@@ -18,6 +18,14 @@ class DiscoverUtahTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+
+        let backgroundImage = UIImage(named: "discoverUtah")
+        let imageView = UIImageView(image: backgroundImage)
+        imageView.alpha = 0.75
+        self.tableView.backgroundView = imageView
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
