@@ -10,7 +10,6 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var gradientView: UIView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,13 +20,13 @@ class ViewController: UIViewController {
         
         view.backgroundColor = .blueColor()
         gradientLayer.frame = view.bounds
-        let color1 = UIColor.yellowColor().CGColor as CGColorRef
-        let color2 = UIColor(red: 1.0, green: 0, blue: 0, alpha: 1.0).CGColor as CGColorRef
+        let color1 = UIColor(red: 0, green: 0.3961, blue: 0.8196, alpha: 1.0).CGColor as CGColorRef
+        let color2 = UIColor(red: 0, green: 0.0941, blue: 0.2, alpha: 1.0).CGColor as CGColorRef
         gradientLayer.colors = [color1, color2]
         
-        gradientLayer.locations = [0.0, 0.25, 0.50, 1.0]
+        gradientLayer.locations = [0.0, 1.0]
         
-        gradientView.layer.addSublayer(gradientLayer)
+        view.layer.insertSublayer(gradientLayer, atIndex: 0)
 
     }
     
