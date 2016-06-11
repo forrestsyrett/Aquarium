@@ -134,8 +134,8 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="Y1p-ql-Of3"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="26"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="30"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k3b-mD-9Zg">
@@ -153,7 +153,11 @@
                                         </constraints>
                                         <state key="normal" title="Discover Utah" backgroundImage="discoverUtahButtonBackground">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="xxo-Lc-Cjn" kind="show" identifier="toUtah" id="BHh-0d-X0w"/>
+                                        </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Hj-TC-Puh">
                                         <rect key="frame" x="0.0" y="170" width="560" height="20"/>
@@ -172,6 +176,9 @@
                                         <state key="normal" title="Ocean Explorer" backgroundImage="oceanExplorerButtonBackground">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="XHA-0V-YWp" kind="show" identifier="toOceanExplorer" id="YwT-h6-YEi"/>
+                                        </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NBt-LZ-v1R">
                                         <rect key="frame" x="0.0" y="260" width="560" height="20"/>
@@ -190,6 +197,9 @@
                                         <state key="normal" title="Journey To South America" backgroundImage="jsaButtonBackground">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="xNa-tW-LBn" kind="show" id="5PI-6n-STZ"/>
+                                        </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VuJ-qo-6wd">
                                         <rect key="frame" x="0.0" y="350" width="560" height="20"/>
@@ -208,6 +218,9 @@
                                         <state key="normal" title="Antarctic Adventure" backgroundImage="AntarcticAdventurebuttonBackground">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="udP-IK-Yxs" kind="show" identifier="toAntarcticAdventure" id="Laj-qY-eas"/>
+                                        </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bS7-FE-mbE">
                                         <rect key="frame" x="0.0" y="440" width="560" height="47"/>
@@ -241,6 +254,110 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o0E-i0-Uq9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1322" y="1123"/>
+        </scene>
+        <!--Discover Utah-->
+        <scene sceneID="zgb-zO-s0z">
+            <objects>
+                <tableViewController title="Discover Utah" id="xxo-Lc-Cjn" customClass="DiscoverUtahTableViewController" customModule="Aquarium" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="w3y-nb-s1t">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="H21-tw-6jX">
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="H21-tw-6jX" id="kxI-Ku-QdH">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="xxo-Lc-Cjn" id="is9-zE-TBK"/>
+                            <outlet property="delegate" destination="xxo-Lc-Cjn" id="cEh-G2-N9d"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DhD-VG-GsP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2101" y="723"/>
+        </scene>
+        <!--Ocean Explorer-->
+        <scene sceneID="V4r-HR-1k2">
+            <objects>
+                <tableViewController title="Ocean Explorer" id="XHA-0V-YWp" customClass="OceanExplorerTableViewController" customModule="Aquarium" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="ZLi-cy-eFj">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="3cl-IK-kXM">
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3cl-IK-kXM" id="HKX-Q4-sln">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="XHA-0V-YWp" id="Iff-If-pva"/>
+                            <outlet property="delegate" destination="XHA-0V-YWp" id="vja-xa-Qmp"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dcg-md-KYd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2101" y="1395"/>
+        </scene>
+        <!--Journey To South America-->
+        <scene sceneID="o9z-vU-hhs">
+            <objects>
+                <tableViewController title="Journey To South America" id="xNa-tW-LBn" customClass="JourneyToSouthAmericaTableViewController" customModule="Aquarium" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="eag-cG-Gec">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="vn4-YX-PhK">
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vn4-YX-PhK" id="Eg0-v2-Zjz">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="xNa-tW-LBn" id="vYc-Po-wsv"/>
+                            <outlet property="delegate" destination="xNa-tW-LBn" id="nXK-eY-YYO"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IX5-Lm-Znl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2101" y="2070"/>
+        </scene>
+        <!--Antarctic Adventure-->
+        <scene sceneID="WIa-HD-HTP">
+            <objects>
+                <viewController title="Antarctic Adventure" id="udP-IK-Yxs" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wFH-as-13c"/>
+                        <viewControllerLayoutGuide type="bottom" id="pK2-JZ-ziA"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="S3b-Cu-PUs">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iz7-68-tac" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3576" y="1269"/>
         </scene>
         <!--Members-->
         <scene sceneID="Mc7-AZ-ff2">

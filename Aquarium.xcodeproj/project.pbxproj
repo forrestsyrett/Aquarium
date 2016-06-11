@@ -13,6 +13,9 @@
 		AA544C9C1D0BB66C00DC1725 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA544C9B1D0BB66C00DC1725 /* Assets.xcassets */; };
 		AA544C9F1D0BB66C00DC1725 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA544C9D1D0BB66C00DC1725 /* LaunchScreen.storyboard */; };
 		AA544CAB1D0C790400DC1725 /* UIAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA544CAA1D0C790400DC1725 /* UIAppearance.swift */; };
+		AA544CAD1D0C90DE00DC1725 /* DiscoverUtahTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA544CAC1D0C90DE00DC1725 /* DiscoverUtahTableViewController.swift */; };
+		AA544CAF1D0C94DE00DC1725 /* OceanExplorerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA544CAE1D0C94DE00DC1725 /* OceanExplorerTableViewController.swift */; };
+		AA544CB11D0C98B700DC1725 /* JourneyToSouthAmericaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA544CB01D0C98B700DC1725 /* JourneyToSouthAmericaTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		AA544C9E1D0BB66C00DC1725 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AA544CA01D0BB66C00DC1725 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AA544CAA1D0C790400DC1725 /* UIAppearance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIAppearance.swift; sourceTree = "<group>"; };
+		AA544CAC1D0C90DE00DC1725 /* DiscoverUtahTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverUtahTableViewController.swift; sourceTree = "<group>"; };
+		AA544CAE1D0C94DE00DC1725 /* OceanExplorerTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OceanExplorerTableViewController.swift; sourceTree = "<group>"; };
+		AA544CB01D0C98B700DC1725 /* JourneyToSouthAmericaTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JourneyToSouthAmericaTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,10 +65,13 @@
 				AA544C941D0BB66C00DC1725 /* AppDelegate.swift */,
 				AA544C961D0BB66C00DC1725 /* ViewController.swift */,
 				AA544C981D0BB66C00DC1725 /* Main.storyboard */,
+				AA544CAC1D0C90DE00DC1725 /* DiscoverUtahTableViewController.swift */,
+				AA544CB01D0C98B700DC1725 /* JourneyToSouthAmericaTableViewController.swift */,
 				AA544C9B1D0BB66C00DC1725 /* Assets.xcassets */,
 				AA544C9D1D0BB66C00DC1725 /* LaunchScreen.storyboard */,
 				AA544CA01D0BB66C00DC1725 /* Info.plist */,
 				AA544CAA1D0C790400DC1725 /* UIAppearance.swift */,
+				AA544CAE1D0C94DE00DC1725 /* OceanExplorerTableViewController.swift */,
 			);
 			path = Aquarium;
 			sourceTree = "<group>";
@@ -139,9 +148,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA544CB11D0C98B700DC1725 /* JourneyToSouthAmericaTableViewController.swift in Sources */,
+				AA544CAD1D0C90DE00DC1725 /* DiscoverUtahTableViewController.swift in Sources */,
 				AA544C971D0BB66C00DC1725 /* ViewController.swift in Sources */,
 				AA544C951D0BB66C00DC1725 /* AppDelegate.swift in Sources */,
 				AA544CAB1D0C790400DC1725 /* UIAppearance.swift in Sources */,
+				AA544CAF1D0C94DE00DC1725 /* OceanExplorerTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
