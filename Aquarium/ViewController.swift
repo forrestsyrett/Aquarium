@@ -14,8 +14,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        
         let gradientLayer = CAGradientLayer()
         
         view.backgroundColor = .blueColor()
@@ -27,6 +25,9 @@ class ViewController: UIViewController {
         gradientLayer.locations = [0.0, 1.0]
         
         view.layer.insertSublayer(gradientLayer, atIndex: 0)
+        
+        
+        
 
     }
     

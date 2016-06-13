@@ -73,6 +73,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
+                        <outlet property="delegate" destination="YCa-8W-zlY" id="Eug-ta-Gfz"/>
                         <segue destination="cTl-Ja-usU" kind="relationship" relationship="viewControllers" id="wgt-fe-5m4"/>
                         <segue destination="KCB-DP-Mnn" kind="relationship" relationship="viewControllers" id="HYK-rZ-Ezd"/>
                         <segue destination="Hcu-tH-ACM" kind="relationship" relationship="viewControllers" id="eGP-dO-d4A"/>
@@ -101,10 +102,10 @@
             </objects>
             <point key="canvasLocation" x="591" y="1123"/>
         </scene>
-        <!--View Controller-->
+        <!--Exhibit Galleries-->
         <scene sceneID="Hfq-nO-eAm">
             <objects>
-                <viewController storyboardIdentifier="ExhibitGalleries" id="KJl-fD-egZ" customClass="ViewController" customModule="Aquarium" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ExhibitGalleries" title="Exhibit Galleries" id="KJl-fD-egZ" customClass="ExhibitGalleriesViewController" customModule="Aquarium" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="3tm-aJ-5ih"/>
                         <viewControllerLayoutGuide type="bottom" id="6wr-cj-8pB"/>
@@ -250,6 +251,12 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="8YD-ZW-amk"/>
+                    <connections>
+                        <outlet property="antarcticAdventureButton" destination="88J-sZ-eCS" id="WF5-3D-4O8"/>
+                        <outlet property="discoverUtahButton" destination="msn-kC-Xg6" id="PWB-R9-GMC"/>
+                        <outlet property="journeyToSouthAmericaButton" destination="S2v-eq-ODK" id="3Qt-t5-HUL"/>
+                        <outlet property="oceanExplorerButton" destination="URz-pl-3lo" id="0kG-uS-0cd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o0E-i0-Uq9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -357,7 +364,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iz7-68-tac" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3576" y="1269"/>
+            <point key="canvasLocation" x="2764" y="1395"/>
         </scene>
         <!--Members-->
         <scene sceneID="Mc7-AZ-ff2">

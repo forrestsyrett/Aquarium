@@ -16,6 +16,7 @@
 		AA544CAD1D0C90DE00DC1725 /* DiscoverUtahTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA544CAC1D0C90DE00DC1725 /* DiscoverUtahTableViewController.swift */; };
 		AA544CAF1D0C94DE00DC1725 /* OceanExplorerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA544CAE1D0C94DE00DC1725 /* OceanExplorerTableViewController.swift */; };
 		AA544CB11D0C98B700DC1725 /* JourneyToSouthAmericaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA544CB01D0C98B700DC1725 /* JourneyToSouthAmericaTableViewController.swift */; };
+		AA544CB31D0CAE1000DC1725 /* ExhibitGalleriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA544CB21D0CAE1000DC1725 /* ExhibitGalleriesViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		AA544CAC1D0C90DE00DC1725 /* DiscoverUtahTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverUtahTableViewController.swift; sourceTree = "<group>"; };
 		AA544CAE1D0C94DE00DC1725 /* OceanExplorerTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OceanExplorerTableViewController.swift; sourceTree = "<group>"; };
 		AA544CB01D0C98B700DC1725 /* JourneyToSouthAmericaTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JourneyToSouthAmericaTableViewController.swift; sourceTree = "<group>"; };
+		AA544CB21D0CAE1000DC1725 /* ExhibitGalleriesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExhibitGalleriesViewController.swift; path = ../ExhibitGalleriesViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 			isa = PBXGroup;
 			children = (
 				AA544C941D0BB66C00DC1725 /* AppDelegate.swift */,
+				AA544CB21D0CAE1000DC1725 /* ExhibitGalleriesViewController.swift */,
 				AA544C961D0BB66C00DC1725 /* ViewController.swift */,
 				AA544C981D0BB66C00DC1725 /* Main.storyboard */,
 				AA544CAC1D0C90DE00DC1725 /* DiscoverUtahTableViewController.swift */,
@@ -151,6 +154,7 @@
 				AA544CB11D0C98B700DC1725 /* JourneyToSouthAmericaTableViewController.swift in Sources */,
 				AA544CAD1D0C90DE00DC1725 /* DiscoverUtahTableViewController.swift in Sources */,
 				AA544C971D0BB66C00DC1725 /* ViewController.swift in Sources */,
+				AA544CB31D0CAE1000DC1725 /* ExhibitGalleriesViewController.swift in Sources */,
 				AA544C951D0BB66C00DC1725 /* AppDelegate.swift in Sources */,
 				AA544CAB1D0C790400DC1725 /* UIAppearance.swift in Sources */,
 				AA544CAF1D0C94DE00DC1725 /* OceanExplorerTableViewController.swift in Sources */,
