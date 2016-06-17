@@ -77,6 +77,7 @@
                         <segue destination="cTl-Ja-usU" kind="relationship" relationship="viewControllers" id="wgt-fe-5m4"/>
                         <segue destination="KCB-DP-Mnn" kind="relationship" relationship="viewControllers" id="HYK-rZ-Ezd"/>
                         <segue destination="Hcu-tH-ACM" kind="relationship" relationship="viewControllers" id="eGP-dO-d4A"/>
+                        <segue destination="tG8-4Y-Bg6" kind="relationship" relationship="viewControllers" id="dga-bB-dPB"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LYA-8d-shZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -346,7 +347,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IX5-Lm-Znl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2101" y="2070"/>
+            <point key="canvasLocation" x="2913" y="2070"/>
         </scene>
         <!--Antarctic Adventure-->
         <scene sceneID="WIa-HD-HTP">
@@ -384,6 +385,68 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8UY-SH-rGu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="591" y="1846"/>
+        </scene>
+        <!--Scanner View Controller-->
+        <scene sceneID="ouM-M7-Gll">
+            <objects>
+                <viewController id="uai-Rq-JX2" customClass="QRScannerViewController" customModule="Aquarium" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Y8z-0I-f1Z"/>
+                        <viewControllerLayoutGuide type="bottom" id="S5t-oz-H9R"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="p1p-bL-GDg">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="QR Code Text:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iGU-BT-vdK">
+                                <rect key="frame" x="20" y="438" width="111" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="QR Code Result" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pdo-TE-cKj">
+                                <rect key="frame" x="139" y="438" width="121" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="iGU-BT-vdK" firstAttribute="leading" secondItem="p1p-bL-GDg" secondAttribute="leadingMargin" id="6jU-fr-Ccd"/>
+                            <constraint firstItem="pdo-TE-cKj" firstAttribute="leading" secondItem="iGU-BT-vdK" secondAttribute="trailing" constant="8" id="8RV-kV-POf"/>
+                            <constraint firstItem="iGU-BT-vdK" firstAttribute="baseline" secondItem="pdo-TE-cKj" secondAttribute="baseline" id="IaB-tE-z8e"/>
+                            <constraint firstItem="S5t-oz-H9R" firstAttribute="top" secondItem="iGU-BT-vdK" secondAttribute="bottom" constant="92" id="V43-Fk-Tcw"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="LiI-1X-I6n"/>
+                    <connections>
+                        <outlet property="qrCodeResult" destination="pdo-TE-cKj" id="6lw-CQ-hWL"/>
+                        <outlet property="qrCodeText" destination="iGU-BT-vdK" id="Pok-dd-9Gm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vRI-qV-PHc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1322" y="2558"/>
+        </scene>
+        <!--QR Scanner-->
+        <scene sceneID="qlQ-UG-oP7">
+            <objects>
+                <navigationController title="QR Scanner" automaticallyAdjustsScrollViewInsets="NO" id="tG8-4Y-Bg6" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Scan" id="CXt-Go-d7P"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="SS7-yz-jlH">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="uai-Rq-JX2" kind="relationship" relationship="rootViewController" id="Dda-OK-2LE"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QOh-cU-ro4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="585" y="2558"/>
         </scene>
     </scenes>
     <resources>

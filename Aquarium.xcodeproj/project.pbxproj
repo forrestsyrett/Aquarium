@@ -17,6 +17,7 @@
 		AA544CAF1D0C94DE00DC1725 /* OceanExplorerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA544CAE1D0C94DE00DC1725 /* OceanExplorerTableViewController.swift */; };
 		AA544CB11D0C98B700DC1725 /* JourneyToSouthAmericaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA544CB01D0C98B700DC1725 /* JourneyToSouthAmericaTableViewController.swift */; };
 		AA544CB31D0CAE1000DC1725 /* ExhibitGalleriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA544CB21D0CAE1000DC1725 /* ExhibitGalleriesViewController.swift */; };
+		AA544CFA1D149C0A00DC1725 /* QRScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA544CF91D149C0A00DC1725 /* QRScannerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		AA544CAE1D0C94DE00DC1725 /* OceanExplorerTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OceanExplorerTableViewController.swift; sourceTree = "<group>"; };
 		AA544CB01D0C98B700DC1725 /* JourneyToSouthAmericaTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JourneyToSouthAmericaTableViewController.swift; sourceTree = "<group>"; };
 		AA544CB21D0CAE1000DC1725 /* ExhibitGalleriesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExhibitGalleriesViewController.swift; path = ../ExhibitGalleriesViewController.swift; sourceTree = "<group>"; };
+		AA544CF91D149C0A00DC1725 /* QRScannerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRScannerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,6 +50,7 @@
 		AA544C881D0BB66B00DC1725 = {
 			isa = PBXGroup;
 			children = (
+				AA544CF91D149C0A00DC1725 /* QRScannerViewController.swift */,
 				AA544C931D0BB66C00DC1725 /* Aquarium */,
 				AA544C921D0BB66C00DC1725 /* Products */,
 			);
@@ -155,6 +158,7 @@
 				AA544CAD1D0C90DE00DC1725 /* DiscoverUtahTableViewController.swift in Sources */,
 				AA544C971D0BB66C00DC1725 /* ViewController.swift in Sources */,
 				AA544CB31D0CAE1000DC1725 /* ExhibitGalleriesViewController.swift in Sources */,
+				AA544CFA1D149C0A00DC1725 /* QRScannerViewController.swift in Sources */,
 				AA544C951D0BB66C00DC1725 /* AppDelegate.swift in Sources */,
 				AA544CAB1D0C790400DC1725 /* UIAppearance.swift in Sources */,
 				AA544CAF1D0C94DE00DC1725 /* OceanExplorerTableViewController.swift in Sources */,
