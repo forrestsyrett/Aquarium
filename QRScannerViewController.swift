@@ -11,8 +11,8 @@ import AVFoundation
 
 class QRScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     
-    @IBOutlet weak var qrCodeText: UILabel!
     @IBOutlet weak var qrCodeResult: UILabel!
+    @IBOutlet weak var photoFrameImage: UIImageView!
     
     
         var captureSession: AVCaptureSession?
@@ -58,7 +58,6 @@ class QRScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsD
         self.view.layer.addSublayer(videoPreviewLayer!)
         captureSession?.startRunning()
         self.view.bringSubviewToFront(qrCodeResult)
-        self.view.bringSubviewToFront(qrCodeText)
     }
     
     func initializeQRView() {
@@ -72,7 +71,7 @@ class QRScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsD
     func captureOutput(captureOutput: AVCaptureOutput!, didOutputMetadataObjects metadataObjects: [AnyObject]!, fromConnection connection: AVCaptureConnection!) {
         if metadataObjects == nil || metadataObjects.count == 0 {
             qrCodeFrameView?.frame = CGRectZero
-            qrCodeResult.text = "No QR Code text detected"
+            qrCodeResult.text = "No QR Code detected"
             return
         }
         let objMetadataMachineReadableCodeObject = metadataObjects[0] as! AVMetadataMachineReadableCodeObject

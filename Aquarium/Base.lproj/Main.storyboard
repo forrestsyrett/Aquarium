@@ -386,7 +386,7 @@
             </objects>
             <point key="canvasLocation" x="591" y="1846"/>
         </scene>
-        <!--Scanner View Controller-->
+        <!--QR Scanner-->
         <scene sceneID="ouM-M7-Gll">
             <objects>
                 <viewController id="uai-Rq-JX2" customClass="QRScannerViewController" customModule="Aquarium" customModuleProvider="target" sceneMemberID="viewController">
@@ -398,31 +398,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="QR Code Text:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iGU-BT-vdK">
-                                <rect key="frame" x="20" y="438" width="111" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fxX-KX-15T">
+                                <rect key="frame" x="59" y="64" width="483" height="395"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="QR Code Result" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pdo-TE-cKj">
-                                <rect key="frame" x="139" y="438" width="121" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="20" y="467" width="560" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="zsC-lf-kXV"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="iGU-BT-vdK" firstAttribute="leading" secondItem="p1p-bL-GDg" secondAttribute="leadingMargin" id="6jU-fr-Ccd"/>
-                            <constraint firstItem="pdo-TE-cKj" firstAttribute="leading" secondItem="iGU-BT-vdK" secondAttribute="trailing" constant="8" id="8RV-kV-POf"/>
-                            <constraint firstItem="iGU-BT-vdK" firstAttribute="baseline" secondItem="pdo-TE-cKj" secondAttribute="baseline" id="IaB-tE-z8e"/>
-                            <constraint firstItem="S5t-oz-H9R" firstAttribute="top" secondItem="iGU-BT-vdK" secondAttribute="bottom" constant="92" id="V43-Fk-Tcw"/>
+                            <constraint firstItem="fxX-KX-15T" firstAttribute="centerX" secondItem="p1p-bL-GDg" secondAttribute="centerX" id="DCw-dZ-2ln"/>
+                            <constraint firstItem="pdo-TE-cKj" firstAttribute="leading" secondItem="p1p-bL-GDg" secondAttribute="leadingMargin" id="FqR-HW-vJa"/>
+                            <constraint firstItem="pdo-TE-cKj" firstAttribute="top" secondItem="fxX-KX-15T" secondAttribute="bottom" constant="8" symbolic="YES" id="Lbk-Rv-MCp"/>
+                            <constraint firstItem="fxX-KX-15T" firstAttribute="leading" secondItem="p1p-bL-GDg" secondAttribute="leadingMargin" constant="39" id="QcN-Gb-Gxu"/>
+                            <constraint firstItem="pdo-TE-cKj" firstAttribute="centerX" secondItem="fxX-KX-15T" secondAttribute="centerX" id="mLi-B9-krc"/>
+                            <constraint firstItem="fxX-KX-15T" firstAttribute="top" secondItem="Y8z-0I-f1Z" secondAttribute="bottom" id="sEN-U5-zLF"/>
+                            <constraint firstItem="S5t-oz-H9R" firstAttribute="top" secondItem="pdo-TE-cKj" secondAttribute="bottom" constant="63" id="z1y-OQ-PGU"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="LiI-1X-I6n"/>
+                    <navigationItem key="navigationItem" title="QR Scanner" id="LiI-1X-I6n"/>
                     <connections>
+                        <outlet property="photoFrameImage" destination="fxX-KX-15T" id="aua-hY-LjU"/>
                         <outlet property="qrCodeResult" destination="pdo-TE-cKj" id="6lw-CQ-hWL"/>
-                        <outlet property="qrCodeText" destination="iGU-BT-vdK" id="Pok-dd-9Gm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vRI-qV-PHc" userLabel="First Responder" sceneMemberID="firstResponder"/>
