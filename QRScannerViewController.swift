@@ -8,6 +8,7 @@
 
 import UIKit
 import AVFoundation
+import SafariServices
 
 class QRScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     
@@ -80,6 +81,8 @@ class QRScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsD
             qrCodeFrameView?.frame = objBarCode.bounds;
             if objMetadataMachineReadableCodeObject.stringValue != nil {
                 qrCodeResult.text = objMetadataMachineReadableCodeObject.stringValue
+                let safariVC = SFSafariViewController(URL: NSURL(string: qrCodeResult.text!)!)
+                presentViewController(safariVC, animated: true, completion: nil)
             }
         }
     }
