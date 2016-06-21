@@ -46,6 +46,8 @@ class ExhibitGalleriesViewController: UIViewController, UITabBarDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+//        navigationController?.navigationBar.setBackgroundImage(UIImage(named: "aquaWave"), forBarMetrics: .Default)
 
         
         // MARK: Gradient

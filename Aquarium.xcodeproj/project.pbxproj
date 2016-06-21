@@ -18,6 +18,7 @@
 		AA544CB11D0C98B700DC1725 /* JourneyToSouthAmericaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA544CB01D0C98B700DC1725 /* JourneyToSouthAmericaTableViewController.swift */; };
 		AA544CB31D0CAE1000DC1725 /* ExhibitGalleriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA544CB21D0CAE1000DC1725 /* ExhibitGalleriesViewController.swift */; };
 		AA544CFA1D149C0A00DC1725 /* QRScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA544CF91D149C0A00DC1725 /* QRScannerViewController.swift */; };
+		AA8D05161D19DC930063F222 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8D05151D19DC930063F222 /* HomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		AA544CB01D0C98B700DC1725 /* JourneyToSouthAmericaTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JourneyToSouthAmericaTableViewController.swift; sourceTree = "<group>"; };
 		AA544CB21D0CAE1000DC1725 /* ExhibitGalleriesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExhibitGalleriesViewController.swift; path = ../ExhibitGalleriesViewController.swift; sourceTree = "<group>"; };
 		AA544CF91D149C0A00DC1725 /* QRScannerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRScannerViewController.swift; sourceTree = "<group>"; };
+		AA8D05151D19DC930063F222 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 				AA544CB21D0CAE1000DC1725 /* ExhibitGalleriesViewController.swift */,
 				AA544C961D0BB66C00DC1725 /* ViewController.swift */,
 				AA544C981D0BB66C00DC1725 /* Main.storyboard */,
+				AA8D05151D19DC930063F222 /* HomeViewController.swift */,
 				AA544CAC1D0C90DE00DC1725 /* DiscoverUtahTableViewController.swift */,
 				AA544CB01D0C98B700DC1725 /* JourneyToSouthAmericaTableViewController.swift */,
 				AA544C9B1D0BB66C00DC1725 /* Assets.xcassets */,
@@ -159,6 +162,7 @@
 				AA544C971D0BB66C00DC1725 /* ViewController.swift in Sources */,
 				AA544CB31D0CAE1000DC1725 /* ExhibitGalleriesViewController.swift in Sources */,
 				AA544CFA1D149C0A00DC1725 /* QRScannerViewController.swift in Sources */,
+				AA8D05161D19DC930063F222 /* HomeViewController.swift in Sources */,
 				AA544C951D0BB66C00DC1725 /* AppDelegate.swift in Sources */,
 				AA544CAB1D0C790400DC1725 /* UIAppearance.swift in Sources */,
 				AA544CAF1D0C94DE00DC1725 /* OceanExplorerTableViewController.swift in Sources */,
@@ -278,6 +282,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.forrestsyrett.Aquarium;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -289,6 +294,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.forrestsyrett.Aquarium;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
