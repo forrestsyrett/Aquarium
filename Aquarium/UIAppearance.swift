@@ -9,5 +9,24 @@
 import Foundation
 import UIKit
 
+func gradient (view: UIView) {
+    
+    
+    let gradientLayer = CAGradientLayer()
+    
+    view.backgroundColor = .blueColor()
+    gradientLayer.frame = view.bounds
+    let color1 = UIColor(red: 0, green: 0.3961, blue: 0.8196, alpha: 1.0).CGColor as CGColorRef
+    let color2 = UIColor(red: 0, green: 0.0941, blue: 0.2, alpha: 1.0).CGColor as CGColorRef
+    let color3 = UIColor(red: 0.149, green: 0.4392, blue: 0.498, alpha: 1.0).CGColor as CGColorRef
+    gradientLayer.colors = [color1, color3, color2]
+    
+    gradientLayer.locations = [0.0, 0.50, 1.0]
+    
+    view.layer.insertSublayer(gradientLayer, atIndex: 0)
+    
+    
+}
+
 
 

@@ -7,28 +7,25 @@
 //
 
 import UIKit
+import SafariServices
 
 class HomeViewController: UIViewController {
+    
+    @IBOutlet weak var welcomeLabel: UILabel!
+    @IBOutlet weak var livingPlanetLabel: UILabel!
+    @IBOutlet weak var buyTicketsLabel: UIButton!
+    @IBOutlet weak var becomeAMemberLabel: UIButton!
+    @IBOutlet weak var animalEncountersLabel: UIButton!
+    @IBOutlet weak var directionsLabel: UIButton!
+    @IBOutlet weak var donateLabel: UIButton!
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // navigationController?.navigationBar.barTintColor = UIColor.blackColor()
-        
-//        let logoImage = UIImage(named: "logo")
-//        navigationItem.titleView = UIImageView(image: logoImage)
+                
 
-        let gradientLayer = CAGradientLayer()
-        
-        view.backgroundColor = .blueColor()
-        gradientLayer.frame = view.bounds
-        let color1 = UIColor(red: 0, green: 0.3961, blue: 0.8196, alpha: 1.0).CGColor as CGColorRef
-        let color2 = UIColor(red: 0, green: 0.0941, blue: 0.2, alpha: 1.0).CGColor as CGColorRef
-        gradientLayer.colors = [color1, color2]
-        
-        gradientLayer.locations = [0.0, 1.0]
-        
-        view.layer.insertSublayer(gradientLayer, atIndex: 0)
+        gradient(self.view)
       
 
         // Do any additional setup after loading the view.
@@ -38,6 +35,27 @@ class HomeViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    @IBAction func buyTicketsButtonTapped(sender: AnyObject) {
+        let safariVC = SFSafariViewController(URL: NSURL(string: "https://tickets.thelivingplanet.com/WebStore/Shop/ViewItems.aspx?CG=online&C=Tickets")!)
+        presentViewController(safariVC, animated: true, completion: nil)
+        
+    }
+    
+    
+    @IBAction func becomeAMemberButtonTapped(sender: AnyObject) {
+        let safariVC = SFSafariViewController(URL: NSURL(string: "https://tickets.thelivingplanet.com/WebStore/Shop/ViewItems.aspx?CG=online&C=Memberships")!)
+        presentViewController(safariVC, animated: true, completion: nil)
+    }
+    
+    @IBAction func donateButtonTapped(sender: AnyObject) {
+        let safariVC = SFSafariViewController(URL: NSURL(string: "http://www.thelivingplanet.com/home-4/give/")!)
+        presentViewController(safariVC, animated: true, completion: nil)
+    }
+    
+    @IBAction func directionButtonTapped(sender: AnyObject) {
+    }
+    
     
 
     /*

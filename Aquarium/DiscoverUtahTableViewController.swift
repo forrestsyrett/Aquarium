@@ -12,12 +12,6 @@ class DiscoverUtahTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
 
         let backgroundImage = UIImage(named: "discoverUtah")
@@ -26,6 +20,12 @@ class DiscoverUtahTableViewController: UITableViewController {
         self.tableView.backgroundView = imageView
         
         
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        tableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -42,18 +42,21 @@ class DiscoverUtahTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return 1
     }
 
-    /*
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier("animalCell", forIndexPath: indexPath)
 
         // Configure the cell...
+        
 
         return cell
+        cell.textLabel?.text = "Test 1"
+        cell.imageView?.image = UIImage(named: "logo")
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.
