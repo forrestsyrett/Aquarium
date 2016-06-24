@@ -9,7 +9,8 @@
 import UIKit
 
 class DiscoverUtahTableViewController: UITableViewController {
-
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -53,8 +54,7 @@ class DiscoverUtahTableViewController: UITableViewController {
         
 
         return cell
-        cell.textLabel?.text = "Test 1"
-        cell.imageView?.image = UIImage(named: "logo")
+        
     }
     
 

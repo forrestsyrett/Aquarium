@@ -23,7 +23,16 @@ class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-                
+        
+        
+        // Navigation Title as an image
+        
+//        let logo = UIImage(named: "smallLogo")
+//        let imageView = UIImageView(image:logo)
+//        self.navigationItem.titleView = imageView
+        
+        
+        
 
         gradient(self.view)
       
@@ -54,6 +63,7 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func directionButtonTapped(sender: AnyObject) {
+        
     }
     
     

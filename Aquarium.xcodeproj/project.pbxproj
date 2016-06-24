@@ -20,11 +20,13 @@
 		AA544CB31D0CAE1000DC1725 /* ExhibitGalleriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA544CB21D0CAE1000DC1725 /* ExhibitGalleriesViewController.swift */; };
 		AA544CFA1D149C0A00DC1725 /* QRScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA544CF91D149C0A00DC1725 /* QRScannerViewController.swift */; };
 		AA8D05161D19DC930063F222 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8D05151D19DC930063F222 /* HomeViewController.swift */; };
+		AA9D6EDE1D1CBE9100831AFE /* DailyScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9D6EDD1D1CBE9100831AFE /* DailyScheduleViewController.swift */; };
+		AA9D6EE01D1CCD5000831AFE /* Animal.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9D6EDF1D1CCD5000831AFE /* Animal.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		AA183F291D1A6DD200D31044 /* AnimalEncountersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimalEncountersViewController.swift; sourceTree = "<group>"; };
-		AA183F2B1D1A767F00D31044 /* AnimalDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnimalDetailViewController.swift; path = Aquarium/AnimalDetailViewController.swift; sourceTree = "<group>"; };
+		AA183F2B1D1A767F00D31044 /* AnimalDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimalDetailViewController.swift; sourceTree = "<group>"; };
 		AA544C911D0BB66C00DC1725 /* Aquarium.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Aquarium.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA544C941D0BB66C00DC1725 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AA544C991D0BB66C00DC1725 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -36,8 +38,10 @@
 		AA544CAE1D0C94DE00DC1725 /* OceanExplorerTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OceanExplorerTableViewController.swift; sourceTree = "<group>"; };
 		AA544CB01D0C98B700DC1725 /* JourneyToSouthAmericaTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JourneyToSouthAmericaTableViewController.swift; sourceTree = "<group>"; };
 		AA544CB21D0CAE1000DC1725 /* ExhibitGalleriesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExhibitGalleriesViewController.swift; path = ../ExhibitGalleriesViewController.swift; sourceTree = "<group>"; };
-		AA544CF91D149C0A00DC1725 /* QRScannerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRScannerViewController.swift; sourceTree = "<group>"; };
+		AA544CF91D149C0A00DC1725 /* QRScannerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QRScannerViewController.swift; path = ../QRScannerViewController.swift; sourceTree = "<group>"; };
 		AA8D05151D19DC930063F222 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		AA9D6EDD1D1CBE9100831AFE /* DailyScheduleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyScheduleViewController.swift; sourceTree = "<group>"; };
+		AA9D6EDF1D1CCD5000831AFE /* Animal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animal.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,8 +58,6 @@
 		AA544C881D0BB66B00DC1725 = {
 			isa = PBXGroup;
 			children = (
-				AA183F2B1D1A767F00D31044 /* AnimalDetailViewController.swift */,
-				AA544CF91D149C0A00DC1725 /* QRScannerViewController.swift */,
 				AA544C931D0BB66C00DC1725 /* Aquarium */,
 				AA544C921D0BB66C00DC1725 /* Products */,
 			);
@@ -75,15 +77,19 @@
 				AA544C941D0BB66C00DC1725 /* AppDelegate.swift */,
 				AA544CB21D0CAE1000DC1725 /* ExhibitGalleriesViewController.swift */,
 				AA544C981D0BB66C00DC1725 /* Main.storyboard */,
+				AA9D6EDF1D1CCD5000831AFE /* Animal.swift */,
 				AA183F291D1A6DD200D31044 /* AnimalEncountersViewController.swift */,
 				AA8D05151D19DC930063F222 /* HomeViewController.swift */,
 				AA544CAC1D0C90DE00DC1725 /* DiscoverUtahTableViewController.swift */,
 				AA544CB01D0C98B700DC1725 /* JourneyToSouthAmericaTableViewController.swift */,
+				AA544CAE1D0C94DE00DC1725 /* OceanExplorerTableViewController.swift */,
+				AA183F2B1D1A767F00D31044 /* AnimalDetailViewController.swift */,
+				AA9D6EDD1D1CBE9100831AFE /* DailyScheduleViewController.swift */,
+				AA544CF91D149C0A00DC1725 /* QRScannerViewController.swift */,
+				AA544CAA1D0C790400DC1725 /* UIAppearance.swift */,
 				AA544C9B1D0BB66C00DC1725 /* Assets.xcassets */,
 				AA544C9D1D0BB66C00DC1725 /* LaunchScreen.storyboard */,
 				AA544CA01D0BB66C00DC1725 /* Info.plist */,
-				AA544CAA1D0C790400DC1725 /* UIAppearance.swift */,
-				AA544CAE1D0C94DE00DC1725 /* OceanExplorerTableViewController.swift */,
 			);
 			path = Aquarium;
 			sourceTree = "<group>";
@@ -161,9 +167,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA183F2C1D1A767F00D31044 /* AnimalDetailViewController.swift in Sources */,
+				AA9D6EDE1D1CBE9100831AFE /* DailyScheduleViewController.swift in Sources */,
 				AA544CB11D0C98B700DC1725 /* JourneyToSouthAmericaTableViewController.swift in Sources */,
 				AA544CAD1D0C90DE00DC1725 /* DiscoverUtahTableViewController.swift in Sources */,
 				AA544CB31D0CAE1000DC1725 /* ExhibitGalleriesViewController.swift in Sources */,
+				AA9D6EE01D1CCD5000831AFE /* Animal.swift in Sources */,
 				AA544CFA1D149C0A00DC1725 /* QRScannerViewController.swift in Sources */,
 				AA8D05161D19DC930063F222 /* HomeViewController.swift in Sources */,
 				AA183F2A1D1A6DD300D31044 /* AnimalEncountersViewController.swift in Sources */,

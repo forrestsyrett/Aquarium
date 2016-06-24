@@ -203,6 +203,12 @@
                                     </mask>
                                 </variation>
                             </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="smallLogo" translatesAutoresizingMaskIntoConstraints="NO" id="oWX-bw-Jvg">
+                                <rect key="frame" x="267" y="479" width="67" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="oWX-bw-Jvg" secondAttribute="height" multiplier="67:64" id="Y5X-yD-mcm"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -211,7 +217,9 @@
                             <constraint firstItem="FWU-uv-02e" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="9M6-Gl-QBe"/>
                             <constraint firstItem="FWU-uv-02e" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="DLN-l4-Vki"/>
                             <constraint firstItem="FWU-uv-02e" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="NnA-iA-GNb"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="oWX-bw-Jvg" secondAttribute="bottom" constant="8" id="TAz-3e-kOq"/>
                             <constraint firstItem="kJa-Wu-OkP" firstAttribute="top" secondItem="qCa-VU-Dni" secondAttribute="bottom" id="WON-MA-DnC"/>
+                            <constraint firstItem="oWX-bw-Jvg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="e2v-aO-0pF"/>
                             <constraint firstItem="qCa-VU-Dni" firstAttribute="top" secondItem="cZa-9F-t4n" secondAttribute="bottom" constant="3" id="fDz-K8-da2"/>
                             <constraint firstItem="qCa-VU-Dni" firstAttribute="leading" secondItem="cZa-9F-t4n" secondAttribute="trailing" constant="8" id="i7l-ay-YO4"/>
                             <constraint firstItem="FWU-uv-02e" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="yst-ar-kHH"/>
@@ -242,7 +250,7 @@
         <!--Daily Schedule-->
         <scene sceneID="5cK-6N-AW9">
             <objects>
-                <viewController id="OgW-A9-DMP" sceneMemberID="viewController">
+                <viewController id="OgW-A9-DMP" customClass="DailyScheduleViewController" customModule="Aquarium" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hNc-Aj-sQ1"/>
                         <viewControllerLayoutGuide type="bottom" id="BTd-Dt-kDk"/>
@@ -281,8 +289,18 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="smallLogo" translatesAutoresizingMaskIntoConstraints="NO" id="2xA-Rx-ojC">
+                                <rect key="frame" x="267" y="479" width="67" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="2xA-Rx-ojC" secondAttribute="height" multiplier="67:64" id="6tv-Vh-hyH"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="BTd-Dt-kDk" firstAttribute="top" secondItem="2xA-Rx-ojC" secondAttribute="bottom" constant="8" id="Ord-NF-XyW"/>
+                            <constraint firstItem="2xA-Rx-ojC" firstAttribute="centerX" secondItem="o8d-8W-uMA" secondAttribute="centerX" id="sQ7-jI-AgV"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Daily Schedule" id="bbI-3G-50h"/>
                 </viewController>
@@ -485,6 +503,9 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </stackView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="smallLogo" translatesAutoresizingMaskIntoConstraints="NO" id="p9q-ki-IfJ">
+                                <rect key="frame" x="267" y="479" width="67" height="64"/>
+                            </imageView>
                         </subviews>
                         <constraints>
                             <constraint firstItem="P2u-Qg-QUV" firstAttribute="top" secondItem="3tm-aJ-5ih" secondAttribute="bottom" id="30R-Io-F6e"/>
@@ -493,8 +514,10 @@
                             <constraint firstAttribute="trailingMargin" secondItem="P2u-Qg-QUV" secondAttribute="trailing" id="NSI-gg-Bht"/>
                             <constraint firstItem="6wr-cj-8pB" firstAttribute="top" secondItem="P2u-Qg-QUV" secondAttribute="bottom" id="Ox2-EI-HSM"/>
                             <constraint firstItem="P2u-Qg-QUV" firstAttribute="leading" secondItem="ovV-yW-6qt" secondAttribute="leadingMargin" id="b4g-Eg-ADi"/>
+                            <constraint firstItem="p9q-ki-IfJ" firstAttribute="centerX" secondItem="ovV-yW-6qt" secondAttribute="centerX" id="g7Z-c4-Nas"/>
                             <constraint firstItem="6wr-cj-8pB" firstAttribute="top" secondItem="jgL-h8-fmL" secondAttribute="bottom" id="sCl-l8-nlr"/>
                             <constraint firstItem="jgL-h8-fmL" firstAttribute="top" secondItem="3tm-aJ-5ih" secondAttribute="bottom" id="udq-Oj-541"/>
+                            <constraint firstItem="6wr-cj-8pB" firstAttribute="top" secondItem="p9q-ki-IfJ" secondAttribute="bottom" constant="8" id="v4S-f4-gHe"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="8YD-ZW-amk"/>
@@ -509,7 +532,7 @@
             </objects>
             <point key="canvasLocation" x="1322" y="1123"/>
         </scene>
-        <!--Animal Encounters-->
+        <!--Animal Encounters View Controller-->
         <scene sceneID="euu-eR-3cJ">
             <objects>
                 <viewController id="kLs-Qc-lC6" customClass="AnimalEncountersViewController" customModule="Aquarium" customModuleProvider="target" sceneMemberID="viewController">
@@ -520,9 +543,57 @@
                     <view key="view" contentMode="scaleToFill" id="FgV-00-urt">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Special Events" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3JA-cj-mON">
+                                <rect key="frame" x="20" y="72" width="560" height="24"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="penguinEncounters" translatesAutoresizingMaskIntoConstraints="NO" id="Ms6-XZ-e5D">
+                                <rect key="frame" x="20" y="109" width="560" height="198"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Ms6-XZ-e5D" secondAttribute="height" multiplier="280:99" id="EDM-FB-1yd"/>
+                                </constraints>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nd2-IS-BBg">
+                                <rect key="frame" x="20" y="315" width="560" height="228"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Nd2-IS-BBg" secondAttribute="height" multiplier="140:43" constant="-182.32558139534888" id="1BW-Lb-tXH"/>
+                                </constraints>
+                                <string key="text">Call 801-355-3474 ext. 222 to book your Penguin Encounter!
+
+1:00pm Thursday-Tuesday
+Limit 10 people per encounter.
+Children under the age of 14 must be supervised by a legal guardian.
+Each child under the age of 5 must have an adult with them.
+$24.95 per person or $19.95 for members.
+
+*Aquarium Admission ticket is also required with a Penguin Encounter</string>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" phoneNumber="YES"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="leadingMargin" secondItem="Ms6-XZ-e5D" secondAttribute="leading" id="0wz-yQ-cOM"/>
+                            <constraint firstItem="3JA-cj-mON" firstAttribute="top" secondItem="LL3-mG-mnS" secondAttribute="bottom" constant="8" id="348-KX-kOS"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="Nd2-IS-BBg" secondAttribute="leading" id="BDO-7X-myZ"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="3JA-cj-mON" secondAttribute="leading" id="MZe-4d-bwL"/>
+                            <constraint firstItem="Nd2-IS-BBg" firstAttribute="top" secondItem="Ms6-XZ-e5D" secondAttribute="bottom" constant="8" id="Y8h-t4-KcY"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="3JA-cj-mON" secondAttribute="trailing" id="Zdw-jd-5IJ"/>
+                            <constraint firstItem="Ms6-XZ-e5D" firstAttribute="top" secondItem="3JA-cj-mON" secondAttribute="bottom" constant="13" id="bhZ-3d-Faq"/>
+                            <constraint firstItem="3JA-cj-mON" firstAttribute="centerX" secondItem="FgV-00-urt" secondAttribute="centerX" id="eUd-aw-1ay"/>
+                            <constraint firstItem="Ms6-XZ-e5D" firstAttribute="centerX" secondItem="FgV-00-urt" secondAttribute="centerX" id="fYd-pv-nms"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Nd2-IS-BBg" secondAttribute="trailing" id="m94-vy-Qqt"/>
+                            <constraint firstItem="Nd2-IS-BBg" firstAttribute="centerX" secondItem="FgV-00-urt" secondAttribute="centerX" id="nty-5E-tZu"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Ms6-XZ-e5D" secondAttribute="trailing" id="xy1-Up-v2L"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Animal Encounters" id="uHD-hm-dTB"/>
+                    <navigationItem key="navigationItem" id="uHD-hm-dTB"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Abq-wb-dgp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -550,7 +621,7 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Animal Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5P6-Tj-kC3">
                                             <rect key="frame" x="71" y="11" width="521" height="24"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -587,16 +658,16 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a4D-YJ-ekP">
                                 <rect key="frame" x="20" y="108" width="560" height="443"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uwz-TR-sPm">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uwz-TR-sPm">
                                         <rect key="frame" x="94" y="19" width="372" height="197"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" secondItem="uwz-TR-sPm" secondAttribute="height" multiplier="16:9" id="bVv-va-4B8"/>
+                                            <constraint firstAttribute="width" secondItem="uwz-TR-sPm" secondAttribute="height" multiplier="16:9" constant="21.777777777777771" id="bVv-va-4B8"/>
                                         </constraints>
                                     </imageView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="uwz-TR-sPm" firstAttribute="top" secondItem="a4D-YJ-ekP" secondAttribute="top" constant="83" id="Apf-an-T8G"/>
-                                    <constraint firstAttribute="bottom" secondItem="uwz-TR-sPm" secondAttribute="bottom" constant="163" id="X6Q-yM-v3u"/>
+                                    <constraint firstItem="uwz-TR-sPm" firstAttribute="top" secondItem="a4D-YJ-ekP" secondAttribute="top" constant="19" id="Apf-an-T8G"/>
+                                    <constraint firstAttribute="bottom" secondItem="uwz-TR-sPm" secondAttribute="bottom" constant="227" id="X6Q-yM-v3u"/>
                                     <constraint firstItem="uwz-TR-sPm" firstAttribute="leading" secondItem="a4D-YJ-ekP" secondAttribute="leading" constant="94" id="bqu-8y-k5w"/>
                                     <constraint firstAttribute="trailing" secondItem="uwz-TR-sPm" secondAttribute="trailing" constant="94" id="hF1-hg-EaM"/>
                                     <constraint firstItem="uwz-TR-sPm" firstAttribute="centerX" secondItem="a4D-YJ-ekP" secondAttribute="centerX" id="hId-46-tKb"/>
@@ -805,5 +876,7 @@
         <image name="discoverUtahButtonBackground" width="369" height="83"/>
         <image name="jsaButtonBackground" width="398" height="80"/>
         <image name="oceanExplorerButtonBackground" width="478" height="65"/>
+        <image name="penguinEncounters" width="965" height="350"/>
+        <image name="smallLogo" width="67" height="64"/>
     </resources>
 </document>
