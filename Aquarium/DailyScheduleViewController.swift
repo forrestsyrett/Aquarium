@@ -12,7 +12,24 @@ class DailyScheduleViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        gradient(self.view)
+        
+        
+        
+        
+        
+//        viewDidAppear()
+        // animations go here!!!!
+//        
+//        viewWillAppear()
+        // animations go here!!!!
 
+        
+        
+        
+        
+        
         // Do any additional setup after loading the view.
     }
 
