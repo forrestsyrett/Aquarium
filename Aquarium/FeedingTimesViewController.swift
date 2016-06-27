@@ -1,35 +1,18 @@
 //
-//  DailyScheduleViewController.swift
+//  FeedingTimesViewController.swift
 //  Aquarium
 //
-//  Created by Forrest Syrett on 6/23/16.
+//  Created by Forrest Syrett on 6/25/16.
 //  Copyright © 2016 Forrest Syrett. All rights reserved.
 //
 
 import UIKit
 
-class DailyScheduleViewController: UIViewController {
+class FeedingTimesViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        gradient(self.view)
-        
-        
-        
-        
-        
-//        viewDidAppear()
-        // animations go here!!!!
-//        
-//        viewWillAppear()
-        // animations go here!!!!
 
-        
-        
-        
-        
-        
         // Do any additional setup after loading the view.
     }
 

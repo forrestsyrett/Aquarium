@@ -10,7 +10,10 @@ import UIKit
 import AVFoundation
 import SafariServices
 
+
+
 class QRScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
+    
     
     @IBOutlet weak var qrCodeResult: UILabel!
     @IBOutlet weak var photoFrameImage: UIImageView!
@@ -36,7 +39,7 @@ class QRScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsD
         if (error != nil) {
             let alertController:UIAlertController = UIAlertController(title: "Device Error", message: "Device not Supported for this Application", preferredStyle: .Alert)
             
-            let cancelAction:UIAlertAction = UIAlertAction(title: "Ok Done", style: .Cancel, handler: { (alertAction) -> Void in
+            let cancelAction:UIAlertAction = UIAlertAction(title: "OK", style: .Cancel, handler: { (alertAction) -> Void in
                 alertController.dismissViewControllerAnimated(true, completion: nil)
             })
             
@@ -58,15 +61,15 @@ class QRScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsD
         videoPreviewLayer?.frame = view.layer.bounds
         self.view.layer.addSublayer(videoPreviewLayer!)
         captureSession?.startRunning()
-        self.view.bringSubviewToFront(qrCodeResult)
+//        self.view.bringSubviewToFront(qrCodeResult)
     }
     
     func initializeQRView() {
         qrCodeFrameView = UIView()
-        qrCodeFrameView?.layer.borderColor = UIColor.redColor().CGColor
+        qrCodeFrameView?.layer.borderColor = UIColor.blueColor().CGColor
         qrCodeFrameView?.layer.borderWidth = 5
         self.view.addSubview(qrCodeFrameView!)
-        self.view.bringSubviewToFront(qrCodeFrameView!)
+//        self.view.bringSubviewToFront(qrCodeFrameView!)
     }
     
     func captureOutput(captureOutput: AVCaptureOutput!, didOutputMetadataObjects metadataObjects: [AnyObject]!, fromConnection connection: AVCaptureConnection!) {
@@ -81,44 +84,45 @@ class QRScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsD
             qrCodeFrameView?.frame = objBarCode.bounds;
             if objMetadataMachineReadableCodeObject.stringValue != nil {
                 qrCodeResult.text = objMetadataMachineReadableCodeObject.stringValue
+                AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
+
                 let safariVC = SFSafariViewController(URL: NSURL(string: qrCodeResult.text!)!)
-                presentViewController(safariVC, animated: true, completion: nil)
-            }
+                self.presentViewController(safariVC, animated: true, completion: nil)
+//                     if (safariVC.isBeingDismissed() == true){ captureSession?.performSelector(#selector(captureSession?.startRunning), withObject: nil, afterDelay: 1.0)
+                }
         }
     }
-
     
-
+    
+    func qrOn(isOn: Bool = false) {
+        if isOn == true {
+            configureVideoCapture()
+            addVideoPreviewLayer()
+            initializeQRView()
+        }}
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.configureVideoCapture()
-        self.addVideoPreviewLayer()
-        self.initializeQRView()
-        
-        
+        qrOn(true)
 
-        
-        
-    
-
-        // Do any additional setup after loading the view.
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        if (captureSession?.running == true) {
+            captureSession!.stopRunning()
+        }
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        initializeQRView()
+        if (captureSession?.running == false) {
+            self.captureSession!.startRunning()
+        }
     }
-    */
-
 }
+
+
+
+
