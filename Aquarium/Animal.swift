@@ -10,14 +10,14 @@ import Foundation
 import UIKit
 
 
-class animal {
+class Animal {
     
-    var name: String = "Tortoise"
+    var name: String
     var description: String
     var animalImage: UIImage
     
     
-    init(name: String = "Tortoise", description: String, animalImage: UIImage) {
+    init(name: String, description: String, animalImage: UIImage) {
         
         self.name = name
         self.description = description

@@ -22,6 +22,11 @@
 		AA8D05161D19DC930063F222 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8D05151D19DC930063F222 /* HomeViewController.swift */; };
 		AA9D6EE01D1CCD5000831AFE /* Animal.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9D6EDF1D1CCD5000831AFE /* Animal.swift */; };
 		AA9D6EE21D1F3D8A00831AFE /* FeedingTimesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9D6EE11D1F3D8A00831AFE /* FeedingTimesViewController.swift */; };
+		AA9D6EE41D281E1200831AFE /* AnimalFeedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9D6EE31D281E1200831AFE /* AnimalFeedTableViewController.swift */; };
+		AA9D6EE61D281E7000831AFE /* AnimalFeedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9D6EE51D281E7000831AFE /* AnimalFeedController.swift */; };
+		AA9D6EE81D281F8A00831AFE /* AnimalFeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9D6EE71D281F8A00831AFE /* AnimalFeedTableViewCell.swift */; };
+		AA9D6EEA1D2888F000831AFE /* AnimalFeedCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9D6EE91D2888F000831AFE /* AnimalFeedCollectionViewController.swift */; };
+		AA9D6EEC1D288C4600831AFE /* AnimalFeedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9D6EEB1D288C4600831AFE /* AnimalFeedCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +47,11 @@
 		AA8D05151D19DC930063F222 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		AA9D6EDF1D1CCD5000831AFE /* Animal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animal.swift; sourceTree = "<group>"; };
 		AA9D6EE11D1F3D8A00831AFE /* FeedingTimesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedingTimesViewController.swift; sourceTree = "<group>"; };
+		AA9D6EE31D281E1200831AFE /* AnimalFeedTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimalFeedTableViewController.swift; sourceTree = "<group>"; };
+		AA9D6EE51D281E7000831AFE /* AnimalFeedController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimalFeedController.swift; sourceTree = "<group>"; };
+		AA9D6EE71D281F8A00831AFE /* AnimalFeedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimalFeedTableViewCell.swift; sourceTree = "<group>"; };
+		AA9D6EE91D2888F000831AFE /* AnimalFeedCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimalFeedCollectionViewController.swift; sourceTree = "<group>"; };
+		AA9D6EEB1D288C4600831AFE /* AnimalFeedCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimalFeedCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +87,11 @@
 				AA544C941D0BB66C00DC1725 /* AppDelegate.swift */,
 				AA544CB21D0CAE1000DC1725 /* ExhibitGalleriesViewController.swift */,
 				AA544C981D0BB66C00DC1725 /* Main.storyboard */,
+				AA9D6EE91D2888F000831AFE /* AnimalFeedCollectionViewController.swift */,
+				AA9D6EEB1D288C4600831AFE /* AnimalFeedCollectionViewCell.swift */,
+				AA9D6EE31D281E1200831AFE /* AnimalFeedTableViewController.swift */,
+				AA9D6EE71D281F8A00831AFE /* AnimalFeedTableViewCell.swift */,
+				AA9D6EE51D281E7000831AFE /* AnimalFeedController.swift */,
 				AA9D6EDF1D1CCD5000831AFE /* Animal.swift */,
 				AA183F291D1A6DD200D31044 /* AnimalEncountersViewController.swift */,
 				AA8D05151D19DC930063F222 /* HomeViewController.swift */,
@@ -166,18 +181,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA9D6EE41D281E1200831AFE /* AnimalFeedTableViewController.swift in Sources */,
 				AA183F2C1D1A767F00D31044 /* AnimalDetailViewController.swift in Sources */,
 				AA544CB11D0C98B700DC1725 /* JourneyToSouthAmericaTableViewController.swift in Sources */,
 				AA544CAD1D0C90DE00DC1725 /* DiscoverUtahTableViewController.swift in Sources */,
+				AA9D6EEA1D2888F000831AFE /* AnimalFeedCollectionViewController.swift in Sources */,
 				AA544CB31D0CAE1000DC1725 /* ExhibitGalleriesViewController.swift in Sources */,
+				AA9D6EE81D281F8A00831AFE /* AnimalFeedTableViewCell.swift in Sources */,
 				AA9D6EE01D1CCD5000831AFE /* Animal.swift in Sources */,
 				AA544CFA1D149C0A00DC1725 /* QRScannerViewController.swift in Sources */,
 				AA8D05161D19DC930063F222 /* HomeViewController.swift in Sources */,
 				AA9D6EE21D1F3D8A00831AFE /* FeedingTimesViewController.swift in Sources */,
+				AA9D6EEC1D288C4600831AFE /* AnimalFeedCollectionViewCell.swift in Sources */,
 				AA183F2A1D1A6DD300D31044 /* AnimalEncountersViewController.swift in Sources */,
 				AA544C951D0BB66C00DC1725 /* AppDelegate.swift in Sources */,
 				AA544CAB1D0C790400DC1725 /* UIAppearance.swift in Sources */,
 				AA544CAF1D0C94DE00DC1725 /* OceanExplorerTableViewController.swift in Sources */,
+				AA9D6EE61D281E7000831AFE /* AnimalFeedController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

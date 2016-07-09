@@ -1,41 +1,23 @@
 //
-//  DiscoverUtahTableViewController.swift
+//  AnimalFeedTableViewController.swift
 //  Aquarium
 //
-//  Created by Forrest Syrett on 6/11/16.
+//  Created by Forrest Syrett on 7/2/16.
 //  Copyright © 2016 Forrest Syrett. All rights reserved.
 //
 
 import UIKit
 
-class DiscoverUtahTableViewController: UITableViewController {
-    
-    
-    var animal = [Animal]()
-    
-    func addAnimal() {
-        
-        let tortoise = Animal(name: "Tortoise", description: "A desert tortoise", animalImage: UIImage(named: "")!)
-        
-        animal += [tortoise]
-    }
-    
+class AnimalFeedTableViewController: UITableViewController {
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
 
-        let backgroundImage = UIImage(named: "discoverUtah")
-        let imageView = UIImageView(image: backgroundImage)
-        imageView.alpha = 0.75
-        self.tableView.backgroundView = imageView
-        
-        
-    }
-    
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        tableView.reloadData()
+        // Uncomment the following line to preserve selection between presentations
+        // self.clearsSelectionOnViewWillAppear = false
+
+        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
     override func didReceiveMemoryWarning() {
@@ -52,20 +34,18 @@ class DiscoverUtahTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return animal.count
+        return 0
     }
 
-    
+    /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("animalCell", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
 
         // Configure the cell...
-        
 
         return cell
-        
     }
-    
+    */
 
     /*
     // Override to support conditional editing of the table view.

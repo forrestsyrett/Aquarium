@@ -95,7 +95,7 @@ class QRScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsD
     
     
     func qrOn(isOn: Bool = false) {
-        if isOn == true {
+        if isOn {
             configureVideoCapture()
             addVideoPreviewLayer()
             initializeQRView()
@@ -115,6 +115,11 @@ class QRScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsD
     }
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        if let qrCodeFrameView = qrCodeFrameView {
+            qrCodeFrameView.removeFromSuperview()
+        }
+        
+        qrCodeFrameView = nil
         
         initializeQRView()
         if (captureSession?.running == false) {
