@@ -9,6 +9,11 @@
 import UIKit
 
 class AnimalFeedTableViewCell: UITableViewCell {
+    
+    @IBOutlet weak var animalFeedNameLabel: UILabel!
+    @IBOutlet weak var animalFeedTimeLabel: UILabel!
+    @IBOutlet weak var animalFeedImage: UIImageView!
+    
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -19,6 +24,7 @@ class AnimalFeedTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+        
     }
 
 }

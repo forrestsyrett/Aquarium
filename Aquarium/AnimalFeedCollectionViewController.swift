@@ -8,18 +8,38 @@
 
 import UIKit
 
-private let reuseIdentifier = "Cell"
+private let reuseIdentifier = "animalFeedCollectionViewCell"
 
 class AnimalFeedCollectionViewController: UICollectionViewController {
+    
+    @IBOutlet weak var animalFeedImage: UIImageView!
+    
+    
+    var feeds = [AnimalFeed]()
+    
+    func addAnimalFeeds() {
+        
+        let sharkFeed = AnimalFeed(animalName: "Shark Feed", feedingTime: "1:30 PM", image: UIImage(named: "sharkFeed")!)
+        let penguinFeed = AnimalFeed(animalName: "Penguin Feed", feedingTime: "4:00 PM", image: UIImage(named: "penguinFeed")!)
+        let riverGiantFeed = AnimalFeed(animalName: "River Giant Feed", feedingTime: "2:30 PM", image: UIImage(named: "riverGiantsFeed")!)
+        let piranhaFeed = AnimalFeed(animalName: "Piranha Feed", feedingTime: "11:00 AM", image: UIImage(named: "piranhaFeed")!)
+        
+        feeds += [piranhaFeed, sharkFeed, riverGiantFeed, penguinFeed]
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        addAnimalFeeds()
+        gradient(self.view)
+        
+        
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Register cell classes
-        self.collectionView!.registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+//        self.collectionView!.registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
 
         // Do any additional setup after loading the view.
     }
@@ -43,18 +63,26 @@ class AnimalFeedCollectionViewController: UICollectionViewController {
 
     override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
 
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return 0
+        return feeds.count
     }
 
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath)
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! AnimalFeedCollectionViewCell
     
+        
+        print("hey")
+        let feed = feeds[indexPath.row]
+        cell.animalFeedLabel.text = feed.animalName
+        cell.animalFeedImage.image = feed.image
+        cell.animalFeedTimeLabel.text = feed.feedingTime
+        cell.backgroundColor = UIColor.clearColor()
+        
         // Configure the cell
     
         return cell

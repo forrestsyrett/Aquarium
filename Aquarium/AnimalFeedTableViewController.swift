@@ -9,10 +9,28 @@
 import UIKit
 
 class AnimalFeedTableViewController: UITableViewController {
+    
+    var feeds = [AnimalFeed]()
+    
+    func addAnimalFeeds() {
+    
+        let sharkFeed = AnimalFeed(animalName: "Shark Feed", feedingTime: "1:30 PM", image: UIImage(named: "sharkFeed")!)
+        let penguinFeed = AnimalFeed(animalName: "Penguin Feed", feedingTime: "4:00 PM", image: UIImage(named: "penguinFeed")!)
+        let riverGiantFeed = AnimalFeed(animalName: "River Giant Feed", feedingTime: "2:30 PM", image: UIImage(named: "riverGiantsFeed")!)
+        let piranhaFeed = AnimalFeed(animalName: "Piranha Feed", feedingTime: "11:00 AM", image: UIImage(named: "piranhaFeed")!)
+        
+        feeds += [piranhaFeed, sharkFeed, riverGiantFeed, penguinFeed]
+        }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        addAnimalFeeds()
+        
+        gradient(tableView)
+        
+        
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -28,24 +46,29 @@ class AnimalFeedTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return feeds.count
     }
 
-    /*
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier("animalFeedTableViewCell", forIndexPath: indexPath) as! AnimalFeedTableViewCell
+        
+        let feed = feeds[indexPath.row]
+        cell.animalFeedNameLabel.text = feed.animalName
+        cell.animalFeedTimeLabel.text = feed.feedingTime
+        cell.animalFeedImage.image = feed.image
+        cell.backgroundColor = UIColor.clearColor()
 
         // Configure the cell...
 
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.
