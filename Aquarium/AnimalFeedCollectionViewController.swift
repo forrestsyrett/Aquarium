@@ -21,10 +21,11 @@ class AnimalFeedCollectionViewController: UICollectionViewController {
         
         let sharkFeed = AnimalFeed(animalName: "Shark Feed", feedingTime: "1:30 PM", image: UIImage(named: "sharkFeed")!)
         let penguinFeed = AnimalFeed(animalName: "Penguin Feed", feedingTime: "4:00 PM", image: UIImage(named: "penguinFeed")!)
-        let riverGiantFeed = AnimalFeed(animalName: "River Giant Feed", feedingTime: "2:30 PM", image: UIImage(named: "riverGiantsFeed")!)
+        let riverGiantFeed = AnimalFeed(animalName: "River Giants Feed", feedingTime: "2:30 PM", image: UIImage(named: "riverGiantsFeed")!)
         let piranhaFeed = AnimalFeed(animalName: "Piranha Feed", feedingTime: "11:00 AM", image: UIImage(named: "piranhaFeed")!)
+        let archerfishFeed = AnimalFeed(animalName: "Archerfish Feed", feedingTime: "2:30 PM", image: UIImage(named: "archerfishFeed")!)
         
-        feeds += [piranhaFeed, sharkFeed, riverGiantFeed, penguinFeed]
+        feeds += [piranhaFeed, sharkFeed, riverGiantFeed, penguinFeed, archerfishFeed]
     }
 
     override func viewDidLoad() {
@@ -75,8 +76,6 @@ class AnimalFeedCollectionViewController: UICollectionViewController {
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! AnimalFeedCollectionViewCell
     
-        
-        print("hey")
         let feed = feeds[indexPath.row]
         cell.animalFeedLabel.text = feed.animalName
         cell.animalFeedImage.image = feed.image
