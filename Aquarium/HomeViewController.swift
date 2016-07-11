@@ -35,7 +35,7 @@ class HomeViewController: UIViewController {
         
 
         gradient(self.view)
-      
+        transparentNavigationBar(self)
 
         // Do any additional setup after loading the view.
     }
