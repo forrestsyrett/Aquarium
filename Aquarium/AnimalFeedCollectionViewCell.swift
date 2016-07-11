@@ -28,7 +28,7 @@ class AnimalFeedCollectionViewCell: UICollectionViewCell {
     
     
     private let notifyMe = "Notify Me!"
-    private let cancelNotification = "Cancel Notification"
+    private let cancelNotification = "Cancel"
     
     @IBAction func notifyMeButtonTapped(sender: AnyObject){
         
@@ -91,7 +91,7 @@ class AnimalFeedCollectionViewCell: UICollectionViewCell {
         
         let penguinFeedNotification = UILocalNotification()
         penguinFeedNotification.fireDate = penguinDate
-        penguinFeedNotification.alertBody = "Penguin Feed Time!"
+        penguinFeedNotification.alertBody = "Penguin Feeding Time!"
         penguinFeedNotification.timeZone = NSTimeZone.defaultTimeZone()
         penguinFeedNotification.repeatInterval = .Year
         penguinFeedNotification.repeatInterval = .Day
@@ -151,7 +151,7 @@ class AnimalFeedCollectionViewCell: UICollectionViewCell {
         let riverGiantDateComponent: NSDateComponents = NSDateComponents()
         riverGiantDateComponent.year = 2016
         riverGiantDateComponent.weekday = 3;
-        riverGiantDateComponent.hour = 13;
+        riverGiantDateComponent.hour = 14;
         riverGiantDateComponent.minute = 15;
         riverGiantDateComponent.timeZone = NSTimeZone.systemTimeZone()
         

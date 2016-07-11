@@ -280,8 +280,8 @@
                         <outlet property="delegate" destination="YCa-8W-zlY" id="Eug-ta-Gfz"/>
                         <segue destination="cTl-Ja-usU" kind="relationship" relationship="viewControllers" id="wgt-fe-5m4"/>
                         <segue destination="KCB-DP-Mnn" kind="relationship" relationship="viewControllers" id="HYK-rZ-Ezd"/>
-                        <segue destination="TAp-52-NIz" kind="relationship" relationship="viewControllers" id="og1-OT-toO"/>
                         <segue destination="tG8-4Y-Bg6" kind="relationship" relationship="viewControllers" id="dga-bB-dPB"/>
+                        <segue destination="TAp-52-NIz" kind="relationship" relationship="viewControllers" id="F2k-Ll-5pG"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LYA-8d-shZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -655,7 +655,7 @@ $24.95 per person or $19.95 for members.
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dcg-md-KYd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2913" y="1395"/>
+            <point key="canvasLocation" x="2101" y="1395"/>
         </scene>
         <!--Journey To South America-->
         <scene sceneID="o9z-vU-hhs">
@@ -683,7 +683,7 @@ $24.95 per person or $19.95 for members.
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IX5-Lm-Znl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3725" y="2070"/>
+            <point key="canvasLocation" x="2764" y="2060"/>
         </scene>
         <!--Antarctic Adventure-->
         <scene sceneID="WIa-HD-HTP">
@@ -701,7 +701,7 @@ $24.95 per person or $19.95 for members.
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iz7-68-tac" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3576" y="1395"/>
+            <point key="canvasLocation" x="2764" y="1395"/>
         </scene>
         <!--QR Scanner-->
         <scene sceneID="ouM-M7-Gll">
@@ -776,7 +776,7 @@ $24.95 per person or $19.95 for members.
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pSg-Au-Qdj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3554" y="55"/>
+            <point key="canvasLocation" x="2764" y="81"/>
         </scene>
         <!--Schedule-->
         <scene sceneID="8xK-82-Uwe">
@@ -869,6 +869,7 @@ $24.95 per person or $19.95 for members.
                             <outlet property="delegate" destination="o4G-MJ-pU3" id="q8x-Qb-tux"/>
                         </connections>
                     </collectionView>
+                    <tabBarItem key="tabBarItem" title="Item" id="u6G-V5-Jcq"/>
                     <navigationItem key="navigationItem" title="Schedule" id="Raj-H7-Pou"/>
                     <connections>
                         <outlet property="collectionView" destination="bIc-rh-Lky" id="LxG-u4-phN"/>
@@ -876,7 +877,7 @@ $24.95 per person or $19.95 for members.
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XIs-Pa-2FY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4260" y="55"/>
+            <point key="canvasLocation" x="3410" y="81"/>
         </scene>
     </scenes>
     <resources>
