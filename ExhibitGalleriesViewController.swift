@@ -52,7 +52,6 @@ class ExhibitGalleriesViewController: UIViewController, UITabBarDelegate {
 
         gradient(self.view)
         
-        
     }
 
     override func didReceiveMemoryWarning() {

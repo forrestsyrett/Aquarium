@@ -35,7 +35,8 @@ class AnimalFeedCollectionViewCell: UICollectionViewCell {
         UIApplication.sharedApplication().registerUserNotificationSettings(UIUserNotificationSettings(forTypes:
             [.Alert, .Badge, .Sound], categories: nil))
     
-        
+        // MARK: - NS USER DEFAULTS
+        var defaults = NSUserDefaults.standardUserDefaults()
         
         // Shark Feed Notification //
         
@@ -62,6 +63,7 @@ class AnimalFeedCollectionViewCell: UICollectionViewCell {
         
         if notifyMeButtonLabel.titleLabel?.text == notifyMe && animalFeedLabel.text == "Shark Feed" {
             UIApplication.sharedApplication().scheduleLocalNotification(sharkFeedNotification)
+            defaults.setObject(notifyMeButtonLabel.titleLabel?.text, forKey: "notifyMe")
 
         notifyMeButtonLabel.setTitle(cancelNotification, forState: .Normal)
         checkMarkImage.image = UIImage(named: "checkmarkSelected")
@@ -213,8 +215,8 @@ class AnimalFeedCollectionViewCell: UICollectionViewCell {
             notifyMeButtonLabel.setTitle(notifyMe, forState: .Normal)
             checkMarkImage.image = UIImage(named: "checkmark")
         }
-        
+    
     }
+    
 }
-
 

@@ -25,7 +25,7 @@ class AnimalFeedCollectionViewController: UICollectionViewController {
         let piranhaFeed = AnimalFeed(animalName: "Piranha Feed", feedingTime: "11:00 AM", image: UIImage(named: "piranhaFeed")!)
         let archerfishFeed = AnimalFeed(animalName: "Archerfish Feed", feedingTime: "2:30 PM", image: UIImage(named: "archerfishFeed")!)
         
-        feeds += [piranhaFeed, sharkFeed, riverGiantFeed, penguinFeed, archerfishFeed]
+        feeds += [piranhaFeed, sharkFeed, riverGiantFeed, archerfishFeed, penguinFeed]
     }
 
     override func viewDidLoad() {

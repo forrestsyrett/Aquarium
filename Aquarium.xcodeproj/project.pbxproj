@@ -21,7 +21,6 @@
 		AA544CFA1D149C0A00DC1725 /* QRScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA544CF91D149C0A00DC1725 /* QRScannerViewController.swift */; };
 		AA8D05161D19DC930063F222 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8D05151D19DC930063F222 /* HomeViewController.swift */; };
 		AA9D6EE01D1CCD5000831AFE /* Animal.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9D6EDF1D1CCD5000831AFE /* Animal.swift */; };
-		AA9D6EE21D1F3D8A00831AFE /* FeedingTimesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9D6EE11D1F3D8A00831AFE /* FeedingTimesViewController.swift */; };
 		AA9D6EE61D281E7000831AFE /* AnimalFeedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9D6EE51D281E7000831AFE /* AnimalFeedController.swift */; };
 		AA9D6EEA1D2888F000831AFE /* AnimalFeedCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9D6EE91D2888F000831AFE /* AnimalFeedCollectionViewController.swift */; };
 		AA9D6EEC1D288C4600831AFE /* AnimalFeedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9D6EEB1D288C4600831AFE /* AnimalFeedCollectionViewCell.swift */; };
@@ -44,7 +43,6 @@
 		AA544CF91D149C0A00DC1725 /* QRScannerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QRScannerViewController.swift; path = ../QRScannerViewController.swift; sourceTree = "<group>"; };
 		AA8D05151D19DC930063F222 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		AA9D6EDF1D1CCD5000831AFE /* Animal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animal.swift; sourceTree = "<group>"; };
-		AA9D6EE11D1F3D8A00831AFE /* FeedingTimesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedingTimesViewController.swift; sourceTree = "<group>"; };
 		AA9D6EE51D281E7000831AFE /* AnimalFeedController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimalFeedController.swift; sourceTree = "<group>"; };
 		AA9D6EE91D2888F000831AFE /* AnimalFeedCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimalFeedCollectionViewController.swift; sourceTree = "<group>"; };
 		AA9D6EEB1D288C4600831AFE /* AnimalFeedCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimalFeedCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -94,7 +92,6 @@
 				AA544CAE1D0C94DE00DC1725 /* OceanExplorerTableViewController.swift */,
 				AA183F2B1D1A767F00D31044 /* AnimalDetailViewController.swift */,
 				AA544CF91D149C0A00DC1725 /* QRScannerViewController.swift */,
-				AA9D6EE11D1F3D8A00831AFE /* FeedingTimesViewController.swift */,
 				AA544CAA1D0C790400DC1725 /* UIAppearance.swift */,
 				AA544C9B1D0BB66C00DC1725 /* Assets.xcassets */,
 				AA544C9D1D0BB66C00DC1725 /* LaunchScreen.storyboard */,
@@ -183,7 +180,6 @@
 				AA9D6EE01D1CCD5000831AFE /* Animal.swift in Sources */,
 				AA544CFA1D149C0A00DC1725 /* QRScannerViewController.swift in Sources */,
 				AA8D05161D19DC930063F222 /* HomeViewController.swift in Sources */,
-				AA9D6EE21D1F3D8A00831AFE /* FeedingTimesViewController.swift in Sources */,
 				AA9D6EEC1D288C4600831AFE /* AnimalFeedCollectionViewCell.swift in Sources */,
 				AA183F2A1D1A6DD300D31044 /* AnimalEncountersViewController.swift in Sources */,
 				AA544C951D0BB66C00DC1725 /* AppDelegate.swift in Sources */,
