@@ -82,6 +82,15 @@ class AnimalFeedCollectionViewController: UICollectionViewController {
         cell.animalFeedTimeLabel.text = feed.feedingTime
         cell.backgroundColor = UIColor.clearColor()
         
+        // Cell Border //
+        
+//        cell.layer.borderColor = UIColor.whiteColor().CGColor
+//        cell.layer.borderWidth = 1.0
+//        cell.layer.masksToBounds = true
+//        cell.clipsToBounds = true
+//        
+        
+        
         // Configure the cell
     
         return cell

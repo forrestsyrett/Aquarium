@@ -20,6 +20,8 @@ import UIKit
 
 class AnimalFeedCollectionViewCell: UICollectionViewCell {
     
+    static let sharedController = AnimalFeedCollectionViewCell()
+    
     @IBOutlet weak var animalFeedImage: UIImageView!
     @IBOutlet weak var animalFeedLabel: UILabel!
     @IBOutlet weak var animalFeedTimeLabel: UILabel!
@@ -30,43 +32,53 @@ class AnimalFeedCollectionViewCell: UICollectionViewCell {
     private let notifyMe = "Notify Me!"
     private let cancelNotification = "Cancel"
     
-    @IBAction func notifyMeButtonTapped(sender: AnyObject){
+    @IBAction func notifyMeButtonTapped(sender: AnyObject) {
         
         UIApplication.sharedApplication().registerUserNotificationSettings(UIUserNotificationSettings(forTypes:
             [.Alert, .Badge, .Sound], categories: nil))
     
         // MARK: - NS USER DEFAULTS
-        var defaults = NSUserDefaults.standardUserDefaults()
+//        var defaults = NSUserDefaults.standardUserDefaults()
         
         // Shark Feed Notification //
         
+        let myCalendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
+        let myComponents = myCalendar.components(.Weekday, fromDate: NSDate())
+        let currentWeekDay = myComponents.weekday
         
         let sharkDateComponent: NSDateComponents = NSDateComponents()
         sharkDateComponent.year = 2016
-        sharkDateComponent.weekday = 1
-        sharkDateComponent.hour = 14;
-        sharkDateComponent.minute = 57;
+        sharkDateComponent.weekday = 4;
+        sharkDateComponent.hour = 16;
+        sharkDateComponent.minute = 51;
         sharkDateComponent.timeZone = NSTimeZone.systemTimeZone()
         
         let calendar: NSCalendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
-        let sharkDate: NSDate = calendar.dateFromComponents(sharkDateComponent)!
+        
+        
+        guard let sharkDate: NSDate = calendar.dateFromComponents(sharkDateComponent)! else { return }
         
                 
                 let sharkFeedNotification = UILocalNotification()
                 sharkFeedNotification.fireDate = sharkDate
-                sharkFeedNotification.alertBody = "Shark Feeding Time!"
+                sharkFeedNotification.alertBody = "Shark Feeding in 15 minutes!"
                 sharkFeedNotification.timeZone = NSTimeZone.defaultTimeZone()
-                sharkFeedNotification.repeatInterval = .Weekday
                 sharkFeedNotification.repeatInterval = .Year
+                sharkFeedNotification.repeatInterval = .Weekday
 
         
-        
-        if notifyMeButtonLabel.titleLabel?.text == notifyMe && animalFeedLabel.text == "Shark Feed" {
+        if notifyMeButtonLabel.titleLabel?.text == notifyMe && animalFeedLabel.text == "Shark Feed" && currentWeekDay != 2 && currentWeekDay
+        != 4 && currentWeekDay != 6 {
             UIApplication.sharedApplication().scheduleLocalNotification(sharkFeedNotification)
-            defaults.setObject(notifyMeButtonLabel.titleLabel?.text, forKey: "notifyMe")
+//            defaults.setObject(notifyMeButtonLabel.titleLabel?.text, forKey: "notifyMe")
 
         notifyMeButtonLabel.setTitle(cancelNotification, forState: .Normal)
         checkMarkImage.image = UIImage(named: "checkmarkSelected")
+            
+//        } else {
+//            let noFeedTodayAlert = UIAlertController(title: "No feeding times today", message: "Shark feedings occur Sundays, Tuesdays, Thursdays, and Saturdays", preferredStyle: .Alert)
+//            let action = UIAlertAction(title: "Ok", style: .Default, handler: nil)
+//            noFeedTodayAlert.addAction(action)
         }
         
         if notifyMeButtonLabel.titleLabel?.text == cancelNotification && animalFeedLabel.text == "Shark Feed" {
@@ -91,7 +103,7 @@ class AnimalFeedCollectionViewCell: UICollectionViewCell {
         
         let penguinFeedNotification = UILocalNotification()
         penguinFeedNotification.fireDate = penguinDate
-        penguinFeedNotification.alertBody = "Penguin Feeding Time!"
+        penguinFeedNotification.alertBody = "Penguin Feeding in 15 minutes!"
         penguinFeedNotification.timeZone = NSTimeZone.defaultTimeZone()
         penguinFeedNotification.repeatInterval = .Year
         penguinFeedNotification.repeatInterval = .Day
@@ -115,9 +127,9 @@ class AnimalFeedCollectionViewCell: UICollectionViewCell {
         
         let archerFishDateComponent: NSDateComponents = NSDateComponents()
         archerFishDateComponent.year = 2016
-        archerFishDateComponent.weekday = 2;
-        archerFishDateComponent.hour = 14;
-        archerFishDateComponent.minute = 15;
+        archerFishDateComponent.weekday = 4;
+        archerFishDateComponent.hour = 16;
+        archerFishDateComponent.minute = 35;
         archerFishDateComponent.timeZone = NSTimeZone.systemTimeZone()
         
         
@@ -126,7 +138,7 @@ class AnimalFeedCollectionViewCell: UICollectionViewCell {
         
         let archerfishFeedNotification = UILocalNotification()
         archerfishFeedNotification.fireDate = archerFishDate
-        archerfishFeedNotification.alertBody = "Archerfish Feeding Time!"
+        archerfishFeedNotification.alertBody = "Archerfish Feeding in 15 minutes!"
         archerfishFeedNotification.timeZone = NSTimeZone.defaultTimeZone()
         archerfishFeedNotification.repeatInterval = .Year
         archerfishFeedNotification.repeatInterval = .Day
@@ -161,7 +173,7 @@ class AnimalFeedCollectionViewCell: UICollectionViewCell {
         
         let riverGiantFeedNotification = UILocalNotification()
         riverGiantFeedNotification.fireDate = riverGiantDate
-        riverGiantFeedNotification.alertBody = "River Giants Feeding Time!"
+        riverGiantFeedNotification.alertBody = "River Giants Feeding in 15 minutes!"
         riverGiantFeedNotification.timeZone = NSTimeZone.defaultTimeZone()
         riverGiantFeedNotification.repeatInterval = .Year
         riverGiantFeedNotification.repeatInterval = .Weekday
@@ -196,7 +208,7 @@ class AnimalFeedCollectionViewCell: UICollectionViewCell {
         
         let piranhaFeedNotification = UILocalNotification()
         piranhaFeedNotification.fireDate = piranhaDate
-        piranhaFeedNotification.alertBody = "Piranha Feeding Time!"
+        piranhaFeedNotification.alertBody = "Piranha Feeding in 15 minutes!"
         piranhaFeedNotification.timeZone = NSTimeZone.defaultTimeZone()
         piranhaFeedNotification.repeatInterval = .Year
         piranhaFeedNotification.repeatInterval = .Weekday
@@ -217,6 +229,5 @@ class AnimalFeedCollectionViewCell: UICollectionViewCell {
         }
     
     }
-    
-}
 
+}

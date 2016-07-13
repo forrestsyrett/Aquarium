@@ -15,7 +15,7 @@ class DiscoverUtahTableViewController: UITableViewController {
     
     func addAnimal() {
         
-        let tortoise = Animal(name: "Tortoise", description: "A desert tortoise", animalImage: UIImage(named: "")!)
+        let tortoise = Animal(name: "Tortoise", description: "A desert tortoise", animalImage: UIImage(named: "smallLogo")!)
         
         animal += [tortoise]
     }
@@ -34,6 +34,7 @@ class DiscoverUtahTableViewController: UITableViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        addAnimal()
         
         tableView.reloadData()
     }
@@ -61,7 +62,7 @@ class DiscoverUtahTableViewController: UITableViewController {
 
         // Configure the cell...
         
-
+        
         return cell
         
     }
