@@ -20,8 +20,6 @@ import UIKit
 
 class AnimalFeedCollectionViewCell: UICollectionViewCell {
     
-    static let sharedController = AnimalFeedCollectionViewCell()
-    
     @IBOutlet weak var animalFeedImage: UIImageView!
     @IBOutlet weak var animalFeedLabel: UILabel!
     @IBOutlet weak var animalFeedTimeLabel: UILabel!
@@ -38,9 +36,9 @@ class AnimalFeedCollectionViewCell: UICollectionViewCell {
             [.Alert, .Badge, .Sound], categories: nil))
     
         // MARK: - NS USER DEFAULTS
-//        var defaults = NSUserDefaults.standardUserDefaults()
+        let defaults = NSUserDefaults.standardUserDefaults()
         
-        // Shark Feed Notification //
+        // MARK: - Shark Feed Notification //
         
         let myCalendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
         let myComponents = myCalendar.components(.Weekday, fromDate: NSDate())
@@ -49,8 +47,8 @@ class AnimalFeedCollectionViewCell: UICollectionViewCell {
         let sharkDateComponent: NSDateComponents = NSDateComponents()
         sharkDateComponent.year = 2016
         sharkDateComponent.weekday = 4;
-        sharkDateComponent.hour = 16;
-        sharkDateComponent.minute = 51;
+        sharkDateComponent.hour = 13;
+        sharkDateComponent.minute = 15;
         sharkDateComponent.timeZone = NSTimeZone.systemTimeZone()
         
         let calendar: NSCalendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
@@ -64,21 +62,22 @@ class AnimalFeedCollectionViewCell: UICollectionViewCell {
                 sharkFeedNotification.alertBody = "Shark Feeding in 15 minutes!"
                 sharkFeedNotification.timeZone = NSTimeZone.defaultTimeZone()
                 sharkFeedNotification.repeatInterval = .Year
-                sharkFeedNotification.repeatInterval = .Weekday
+                sharkFeedNotification.repeatInterval = .Day
 
         
-        if notifyMeButtonLabel.titleLabel?.text == notifyMe && animalFeedLabel.text == "Shark Feed" && currentWeekDay != 2 && currentWeekDay
-        != 4 && currentWeekDay != 6 {
+        if notifyMeButtonLabel.titleLabel?.text == notifyMe && animalFeedLabel.text == "Shark Feed" && currentWeekDay != 2 && currentWeekDay != 4 && currentWeekDay != 6 {
             UIApplication.sharedApplication().scheduleLocalNotification(sharkFeedNotification)
-//            defaults.setObject(notifyMeButtonLabel.titleLabel?.text, forKey: "notifyMe")
+            
+            defaults.setObject(notifyMeButtonLabel.titleLabel?.text, forKey: "notifyMe")
 
         notifyMeButtonLabel.setTitle(cancelNotification, forState: .Normal)
         checkMarkImage.image = UIImage(named: "checkmarkSelected")
             
-//        } else {
-//            let noFeedTodayAlert = UIAlertController(title: "No feeding times today", message: "Shark feedings occur Sundays, Tuesdays, Thursdays, and Saturdays", preferredStyle: .Alert)
-//            let action = UIAlertAction(title: "Ok", style: .Default, handler: nil)
-//            noFeedTodayAlert.addAction(action)
+        } else if notifyMeButtonLabel.titleLabel?.text == notifyMe && animalFeedLabel.text == "Shark Feed"{
+            let noFeedTodayAlert = UIAlertController(title: "No Feeding Times Today", message: "Shark feedings occur Sundays, Tuesdays, Thursdays, and Saturdays", preferredStyle: .Alert)
+            let action = UIAlertAction(title: "Ok", style: .Default, handler: nil)
+            noFeedTodayAlert.addAction(action)
+            self.window?.rootViewController?.presentViewController(noFeedTodayAlert, animated: true, completion: nil)
         }
         
         if notifyMeButtonLabel.titleLabel?.text == cancelNotification && animalFeedLabel.text == "Shark Feed" {
@@ -87,8 +86,11 @@ class AnimalFeedCollectionViewCell: UICollectionViewCell {
             notifyMeButtonLabel.setTitle(notifyMe, forState: .Normal)
             checkMarkImage.image = UIImage(named: "checkmark")
         }
+        if currentWeekDay != 1 && currentWeekDay != 3 && currentWeekDay != 5 && currentWeekDay != 7 {
+            UIApplication.sharedApplication().cancelLocalNotification(sharkFeedNotification)
+        }
         
-        // Penguin Feed Notification //
+        // MARK: - Penguin Feed Notification //
         
         let penguinDateComponent: NSDateComponents = NSDateComponents()
         penguinDateComponent.year = 2016
@@ -123,7 +125,7 @@ class AnimalFeedCollectionViewCell: UICollectionViewCell {
             checkMarkImage.image = UIImage(named: "checkmark")
         }
         
-        // ArcherFish Feed Notification //
+        // MARK: - ArcherFish Feed Notification //
         
         let archerFishDateComponent: NSDateComponents = NSDateComponents()
         archerFishDateComponent.year = 2016
@@ -144,11 +146,16 @@ class AnimalFeedCollectionViewCell: UICollectionViewCell {
         archerfishFeedNotification.repeatInterval = .Day
         
         
-        if notifyMeButtonLabel.titleLabel?.text == notifyMe && animalFeedLabel.text == "Archerfish Feed" {
+        if notifyMeButtonLabel.titleLabel?.text == notifyMe && animalFeedLabel.text == "Archerfish Feed" && currentWeekDay != 1 && currentWeekDay != 3 && currentWeekDay != 4 && currentWeekDay != 6 {
             UIApplication.sharedApplication().scheduleLocalNotification(archerfishFeedNotification)
             
             notifyMeButtonLabel.setTitle(cancelNotification, forState: .Normal)
             checkMarkImage.image = UIImage(named: "checkmarkSelected")
+        } else if notifyMeButtonLabel.titleLabel?.text == notifyMe && animalFeedLabel.text == "Archerfish Feed"{
+            let noFeedTodayAlert = UIAlertController(title: "No Feeding Times Today", message: "Archerfish feedings occur Mondays, Thursdays, and Saturdays", preferredStyle: .Alert)
+            let action = UIAlertAction(title: "Ok", style: .Default, handler: nil)
+            noFeedTodayAlert.addAction(action)
+            self.window?.rootViewController?.presentViewController(noFeedTodayAlert, animated: true, completion: nil)
         }
         
         if notifyMeButtonLabel.titleLabel?.text == cancelNotification && animalFeedLabel.text == "Archerfish Feed" {
@@ -157,8 +164,12 @@ class AnimalFeedCollectionViewCell: UICollectionViewCell {
             notifyMeButtonLabel.setTitle(notifyMe, forState: .Normal)
             checkMarkImage.image = UIImage(named: "checkmark")
         }
+        if currentWeekDay != 2 && currentWeekDay != 5 && currentWeekDay != 7 {
+            UIApplication.sharedApplication().cancelLocalNotification(archerfishFeedNotification)
+        }
         
-        // River Giants Feed //
+        
+        // MARK: - River Giants Feed Notification //
         
         let riverGiantDateComponent: NSDateComponents = NSDateComponents()
         riverGiantDateComponent.year = 2016
@@ -176,24 +187,31 @@ class AnimalFeedCollectionViewCell: UICollectionViewCell {
         riverGiantFeedNotification.alertBody = "River Giants Feeding in 15 minutes!"
         riverGiantFeedNotification.timeZone = NSTimeZone.defaultTimeZone()
         riverGiantFeedNotification.repeatInterval = .Year
-        riverGiantFeedNotification.repeatInterval = .Weekday
+        riverGiantFeedNotification.repeatInterval = .Day
         
         
-        if notifyMeButtonLabel.titleLabel?.text == notifyMe && animalFeedLabel.text == "River Giants Feed" {
+        if notifyMeButtonLabel.titleLabel?.text == notifyMe && animalFeedLabel.text == "River Giants Feed" && currentWeekDay != 1 && currentWeekDay != 2 && currentWeekDay != 4 && currentWeekDay != 6 {
             UIApplication.sharedApplication().scheduleLocalNotification(riverGiantFeedNotification)
             
             notifyMeButtonLabel.setTitle(cancelNotification, forState: .Normal)
             checkMarkImage.image = UIImage(named: "checkmarkSelected")
+        } else if notifyMeButtonLabel.titleLabel?.text == notifyMe && animalFeedLabel.text == "River Giants Feed" {
+            let noFeedTodayAlert = UIAlertController(title: "No Feeding Times Today", message: "River Giant feedings occur Tuesdays, Thursdays, and Saturdays", preferredStyle: .Alert)
+            let action = UIAlertAction(title: "Ok", style: .Default, handler: nil)
+            noFeedTodayAlert.addAction(action)
+            self.window?.rootViewController?.presentViewController(noFeedTodayAlert, animated: true, completion: nil)
         }
-        
         if notifyMeButtonLabel.titleLabel?.text == cancelNotification && animalFeedLabel.text == "River Giants Feed" {
             UIApplication.sharedApplication().cancelLocalNotification(riverGiantFeedNotification)
             
             notifyMeButtonLabel.setTitle(notifyMe, forState: .Normal)
             checkMarkImage.image = UIImage(named: "checkmark")
         }
+        if currentWeekDay != 3 && currentWeekDay != 5 && currentWeekDay != 5 && currentWeekDay != 7 {
+            UIApplication.sharedApplication().cancelLocalNotification(riverGiantFeedNotification)
+        }
 
-        // Piranha Feed //
+        // MARK: - Piranha Feed Notification //
         
         let piranhaDateComponent: NSDateComponents = NSDateComponents()
         piranhaDateComponent.year = 2016
@@ -214,11 +232,17 @@ class AnimalFeedCollectionViewCell: UICollectionViewCell {
         piranhaFeedNotification.repeatInterval = .Weekday
         
         
-        if notifyMeButtonLabel.titleLabel?.text == notifyMe && animalFeedLabel.text == "Piranha Feed" {
+        if notifyMeButtonLabel.titleLabel?.text == notifyMe && animalFeedLabel.text == "Piranha Feed" && currentWeekDay != 1 && currentWeekDay != 2 && currentWeekDay != 4 && currentWeekDay != 6 && currentWeekDay != 7 {
             UIApplication.sharedApplication().scheduleLocalNotification(piranhaFeedNotification)
             
             notifyMeButtonLabel.setTitle(cancelNotification, forState: .Normal)
             checkMarkImage.image = UIImage(named: "checkmarkSelected")
+            
+        } else if notifyMeButtonLabel.titleLabel?.text == notifyMe && animalFeedLabel.text == "Piranha Feed" {
+            let noFeedTodayAlert = UIAlertController(title: "No Feeding Times Today", message: "Piranha feedings occur Tuesdays and Thursdays", preferredStyle: .Alert)
+            let action = UIAlertAction(title: "Ok", style: .Default, handler: nil)
+            noFeedTodayAlert.addAction(action)
+            self.window?.rootViewController?.presentViewController(noFeedTodayAlert, animated: true, completion: nil)
         }
         
         if notifyMeButtonLabel.titleLabel?.text == cancelNotification && animalFeedLabel.text == "Piranha Feed" {
@@ -226,6 +250,9 @@ class AnimalFeedCollectionViewCell: UICollectionViewCell {
             
             notifyMeButtonLabel.setTitle(notifyMe, forState: .Normal)
             checkMarkImage.image = UIImage(named: "checkmark")
+        }
+        if currentWeekDay != 3 && currentWeekDay != 5 {
+            UIApplication.sharedApplication().cancelLocalNotification(piranhaFeedNotification)
         }
     
     }
