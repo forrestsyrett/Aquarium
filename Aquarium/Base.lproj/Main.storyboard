@@ -243,7 +243,12 @@
                         <outlet property="buyTicketsLabel" destination="m7u-aa-Y5M" id="dSw-b5-8yv"/>
                         <outlet property="directionsLabel" destination="lyN-Gm-8L7" id="41C-ZD-TkE"/>
                         <outlet property="donateLabel" destination="cZa-9F-t4n" id="dWL-Cj-4Jc"/>
+                        <outlet property="lineFour" destination="qCa-VU-Dni" id="sGK-Xe-fdq"/>
+                        <outlet property="lineOne" destination="xFR-yQ-jvG" id="Cwe-0T-mQV"/>
+                        <outlet property="lineThree" destination="8d0-0F-xhB" id="rea-X1-wVd"/>
+                        <outlet property="lineTwo" destination="2pd-G0-ZeE" id="UXG-Al-Ssb"/>
                         <outlet property="livingPlanetLabel" destination="stY-ap-ezq" id="1L1-s6-5x2"/>
+                        <outlet property="smallLogo" destination="oWX-bw-Jvg" id="J9t-Iy-Hc0"/>
                         <outlet property="welcomeLabel" destination="LhD-PS-1A8" id="PUV-JC-RZf"/>
                     </connections>
                 </viewController>
@@ -438,12 +443,6 @@
                                     <constraint firstItem="bS7-FE-mbE" firstAttribute="top" secondItem="88J-sZ-eCS" secondAttribute="bottom" id="Zs3-Gy-eqL"/>
                                 </constraints>
                             </stackView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="smallLogo" translatesAutoresizingMaskIntoConstraints="NO" id="p9q-ki-IfJ">
-                                <rect key="frame" x="267" y="479" width="67" height="64"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="p9q-ki-IfJ" secondAttribute="height" multiplier="67:64" id="qL5-i8-y1B"/>
-                                </constraints>
-                            </imageView>
                         </subviews>
                         <constraints>
                             <constraint firstItem="P2u-Qg-QUV" firstAttribute="top" secondItem="3tm-aJ-5ih" secondAttribute="bottom" id="30R-Io-F6e"/>
@@ -453,10 +452,8 @@
                             <constraint firstAttribute="trailingMargin" secondItem="P2u-Qg-QUV" secondAttribute="trailing" id="NSI-gg-Bht"/>
                             <constraint firstItem="6wr-cj-8pB" firstAttribute="top" secondItem="P2u-Qg-QUV" secondAttribute="bottom" id="Ox2-EI-HSM"/>
                             <constraint firstItem="P2u-Qg-QUV" firstAttribute="leading" secondItem="ovV-yW-6qt" secondAttribute="leadingMargin" id="b4g-Eg-ADi"/>
-                            <constraint firstItem="p9q-ki-IfJ" firstAttribute="centerX" secondItem="ovV-yW-6qt" secondAttribute="centerX" id="g7Z-c4-Nas"/>
                             <constraint firstItem="6wr-cj-8pB" firstAttribute="top" secondItem="jgL-h8-fmL" secondAttribute="bottom" id="sCl-l8-nlr"/>
                             <constraint firstItem="jgL-h8-fmL" firstAttribute="top" secondItem="3tm-aJ-5ih" secondAttribute="bottom" id="udq-Oj-541"/>
-                            <constraint firstItem="6wr-cj-8pB" firstAttribute="top" secondItem="p9q-ki-IfJ" secondAttribute="bottom" constant="8" id="v4S-f4-gHe"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Exhibit Galleries" id="8YD-ZW-amk"/>
@@ -786,15 +783,15 @@ $24.95 per person or $19.95 for members.
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Bn2-hp-QYH">
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="2" minimumInteritemSpacing="0.0" id="Bn2-hp-QYH">
                             <size key="itemSize" width="201" height="248"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            <inset key="sectionInset" minX="1" minY="1" maxX="1" maxY="1"/>
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="animalFeedCollectionViewCell" id="j8a-uo-XdS" customClass="AnimalFeedCollectionViewCell" customModule="Aquarium" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="64" width="201" height="248"/>
+                                <rect key="frame" x="1" y="65" width="201" height="248"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="201" height="248"/>

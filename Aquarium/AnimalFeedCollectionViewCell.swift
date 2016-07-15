@@ -130,8 +130,8 @@ class AnimalFeedCollectionViewCell: UICollectionViewCell {
         let archerFishDateComponent: NSDateComponents = NSDateComponents()
         archerFishDateComponent.year = 2016
         archerFishDateComponent.weekday = 4;
-        archerFishDateComponent.hour = 16;
-        archerFishDateComponent.minute = 35;
+        archerFishDateComponent.hour = 14;
+        archerFishDateComponent.minute = 15;
         archerFishDateComponent.timeZone = NSTimeZone.systemTimeZone()
         
         
@@ -229,7 +229,7 @@ class AnimalFeedCollectionViewCell: UICollectionViewCell {
         piranhaFeedNotification.alertBody = "Piranha Feeding in 15 minutes!"
         piranhaFeedNotification.timeZone = NSTimeZone.defaultTimeZone()
         piranhaFeedNotification.repeatInterval = .Year
-        piranhaFeedNotification.repeatInterval = .Weekday
+        piranhaFeedNotification.repeatInterval = .Day
         
         
         if notifyMeButtonLabel.titleLabel?.text == notifyMe && animalFeedLabel.text == "Piranha Feed" && currentWeekDay != 1 && currentWeekDay != 2 && currentWeekDay != 4 && currentWeekDay != 6 && currentWeekDay != 7 {

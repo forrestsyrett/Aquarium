@@ -18,9 +18,34 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var animalEncountersLabel: UIButton!
     @IBOutlet weak var directionsLabel: UIButton!
     @IBOutlet weak var donateLabel: UIButton!
+    @IBOutlet weak var smallLogo: UIImageView!
+    @IBOutlet weak var lineOne: UIView!
+    @IBOutlet weak var lineTwo: UIView!
+    @IBOutlet weak var lineThree: UIView!
+    @IBOutlet weak var lineFour: UIView!
     
     
-
+    
+    func animateLogo(image: UIImageView) {
+        image.alpha = 0.0
+        UIView.animateWithDuration(2.0) {
+            image.alpha = 1.0
+        }
+    }
+    
+    func animateLabel(label: UILabel, animateTime: Double) {
+        label.alpha = 0.0
+        UILabel.animateWithDuration(animateTime) {
+            label.alpha = 1.0
+        }
+    }
+    
+    func animateLines(view: UIView, animateTime: Double) {
+        view.alpha = 0.0
+        UIView.animateWithDuration(animateTime) { 
+            view.alpha = 1.0
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -31,14 +56,24 @@ class HomeViewController: UIViewController {
 //        let imageView = UIImageView(image:logo)
 //        self.navigationItem.titleView = imageView
         
-        
-        
+     
 
         gradient(self.view)
         transparentNavigationBar(self)
 
         // Do any additional setup after loading the view.
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        animateLogo(smallLogo)
+        animateLabel(welcomeLabel, animateTime: 0.5)
+        animateLabel(livingPlanetLabel, animateTime: 1.0)
+        animateLines(lineOne, animateTime: 0.75)
+        animateLines(lineTwo, animateTime: 1.0)
+        animateLines(lineThree, animateTime: 1.5)
+        animateLines(lineFour, animateTime: 2.0)
+    }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
