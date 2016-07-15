@@ -9,6 +9,11 @@
 import UIKit
 
 class AnimalTableViewCell: UITableViewCell {
+    
+    @IBOutlet weak var animalNameLabel: UILabel!
+    @IBOutlet weak var animalPreviewImage: UIImageView!
+    
+//    test
 
     override func awakeFromNib() {
         super.awakeFromNib()

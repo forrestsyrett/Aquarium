@@ -7,3 +7,11 @@
 //
 
 import Foundation
+import UIKit
+
+
+struct Feeding {
+    var name: String
+    var image: UIImage
+    var ID: String
+}
