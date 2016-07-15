@@ -10,6 +10,9 @@ import Foundation
 import UIKit
 
 
+
+    // ANIMATIONS
+
 func animateLogo(image: UIImageView) {
     image.alpha = 0.0
     UIView.animateWithDuration(2.0) {

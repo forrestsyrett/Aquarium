@@ -29,6 +29,7 @@ class AnimalFeedCollectionViewCell: UICollectionViewCell {
     
     private let notifyMe = "Notify Me!"
     private let cancelNotification = "Cancel"
+    private let IDKey = "ID"
     
     @IBAction func notifyMeButtonTapped(sender: AnyObject) {
         
@@ -63,6 +64,7 @@ class AnimalFeedCollectionViewCell: UICollectionViewCell {
                 sharkFeedNotification.timeZone = NSTimeZone.defaultTimeZone()
                 sharkFeedNotification.repeatInterval = .Year
                 sharkFeedNotification.repeatInterval = .Day
+        sharkFeedNotification.userInfo = [IDKey: ""]
 
         
         if notifyMeButtonLabel.titleLabel?.text == notifyMe && animalFeedLabel.text == "Shark Feed" && currentWeekDay != 2 && currentWeekDay != 4 && currentWeekDay != 6 {

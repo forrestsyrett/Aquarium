@@ -11,18 +11,18 @@ import UIKit
 class DiscoverUtahTableViewController: UITableViewController {
     
     
-    var animal = [Animal]()
+    var animals = [Animal]()
     
     func addAnimal() {
         
         let tortoise = Animal(name: "Tortoise", description: "A desert tortoise", animalImage: UIImage(named: "smallLogo")!)
         
-        animal += [tortoise]
+        animals += [tortoise]
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        addAnimal()
 
         let backgroundImage = UIImage(named: "discoverUtah")
         let imageView = UIImageView(image: backgroundImage)
@@ -34,9 +34,8 @@ class DiscoverUtahTableViewController: UITableViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        addAnimal()
-        
         tableView.reloadData()
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -48,19 +47,23 @@ class DiscoverUtahTableViewController: UITableViewController {
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return animal.count
+        return animals.count
     }
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("animalCell", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier("animalCell", forIndexPath: indexPath) as! AnimalTableViewCell
 
         // Configure the cell...
+        
+        let animal = animals[indexPath.row]
+        cell.animalNameLabel.text = animal.name
+        cell.animalPreviewImage.image = animal.animalImage
         
         
         return cell
