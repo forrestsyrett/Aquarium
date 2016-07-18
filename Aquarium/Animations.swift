@@ -13,9 +13,16 @@ import UIKit
 
     // ANIMATIONS
 
-func animateLogo(image: UIImageView) {
+func animateImage(image: UIImageView, animateTime: Double) {
     image.alpha = 0.0
-    UIView.animateWithDuration(2.0) {
+    UIView.animateWithDuration(animateTime) {
+        image.alpha = 1.0
+    }
+}
+
+func animateButton(image: UIButton, animateTime: Double) {
+    image.alpha = 0.0
+    UIView.animateWithDuration(animateTime) {
         image.alpha = 1.0
     }
 }

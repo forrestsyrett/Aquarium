@@ -36,35 +36,15 @@ class AnimalFeed {
             print(currentMinute)
             if weekDay == dayOfweek && currentHour == hour && (currentMinute >= minute && currentMinute <= minuteEnd) { 
             }}
-            
-        // Shark Feed //
+    }}
+        var feeds = [AnimalFeed]()
         
-        feedingTime(1, hour: 13, minute: 25, minuteEnd: 59)
-        feedingTime(3, hour: 13, minute: 25, minuteEnd: 59)
-        feedingTime(5, hour: 13, minute: 25, minuteEnd: 59)
-        feedingTime(7, hour: 13, minute: 25, minuteEnd: 59)
-        
-        
-        // River Giant Feed //
-        
-        feedingTime(3, hour: 14, minute: 25, minuteEnd: 59)
-        feedingTime(5, hour: 14, minute: 25, minuteEnd: 59)
-        feedingTime(7, hour: 14, minute: 25, minuteEnd: 59)
-        
-        // Piranha Feed //
-        
-        feedingTime(3, hour: 11, minute: 00, minuteEnd: 29)
-        feedingTime(5, hour: 11, minute: 00, minuteEnd: 29)
-        
-        // Penguin Feed //
-        
-        feedingTime(1, hour: 15, minute: 50, minuteEnd: 29)
-        feedingTime(2, hour: 15, minute: 50, minuteEnd: 29)
-        feedingTime(3, hour: 15, minute: 50, minuteEnd: 29)
-        feedingTime(4, hour: 15, minute: 50, minuteEnd: 29)
-        feedingTime(5, hour: 15, minute: 50, minuteEnd: 29)
-        feedingTime(6, hour: 15, minute: 50, minuteEnd: 29)
-        feedingTime(7, hour: 15, minute: 50, minuteEnd: 29)
-        }
-}
+        let sharkFeed = AnimalFeed(animalName: "Shark Feed", feedingTime: "1:30 PM", image: UIImage(named: "sharkFeed")!)
+        let penguinFeed = AnimalFeed(animalName: "Penguin Feed", feedingTime: "4:00 PM", image: UIImage(named: "penguinFeed")!)
+        let riverGiantFeed = AnimalFeed(animalName: "River Giants Feed", feedingTime: "2:30 PM", image: UIImage(named: "riverGiantsFeed")!)
+        let piranhaFeed = AnimalFeed(animalName: "Piranha Feed", feedingTime: "11:00 AM", image: UIImage(named: "piranhaFeed")!)
+        let archerfishFeed = AnimalFeed(animalName: "Archerfish Feed", feedingTime: "2:30 PM", image: UIImage(named: "archerfishFeed")!)
+
+
+
 

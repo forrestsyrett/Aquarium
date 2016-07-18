@@ -45,7 +45,7 @@ class HomeViewController: UIViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
-        animateLogo(smallLogo)
+        animateImage(smallLogo, animateTime: 2.0)
         animateLabel(welcomeLabel, animateTime: 0.5)
         animateLabel(livingPlanetLabel, animateTime: 1.0)
         animateLines(lineOne, animateTime: 0.75)
