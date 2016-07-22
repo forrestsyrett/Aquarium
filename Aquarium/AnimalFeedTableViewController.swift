@@ -76,16 +76,24 @@ class AnimalFeedTableViewController: UIViewController, UITableViewDelegate, UITa
         cell.checkMarkImage.alpha = 0.0
         cell.notifyMeButtonLabel.alpha = 0.0
         
+        if weekdaySegmentedControl.selectedSegmentIndex == 1 && cell.animalFeedLabel.text == "Shark Feed" && cell.notifyMeButtonLabel.titleLabel == "Cancel" { notificationController().scheduleSharkFeedNotification(true); cell.checkMarkImage.image = UIImage(named: "checkmarkSelected")}
+
+        
+        else { cell.checkMarkImage.image = UIImage(named: "checkmark")}
+        
+        
+            
+        
         animateLabel(cell.animalFeedLabel, animateTime: 0.75)
         animateImage(cell.animalFeedImage, animateTime: 0.75)
         animateLabel(cell.animalFeedTimeLabel, animateTime: 0.75)
         animateImage(cell.checkMarkImage, animateTime: 0.75)
         animateButton(cell.notifyMeButtonLabel, animateTime: 0.75)
         
+        
         return cell
     }
 
-    
     @IBAction func weekdaySegmentedControlSelected(sender: AnyObject) {
         
         switch weekdaySegmentedControl.selectedSegmentIndex {
@@ -110,5 +118,6 @@ class AnimalFeedTableViewController: UIViewController, UITableViewDelegate, UITa
         animalFeedTableView.reloadData()
     }
 }
+
 
 

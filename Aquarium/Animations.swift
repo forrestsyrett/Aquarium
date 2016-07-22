@@ -34,6 +34,9 @@ func animateLabel(label: UILabel, animateTime: Double) {
     }
 }
 
+
+// Use UIVIEW to animate all views in cell
+
 func animateLines(view: UIView, animateTime: Double) {
     view.alpha = 0.0
     UIView.animateWithDuration(animateTime) {

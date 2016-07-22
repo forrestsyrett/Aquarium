@@ -36,5 +36,8 @@ func transparentNavigationBar(viewController: UIViewController) {
     
 }
 
-
+func roundCornerButtons(button: UIButton) {
+    button.layer.cornerRadius = 5
+    button.layer.masksToBounds = true
+}
 

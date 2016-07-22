@@ -46,11 +46,16 @@ class ExhibitGalleriesViewController: UIViewController, UITabBarDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        // MARK: Gradient
+  
 
         gradient(self.view)
+        navigationController?.navigationBar.tintColor = UIColor.blackColor()
+    
+        
+        roundCornerButtons(discoverUtahButton)
+        roundCornerButtons(oceanExplorerButton)
+        roundCornerButtons(journeyToSouthAmericaButton)
+        roundCornerButtons(antarcticAdventureButton)
         
     }
 

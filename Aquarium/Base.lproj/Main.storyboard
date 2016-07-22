@@ -315,10 +315,10 @@
             </objects>
             <point key="canvasLocation" x="591" y="1123"/>
         </scene>
-        <!--Exhibit Galleries-->
+        <!--Exhibits-->
         <scene sceneID="Hfq-nO-eAm">
             <objects>
-                <viewController storyboardIdentifier="ExhibitGalleries" title="Exhibit Galleries" id="KJl-fD-egZ" customClass="ExhibitGalleriesViewController" customModule="Aquarium" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ExhibitGalleries" title="Exhibits" id="KJl-fD-egZ" customClass="ExhibitGalleriesViewController" customModule="Aquarium" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="3tm-aJ-5ih"/>
                         <viewControllerLayoutGuide type="bottom" id="6wr-cj-8pB"/>
@@ -456,7 +456,7 @@
                             <constraint firstItem="jgL-h8-fmL" firstAttribute="top" secondItem="3tm-aJ-5ih" secondAttribute="bottom" id="udq-Oj-541"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Exhibit Galleries" id="8YD-ZW-amk"/>
+                    <navigationItem key="navigationItem" title="Exhibits" id="8YD-ZW-amk"/>
                     <connections>
                         <outlet property="antarcticAdventureButton" destination="88J-sZ-eCS" id="WF5-3D-4O8"/>
                         <outlet property="discoverUtahButton" destination="msn-kC-Xg6" id="PWB-R9-GMC"/>
@@ -780,7 +780,7 @@ $24.95 per person or $19.95 for members.
         <!--Animal Feedings-->
         <scene sceneID="QAN-EJ-vGH">
             <objects>
-                <viewController id="XZH-NW-XMu" customClass="AnimalFeedTableViewController" customModule="Aquarium" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="XZH-NW-XMu" customClass="AnimalFeedTableViewController" customModule="Aquarium" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ams-48-QmZ"/>
                         <viewControllerLayoutGuide type="bottom" id="ep7-ky-GFT"/>
@@ -794,13 +794,13 @@ $24.95 per person or $19.95 for members.
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="feedCell" rowHeight="144" id="S9S-cD-9fi" customClass="AnimalFeedTableViewCell" customModule="Aquarium" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="92" width="600" height="144"/>
+                                        <rect key="frame" x="0.0" y="28" width="600" height="144"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="S9S-cD-9fi" id="akr-z6-wF3">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="144"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zyt-Od-1MN">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Zyt-Od-1MN">
                                                     <rect key="frame" x="8" y="8" width="169" height="127"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="191" id="2KC-yN-mbJ"/>
@@ -818,13 +818,13 @@ $24.95 per person or $19.95 for members.
                                                         </mask>
                                                     </variation>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Animal Feed Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="pUG-4g-ncl">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Animal Feed Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="pUG-4g-ncl">
                                                     <rect key="frame" x="185" y="8" width="388" height="41"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Time Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="Gxn-9z-E56">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="Gxn-9z-E56">
                                                     <rect key="frame" x="185" y="57" width="323" height="29"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="29" id="QA3-er-keg"/>
@@ -833,7 +833,7 @@ $24.95 per person or $19.95 for members.
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dju-y4-bDt">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dju-y4-bDt">
                                                     <rect key="frame" x="185" y="94" width="323" height="36"/>
                                                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <state key="normal" title="Notify Me!">
@@ -843,7 +843,7 @@ $24.95 per person or $19.95 for members.
                                                         <action selector="notifyMeButtonTapped:" destination="S9S-cD-9fi" eventType="touchUpInside" id="LGS-nF-4qT"/>
                                                     </connections>
                                                 </button>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="checkmark" translatesAutoresizingMaskIntoConstraints="NO" id="hyF-cx-ZNB">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkmark" translatesAutoresizingMaskIntoConstraints="NO" id="hyF-cx-ZNB">
                                                     <rect key="frame" x="516" y="67" width="57" height="57"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="57" id="fsF-Vg-gm9"/>
@@ -854,15 +854,15 @@ $24.95 per person or $19.95 for members.
                                                 <constraint firstItem="hyF-cx-ZNB" firstAttribute="leading" secondItem="Gxn-9z-E56" secondAttribute="trailing" constant="8" id="152-tv-NcA"/>
                                                 <constraint firstItem="dju-y4-bDt" firstAttribute="leading" secondItem="Zyt-Od-1MN" secondAttribute="trailing" constant="19" id="5hr-tw-tdp"/>
                                                 <constraint firstItem="Zyt-Od-1MN" firstAttribute="top" secondItem="akr-z6-wF3" secondAttribute="topMargin" id="7Gf-Ks-Nna"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="hyF-cx-ZNB" secondAttribute="bottom" constant="11" id="AyQ-mW-ie9"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="hyF-cx-ZNB" secondAttribute="bottom" constant="12" id="AyQ-mW-ie9"/>
                                                 <constraint firstItem="Zyt-Od-1MN" firstAttribute="centerY" secondItem="Gxn-9z-E56" secondAttribute="centerY" id="CyQ-Ln-Vqw"/>
                                                 <constraint firstItem="Gxn-9z-E56" firstAttribute="trailing" secondItem="dju-y4-bDt" secondAttribute="trailing" id="Dc7-LX-1Wg"/>
                                                 <constraint firstItem="dju-y4-bDt" firstAttribute="top" secondItem="Gxn-9z-E56" secondAttribute="bottom" constant="8" symbolic="YES" id="Imh-Ql-anF"/>
-                                                <constraint firstItem="Zyt-Od-1MN" firstAttribute="bottom" secondItem="akr-z6-wF3" secondAttribute="bottomMargin" id="PZh-GG-UQl"/>
+                                                <constraint firstItem="Zyt-Od-1MN" firstAttribute="bottom" secondItem="akr-z6-wF3" secondAttribute="bottomMargin" constant="-1" id="PZh-GG-UQl"/>
                                                 <constraint firstItem="pUG-4g-ncl" firstAttribute="leading" secondItem="Zyt-Od-1MN" secondAttribute="trailing" constant="8" symbolic="YES" id="V3F-cX-qJa"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="pUG-4g-ncl" secondAttribute="trailing" constant="19" id="YwT-Ym-JPz"/>
                                                 <constraint firstItem="Zyt-Od-1MN" firstAttribute="leading" secondItem="akr-z6-wF3" secondAttribute="leadingMargin" id="Z6D-BL-uId"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="dju-y4-bDt" secondAttribute="bottom" constant="5" id="Z7M-NT-Ai6"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="dju-y4-bDt" secondAttribute="bottom" constant="6" id="Z7M-NT-Ai6"/>
                                                 <constraint firstItem="hyF-cx-ZNB" firstAttribute="top" secondItem="pUG-4g-ncl" secondAttribute="bottom" constant="8" id="cvn-MY-rq6"/>
                                                 <constraint firstItem="Gxn-9z-E56" firstAttribute="leading" secondItem="dju-y4-bDt" secondAttribute="leading" id="fTx-Wh-ay8"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="hyF-cx-ZNB" secondAttribute="trailing" constant="19" id="fUw-Jq-1c2"/>
@@ -909,7 +909,7 @@ $24.95 per person or $19.95 for members.
                                     <segment title="Sat"/>
                                 </segments>
                                 <connections>
-                                    <action selector="weekdaySegmentedControlSelected:" destination="XZH-NW-XMu" eventType="valueChanged" id="gde-5G-QWc"/>
+                                    <action selector="weekdaySegmentedControlSelected:" destination="XZH-NW-XMu" eventType="valueChanged" id="wrL-vy-tpv"/>
                                 </connections>
                             </segmentedControl>
                         </subviews>
@@ -927,7 +927,7 @@ $24.95 per person or $19.95 for members.
                     <navigationItem key="navigationItem" title="Animal Feedings" id="Dw9-e0-Sy6"/>
                     <connections>
                         <outlet property="animalFeedTableView" destination="1RR-lf-6Xi" id="akh-SQ-JaY"/>
-                        <outlet property="weekdaySegmentedControl" destination="VSg-Yz-0Nd" id="dTy-Yt-CJR"/>
+                        <outlet property="weekdaySegmentedControl" destination="VSg-Yz-0Nd" id="kSF-bI-siB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b0x-dR-8uk" userLabel="First Responder" sceneMemberID="firstResponder"/>

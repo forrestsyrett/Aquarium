@@ -15,7 +15,10 @@ class AnimalEncountersViewController: UIViewController {
         
         
         gradient(self.view)
-
+        
+        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
+        navigationController?.navigationBar.tintColor = UIColor.whiteColor()
+        
         // Do any additional setup after loading the view.
     }
 
