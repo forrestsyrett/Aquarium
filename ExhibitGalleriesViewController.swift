@@ -57,6 +57,8 @@ class ExhibitGalleriesViewController: UIViewController, UITabBarDelegate {
         roundCornerButtons(journeyToSouthAmericaButton)
         roundCornerButtons(antarcticAdventureButton)
         
+        
+        UIApplication.sharedApplication().cancelAllLocalNotifications()
     }
 
     override func didReceiveMemoryWarning() {

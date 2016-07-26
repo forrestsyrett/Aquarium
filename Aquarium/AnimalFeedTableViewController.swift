@@ -16,21 +16,25 @@ class AnimalFeedTableViewController: UIViewController, UITableViewDelegate, UITa
     
     private let reuseIdentifier = "feedCell"
     
-    var feeds = [AnimalFeed]()
+    var feeds = [Feeding]()
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         animalFeedTableView.reloadData()
-        feeds = [sharkFeed, penguinFeed]
+        feeds = [.shark, .penguin]
         gradient(self.view)
         animalFeedTableView.backgroundColor = UIColor.clearColor()
         weekdaySegmentedControl.tintColor = .whiteColor()
+
     }
     
     
-    
+    override func viewWillAppear(animated: Bool) {
+        print(UIApplication.sharedApplication().scheduledLocalNotifications)
+
+    }
     
     
     override func didReceiveMemoryWarning() {
@@ -65,9 +69,9 @@ class AnimalFeedTableViewController: UIViewController, UITableViewDelegate, UITa
         let cell = tableView.dequeueReusableCellWithIdentifier(reuseIdentifier, forIndexPath: indexPath) as! AnimalFeedTableViewCell
         
         let feed = feeds[indexPath.row]
-        cell.animalFeedLabel.text = feed.animalName
-        cell.animalFeedImage.image = feed.image
-        cell.animalFeedTimeLabel.text = feed.feedingTime
+        cell.animalFeedLabel.text = feed.info.animalName
+        cell.animalFeedImage.image = feed.info.image
+        cell.animalFeedTimeLabel.text = feed.info.timeString
         cell.backgroundColor = UIColor.clearColor()
         
         cell.animalFeedImage.alpha = 0.0
@@ -76,13 +80,6 @@ class AnimalFeedTableViewController: UIViewController, UITableViewDelegate, UITa
         cell.checkMarkImage.alpha = 0.0
         cell.notifyMeButtonLabel.alpha = 0.0
         
-        if weekdaySegmentedControl.selectedSegmentIndex == 1 && cell.animalFeedLabel.text == "Shark Feed" && cell.notifyMeButtonLabel.titleLabel == "Cancel" { notificationController().scheduleSharkFeedNotification(true); cell.checkMarkImage.image = UIImage(named: "checkmarkSelected")}
-
-        
-        else { cell.checkMarkImage.image = UIImage(named: "checkmark")}
-        
-        
-            
         
         animateLabel(cell.animalFeedLabel, animateTime: 0.75)
         animateImage(cell.animalFeedImage, animateTime: 0.75)
@@ -90,32 +87,264 @@ class AnimalFeedTableViewController: UIViewController, UITableViewDelegate, UITa
         animateImage(cell.checkMarkImage, animateTime: 0.75)
         animateButton(cell.notifyMeButtonLabel, animateTime: 0.75)
         
+        let weekday = weekdaySegmentedControl.selectedSegmentIndex
+        let checkmark = UIImage(named: "checkmark")
+        let checkmarkSelected = UIImage(named: "checkmarkSelected")
+        
+         enum weekdays: Int {
+            case sunday = 0
+            case monday = 1
+            case tuesday = 2
+            case wednesday = 3
+            case thursday = 4
+            case friday = 5
+            case saturday = 6
+            
+        }
+        
+        let penguinFeed = "Penguin Feed"
+        let sharkFeed = "Shark Feed"
+        let archerfishFeed = "Archerfish Feed"
+        let riverGiantFeed = "River Giant Feed"
+        let piranhaFeed = "Piranha Feed"
+        
+        let notifyMe = "Notify Me!"
+        let cancel = "Cancel"
+        
+        
+        let notify = UILocalNotification()
+        notify.userInfo = ["Test": "Test"]
+        
+        
+       
+        
+      //  MARK: - Sunday Notifications
+        
+        // Penguin Feed
+    
+        if weekdaySegmentedControl.selectedSegmentIndex == weekdays.sunday.rawValue && cell.animalFeedLabel.text == penguinFeed && cell.notifyMeButtonLabel.titleLabel?.text == cancel {
+            notificationController().scheduleNotification(for: .penguin, onWeekday: weekday , scheduled: true)
+            cell.checkMarkImage.image = checkmarkSelected
+        } else if weekdaySegmentedControl.selectedSegmentIndex == weekdays.sunday.rawValue && cell.animalFeedLabel.text == penguinFeed && cell.notifyMeButtonLabel.titleLabel?.text == notifyMe {
+            notificationController().scheduleNotification(for: .penguin, onWeekday: weekday, scheduled: false)
+            cell.checkMarkImage.image = checkmark
+        }
+        
+        // Shark Feed
+        
+        if weekdaySegmentedControl.selectedSegmentIndex == weekdays.sunday.rawValue && cell.animalFeedLabel.text == sharkFeed && cell.notifyMeButtonLabel.titleLabel?.text == cancel {
+            notificationController().scheduleNotification(for: .shark, onWeekday: weekday, scheduled: true)
+            cell.checkMarkImage.image = checkmarkSelected
+        } else if weekdaySegmentedControl.selectedSegmentIndex == weekdays.sunday.rawValue && cell.animalFeedLabel.text == sharkFeed && cell.notifyMeButtonLabel.titleLabel?.text == notifyMe {
+            notificationController().scheduleNotification(for: .shark, onWeekday: weekday, scheduled: false)
+            cell.checkMarkImage.image = checkmark
+        }
+        
+        
+        
+        // MARK: - Monday Notifications
+        
+        // Archerfish
+        
+        if weekdaySegmentedControl.selectedSegmentIndex == weekdays.monday.rawValue && cell.animalFeedLabel.text == archerfishFeed && cell.notifyMeButtonLabel.titleLabel?.text == cancel {
+            notificationController().scheduleNotification(for: .archerfish, onWeekday: weekday , scheduled: true)
+            cell.checkMarkImage.image = checkmarkSelected
+        } else if weekdaySegmentedControl.selectedSegmentIndex == weekdays.monday.rawValue && cell.animalFeedLabel.text == archerfishFeed && cell.notifyMeButtonLabel.titleLabel?.text == notifyMe {
+            notificationController().scheduleNotification(for: .archerfish, onWeekday: weekday, scheduled: false)
+            cell.checkMarkImage.image = checkmark
+        }
+        
+        
+        // Penguin Feed
+        
+        if weekdaySegmentedControl.selectedSegmentIndex == weekdays.monday.rawValue && cell.animalFeedLabel.text == penguinFeed && cell.notifyMeButtonLabel.titleLabel?.text == cancel {
+            notificationController().scheduleNotification(for: .penguin, onWeekday: weekday , scheduled: true)
+            cell.checkMarkImage.image = checkmarkSelected
+        } else if weekdaySegmentedControl.selectedSegmentIndex == weekdays.monday.rawValue && cell.animalFeedLabel.text == penguinFeed && cell.notifyMeButtonLabel.titleLabel?.text == notifyMe {
+            notificationController().scheduleNotification(for: .penguin, onWeekday: weekday, scheduled: false)
+            cell.checkMarkImage.image = checkmark
+        }
+
+        
+        // MARK: - Tuesday Notifications
+        
+        
+        // Piranha Feed
+        
+        
+        if weekdaySegmentedControl.selectedSegmentIndex == weekdays.tuesday.rawValue && cell.animalFeedLabel.text == piranhaFeed && cell.notifyMeButtonLabel.titleLabel?.text == cancel {
+            notificationController().scheduleNotification(for: .piranha, onWeekday: weekday , scheduled: true)
+            cell.checkMarkImage.image = checkmarkSelected
+        } else if weekdaySegmentedControl.selectedSegmentIndex == weekdays.tuesday.rawValue && cell.animalFeedLabel.text == piranhaFeed && cell.notifyMeButtonLabel.titleLabel?.text == notifyMe {
+            notificationController().scheduleNotification(for: .piranha, onWeekday: weekday, scheduled: false)
+            cell.checkMarkImage.image = checkmark
+        }
+
+        
+        // shark feed
+        
+        if weekdaySegmentedControl.selectedSegmentIndex == weekdays.tuesday.rawValue && cell.animalFeedLabel.text == sharkFeed && cell.notifyMeButtonLabel.titleLabel?.text == cancel {
+            notificationController().scheduleNotification(for: .shark, onWeekday: weekday , scheduled: true)
+            cell.checkMarkImage.image = checkmarkSelected
+        } else if weekdaySegmentedControl.selectedSegmentIndex == weekdays.tuesday.rawValue && cell.animalFeedLabel.text == sharkFeed && cell.notifyMeButtonLabel.titleLabel?.text == notifyMe {
+            notificationController().scheduleNotification(for: .shark, onWeekday: weekday, scheduled: false)
+            cell.checkMarkImage.image = checkmark
+        }
+        
+        
+        // river giants feed
+        
+        if weekdaySegmentedControl.selectedSegmentIndex == weekdays.tuesday.rawValue && cell.animalFeedLabel.text == riverGiantFeed && cell.notifyMeButtonLabel.titleLabel?.text == cancel {
+            notificationController().scheduleNotification(for: .riverGiant, onWeekday: weekday , scheduled: true)
+            cell.checkMarkImage.image = checkmarkSelected
+        } else if weekdaySegmentedControl.selectedSegmentIndex == weekdays.tuesday.rawValue && cell.animalFeedLabel.text == riverGiantFeed && cell.notifyMeButtonLabel.titleLabel?.text == notifyMe {
+            notificationController().scheduleNotification(for: .riverGiant, onWeekday: weekday, scheduled: false)
+            cell.checkMarkImage.image = checkmark
+        }
+
+
+        // penguin feed
+        
+        if weekdaySegmentedControl.selectedSegmentIndex == weekdays.tuesday.rawValue && cell.animalFeedLabel.text == penguinFeed && cell.notifyMeButtonLabel.titleLabel?.text == cancel {
+            notificationController().scheduleNotification(for: .penguin, onWeekday: weekday , scheduled: true)
+            cell.checkMarkImage.image = checkmarkSelected
+        } else if weekdaySegmentedControl.selectedSegmentIndex == weekdays.tuesday.rawValue && cell.animalFeedLabel.text == penguinFeed && cell.notifyMeButtonLabel.titleLabel?.text == notifyMe {
+            notificationController().scheduleNotification(for: .penguin, onWeekday: weekday, scheduled: false)
+            cell.checkMarkImage.image = checkmark
+        }
+
+        
+        
+        // MARK: - Wednesday Notifications
+        
+        
+        // Penguin feed
+        
+        if weekdaySegmentedControl.selectedSegmentIndex == weekdays.wednesday.rawValue && cell.animalFeedLabel.text == penguinFeed && cell.notifyMeButtonLabel.titleLabel?.text == cancel {
+        notificationController().scheduleNotification(for: .penguin, onWeekday: weekday , scheduled: true)
+        cell.checkMarkImage.image = checkmarkSelected
+    } else if weekdaySegmentedControl.selectedSegmentIndex == weekdays.wednesday.rawValue && cell.animalFeedLabel.text == penguinFeed && cell.notifyMeButtonLabel.titleLabel?.text == notifyMe {
+    notificationController().scheduleNotification(for: .penguin, onWeekday: weekday, scheduled: false)
+    cell.checkMarkImage.image = checkmark
+    }
+
+        
+        // MARK: - Thursday Notifications
+        
+        
+        // Piranha Feed
+        
+        
+        if weekdaySegmentedControl.selectedSegmentIndex == weekdays.thursday.rawValue && cell.animalFeedLabel.text == piranhaFeed && cell.notifyMeButtonLabel.titleLabel?.text == cancel {
+            notificationController().scheduleNotification(for: .piranha, onWeekday: weekday , scheduled: true)
+            cell.checkMarkImage.image = checkmarkSelected
+        } else if weekdaySegmentedControl.selectedSegmentIndex == weekdays.thursday.rawValue && cell.animalFeedLabel.text == piranhaFeed && cell.notifyMeButtonLabel.titleLabel?.text == notifyMe {
+            notificationController().scheduleNotification(for: .piranha, onWeekday: weekday, scheduled: false)
+            cell.checkMarkImage.image = checkmark
+        }
+        
+        
+        // shark feed
+        
+        if weekdaySegmentedControl.selectedSegmentIndex == weekdays.thursday.rawValue && cell.animalFeedLabel.text == sharkFeed && cell.notifyMeButtonLabel.titleLabel?.text == cancel {
+            notificationController().scheduleNotification(for: .shark, onWeekday: weekday , scheduled: true)
+            cell.checkMarkImage.image = checkmarkSelected
+        } else if weekdaySegmentedControl.selectedSegmentIndex == weekdays.thursday.rawValue && cell.animalFeedLabel.text == sharkFeed && cell.notifyMeButtonLabel.titleLabel?.text == notifyMe {
+            notificationController().scheduleNotification(for: .shark, onWeekday: weekday, scheduled: false)
+            cell.checkMarkImage.image = checkmark
+        }
+        
+        
+        // river giants feed
+        
+        if weekdaySegmentedControl.selectedSegmentIndex == weekdays.thursday.rawValue && cell.animalFeedLabel.text == riverGiantFeed && cell.notifyMeButtonLabel.titleLabel?.text == cancel {
+            notificationController().scheduleNotification(for: .riverGiant, onWeekday: weekday , scheduled: true)
+            cell.checkMarkImage.image = checkmarkSelected
+        } else if weekdaySegmentedControl.selectedSegmentIndex == weekdays.thursday.rawValue && cell.animalFeedLabel.text == riverGiantFeed && cell.notifyMeButtonLabel.titleLabel?.text == notifyMe {
+            notificationController().scheduleNotification(for: .riverGiant, onWeekday: weekday, scheduled: false)
+            cell.checkMarkImage.image = checkmark
+        }
+        
+        
+        // Archerfish feed
+        
+        if weekdaySegmentedControl.selectedSegmentIndex == weekdays.thursday.rawValue && cell.animalFeedLabel.text == archerfishFeed && cell.notifyMeButtonLabel.titleLabel?.text == cancel {
+            notificationController().scheduleNotification(for: .archerfish, onWeekday: weekday , scheduled: true)
+            cell.checkMarkImage.image = checkmarkSelected
+        } else if weekdaySegmentedControl.selectedSegmentIndex == weekdays.thursday.rawValue && cell.animalFeedLabel.text == archerfishFeed && cell.notifyMeButtonLabel.titleLabel?.text == notifyMe {
+            notificationController().scheduleNotification(for: .archerfish, onWeekday: weekday, scheduled: false)
+            cell.checkMarkImage.image = checkmark
+        }
+        
+        
+        // penguin feed
+        
+        if weekdaySegmentedControl.selectedSegmentIndex == weekdays.thursday.rawValue && cell.animalFeedLabel.text == penguinFeed && cell.notifyMeButtonLabel.titleLabel?.text == cancel {
+            notificationController().scheduleNotification(for: .penguin, onWeekday: weekday , scheduled: true)
+            cell.checkMarkImage.image = checkmarkSelected
+        } else if weekdaySegmentedControl.selectedSegmentIndex == weekdays.thursday.rawValue && cell.animalFeedLabel.text == penguinFeed && cell.notifyMeButtonLabel.titleLabel?.text == notifyMe {
+            notificationController().scheduleNotification(for: .penguin, onWeekday: weekday, scheduled: false)
+            cell.checkMarkImage.image = checkmark
+        }
+
+    
+        
+    // MARK: - Friday Notifications
+        
+        
+        
+        // penguin feed
+        
+        if weekdaySegmentedControl.selectedSegmentIndex == weekdays.friday.rawValue && cell.animalFeedLabel.text == penguinFeed && cell.notifyMeButtonLabel.titleLabel?.text == cancel {
+            notificationController().scheduleNotification(for: .penguin, onWeekday: weekday , scheduled: true)
+            cell.checkMarkImage.image = checkmarkSelected
+        } else if weekdaySegmentedControl.selectedSegmentIndex == weekdays.friday.rawValue && cell.animalFeedLabel.text == penguinFeed && cell.notifyMeButtonLabel.titleLabel?.text == notifyMe {
+            notificationController().scheduleNotification(for: .penguin, onWeekday: weekday, scheduled: false)
+            cell.checkMarkImage.image = checkmark
+        }
+
+    
+    // MARK: - Saturday Notifications
+        
+        
+        // shark feed
+        
+        if weekdaySegmentedControl.selectedSegmentIndex == weekdays.saturday.rawValue && cell.animalFeedLabel.text == sharkFeed && cell.notifyMeButtonLabel.titleLabel?.text == cancel {
+            notificationController().scheduleNotification(for: .shark, onWeekday: weekday , scheduled: true)
+            cell.checkMarkImage.image = checkmarkSelected
+        } else if weekdaySegmentedControl.selectedSegmentIndex == weekdays.saturday.rawValue && cell.animalFeedLabel.text == sharkFeed && cell.notifyMeButtonLabel.titleLabel?.text == notifyMe {
+            notificationController().scheduleNotification(for: .shark, onWeekday: weekday, scheduled: false)
+            cell.checkMarkImage.image = checkmark
+        }
+
+        // river giants feed
+        
+        if weekdaySegmentedControl.selectedSegmentIndex == weekdays.saturday.rawValue && cell.animalFeedLabel.text == riverGiantFeed && cell.notifyMeButtonLabel.titleLabel?.text == cancel {
+            notificationController().scheduleNotification(for: .riverGiant, onWeekday: weekday , scheduled: true)
+            cell.checkMarkImage.image = checkmarkSelected
+        } else if weekdaySegmentedControl.selectedSegmentIndex == weekdays.saturday.rawValue && cell.animalFeedLabel.text == riverGiantFeed && cell.notifyMeButtonLabel.titleLabel?.text == notifyMe {
+            notificationController().scheduleNotification(for: .riverGiant, onWeekday: weekday, scheduled: false)
+            cell.checkMarkImage.image = checkmark
+        }
+
+        // Archerfish feed
+        
+        if weekdaySegmentedControl.selectedSegmentIndex == weekdays.saturday.rawValue && cell.animalFeedLabel.text == archerfishFeed && cell.notifyMeButtonLabel.titleLabel?.text == cancel {
+            notificationController().scheduleNotification(for: .archerfish, onWeekday: weekday , scheduled: true)
+            cell.checkMarkImage.image = checkmarkSelected
+        } else if weekdaySegmentedControl.selectedSegmentIndex == weekdays.saturday.rawValue && cell.animalFeedLabel.text == archerfishFeed && cell.notifyMeButtonLabel.titleLabel?.text == notifyMe {
+            notificationController().scheduleNotification(for: .archerfish, onWeekday: weekday, scheduled: false)
+            cell.checkMarkImage.image = checkmark
+        }
+        
         
         return cell
     }
 
     @IBAction func weekdaySegmentedControlSelected(sender: AnyObject) {
-        
-        switch weekdaySegmentedControl.selectedSegmentIndex {
-            
-        case 0:
-            feeds = [sharkFeed, penguinFeed]
-        case 1:
-            feeds = [archerfishFeed, penguinFeed]
-        case 2:
-            feeds = [piranhaFeed, sharkFeed, riverGiantFeed, penguinFeed]
-        case 3:
-            feeds = [penguinFeed]
-        case 4:
-            feeds = [piranhaFeed, sharkFeed, riverGiantFeed, archerfishFeed, penguinFeed]
-        case 5:
-            feeds = [penguinFeed]
-        case 6:
-            feeds = [sharkFeed, riverGiantFeed, archerfishFeed]
-            
-        default: break
-        }
+        feeds = Feeding.feeding(on: weekdaySegmentedControl.selectedSegmentIndex + 1)
         animalFeedTableView.reloadData()
+
     }
 }
 

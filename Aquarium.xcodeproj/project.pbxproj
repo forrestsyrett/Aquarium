@@ -24,8 +24,8 @@
 		AA6F4E701D3C01B100FA20F7 /* AnimalFeedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6F4E6F1D3C01B100FA20F7 /* AnimalFeedTableViewController.swift */; };
 		AA6F4E721D3C01D000FA20F7 /* AnimalFeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6F4E711D3C01D000FA20F7 /* AnimalFeedTableViewCell.swift */; };
 		AA8D05161D19DC930063F222 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8D05151D19DC930063F222 /* HomeViewController.swift */; };
+		AA909B181D41B42A000DB923 /* Feeding.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA909B171D41B42A000DB923 /* Feeding.swift */; };
 		AA9D6EE01D1CCD5000831AFE /* Animal.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9D6EDF1D1CCD5000831AFE /* Animal.swift */; };
-		AA9D6EE61D281E7000831AFE /* AnimalFeedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9D6EE51D281E7000831AFE /* AnimalFeedController.swift */; };
 		AAEE47681D3CAD8500E0C537 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEE47671D3CAD8500E0C537 /* NotificationController.swift */; };
 /* End PBXBuildFile section */
 
@@ -49,8 +49,8 @@
 		AA6F4E6F1D3C01B100FA20F7 /* AnimalFeedTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimalFeedTableViewController.swift; sourceTree = "<group>"; };
 		AA6F4E711D3C01D000FA20F7 /* AnimalFeedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimalFeedTableViewCell.swift; sourceTree = "<group>"; };
 		AA8D05151D19DC930063F222 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		AA909B171D41B42A000DB923 /* Feeding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Feeding.swift; sourceTree = "<group>"; };
 		AA9D6EDF1D1CCD5000831AFE /* Animal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animal.swift; sourceTree = "<group>"; };
-		AA9D6EE51D281E7000831AFE /* AnimalFeedController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimalFeedController.swift; sourceTree = "<group>"; };
 		AAEE47671D3CAD8500E0C537 /* NotificationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -90,8 +90,8 @@
 				AA6F4E711D3C01D000FA20F7 /* AnimalFeedTableViewCell.swift */,
 				AA6F4E6F1D3C01B100FA20F7 /* AnimalFeedTableViewController.swift */,
 				AA6F4E651D386A2A00FA20F7 /* AnimalTableViewCell.swift */,
-				AA9D6EE51D281E7000831AFE /* AnimalFeedController.swift */,
 				AAEE47671D3CAD8500E0C537 /* NotificationController.swift */,
+				AA909B171D41B42A000DB923 /* Feeding.swift */,
 				AA9D6EDF1D1CCD5000831AFE /* Animal.swift */,
 				AA183F291D1A6DD200D31044 /* AnimalEncountersViewController.swift */,
 				AA8D05151D19DC930063F222 /* HomeViewController.swift */,
@@ -187,6 +187,7 @@
 				AA544CAD1D0C90DE00DC1725 /* DiscoverUtahTableViewController.swift in Sources */,
 				AA6F4E721D3C01D000FA20F7 /* AnimalFeedTableViewCell.swift in Sources */,
 				AA544CB31D0CAE1000DC1725 /* ExhibitGalleriesViewController.swift in Sources */,
+				AA909B181D41B42A000DB923 /* Feeding.swift in Sources */,
 				AA9D6EE01D1CCD5000831AFE /* Animal.swift in Sources */,
 				AA544CFA1D149C0A00DC1725 /* QRScannerViewController.swift in Sources */,
 				AA8D05161D19DC930063F222 /* HomeViewController.swift in Sources */,
@@ -197,7 +198,6 @@
 				AA6F4E641D3868F900FA20F7 /* Animations.swift in Sources */,
 				AA544CAB1D0C790400DC1725 /* UIAppearance.swift in Sources */,
 				AA544CAF1D0C94DE00DC1725 /* OceanExplorerTableViewController.swift in Sources */,
-				AA9D6EE61D281E7000831AFE /* AnimalFeedController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
