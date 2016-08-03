@@ -54,8 +54,6 @@ class AnimalFeedTableViewCell: UITableViewCell {
             checkMarkImage.image = UIImage(named: "checkmarkSelected")
             
            
-        
-            
         }
         
         if notifyMeButtonLabel.titleLabel?.text == cancelNotification && animalFeedLabel.text == "Shark Feed" {

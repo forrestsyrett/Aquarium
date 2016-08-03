@@ -79,6 +79,17 @@ class HomeViewController: UIViewController {
     
     @IBAction func directionButtonTapped(sender: AnyObject) {
         
+        let alert = UIAlertController(title: "Open in Maps?", message: nil, preferredStyle: .Alert)
+        
+        alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: { (action: UIAlertAction!) in
+            UIApplication.sharedApplication().openURL(NSURL(string: "http://maps.apple.com/?q=Loveland+Living+Planet+Aquarium")!)
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: { (action: UIAlertAction!) in
+            return }))
+        
+        presentViewController(alert, animated: true, completion: nil)
+        
     }
     
     

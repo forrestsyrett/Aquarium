@@ -37,9 +37,9 @@ class QRScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsD
             input = nil
         }
         if (error != nil) {
-            let alertController:UIAlertController = UIAlertController(title: "Device Error", message: "Device not Supported for this Application", preferredStyle: .Alert)
+            let alertController = UIAlertController(title: "Device Error", message: "Device not Supported for this Application", preferredStyle: .Alert)
             
-            let cancelAction:UIAlertAction = UIAlertAction(title: "OK", style: .Cancel, handler: { (alertAction) -> Void in
+            let cancelAction = UIAlertAction(title: "OK", style: .Cancel, handler: { (alertAction) -> Void in
                 alertController.dismissViewControllerAnimated(true, completion: nil)
             })
             

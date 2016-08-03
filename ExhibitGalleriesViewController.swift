@@ -59,6 +59,8 @@ class ExhibitGalleriesViewController: UIViewController, UITabBarDelegate {
         
         
         UIApplication.sharedApplication().cancelAllLocalNotifications()
+        
+
     }
 
     override func didReceiveMemoryWarning() {

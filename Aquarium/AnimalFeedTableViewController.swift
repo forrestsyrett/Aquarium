@@ -102,6 +102,7 @@ class AnimalFeedTableViewController: UIViewController, UITableViewDelegate, UITa
             
         }
         
+        
         let penguinFeed = "Penguin Feed"
         let sharkFeed = "Shark Feed"
         let archerfishFeed = "Archerfish Feed"
@@ -116,7 +117,6 @@ class AnimalFeedTableViewController: UIViewController, UITableViewDelegate, UITa
         notify.userInfo = ["Test": "Test"]
         
         
-       
         
       //  MARK: - Sunday Notifications
         
@@ -125,6 +125,7 @@ class AnimalFeedTableViewController: UIViewController, UITableViewDelegate, UITa
         if weekdaySegmentedControl.selectedSegmentIndex == weekdays.sunday.rawValue && cell.animalFeedLabel.text == penguinFeed && cell.notifyMeButtonLabel.titleLabel?.text == cancel {
             notificationController().scheduleNotification(for: .penguin, onWeekday: weekday , scheduled: true)
             cell.checkMarkImage.image = checkmarkSelected
+            animalFeedTableView.reloadData()
         } else if weekdaySegmentedControl.selectedSegmentIndex == weekdays.sunday.rawValue && cell.animalFeedLabel.text == penguinFeed && cell.notifyMeButtonLabel.titleLabel?.text == notifyMe {
             notificationController().scheduleNotification(for: .penguin, onWeekday: weekday, scheduled: false)
             cell.checkMarkImage.image = checkmark
