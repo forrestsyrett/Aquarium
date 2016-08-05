@@ -22,7 +22,12 @@ class AnimalFeedTableViewCell: UITableViewCell {
     @IBOutlet weak var checkMarkImage: UIImageView!
     weak var delegate: AnimalFeedTableViewCellDelegate?
     
-    var notificationScheduled = false
+    var notificationScheduled = false {
+        didSet {
+            notifyMeButtonLabel.setTitle(notificationScheduled ? AnimalFeedTableViewCell.cancelNotification : AnimalFeedTableViewCell.notifyMe, forState: .Normal)
+            checkMarkImage.image = UIImage(named: notificationScheduled ? "checkmarkSelected" : "checkmark")
+        }
+    }
     
     
     override func awakeFromNib() {
@@ -51,20 +56,8 @@ class AnimalFeedTableViewCell: UITableViewCell {
     private let friday = 5
     private let saturday = 6
     
-    
-    func updateButtonAndCheckmark() {
-        if notificationScheduled {
-            notifyMeButtonLabel.setTitle(AnimalFeedTableViewCell.cancelNotification, forState: .Normal)
-            checkMarkImage.image = UIImage(named: "checkmarkSelected")
-        } else {
-            notifyMeButtonLabel.setTitle(AnimalFeedTableViewCell.notifyMe, forState: .Normal)
-            checkMarkImage.image = UIImage(named: "checkmark")
-        }
-    }
-    
     @IBAction func notifyMeButtonTapped(sender: AnyObject) {
         notificationScheduled = !notificationScheduled
-        updateButtonAndCheckmark()
         
         delegate?.feedNotificationButtonTapped(self)
     }

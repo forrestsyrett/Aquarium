@@ -45,20 +45,6 @@ class AnimalFeedTableViewController: UIViewController, UITableViewDelegate, UITa
     }
     
     
-    //                check notifications to see which are scheduled. access .userinfo
-    func notificationCheck(animalName: String, weekday: Int) -> Bool {
-        guard let scheduledLocalNotifications = UIApplication.sharedApplication().scheduledLocalNotifications else { return false }
-        var found = false
-        for notification in scheduledLocalNotifications {
-            guard let userInfo = notification.userInfo as? [String: String] else { return false }
-            if userInfo[String(weekday)] == animalName {
-                print("notification info: \(userInfo)")
-                found = true
-            }
-        }
-        return found
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         animalFeedTableView.reloadData()
@@ -66,10 +52,6 @@ class AnimalFeedTableViewController: UIViewController, UITableViewDelegate, UITa
         gradient(self.view)
         animalFeedTableView.backgroundColor = UIColor.clearColor()
         weekdaySegmentedControl.tintColor = .whiteColor()
-        
-//        notificationCheck(Feeding.penguin.info.animalName, dayOfWeek: "Sunday", feeding: penguinFeed)
-        
-
     }
     
     
@@ -116,7 +98,6 @@ class AnimalFeedTableViewController: UIViewController, UITableViewDelegate, UITa
         cell.animalFeedTimeLabel.text = feed.info.timeString
         cell.backgroundColor = UIColor.clearColor()
         cell.notificationScheduled = notificationCheck(feed.info.animalName, weekday: weekdaySegmentedControl.selectedSegmentIndex)
-        cell.updateButtonAndCheckmark()
         
         cell.animalFeedImage.alpha = 0.0
         cell.animalFeedLabel.alpha = 0.0
@@ -132,6 +113,19 @@ class AnimalFeedTableViewController: UIViewController, UITableViewDelegate, UITa
         
         
         return cell
+    }
+
+    //                check notifications to see which are scheduled. access .userinfo
+    func notificationCheck(animalName: String, weekday: Int) -> Bool {
+        guard let scheduledLocalNotifications = UIApplication.sharedApplication().scheduledLocalNotifications else { return false }
+        var found = false
+        for notification in scheduledLocalNotifications {
+            guard let userInfo = notification.userInfo as? [String: String] else { return false }
+            if userInfo[String(weekday)] == animalName {
+                found = true
+            }
+        }
+        return found
     }
 
     @IBAction func weekdaySegmentedControlSelected(sender: AnyObject) {
