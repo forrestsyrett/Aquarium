@@ -17,31 +17,18 @@ class NotificationController {
     
     func scheduleNotification(for feeding: Feeding, onWeekday weekday: Int, scheduled: Bool) {
         
-        let myCalendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
+        let gregorian = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
         
-        // gets current weekday
-//        let myComponents = myCalendar.components(.Weekday, fromDate: NSDate())
-//        let currentWeekDay = myComponents.weekday
-        
-        
-        let feedDateComponents: NSDateComponents = NSDateComponents()
-        
-        feedDateComponents.year = 2016
-        feedDateComponents.month = 1
-        feedDateComponents.day = weekday + 3
-        feedDateComponents.weekday = 1
-        feedDateComponents.hour = feeding.info.hour
-        feedDateComponents.minute = feeding.info.minute
-        feedDateComponents.timeZone = NSTimeZone.systemTimeZone()
-        
-        
-        guard let feedNotificationDate: NSDate = myCalendar.dateFromComponents(feedDateComponents)! else { return }
+        let now = NSDate()
+        var fireDate = gregorian.dateBySettingUnit(.Weekday, value: weekday, ofDate: now, options: [])!
+        fireDate = gregorian.dateBySettingUnit(.Hour, value: feeding.info.hour, ofDate: fireDate, options: [])!
+        fireDate = gregorian.dateBySettingUnit(.Minute, value: feeding.info.minute, ofDate: fireDate, options: [])!
         
 
         let feedNotification = UILocalNotification()
         let userInfoDictionary = [String(weekday) : feeding.info.animalName]
         
-        feedNotification.fireDate = feedNotificationDate
+        feedNotification.fireDate = fireDate
         feedNotification.alertBody = feeding.info.notificationTitle
         feedNotification.timeZone = NSTimeZone.defaultTimeZone()
         feedNotification.repeatInterval = .WeekOfYear

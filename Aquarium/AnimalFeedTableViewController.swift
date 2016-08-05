@@ -12,37 +12,16 @@ class AnimalFeedTableViewController: UIViewController, UITableViewDelegate, UITa
 
     @IBOutlet weak var animalFeedTableView: UITableView!
     @IBOutlet weak var weekdaySegmentedControl: UISegmentedControl!
+    
+    var selectedWeekday: Int {
+        return weekdaySegmentedControl.selectedSegmentIndex + 1
+    }
 
     
     private let reuseIdentifier = "feedCell"
-    static let key: NSObject = "key"
     
     var notificationController = NotificationController()
     var feeds = [Feeding]()
-    var animal = AnimalFeedTableViewCell()
-    let checkmark = UIImage(named: "checkmark")
-    let checkmarkSelected = UIImage(named: "checkmarkSelected")
-//    let penguinFeed = "Penguin Feed"
-//    let sharkFeed = "Shark Feed"
-//    let archerfishFeed = "Archerfish Feed"
-//    let riverGiantFeed = "River Giant Feed"
-//    let piranhaFeed = "Piranha Feed"
-    
-    let notifyMe = "Notify Me!"
-    let cancel = "Cancel"
-    
-    
-    
-    enum weekdays: Int {
-        case sunday = 0
-        case monday = 1
-        case tuesday = 2
-        case wednesday = 3
-        case thursday = 4
-        case friday = 5
-        case saturday = 6
-        
-    }
     
     
     override func viewDidLoad() {
@@ -97,7 +76,7 @@ class AnimalFeedTableViewController: UIViewController, UITableViewDelegate, UITa
         cell.animalFeedImage.image = feed.info.image
         cell.animalFeedTimeLabel.text = feed.info.timeString
         cell.backgroundColor = UIColor.clearColor()
-        cell.notificationScheduled = notificationCheck(feed.info.animalName, weekday: weekdaySegmentedControl.selectedSegmentIndex)
+        cell.notificationScheduled = notificationCheck(feed.info.animalName, weekday: selectedWeekday)
         
         cell.animalFeedImage.alpha = 0.0
         cell.animalFeedLabel.alpha = 0.0
@@ -129,7 +108,7 @@ class AnimalFeedTableViewController: UIViewController, UITableViewDelegate, UITa
     }
 
     @IBAction func weekdaySegmentedControlSelected(sender: AnyObject) {
-        feeds = Feeding.feeding(on: weekdaySegmentedControl.selectedSegmentIndex + 1)
+        feeds = Feeding.feeding(on: selectedWeekday)
         animalFeedTableView.reloadData()
 
     }
@@ -143,7 +122,7 @@ class AnimalFeedTableViewController: UIViewController, UITableViewDelegate, UITa
         UIApplication.sharedApplication().registerUserNotificationSettings(UIUserNotificationSettings(forTypes:
             [.Alert, .Badge, .Sound], categories: nil))
 
-        notificationController.scheduleNotification(for: feed, onWeekday: weekdaySegmentedControl.selectedSegmentIndex, scheduled: animalFeedTableViewCell.notificationScheduled)
+        notificationController.scheduleNotification(for: feed, onWeekday: selectedWeekday, scheduled: animalFeedTableViewCell.notificationScheduled)
     }
 }
 
