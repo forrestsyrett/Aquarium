@@ -39,7 +39,7 @@ class NotificationController {
         
 
         let feedNotification = UILocalNotification()
-        let userInfoDictionary = [weekday : feeding.info.animalName]
+        let userInfoDictionary = [String(weekday) : feeding.info.animalName]
         
         feedNotification.fireDate = feedNotificationDate
         feedNotification.alertBody = feeding.info.notificationTitle

@@ -50,8 +50,8 @@ class AnimalFeedTableViewController: UIViewController, UITableViewDelegate, UITa
         guard let scheduledLocalNotifications = UIApplication.sharedApplication().scheduledLocalNotifications else { return false }
         var found = false
         for notification in scheduledLocalNotifications {
-            guard let userInfo = notification.userInfo as? [Int: String] else { return false }
-            if userInfo[weekday] == animalName {
+            guard let userInfo = notification.userInfo as? [String: String] else { return false }
+            if userInfo[String(weekday)] == animalName {
                 print("notification info: \(userInfo)")
                 found = true
             }
