@@ -7,29 +7,74 @@
 //
 
 import UIKit
+import CoreImage
 
-class BarcodeGeneratorViewController: UIViewController {
-
+class BarcodeGeneratorViewController: UIViewController, UITextFieldDelegate {
+    
+    @IBOutlet weak var barcodeImage: UIImageView!
+    @IBOutlet weak var barcodeNumberLabel: UILabel!
+    @IBOutlet weak var barcodeNumberTextField: UITextField!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        gradient(self.view)
+        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(BarcodeGeneratorViewController.dismissKeyboard))
+        view.addGestureRecognizer(tap)
+        
+        barcodeNumberTextField.delegate = self
 
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func dismissKeyboard() {
+        view.endEditing(true)
     }
-    */
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        
+        
+        
+        
+        if barcodeNumberTextField.text != nil {
+        let barcodeNumber = barcodeNumberTextField.text
+        let barcode = BarcodeGeneratorViewController.barcodefromString(barcodeNumber!)
+        
+        barcodeImage.image = barcode
+        barcodeNumberLabel.text = barcodeNumber
+        roundCornerButtons(barcodeImage)
+        textField.resignFirstResponder()
+        } else {
+            textField.resignFirstResponder()}
+        return true
+        }
+    
+    
+    
+    
+    class func barcodefromString(string : String) -> UIImage? {
+        
+        guard let barcode = string.dataUsingEncoding(NSASCIIStringEncoding) else { return BarcodeGeneratorViewController.barcodefromString("1") }
+        
+        let filter = CIFilter(name: "CICode128BarcodeGenerator")
+        filter!.setValue(barcode, forKey: "inputMessage")
+        return UIImage(CIImage: filter!.outputImage!)
+    }
+    
+    @IBAction func createButtonTapped(sender: AnyObject) {
+        
+        guard let barcodeNumber = barcodeNumberTextField.text else { return }
+   
+        let barcode = BarcodeGeneratorViewController.barcodefromString(barcodeNumber)
+        
+        barcodeImage.image = barcode
+        barcodeNumberLabel.text = barcodeNumber
+        roundCornerButtons(barcodeImage)
+        dismissKeyboard()
+        
+    }
 
 }
+
