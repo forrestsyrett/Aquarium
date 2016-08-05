@@ -49,7 +49,6 @@ class ExhibitGalleriesViewController: UIViewController, UITabBarDelegate {
   
 
         gradient(self.view)
-        navigationController?.navigationBar.tintColor = UIColor.blackColor()
     
         
         roundCornerButtons(discoverUtahButton)
@@ -57,9 +56,8 @@ class ExhibitGalleriesViewController: UIViewController, UITabBarDelegate {
         roundCornerButtons(journeyToSouthAmericaButton)
         roundCornerButtons(antarcticAdventureButton)
         
-        
-        UIApplication.sharedApplication().cancelAllLocalNotifications()
-        
+        transparentNavigationBar(self)
+       
 
     }
 

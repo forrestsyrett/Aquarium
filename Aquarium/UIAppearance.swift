@@ -33,6 +33,8 @@ func transparentNavigationBar(viewController: UIViewController) {
     viewController.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
     viewController.navigationController?.navigationBar.shadowImage = UIImage()
     viewController.navigationController?.navigationBar.translucent = true
+    viewController.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
+   viewController.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
     
 }
 

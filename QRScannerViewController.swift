@@ -20,6 +20,7 @@ class QRScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsD
     @IBOutlet weak var tabBarLineView: UIView!
     @IBOutlet weak var alignQRCodeLabel: UILabel!
     @IBOutlet weak var scanButton: UIButton!
+    @IBOutlet weak var cameraAccessPenguin: UIImageView!
     
     
     var captureSession: AVCaptureSession?
@@ -32,6 +33,8 @@ class QRScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsD
         
         var error: NSError?
         let input: AnyObject!
+        
+      
         do {
             input = try AVCaptureDeviceInput(device: captureDevice) as AVCaptureDeviceInput
         }
@@ -40,24 +43,26 @@ class QRScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsD
             input = nil
         }
         if (error != nil) {
-            let alertController = UIAlertController(title: "Device Error", message: "Device not Supported for this Application", preferredStyle: .Alert)
+            let alertController = UIAlertController(title: "Device Error", message: "Device not supported for this Application", preferredStyle: .Alert)
             
-            let cancelAction = UIAlertAction(title: "OK", style: .Cancel, handler: { (alertAction) -> Void in
-                alertController.dismissViewControllerAnimated(true, completion: nil)
-            })
-            
+            let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
             alertController.addAction(cancelAction)
             self.presentViewController(alertController, animated: true, completion: nil)
         }
         
         
         captureSession = AVCaptureSession()
-        captureSession?.addInput(input as! AVCaptureInput)
+        if captureDevice == nil {
+            return
+        } else {
+        captureSession?.addInput(input as? AVCaptureInput)
+        }
+    
         let objCaptureMetadataOutput = AVCaptureMetadataOutput()
         captureSession?.addOutput(objCaptureMetadataOutput)
         objCaptureMetadataOutput.setMetadataObjectsDelegate(self, queue: dispatch_get_main_queue())
         objCaptureMetadataOutput.metadataObjectTypes = [AVMetadataObjectTypeQRCode]
-    }
+        }
     
     
     func addVideoPreviewLayer() {
@@ -77,7 +82,6 @@ class QRScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsD
         self.view.addSubview(photoFrameImage)
         self.view.addSubview(alignQRCodeLabel)
         self.view.addSubview(scanButton)
-        //        self.view.bringSubviewToFront(qrCodeFrameView!)
     }
     
     
@@ -85,7 +89,6 @@ class QRScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsD
     func captureOutput(captureOutput: AVCaptureOutput!, didOutputMetadataObjects metadataObjects: [AnyObject]!, fromConnection connection: AVCaptureConnection!) {
         if metadataObjects == nil || metadataObjects.count == 0 {
             qrCodeFrameView?.frame = CGRectZero
-            qrCodeResult.text = "No QR Code detected"
             return
         }
         let objMetadataMachineReadableCodeObject = metadataObjects[0] as! AVMetadataMachineReadableCodeObject
@@ -105,14 +108,10 @@ class QRScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsD
         
         func openURL() {
             guard let url = NSURL(string: qrResult!) else {
-                // not a valid URL
                 return
             }
-            //            if qrResult != nil {
             
-            // Can open with SFSafariViewController
             if ["http", "https"].contains(url.scheme.lowercaseString) {
-                // Can open with SFSafariViewController
                 let safariViewController = SFSafariViewController(URL: url)
                 self.presentViewController(safariViewController, animated: true, completion: nil)
                 AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
@@ -132,12 +131,25 @@ class QRScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsD
             initializeQRView()
         }}
     
+    
+
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        if AVCaptureDevice.authorizationStatusForMediaType(AVMediaTypeVideo) ==  AVAuthorizationStatus.Authorized
+        {
         qrOn(true)
         scanButton.layer.cornerRadius = 20
+            cameraAccessPenguin.hidden = true
+        }
         
+        else {
+            gradient(self.view)
+            photoFrameImage.hidden = true
+            alignQRCodeLabel.text = "Please Allow Access to The Camera"
+            scanButton.hidden = true
+        }
     }
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)

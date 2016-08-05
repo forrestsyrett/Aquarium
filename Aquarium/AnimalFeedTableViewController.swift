@@ -35,7 +35,6 @@ class AnimalFeedTableViewController: UIViewController, UITableViewDelegate, UITa
     
     
     override func viewWillAppear(animated: Bool) {
-        print(UIApplication.sharedApplication().scheduledLocalNotifications)
     }
     
     

@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		AA183F2A1D1A6DD300D31044 /* AnimalEncountersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA183F291D1A6DD200D31044 /* AnimalEncountersViewController.swift */; };
 		AA183F2C1D1A767F00D31044 /* AnimalDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA183F2B1D1A767F00D31044 /* AnimalDetailViewController.swift */; };
-		AA49C2041D5176BC008AE631 /* DirectionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA49C2031D5176BC008AE631 /* DirectionsViewController.swift */; };
 		AA544C951D0BB66C00DC1725 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA544C941D0BB66C00DC1725 /* AppDelegate.swift */; };
 		AA544C9A1D0BB66C00DC1725 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA544C981D0BB66C00DC1725 /* Main.storyboard */; };
 		AA544C9C1D0BB66C00DC1725 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA544C9B1D0BB66C00DC1725 /* Assets.xcassets */; };
@@ -33,7 +32,6 @@
 /* Begin PBXFileReference section */
 		AA183F291D1A6DD200D31044 /* AnimalEncountersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimalEncountersViewController.swift; sourceTree = "<group>"; };
 		AA183F2B1D1A767F00D31044 /* AnimalDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimalDetailViewController.swift; sourceTree = "<group>"; };
-		AA49C2031D5176BC008AE631 /* DirectionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectionsViewController.swift; sourceTree = "<group>"; };
 		AA544C911D0BB66C00DC1725 /* Aquarium.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Aquarium.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA544C941D0BB66C00DC1725 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AA544C991D0BB66C00DC1725 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -94,7 +92,6 @@
 				AA6F4E651D386A2A00FA20F7 /* AnimalTableViewCell.swift */,
 				AAEE47671D3CAD8500E0C537 /* NotificationController.swift */,
 				AA909B171D41B42A000DB923 /* Feeding.swift */,
-				AA49C2031D5176BC008AE631 /* DirectionsViewController.swift */,
 				AA9D6EDF1D1CCD5000831AFE /* Animal.swift */,
 				AA183F291D1A6DD200D31044 /* AnimalEncountersViewController.swift */,
 				AA8D05151D19DC930063F222 /* HomeViewController.swift */,
@@ -200,7 +197,6 @@
 				AAEE47681D3CAD8500E0C537 /* NotificationController.swift in Sources */,
 				AA6F4E641D3868F900FA20F7 /* Animations.swift in Sources */,
 				AA544CAB1D0C790400DC1725 /* UIAppearance.swift in Sources */,
-				AA49C2041D5176BC008AE631 /* DirectionsViewController.swift in Sources */,
 				AA544CAF1D0C94DE00DC1725 /* OceanExplorerTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

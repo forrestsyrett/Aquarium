@@ -7,24 +7,6 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Directions-->
-        <scene sceneID="TY3-Uy-2hF">
-            <objects>
-                <viewController title="Directions" id="PKG-de-NU1" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="qqT-bV-3wl"/>
-                        <viewControllerLayoutGuide type="bottom" id="R0z-Ik-wRZ"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="VaD-h2-lYr">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="6fh-l9-pu6" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1322" y="-282"/>
-        </scene>
         <!--Home View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -316,8 +298,8 @@
                         <outlet property="delegate" destination="YCa-8W-zlY" id="Eug-ta-Gfz"/>
                         <segue destination="cTl-Ja-usU" kind="relationship" relationship="viewControllers" id="wgt-fe-5m4"/>
                         <segue destination="KCB-DP-Mnn" kind="relationship" relationship="viewControllers" id="HYK-rZ-Ezd"/>
-                        <segue destination="TAp-52-NIz" kind="relationship" relationship="viewControllers" id="F2k-Ll-5pG"/>
-                        <segue destination="tG8-4Y-Bg6" kind="relationship" relationship="viewControllers" id="dga-bB-dPB"/>
+                        <segue destination="XZH-NW-XMu" kind="relationship" relationship="viewControllers" id="xeE-QR-McR"/>
+                        <segue destination="uai-Rq-JX2" kind="relationship" relationship="viewControllers" id="ps6-Xv-MyU"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LYA-8d-shZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -362,6 +344,19 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Exhibit Galleries" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HpM-AN-CZ4">
+                                <rect key="frame" x="20" y="35" width="560" height="22"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ogq-h8-YMd">
+                                <rect key="frame" x="20" y="61" width="560" height="1"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="Qb4-9v-L4C"/>
+                                </constraints>
+                            </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="jgL-h8-fmL">
                                 <rect key="frame" x="20" y="64" width="560" height="487"/>
                                 <subviews>
@@ -486,17 +481,31 @@
                             <constraint firstItem="P2u-Qg-QUV" firstAttribute="top" secondItem="3tm-aJ-5ih" secondAttribute="bottom" id="30R-Io-F6e"/>
                             <constraint firstItem="jgL-h8-fmL" firstAttribute="leading" secondItem="ovV-yW-6qt" secondAttribute="leadingMargin" id="5JC-tr-Wih"/>
                             <constraint firstItem="QrM-0H-C8J" firstAttribute="leading" secondItem="ovV-yW-6qt" secondAttribute="leadingMargin" id="5zc-Re-oNO"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="HpM-AN-CZ4" secondAttribute="trailing" id="9Gj-9I-OSo"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ogq-h8-YMd" secondAttribute="trailing" id="BVP-1l-ehS"/>
                             <constraint firstAttribute="trailingMargin" secondItem="jgL-h8-fmL" secondAttribute="trailing" id="GVW-1e-m5l"/>
                             <constraint firstItem="6wr-cj-8pB" firstAttribute="top" secondItem="QrM-0H-C8J" secondAttribute="bottom" constant="5" id="I81-hU-sU6"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="HpM-AN-CZ4" secondAttribute="leading" id="IMf-14-dbB"/>
                             <constraint firstItem="msn-kC-Xg6" firstAttribute="top" secondItem="3tm-aJ-5ih" secondAttribute="bottom" constant="70" id="Irn-xg-huu"/>
                             <constraint firstAttribute="trailingMargin" secondItem="P2u-Qg-QUV" secondAttribute="trailing" id="NSI-gg-Bht"/>
                             <constraint firstItem="6wr-cj-8pB" firstAttribute="top" secondItem="P2u-Qg-QUV" secondAttribute="bottom" id="Ox2-EI-HSM"/>
                             <constraint firstItem="P2u-Qg-QUV" firstAttribute="leading" secondItem="ovV-yW-6qt" secondAttribute="leadingMargin" id="b4g-Eg-ADi"/>
+                            <constraint firstItem="ogq-h8-YMd" firstAttribute="top" secondItem="HpM-AN-CZ4" secondAttribute="bottom" constant="4" id="c3J-Nb-eTQ"/>
+                            <constraint firstItem="HpM-AN-CZ4" firstAttribute="top" secondItem="3tm-aJ-5ih" secondAttribute="bottom" constant="-29" id="cqc-1B-hlV"/>
+                            <constraint firstItem="ogq-h8-YMd" firstAttribute="centerX" secondItem="ovV-yW-6qt" secondAttribute="centerX" id="eVU-ea-VSP"/>
                             <constraint firstItem="6wr-cj-8pB" firstAttribute="top" secondItem="jgL-h8-fmL" secondAttribute="bottom" id="sCl-l8-nlr"/>
+                            <constraint firstItem="HpM-AN-CZ4" firstAttribute="centerX" secondItem="ovV-yW-6qt" secondAttribute="centerX" id="tCT-Cm-F0c"/>
+                            <constraint firstItem="ogq-h8-YMd" firstAttribute="leading" secondItem="HpM-AN-CZ4" secondAttribute="trailing" id="tXl-DD-Vl2"/>
                             <constraint firstItem="jgL-h8-fmL" firstAttribute="top" secondItem="3tm-aJ-5ih" secondAttribute="bottom" id="udq-Oj-541"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="ogq-h8-YMd" secondAttribute="leading" id="yCD-PY-aBa"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="tXl-DD-Vl2"/>
+                            </mask>
+                        </variation>
                     </view>
-                    <navigationItem key="navigationItem" title="Exhibits" id="8YD-ZW-amk"/>
+                    <navigationItem key="navigationItem" id="8YD-ZW-amk"/>
                     <connections>
                         <outlet property="antarcticAdventureButton" destination="88J-sZ-eCS" id="WF5-3D-4O8"/>
                         <outlet property="discoverUtahButton" destination="msn-kC-Xg6" id="PWB-R9-GMC"/>
@@ -508,7 +517,7 @@
             </objects>
             <point key="canvasLocation" x="1322" y="1123"/>
         </scene>
-        <!--Special Events-->
+        <!--Animal Encounters View Controller-->
         <scene sceneID="euu-eR-3cJ">
             <objects>
                 <viewController id="kLs-Qc-lC6" customClass="AnimalEncountersViewController" customModule="Aquarium" customModuleProvider="target" sceneMemberID="viewController">
@@ -546,20 +555,38 @@ $24.95 per person or $19.95 for members.
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <dataDetectorType key="dataDetectorTypes" phoneNumber="YES"/>
                             </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Special Events" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tbE-vr-Iig">
+                                <rect key="frame" x="241" y="35" width="118" height="22"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VpU-6U-ytV">
+                                <rect key="frame" x="20" y="61" width="560" height="1"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="YVf-hF-Tik"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="leadingMargin" secondItem="Ms6-XZ-e5D" secondAttribute="leading" id="0wz-yQ-cOM"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="VpU-6U-ytV" secondAttribute="trailing" id="AdB-5u-zRE"/>
                             <constraint firstAttribute="leadingMargin" secondItem="Nd2-IS-BBg" secondAttribute="leading" id="BDO-7X-myZ"/>
+                            <constraint firstItem="tbE-vr-Iig" firstAttribute="top" secondItem="LL3-mG-mnS" secondAttribute="bottom" constant="-29" id="G21-xr-7k6"/>
                             <constraint firstItem="Nd2-IS-BBg" firstAttribute="top" secondItem="Ms6-XZ-e5D" secondAttribute="bottom" constant="10" id="Y8h-t4-KcY"/>
                             <constraint firstItem="Ms6-XZ-e5D" firstAttribute="centerX" secondItem="FgV-00-urt" secondAttribute="centerX" id="fYd-pv-nms"/>
+                            <constraint firstItem="VpU-6U-ytV" firstAttribute="top" secondItem="tbE-vr-Iig" secondAttribute="bottom" constant="4" id="m1D-eC-BIH"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Nd2-IS-BBg" secondAttribute="trailing" id="m94-vy-Qqt"/>
                             <constraint firstItem="Nd2-IS-BBg" firstAttribute="centerX" secondItem="FgV-00-urt" secondAttribute="centerX" id="nty-5E-tZu"/>
                             <constraint firstItem="Ms6-XZ-e5D" firstAttribute="top" secondItem="LL3-mG-mnS" secondAttribute="bottom" constant="20" id="nwW-gv-H3W"/>
+                            <constraint firstItem="tbE-vr-Iig" firstAttribute="centerX" secondItem="FgV-00-urt" secondAttribute="centerX" id="vB0-GC-cUd"/>
+                            <constraint firstItem="VpU-6U-ytV" firstAttribute="leading" secondItem="FgV-00-urt" secondAttribute="leadingMargin" id="xQa-Jz-KOV"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Ms6-XZ-e5D" secondAttribute="trailing" id="xy1-Up-v2L"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Special Events" id="uHD-hm-dTB"/>
+                    <navigationItem key="navigationItem" id="uHD-hm-dTB"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Abq-wb-dgp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -798,33 +825,57 @@ $24.95 per person or $19.95 for members.
                                     <action selector="scanButtonTapped:" destination="uai-Rq-JX2" eventType="touchUpInside" id="Dsh-mg-jOY"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cameraAccessPenguin" translatesAutoresizingMaskIntoConstraints="NO" id="vDK-XA-o7h">
+                                <rect key="frame" x="20" y="172" width="560" height="316"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="vDK-XA-o7h" secondAttribute="height" multiplier="124:85" id="2oh-qX-1B1"/>
+                                    <constraint firstAttribute="width" secondItem="vDK-XA-o7h" secondAttribute="height" multiplier="124:85" constant="99.011764705882399" id="5IC-jq-1Jz"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="2oh-qX-1B1"/>
+                                    </mask>
+                                </variation>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="vDK-XA-o7h" firstAttribute="centerY" secondItem="p1p-bL-GDg" secondAttribute="centerY" constant="30" id="5K6-cp-V6g"/>
+                            <constraint firstItem="vDK-XA-o7h" firstAttribute="bottom" secondItem="H8o-zs-gKh" secondAttribute="bottom" id="8P4-wi-FTw"/>
                             <constraint firstItem="jir-VW-avP" firstAttribute="top" secondItem="dNn-yR-jlI" secondAttribute="bottom" constant="283" id="BS9-DN-xdP"/>
                             <constraint firstItem="dNn-yR-jlI" firstAttribute="centerX" secondItem="p1p-bL-GDg" secondAttribute="centerX" id="EaG-ro-DeE"/>
                             <constraint firstAttribute="trailingMargin" secondItem="jnf-Ws-sfr" secondAttribute="trailing" id="EpC-up-N0n"/>
                             <constraint firstItem="H8o-zs-gKh" firstAttribute="centerX" secondItem="p1p-bL-GDg" secondAttribute="centerX" id="FRD-UQ-wfZ"/>
                             <constraint firstItem="pdo-TE-cKj" firstAttribute="leading" secondItem="p1p-bL-GDg" secondAttribute="leadingMargin" id="FqR-HW-vJa"/>
+                            <constraint firstItem="vDK-XA-o7h" firstAttribute="leading" secondItem="p1p-bL-GDg" secondAttribute="leadingMargin" id="Gf0-49-fpS"/>
                             <constraint firstItem="H8o-zs-gKh" firstAttribute="centerY" secondItem="p1p-bL-GDg" secondAttribute="centerY" id="KBy-ay-iVY"/>
                             <constraint firstItem="S5t-oz-H9R" firstAttribute="top" secondItem="jnf-Ws-sfr" secondAttribute="bottom" constant="5" id="Mec-DH-Tvw"/>
+                            <constraint firstItem="vDK-XA-o7h" firstAttribute="top" secondItem="H8o-zs-gKh" secondAttribute="top" id="OAg-0x-HMD"/>
                             <constraint firstItem="dNn-yR-jlI" firstAttribute="top" secondItem="H8o-zs-gKh" secondAttribute="bottom" constant="-284" id="eTP-xK-Q4j"/>
                             <constraint firstAttribute="leadingMargin" secondItem="jnf-Ws-sfr" secondAttribute="leading" id="iZt-mu-bQZ"/>
+                            <constraint firstItem="vDK-XA-o7h" firstAttribute="top" secondItem="dNn-yR-jlI" secondAttribute="bottom" constant="10" id="lck-Wf-Wzb"/>
                             <constraint firstItem="jir-VW-avP" firstAttribute="centerX" secondItem="p1p-bL-GDg" secondAttribute="centerX" id="rEB-HP-95Z"/>
+                            <constraint firstItem="vDK-XA-o7h" firstAttribute="centerX" secondItem="H8o-zs-gKh" secondAttribute="centerX" id="rMG-mJ-mhg"/>
                             <constraint firstItem="H8o-zs-gKh" firstAttribute="top" secondItem="dNn-yR-jlI" secondAttribute="bottom" constant="10" id="rY1-qr-wrJ"/>
                             <constraint firstItem="jir-VW-avP" firstAttribute="top" secondItem="H8o-zs-gKh" secondAttribute="bottom" constant="30" id="sy3-bm-wV7"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="vDK-XA-o7h" secondAttribute="trailing" id="tjV-AU-43X"/>
                             <constraint firstItem="S5t-oz-H9R" firstAttribute="top" secondItem="pdo-TE-cKj" secondAttribute="bottom" constant="63" id="z1y-OQ-PGU"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="8P4-wi-FTw"/>
+                                <exclude reference="OAg-0x-HMD"/>
+                                <exclude reference="rMG-mJ-mhg"/>
                                 <exclude reference="eTP-xK-Q4j"/>
                                 <exclude reference="BS9-DN-xdP"/>
                             </mask>
                         </variation>
                     </view>
+                    <tabBarItem key="tabBarItem" title="" image="qrCode" selectedImage="qrCodeFilled" id="8zP-hr-HLq"/>
                     <navigationItem key="navigationItem" title="QR Scanner" id="LiI-1X-I6n"/>
                     <connections>
                         <outlet property="alignQRCodeLabel" destination="dNn-yR-jlI" id="kDB-SV-XOW"/>
+                        <outlet property="cameraAccessPenguin" destination="vDK-XA-o7h" id="G0B-Om-9pe"/>
                         <outlet property="photoFrameImage" destination="H8o-zs-gKh" id="1Z0-pL-Z1X"/>
                         <outlet property="qrCodeResult" destination="pdo-TE-cKj" id="6lw-CQ-hWL"/>
                         <outlet property="scanButton" destination="jir-VW-avP" id="ho1-or-nKI"/>
@@ -834,44 +885,6 @@ $24.95 per person or $19.95 for members.
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vRI-qV-PHc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1322" y="1802"/>
-        </scene>
-        <!--QR Scanner-->
-        <scene sceneID="qlQ-UG-oP7">
-            <objects>
-                <navigationController title="QR Scanner" automaticallyAdjustsScrollViewInsets="NO" id="tG8-4Y-Bg6" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="qrCode" selectedImage="qrCodeFilled" id="CXt-Go-d7P"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="SS7-yz-jlH">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="uai-Rq-JX2" kind="relationship" relationship="rootViewController" id="Dda-OK-2LE"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="QOh-cU-ro4" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="591" y="1802"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="EIs-Me-FkB">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TAp-52-NIz" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="calendar" selectedImage="calendarFilled" id="odX-SY-ocH"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="8hC-GE-crx">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="XZH-NW-XMu" kind="relationship" relationship="rootViewController" id="a3B-Bh-Nv9"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="pSg-Au-Qdj" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2764" y="81"/>
         </scene>
         <!--Animal Feedings-->
         <scene sceneID="QAN-EJ-vGH">
@@ -1015,6 +1028,19 @@ $24.95 per person or $19.95 for members.
                                     <constraint firstAttribute="height" constant="1" id="Jdx-AG-uZw"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CRI-2g-MbA">
+                                <rect key="frame" x="20" y="61" width="560" height="1"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="XI4-fg-U96"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Animal Feedings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bwl-JV-Cza">
+                                <rect key="frame" x="233" y="35" width="134" height="22"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -1023,13 +1049,19 @@ $24.95 per person or $19.95 for members.
                             <constraint firstItem="1RR-lf-6Xi" firstAttribute="top" secondItem="VSg-Yz-0Nd" secondAttribute="bottom" constant="8" id="HLS-zz-KzY"/>
                             <constraint firstItem="VSg-Yz-0Nd" firstAttribute="trailing" secondItem="d9f-3L-BKK" secondAttribute="trailingMargin" id="KKN-qU-eDQ"/>
                             <constraint firstItem="1RR-lf-6Xi" firstAttribute="bottom" secondItem="ep7-ky-GFT" secondAttribute="top" constant="-8" id="Q2Y-Mh-gKH"/>
-                            <constraint firstItem="VSg-Yz-0Nd" firstAttribute="top" secondItem="Ams-48-QmZ" secondAttribute="bottom" constant="8" symbolic="YES" id="YyN-pF-nhe"/>
+                            <constraint firstItem="VSg-Yz-0Nd" firstAttribute="top" secondItem="Ams-48-QmZ" secondAttribute="bottom" constant="52" id="YyN-pF-nhe"/>
+                            <constraint firstItem="CRI-2g-MbA" firstAttribute="top" secondItem="Bwl-JV-Cza" secondAttribute="bottom" constant="4" id="arR-oY-KGx"/>
                             <constraint firstItem="ep7-ky-GFT" firstAttribute="top" secondItem="xQd-oe-lCc" secondAttribute="bottom" constant="5" id="bE2-br-RQS"/>
+                            <constraint firstItem="Bwl-JV-Cza" firstAttribute="top" secondItem="Ams-48-QmZ" secondAttribute="bottom" constant="15" id="cNy-MA-9Cz"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="CRI-2g-MbA" secondAttribute="trailing" id="d6r-kG-kit"/>
                             <constraint firstItem="VSg-Yz-0Nd" firstAttribute="leading" secondItem="d9f-3L-BKK" secondAttribute="leadingMargin" id="eJX-4a-Qgc"/>
                             <constraint firstAttribute="trailingMargin" secondItem="xQd-oe-lCc" secondAttribute="trailing" id="kx0-uk-EUq"/>
+                            <constraint firstItem="Bwl-JV-Cza" firstAttribute="centerX" secondItem="d9f-3L-BKK" secondAttribute="centerX" id="sX4-hk-Gak"/>
                             <constraint firstItem="VSg-Yz-0Nd" firstAttribute="leading" secondItem="1RR-lf-6Xi" secondAttribute="leading" constant="20" id="vEE-NJ-MiQ"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="CRI-2g-MbA" secondAttribute="leading" id="vSn-Md-pLQ"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="" image="calendar" selectedImage="calendarFilled" id="XXR-kG-8zh"/>
                     <navigationItem key="navigationItem" title="Animal Feedings" id="Dw9-e0-Sy6"/>
                     <connections>
                         <outlet property="animalFeedTableView" destination="1RR-lf-6Xi" id="akh-SQ-JaY"/>
@@ -1038,7 +1070,7 @@ $24.95 per person or $19.95 for members.
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b0x-dR-8uk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3455" y="81"/>
+            <point key="canvasLocation" x="2764" y="81"/>
         </scene>
     </scenes>
     <resources>
@@ -1046,6 +1078,7 @@ $24.95 per person or $19.95 for members.
         <image name="QRviewfinder" width="384" height="248"/>
         <image name="calendar" width="30" height="30"/>
         <image name="calendarFilled" width="30" height="30"/>
+        <image name="cameraAccessPenguin" width="564" height="411"/>
         <image name="checkmark" width="25" height="25"/>
         <image name="discoverUtahButtonBackground" width="369" height="83"/>
         <image name="fish" width="50" height="50"/>
