@@ -12,17 +12,20 @@ import SafariServices
 
 
 
-class QRScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
+class QRScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate, SFSafariViewControllerDelegate {
     
     
     @IBOutlet weak var qrCodeResult: UILabel!
     @IBOutlet weak var photoFrameImage: UIImageView!
+    @IBOutlet weak var tabBarLineView: UIView!
+    @IBOutlet weak var alignQRCodeLabel: UILabel!
+    @IBOutlet weak var scanButton: UIButton!
     
     
-        var captureSession: AVCaptureSession?
-        var videoPreviewLayer: AVCaptureVideoPreviewLayer?
-        var qrCodeFrameView: UIView?
-        
+    var captureSession: AVCaptureSession?
+    var videoPreviewLayer: AVCaptureVideoPreviewLayer?
+    var qrCodeFrameView: UIView?
+    
     
     func configureVideoCapture() {
         let captureDevice = AVCaptureDevice.defaultDeviceWithMediaType(AVMediaTypeVideo)
@@ -46,6 +49,8 @@ class QRScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsD
             alertController.addAction(cancelAction)
             self.presentViewController(alertController, animated: true, completion: nil)
         }
+        
+        
         captureSession = AVCaptureSession()
         captureSession?.addInput(input as! AVCaptureInput)
         let objCaptureMetadataOutput = AVCaptureMetadataOutput()
@@ -61,7 +66,6 @@ class QRScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsD
         videoPreviewLayer?.frame = view.layer.bounds
         self.view.layer.addSublayer(videoPreviewLayer!)
         captureSession?.startRunning()
-//        self.view.bringSubviewToFront(qrCodeResult)
     }
     
     func initializeQRView() {
@@ -69,8 +73,14 @@ class QRScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsD
         qrCodeFrameView?.layer.borderColor = UIColor.blueColor().CGColor
         qrCodeFrameView?.layer.borderWidth = 5
         self.view.addSubview(qrCodeFrameView!)
-//        self.view.bringSubviewToFront(qrCodeFrameView!)
+        self.view.addSubview(tabBarLineView)
+        self.view.addSubview(photoFrameImage)
+        self.view.addSubview(alignQRCodeLabel)
+        self.view.addSubview(scanButton)
+        //        self.view.bringSubviewToFront(qrCodeFrameView!)
     }
+    
+    
     
     func captureOutput(captureOutput: AVCaptureOutput!, didOutputMetadataObjects metadataObjects: [AnyObject]!, fromConnection connection: AVCaptureConnection!) {
         if metadataObjects == nil || metadataObjects.count == 0 {
@@ -84,14 +94,35 @@ class QRScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsD
             qrCodeFrameView?.frame = objBarCode.bounds;
             if objMetadataMachineReadableCodeObject.stringValue != nil {
                 qrCodeResult.text = objMetadataMachineReadableCodeObject.stringValue
-                AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
-
-                let safariVC = SFSafariViewController(URL: NSURL(string: qrCodeResult.text!)!)
-                self.presentViewController(safariVC, animated: true, completion: nil)
-//                     if (safariVC.isBeingDismissed() == true){ captureSession?.performSelector(#selector(captureSession?.startRunning), withObject: nil, afterDelay: 1.0)
-                }
+                
+            }
         }
     }
+    
+    @IBAction func scanButtonTapped(sender: AnyObject) {
+        
+        let qrResult = qrCodeResult.text
+        
+        func openURL() {
+            guard let url = NSURL(string: qrResult!) else {
+                // not a valid URL
+                return
+            }
+            //            if qrResult != nil {
+            
+            // Can open with SFSafariViewController
+            if ["http", "https"].contains(url.scheme.lowercaseString) {
+                // Can open with SFSafariViewController
+                let safariViewController = SFSafariViewController(URL: url)
+                self.presentViewController(safariViewController, animated: true, completion: nil)
+                AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
+            } else { return }
+        }
+        
+        openURL()
+        
+    }
+    
     
     
     func qrOn(isOn: Bool = false) {
@@ -105,7 +136,8 @@ class QRScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsD
         super.viewDidLoad()
         
         qrOn(true)
-
+        scanButton.layer.cornerRadius = 20
+        
     }
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
@@ -115,6 +147,7 @@ class QRScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsD
     }
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        captureSession?.stopRunning()
         if let qrCodeFrameView = qrCodeFrameView {
             qrCodeFrameView.removeFromSuperview()
         }
@@ -126,6 +159,8 @@ class QRScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsD
             self.captureSession!.startRunning()
         }
     }
+    
+    
 }
 
 

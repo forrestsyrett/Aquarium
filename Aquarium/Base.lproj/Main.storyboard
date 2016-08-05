@@ -224,12 +224,19 @@
                                 </variation>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="smallLogo" translatesAutoresizingMaskIntoConstraints="NO" id="oWX-bw-Jvg">
-                                <rect key="frame" x="267" y="479" width="67" height="64"/>
+                                <rect key="frame" x="267" y="437" width="67" height="64"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="64" id="2yw-n0-Hyd"/>
                                     <constraint firstAttribute="width" secondItem="oWX-bw-Jvg" secondAttribute="height" multiplier="67:64" id="Y5X-yD-mcm"/>
                                 </constraints>
                             </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A30-8u-NHL">
+                                <rect key="frame" x="20" y="545" width="560" height="1"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="EsR-UT-Sdx"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -238,9 +245,12 @@
                             <constraint firstItem="FWU-uv-02e" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="9M6-Gl-QBe"/>
                             <constraint firstItem="FWU-uv-02e" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="DLN-l4-Vki"/>
                             <constraint firstItem="FWU-uv-02e" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="NnA-iA-GNb"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="oWX-bw-Jvg" secondAttribute="bottom" constant="8" id="TAz-3e-kOq"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="oWX-bw-Jvg" secondAttribute="bottom" constant="50" id="TAz-3e-kOq"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="A30-8u-NHL" secondAttribute="bottom" constant="5" id="Vpm-UY-UZc"/>
                             <constraint firstItem="kJa-Wu-OkP" firstAttribute="top" secondItem="qCa-VU-Dni" secondAttribute="bottom" id="WON-MA-DnC"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="A30-8u-NHL" secondAttribute="trailing" id="Xht-OV-4gz"/>
                             <constraint firstItem="oWX-bw-Jvg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="e2v-aO-0pF"/>
+                            <constraint firstItem="A30-8u-NHL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="eMn-Fk-Rmi"/>
                             <constraint firstItem="qCa-VU-Dni" firstAttribute="top" secondItem="cZa-9F-t4n" secondAttribute="bottom" constant="3" id="fDz-K8-da2"/>
                             <constraint firstItem="qCa-VU-Dni" firstAttribute="leading" secondItem="cZa-9F-t4n" secondAttribute="trailing" constant="8" id="i7l-ay-YO4"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="kJa-Wu-OkP" secondAttribute="bottom" id="ogs-UG-A1F"/>
@@ -274,11 +284,11 @@
             </objects>
             <point key="canvasLocation" x="1322" y="389"/>
         </scene>
-        <!--Home-->
+        <!--Navigation Controller-->
         <scene sceneID="rZh-HU-YfR">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cTl-Ja-usU" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" id="PDX-89-lF2"/>
+                    <tabBarItem key="tabBarItem" title="" image="home" selectedImage="homeFilled" id="PDX-89-lF2"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="4Oi-c8-wAc">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -314,11 +324,13 @@
             </objects>
             <point key="canvasLocation" x="-129" y="389"/>
         </scene>
-        <!--Exhibits-->
+        <!--Navigation Controller-->
         <scene sceneID="e01-W2-yIz">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="KCB-DP-Mnn" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Exhibits" id="Qvh-Ox-Vq0"/>
+                    <tabBarItem key="tabBarItem" title="" image="fish" selectedImage="fishFilled" id="Qvh-Ox-Vq0">
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="p7C-Sc-Iat">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -461,11 +473,21 @@
                                     <constraint firstItem="bS7-FE-mbE" firstAttribute="top" secondItem="88J-sZ-eCS" secondAttribute="bottom" id="Zs3-Gy-eqL"/>
                                 </constraints>
                             </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QrM-0H-C8J">
+                                <rect key="frame" x="20" y="545" width="560" height="1"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="myR-oR-nRi"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="QrM-0H-C8J" secondAttribute="trailing" id="1Z3-0X-Q8W"/>
                             <constraint firstItem="P2u-Qg-QUV" firstAttribute="top" secondItem="3tm-aJ-5ih" secondAttribute="bottom" id="30R-Io-F6e"/>
                             <constraint firstItem="jgL-h8-fmL" firstAttribute="leading" secondItem="ovV-yW-6qt" secondAttribute="leadingMargin" id="5JC-tr-Wih"/>
+                            <constraint firstItem="QrM-0H-C8J" firstAttribute="leading" secondItem="ovV-yW-6qt" secondAttribute="leadingMargin" id="5zc-Re-oNO"/>
                             <constraint firstAttribute="trailingMargin" secondItem="jgL-h8-fmL" secondAttribute="trailing" id="GVW-1e-m5l"/>
+                            <constraint firstItem="6wr-cj-8pB" firstAttribute="top" secondItem="QrM-0H-C8J" secondAttribute="bottom" constant="5" id="I81-hU-sU6"/>
                             <constraint firstItem="msn-kC-Xg6" firstAttribute="top" secondItem="3tm-aJ-5ih" secondAttribute="bottom" constant="70" id="Irn-xg-huu"/>
                             <constraint firstAttribute="trailingMargin" secondItem="P2u-Qg-QUV" secondAttribute="trailing" id="NSI-gg-Bht"/>
                             <constraint firstItem="6wr-cj-8pB" firstAttribute="top" secondItem="P2u-Qg-QUV" secondAttribute="bottom" id="Ox2-EI-HSM"/>
@@ -741,16 +763,72 @@ $24.95 per person or $19.95 for members.
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jnf-Ws-sfr">
+                                <rect key="frame" x="20" y="545" width="560" height="1"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="xDM-Jm-QXT"/>
+                                </constraints>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="QRviewfinder" translatesAutoresizingMaskIntoConstraints="NO" id="H8o-zs-gKh">
+                                <rect key="frame" x="173" y="172" width="255" height="255"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="H8o-zs-gKh" secondAttribute="height" multiplier="1:1" id="2or-DY-HRc"/>
+                                    <constraint firstAttribute="width" constant="255" id="6JL-A6-65p"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Align QR Code in Frame" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dNn-yR-jlI">
+                                <rect key="frame" x="209" y="141" width="182" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jir-VW-avP">
+                                <rect key="frame" x="242" y="457" width="117" height="59"/>
+                                <color key="backgroundColor" red="0.60297624350000001" green="0.77598434559999996" blue="0.88197115380000002" alpha="0.76686422409999999" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="59" id="fRW-lE-90l"/>
+                                    <constraint firstAttribute="width" constant="117" id="wH5-GU-ibS"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Scan!">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="scanButtonTapped:" destination="uai-Rq-JX2" eventType="touchUpInside" id="Dsh-mg-jOY"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="jir-VW-avP" firstAttribute="top" secondItem="dNn-yR-jlI" secondAttribute="bottom" constant="283" id="BS9-DN-xdP"/>
+                            <constraint firstItem="dNn-yR-jlI" firstAttribute="centerX" secondItem="p1p-bL-GDg" secondAttribute="centerX" id="EaG-ro-DeE"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="jnf-Ws-sfr" secondAttribute="trailing" id="EpC-up-N0n"/>
+                            <constraint firstItem="H8o-zs-gKh" firstAttribute="centerX" secondItem="p1p-bL-GDg" secondAttribute="centerX" id="FRD-UQ-wfZ"/>
                             <constraint firstItem="pdo-TE-cKj" firstAttribute="leading" secondItem="p1p-bL-GDg" secondAttribute="leadingMargin" id="FqR-HW-vJa"/>
+                            <constraint firstItem="H8o-zs-gKh" firstAttribute="centerY" secondItem="p1p-bL-GDg" secondAttribute="centerY" id="KBy-ay-iVY"/>
+                            <constraint firstItem="S5t-oz-H9R" firstAttribute="top" secondItem="jnf-Ws-sfr" secondAttribute="bottom" constant="5" id="Mec-DH-Tvw"/>
+                            <constraint firstItem="dNn-yR-jlI" firstAttribute="top" secondItem="H8o-zs-gKh" secondAttribute="bottom" constant="-284" id="eTP-xK-Q4j"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="jnf-Ws-sfr" secondAttribute="leading" id="iZt-mu-bQZ"/>
+                            <constraint firstItem="jir-VW-avP" firstAttribute="centerX" secondItem="p1p-bL-GDg" secondAttribute="centerX" id="rEB-HP-95Z"/>
+                            <constraint firstItem="H8o-zs-gKh" firstAttribute="top" secondItem="dNn-yR-jlI" secondAttribute="bottom" constant="10" id="rY1-qr-wrJ"/>
+                            <constraint firstItem="jir-VW-avP" firstAttribute="top" secondItem="H8o-zs-gKh" secondAttribute="bottom" constant="30" id="sy3-bm-wV7"/>
                             <constraint firstItem="S5t-oz-H9R" firstAttribute="top" secondItem="pdo-TE-cKj" secondAttribute="bottom" constant="63" id="z1y-OQ-PGU"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="eTP-xK-Q4j"/>
+                                <exclude reference="BS9-DN-xdP"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="QR Scanner" id="LiI-1X-I6n"/>
                     <connections>
+                        <outlet property="alignQRCodeLabel" destination="dNn-yR-jlI" id="kDB-SV-XOW"/>
+                        <outlet property="photoFrameImage" destination="H8o-zs-gKh" id="1Z0-pL-Z1X"/>
                         <outlet property="qrCodeResult" destination="pdo-TE-cKj" id="6lw-CQ-hWL"/>
+                        <outlet property="scanButton" destination="jir-VW-avP" id="ho1-or-nKI"/>
+                        <outlet property="tabBarLineView" destination="jnf-Ws-sfr" id="1st-9Z-IIU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vRI-qV-PHc" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -761,7 +839,7 @@ $24.95 per person or $19.95 for members.
         <scene sceneID="qlQ-UG-oP7">
             <objects>
                 <navigationController title="QR Scanner" automaticallyAdjustsScrollViewInsets="NO" id="tG8-4Y-Bg6" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Scan" id="CXt-Go-d7P"/>
+                    <tabBarItem key="tabBarItem" title="" image="qrCode" selectedImage="qrCodeFilled" id="CXt-Go-d7P"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="SS7-yz-jlH">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -776,11 +854,11 @@ $24.95 per person or $19.95 for members.
             </objects>
             <point key="canvasLocation" x="591" y="1802"/>
         </scene>
-        <!--Schedule-->
+        <!--Navigation Controller-->
         <scene sceneID="EIs-Me-FkB">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TAp-52-NIz" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Schedule" id="odX-SY-ocH"/>
+                    <tabBarItem key="tabBarItem" title="" image="calendar" selectedImage="calendarFilled" id="odX-SY-ocH"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="8hC-GE-crx">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -808,7 +886,7 @@ $24.95 per person or $19.95 for members.
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="144" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1RR-lf-6Xi">
-                                <rect key="frame" x="0.0" y="120" width="600" height="431"/>
+                                <rect key="frame" x="0.0" y="120" width="600" height="423"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="feedCell" rowHeight="144" id="S9S-cD-9fi" customClass="AnimalFeedTableViewCell" customModule="Aquarium" customModuleProvider="target">
@@ -930,15 +1008,25 @@ $24.95 per person or $19.95 for members.
                                     <action selector="weekdaySegmentedControlSelected:" destination="XZH-NW-XMu" eventType="valueChanged" id="wrL-vy-tpv"/>
                                 </connections>
                             </segmentedControl>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xQd-oe-lCc">
+                                <rect key="frame" x="20" y="545" width="560" height="1"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="Jdx-AG-uZw"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="VSg-Yz-0Nd" firstAttribute="trailing" secondItem="1RR-lf-6Xi" secondAttribute="trailing" constant="-20" id="2EP-jc-SqD"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="xQd-oe-lCc" secondAttribute="leading" id="H7p-Tc-B3B"/>
                             <constraint firstItem="1RR-lf-6Xi" firstAttribute="top" secondItem="VSg-Yz-0Nd" secondAttribute="bottom" constant="8" id="HLS-zz-KzY"/>
                             <constraint firstItem="VSg-Yz-0Nd" firstAttribute="trailing" secondItem="d9f-3L-BKK" secondAttribute="trailingMargin" id="KKN-qU-eDQ"/>
-                            <constraint firstItem="1RR-lf-6Xi" firstAttribute="bottom" secondItem="ep7-ky-GFT" secondAttribute="top" id="Q2Y-Mh-gKH"/>
+                            <constraint firstItem="1RR-lf-6Xi" firstAttribute="bottom" secondItem="ep7-ky-GFT" secondAttribute="top" constant="-8" id="Q2Y-Mh-gKH"/>
                             <constraint firstItem="VSg-Yz-0Nd" firstAttribute="top" secondItem="Ams-48-QmZ" secondAttribute="bottom" constant="8" symbolic="YES" id="YyN-pF-nhe"/>
+                            <constraint firstItem="ep7-ky-GFT" firstAttribute="top" secondItem="xQd-oe-lCc" secondAttribute="bottom" constant="5" id="bE2-br-RQS"/>
                             <constraint firstItem="VSg-Yz-0Nd" firstAttribute="leading" secondItem="d9f-3L-BKK" secondAttribute="leadingMargin" id="eJX-4a-Qgc"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="xQd-oe-lCc" secondAttribute="trailing" id="kx0-uk-EUq"/>
                             <constraint firstItem="VSg-Yz-0Nd" firstAttribute="leading" secondItem="1RR-lf-6Xi" secondAttribute="leading" constant="20" id="vEE-NJ-MiQ"/>
                         </constraints>
                     </view>
@@ -955,11 +1043,20 @@ $24.95 per person or $19.95 for members.
     </scenes>
     <resources>
         <image name="AntarcticAdventurebuttonBackground" width="501" height="65"/>
+        <image name="QRviewfinder" width="384" height="248"/>
+        <image name="calendar" width="30" height="30"/>
+        <image name="calendarFilled" width="30" height="30"/>
         <image name="checkmark" width="25" height="25"/>
         <image name="discoverUtahButtonBackground" width="369" height="83"/>
+        <image name="fish" width="50" height="50"/>
+        <image name="fishFilled" width="30" height="30"/>
+        <image name="home" width="30" height="30"/>
+        <image name="homeFilled" width="30" height="30"/>
         <image name="jsaButtonBackground" width="398" height="80"/>
         <image name="oceanExplorerButtonBackground" width="478" height="65"/>
         <image name="penguinEncounters" width="965" height="350"/>
+        <image name="qrCode" width="30" height="30"/>
+        <image name="qrCodeFilled" width="30" height="30"/>
         <image name="smallLogo" width="67" height="64"/>
     </resources>
 </document>

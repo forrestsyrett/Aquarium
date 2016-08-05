@@ -9,7 +9,7 @@
 import UIKit
 import Foundation
 
-enum Feeding {
+enum Feeding: String {
     case shark
     case penguin
     case archerfish

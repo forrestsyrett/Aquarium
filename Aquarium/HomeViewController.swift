@@ -40,6 +40,8 @@ class HomeViewController: UIViewController {
 
         gradient(self.view)
         transparentNavigationBar(self)
+        
+        tabBarController?.tabBarItem.image = UIImage(named: "home")
 
         // Do any additional setup after loading the view.
     }
