@@ -20,7 +20,7 @@ class QRScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsD
     @IBOutlet weak var tabBarLineView: UIView!
     @IBOutlet weak var alignQRCodeLabel: UILabel!
     @IBOutlet weak var scanButton: UIButton!
-    @IBOutlet weak var cameraAccessPenguin: UIImageView!
+//    @IBOutlet weak var cameraAccessPenguin: UIImageView!
     
     
     var captureSession: AVCaptureSession?
@@ -141,7 +141,7 @@ class QRScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsD
         {
         qrOn(true)
         scanButton.layer.cornerRadius = 20
-            cameraAccessPenguin.hidden = true
+//            cameraAccessPenguin.hidden = true
         }
         
         else {

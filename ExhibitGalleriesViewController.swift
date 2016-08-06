@@ -11,12 +11,6 @@ import UIKit
 
 class ExhibitGalleriesViewController: UIViewController, UITabBarDelegate {
     
-    
-//    func tabBar
-//        //This method will be called when user changes tab.
-//        
-//        animate()
-//    
 
 
     // MARK: Outlets
@@ -66,17 +60,4 @@ class ExhibitGalleriesViewController: UIViewController, UITabBarDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-    
-
-
 }

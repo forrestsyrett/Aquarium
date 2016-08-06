@@ -68,6 +68,7 @@ class AnimalFeedTableViewController: UIViewController, UITableViewDelegate, UITa
     
      func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(reuseIdentifier, forIndexPath: indexPath) as! AnimalFeedTableViewCell
+        
         cell.delegate = self
         
         let feed = feeds[indexPath.row]

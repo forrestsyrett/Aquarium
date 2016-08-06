@@ -9,72 +9,68 @@
 import UIKit
 import CoreImage
 
-class BarcodeGeneratorViewController: UIViewController, UITextFieldDelegate {
+class AddNewMembershipViewController: UIViewController, UITextFieldDelegate {
     
-    @IBOutlet weak var barcodeImage: UIImageView!
-    @IBOutlet weak var barcodeNumberLabel: UILabel!
-    @IBOutlet weak var barcodeNumberTextField: UITextField!
+    @IBOutlet var membershipNameTextField: UITextField!
+    @IBOutlet var membershipIDTextField: UITextField!
+    @IBOutlet weak var saveButton: UIBarButtonItem!
     
+    var membership: MembershipCard?
+    var membershipCell = MembershipCardTableViewCell()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         gradient(self.view)
         
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(BarcodeGeneratorViewController.dismissKeyboard))
-        view.addGestureRecognizer(tap)
+        membershipNameTextField.delegate = self
+        membershipIDTextField.delegate = self
         
-        barcodeNumberTextField.delegate = self
+        if membershipNameTextField.text?.isEmpty == true {
+            saveButton.enabled = false
+        }
 
     }
-    
-    func dismissKeyboard() {
-        view.endEditing(true)
-    }
-    
+ 
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         
-        
-        
-        
-        if barcodeNumberTextField.text != nil {
-        let barcodeNumber = barcodeNumberTextField.text
-        let barcode = BarcodeGeneratorViewController.barcodefromString(barcodeNumber!)
-        
-        barcodeImage.image = barcode
-        barcodeNumberLabel.text = barcodeNumber
-        roundCornerButtons(barcodeImage)
-        textField.resignFirstResponder()
+        if membershipNameTextField.text == "" || membershipIDTextField.text == "" {
+            saveButton.enabled = false
         } else {
-            textField.resignFirstResponder()}
+            saveButton.enabled = true
+        }
+        membershipIDTextField.resignFirstResponder()
+        membershipNameTextField.resignFirstResponder()
         return true
         }
     
+        
+        
+        @IBAction func saveButton(sender: AnyObject) {
+            
+            if membership?.memberName == "" && membership?.memberID == "" { return }
+            else {
+                if let membership = self.membership {
+                    membership.memberName = self.membershipNameTextField.text!
+                    membership.memberID = self.membershipIDTextField.text!
+                    membership.barcodeImageString = self.membershipIDTextField.text!
+                    
+                } else {
+                    let newMembership = MembershipCard(memberID: self.membershipIDTextField.text!, memberName: self.membershipNameTextField.text!, barcodeImageString: membershipIDTextField.text!)
+                    MembershipCardController.sharedMembershipController.addMembership(newMembership)
+                    self.membership = newMembership
+                }
+            }
+            
+            self.navigationController?.popViewControllerAnimated(true)
+        }
     
-    
-    
-    class func barcodefromString(string : String) -> UIImage? {
         
-        guard let barcode = string.dataUsingEncoding(NSASCIIStringEncoding) else { return BarcodeGeneratorViewController.barcodefromString("1") }
         
-        let filter = CIFilter(name: "CICode128BarcodeGenerator")
-        filter!.setValue(barcode, forKey: "inputMessage")
-        return UIImage(CIImage: filter!.outputImage!)
-    }
-    
-    @IBAction func createButtonTapped(sender: AnyObject) {
-        
-        guard let barcodeNumber = barcodeNumberTextField.text else { return }
-   
-        let barcode = BarcodeGeneratorViewController.barcodefromString(barcodeNumber)
-        
-        barcodeImage.image = barcode
-        barcodeNumberLabel.text = barcodeNumber
-        roundCornerButtons(barcodeImage)
-        dismissKeyboard()
-        
-    }
-
+        func updateWithMembership(membership: MembershipCard) {
+            self.membership = membership
+            
+            self.membershipIDTextField.text = membership.memberID
+            self.membershipNameTextField.text = membership.memberName
 }
-
+}
