@@ -19,6 +19,7 @@ class ExhibitGalleriesViewController: UIViewController, UITabBarDelegate {
     @IBOutlet weak var journeyToSouthAmericaButton: UIButton!
     @IBOutlet weak var antarcticAdventureButton: UIButton!
     
+    @IBOutlet weak var expeditionAsiaButton: UIButton!
     
     // MARK: Animations
     
@@ -41,6 +42,7 @@ class ExhibitGalleriesViewController: UIViewController, UITabBarDelegate {
         roundCornerButtons(oceanExplorerButton)
         roundCornerButtons(journeyToSouthAmericaButton)
         roundCornerButtons(antarcticAdventureButton)
+        roundCornerButtons(expeditionAsiaButton)
         
         transparentNavigationBar(self)
         

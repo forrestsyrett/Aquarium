@@ -8,17 +8,21 @@
 
 import Foundation
 import UIKit
+import SafariServices
 
 class MembershipListTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var membershipCardTableView: UITableView!
+    @IBOutlet weak var welcomeView: UIView!
     
+    @IBOutlet weak var becomeAMemberButtonLabel: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //        gradient(self.view)
+
         membershipCardTableView.reloadData()
+        roundCornerButtons(becomeAMemberButtonLabel)
+        roundCornerButtons(welcomeView)
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -27,8 +31,26 @@ class MembershipListTableViewController: UIViewController, UITableViewDelegate, 
         membershipCardTableView.backgroundColor = UIColor.clearColor()
         transparentNavigationBar(self)
         
+        if MembershipCardController.sharedMembershipController.memberships.count != 0 {
+            
+            welcomeView.hidden = true
+        } else {
+            welcomeView.hidden = false
+        }
+    
         
     }
+    
+    
+    @IBAction func becomeAMemberButtonTapped(sender: AnyObject) {
+        
+        let safariVC = SFSafariViewController(URL: NSURL(string: "https://tickets.thelivingplanet.com/WebStore/Shop/ViewItems.aspx?CG=online&C=Memberships")!)
+        presentViewController(safariVC, animated: true, completion: nil)
+    }
+    
+    
+    
+    
     
     let membership = MembershipCardTableViewCell()
     
@@ -65,7 +87,6 @@ class MembershipListTableViewController: UIViewController, UITableViewDelegate, 
         cell.barcodeImage.image = barcodefromString(membership.memberID)
         cell.backgroundColor = UIColor.clearColor()
         roundCornerButtons(cell.barcodeImage)
-        
         
         return cell
     }

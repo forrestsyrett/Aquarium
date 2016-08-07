@@ -83,12 +83,17 @@ class AnimalFeedTableViewController: UIViewController, UITableViewDelegate, UITa
         cell.animalFeedTimeLabel.alpha = 0.0
         cell.checkMarkImage.alpha = 0.0
         cell.notifyMeButtonLabel.alpha = 0.0
+    
         
         animateLabel(cell.animalFeedLabel, animateTime: 0.75)
         animateImage(cell.animalFeedImage, animateTime: 0.75)
         animateLabel(cell.animalFeedTimeLabel, animateTime: 0.75)
         animateImage(cell.checkMarkImage, animateTime: 0.75)
         animateButton(cell.notifyMeButtonLabel, animateTime: 0.75)
+        
+        roundCornerButtons(cell.notifyMeButtonLabel)
+        roundCornerButtons(cell.animalFeedImage)
+        
         
         
         return cell
