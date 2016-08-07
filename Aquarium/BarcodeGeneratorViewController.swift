@@ -25,13 +25,14 @@ class AddNewMembershipViewController: UIViewController, UITextFieldDelegate {
         
         membershipNameTextField.delegate = self
         membershipIDTextField.delegate = self
+        transparentNavigationBar(self)
         
         if membershipNameTextField.text?.isEmpty == true {
             saveButton.enabled = false
         }
-
+        
     }
- 
+    
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         
         if membershipNameTextField.text == "" || membershipIDTextField.text == "" {
@@ -42,35 +43,35 @@ class AddNewMembershipViewController: UIViewController, UITextFieldDelegate {
         membershipIDTextField.resignFirstResponder()
         membershipNameTextField.resignFirstResponder()
         return true
-        }
+    }
     
+    
+    
+    @IBAction func saveButton(sender: AnyObject) {
         
-        
-        @IBAction func saveButton(sender: AnyObject) {
-            
-            if membership?.memberName == "" && membership?.memberID == "" { return }
-            else {
-                if let membership = self.membership {
-                    membership.memberName = self.membershipNameTextField.text!
-                    membership.memberID = self.membershipIDTextField.text!
-                    membership.barcodeImageString = self.membershipIDTextField.text!
-                    
-                } else {
-                    let newMembership = MembershipCard(memberID: self.membershipIDTextField.text!, memberName: self.membershipNameTextField.text!, barcodeImageString: membershipIDTextField.text!)
-                    MembershipCardController.sharedMembershipController.addMembership(newMembership)
-                    self.membership = newMembership
-                }
+        if membership?.memberName == "" && membership?.memberID == "" { return }
+        else {
+            if let membership = self.membership {
+                membership.memberName = self.membershipNameTextField.text!
+                membership.memberID = self.membershipIDTextField.text!
+                membership.barcodeImageString = self.membershipIDTextField.text!
+                
+            } else {
+                let newMembership = MembershipCard(memberID: self.membershipIDTextField.text!, memberName: self.membershipNameTextField.text!, barcodeImageString: membershipIDTextField.text!)
+                MembershipCardController.sharedMembershipController.addMembership(newMembership)
+                self.membership = newMembership
             }
-            
-            self.navigationController?.popViewControllerAnimated(true)
         }
+        
+        self.navigationController?.popViewControllerAnimated(true)
+    }
     
+    
+    
+    func updateWithMembership(membership: MembershipCard) {
+        self.membership = membership
         
-        
-        func updateWithMembership(membership: MembershipCard) {
-            self.membership = membership
-            
-            self.membershipIDTextField.text = membership.memberID
-            self.membershipNameTextField.text = membership.memberName
-}
+        self.membershipIDTextField.text = membership.memberID
+        self.membershipNameTextField.text = membership.memberName
+    }
 }

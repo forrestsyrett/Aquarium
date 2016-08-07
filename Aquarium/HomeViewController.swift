@@ -29,20 +29,8 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        // Navigation Title as an image
-        
-//        let logo = UIImage(named: "smallLogo")
-//        let imageView = UIImageView(image:logo)
-//        self.navigationItem.titleView = imageView
-        
-     
-
         gradient(self.view)
         transparentNavigationBar(self)
-        
-
-        // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -55,7 +43,7 @@ class HomeViewController: UIViewController {
         animateLines(lineFour, animateTime: 2.0)
     }
     
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -94,15 +82,4 @@ class HomeViewController: UIViewController {
     }
     
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

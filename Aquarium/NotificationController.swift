@@ -24,7 +24,7 @@ class NotificationController {
         fireDate = gregorian.dateBySettingUnit(.Hour, value: feeding.info.hour, ofDate: fireDate, options: [])!
         fireDate = gregorian.dateBySettingUnit(.Minute, value: feeding.info.minute, ofDate: fireDate, options: [])!
         
-
+        
         let feedNotification = UILocalNotification()
         let userInfoDictionary = [String(weekday) : feeding.info.animalName]
         
@@ -33,10 +33,10 @@ class NotificationController {
         feedNotification.timeZone = NSTimeZone.defaultTimeZone()
         feedNotification.repeatInterval = .WeekOfYear
         feedNotification.userInfo = userInfoDictionary
-    
+        
         
         if scheduled {
-        UIApplication.sharedApplication().scheduleLocalNotification(feedNotification)
+            UIApplication.sharedApplication().scheduleLocalNotification(feedNotification)
         }
         if scheduled == false {
             UIApplication.sharedApplication().cancelLocalNotification(feedNotification)

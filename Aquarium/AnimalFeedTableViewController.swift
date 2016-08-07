@@ -9,14 +9,14 @@
 import UIKit
 
 class AnimalFeedTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, AnimalFeedTableViewCellDelegate {
-
+    
     @IBOutlet weak var animalFeedTableView: UITableView!
     @IBOutlet weak var weekdaySegmentedControl: UISegmentedControl!
     
     var selectedWeekday: Int {
         return weekdaySegmentedControl.selectedSegmentIndex + 1
     }
-
+    
     
     private let reuseIdentifier = "feedCell"
     
@@ -55,18 +55,18 @@ class AnimalFeedTableViewController: UIViewController, UITableViewDelegate, UITa
     
     // MARK: UICollectionViewDataSource
     
-     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
     
-     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return feeds.count
     }
     
     
-     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(reuseIdentifier, forIndexPath: indexPath) as! AnimalFeedTableViewCell
         
         cell.delegate = self
@@ -93,7 +93,7 @@ class AnimalFeedTableViewController: UIViewController, UITableViewDelegate, UITa
         
         return cell
     }
-
+    
     //                check notifications to see which are scheduled. access .userinfo
     func notificationCheck(animalName: String, weekday: Int) -> Bool {
         guard let scheduledLocalNotifications = UIApplication.sharedApplication().scheduledLocalNotifications else { return false }
@@ -106,11 +106,11 @@ class AnimalFeedTableViewController: UIViewController, UITableViewDelegate, UITa
         }
         return found
     }
-
+    
     @IBAction func weekdaySegmentedControlSelected(sender: AnyObject) {
         feeds = Feeding.feeding(on: selectedWeekday)
         animalFeedTableView.reloadData()
-
+        
     }
     
     //MARK: - AnimalFeedTableViewCellDelegate Methods
@@ -121,7 +121,7 @@ class AnimalFeedTableViewController: UIViewController, UITableViewDelegate, UITa
         
         UIApplication.sharedApplication().registerUserNotificationSettings(UIUserNotificationSettings(forTypes:
             [.Alert, .Badge, .Sound], categories: nil))
-
+        
         notificationController.scheduleNotification(for: feed, onWeekday: selectedWeekday, scheduled: animalFeedTableViewCell.notificationScheduled)
     }
 }

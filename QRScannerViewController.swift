@@ -20,7 +20,7 @@ class QRScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsD
     @IBOutlet weak var tabBarLineView: UIView!
     @IBOutlet weak var alignQRCodeLabel: UILabel!
     @IBOutlet weak var scanButton: UIButton!
-//    @IBOutlet weak var cameraAccessPenguin: UIImageView!
+    //    @IBOutlet weak var cameraAccessPenguin: UIImageView!
     
     
     var captureSession: AVCaptureSession?
@@ -34,7 +34,7 @@ class QRScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsD
         var error: NSError?
         let input: AnyObject!
         
-      
+        
         do {
             input = try AVCaptureDeviceInput(device: captureDevice) as AVCaptureDeviceInput
         }
@@ -55,14 +55,14 @@ class QRScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsD
         if captureDevice == nil {
             return
         } else {
-        captureSession?.addInput(input as? AVCaptureInput)
+            captureSession?.addInput(input as? AVCaptureInput)
         }
-    
+        
         let objCaptureMetadataOutput = AVCaptureMetadataOutput()
         captureSession?.addOutput(objCaptureMetadataOutput)
         objCaptureMetadataOutput.setMetadataObjectsDelegate(self, queue: dispatch_get_main_queue())
         objCaptureMetadataOutput.metadataObjectTypes = [AVMetadataObjectTypeQRCode]
-        }
+    }
     
     
     func addVideoPreviewLayer() {
@@ -122,8 +122,6 @@ class QRScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsD
         
     }
     
-    
-    
     func qrOn(isOn: Bool = false) {
         if isOn {
             configureVideoCapture()
@@ -132,18 +130,15 @@ class QRScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsD
         }}
     
     
-
-
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         if AVCaptureDevice.authorizationStatusForMediaType(AVMediaTypeVideo) ==  AVAuthorizationStatus.Authorized
         {
-        qrOn(true)
-        scanButton.layer.cornerRadius = 20
-//            cameraAccessPenguin.hidden = true
+            qrOn(true)
+            scanButton.layer.cornerRadius = 20
+            //            cameraAccessPenguin.hidden = true
         }
-        
+            
         else {
             gradient(self.view)
             photoFrameImage.hidden = true

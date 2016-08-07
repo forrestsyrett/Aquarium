@@ -285,10 +285,10 @@
             </objects>
             <point key="canvasLocation" x="591" y="389"/>
         </scene>
-        <!--Mobile Membership Card-->
+        <!--Membership List Table View Controller-->
         <scene sceneID="UbB-Ck-8oc">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="dCA-Iv-eZj" customClass="MembershipListTableViewController" customModule="Aquarium" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="membershipViewController" automaticallyAdjustsScrollViewInsets="NO" id="dCA-Iv-eZj" customClass="MembershipListTableViewController" customModule="Aquarium" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="AjI-Vc-P61"/>
                         <viewControllerLayoutGuide type="bottom" id="SiM-AC-npK"/>
@@ -358,13 +358,33 @@
                                     <constraint firstAttribute="height" constant="1" id="drq-of-XoI"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mobile Membership Card" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CmB-iv-51b">
+                                <rect key="frame" x="20" y="37" width="560" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vcS-aq-fI9">
+                                <rect key="frame" x="20" y="62" width="560" height="1"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="IDn-Du-FZe"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="vcS-aq-fI9" firstAttribute="leading" secondItem="v8y-be-ivU" secondAttribute="leadingMargin" id="1c4-Ha-0Cf"/>
                             <constraint firstAttribute="trailingMargin" secondItem="0YB-GR-tGq" secondAttribute="trailing" id="3oM-Ll-KkP"/>
+                            <constraint firstItem="vcS-aq-fI9" firstAttribute="top" secondItem="CmB-iv-51b" secondAttribute="bottom" constant="4" id="571-8G-neq"/>
                             <constraint firstItem="EO3-t5-Sj1" firstAttribute="top" secondItem="AjI-Vc-P61" secondAttribute="bottom" constant="8" id="AA7-1d-7ZD"/>
                             <constraint firstAttribute="trailingMargin" secondItem="EO3-t5-Sj1" secondAttribute="trailing" constant="-20" id="GUt-NN-cr0"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="vcS-aq-fI9" secondAttribute="trailing" id="Iar-aW-xcL"/>
+                            <constraint firstItem="CmB-iv-51b" firstAttribute="leading" secondItem="v8y-be-ivU" secondAttribute="leadingMargin" id="NBu-rf-kd9"/>
                             <constraint firstItem="SiM-AC-npK" firstAttribute="top" secondItem="0YB-GR-tGq" secondAttribute="bottom" constant="5" id="Qib-oe-bIA"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="CmB-iv-51b" secondAttribute="trailing" id="VmK-tA-vqg"/>
+                            <constraint firstItem="vcS-aq-fI9" firstAttribute="top" secondItem="EO3-t5-Sj1" secondAttribute="bottom" constant="5" id="d1q-5P-zm4"/>
+                            <constraint firstItem="CmB-iv-51b" firstAttribute="top" secondItem="AjI-Vc-P61" secondAttribute="bottom" constant="-27" id="fGX-yh-RrN"/>
                             <constraint firstItem="EO3-t5-Sj1" firstAttribute="leading" secondItem="v8y-be-ivU" secondAttribute="leadingMargin" constant="-20" id="h6z-LH-16E"/>
                             <constraint firstAttribute="leadingMargin" secondItem="0YB-GR-tGq" secondAttribute="leading" id="lIJ-Ea-eRP"/>
                             <constraint firstItem="SiM-AC-npK" firstAttribute="top" secondItem="EO3-t5-Sj1" secondAttribute="bottom" constant="17" id="lfj-Qd-ycV"/>
@@ -372,11 +392,12 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="d1q-5P-zm4"/>
                                 <exclude reference="lfj-Qd-ycV"/>
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" title="Mobile Membership Card" id="Ldp-oS-yj0">
+                    <navigationItem key="navigationItem" id="Ldp-oS-yj0">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="kZL-by-Epj">
                             <connections>
                                 <segue destination="vyk-Ro-hE2" kind="show" id="vda-Aa-nGr"/>
@@ -389,7 +410,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IQI-oE-zRm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1322" y="-292"/>
+            <point key="canvasLocation" x="1322" y="-293"/>
         </scene>
         <!--Add New Membership-->
         <scene sceneID="wsj-vE-6ra">
@@ -452,7 +473,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="hxp-dU-UuP">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="ZEg-YR-9zb" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="tabBar" automaticallyAdjustsScrollViewInsets="NO" id="ZEg-YR-9zb" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="YCa-8W-zlY">
                         <autoresizingMask key="autoresizingMask"/>
@@ -1218,7 +1239,7 @@ Call (801)355-3474 ext. 222 to book your Penguin Encounter!</mutableString>
         <!--Members-->
         <scene sceneID="Tfr-xx-UXK">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="imB-JP-09G" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="membersController" automaticallyAdjustsScrollViewInsets="NO" id="imB-JP-09G" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Members" image="card" selectedImage="cardFilled" id="Dnf-Lx-63N"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="6MY-Ve-UcP">

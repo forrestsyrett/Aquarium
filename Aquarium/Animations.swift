@@ -11,7 +11,7 @@ import UIKit
 
 
 
-    // ANIMATIONS
+// ANIMATIONS
 
 func animateImage(image: UIImageView, animateTime: Double) {
     image.alpha = 0.0

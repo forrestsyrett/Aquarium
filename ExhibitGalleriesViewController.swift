@@ -11,8 +11,8 @@ import UIKit
 
 class ExhibitGalleriesViewController: UIViewController, UITabBarDelegate {
     
-
-
+    
+    
     // MARK: Outlets
     @IBOutlet weak var discoverUtahButton: UIButton!
     @IBOutlet weak var oceanExplorerButton: UIButton!
@@ -20,30 +20,22 @@ class ExhibitGalleriesViewController: UIViewController, UITabBarDelegate {
     @IBOutlet weak var antarcticAdventureButton: UIButton!
     
     
-    
-    
-    
-    
-    
     // MARK: Animations
     
     func animate() {
         
-            UIButton.animateWithDuration(3.0) { () -> Void in
-                self.discoverUtahButton.alpha = 1.0
-                self.discoverUtahButton.currentBackgroundImage
-                
+        UIButton.animateWithDuration(3.0) { () -> Void in
+            self.discoverUtahButton.alpha = 1.0
+            self.discoverUtahButton.currentBackgroundImage
         }
     }
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-  
-
+        
+        
         gradient(self.view)
-    
+        
         
         roundCornerButtons(discoverUtahButton)
         roundCornerButtons(oceanExplorerButton)
@@ -51,10 +43,10 @@ class ExhibitGalleriesViewController: UIViewController, UITabBarDelegate {
         roundCornerButtons(antarcticAdventureButton)
         
         transparentNavigationBar(self)
-       
-
+        
+        
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

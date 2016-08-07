@@ -56,7 +56,7 @@ enum Feeding {
             if $0.info.time == $0.info.time {
                 return $0.info.time.timeIntervalSince1970 < $1.info.time.timeIntervalSince1970
             }
-           return $0.info.notificationTitle < $1.info.notificationTitle
+            return $0.info.notificationTitle < $1.info.notificationTitle
         }
     }
     

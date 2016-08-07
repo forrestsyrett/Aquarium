@@ -12,12 +12,12 @@ import UIKit
 class MembershipListTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var membershipCardTableView: UITableView!
-
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        gradient(self.view)
+        //        gradient(self.view)
         membershipCardTableView.reloadData()
     }
     
@@ -25,8 +25,9 @@ class MembershipListTableViewController: UIViewController, UITableViewDelegate, 
         membershipCardTableView.reloadData()
         gradient(self.view)
         membershipCardTableView.backgroundColor = UIColor.clearColor()
-
-
+        transparentNavigationBar(self)
+        
+        
     }
     
     let membership = MembershipCardTableViewCell()
@@ -46,7 +47,7 @@ class MembershipListTableViewController: UIViewController, UITableViewDelegate, 
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("tableViewCell", forIndexPath: indexPath) as! MembershipCardTableViewCell
-            
+        
         let membership = MembershipCardController.sharedMembershipController.memberships[indexPath.row]
         
         
@@ -56,8 +57,8 @@ class MembershipListTableViewController: UIViewController, UITableViewDelegate, 
             let filter = CIFilter(name: "CICode128BarcodeGenerator")
             filter!.setValue(barcode, forKey: "inputMessage")
             return UIImage(CIImage: filter!.outputImage!)
-            }
-
+        }
+        
         // Configure the cell...
         cell.memberNameLabel.text = membership.memberName
         cell.membershipIDLabel.text = membership.memberID
@@ -65,7 +66,7 @@ class MembershipListTableViewController: UIViewController, UITableViewDelegate, 
         cell.backgroundColor = UIColor.clearColor()
         roundCornerButtons(cell.barcodeImage)
         
-       
+        
         return cell
     }
     
