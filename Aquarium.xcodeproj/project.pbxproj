@@ -30,7 +30,7 @@
 		AA8D05161D19DC930063F222 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8D05151D19DC930063F222 /* HomeViewController.swift */; };
 		AA909B181D41B42A000DB923 /* Feeding.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA909B171D41B42A000DB923 /* Feeding.swift */; };
 		AA9D6EE01D1CCD5000831AFE /* Animal.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9D6EDF1D1CCD5000831AFE /* Animal.swift */; };
-		AACE392A1D54578E0082E667 /* BarcodeGeneratorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACE39291D54578E0082E667 /* BarcodeGeneratorViewController.swift */; };
+		AACE392A1D54578E0082E667 /* AddNewMembershipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACE39291D54578E0082E667 /* AddNewMembershipViewController.swift */; };
 		AAEE47681D3CAD8500E0C537 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEE47671D3CAD8500E0C537 /* NotificationController.swift */; };
 /* End PBXBuildFile section */
 
@@ -60,7 +60,7 @@
 		AA8D05151D19DC930063F222 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		AA909B171D41B42A000DB923 /* Feeding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Feeding.swift; sourceTree = "<group>"; };
 		AA9D6EDF1D1CCD5000831AFE /* Animal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animal.swift; sourceTree = "<group>"; };
-		AACE39291D54578E0082E667 /* BarcodeGeneratorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarcodeGeneratorViewController.swift; sourceTree = "<group>"; };
+		AACE39291D54578E0082E667 /* AddNewMembershipViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewMembershipViewController.swift; sourceTree = "<group>"; };
 		AAEE47671D3CAD8500E0C537 /* NotificationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -111,7 +111,7 @@
 		AA8441CB1D556E12000238C1 /* Mobile Membership */ = {
 			isa = PBXGroup;
 			children = (
-				AACE39291D54578E0082E667 /* BarcodeGeneratorViewController.swift */,
+				AACE39291D54578E0082E667 /* AddNewMembershipViewController.swift */,
 				AA6FA1D51D5554FC00CBEEC7 /* MembershipCardController.swift */,
 				AA6FA1D71D55552800CBEEC7 /* Membership.swift */,
 				AA6FA1D31D55540B00CBEEC7 /* MembershipListTableViewController.swift */,
@@ -242,7 +242,7 @@
 				AA6FA1D61D5554FC00CBEEC7 /* MembershipCardController.swift in Sources */,
 				AA544CAD1D0C90DE00DC1725 /* DiscoverUtahTableViewController.swift in Sources */,
 				AA6F4E721D3C01D000FA20F7 /* AnimalFeedTableViewCell.swift in Sources */,
-				AACE392A1D54578E0082E667 /* BarcodeGeneratorViewController.swift in Sources */,
+				AACE392A1D54578E0082E667 /* AddNewMembershipViewController.swift in Sources */,
 				AA544CB31D0CAE1000DC1725 /* ExhibitGalleriesViewController.swift in Sources */,
 				AA909B181D41B42A000DB923 /* Feeding.swift in Sources */,
 				AA6FA1D41D55540B00CBEEC7 /* MembershipListTableViewController.swift in Sources */,

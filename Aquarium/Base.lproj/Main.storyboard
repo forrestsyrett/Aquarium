@@ -211,6 +211,11 @@
                                     <constraint firstAttribute="height" constant="64" id="2yw-n0-Hyd"/>
                                     <constraint firstAttribute="width" secondItem="oWX-bw-Jvg" secondAttribute="height" multiplier="67:64" id="Y5X-yD-mcm"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="2yw-n0-Hyd"/>
+                                    </mask>
+                                </variation>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A30-8u-NHL">
                                 <rect key="frame" x="20" y="545" width="560" height="1"/>
@@ -231,10 +236,12 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="A30-8u-NHL" secondAttribute="bottom" constant="5" id="Vpm-UY-UZc"/>
                             <constraint firstItem="kJa-Wu-OkP" firstAttribute="top" secondItem="qCa-VU-Dni" secondAttribute="bottom" id="WON-MA-DnC"/>
                             <constraint firstAttribute="trailingMargin" secondItem="A30-8u-NHL" secondAttribute="trailing" id="Xht-OV-4gz"/>
+                            <constraint firstItem="A30-8u-NHL" firstAttribute="top" secondItem="oWX-bw-Jvg" secondAttribute="bottom" constant="44" id="ZJB-19-qn0"/>
                             <constraint firstItem="oWX-bw-Jvg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="e2v-aO-0pF"/>
                             <constraint firstItem="A30-8u-NHL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="eMn-Fk-Rmi"/>
                             <constraint firstItem="qCa-VU-Dni" firstAttribute="top" secondItem="cZa-9F-t4n" secondAttribute="bottom" constant="3" id="fDz-K8-da2"/>
                             <constraint firstItem="qCa-VU-Dni" firstAttribute="leading" secondItem="cZa-9F-t4n" secondAttribute="trailing" constant="8" id="i7l-ay-YO4"/>
+                            <constraint firstItem="qCa-VU-Dni" firstAttribute="top" secondItem="oWX-bw-Jvg" secondAttribute="bottom" constant="18" id="lkp-6j-1iE"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="kJa-Wu-OkP" secondAttribute="bottom" id="ogs-UG-A1F"/>
                             <constraint firstItem="FWU-uv-02e" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="yst-ar-kHH"/>
                         </constraints>
@@ -243,6 +250,7 @@
                                 <exclude reference="WON-MA-DnC"/>
                                 <exclude reference="52J-c3-d0o"/>
                                 <exclude reference="i7l-ay-YO4"/>
+                                <exclude reference="TAz-3e-kOq"/>
                             </mask>
                         </variation>
                     </view>
