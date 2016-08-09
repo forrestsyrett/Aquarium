@@ -365,7 +365,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vTV-cV-O25" userLabel="WelcomeView">
-                                <rect key="frame" x="20" y="98" width="560" height="431"/>
+                                <rect key="frame" x="20" y="98" width="560" height="433"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to Mobile Memberships!" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="HG4-QV-EOX">
                                         <rect key="frame" x="0.0" y="41" width="560" height="21"/>
@@ -377,7 +377,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" scrollEnabled="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="4X3-rL-V9z">
-                                        <rect key="frame" x="8" y="79" width="544" height="344"/>
+                                        <rect key="frame" x="8" y="79" width="544" height="346"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <string key="text">Here you can add your Loveland Living Planet Aquarium memberships, and scan your phone at the entrance!
 
@@ -395,7 +395,7 @@ To get started, tap the plus!
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Em-QZ-dU4">
-                                        <rect key="frame" x="70" y="362" width="421" height="51"/>
+                                        <rect key="frame" x="70" y="364" width="421" height="51"/>
                                         <color key="backgroundColor" red="0.60297624350000001" green="0.77598434559999996" blue="0.88197115380000002" alpha="0.76686422409999999" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="3Em-QZ-dU4" secondAttribute="height" multiplier="421:59" id="Ibg-LS-VGC"/>
@@ -416,7 +416,7 @@ To get started, tap the plus!
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Not a member yet?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ni6-bF-yRa">
-                                        <rect key="frame" x="8" y="338" width="544" height="21"/>
+                                        <rect key="frame" x="8" y="340" width="544" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -444,6 +444,7 @@ To get started, tap the plus!
                                     <constraint firstItem="HG4-QV-EOX" firstAttribute="top" secondItem="vTV-cV-O25" secondAttribute="top" constant="41" id="s3s-vh-D9R"/>
                                     <constraint firstItem="3Em-QZ-dU4" firstAttribute="top" secondItem="4X3-rL-V9z" secondAttribute="bottom" constant="8" symbolic="YES" id="sZf-Np-uFM"/>
                                     <constraint firstAttribute="trailing" secondItem="Ni6-bF-yRa" secondAttribute="trailing" constant="8" id="saN-1B-Y8v"/>
+                                    <constraint firstAttribute="bottom" secondItem="3Em-QZ-dU4" secondAttribute="bottom" constant="18" id="ybe-dc-r2j"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -461,7 +462,7 @@ To get started, tap the plus!
                             <constraint firstAttribute="trailingMargin" secondItem="0YB-GR-tGq" secondAttribute="trailing" id="3oM-Ll-KkP"/>
                             <constraint firstItem="vcS-aq-fI9" firstAttribute="top" secondItem="CmB-iv-51b" secondAttribute="bottom" constant="4" id="571-8G-neq"/>
                             <constraint firstItem="EO3-t5-Sj1" firstAttribute="top" secondItem="AjI-Vc-P61" secondAttribute="bottom" constant="8" id="AA7-1d-7ZD"/>
-                            <constraint firstItem="vTV-cV-O25" firstAttribute="bottom" secondItem="v8y-be-ivU" secondAttribute="bottomMargin" constant="-71" id="B1X-73-g7e"/>
+                            <constraint firstItem="vTV-cV-O25" firstAttribute="bottom" secondItem="v8y-be-ivU" secondAttribute="bottomMargin" constant="-69" id="B1X-73-g7e"/>
                             <constraint firstItem="vTV-cV-O25" firstAttribute="leading" secondItem="v8y-be-ivU" secondAttribute="leadingMargin" id="EDp-qD-bCD"/>
                             <constraint firstAttribute="trailingMargin" secondItem="EO3-t5-Sj1" secondAttribute="trailing" constant="-20" id="GUt-NN-cr0"/>
                             <constraint firstAttribute="trailingMargin" secondItem="vcS-aq-fI9" secondAttribute="trailing" id="Iar-aW-xcL"/>
@@ -627,12 +628,15 @@ To get started, tap the plus!
                                     <constraint firstAttribute="height" constant="1" id="Sac-7A-9EY"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QrM-0H-C8J">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QrM-0H-C8J">
                                 <rect key="frame" x="20" y="645" width="560" height="1"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="9Ro-3q-gCP"/>
+                                </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="4xo-td-ZJw">
-                                <rect key="frame" x="20" y="64" width="560" height="587"/>
+                                <rect key="frame" x="20" y="64" width="560" height="579"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nl5-wI-A0G">
                                         <rect key="frame" x="0.0" y="0.0" width="560" height="40"/>
@@ -789,7 +793,7 @@ To get started, tap the plus!
                                         </variation>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fut-3Z-5VG">
-                                        <rect key="frame" x="0.0" y="495" width="560" height="92"/>
+                                        <rect key="frame" x="0.0" y="495" width="560" height="84"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </view>
                                 </subviews>
@@ -816,27 +820,30 @@ To get started, tap the plus!
                             </stackView>
                         </subviews>
                         <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="QrM-0H-C8J" secondAttribute="trailing" id="1AV-rp-Ee1"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ogq-h8-YMd" secondAttribute="trailing" id="Afy-Yo-1ly"/>
                             <constraint firstAttribute="leadingMargin" secondItem="HpM-AN-CZ4" secondAttribute="leading" id="EMC-t7-41U"/>
                             <constraint firstItem="4xo-td-ZJw" firstAttribute="top" secondItem="ovV-yW-6qt" secondAttribute="topMargin" id="JA4-yr-Dyj"/>
                             <constraint firstItem="ogq-h8-YMd" firstAttribute="top" secondItem="HpM-AN-CZ4" secondAttribute="bottom" constant="4" id="JFY-83-9Qd"/>
                             <constraint firstItem="4xo-td-ZJw" firstAttribute="top" secondItem="3tm-aJ-5ih" secondAttribute="bottom" id="QmO-mJ-IJR"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="QrM-0H-C8J" secondAttribute="leading" id="S0M-Iw-LcC"/>
                             <constraint firstAttribute="bottomMargin" secondItem="4xo-td-ZJw" secondAttribute="bottom" constant="8" id="UfE-Xm-ScG"/>
                             <constraint firstAttribute="trailingMargin" secondItem="4xo-td-ZJw" secondAttribute="trailing" id="aGq-5W-68Z"/>
+                            <constraint firstItem="6wr-cj-8pB" firstAttribute="top" secondItem="QrM-0H-C8J" secondAttribute="bottom" constant="5" id="eo1-aw-nUo"/>
                             <constraint firstItem="4xo-td-ZJw" firstAttribute="leading" secondItem="ovV-yW-6qt" secondAttribute="leadingMargin" id="fHB-dQ-hU1"/>
                             <constraint firstAttribute="trailingMargin" secondItem="HpM-AN-CZ4" secondAttribute="trailing" id="fW9-aX-22Q"/>
                             <constraint firstItem="HpM-AN-CZ4" firstAttribute="top" secondItem="ovV-yW-6qt" secondAttribute="topMargin" constant="35" id="id4-dm-14W"/>
                             <constraint firstAttribute="leadingMargin" secondItem="ogq-h8-YMd" secondAttribute="leading" id="mLc-01-lsM"/>
-                            <constraint firstItem="6wr-cj-8pB" firstAttribute="top" secondItem="4xo-td-ZJw" secondAttribute="bottom" id="rFD-HM-M7g"/>
+                            <constraint firstItem="6wr-cj-8pB" firstAttribute="top" secondItem="4xo-td-ZJw" secondAttribute="bottom" constant="8" id="rFD-HM-M7g"/>
                             <constraint firstItem="4xo-td-ZJw" firstAttribute="top" secondItem="ovV-yW-6qt" secondAttribute="topMargin" id="sq0-R5-mNX"/>
                             <constraint firstItem="ogq-h8-YMd" firstAttribute="leading" secondItem="HpM-AN-CZ4" secondAttribute="trailing" id="tXl-DD-Vl2"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="tXl-DD-Vl2"/>
                                 <exclude reference="JA4-yr-Dyj"/>
                                 <exclude reference="UfE-Xm-ScG"/>
                                 <exclude reference="sq0-R5-mNX"/>
-                                <exclude reference="tXl-DD-Vl2"/>
                             </mask>
                         </variation>
                     </view>
@@ -975,7 +982,7 @@ Call (801)355-3474 ext. 222 to book your Penguin Encounter!</mutableString>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DhD-VG-GsP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2101" y="723"/>
+            <point key="canvasLocation" x="2065" y="467"/>
         </scene>
         <!--Animal Detail View Controller-->
         <scene sceneID="9UK-Sp-BGN">
@@ -1120,6 +1127,87 @@ Call (801)355-3474 ext. 222 to book your Penguin Encounter!</mutableString>
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="waN-Ru-3wv" userLabel="QRScanner Modal">
+                                <rect key="frame" x="20" y="54" width="560" height="477"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pk0-Bu-fsC">
+                                        <rect key="frame" x="8" y="0.0" width="544" height="178"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="Pk0-Bu-fsC" secondAttribute="height" multiplier="544:103" constant="-396.11650485436894" id="M5B-Td-j8H"/>
+                                        </constraints>
+                                        <string key="text"> Throughout the Aquarium you'll find special QR codes on our animal exhibits. Use this scanner to pull up additional animal information and interactive activities!</string>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="If you see one of these, scan it for more info!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="ZuI-Hf-35J">
+                                        <rect key="frame" x="8" y="186" width="544" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="25" id="M3S-2X-eaV"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="QRLogo" translatesAutoresizingMaskIntoConstraints="NO" id="KPr-JS-ADZ">
+                                        <rect key="frame" x="190" y="219" width="182" height="181"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="KPr-JS-ADZ" secondAttribute="height" multiplier="1:1" constant="1" id="h2j-AY-cEz"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZKX-Er-3fC">
+                                        <rect key="frame" x="221" y="408" width="117" height="51"/>
+                                        <color key="backgroundColor" red="0.60297624350000001" green="0.77598434559999996" blue="0.88197115380000002" alpha="0.76686422409999999" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="117" id="94c-dD-G2a"/>
+                                            <constraint firstAttribute="height" constant="51" id="qwA-Ql-jX2"/>
+                                        </constraints>
+                                        <state key="normal" title="Get Started">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="getStartedButtonTapped:" destination="uai-Rq-JX2" eventType="touchUpInside" id="qQm-AE-PQL"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.27262931029999998" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="KPr-JS-ADZ" firstAttribute="centerX" secondItem="waN-Ru-3wv" secondAttribute="centerX" constant="1" id="3Wj-AS-Rz5"/>
+                                    <constraint firstItem="KPr-JS-ADZ" firstAttribute="leading" secondItem="waN-Ru-3wv" secondAttribute="leading" constant="160" id="4R7-gX-lAf"/>
+                                    <constraint firstItem="Pk0-Bu-fsC" firstAttribute="leading" secondItem="waN-Ru-3wv" secondAttribute="leading" constant="8" id="AY8-qf-bvF"/>
+                                    <constraint firstItem="ZKX-Er-3fC" firstAttribute="centerX" secondItem="waN-Ru-3wv" secondAttribute="centerX" id="Ged-en-ekg"/>
+                                    <constraint firstAttribute="trailing" secondItem="Pk0-Bu-fsC" secondAttribute="trailing" constant="8" id="Huc-RN-bb2"/>
+                                    <constraint firstItem="ZKX-Er-3fC" firstAttribute="top" secondItem="KPr-JS-ADZ" secondAttribute="bottom" constant="8" id="OWB-Ag-gZF"/>
+                                    <constraint firstAttribute="bottom" secondItem="ZKX-Er-3fC" secondAttribute="bottom" constant="18" id="Q4e-ug-KgG"/>
+                                    <constraint firstItem="ZuI-Hf-35J" firstAttribute="top" secondItem="Pk0-Bu-fsC" secondAttribute="bottom" constant="13" id="T5g-if-Mxq"/>
+                                    <constraint firstAttribute="trailing" secondItem="KPr-JS-ADZ" secondAttribute="trailing" constant="172" id="XgG-OC-XV3"/>
+                                    <constraint firstItem="ZuI-Hf-35J" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Pk0-Bu-fsC" secondAttribute="bottom" constant="8" id="Yu5-EE-0Ps"/>
+                                    <constraint firstItem="KPr-JS-ADZ" firstAttribute="top" secondItem="ZuI-Hf-35J" secondAttribute="bottom" constant="8" id="gjz-1D-paL"/>
+                                    <constraint firstItem="Pk0-Bu-fsC" firstAttribute="top" secondItem="waN-Ru-3wv" secondAttribute="top" id="jlc-SL-Ey4"/>
+                                    <constraint firstAttribute="bottom" secondItem="KPr-JS-ADZ" secondAttribute="bottom" constant="100" id="lJt-pu-Jxg"/>
+                                    <constraint firstItem="KPr-JS-ADZ" firstAttribute="top" secondItem="Pk0-Bu-fsC" secondAttribute="bottom" constant="30" id="olM-3z-Em8"/>
+                                    <constraint firstAttribute="bottom" secondItem="Pk0-Bu-fsC" secondAttribute="bottom" constant="374" id="qXW-5e-X2y"/>
+                                    <constraint firstItem="KPr-JS-ADZ" firstAttribute="leading" secondItem="waN-Ru-3wv" secondAttribute="leading" constant="173" id="qrP-xs-eCj"/>
+                                    <constraint firstItem="ZKX-Er-3fC" firstAttribute="top" secondItem="KPr-JS-ADZ" secondAttribute="bottom" constant="26" id="tPg-0l-BNb"/>
+                                    <constraint firstItem="KPr-JS-ADZ" firstAttribute="top" secondItem="waN-Ru-3wv" secondAttribute="top" constant="162" id="w5v-mN-cZT"/>
+                                    <constraint firstAttribute="trailing" secondItem="KPr-JS-ADZ" secondAttribute="trailing" constant="160" id="yXo-6S-6lJ"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="qXW-5e-X2y"/>
+                                        <exclude reference="T5g-if-Mxq"/>
+                                        <exclude reference="4R7-gX-lAf"/>
+                                        <exclude reference="XgG-OC-XV3"/>
+                                        <exclude reference="lJt-pu-Jxg"/>
+                                        <exclude reference="olM-3z-Em8"/>
+                                        <exclude reference="qrP-xs-eCj"/>
+                                        <exclude reference="w5v-mN-cZT"/>
+                                        <exclude reference="yXo-6S-6lJ"/>
+                                        <exclude reference="tPg-0l-BNb"/>
+                                    </mask>
+                                </variation>
+                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pdo-TE-cKj">
                                 <rect key="frame" x="20" y="467" width="0.0" height="21"/>
                                 <constraints>
@@ -1137,20 +1225,25 @@ Call (801)355-3474 ext. 222 to book your Penguin Encounter!</mutableString>
                                 </constraints>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="QRviewfinder" translatesAutoresizingMaskIntoConstraints="NO" id="H8o-zs-gKh">
-                                <rect key="frame" x="173" y="172" width="255" height="255"/>
+                                <rect key="frame" x="50" y="50" width="500" height="500"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="H8o-zs-gKh" secondAttribute="height" multiplier="1:1" id="2or-DY-HRc"/>
                                     <constraint firstAttribute="width" constant="255" id="6JL-A6-65p"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="6JL-A6-65p"/>
+                                    </mask>
+                                </variation>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Align QR Code in Frame" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dNn-yR-jlI">
-                                <rect key="frame" x="209" y="141" width="182" height="21"/>
+                                <rect key="frame" x="209" y="19" width="182" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jir-VW-avP">
-                                <rect key="frame" x="242" y="457" width="117" height="59"/>
+                                <rect key="frame" x="242" y="558" width="117" height="59"/>
                                 <color key="backgroundColor" red="0.60297624350000001" green="0.77598434559999996" blue="0.88197115380000002" alpha="0.76686422409999999" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="59" id="fRW-lE-90l"/>
@@ -1167,23 +1260,35 @@ Call (801)355-3474 ext. 222 to book your Penguin Encounter!</mutableString>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="ZuI-Hf-35J" secondAttribute="trailing" constant="8" id="3LJ-nD-2b1"/>
                             <constraint firstItem="jir-VW-avP" firstAttribute="top" secondItem="dNn-yR-jlI" secondAttribute="bottom" constant="283" id="BS9-DN-xdP"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="waN-Ru-3wv" secondAttribute="leading" id="BdU-ei-O3m"/>
                             <constraint firstItem="dNn-yR-jlI" firstAttribute="centerX" secondItem="p1p-bL-GDg" secondAttribute="centerX" id="EaG-ro-DeE"/>
+                            <constraint firstItem="S5t-oz-H9R" firstAttribute="top" secondItem="jir-VW-avP" secondAttribute="bottom" constant="35" id="Ell-8q-p7S"/>
                             <constraint firstAttribute="trailingMargin" secondItem="jnf-Ws-sfr" secondAttribute="trailing" id="EpC-up-N0n"/>
                             <constraint firstItem="H8o-zs-gKh" firstAttribute="centerX" secondItem="p1p-bL-GDg" secondAttribute="centerX" id="FRD-UQ-wfZ"/>
                             <constraint firstItem="pdo-TE-cKj" firstAttribute="leading" secondItem="p1p-bL-GDg" secondAttribute="leadingMargin" id="FqR-HW-vJa"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="waN-Ru-3wv" secondAttribute="trailing" id="HFh-Z0-vtJ"/>
+                            <constraint firstItem="ZuI-Hf-35J" firstAttribute="leading" secondItem="p1p-bL-GDg" secondAttribute="leadingMargin" constant="8" id="JNN-8r-APA"/>
                             <constraint firstItem="H8o-zs-gKh" firstAttribute="centerY" secondItem="p1p-bL-GDg" secondAttribute="centerY" id="KBy-ay-iVY"/>
                             <constraint firstItem="S5t-oz-H9R" firstAttribute="top" secondItem="jnf-Ws-sfr" secondAttribute="bottom" constant="5" id="Mec-DH-Tvw"/>
+                            <constraint firstItem="S5t-oz-H9R" firstAttribute="top" secondItem="waN-Ru-3wv" secondAttribute="bottom" constant="14" id="QAA-IS-siI"/>
+                            <constraint firstItem="S5t-oz-H9R" firstAttribute="top" secondItem="waN-Ru-3wv" secondAttribute="bottom" constant="20" id="VOQ-BG-FKO"/>
                             <constraint firstItem="dNn-yR-jlI" firstAttribute="top" secondItem="H8o-zs-gKh" secondAttribute="bottom" constant="-284" id="eTP-xK-Q4j"/>
+                            <constraint firstItem="waN-Ru-3wv" firstAttribute="top" secondItem="Y8z-0I-f1Z" secondAttribute="bottom" constant="34" id="h52-Zk-3OG"/>
                             <constraint firstAttribute="leadingMargin" secondItem="jnf-Ws-sfr" secondAttribute="leading" id="iZt-mu-bQZ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="H8o-zs-gKh" secondAttribute="trailing" constant="30" id="k7P-aF-zGc"/>
+                            <constraint firstItem="H8o-zs-gKh" firstAttribute="leading" secondItem="p1p-bL-GDg" secondAttribute="leadingMargin" constant="30" id="qIy-JC-nzY"/>
                             <constraint firstItem="jir-VW-avP" firstAttribute="centerX" secondItem="p1p-bL-GDg" secondAttribute="centerX" id="rEB-HP-95Z"/>
                             <constraint firstItem="H8o-zs-gKh" firstAttribute="top" secondItem="dNn-yR-jlI" secondAttribute="bottom" constant="10" id="rY1-qr-wrJ"/>
-                            <constraint firstItem="jir-VW-avP" firstAttribute="top" secondItem="H8o-zs-gKh" secondAttribute="bottom" constant="30" id="sy3-bm-wV7"/>
+                            <constraint firstItem="jir-VW-avP" firstAttribute="top" secondItem="H8o-zs-gKh" secondAttribute="bottom" constant="8" id="sy3-bm-wV7"/>
                             <constraint firstItem="S5t-oz-H9R" firstAttribute="top" secondItem="pdo-TE-cKj" secondAttribute="bottom" constant="63" id="z1y-OQ-PGU"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="eTP-xK-Q4j"/>
+                                <exclude reference="Ell-8q-p7S"/>
+                                <exclude reference="QAA-IS-siI"/>
                                 <exclude reference="BS9-DN-xdP"/>
                             </mask>
                         </variation>
@@ -1191,9 +1296,12 @@ Call (801)355-3474 ext. 222 to book your Penguin Encounter!</mutableString>
                     <tabBarItem key="tabBarItem" title="QR Scanner" image="qrCode" selectedImage="qrCodeFilled" id="8zP-hr-HLq"/>
                     <navigationItem key="navigationItem" title="QR Scanner" id="LiI-1X-I6n"/>
                     <connections>
+                        <outlet property="QRModalView" destination="waN-Ru-3wv" id="Rwl-aX-Xth"/>
                         <outlet property="alignQRCodeLabel" destination="dNn-yR-jlI" id="kDB-SV-XOW"/>
+                        <outlet property="getStartedButtonLabel" destination="ZKX-Er-3fC" id="apH-wB-NW0"/>
                         <outlet property="photoFrameImage" destination="H8o-zs-gKh" id="1Z0-pL-Z1X"/>
                         <outlet property="qrCodeResult" destination="pdo-TE-cKj" id="6lw-CQ-hWL"/>
+                        <outlet property="qrWelcomeTextField" destination="Pk0-Bu-fsC" id="aT6-x1-i3W"/>
                         <outlet property="scanButton" destination="jir-VW-avP" id="ho1-or-nKI"/>
                         <outlet property="tabBarLineView" destination="jnf-Ws-sfr" id="1st-9Z-IIU"/>
                     </connections>
@@ -1412,6 +1520,7 @@ Call (801)355-3474 ext. 222 to book your Penguin Encounter!</mutableString>
     </scenes>
     <resources>
         <image name="AntarcticAdventurebuttonBackground" width="501" height="65"/>
+        <image name="QRLogo" width="250" height="250"/>
         <image name="QRviewfinder" width="384" height="248"/>
         <image name="asia" width="691" height="145"/>
         <image name="calendar" width="30" height="30"/>
