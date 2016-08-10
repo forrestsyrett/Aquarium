@@ -30,19 +30,42 @@ class AddNewMembershipViewController: UIViewController, UITextFieldDelegate {
         if membershipNameTextField.text?.isEmpty == true {
             saveButton.enabled = false
         }
-        
+       
     }
+    
+    
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         
-        if membershipNameTextField.text == "" || membershipIDTextField.text == "" {
-            saveButton.enabled = false
-        } else {
-            saveButton.enabled = true
-        }
+//        if membershipNameTextField.text == "" || membershipIDTextField.text == "" {
+//            saveButton.enabled = false
+//        } else {
+//            saveButton.enabled = true
+//        }
         membershipIDTextField.resignFirstResponder()
         membershipNameTextField.resignFirstResponder()
         return true
+    }
+
+    
+    @IBAction func memberIDTextFieldEditingChanged(sender: AnyObject) {
+        
+        if membershipNameTextField.text?.characters.count <= 0 || membershipIDTextField.text?.characters.count <= 0 {
+            saveButton.enabled = false
+        } else if membershipIDTextField.text?.characters.count > 0 {
+            saveButton.enabled = true
+        }
+    }
+    
+    
+    @IBAction func memberNameTextFieldEditingChanged(sender: AnyObject) {
+        
+        if membershipNameTextField.text?.characters.count <= 0 || membershipIDTextField.text?.characters.count <= 0 {
+            saveButton.enabled = false
+        } else if membershipIDTextField.text?.characters.count > 0 {
+            saveButton.enabled = true
+        }
+
     }
     
     

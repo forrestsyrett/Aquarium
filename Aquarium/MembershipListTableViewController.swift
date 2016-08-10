@@ -37,9 +37,10 @@ class MembershipListTableViewController: UIViewController, UITableViewDelegate, 
         } else {
             welcomeView.hidden = false
         }
-    
-        
     }
+    
+    
+    
     
     
     @IBAction func becomeAMemberButtonTapped(sender: AnyObject) {

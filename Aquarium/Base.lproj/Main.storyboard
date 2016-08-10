@@ -352,13 +352,13 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mobile Membership Card" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CmB-iv-51b">
-                                <rect key="frame" x="20" y="37" width="560" height="21"/>
+                                <rect key="frame" x="20" y="36" width="560" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vcS-aq-fI9">
-                                <rect key="frame" x="20" y="62" width="560" height="1"/>
+                                <rect key="frame" x="20" y="61" width="560" height="1"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="IDn-Du-FZe"/>
@@ -379,7 +379,7 @@
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" scrollEnabled="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="4X3-rL-V9z">
                                         <rect key="frame" x="8" y="79" width="544" height="346"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <string key="text">Here you can add your Loveland Living Planet Aquarium memberships, and scan your phone at the entrance!
+                                        <string key="text">Here you can add your Living Planet Aquarium memberships, and scan your phone at the entrance!
 
 To get started, tap the plus!
 </string>
@@ -471,7 +471,7 @@ To get started, tap the plus!
                             <constraint firstItem="SiM-AC-npK" firstAttribute="top" secondItem="0YB-GR-tGq" secondAttribute="bottom" constant="5" id="Qib-oe-bIA"/>
                             <constraint firstAttribute="trailingMargin" secondItem="CmB-iv-51b" secondAttribute="trailing" id="VmK-tA-vqg"/>
                             <constraint firstItem="vcS-aq-fI9" firstAttribute="top" secondItem="EO3-t5-Sj1" secondAttribute="bottom" constant="5" id="d1q-5P-zm4"/>
-                            <constraint firstItem="CmB-iv-51b" firstAttribute="top" secondItem="AjI-Vc-P61" secondAttribute="bottom" constant="-27" id="fGX-yh-RrN"/>
+                            <constraint firstItem="CmB-iv-51b" firstAttribute="top" secondItem="AjI-Vc-P61" secondAttribute="bottom" constant="-28" id="fGX-yh-RrN"/>
                             <constraint firstAttribute="trailingMargin" secondItem="vTV-cV-O25" secondAttribute="trailing" id="fOK-5b-IO7"/>
                             <constraint firstItem="EO3-t5-Sj1" firstAttribute="leading" secondItem="v8y-be-ivU" secondAttribute="leadingMargin" constant="-20" id="h6z-LH-16E"/>
                             <constraint firstAttribute="leadingMargin" secondItem="0YB-GR-tGq" secondAttribute="leading" id="lIJ-Ea-eRP"/>
@@ -514,34 +514,74 @@ To get started, tap the plus!
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Membership ID Number" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lIg-Nw-p4n">
-                                <rect key="frame" x="20" y="158" width="560" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Member Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dHn-RD-4X3">
+                                <rect key="frame" x="20" y="184" width="560" height="40"/>
                                 <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="54o-gM-F29"/>
+                                </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                <connections>
+                                    <action selector="memberNameTextFieldEditingChanged:" destination="vyk-Ro-hE2" eventType="editingChanged" id="5LH-l9-WVk"/>
+                                </connections>
+                            </textField>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JUT-JD-Nqw">
+                                <rect key="frame" x="20" y="229" width="560" height="1"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="bS8-nv-ZaY"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mbq-57-TzL">
+                                <rect key="frame" x="20" y="283" width="560" height="1"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="P88-PB-PFv"/>
+                                </constraints>
+                            </view>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Membership ID Number" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lIg-Nw-p4n">
+                                <rect key="frame" x="20" y="238" width="560" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="76Y-TI-WqV"/>
                                     <constraint firstAttribute="height" constant="30" id="LYm-bP-wlY"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="LYm-bP-wlY"/>
                                     </mask>
                                 </variation>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Member Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dHn-RD-4X3">
-                                <rect key="frame" x="20" y="120" width="560" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                <connections>
+                                    <action selector="memberIDTextFieldEditingChanged:" destination="vyk-Ro-hE2" eventType="editingChanged" id="Iqd-Fd-Fgq"/>
+                                </connections>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="dHn-RD-4X3" firstAttribute="leading" secondItem="LYD-Ub-rKK" secondAttribute="leadingMargin" id="4g0-yW-wSJ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="mbq-57-TzL" secondAttribute="trailing" id="BKU-L6-9pr"/>
+                            <constraint firstItem="dHn-RD-4X3" firstAttribute="top" secondItem="l1l-IO-8mY" secondAttribute="bottom" constant="120" id="GXy-8B-dVP"/>
                             <constraint firstAttribute="trailingMargin" secondItem="dHn-RD-4X3" secondAttribute="trailing" id="JQg-gi-L6F"/>
-                            <constraint firstItem="dHn-RD-4X3" firstAttribute="top" secondItem="l1l-IO-8mY" secondAttribute="bottom" constant="56" id="NOo-uy-Q67"/>
-                            <constraint firstItem="lIg-Nw-p4n" firstAttribute="top" secondItem="dHn-RD-4X3" secondAttribute="bottom" constant="8" id="S93-l6-mXv"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="JUT-JD-Nqw" secondAttribute="trailing" id="JjD-VW-lau"/>
+                            <constraint firstItem="dHn-RD-4X3" firstAttribute="top" secondItem="l1l-IO-8mY" secondAttribute="bottom" constant="100" id="NOo-uy-Q67"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="JUT-JD-Nqw" secondAttribute="leading" id="NwS-N5-lRp"/>
+                            <constraint firstItem="mbq-57-TzL" firstAttribute="top" secondItem="lIg-Nw-p4n" secondAttribute="bottom" constant="5" id="PBt-7B-qEO"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="mbq-57-TzL" secondAttribute="leading" id="RYX-Ez-CMX"/>
+                            <constraint firstItem="lIg-Nw-p4n" firstAttribute="top" secondItem="dHn-RD-4X3" secondAttribute="bottom" constant="14" id="S93-l6-mXv"/>
                             <constraint firstItem="lIg-Nw-p4n" firstAttribute="leading" secondItem="LYD-Ub-rKK" secondAttribute="leadingMargin" id="SEn-Bg-Vd2"/>
                             <constraint firstAttribute="trailingMargin" secondItem="lIg-Nw-p4n" secondAttribute="trailing" id="aLo-bt-VUr"/>
+                            <constraint firstItem="dHn-RD-4X3" firstAttribute="centerY" secondItem="LYD-Ub-rKK" secondAttribute="centerY" id="nj5-FF-8Hr"/>
+                            <constraint firstItem="JUT-JD-Nqw" firstAttribute="top" secondItem="dHn-RD-4X3" secondAttribute="bottom" constant="5" id="wY7-eR-xyd"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="NOo-uy-Q67"/>
+                                <exclude reference="nj5-FF-8Hr"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Add New Membership" id="5Wf-lT-Y1y">
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="Cxe-GX-346">
@@ -704,9 +744,6 @@ To get started, tap the plus!
                                                 <exclude reference="t2J-de-JV7"/>
                                             </mask>
                                         </variation>
-                                        <connections>
-                                            <segue destination="xNa-tW-LBn" kind="show" id="0RW-Tk-0yp"/>
-                                        </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8JA-ba-cbd">
                                         <rect key="frame" x="0.0" y="210" width="560" height="20"/>
@@ -734,9 +771,6 @@ To get started, tap the plus!
                                                 <exclude reference="wkJ-X0-jFK"/>
                                             </mask>
                                         </variation>
-                                        <connections>
-                                            <segue destination="udP-IK-Yxs" kind="show" id="hXO-zT-n4i"/>
-                                        </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fLW-Td-n5E">
                                         <rect key="frame" x="0.0" y="305" width="560" height="20"/>
@@ -764,9 +798,6 @@ To get started, tap the plus!
                                                 <exclude reference="bCw-Lc-4Rf"/>
                                             </mask>
                                         </variation>
-                                        <connections>
-                                            <segue destination="XHA-0V-YWp" kind="show" id="9FX-Hg-XGU"/>
-                                        </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4q2-r5-UAy">
                                         <rect key="frame" x="0.0" y="400" width="560" height="20"/>
@@ -1046,12 +1077,12 @@ Call (801)355-3474 ext. 222 to book your Penguin Encounter!</mutableString>
             <objects>
                 <tableViewController title="Ocean Explorer" id="XHA-0V-YWp" customClass="OceanExplorerTableViewController" customModule="Aquarium" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="ZLi-cy-eFj">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="700"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="3cl-IK-kXM">
-                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3cl-IK-kXM" id="HKX-Q4-sln">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
@@ -1074,12 +1105,12 @@ Call (801)355-3474 ext. 222 to book your Penguin Encounter!</mutableString>
             <objects>
                 <tableViewController title="Journey To South America" id="xNa-tW-LBn" customClass="JourneyToSouthAmericaTableViewController" customModule="Aquarium" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="eag-cG-Gec">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="700"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="vn4-YX-PhK">
-                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vn4-YX-PhK" id="Eg0-v2-Zjz">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
@@ -1096,24 +1127,6 @@ Call (801)355-3474 ext. 222 to book your Penguin Encounter!</mutableString>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IX5-Lm-Znl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2764" y="2116"/>
-        </scene>
-        <!--Antarctic Adventure-->
-        <scene sceneID="WIa-HD-HTP">
-            <objects>
-                <viewController title="Antarctic Adventure" id="udP-IK-Yxs" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="wFH-as-13c"/>
-                        <viewControllerLayoutGuide type="bottom" id="pK2-JZ-ziA"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="S3b-Cu-PUs">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="700"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="iz7-68-tac" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2764" y="1395"/>
         </scene>
         <!--QR Scanner-->
         <scene sceneID="ouM-M7-Gll">

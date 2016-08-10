@@ -196,7 +196,7 @@
 				TargetAttributes = {
 					AA544C901D0BB66B00DC1725 = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = 52T93X8W2H;
+						DevelopmentTeam = B3G94J8WC9;
 					};
 				};
 			};
@@ -370,10 +370,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Aquarium/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.forrestsyrett.Aquarium;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Aquarium;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -382,10 +383,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Aquarium/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.forrestsyrett.Aquarium;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Aquarium;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
