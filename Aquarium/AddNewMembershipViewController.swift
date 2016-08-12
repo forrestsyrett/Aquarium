@@ -22,6 +22,7 @@ class AddNewMembershipViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         gradient(self.view)
+        transparentNavigationBar(self)
         
         membershipNameTextField.delegate = self
         membershipIDTextField.delegate = self

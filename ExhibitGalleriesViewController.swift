@@ -18,8 +18,8 @@ class ExhibitGalleriesViewController: UIViewController, UITabBarDelegate {
     @IBOutlet weak var oceanExplorerButton: UIButton!
     @IBOutlet weak var journeyToSouthAmericaButton: UIButton!
     @IBOutlet weak var antarcticAdventureButton: UIButton!
-    
     @IBOutlet weak var expeditionAsiaButton: UIButton!
+    
     
     // MARK: Animations
     
@@ -33,7 +33,6 @@ class ExhibitGalleriesViewController: UIViewController, UITabBarDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         
         gradient(self.view)
         
@@ -53,5 +52,7 @@ class ExhibitGalleriesViewController: UIViewController, UITabBarDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+
     
 }

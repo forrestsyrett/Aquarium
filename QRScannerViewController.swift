@@ -44,17 +44,19 @@ class QRScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsD
             error = error1
             input = nil
         }
-        if (error != nil) {
-            let alertController = UIAlertController(title: "Device Error", message: "Device not supported for this Application", preferredStyle: .Alert)
-            
-            let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
-            alertController.addAction(cancelAction)
-        }
+//        if (error != nil) {
+//            let alertController = UIAlertController(title: "Device Error", message: "Device not supported for this Application", preferredStyle: .Alert)
+//            
+//            let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+//            alertController.addAction(cancelAction)
+//        }
         
         
         captureSession = AVCaptureSession()
         if captureDevice == nil {
+    
             return
+            
         } else {
             captureSession?.addInput(input as? AVCaptureInput)
         }
@@ -132,7 +134,6 @@ class QRScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsD
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        AVCaptureDevice.requestAccessForMediaType(AVMediaTypeVideo, completionHandler: nil)
 
         
         roundCornerButtons(QRModalView)
@@ -181,7 +182,13 @@ class QRScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsD
     func cameraCheck() {
         let authStatus = AVCaptureDevice.authorizationStatusForMediaType(AVMediaTypeVideo)
         switch authStatus {
-        case .Authorized: qrOn(true)
+        case .Authorized:
+            qrOn(true)
+            QRModalView.hidden = true
+            alignQRCodeLabel.hidden = false
+            scanButton.hidden = false
+            photoFrameImage.hidden = false
+            
         case .Denied:
             let cameraAlert = UIAlertController(title: "No Camera Access", message: "Please Allow Access To The Camera", preferredStyle: .Alert)
             let settingsAction = UIAlertAction(title: "Settings", style: .Default, handler: { (cameraAlert) in
@@ -202,34 +209,22 @@ class QRScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsD
             
         case .NotDetermined:
             
-            let cameraAlert = UIAlertController(title: "No Camera Access", message: "Camera Not Found", preferredStyle: .Alert)
-            let okAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+            AVCaptureDevice.requestAccessForMediaType(AVMediaTypeVideo, completionHandler: nil)
             
-            cameraAlert.addAction(okAction)
-            
-            self.presentViewController(cameraAlert, animated: true, completion: nil)
-            
-            QRModalView.hidden = false
-            alignQRCodeLabel.hidden = true
-            scanButton.hidden = true
-            photoFrameImage.hidden = true
-        default: break
-        }
-    }
 
+            
+        default: break
+                
+        }
+    
+    }
     
     @IBAction func getStartedButtonTapped(sender: AnyObject) {
-        QRModalView.hidden = true
-        alignQRCodeLabel.hidden = false
-        scanButton.hidden = false
-        photoFrameImage.hidden = false
+        
         cameraCheck()
-    
-    }
-    
+
+        }
 }
-
-
 
 
 

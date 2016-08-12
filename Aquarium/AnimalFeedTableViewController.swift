@@ -8,10 +8,12 @@
 
 import UIKit
 
-class AnimalFeedTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, AnimalFeedTableViewCellDelegate {
+class AnimalFeedTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, AnimalFeedTableViewCellDelegate, UIGestureRecognizerDelegate {
     
     @IBOutlet weak var animalFeedTableView: UITableView!
     @IBOutlet weak var weekdaySegmentedControl: UISegmentedControl!
+    @IBOutlet var rightSwipeGesture: UISwipeGestureRecognizer!
+    
     
     var selectedWeekday: Int {
         return weekdaySegmentedControl.selectedSegmentIndex + 1
@@ -31,10 +33,53 @@ class AnimalFeedTableViewController: UIViewController, UITableViewDelegate, UITa
         gradient(self.view)
         animalFeedTableView.backgroundColor = UIColor.clearColor()
         weekdaySegmentedControl.tintColor = .whiteColor()
+        
+//        let leftSwipe = UISwipeGestureRecognizer(target: self, action: (#selector(AnimalFeedTableViewController.swipeAction(_:))))
+//        let rightSwipe = UISwipeGestureRecognizer(target: self, action:(#selector(AnimalFeedTableViewController.swipeAction(_:))))
+//        
+//        leftSwipe.direction = .Left
+//        rightSwipe.direction = .Right
+//        
+//        view.addGestureRecognizer(leftSwipe)
+//        view.addGestureRecognizer(rightSwipe)
     }
     
+    func swipeAction(swipe: UISwipeGestureRecognizer) {
+        
+        if swipe.direction == .Left {
+     
+            if self.weekdaySegmentedControl.selectedSegmentIndex < 6 {
+                self.weekdaySegmentedControl.selectedSegmentIndex + 1
+            self.weekdaySegmentedControl.sendActionsForControlEvents(.ValueChanged)
+                animalFeedTableView.reloadData()
+            }
+                print("Left swipe")
+            print(weekdaySegmentedControl.selectedSegmentIndex)
+//            else { return }
+        }
+        if swipe.direction == .Right {
+            if self.weekdaySegmentedControl.selectedSegmentIndex > 0 {
+                self.weekdaySegmentedControl.selectedSegmentIndex - 1
+                self.weekdaySegmentedControl.sendActionsForControlEvents(.ValueChanged)
+            }
+                print("Right swipe")
+                print(weekdaySegmentedControl.selectedSegmentIndex)
+//            else { return }
+        }
+    }
+//
+
     
     override func viewWillAppear(animated: Bool) {
+        
+//        let leftSwipe = UISwipeGestureRecognizer(target: self, action: (#selector(AnimalFeedTableViewController.swipeAction(_:))))
+//        let rightSwipe = UISwipeGestureRecognizer(target: self, action:(#selector(AnimalFeedTableViewController.swipeAction(_:))))
+//        
+//        leftSwipe.direction = .Left
+//        rightSwipe.direction = .Right
+//        
+//        view.addGestureRecognizer(leftSwipe)
+//        view.addGestureRecognizer(rightSwipe)
     }
     
     
@@ -43,15 +88,6 @@ class AnimalFeedTableViewController: UIViewController, UITableViewDelegate, UITa
         // Dispose of any resources that can be recreated.
     }
     
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-     // Get the new view controller using [segue destinationViewController].
-     // Pass the selected object to the new view controller.
-     }
-     */
     
     // MARK: UICollectionViewDataSource
     
@@ -94,10 +130,10 @@ class AnimalFeedTableViewController: UIViewController, UITableViewDelegate, UITa
         roundCornerButtons(cell.notifyMeButtonLabel)
         roundCornerButtons(cell.animalFeedImage)
         
-        
-        
+    
         return cell
     }
+    
     
     //                check notifications to see which are scheduled. access .userinfo
     func notificationCheck(animalName: String, weekday: Int) -> Bool {
@@ -128,7 +164,21 @@ class AnimalFeedTableViewController: UIViewController, UITableViewDelegate, UITa
             [.Alert, .Badge, .Sound], categories: nil))
         
         notificationController.scheduleNotification(for: feed, onWeekday: selectedWeekday, scheduled: animalFeedTableViewCell.notificationScheduled)
+        
+        
     }
+    
+    @IBAction func swipeRecognition(sender: UISegmentedControl) {
+        
+//        if sender.selectedSegmentIndex > 0 {
+//            self.view.addGestureRecognizer(self.rightSwipeGesture)
+//            weekdaySegmentedControl.selectedSegmentIndex + 1
+//            print("right swipe")
+//        } else {
+//            self.view.removeGestureRecognizer(self.rightSwipeGesture)
+//        }
+    }
+    
 }
 
 

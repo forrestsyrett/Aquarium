@@ -34,19 +34,19 @@ enum Feeding {
         switch self {
         case .shark:
             let time = calendar.dateBySettingHour(13, minute: 30, second: 0, ofDate: now, options: .MatchStrictly)!
-            return Info(animalName: "Shark Feed", notificationTitle: "Shark feeding at \(Feeding.dateFormatter.stringFromDate(time))!", time: time, hour: 13, minute: 30, timeString: Feeding.dateFormatter.stringFromDate(time), weekdays: [1: true, 3: true, 5: true, 7: true], image: UIImage(named: "sharkFeed")!)
+            return Info(animalName: "Shark Feed", notificationTitle: "Shark feeding at \(Feeding.dateFormatter.stringFromDate(time))!", time: time, hour: 13, minute: 15, timeString: Feeding.dateFormatter.stringFromDate(time), weekdays: [1: true, 3: true, 5: true, 7: true], image: UIImage(named: "sharkFeed")!)
         case .penguin:
             let time = calendar.dateBySettingHour(16, minute: 00, second: 0, ofDate: now, options: .MatchStrictly)!
-            return Info(animalName: "Penguin Feed", notificationTitle: "Penguin feeding at \(Feeding.dateFormatter.stringFromDate(time))!", time: time, hour: 16, minute: 00, timeString: Feeding.dateFormatter.stringFromDate(time), weekdays: [1: true, 2: true, 3: true, 4: true, 5: true, 6: true, 7: true], image: UIImage(named: "penguinFeed")!)
+            return Info(animalName: "Penguin Feed", notificationTitle: "Penguin feeding at \(Feeding.dateFormatter.stringFromDate(time))!", time: time, hour: 15, minute: 45, timeString: Feeding.dateFormatter.stringFromDate(time), weekdays: [1: true, 2: true, 3: true, 4: true, 5: true, 6: true, 7: true], image: UIImage(named: "penguinFeed")!)
         case .archerfish:
             let time = calendar.dateBySettingHour(14, minute: 30, second: 0, ofDate: now, options: .MatchStrictly)!
-            return Info(animalName: "Archerfish Feed", notificationTitle: "Archerfish feeding at \(Feeding.dateFormatter.stringFromDate(time))!", time: time, hour: 14, minute: 30, timeString: Feeding.dateFormatter.stringFromDate(time), weekdays: [2: true, 5: true, 7: true], image: UIImage(named: "archerfishFeed")!)
+            return Info(animalName: "Archerfish Feed", notificationTitle: "Archerfish feeding at \(Feeding.dateFormatter.stringFromDate(time))!", time: time, hour: 14, minute: 15, timeString: Feeding.dateFormatter.stringFromDate(time), weekdays: [2: true, 5: true, 7: true], image: UIImage(named: "archerfishFeed")!)
         case .riverGiant:
             let time = calendar.dateBySettingHour(14, minute: 30, second: 0, ofDate: now, options: .MatchStrictly)!
-            return Info(animalName: "River Giants Feed", notificationTitle: "River Giants feeding at \(Feeding.dateFormatter.stringFromDate(time))!", time: time, hour: 14, minute: 30, timeString: Feeding.dateFormatter.stringFromDate(time), weekdays: [3: true, 5: true, 7: true], image: UIImage(named: "riverGiantsFeed")!)
+            return Info(animalName: "River Giants Feed", notificationTitle: "River Giants feeding at \(Feeding.dateFormatter.stringFromDate(time))!", time: time, hour: 14, minute: 15, timeString: Feeding.dateFormatter.stringFromDate(time), weekdays: [3: true, 5: true, 7: true], image: UIImage(named: "riverGiantsFeed")!)
         case .piranha:
             let time = calendar.dateBySettingHour(11, minute: 00, second: 0, ofDate: now, options: .MatchStrictly)!
-            return Info(animalName: "Piranha Feed", notificationTitle: "Piranha feeding at \(Feeding.dateFormatter.stringFromDate(time))!", time: time, hour: 11, minute: 00, timeString: Feeding.dateFormatter.stringFromDate(time), weekdays: [3: true, 5: true], image: UIImage(named: "piranhaFeed")!)
+            return Info(animalName: "Piranha Feed", notificationTitle: "Piranha feeding at \(Feeding.dateFormatter.stringFromDate(time))!", time: time, hour: 10, minute: 45, timeString: Feeding.dateFormatter.stringFromDate(time), weekdays: [3: true, 5: true], image: UIImage(named: "piranhaFeed")!)
         }
     }
     

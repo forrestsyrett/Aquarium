@@ -75,11 +75,12 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VL1-4L-JZp">
                                         <rect key="frame" x="280" y="0.0" width="280" height="110"/>
-                                        <state key="normal" title="Directions">
+                                        <state key="normal" title="Contact Us">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
                                             <action selector="directionButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qka-co-T19"/>
+                                            <segue destination="jB3-XJ-xla" kind="show" id="Uvk-9n-nsp"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -352,13 +353,13 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mobile Membership Card" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CmB-iv-51b">
-                                <rect key="frame" x="20" y="36" width="560" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="20" y="36" width="560" height="22"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vcS-aq-fI9">
-                                <rect key="frame" x="20" y="61" width="560" height="1"/>
+                                <rect key="frame" x="20" y="62" width="560" height="1"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="IDn-Du-FZe"/>
@@ -376,7 +377,7 @@
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" scrollEnabled="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="4X3-rL-V9z">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" scrollEnabled="NO" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4X3-rL-V9z">
                                         <rect key="frame" x="8" y="79" width="544" height="346"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <string key="text">Here you can add your Living Planet Aquarium memberships, and scan your phone at the entrance!
@@ -502,7 +503,324 @@ To get started, tap the plus!
             </objects>
             <point key="canvasLocation" x="1322" y="-293"/>
         </scene>
-        <!--Add New Membership-->
+        <!--Contact Us View Controller-->
+        <scene sceneID="6sX-ND-xxx">
+            <objects>
+                <viewController id="jB3-XJ-xla" customClass="ContactUsViewController" customModule="Aquarium" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="yRO-Zl-EYo"/>
+                        <viewControllerLayoutGuide type="bottom" id="was-Xq-FDf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="4QO-1r-L8z">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="800"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contact Us" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7b4-M8-adQ">
+                                <rect key="frame" x="20" y="36" width="560" height="22"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JaQ-wt-bbc">
+                                <rect key="frame" x="20" y="62" width="560" height="1"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="Bcs-Ck-SJu"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10 AM - 6 PM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="Mee-BF-QhS">
+                                <rect key="frame" x="20" y="276" width="560" height="26"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Mee-BF-QhS" secondAttribute="height" multiplier="80:3" constant="-133.33333333333337" id="Hhp-UR-qZC"/>
+                                    <constraint firstAttribute="height" constant="21" id="Yux-m9-lbo"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Yux-m9-lbo"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We are open every day except" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="Erk-nw-Hui">
+                                <rect key="frame" x="20" y="310" width="560" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Erk-nw-Hui" secondAttribute="height" multiplier="70:4" id="mpv-oh-lzr"/>
+                                    <constraint firstAttribute="height" constant="24" id="woS-fM-nYd"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="woS-fM-nYd"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Directions" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="1mZ-3z-5Hm">
+                                <rect key="frame" x="20" y="416" width="560" height="27"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="22" id="LBv-t5-zzk"/>
+                                    <constraint firstAttribute="width" secondItem="1mZ-3z-5Hm" secondAttribute="height" multiplier="560:27" id="fY7-gO-5fL"/>
+                                    <constraint firstAttribute="width" secondItem="1mZ-3z-5Hm" secondAttribute="height" multiplier="280:11" constant="-127.27272727272725" id="m8U-7G-4tC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="LBv-t5-zzk"/>
+                                        <exclude reference="m8U-7G-4tC"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12033 Lone Peak Parkway, Draper UT" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="zLb-xH-GZt">
+                                <rect key="frame" x="20" y="456" width="560" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="zLb-xH-GZt" secondAttribute="height" multiplier="80:4" constant="-60" id="Ina-Id-fgq"/>
+                                    <constraint firstAttribute="height" constant="21" id="kkm-w6-t54"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="kkm-w6-t54"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="84020" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="6IP-bs-we5">
+                                <rect key="frame" x="20" y="490" width="560" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="6IP-bs-we5" secondAttribute="height" multiplier="80:3" constant="-266.66666666666674" id="kg0-7s-06U"/>
+                                    <constraint firstAttribute="height" constant="21" id="tsU-sk-hZ5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="tsU-sk-hZ5"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hjW-q7-UM6">
+                                <rect key="frame" x="241" y="526" width="119" height="40"/>
+                                <color key="backgroundColor" red="0.60297624350000001" green="0.77598434559999996" blue="0.88197115380000002" alpha="0.76686422409999999" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="hjW-q7-UM6" secondAttribute="height" multiplier="116:41" constant="22.804878048780495" id="GXb-Cm-jCm"/>
+                                    <constraint firstAttribute="height" constant="40" id="Rxh-oA-Rtk"/>
+                                    <constraint firstAttribute="width" constant="116" id="hNI-k5-06Z"/>
+                                    <constraint firstAttribute="height" constant="41" id="vFE-TR-j21"/>
+                                    <constraint firstAttribute="width" constant="119" id="zzB-AN-rWn"/>
+                                </constraints>
+                                <state key="normal" title="Open in Maps">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="GXb-Cm-jCm"/>
+                                        <exclude reference="hNI-k5-06Z"/>
+                                        <exclude reference="vFE-TR-j21"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="openInMapsButtonTapped:" destination="jB3-XJ-xla" eventType="touchUpInside" id="iYN-tx-vra"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="87r-Go-st0">
+                                <rect key="frame" x="72" y="447" width="456" height="1"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="Hcu-D4-jXD"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yVw-XH-3g6">
+                                <rect key="frame" x="72" y="267" width="456" height="1"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="Lol-MJ-OPB"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mcl-pj-03z">
+                                <rect key="frame" x="20" y="745" width="560" height="1"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="W2N-kX-jmI"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hours of Operation" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="TeN-K3-zEW">
+                                <rect key="frame" x="20" y="236" width="560" height="27"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="22" id="FDL-ic-a0N"/>
+                                    <constraint firstAttribute="width" secondItem="TeN-K3-zEW" secondAttribute="height" multiplier="280:11" constant="-127.27272727272725" id="lSe-bL-cOs"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="FDL-ic-a0N"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Questions or comments?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="UPe-Ef-VrZ">
+                                <rect key="frame" x="20" y="93" width="560" height="28"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="UPe-Ef-VrZ" secondAttribute="height" multiplier="80:4" id="FpM-Ie-sDf"/>
+                                    <constraint firstAttribute="height" constant="21" id="lOR-fT-IYP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="lOR-fT-IYP"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Give us a call!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="7SO-bw-mpd">
+                                <rect key="frame" x="20" y="126" width="560" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="7SO-bw-mpd" secondAttribute="height" multiplier="28:1" constant="-140" id="Y6I-Rm-bPe"/>
+                                    <constraint firstAttribute="height" constant="20" id="qQQ-5H-fAf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="qQQ-5H-fAf"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thanksgiving and Christmas" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="DCX-NK-VB8">
+                                <rect key="frame" x="20" y="343" width="560" height="33"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="BZW-lc-y5a"/>
+                                    <constraint firstAttribute="width" secondItem="DCX-NK-VB8" secondAttribute="height" multiplier="80:4" constant="-100" id="Tac-Qw-fNp"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="BZW-lc-y5a"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c8d-7F-QWp">
+                                <rect key="frame" x="241" y="156" width="119" height="40"/>
+                                <color key="backgroundColor" red="0.60297624350000001" green="0.77598434559999996" blue="0.88197115380000002" alpha="0.76686422409999999" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="119" id="CL3-jd-l1Z"/>
+                                    <constraint firstAttribute="height" constant="41" id="Kwh-uX-jOB"/>
+                                    <constraint firstAttribute="width" constant="116" id="UZ7-wI-Duo"/>
+                                    <constraint firstAttribute="width" secondItem="c8d-7F-QWp" secondAttribute="height" multiplier="116:41" constant="19.975609756097569" id="c11-UX-RG7"/>
+                                    <constraint firstAttribute="height" constant="40" id="pH3-D1-hFE"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="116" id="vow-6n-qJg"/>
+                                </constraints>
+                                <state key="normal" title="801-355-FISH">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Kwh-uX-jOB"/>
+                                        <exclude reference="UZ7-wI-Duo"/>
+                                        <exclude reference="c11-UX-RG7"/>
+                                        <exclude reference="vow-6n-qJg"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="phoneNumberButton:" destination="jB3-XJ-xla" eventType="touchUpInside" id="oCK-D5-2oE"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="leadingMargin" secondItem="Erk-nw-Hui" secondAttribute="leading" id="3BO-6P-RCM"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="yVw-XH-3g6" secondAttribute="leading" constant="-52" id="3af-ac-ZXU"/>
+                            <constraint firstItem="6IP-bs-we5" firstAttribute="top" secondItem="zLb-xH-GZt" secondAttribute="bottom" constant="3" id="3hr-qL-7Qr"/>
+                            <constraint firstItem="yVw-XH-3g6" firstAttribute="top" secondItem="TeN-K3-zEW" secondAttribute="bottom" constant="4" id="4nc-ut-u3i"/>
+                            <constraint firstItem="1mZ-3z-5Hm" firstAttribute="top" relation="greaterThanOrEqual" secondItem="DCX-NK-VB8" secondAttribute="bottom" constant="8" id="7Xt-ny-QBr"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Erk-nw-Hui" secondAttribute="trailing" id="8Dy-zT-uJ8"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="UPe-Ef-VrZ" secondAttribute="leading" id="8e1-Jv-j89"/>
+                            <constraint firstItem="TeN-K3-zEW" firstAttribute="top" relation="greaterThanOrEqual" secondItem="c8d-7F-QWp" secondAttribute="bottom" constant="8" id="8gD-y6-Wf4"/>
+                            <constraint firstItem="zLb-xH-GZt" firstAttribute="top" secondItem="87r-Go-st0" secondAttribute="bottom" constant="8" id="ACv-oP-0AB"/>
+                            <constraint firstItem="UPe-Ef-VrZ" firstAttribute="top" relation="greaterThanOrEqual" secondItem="JaQ-wt-bbc" secondAttribute="bottom" constant="20" id="ALC-X9-ecn"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="DCX-NK-VB8" secondAttribute="trailing" id="AeY-Ts-25f"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="zLb-xH-GZt" secondAttribute="trailing" id="B1L-po-Osq"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="87r-Go-st0" secondAttribute="leading" constant="-52" id="Bn5-EM-nkb"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="yVw-XH-3g6" secondAttribute="trailing" constant="52" id="FJE-8m-Oib"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="DCX-NK-VB8" secondAttribute="leading" id="FTU-Br-c0l"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="JaQ-wt-bbc" secondAttribute="leading" id="Gof-VN-jsT"/>
+                            <constraint firstItem="7SO-bw-mpd" firstAttribute="top" secondItem="UPe-Ef-VrZ" secondAttribute="bottom" constant="5" id="HXN-Zf-nNR"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="TeN-K3-zEW" secondAttribute="trailing" id="HbE-uD-CV1"/>
+                            <constraint firstItem="Mee-BF-QhS" firstAttribute="top" secondItem="yVw-XH-3g6" secondAttribute="bottom" constant="8" id="I7A-Ud-r3m"/>
+                            <constraint firstItem="c8d-7F-QWp" firstAttribute="centerX" secondItem="4QO-1r-L8z" secondAttribute="centerX" id="ITf-XX-L4r"/>
+                            <constraint firstItem="DCX-NK-VB8" firstAttribute="top" secondItem="Erk-nw-Hui" secondAttribute="bottom" constant="1" id="Jw8-AB-kqW"/>
+                            <constraint firstItem="Mee-BF-QhS" firstAttribute="leading" secondItem="4QO-1r-L8z" secondAttribute="leadingMargin" id="LEP-tE-MOa"/>
+                            <constraint firstItem="hjW-q7-UM6" firstAttribute="centerX" secondItem="4QO-1r-L8z" secondAttribute="centerX" id="MYE-x1-6UV"/>
+                            <constraint firstItem="7b4-M8-adQ" firstAttribute="top" secondItem="yRO-Zl-EYo" secondAttribute="bottom" constant="-28" id="OEE-NX-FO7"/>
+                            <constraint firstItem="hjW-q7-UM6" firstAttribute="top" secondItem="6IP-bs-we5" secondAttribute="bottom" constant="5" id="OIM-Cw-xbb"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="1mZ-3z-5Hm" secondAttribute="trailing" id="PrF-aj-eVB"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="TeN-K3-zEW" secondAttribute="leading" id="Qfd-oM-KFw"/>
+                            <constraint firstItem="was-Xq-FDf" firstAttribute="top" secondItem="mcl-pj-03z" secondAttribute="bottom" constant="5" id="RyC-BI-SoP"/>
+                            <constraint firstItem="mcl-pj-03z" firstAttribute="top" secondItem="hjW-q7-UM6" secondAttribute="bottom" constant="249" id="SxG-Lc-7wm"/>
+                            <constraint firstItem="87r-Go-st0" firstAttribute="top" secondItem="1mZ-3z-5Hm" secondAttribute="bottom" constant="4" id="TuP-Wo-RqN"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="mcl-pj-03z" secondAttribute="leading" id="U1X-ct-hw1"/>
+                            <constraint firstItem="1mZ-3z-5Hm" firstAttribute="top" secondItem="DCX-NK-VB8" secondAttribute="bottom" priority="250" constant="40" id="Uzs-TF-19S"/>
+                            <constraint firstItem="1mZ-3z-5Hm" firstAttribute="top" secondItem="Erk-nw-Hui" secondAttribute="bottom" priority="750" constant="40" id="VC7-Mx-Bw0"/>
+                            <constraint firstItem="TeN-K3-zEW" firstAttribute="top" relation="greaterThanOrEqual" secondItem="c8d-7F-QWp" secondAttribute="bottom" constant="8" id="VIu-Xv-8aU"/>
+                            <constraint firstItem="c8d-7F-QWp" firstAttribute="top" secondItem="7SO-bw-mpd" secondAttribute="bottom" constant="5" id="VVC-Wh-U2N"/>
+                            <constraint firstItem="c8d-7F-QWp" firstAttribute="top" secondItem="UPe-Ef-VrZ" secondAttribute="bottom" constant="8" id="WQH-DU-vY3"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="7b4-M8-adQ" secondAttribute="trailing" id="WeQ-mB-6wc"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="JaQ-wt-bbc" secondAttribute="trailing" id="X28-mM-8AK"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="1mZ-3z-5Hm" secondAttribute="leading" id="aaP-Eu-uPk"/>
+                            <constraint firstItem="mcl-pj-03z" firstAttribute="top" relation="greaterThanOrEqual" secondItem="hjW-q7-UM6" secondAttribute="bottom" priority="750" constant="20" id="b0G-NS-QbC"/>
+                            <constraint firstItem="UPe-Ef-VrZ" firstAttribute="top" secondItem="JaQ-wt-bbc" secondAttribute="bottom" priority="750" constant="30" id="baL-6H-8ey"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="6IP-bs-we5" secondAttribute="trailing" id="cNm-eA-0VL"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="7b4-M8-adQ" secondAttribute="leading" id="drU-uP-9XK"/>
+                            <constraint firstItem="Mee-BF-QhS" firstAttribute="top" secondItem="TeN-K3-zEW" secondAttribute="bottom" constant="8" id="e0L-N0-hl6"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Mee-BF-QhS" secondAttribute="trailing" id="eQg-lg-ceD"/>
+                            <constraint firstItem="c8d-7F-QWp" firstAttribute="top" secondItem="JaQ-wt-bbc" secondAttribute="bottom" constant="200" id="egm-bB-Zsp"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="87r-Go-st0" secondAttribute="trailing" constant="52" id="fvg-Et-S0s"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="7SO-bw-mpd" secondAttribute="leading" id="hag-9b-BdF"/>
+                            <constraint firstItem="1mZ-3z-5Hm" firstAttribute="top" relation="greaterThanOrEqual" secondItem="DCX-NK-VB8" secondAttribute="bottom" constant="8" id="jxY-E7-XfC"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="UPe-Ef-VrZ" secondAttribute="trailing" id="otZ-KG-v9G"/>
+                            <constraint firstAttribute="bottom" secondItem="1mZ-3z-5Hm" secondAttribute="bottom" constant="316" id="pNw-sx-nkQ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="mcl-pj-03z" secondAttribute="trailing" id="rhb-Lb-Cih"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="6IP-bs-we5" secondAttribute="leading" id="u2m-xK-39v"/>
+                            <constraint firstItem="TeN-K3-zEW" firstAttribute="top" secondItem="c8d-7F-QWp" secondAttribute="bottom" priority="250" constant="40" id="uhp-CG-uMo"/>
+                            <constraint firstItem="JaQ-wt-bbc" firstAttribute="top" secondItem="7b4-M8-adQ" secondAttribute="bottom" constant="4" id="xve-GA-ira"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="zLb-xH-GZt" secondAttribute="leading" id="y57-fc-cW1"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="7SO-bw-mpd" secondAttribute="trailing" id="yEK-rK-Oxv"/>
+                            <constraint firstItem="Erk-nw-Hui" firstAttribute="top" secondItem="Mee-BF-QhS" secondAttribute="bottom" constant="8" id="yGR-Nk-wOG"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="VIu-Xv-8aU"/>
+                                <exclude reference="e0L-N0-hl6"/>
+                                <exclude reference="WQH-DU-vY3"/>
+                                <exclude reference="egm-bB-Zsp"/>
+                                <exclude reference="VC7-Mx-Bw0"/>
+                                <exclude reference="jxY-E7-XfC"/>
+                                <exclude reference="pNw-sx-nkQ"/>
+                                <exclude reference="SxG-Lc-7wm"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="mapsButton" destination="hjW-q7-UM6" id="xcE-Dk-q64"/>
+                        <outlet property="phoneNumberButton" destination="c8d-7F-QWp" id="YxC-3o-mzi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="62t-tH-QiQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2052" y="-1072"/>
+        </scene>
+        <!--Add New Membership View Controller-->
         <scene sceneID="wsj-vE-6ra">
             <objects>
                 <viewController id="vyk-Ro-hE2" customClass="AddNewMembershipViewController" customModule="Aquarium" customModuleProvider="target" sceneMemberID="viewController">
@@ -514,6 +832,24 @@ To get started, tap the plus!
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Membership ID Number" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lIg-Nw-p4n">
+                                <rect key="frame" x="20" y="238" width="560" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="76Y-TI-WqV"/>
+                                    <constraint firstAttribute="height" constant="30" id="LYm-bP-wlY"/>
+                                </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="LYm-bP-wlY"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="memberIDTextFieldEditingChanged:" destination="vyk-Ro-hE2" eventType="editingChanged" id="Iqd-Fd-Fgq"/>
+                                </connections>
+                            </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Member Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dHn-RD-4X3">
                                 <rect key="frame" x="20" y="184" width="560" height="40"/>
                                 <constraints>
@@ -540,32 +876,29 @@ To get started, tap the plus!
                                     <constraint firstAttribute="height" constant="1" id="P88-PB-PFv"/>
                                 </constraints>
                             </view>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Membership ID Number" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lIg-Nw-p4n">
-                                <rect key="frame" x="20" y="238" width="560" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="76Y-TI-WqV"/>
-                                    <constraint firstAttribute="height" constant="30" id="LYm-bP-wlY"/>
-                                </constraints>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add New Membership" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="uSu-eK-MlC">
+                                <rect key="frame" x="20" y="36" width="560" height="22"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="LYm-bP-wlY"/>
-                                    </mask>
-                                </variation>
-                                <connections>
-                                    <action selector="memberIDTextFieldEditingChanged:" destination="vyk-Ro-hE2" eventType="editingChanged" id="Iqd-Fd-Fgq"/>
-                                </connections>
-                            </textField>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mmI-H8-Nq5">
+                                <rect key="frame" x="20" y="62" width="560" height="1"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="lFd-Re-R6U"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="uSu-eK-MlC" secondAttribute="trailing" id="21k-AB-5d0"/>
                             <constraint firstItem="dHn-RD-4X3" firstAttribute="leading" secondItem="LYD-Ub-rKK" secondAttribute="leadingMargin" id="4g0-yW-wSJ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="mbq-57-TzL" secondAttribute="trailing" id="BKU-L6-9pr"/>
                             <constraint firstItem="dHn-RD-4X3" firstAttribute="top" secondItem="l1l-IO-8mY" secondAttribute="bottom" constant="120" id="GXy-8B-dVP"/>
                             <constraint firstAttribute="trailingMargin" secondItem="dHn-RD-4X3" secondAttribute="trailing" id="JQg-gi-L6F"/>
                             <constraint firstAttribute="trailingMargin" secondItem="JUT-JD-Nqw" secondAttribute="trailing" id="JjD-VW-lau"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="mmI-H8-Nq5" secondAttribute="leading" id="LbC-cy-abd"/>
                             <constraint firstItem="dHn-RD-4X3" firstAttribute="top" secondItem="l1l-IO-8mY" secondAttribute="bottom" constant="100" id="NOo-uy-Q67"/>
                             <constraint firstAttribute="leadingMargin" secondItem="JUT-JD-Nqw" secondAttribute="leading" id="NwS-N5-lRp"/>
                             <constraint firstItem="mbq-57-TzL" firstAttribute="top" secondItem="lIg-Nw-p4n" secondAttribute="bottom" constant="5" id="PBt-7B-qEO"/>
@@ -573,7 +906,11 @@ To get started, tap the plus!
                             <constraint firstItem="lIg-Nw-p4n" firstAttribute="top" secondItem="dHn-RD-4X3" secondAttribute="bottom" constant="14" id="S93-l6-mXv"/>
                             <constraint firstItem="lIg-Nw-p4n" firstAttribute="leading" secondItem="LYD-Ub-rKK" secondAttribute="leadingMargin" id="SEn-Bg-Vd2"/>
                             <constraint firstAttribute="trailingMargin" secondItem="lIg-Nw-p4n" secondAttribute="trailing" id="aLo-bt-VUr"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="mmI-H8-Nq5" secondAttribute="trailing" id="bPc-AW-GJw"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="uSu-eK-MlC" secondAttribute="leading" id="flp-Kh-S11"/>
+                            <constraint firstItem="uSu-eK-MlC" firstAttribute="top" secondItem="l1l-IO-8mY" secondAttribute="bottom" constant="-28" id="lX7-A9-sYN"/>
                             <constraint firstItem="dHn-RD-4X3" firstAttribute="centerY" secondItem="LYD-Ub-rKK" secondAttribute="centerY" id="nj5-FF-8Hr"/>
+                            <constraint firstItem="mmI-H8-Nq5" firstAttribute="top" secondItem="uSu-eK-MlC" secondAttribute="bottom" constant="4" id="pDk-RT-13J"/>
                             <constraint firstItem="JUT-JD-Nqw" firstAttribute="top" secondItem="dHn-RD-4X3" secondAttribute="bottom" constant="5" id="wY7-eR-xyd"/>
                         </constraints>
                         <variation key="default">
@@ -583,7 +920,7 @@ To get started, tap the plus!
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" title="Add New Membership" id="5Wf-lT-Y1y">
+                    <navigationItem key="navigationItem" id="5Wf-lT-Y1y">
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="Cxe-GX-346">
                             <connections>
                                 <action selector="saveButton:" destination="vyk-Ro-hE2" id="Ma3-ib-88a"/>
@@ -626,9 +963,7 @@ To get started, tap the plus!
         <scene sceneID="e01-W2-yIz">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="KCB-DP-Mnn" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Exhibits" image="fish" selectedImage="fishFilled" id="Qvh-Ox-Vq0">
-                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
-                    </tabBarItem>
+                    <tabBarItem key="tabBarItem" title="Exhibits" image="fish" selectedImage="fishFilled" id="Qvh-Ox-Vq0"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="p7C-Sc-Iat">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -656,13 +991,13 @@ To get started, tap the plus!
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Exhibit Galleries" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HpM-AN-CZ4">
-                                <rect key="frame" x="20" y="35" width="560" height="22"/>
+                                <rect key="frame" x="20" y="36" width="560" height="22"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ogq-h8-YMd">
-                                <rect key="frame" x="20" y="61" width="560" height="1"/>
+                                <rect key="frame" x="20" y="62" width="560" height="1"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="Sac-7A-9EY"/>
@@ -863,7 +1198,7 @@ To get started, tap the plus!
                             <constraint firstItem="6wr-cj-8pB" firstAttribute="top" secondItem="QrM-0H-C8J" secondAttribute="bottom" constant="5" id="eo1-aw-nUo"/>
                             <constraint firstItem="4xo-td-ZJw" firstAttribute="leading" secondItem="ovV-yW-6qt" secondAttribute="leadingMargin" id="fHB-dQ-hU1"/>
                             <constraint firstAttribute="trailingMargin" secondItem="HpM-AN-CZ4" secondAttribute="trailing" id="fW9-aX-22Q"/>
-                            <constraint firstItem="HpM-AN-CZ4" firstAttribute="top" secondItem="ovV-yW-6qt" secondAttribute="topMargin" constant="35" id="id4-dm-14W"/>
+                            <constraint firstItem="HpM-AN-CZ4" firstAttribute="top" secondItem="ovV-yW-6qt" secondAttribute="topMargin" constant="36" id="id4-dm-14W"/>
                             <constraint firstAttribute="leadingMargin" secondItem="ogq-h8-YMd" secondAttribute="leading" id="mLc-01-lsM"/>
                             <constraint firstItem="6wr-cj-8pB" firstAttribute="top" secondItem="4xo-td-ZJw" secondAttribute="bottom" constant="8" id="rFD-HM-M7g"/>
                             <constraint firstItem="4xo-td-ZJw" firstAttribute="top" secondItem="ovV-yW-6qt" secondAttribute="topMargin" id="sq0-R5-mNX"/>
@@ -912,48 +1247,66 @@ To get started, tap the plus!
                                 </constraints>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nd2-IS-BBg">
-                                <rect key="frame" x="20" y="292" width="560" height="308"/>
+                                <rect key="frame" x="20" y="292" width="560" height="445"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="Nd2-IS-BBg" secondAttribute="height" multiplier="140:43" constant="-442.79069767441865" id="1BW-Lb-tXH"/>
+                                    <constraint firstAttribute="width" secondItem="Nd2-IS-BBg" secondAttribute="height" multiplier="140:43" constant="-647.90697674418607" id="1BW-Lb-tXH"/>
                                 </constraints>
-                                <mutableString key="text">
-Get up close and personal with our Gentoo Penguins!
+                                <mutableString key="text">Get up close and personal with our Gentoo Penguins!
 1:00pm Thursday-Tuesday
 Limit 10 people per encounter.
 Children under the age of 14 must be supervised by a legal guardian.
 Each child under the age of 5 must have an adult with them.
 $24.95 per person or $19.95 for members.
 
-*Aquarium Admission ticket is also required with a Penguin Encounter  
-Call (801)355-3474 ext. 222 to book your Penguin Encounter!</mutableString>
+Call (801)355-3474 ext. 222 to book your Penguin Encounter!
+
+*Aquarium Admission ticket is also required with a Penguin Encounter</mutableString>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <dataDetectorType key="dataDetectorTypes" phoneNumber="YES"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="1BW-Lb-tXH"/>
+                                    </mask>
+                                </variation>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Special Events" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tbE-vr-Iig">
-                                <rect key="frame" x="241" y="35" width="118" height="22"/>
+                                <rect key="frame" x="20" y="36" width="560" height="22"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VpU-6U-ytV">
-                                <rect key="frame" x="20" y="61" width="560" height="1"/>
+                                <rect key="frame" x="20" y="62" width="560" height="1"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="YVf-hF-Tik"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="63a-jR-kjf">
+                                <rect key="frame" x="20" y="745" width="560" height="1"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="NEN-mW-5Vw"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="leadingMargin" secondItem="Ms6-XZ-e5D" secondAttribute="leading" id="0wz-yQ-cOM"/>
+                            <constraint firstItem="HaR-73-Dwp" firstAttribute="top" secondItem="63a-jR-kjf" secondAttribute="bottom" constant="5" id="2bP-1i-cGE"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="63a-jR-kjf" secondAttribute="trailing" id="5fD-cC-kg7"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="tbE-vr-Iig" secondAttribute="leading" id="9U7-S6-u26"/>
                             <constraint firstAttribute="trailingMargin" secondItem="VpU-6U-ytV" secondAttribute="trailing" id="AdB-5u-zRE"/>
                             <constraint firstAttribute="leadingMargin" secondItem="Nd2-IS-BBg" secondAttribute="leading" id="BDO-7X-myZ"/>
-                            <constraint firstItem="tbE-vr-Iig" firstAttribute="top" secondItem="LL3-mG-mnS" secondAttribute="bottom" constant="-29" id="G21-xr-7k6"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="63a-jR-kjf" secondAttribute="leading" id="EOr-8h-xlJ"/>
+                            <constraint firstItem="tbE-vr-Iig" firstAttribute="top" secondItem="LL3-mG-mnS" secondAttribute="bottom" constant="-28" id="G21-xr-7k6"/>
+                            <constraint firstItem="63a-jR-kjf" firstAttribute="top" secondItem="Nd2-IS-BBg" secondAttribute="bottom" constant="8" id="QVf-YG-fwx"/>
                             <constraint firstItem="Nd2-IS-BBg" firstAttribute="top" secondItem="Ms6-XZ-e5D" secondAttribute="bottom" constant="10" id="Y8h-t4-KcY"/>
                             <constraint firstItem="Ms6-XZ-e5D" firstAttribute="centerX" secondItem="FgV-00-urt" secondAttribute="centerX" id="fYd-pv-nms"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="tbE-vr-Iig" secondAttribute="trailing" id="gKj-ag-lcx"/>
                             <constraint firstItem="VpU-6U-ytV" firstAttribute="top" secondItem="tbE-vr-Iig" secondAttribute="bottom" constant="4" id="m1D-eC-BIH"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Nd2-IS-BBg" secondAttribute="trailing" id="m94-vy-Qqt"/>
                             <constraint firstItem="Nd2-IS-BBg" firstAttribute="centerX" secondItem="FgV-00-urt" secondAttribute="centerX" id="nty-5E-tZu"/>
@@ -962,6 +1315,11 @@ Call (801)355-3474 ext. 222 to book your Penguin Encounter!</mutableString>
                             <constraint firstItem="VpU-6U-ytV" firstAttribute="leading" secondItem="FgV-00-urt" secondAttribute="leadingMargin" id="xQa-Jz-KOV"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Ms6-XZ-e5D" secondAttribute="trailing" id="xy1-Up-v2L"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="vB0-GC-cUd"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="uHD-hm-dTB"/>
                 </viewController>
@@ -1141,7 +1499,7 @@ Call (801)355-3474 ext. 222 to book your Penguin Encounter!</mutableString>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="waN-Ru-3wv" userLabel="QRScanner Modal">
-                                <rect key="frame" x="20" y="54" width="560" height="477"/>
+                                <rect key="frame" x="20" y="98" width="560" height="433"/>
                                 <subviews>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pk0-Bu-fsC">
                                         <rect key="frame" x="8" y="0.0" width="544" height="178"/>
@@ -1149,7 +1507,7 @@ Call (801)355-3474 ext. 222 to book your Penguin Encounter!</mutableString>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="Pk0-Bu-fsC" secondAttribute="height" multiplier="544:103" constant="-396.11650485436894" id="M5B-Td-j8H"/>
                                         </constraints>
-                                        <string key="text"> Throughout the Aquarium you'll find special QR codes on our animal exhibits. Use this scanner to pull up additional animal information and interactive activities!</string>
+                                        <string key="text"> Throughout the Aquarium you'll find special QR codes on many of the animal exhibits. Use this scanner to pull up additional animal information and interactive activities!</string>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -1164,13 +1522,13 @@ Call (801)355-3474 ext. 222 to book your Penguin Encounter!</mutableString>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="QRLogo" translatesAutoresizingMaskIntoConstraints="NO" id="KPr-JS-ADZ">
-                                        <rect key="frame" x="190" y="219" width="182" height="181"/>
+                                        <rect key="frame" x="212" y="219" width="138" height="137"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="KPr-JS-ADZ" secondAttribute="height" multiplier="1:1" constant="1" id="h2j-AY-cEz"/>
                                         </constraints>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZKX-Er-3fC">
-                                        <rect key="frame" x="221" y="408" width="117" height="51"/>
+                                        <rect key="frame" x="221" y="364" width="117" height="51"/>
                                         <color key="backgroundColor" red="0.60297624350000001" green="0.77598434559999996" blue="0.88197115380000002" alpha="0.76686422409999999" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="117" id="94c-dD-G2a"/>
@@ -1270,9 +1628,23 @@ Call (801)355-3474 ext. 222 to book your Penguin Encounter!</mutableString>
                                     <action selector="scanButtonTapped:" destination="uai-Rq-JX2" eventType="touchUpInside" id="Dsh-mg-jOY"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="QR Code Scanner" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rwa-vi-IyD">
+                                <rect key="frame" x="20" y="36" width="560" height="22"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pSN-Ap-Nkd">
+                                <rect key="frame" x="20" y="62" width="560" height="1"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="fDK-ya-Q51"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="leadingMargin" secondItem="Rwa-vi-IyD" secondAttribute="leading" id="2li-T3-MtX"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ZuI-Hf-35J" secondAttribute="trailing" constant="8" id="3LJ-nD-2b1"/>
                             <constraint firstItem="jir-VW-avP" firstAttribute="top" secondItem="dNn-yR-jlI" secondAttribute="bottom" constant="283" id="BS9-DN-xdP"/>
                             <constraint firstAttribute="leadingMargin" secondItem="waN-Ru-3wv" secondAttribute="leading" id="BdU-ei-O3m"/>
@@ -1281,16 +1653,21 @@ Call (801)355-3474 ext. 222 to book your Penguin Encounter!</mutableString>
                             <constraint firstAttribute="trailingMargin" secondItem="jnf-Ws-sfr" secondAttribute="trailing" id="EpC-up-N0n"/>
                             <constraint firstItem="H8o-zs-gKh" firstAttribute="centerX" secondItem="p1p-bL-GDg" secondAttribute="centerX" id="FRD-UQ-wfZ"/>
                             <constraint firstItem="pdo-TE-cKj" firstAttribute="leading" secondItem="p1p-bL-GDg" secondAttribute="leadingMargin" id="FqR-HW-vJa"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="pSN-Ap-Nkd" secondAttribute="trailing" id="GTT-oP-V5a"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="pSN-Ap-Nkd" secondAttribute="leading" id="H67-1m-zi2"/>
                             <constraint firstAttribute="trailingMargin" secondItem="waN-Ru-3wv" secondAttribute="trailing" id="HFh-Z0-vtJ"/>
                             <constraint firstItem="ZuI-Hf-35J" firstAttribute="leading" secondItem="p1p-bL-GDg" secondAttribute="leadingMargin" constant="8" id="JNN-8r-APA"/>
                             <constraint firstItem="H8o-zs-gKh" firstAttribute="centerY" secondItem="p1p-bL-GDg" secondAttribute="centerY" id="KBy-ay-iVY"/>
+                            <constraint firstItem="Rwa-vi-IyD" firstAttribute="top" secondItem="Y8z-0I-f1Z" secondAttribute="bottom" constant="16" id="Kel-Ug-NWm"/>
                             <constraint firstItem="S5t-oz-H9R" firstAttribute="top" secondItem="jnf-Ws-sfr" secondAttribute="bottom" constant="5" id="Mec-DH-Tvw"/>
                             <constraint firstItem="S5t-oz-H9R" firstAttribute="top" secondItem="waN-Ru-3wv" secondAttribute="bottom" constant="14" id="QAA-IS-siI"/>
                             <constraint firstItem="S5t-oz-H9R" firstAttribute="top" secondItem="waN-Ru-3wv" secondAttribute="bottom" constant="20" id="VOQ-BG-FKO"/>
                             <constraint firstItem="dNn-yR-jlI" firstAttribute="top" secondItem="H8o-zs-gKh" secondAttribute="bottom" constant="-284" id="eTP-xK-Q4j"/>
-                            <constraint firstItem="waN-Ru-3wv" firstAttribute="top" secondItem="Y8z-0I-f1Z" secondAttribute="bottom" constant="34" id="h52-Zk-3OG"/>
+                            <constraint firstItem="waN-Ru-3wv" firstAttribute="top" secondItem="Y8z-0I-f1Z" secondAttribute="bottom" constant="78" id="h52-Zk-3OG"/>
                             <constraint firstAttribute="leadingMargin" secondItem="jnf-Ws-sfr" secondAttribute="leading" id="iZt-mu-bQZ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="H8o-zs-gKh" secondAttribute="trailing" constant="30" id="k7P-aF-zGc"/>
+                            <constraint firstItem="pSN-Ap-Nkd" firstAttribute="top" secondItem="Rwa-vi-IyD" secondAttribute="bottom" constant="4" id="kna-4A-jKF"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Rwa-vi-IyD" secondAttribute="trailing" id="lWR-2e-lBI"/>
                             <constraint firstItem="H8o-zs-gKh" firstAttribute="leading" secondItem="p1p-bL-GDg" secondAttribute="leadingMargin" constant="30" id="qIy-JC-nzY"/>
                             <constraint firstItem="jir-VW-avP" firstAttribute="centerX" secondItem="p1p-bL-GDg" secondAttribute="centerX" id="rEB-HP-95Z"/>
                             <constraint firstItem="H8o-zs-gKh" firstAttribute="top" secondItem="dNn-yR-jlI" secondAttribute="bottom" constant="10" id="rY1-qr-wrJ"/>
@@ -1457,6 +1834,7 @@ Call (801)355-3474 ext. 222 to book your Penguin Encounter!</mutableString>
                                     <segment title="Sat"/>
                                 </segments>
                                 <connections>
+                                    <action selector="swipeRecognition:" destination="XZH-NW-XMu" eventType="valueChanged" id="i00-7X-51G"/>
                                     <action selector="weekdaySegmentedControlSelected:" destination="XZH-NW-XMu" eventType="valueChanged" id="wrL-vy-tpv"/>
                                 </connections>
                             </segmentedControl>
@@ -1468,20 +1846,21 @@ Call (801)355-3474 ext. 222 to book your Penguin Encounter!</mutableString>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CRI-2g-MbA">
-                                <rect key="frame" x="20" y="61" width="560" height="1"/>
+                                <rect key="frame" x="20" y="62" width="560" height="1"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="XI4-fg-U96"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Animal Feedings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bwl-JV-Cza">
-                                <rect key="frame" x="233" y="35" width="134" height="22"/>
+                                <rect key="frame" x="233" y="36" width="134" height="22"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="VSg-Yz-0Nd" firstAttribute="trailing" secondItem="1RR-lf-6Xi" secondAttribute="trailing" constant="-20" id="2EP-jc-SqD"/>
                             <constraint firstAttribute="leadingMargin" secondItem="xQd-oe-lCc" secondAttribute="leading" id="H7p-Tc-B3B"/>
@@ -1491,7 +1870,7 @@ Call (801)355-3474 ext. 222 to book your Penguin Encounter!</mutableString>
                             <constraint firstItem="VSg-Yz-0Nd" firstAttribute="top" secondItem="Ams-48-QmZ" secondAttribute="bottom" constant="52" id="YyN-pF-nhe"/>
                             <constraint firstItem="CRI-2g-MbA" firstAttribute="top" secondItem="Bwl-JV-Cza" secondAttribute="bottom" constant="4" id="arR-oY-KGx"/>
                             <constraint firstItem="ep7-ky-GFT" firstAttribute="top" secondItem="xQd-oe-lCc" secondAttribute="bottom" constant="5" id="bE2-br-RQS"/>
-                            <constraint firstItem="Bwl-JV-Cza" firstAttribute="top" secondItem="Ams-48-QmZ" secondAttribute="bottom" constant="15" id="cNy-MA-9Cz"/>
+                            <constraint firstItem="Bwl-JV-Cza" firstAttribute="top" secondItem="Ams-48-QmZ" secondAttribute="bottom" constant="16" id="cNy-MA-9Cz"/>
                             <constraint firstAttribute="trailingMargin" secondItem="CRI-2g-MbA" secondAttribute="trailing" id="d6r-kG-kit"/>
                             <constraint firstItem="VSg-Yz-0Nd" firstAttribute="leading" secondItem="d9f-3L-BKK" secondAttribute="leadingMargin" id="eJX-4a-Qgc"/>
                             <constraint firstAttribute="trailingMargin" secondItem="xQd-oe-lCc" secondAttribute="trailing" id="kx0-uk-EUq"/>
@@ -1499,15 +1878,20 @@ Call (801)355-3474 ext. 222 to book your Penguin Encounter!</mutableString>
                             <constraint firstItem="VSg-Yz-0Nd" firstAttribute="leading" secondItem="1RR-lf-6Xi" secondAttribute="leading" constant="20" id="vEE-NJ-MiQ"/>
                             <constraint firstAttribute="leadingMargin" secondItem="CRI-2g-MbA" secondAttribute="leading" id="vSn-Md-pLQ"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="4AG-Ps-Ejv" appends="YES" id="lQ7-sx-UeD"/>
+                        </connections>
                     </view>
                     <tabBarItem key="tabBarItem" title="Schedule" image="calendar" selectedImage="calendarFilled" id="XXR-kG-8zh"/>
                     <navigationItem key="navigationItem" title="Animal Feedings" id="Dw9-e0-Sy6"/>
                     <connections>
                         <outlet property="animalFeedTableView" destination="1RR-lf-6Xi" id="akh-SQ-JaY"/>
+                        <outlet property="rightSwipeGesture" destination="4AG-Ps-Ejv" id="Fmk-LQ-IEO"/>
                         <outlet property="weekdaySegmentedControl" destination="VSg-Yz-0Nd" id="kSF-bI-siB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b0x-dR-8uk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="4AG-Ps-Ejv"/>
             </objects>
             <point key="canvasLocation" x="3428" y="53"/>
         </scene>
@@ -1542,7 +1926,7 @@ Call (801)355-3474 ext. 222 to book your Penguin Encounter!</mutableString>
         <image name="cardFilled" width="30" height="30"/>
         <image name="checkmark" width="25" height="25"/>
         <image name="discoverUtahButtonBackground" width="369" height="83"/>
-        <image name="fish" width="50" height="50"/>
+        <image name="fish" width="30" height="30"/>
         <image name="fishFilled" width="30" height="30"/>
         <image name="home" width="30" height="30"/>
         <image name="homeFilled" width="30" height="30"/>

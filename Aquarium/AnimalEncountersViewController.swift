@@ -27,6 +27,8 @@ class AnimalEncountersViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewDidAppear(animated: Bool) {
+    }
     
     /*
      // MARK: - Navigation

@@ -30,6 +30,8 @@
 		AA8D05161D19DC930063F222 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8D05151D19DC930063F222 /* HomeViewController.swift */; };
 		AA909B181D41B42A000DB923 /* Feeding.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA909B171D41B42A000DB923 /* Feeding.swift */; };
 		AA9D6EE01D1CCD5000831AFE /* Animal.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9D6EDF1D1CCD5000831AFE /* Animal.swift */; };
+		AAA20FF61D5E47A1009B3241 /* ContactUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA20FF51D5E47A1009B3241 /* ContactUsViewController.swift */; };
+		AAA20FFA1D5E83C4009B3241 /* fishFlop in Resources */ = {isa = PBXBuildFile; fileRef = AAA20FF91D5E83C4009B3241 /* fishFlop */; };
 		AACE392A1D54578E0082E667 /* AddNewMembershipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACE39291D54578E0082E667 /* AddNewMembershipViewController.swift */; };
 		AAEE47681D3CAD8500E0C537 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEE47671D3CAD8500E0C537 /* NotificationController.swift */; };
 /* End PBXBuildFile section */
@@ -60,6 +62,8 @@
 		AA8D05151D19DC930063F222 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		AA909B171D41B42A000DB923 /* Feeding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Feeding.swift; sourceTree = "<group>"; };
 		AA9D6EDF1D1CCD5000831AFE /* Animal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animal.swift; sourceTree = "<group>"; };
+		AAA20FF51D5E47A1009B3241 /* ContactUsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactUsViewController.swift; sourceTree = "<group>"; };
+		AAA20FF91D5E83C4009B3241 /* fishFlop */ = {isa = PBXFileReference; lastKnownFileType = file; name = fishFlop; path = ../../../../Downloads/fishFlop; sourceTree = "<group>"; };
 		AACE39291D54578E0082E667 /* AddNewMembershipViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewMembershipViewController.swift; sourceTree = "<group>"; };
 		AAEE47671D3CAD8500E0C537 /* NotificationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -96,6 +100,7 @@
 			children = (
 				AA544C941D0BB66C00DC1725 /* AppDelegate.swift */,
 				AA544C981D0BB66C00DC1725 /* Main.storyboard */,
+				AAA20FF51D5E47A1009B3241 /* ContactUsViewController.swift */,
 				AA8441CF1D556F3C000238C1 /* Main Tab Bar Items */,
 				AA8441CB1D556E12000238C1 /* Mobile Membership */,
 				AA8441CD1D556EA0000238C1 /* Animal Feeds */,
@@ -147,6 +152,7 @@
 		AA8441CE1D556ECD000238C1 /* Appearance */ = {
 			isa = PBXGroup;
 			children = (
+				AAA20FF91D5E83C4009B3241 /* fishFlop */,
 				AA6F4E631D3868F900FA20F7 /* Animations.swift */,
 				AA544CAA1D0C790400DC1725 /* UIAppearance.swift */,
 			);
@@ -223,6 +229,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AAA20FFA1D5E83C4009B3241 /* fishFlop in Resources */,
 				AA544C9F1D0BB66C00DC1725 /* LaunchScreen.storyboard in Resources */,
 				AA544C9C1D0BB66C00DC1725 /* Assets.xcassets in Resources */,
 				AA544C9A1D0BB66C00DC1725 /* Main.storyboard in Resources */,
@@ -248,6 +255,7 @@
 				AA6FA1D41D55540B00CBEEC7 /* MembershipListTableViewController.swift in Sources */,
 				AA9D6EE01D1CCD5000831AFE /* Animal.swift in Sources */,
 				AA544CFA1D149C0A00DC1725 /* QRScannerViewController.swift in Sources */,
+				AAA20FF61D5E47A1009B3241 /* ContactUsViewController.swift in Sources */,
 				AA8D05161D19DC930063F222 /* HomeViewController.swift in Sources */,
 				AA6F4E661D386A2A00FA20F7 /* AnimalTableViewCell.swift in Sources */,
 				AA183F2A1D1A6DD300D31044 /* AnimalEncountersViewController.swift in Sources */,
@@ -373,7 +381,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Aquarium/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.forrestsyrett.Aquarium;
+				PRODUCT_BUNDLE_IDENTIFIER = com.forrest.Aquarium;
 				PRODUCT_NAME = Aquarium;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -386,7 +394,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Aquarium/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.forrestsyrett.Aquarium;
+				PRODUCT_BUNDLE_IDENTIFIER = com.forrest.Aquarium;
 				PRODUCT_NAME = Aquarium;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
