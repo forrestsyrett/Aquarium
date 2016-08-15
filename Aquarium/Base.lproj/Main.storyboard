@@ -1022,7 +1022,7 @@ To get started, tap the plus!
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dnn-ST-8h9">
                                         <rect key="frame" x="0.0" y="40" width="560" height="75"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="dnn-ST-8h9" secondAttribute="height" multiplier="112:15" id="29j-83-xWW"/>
                                             <constraint firstAttribute="height" constant="75" id="7YW-Rd-C8Q"/>
@@ -1050,7 +1050,8 @@ To get started, tap the plus!
                                             </mask>
                                         </variation>
                                         <connections>
-                                            <segue destination="xxo-Lc-Cjn" kind="show" id="BuE-mo-bcS"/>
+                                            <action selector="discoverUtahButtonTapped:" destination="KJl-fD-egZ" eventType="touchUpInside" id="drh-2e-YUC"/>
+                                            <segue destination="F9z-vC-yoc" kind="show" identifier="discoverUtah" id="60J-2n-fID"/>
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jeb-5z-c4A">
@@ -1079,6 +1080,9 @@ To get started, tap the plus!
                                                 <exclude reference="t2J-de-JV7"/>
                                             </mask>
                                         </variation>
+                                        <connections>
+                                            <segue destination="F9z-vC-yoc" kind="show" id="n0l-54-pDC"/>
+                                        </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8JA-ba-cbd">
                                         <rect key="frame" x="0.0" y="210" width="560" height="20"/>
@@ -1228,6 +1232,134 @@ To get started, tap the plus!
             </objects>
             <point key="canvasLocation" x="1322" y="1123"/>
         </scene>
+        <!--Exhibit Table View Controller-->
+        <scene sceneID="MH7-tX-WdX">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="F9z-vC-yoc" customClass="ExhibitTableViewController" customModule="Aquarium" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="NPR-qd-qVL"/>
+                        <viewControllerLayoutGuide type="bottom" id="iRb-Gi-6RX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fYM-VQ-wAK">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="700"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="241" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="j68-9Q-RrZ">
+                                <rect key="frame" x="0.0" y="72" width="600" height="562"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="sectionIndexTrackingBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="animalCell" rowHeight="241" id="WYx-wp-hcK" customClass="AnimalTableViewCell" customModule="Aquarium" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="600" height="241"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WYx-wp-hcK" id="Q7r-st-F9g">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="240"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NtM-Tx-ufq">
+                                                    <rect key="frame" x="40" y="8" width="521" height="180"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="NtM-Tx-ufq" secondAttribute="height" multiplier="233:138" constant="176" id="W6E-dI-tAI"/>
+                                                    </constraints>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="W6E-dI-tAI"/>
+                                                        </mask>
+                                                    </variation>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Animal Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Sc-st-KN3">
+                                                    <rect key="frame" x="8" y="196" width="584" height="36"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstItem="4Sc-st-KN3" firstAttribute="top" secondItem="NtM-Tx-ufq" secondAttribute="bottom" constant="8" id="04H-CE-KrW"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="4Sc-st-KN3" secondAttribute="trailing" id="0wu-LR-Grs"/>
+                                                <constraint firstItem="4Sc-st-KN3" firstAttribute="leading" secondItem="NtM-Tx-ufq" secondAttribute="trailing" constant="-373" id="4zD-US-WiR"/>
+                                                <constraint firstItem="4Sc-st-KN3" firstAttribute="top" secondItem="Q7r-st-F9g" secondAttribute="topMargin" constant="104" id="9Xf-dC-gIl"/>
+                                                <constraint firstAttribute="leadingMargin" secondItem="NtM-Tx-ufq" secondAttribute="leading" constant="-88" id="ASv-hu-qTA"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="4Sc-st-KN3" secondAttribute="trailing" constant="124" id="cPs-XF-G2G"/>
+                                                <constraint firstItem="4Sc-st-KN3" firstAttribute="leading" secondItem="Q7r-st-F9g" secondAttribute="leadingMargin" id="d4h-dg-Zlw"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="4Sc-st-KN3" secondAttribute="bottom" id="gX1-yH-TXG"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="NtM-Tx-ufq" secondAttribute="trailing" constant="31" id="kHK-i8-MQf"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="NtM-Tx-ufq" secondAttribute="bottom" constant="44" id="pNO-TR-rh8"/>
+                                                <constraint firstItem="NtM-Tx-ufq" firstAttribute="leading" secondItem="Q7r-st-F9g" secondAttribute="leadingMargin" constant="32" id="rUK-Hu-dfI"/>
+                                                <constraint firstAttribute="topMargin" secondItem="NtM-Tx-ufq" secondAttribute="top" id="sWX-4T-slE"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="ASv-hu-qTA"/>
+                                                    <exclude reference="4zD-US-WiR"/>
+                                                    <exclude reference="9Xf-dC-gIl"/>
+                                                    <exclude reference="cPs-XF-G2G"/>
+                                                </mask>
+                                            </variation>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <outlet property="animalNameLabel" destination="4Sc-st-KN3" id="wOO-Kf-PiD"/>
+                                            <outlet property="animalPreviewImage" destination="NtM-Tx-ufq" id="FnQ-pc-58H"/>
+                                            <segue destination="C12-hu-1ZO" kind="show" id="a30-cp-kGl"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="F9z-vC-yoc" id="4z9-gZ-YES"/>
+                                    <outlet property="delegate" destination="F9z-vC-yoc" id="g4P-5W-VWL"/>
+                                </connections>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Exhibit Gallery Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wAb-Af-5cm">
+                                <rect key="frame" x="20" y="36" width="560" height="23"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pTP-k6-hMQ">
+                                <rect key="frame" x="20" y="62" width="560" height="1"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="LIy-hs-MGA"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KoR-4s-eSb">
+                                <rect key="frame" x="20" y="642" width="560" height="1"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="0wB-3d-vbh"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="j68-9Q-RrZ" secondAttribute="trailing" constant="-20" id="10h-1p-oq9"/>
+                            <constraint firstItem="KoR-4s-eSb" firstAttribute="top" secondItem="j68-9Q-RrZ" secondAttribute="bottom" constant="8" id="1dD-S9-y7y"/>
+                            <constraint firstItem="wAb-Af-5cm" firstAttribute="top" secondItem="NPR-qd-qVL" secondAttribute="bottom" constant="-28" id="3CG-6k-ssi"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="pTP-k6-hMQ" secondAttribute="trailing" id="7Zl-na-iBu"/>
+                            <constraint firstItem="j68-9Q-RrZ" firstAttribute="leading" secondItem="fYM-VQ-wAK" secondAttribute="leadingMargin" constant="-20" id="9QR-gQ-esY"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="KoR-4s-eSb" secondAttribute="leading" id="brl-Bn-786"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="wAb-Af-5cm" secondAttribute="trailing" id="cgf-gS-UF1"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="wAb-Af-5cm" secondAttribute="leading" id="eSR-1L-sfU"/>
+                            <constraint firstItem="iRb-Gi-6RX" firstAttribute="top" secondItem="KoR-4s-eSb" secondAttribute="bottom" constant="8" id="feE-Z0-IG6"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="KoR-4s-eSb" secondAttribute="trailing" id="jhG-0i-N09"/>
+                            <constraint firstItem="j68-9Q-RrZ" firstAttribute="top" secondItem="NPR-qd-qVL" secondAttribute="bottom" constant="8" id="mYZ-ts-bft"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="pTP-k6-hMQ" secondAttribute="leading" id="n8a-Dw-pyI"/>
+                            <constraint firstItem="pTP-k6-hMQ" firstAttribute="top" secondItem="wAb-Af-5cm" secondAttribute="bottom" constant="4" id="rBp-eg-UXx"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="animalTableView" destination="j68-9Q-RrZ" id="ewB-Ui-12z"/>
+                        <outlet property="exhibitGalleryLabel" destination="wAb-Af-5cm" id="dz5-X9-y0f"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="htl-qc-dvO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1977" y="1123"/>
+        </scene>
         <!--Animal Encounters View Controller-->
         <scene sceneID="euu-eR-3cJ">
             <objects>
@@ -1327,52 +1459,6 @@ Call (801)355-3474 ext. 222 to book your Penguin Encounter!
             </objects>
             <point key="canvasLocation" x="2764" y="53"/>
         </scene>
-        <!--Discover Utah-->
-        <scene sceneID="zgb-zO-s0z">
-            <objects>
-                <tableViewController title="Discover Utah" id="xxo-Lc-Cjn" customClass="DiscoverUtahTableViewController" customModule="Aquarium" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="w3y-nb-s1t">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="700"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="animalCell" id="H21-tw-6jX" customClass="AnimalTableViewCell" customModule="Aquarium" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="H21-tw-6jX" id="kxI-Ku-QdH">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="djP-Bb-0hq">
-                                            <rect key="frame" x="8" y="0.0" width="44" height="43"/>
-                                        </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Animal Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5P6-Tj-kC3">
-                                            <rect key="frame" x="71" y="11" width="521" height="24"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                </tableViewCellContentView>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <connections>
-                                    <outlet property="animalNameLabel" destination="5P6-Tj-kC3" id="ykb-Zr-ath"/>
-                                    <outlet property="animalPreviewImage" destination="djP-Bb-0hq" id="jk9-ve-4rl"/>
-                                    <segue destination="C12-hu-1ZO" kind="show" id="d05-XL-ToR"/>
-                                </connections>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="xxo-Lc-Cjn" id="is9-zE-TBK"/>
-                            <outlet property="delegate" destination="xxo-Lc-Cjn" id="cEh-G2-N9d"/>
-                        </connections>
-                    </tableView>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="DhD-VG-GsP" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2065" y="467"/>
-        </scene>
         <!--Animal Detail View Controller-->
         <scene sceneID="9UK-Sp-BGN">
             <objects>
@@ -1428,63 +1514,7 @@ Call (801)355-3474 ext. 222 to book your Penguin Encounter!
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xNf-er-82g" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2764" y="723"/>
-        </scene>
-        <!--Ocean Explorer-->
-        <scene sceneID="V4r-HR-1k2">
-            <objects>
-                <tableViewController title="Ocean Explorer" id="XHA-0V-YWp" customClass="OceanExplorerTableViewController" customModule="Aquarium" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="ZLi-cy-eFj">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="3cl-IK-kXM">
-                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3cl-IK-kXM" id="HKX-Q4-sln">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="XHA-0V-YWp" id="Iff-If-pva"/>
-                            <outlet property="delegate" destination="XHA-0V-YWp" id="vja-xa-Qmp"/>
-                        </connections>
-                    </tableView>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dcg-md-KYd" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2101" y="1395"/>
-        </scene>
-        <!--Journey To South America-->
-        <scene sceneID="o9z-vU-hhs">
-            <objects>
-                <tableViewController title="Journey To South America" id="xNa-tW-LBn" customClass="JourneyToSouthAmericaTableViewController" customModule="Aquarium" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="eag-cG-Gec">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="vn4-YX-PhK">
-                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vn4-YX-PhK" id="Eg0-v2-Zjz">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="xNa-tW-LBn" id="vYc-Po-wsv"/>
-                            <outlet property="delegate" destination="xNa-tW-LBn" id="nXK-eY-YYO"/>
-                        </connections>
-                    </tableView>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="IX5-Lm-Znl" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2764" y="2116"/>
+            <point key="canvasLocation" x="2670" y="1073"/>
         </scene>
         <!--QR Scanner-->
         <scene sceneID="ouM-M7-Gll">
@@ -1937,4 +1967,7 @@ Call (801)355-3474 ext. 222 to book your Penguin Encounter!
         <image name="qrCodeFilled" width="30" height="30"/>
         <image name="smallLogo" width="67" height="64"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="60J-2n-fID"/>
+    </inferredMetricsTieBreakers>
 </document>

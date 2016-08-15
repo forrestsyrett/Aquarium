@@ -71,15 +71,7 @@ class AnimalFeedTableViewController: UIViewController, UITableViewDelegate, UITa
 
     
     override func viewWillAppear(animated: Bool) {
-        
-//        let leftSwipe = UISwipeGestureRecognizer(target: self, action: (#selector(AnimalFeedTableViewController.swipeAction(_:))))
-//        let rightSwipe = UISwipeGestureRecognizer(target: self, action:(#selector(AnimalFeedTableViewController.swipeAction(_:))))
-//        
-//        leftSwipe.direction = .Left
-//        rightSwipe.direction = .Right
-//        
-//        view.addGestureRecognizer(leftSwipe)
-//        view.addGestureRecognizer(rightSwipe)
+
     }
     
     

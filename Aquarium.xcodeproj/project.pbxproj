@@ -14,7 +14,7 @@
 		AA544C9C1D0BB66C00DC1725 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA544C9B1D0BB66C00DC1725 /* Assets.xcassets */; };
 		AA544C9F1D0BB66C00DC1725 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA544C9D1D0BB66C00DC1725 /* LaunchScreen.storyboard */; };
 		AA544CAB1D0C790400DC1725 /* UIAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA544CAA1D0C790400DC1725 /* UIAppearance.swift */; };
-		AA544CAD1D0C90DE00DC1725 /* DiscoverUtahTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA544CAC1D0C90DE00DC1725 /* DiscoverUtahTableViewController.swift */; };
+		AA544CAD1D0C90DE00DC1725 /* ExhibitTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA544CAC1D0C90DE00DC1725 /* ExhibitTableViewController.swift */; };
 		AA544CAF1D0C94DE00DC1725 /* OceanExplorerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA544CAE1D0C94DE00DC1725 /* OceanExplorerTableViewController.swift */; };
 		AA544CB11D0C98B700DC1725 /* JourneyToSouthAmericaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA544CB01D0C98B700DC1725 /* JourneyToSouthAmericaTableViewController.swift */; };
 		AA544CB31D0CAE1000DC1725 /* ExhibitGalleriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA544CB21D0CAE1000DC1725 /* ExhibitGalleriesViewController.swift */; };
@@ -31,7 +31,7 @@
 		AA909B181D41B42A000DB923 /* Feeding.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA909B171D41B42A000DB923 /* Feeding.swift */; };
 		AA9D6EE01D1CCD5000831AFE /* Animal.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9D6EDF1D1CCD5000831AFE /* Animal.swift */; };
 		AAA20FF61D5E47A1009B3241 /* ContactUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA20FF51D5E47A1009B3241 /* ContactUsViewController.swift */; };
-		AAA20FFA1D5E83C4009B3241 /* fishFlop in Resources */ = {isa = PBXBuildFile; fileRef = AAA20FF91D5E83C4009B3241 /* fishFlop */; };
+		AAA20FFC1D5F9328009B3241 /* fishFlop.wav in Resources */ = {isa = PBXBuildFile; fileRef = AAA20FFB1D5F9328009B3241 /* fishFlop.wav */; };
 		AACE392A1D54578E0082E667 /* AddNewMembershipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACE39291D54578E0082E667 /* AddNewMembershipViewController.swift */; };
 		AAEE47681D3CAD8500E0C537 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEE47671D3CAD8500E0C537 /* NotificationController.swift */; };
 /* End PBXBuildFile section */
@@ -46,7 +46,7 @@
 		AA544C9E1D0BB66C00DC1725 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AA544CA01D0BB66C00DC1725 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AA544CAA1D0C790400DC1725 /* UIAppearance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIAppearance.swift; sourceTree = "<group>"; };
-		AA544CAC1D0C90DE00DC1725 /* DiscoverUtahTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverUtahTableViewController.swift; sourceTree = "<group>"; };
+		AA544CAC1D0C90DE00DC1725 /* ExhibitTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExhibitTableViewController.swift; sourceTree = "<group>"; };
 		AA544CAE1D0C94DE00DC1725 /* OceanExplorerTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OceanExplorerTableViewController.swift; sourceTree = "<group>"; };
 		AA544CB01D0C98B700DC1725 /* JourneyToSouthAmericaTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JourneyToSouthAmericaTableViewController.swift; sourceTree = "<group>"; };
 		AA544CB21D0CAE1000DC1725 /* ExhibitGalleriesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExhibitGalleriesViewController.swift; path = ../ExhibitGalleriesViewController.swift; sourceTree = "<group>"; };
@@ -63,7 +63,7 @@
 		AA909B171D41B42A000DB923 /* Feeding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Feeding.swift; sourceTree = "<group>"; };
 		AA9D6EDF1D1CCD5000831AFE /* Animal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animal.swift; sourceTree = "<group>"; };
 		AAA20FF51D5E47A1009B3241 /* ContactUsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactUsViewController.swift; sourceTree = "<group>"; };
-		AAA20FF91D5E83C4009B3241 /* fishFlop */ = {isa = PBXFileReference; lastKnownFileType = file; name = fishFlop; path = ../../../../Downloads/fishFlop; sourceTree = "<group>"; };
+		AAA20FFB1D5F9328009B3241 /* fishFlop.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = fishFlop.wav; path = ../../../Logos/fishFlop.wav; sourceTree = "<group>"; };
 		AACE39291D54578E0082E667 /* AddNewMembershipViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewMembershipViewController.swift; sourceTree = "<group>"; };
 		AAEE47671D3CAD8500E0C537 /* NotificationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -130,7 +130,7 @@
 			children = (
 				AA183F2B1D1A767F00D31044 /* AnimalDetailViewController.swift */,
 				AA6F4E651D386A2A00FA20F7 /* AnimalTableViewCell.swift */,
-				AA544CAC1D0C90DE00DC1725 /* DiscoverUtahTableViewController.swift */,
+				AA544CAC1D0C90DE00DC1725 /* ExhibitTableViewController.swift */,
 				AA544CB01D0C98B700DC1725 /* JourneyToSouthAmericaTableViewController.swift */,
 				AA544CAE1D0C94DE00DC1725 /* OceanExplorerTableViewController.swift */,
 			);
@@ -152,7 +152,7 @@
 		AA8441CE1D556ECD000238C1 /* Appearance */ = {
 			isa = PBXGroup;
 			children = (
-				AAA20FF91D5E83C4009B3241 /* fishFlop */,
+				AAA20FFB1D5F9328009B3241 /* fishFlop.wav */,
 				AA6F4E631D3868F900FA20F7 /* Animations.swift */,
 				AA544CAA1D0C790400DC1725 /* UIAppearance.swift */,
 			);
@@ -229,10 +229,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AAA20FFA1D5E83C4009B3241 /* fishFlop in Resources */,
 				AA544C9F1D0BB66C00DC1725 /* LaunchScreen.storyboard in Resources */,
 				AA544C9C1D0BB66C00DC1725 /* Assets.xcassets in Resources */,
 				AA544C9A1D0BB66C00DC1725 /* Main.storyboard in Resources */,
+				AAA20FFC1D5F9328009B3241 /* fishFlop.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -247,7 +247,7 @@
 				AA183F2C1D1A767F00D31044 /* AnimalDetailViewController.swift in Sources */,
 				AA544CB11D0C98B700DC1725 /* JourneyToSouthAmericaTableViewController.swift in Sources */,
 				AA6FA1D61D5554FC00CBEEC7 /* MembershipCardController.swift in Sources */,
-				AA544CAD1D0C90DE00DC1725 /* DiscoverUtahTableViewController.swift in Sources */,
+				AA544CAD1D0C90DE00DC1725 /* ExhibitTableViewController.swift in Sources */,
 				AA6F4E721D3C01D000FA20F7 /* AnimalFeedTableViewCell.swift in Sources */,
 				AACE392A1D54578E0082E667 /* AddNewMembershipViewController.swift in Sources */,
 				AA544CB31D0CAE1000DC1725 /* ExhibitGalleriesViewController.swift in Sources */,
