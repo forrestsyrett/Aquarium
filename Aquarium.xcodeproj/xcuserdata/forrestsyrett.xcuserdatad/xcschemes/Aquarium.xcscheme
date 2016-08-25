@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "AA544C901D0BB66B00DC1725"
-               BuildableName = "The Living Planet Aquarium.app"
+               BuildableName = "Aquarium.app"
                BlueprintName = "Aquarium"
                ReferencedContainer = "container:Aquarium.xcodeproj">
             </BuildableReference>
@@ -33,7 +33,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "AA544C901D0BB66B00DC1725"
-            BuildableName = "The Living Planet Aquarium.app"
+            BuildableName = "Aquarium.app"
             BlueprintName = "Aquarium"
             ReferencedContainer = "container:Aquarium.xcodeproj">
          </BuildableReference>
@@ -56,7 +56,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "AA544C901D0BB66B00DC1725"
-            BuildableName = "The Living Planet Aquarium.app"
+            BuildableName = "Aquarium.app"
             BlueprintName = "Aquarium"
             ReferencedContainer = "container:Aquarium.xcodeproj">
          </BuildableReference>
@@ -75,7 +75,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "AA544C901D0BB66B00DC1725"
-            BuildableName = "The Living Planet Aquarium.app"
+            BuildableName = "Aquarium.app"
             BlueprintName = "Aquarium"
             ReferencedContainer = "container:Aquarium.xcodeproj">
          </BuildableReference>

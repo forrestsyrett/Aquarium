@@ -17,6 +17,9 @@ protocol ExhibitGalleriesViewControllerDelegate: class {
 class ExhibitGalleriesViewController: UIViewController, UITabBarDelegate {
     
 
+    static let sharedController = ExhibitGalleriesViewController()
+    
+    
     
     // MARK: Outlets
     @IBOutlet weak var discoverUtahButton: UIButton!
@@ -26,20 +29,15 @@ class ExhibitGalleriesViewController: UIViewController, UITabBarDelegate {
     @IBOutlet weak var expeditionAsiaButton: UIButton!
     weak var delegate: ExhibitGalleriesViewControllerDelegate?
     
-    
-    // MARK: Animations
-    
-    func animate() {
+
+    override func viewWillAppear(animated: Bool) {
         
-        UIButton.animateWithDuration(3.0) { () -> Void in
-            self.discoverUtahButton.alpha = 1.0
-            self.discoverUtahButton.currentBackgroundImage
-        }
     }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+    
         gradient(self.view)
         
         
@@ -48,27 +46,42 @@ class ExhibitGalleriesViewController: UIViewController, UITabBarDelegate {
         roundCornerButtons(journeyToSouthAmericaButton)
         roundCornerButtons(antarcticAdventureButton)
         roundCornerButtons(expeditionAsiaButton)
-        
         transparentNavigationBar(self)
-        
-        
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
 
-
-
+    
 
     @IBAction func discoverUtahButtonTapped(sender: AnyObject) {
-        ("discoverUtah", sender: self)
- 
+        
+        NSNotificationCenter.defaultCenter().postNotificationName("discoverUtah", object: nil)
         
     }
-
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?){
+        
+        let exhibitAnimalViewController = segue.destinationViewController as? ExhibitTableViewController
+        
+            if (segue.identifier == "discoverUtah") {
+            exhibitAnimalViewController?.exhibitAnimals = [Animals.otters, .tortoise]
+            exhibitAnimalViewController?.exhibitGalleryLabelMutable = "Discover Utah"
+        }
+            else if (segue.identifier == "journeyToSouthAmerica") {
+                exhibitAnimalViewController?.exhibitAnimals = [Animals.arapaima, .toucan]
+                exhibitAnimalViewController?.exhibitGalleryLabelMutable = "Journey To South America"
+        }
+            else if (segue.identifier == "antarcticAdventure") {
+                exhibitAnimalViewController?.exhibitAnimals = [Animals.penguins]
+                exhibitAnimalViewController?.exhibitGalleryLabelMutable = "Antarctic Adventure"
+        }
+            else if (segue.identifier == "oceanExplorer") {
+                exhibitAnimalViewController?.exhibitAnimals = [Animals.greenSeaTurtle, .eel, .zebraShark]
+                exhibitAnimalViewController?.exhibitGalleryLabelMutable = "Ocean Explorer"
+        }
+            else if (segue.identifier == "expeditionAsia") {
+                exhibitAnimalViewController?.exhibitAnimals = [Animals.binturong, .cloudedLeopards, .hornbill]
+                exhibitAnimalViewController?.exhibitGalleryLabelMutable = "Expedition Asia"
+        }
+    }
     
 }
 

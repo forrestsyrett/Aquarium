@@ -9,28 +9,6 @@
 import Foundation
 import UIKit
 
-
-//class Animal {
-//    
-//    var name: String
-//    var description: String?
-//    var animalImage: UIImage
-//    var isExpanded: Bool
-//
-//    
-//    
-//    init(name: String, description: String?, animalImage: UIImage, isExpanded: Bool) {
-//        
-//        self.name = name
-//        self.description = description
-//        self.animalImage = animalImage
-//        self.isExpanded = isExpanded
-//    }
-//    
-//
-//    
-//}
-
 enum Animals {
     case otters
     case tortoise
@@ -49,12 +27,13 @@ enum Animals {
         var description: String?
         var animalImage: UIImage
         var isExpanded: Bool
+ 
+    
     }
-
-    var info: Info {
-
+ 
+      var info: Info {
+    
         switch self {
-            
             
         case .otters:
             return
@@ -92,9 +71,6 @@ enum Animals {
             return
                 Info(name: "Binturong", description: "Type: Mammal\nDiet: Omnivorous\nLife Span: Up to 20 years\nSize: 2.3 - 2.8 feet\nWeight: 24 - 71 lbs\nConservation: Vulnerable", animalImage: UIImage(named: "binturong")!, isExpanded: false)
         }
-}
-
-
-
-
-}
+    }
+    
+    }
