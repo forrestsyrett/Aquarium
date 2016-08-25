@@ -33,15 +33,7 @@ class AnimalFeedTableViewController: UIViewController, UITableViewDelegate, UITa
         gradient(self.view)
         animalFeedTableView.backgroundColor = UIColor.clearColor()
         weekdaySegmentedControl.tintColor = .whiteColor()
-        
-//        let leftSwipe = UISwipeGestureRecognizer(target: self, action: (#selector(AnimalFeedTableViewController.swipeAction(_:))))
-//        let rightSwipe = UISwipeGestureRecognizer(target: self, action:(#selector(AnimalFeedTableViewController.swipeAction(_:))))
-//        
-//        leftSwipe.direction = .Left
-//        rightSwipe.direction = .Right
-//        
-//        view.addGestureRecognizer(leftSwipe)
-//        view.addGestureRecognizer(rightSwipe)
+    
     }
     
     func swipeAction(swipe: UISwipeGestureRecognizer) {

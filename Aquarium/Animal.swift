@@ -10,65 +10,91 @@ import Foundation
 import UIKit
 
 
-class Animal {
-    
-    var name: String
-    var description: String?
-    var animalImage: UIImage
-    
-    
-    init(name: String, description: String?, animalImage: UIImage) {
-        
-        self.name = name
-        self.description = description
-        self.animalImage = animalImage
-    }
-    
-
-    
-}
-
-//enum Animals {
-//    case otters
-//    case tortoise
-//    case arapaima
-//    case toucan
-//    case zebraShark
-//    case greenSeaTurtle
-//    case eel
-//    case penguins
-//    case cloudedLeopards
-//    case hornbill
-//    case binturong
+//class Animal {
 //    
-//    struct Info {
-//        var animalName: String
-//        var notificationTitle: String
-//        var time: NSDate
-//        var hour: Int
-//        var minute: Int
-//        var timeString: String
-//        var weekdays: [Int: Bool]
-//        var image: UIImage?
+//    var name: String
+//    var description: String?
+//    var animalImage: UIImage
+//    var isExpanded: Bool
+//
+//    
+//    
+//    init(name: String, description: String?, animalImage: UIImage, isExpanded: Bool) {
+//        
+//        self.name = name
+//        self.description = description
+//        self.animalImage = animalImage
+//        self.isExpanded = isExpanded
 //    }
 //    
-//    var info: Info {
-//        let now = NSDate()
-//        let calendar = NSCalendar.currentCalendar()
-//        
-//        switch self {
-//        case .otters:
-//             let otters = Animal(name: "North American River Otters", description: "A desert tortoise", animalImage: UIImage(named: "otters")!)
-//        case .tortoise:
-//            let tortoise = Animal(name: "Desert Tortoise", description: nil, animalImage: UIImage(named: "tortoise")!)
-//        case .archerfish:
-//            let time = calendar.dateBySettingHour(14, minute: 30, second: 0, ofDate: now, options: .MatchStrictly)!
-//            return Info(animalName: "Archerfish Feed", notificationTitle: "Archerfish feeding at \(Feeding.dateFormatter.stringFromDate(time))!", time: time, hour: 14, minute: 15, timeString: Feeding.dateFormatter.stringFromDate(time), weekdays: [2: true, 5: true, 7: true], image: UIImage(named: "archerfishFeed")!)
-//        case .riverGiant:
-//            let time = calendar.dateBySettingHour(14, minute: 30, second: 0, ofDate: now, options: .MatchStrictly)!
-//            return Info(animalName: "River Giants Feed", notificationTitle: "River Giants feeding at \(Feeding.dateFormatter.stringFromDate(time))!", time: time, hour: 14, minute: 15, timeString: Feeding.dateFormatter.stringFromDate(time), weekdays: [3: true, 5: true, 7: true], image: UIImage(named: "riverGiantsFeed")!)
-//        case .piranha:
-//            let time = calendar.dateBySettingHour(11, minute: 00, second: 0, ofDate: now, options: .MatchStrictly)!
-//            return Info(animalName: "Piranha Feed", notificationTitle: "Piranha feeding at \(Feeding.dateFormatter.stringFromDate(time))!", time: time, hour: 10, minute: 45, timeString: Feeding.dateFormatter.stringFromDate(time), weekdays: [3: true, 5: true], image: UIImage(named: "piranhaFeed")!)
-//        }
+//
+//    
 //}
+
+enum Animals {
+    case otters
+    case tortoise
+    case arapaima
+    case toucan
+    case zebraShark
+    case greenSeaTurtle
+    case eel
+    case penguins
+    case cloudedLeopards
+    case hornbill
+    case binturong
+    
+    struct Info {
+        var name: String
+        var description: String?
+        var animalImage: UIImage
+        var isExpanded: Bool
+    }
+
+    var info: Info {
+
+        switch self {
+            
+            
+        case .otters:
+            return
+                Info(name: "North American River Otters", description: "Type: Mammal\nDiet: Carnivorous\nAverage Life Span: 14 – 25 years\nSize: 3.7 feet (males)\n3.2 feet (females) Weight: 11 – 30lbs\nConservation Status: Threatened", animalImage: UIImage(named: "otters")!, isExpanded: false)
+        case .tortoise:
+            return
+                Info(name: "Desert Tortoise", description: "Type: Reptile\nDiet: Herbivorous\nAverage Life Span: 50 - 80 years\nSize: 10-14 inches\nWeight: .04 - 11lbs\nConservation Status: Threatened", animalImage: UIImage(named: "tortoise")!, isExpanded: false)
+        case .arapaima:
+            return
+                Info(name: "Giant Arapaima", description: "Type: Fish\nDiet: Carnivorous\nAverage Life\nSpan: 15 – 20 years\nSize: 9 ft (2.75 m)\nWeight: 440 lbs\nConservation Status: Unknown", animalImage: UIImage(named: "arapaima")!, isExpanded: false)
+        case .toucan:
+            return
+                Info(name: "Swainson's Toucan", description: "Type: Bird\nDiet: Omnivorous\nAverage Life Span: 12- 20 Years\nSize: 11.5 in – 29 in\nWeight: 130 g – 680 g (4.6oz – 24oz)\nConservation Status: Stable", animalImage: UIImage(named: "toucan")!, isExpanded: false)
+        case .zebraShark:
+            return
+                Info(name: "Zebra Shark", description: "Type: Fish\nDiet: Omnivorous\nAverage Life Span: 15 - 20 Years\nSize: 2 – 8.2ft\nWeight: 35 - 44 lbs\nConservation Status: Threatened", animalImage: UIImage(named: "zebraShark")!, isExpanded: false)
+        case .greenSeaTurtle:
+            return
+                Info(name: "Green Sea Turtle", description: "Type: Reptile\nDiet: Juveniles are omnivorous, Adults are mainly herbivorous\nAverage Life Span: Over 80 years\nSize: Up to 5 ft in length\nWeight: 150 – 419lbs\nConservation Status: Endangered", animalImage: UIImage(named: "greenSeaTurtle")!, isExpanded: false)
+        case .eel:
+            return
+                Info(name: "Green Moray Eel", description: "Type: Eel\nDiet: Carnivorous\nAverage Life Span: Estimated 8 - 30 years\nSize: Up to 5 ft in length\nWeight: Up to 65lbs\nConservation Status: Least Concern", animalImage: UIImage(named: "eel")!, isExpanded: false)
+
+        case .penguins:
+            return
+                Info(name: "Gentoo Penguins", description: "Type: Bird\nDiet: Carnivorous\nAverage Life Span: 15 – 20 years\nSize: 30 in\nWeight: 12 lbs (5.5 kg)\nGroup Name: Colony", animalImage: UIImage(named: "penguins")!, isExpanded: false)
+
+        case .cloudedLeopards:
+            return
+                Info(name: "Clouded Leopard", description: "Type: Mammal\nDiet: Carnivorous\nWing Span: Up to 17 years in captivity\nSize: 27 - 32in (Female), 32 - 43in (male)\nWeight: 25 - 51 lbs\nConservation: Vulnerable", animalImage: UIImage(named: "cloudedLeopard")!, isExpanded: false)
+        case .hornbill:
+            return
+                Info(name: "Oriental Pied Hornbill", description: "Type: Bird\nDiet: Frugivore(Diet consists mainly of fruit)\nAverage Life Span: Wing Span: 23 - 32cm\nSize: 55 - 60cm in\nWeight: 600 - 1,050g\nConservation Status: Least Concern", animalImage: UIImage(named: "hornbill")!, isExpanded: false)
+        case .binturong:
+            return
+                Info(name: "Binturong", description: "Type: Mammal\nDiet: Omnivorous\nLife Span: Up to 20 years\nSize: 2.3 - 2.8 feet\nWeight: 24 - 71 lbs\nConservation: Vulnerable", animalImage: UIImage(named: "binturong")!, isExpanded: false)
+        }
+}
+
+
+
+
+}

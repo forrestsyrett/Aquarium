@@ -12,8 +12,9 @@ class AnimalTableViewCell: UITableViewCell {
     
     @IBOutlet weak var animalNameLabel: UILabel!
     @IBOutlet weak var animalPreviewImage: UIImageView!
+
+    @IBOutlet weak var moreInfoTextField: UITextView!
     
-//    test
 
     override func awakeFromNib() {
         super.awakeFromNib()
