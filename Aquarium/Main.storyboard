@@ -219,6 +219,7 @@
                             <constraint firstItem="DM1-qb-gTy" firstAttribute="top" secondItem="WJ7-NO-hTG" secondAttribute="bottom" constant="8" id="ttq-F4-Eqn"/>
                             <constraint firstAttribute="trailingMargin" secondItem="oaI-fl-4K6" secondAttribute="trailing" id="u5l-cd-g8l"/>
                             <constraint firstAttribute="trailingMargin" secondItem="DM1-qb-gTy" secondAttribute="trailing" id="uEB-2x-bA4"/>
+                            <constraint firstItem="A30-8u-NHL" firstAttribute="top" secondItem="2vw-ow-2t3" secondAttribute="bottom" priority="250" constant="100" id="v3S-zD-Wge"/>
                             <constraint firstItem="oaI-fl-4K6" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="32" id="vRj-gf-BTj"/>
                             <constraint firstAttribute="trailingMargin" secondItem="90p-YP-0He" secondAttribute="trailing" id="w1T-gi-7iF"/>
                             <constraint firstAttribute="trailingMargin" secondItem="2vw-ow-2t3" secondAttribute="trailing" constant="71" id="y8H-IP-pYp"/>
@@ -236,6 +237,7 @@
                                 <exclude reference="gsR-D8-lGN"/>
                                 <exclude reference="oOS-ue-edq"/>
                                 <exclude reference="TAz-3e-kOq"/>
+                                <exclude reference="hXJ-2x-QB5"/>
                             </mask>
                         </variation>
                     </view>
@@ -1195,6 +1197,7 @@ To get started, tap the plus!
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="fVv-or-Xbb"/>
+                                        <exclude reference="fgD-ka-8yG"/>
                                     </mask>
                                 </variation>
                             </stackView>
@@ -1255,7 +1258,7 @@ To get started, tap the plus!
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="402" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="j68-9Q-RrZ">
-                                <rect key="frame" x="0.0" y="72" width="600" height="562"/>
+                                <rect key="frame" x="0.0" y="72" width="600" height="571"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -1385,7 +1388,7 @@ To get started, tap the plus!
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KoR-4s-eSb">
-                                <rect key="frame" x="20" y="642" width="560" height="1"/>
+                                <rect key="frame" x="20" y="645" width="560" height="1"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="0wB-3d-vbh"/>
@@ -1395,14 +1398,14 @@ To get started, tap the plus!
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="j68-9Q-RrZ" secondAttribute="trailing" constant="-20" id="10h-1p-oq9"/>
-                            <constraint firstItem="KoR-4s-eSb" firstAttribute="top" secondItem="j68-9Q-RrZ" secondAttribute="bottom" constant="8" id="1dD-S9-y7y"/>
+                            <constraint firstItem="KoR-4s-eSb" firstAttribute="top" secondItem="j68-9Q-RrZ" secondAttribute="bottom" constant="2" id="1dD-S9-y7y"/>
                             <constraint firstItem="wAb-Af-5cm" firstAttribute="top" secondItem="NPR-qd-qVL" secondAttribute="bottom" constant="-28" id="3CG-6k-ssi"/>
                             <constraint firstAttribute="trailingMargin" secondItem="pTP-k6-hMQ" secondAttribute="trailing" id="7Zl-na-iBu"/>
                             <constraint firstItem="j68-9Q-RrZ" firstAttribute="leading" secondItem="fYM-VQ-wAK" secondAttribute="leadingMargin" constant="-20" id="9QR-gQ-esY"/>
                             <constraint firstAttribute="leadingMargin" secondItem="KoR-4s-eSb" secondAttribute="leading" id="brl-Bn-786"/>
                             <constraint firstAttribute="trailingMargin" secondItem="wAb-Af-5cm" secondAttribute="trailing" id="cgf-gS-UF1"/>
                             <constraint firstAttribute="leadingMargin" secondItem="wAb-Af-5cm" secondAttribute="leading" id="eSR-1L-sfU"/>
-                            <constraint firstItem="iRb-Gi-6RX" firstAttribute="top" secondItem="KoR-4s-eSb" secondAttribute="bottom" constant="8" id="feE-Z0-IG6"/>
+                            <constraint firstItem="iRb-Gi-6RX" firstAttribute="top" secondItem="KoR-4s-eSb" secondAttribute="bottom" constant="5" id="feE-Z0-IG6"/>
                             <constraint firstAttribute="trailingMargin" secondItem="KoR-4s-eSb" secondAttribute="trailing" id="jhG-0i-N09"/>
                             <constraint firstItem="j68-9Q-RrZ" firstAttribute="top" secondItem="NPR-qd-qVL" secondAttribute="bottom" constant="8" id="mYZ-ts-bft"/>
                             <constraint firstAttribute="leadingMargin" secondItem="pTP-k6-hMQ" secondAttribute="leading" id="n8a-Dw-pyI"/>
@@ -1951,6 +1954,7 @@ Call (801)355-3474 ext. 222 to book your Penguin Encounter!
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="VSg-Yz-0Nd" firstAttribute="trailing" secondItem="1RR-lf-6Xi" secondAttribute="trailing" constant="-20" id="2EP-jc-SqD"/>
+                            <constraint firstItem="xQd-oe-lCc" firstAttribute="top" secondItem="1RR-lf-6Xi" secondAttribute="bottom" constant="2" id="FFt-3a-aMt"/>
                             <constraint firstAttribute="leadingMargin" secondItem="xQd-oe-lCc" secondAttribute="leading" id="H7p-Tc-B3B"/>
                             <constraint firstItem="1RR-lf-6Xi" firstAttribute="top" secondItem="VSg-Yz-0Nd" secondAttribute="bottom" constant="8" id="HLS-zz-KzY"/>
                             <constraint firstItem="VSg-Yz-0Nd" firstAttribute="trailing" secondItem="d9f-3L-BKK" secondAttribute="trailingMargin" id="KKN-qU-eDQ"/>
@@ -1966,6 +1970,11 @@ Call (801)355-3474 ext. 222 to book your Penguin Encounter!
                             <constraint firstItem="VSg-Yz-0Nd" firstAttribute="leading" secondItem="1RR-lf-6Xi" secondAttribute="leading" constant="20" id="vEE-NJ-MiQ"/>
                             <constraint firstAttribute="leadingMargin" secondItem="CRI-2g-MbA" secondAttribute="leading" id="vSn-Md-pLQ"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Q2Y-Mh-gKH"/>
+                            </mask>
+                        </variation>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="4AG-Ps-Ejv" appends="YES" id="lQ7-sx-UeD"/>
                         </connections>
