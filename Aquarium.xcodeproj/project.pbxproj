@@ -122,6 +122,7 @@
 		AA8441CC1D556E49000238C1 /* Exhibit TableViews */ = {
 			isa = PBXGroup;
 			children = (
+				AA9D6EDF1D1CCD5000831AFE /* Animal.swift */,
 				AA6F4E651D386A2A00FA20F7 /* AnimalTableViewCell.swift */,
 				AA544CAC1D0C90DE00DC1725 /* ExhibitTableViewController.swift */,
 			);
@@ -135,7 +136,6 @@
 				AA6F4E6F1D3C01B100FA20F7 /* AnimalFeedTableViewController.swift */,
 				AAEE47671D3CAD8500E0C537 /* NotificationController.swift */,
 				AA909B171D41B42A000DB923 /* Feeding.swift */,
-				AA9D6EDF1D1CCD5000831AFE /* Animal.swift */,
 			);
 			name = "Animal Feeds";
 			sourceTree = "<group>";

@@ -66,6 +66,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     enum ShortCutIdentifier: String {
         case OpenMobileMembership = "Open Mobile Membership"
+        case QRScanner = "QR Scanner"
         
         init?(shortcutItem: String) {
             guard let last = shortcutItem.componentsSeparatedByString(".").last else { return nil }

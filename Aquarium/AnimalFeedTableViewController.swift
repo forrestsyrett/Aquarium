@@ -28,42 +28,42 @@ class AnimalFeedTableViewController: UIViewController, UITableViewDelegate, UITa
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        animalFeedTableView.reloadData()
+//        animalFeedTableView.reloadData()
         feeds = [.shark, .penguin]
         gradient(self.view)
         animalFeedTableView.backgroundColor = UIColor.clearColor()
         weekdaySegmentedControl.tintColor = .whiteColor()
+        
+//        let rightSwipe = UISwipeGestureRecognizer(target: self, action: #selector(AnimalFeedTableViewController.swipeAction))
+//        rightSwipe.direction = .Right
+//        self.animalFeedTableView.addGestureRecognizer(rightSwipe)
     
     }
     
     func swipeAction(swipe: UISwipeGestureRecognizer) {
-        
-        if swipe.direction == .Left {
-     
-            if self.weekdaySegmentedControl.selectedSegmentIndex < 6 {
-                self.weekdaySegmentedControl.selectedSegmentIndex + 1
-            self.weekdaySegmentedControl.sendActionsForControlEvents(.ValueChanged)
-                animalFeedTableView.reloadData()
-            }
-                print("Left swipe")
-            print(weekdaySegmentedControl.selectedSegmentIndex)
-//            else { return }
-        }
-        if swipe.direction == .Right {
-            if self.weekdaySegmentedControl.selectedSegmentIndex > 0 {
-                self.weekdaySegmentedControl.selectedSegmentIndex - 1
-                self.weekdaySegmentedControl.sendActionsForControlEvents(.ValueChanged)
-            }
-                print("Right swipe")
-                print(weekdaySegmentedControl.selectedSegmentIndex)
-//            else { return }
-        }
+//        
+//        if swipe.direction == .Left {
+//     
+//            if self.weekdaySegmentedControl.selectedSegmentIndex < 6 {
+//            self.weekdaySegmentedControl.sendActionsForControlEvents(.ValueChanged)
+////                animalFeedTableView.reloadData()
+//            }
+//                print("Left swipe")
+//            print(weekdaySegmentedControl.selectedSegmentIndex)
+////            else { return }
+//        }
+//        if swipe.direction == .Right {
+//            if self.weekdaySegmentedControl.selectedSegmentIndex < 6 {
+//                self.weekdaySegmentedControl.sendActionsForControlEvents(.ValueChanged)
+////                animalFeedTableView.reloadData()
+//            }
+//        }
     }
 //
 
     
     override func viewWillAppear(animated: Bool) {
-
+//        animalFeedTableView.reloadData()
     }
     
     
@@ -114,6 +114,20 @@ class AnimalFeedTableViewController: UIViewController, UITableViewDelegate, UITa
         roundCornerButtons(cell.notifyMeButtonLabel)
         roundCornerButtons(cell.animalFeedImage)
         
+        
+        func animate(cellView: UIView) {
+            
+            view.addSubview(cellView)
+            let basicAnimation = CABasicAnimation()
+            basicAnimation.keyPath = "position.x"
+            basicAnimation.fromValue = cellView.center.x + 350
+            basicAnimation.toValue = cellView.center.x + -30
+            basicAnimation.duration = 0.25
+            cellView.layer.addAnimation(basicAnimation, forKey: "slide")
+            cellView.center.x += -30
+        }
+        
+        animate(cell)
     
         return cell
     }
@@ -149,21 +163,34 @@ class AnimalFeedTableViewController: UIViewController, UITableViewDelegate, UITa
         
         notificationController.scheduleNotification(for: feed, onWeekday: selectedWeekday, scheduled: animalFeedTableViewCell.notificationScheduled)
         
+    }
+    
+    
+    @IBAction func clearFeedingsButtonTapped(sender: AnyObject) {
+        
+        let alert = UIAlertController(title: "Clear Notifications?", message: "This will cancel all scheduled feeding notifications", preferredStyle: .Alert)
+        let clearAction = UIAlertAction(title: "Clear", style: .Default) { (action) in
+            UIApplication.sharedApplication().cancelAllLocalNotifications()
+            self.animalFeedTableView.reloadData()
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+        alert.addAction(clearAction)
+        alert.addAction(cancelAction)
+        
+        self.presentViewController(alert, animated: true, completion: nil)
         
     }
     
     @IBAction func swipeRecognition(sender: UISegmentedControl) {
         
-//        if sender.selectedSegmentIndex > 0 {
-//            self.view.addGestureRecognizer(self.rightSwipeGesture)
-//            weekdaySegmentedControl.selectedSegmentIndex + 1
-//            print("right swipe")
-//        } else {
-//            self.view.removeGestureRecognizer(self.rightSwipeGesture)
-//        }
+//        
+//        (weekdaySegmentedControl.selectedSegmentIndex) = self.weekdaySegmentedControl.selectedSegmentIndex - 1
+//        animalFeedTableView.reloadData()
+//        
     }
-    
 }
+    
+
 
 
 

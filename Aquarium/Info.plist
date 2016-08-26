@@ -15,7 +15,7 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0</string>
+	<string>1.2</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
@@ -24,6 +24,32 @@
 	<true/>
 	<key>UIApplicationShortcutItems</key>
 	<array>
+		<dict>
+			<key>UIApplicationShortcutItemIconType</key>
+			<string>UIApplicationShortcutIconTypeAlarm</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>Feeding Schedule</string>
+			<key>UIApplicationShortcutItemType</key>
+			<string>$(PRODUCT_BUNDLE_IDENTIFIER).Third</string>
+			<key>UIApplicationShortcutItemUserInfo</key>
+			<dict>
+				<key>TabIndex</key>
+				<integer>3</integer>
+			</dict>
+		</dict>
+		<dict>
+			<key>UIApplicationShortcutItemIconType</key>
+			<string>UIApplicationShortcutIconTypeCapturePhoto</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>QR Scanner</string>
+			<key>UIApplicationShortcutItemType</key>
+			<string>$(PRODUCT_BUNDLE_IDENTIFIER).Second</string>
+			<key>UIApplicationShortcutItemUserInfo</key>
+			<dict>
+				<key>TabIndex</key>
+				<integer>4</integer>
+			</dict>
+		</dict>
 		<dict>
 			<key>UIApplicationShortcutItemIconType</key>
 			<string>UIApplicationShortcutIconTypeContact</string>

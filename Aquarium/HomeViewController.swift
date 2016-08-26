@@ -43,11 +43,7 @@ class HomeViewController: UIViewController {
         animateLines(lineFour, animateTime: 2.0)
     }
     
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+
     
     @IBAction func buyTicketsButtonTapped(sender: AnyObject) {
         let safariVC = SFSafariViewController(URL: NSURL(string: "https://tickets.thelivingplanet.com/WebStore/Shop/ViewItems.aspx?CG=online&C=Tickets")!)
@@ -67,17 +63,7 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func directionButtonTapped(sender: AnyObject) {
-        
-//        let alert = UIAlertController(title: "Open in Maps?", message: nil, preferredStyle: .Alert)
-//        
-//        alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: { (action: UIAlertAction!) in
-//            UIApplication.sharedApplication().openURL(NSURL(string: "http://maps.apple.com/?q=Loveland+Living+Planet+Aquarium")!)
-//        }))
-//        
-//        alert.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: { (action: UIAlertAction!) in
-//            return }))
-//        
-//        presentViewController(alert, animated: true, completion: nil)
+
         
     }
     
