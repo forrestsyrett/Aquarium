@@ -28,42 +28,48 @@ class AnimalFeedTableViewController: UIViewController, UITableViewDelegate, UITa
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        animalFeedTableView.reloadData()
-        feeds = [.shark, .penguin]
         gradient(self.view)
         animalFeedTableView.backgroundColor = UIColor.clearColor()
         weekdaySegmentedControl.tintColor = .whiteColor()
+
+ 
+        let date = NSDate()
+        let calendar = NSCalendar.currentCalendar()
+        let components = calendar.components([.Weekday], fromDate: date)
+        let dayOfWeek = components.weekday - 1
         
-//        let rightSwipe = UISwipeGestureRecognizer(target: self, action: #selector(AnimalFeedTableViewController.swipeAction))
-//        rightSwipe.direction = .Right
-//        self.animalFeedTableView.addGestureRecognizer(rightSwipe)
-    
+        weekdaySegmentedControl.selectedSegmentIndex = dayOfWeek
+
+        if dayOfWeek == 0 {
+            feeds = [.shark, .penguin]
+        }
+        else if dayOfWeek == 1 {
+            feeds = [.archerfish, .penguin]
+        }
+        else if dayOfWeek == 2 {
+            feeds = [.piranha, .shark, .riverGiant, .penguin]
+        }
+        else if dayOfWeek == 3 {
+            feeds = [.penguin]
+        }
+        else if dayOfWeek == 4 {
+            feeds = [.piranha, .shark, .archerfish, .riverGiant, .penguin]
+        }
+        else if dayOfWeek == 5 {
+            feeds = [.penguin]
+        }
+        else if dayOfWeek == 6 {
+            feeds = [.shark, .archerfish, .riverGiant, .penguin]
+        }
+        
     }
     
     func swipeAction(swipe: UISwipeGestureRecognizer) {
-//        
-//        if swipe.direction == .Left {
-//     
-//            if self.weekdaySegmentedControl.selectedSegmentIndex < 6 {
-//            self.weekdaySegmentedControl.sendActionsForControlEvents(.ValueChanged)
-////                animalFeedTableView.reloadData()
-//            }
-//                print("Left swipe")
-//            print(weekdaySegmentedControl.selectedSegmentIndex)
-////            else { return }
-//        }
-//        if swipe.direction == .Right {
-//            if self.weekdaySegmentedControl.selectedSegmentIndex < 6 {
-//                self.weekdaySegmentedControl.sendActionsForControlEvents(.ValueChanged)
-////                animalFeedTableView.reloadData()
-//            }
-//        }
+
     }
-//
 
     
     override func viewWillAppear(animated: Bool) {
-//        animalFeedTableView.reloadData()
     }
     
     

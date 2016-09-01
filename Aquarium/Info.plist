@@ -28,7 +28,7 @@
 			<key>UIApplicationShortcutItemIconType</key>
 			<string>UIApplicationShortcutIconTypeAlarm</string>
 			<key>UIApplicationShortcutItemTitle</key>
-			<string>Feeding Schedule</string>
+			<string>Today&apos;s Feedings</string>
 			<key>UIApplicationShortcutItemType</key>
 			<string>$(PRODUCT_BUNDLE_IDENTIFIER).Third</string>
 			<key>UIApplicationShortcutItemUserInfo</key>

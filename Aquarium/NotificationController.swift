@@ -33,7 +33,7 @@ class NotificationController {
         feedNotification.timeZone = NSTimeZone.defaultTimeZone()
         feedNotification.repeatInterval = .WeekOfYear
         feedNotification.userInfo = userInfoDictionary
-        feedNotification.soundName = "fishFlop"
+        feedNotification.soundName = "fishFlop.wav"
         
         
         if scheduled {
