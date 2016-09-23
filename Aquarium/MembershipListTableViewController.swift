@@ -26,6 +26,7 @@ class MembershipListTableViewController: UIViewController, UITableViewDelegate, 
     }
     
     override func viewWillAppear(animated: Bool) {
+        
         membershipCardTableView.reloadData()
         gradient(self.view)
         membershipCardTableView.backgroundColor = UIColor.clearColor()
