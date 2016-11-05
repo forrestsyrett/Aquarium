@@ -9,7 +9,7 @@
 import UIKit
 import SafariServices
 
-class HomeViewController: UIViewController {
+class HomeViewController: UIViewController, UITabBarControllerDelegate {
     
     @IBOutlet weak var welcomeLabel: UILabel!
     @IBOutlet weak var livingPlanetLabel: UILabel!
@@ -29,11 +29,12 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        smallLogo.isHidden = true
         gradient(self.view)
         transparentNavigationBar(self)
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         animateImage(smallLogo, animateTime: 2.0)
         animateLabel(welcomeLabel, animateTime: 0.5)
         animateLabel(livingPlanetLabel, animateTime: 1.0)
@@ -43,26 +44,43 @@ class HomeViewController: UIViewController {
         animateLines(lineFour, animateTime: 2.0)
     }
     
+   
+    
+    // These codes will animate the tab bar controller each time the view changes
+    // implement a swipe gesture to change tabs
+
+//      func tabBarController(_ tabBarController: UITabBarController, interactionControllerFor animationController: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
+//        
+//    }
+//    
+    
+ 
+//      func tabBarController(_ tabBarController: UITabBarController, animationControllerForTransitionFrom fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+//        
+//
+//    }
 
     
-    @IBAction func buyTicketsButtonTapped(sender: AnyObject) {
-        let safariVC = SFSafariViewController(URL: NSURL(string: "https://tickets.thelivingplanet.com/WebStore/Shop/ViewItems.aspx?CG=online&C=Tickets")!)
-        presentViewController(safariVC, animated: true, completion: nil)
+
+    
+    @IBAction func buyTicketsButtonTapped(_ sender: AnyObject) {
+        let safariVC = SFSafariViewController(url: URL(string: "https://tickets.thelivingplanet.com/WebStore/Shop/ViewItems.aspx?CG=online&C=Tickets")!)
+        present(safariVC, animated: true, completion: nil)
         
     }
     
     
-    @IBAction func becomeAMemberButtonTapped(sender: AnyObject) {
-        let safariVC = SFSafariViewController(URL: NSURL(string: "https://tickets.thelivingplanet.com/WebStore/Shop/ViewItems.aspx?CG=online&C=Memberships")!)
-        presentViewController(safariVC, animated: true, completion: nil)
+    @IBAction func becomeAMemberButtonTapped(_ sender: AnyObject) {
+        let safariVC = SFSafariViewController(url: URL(string: "https://tickets.thelivingplanet.com/WebStore/Shop/ViewItems.aspx?CG=online&C=Memberships")!)
+        present(safariVC, animated: true, completion: nil)
     }
     
-    @IBAction func donateButtonTapped(sender: AnyObject) {
-        let safariVC = SFSafariViewController(URL: NSURL(string: "http://www.thelivingplanet.com/home-4/give/")!)
-        presentViewController(safariVC, animated: true, completion: nil)
+    @IBAction func donateButtonTapped(_ sender: AnyObject) {
+        let safariVC = SFSafariViewController(url: URL(string: "http://www.thelivingplanet.com/home-4/give/")!)
+        present(safariVC, animated: true, completion: nil)
     }
     
-    @IBAction func directionButtonTapped(sender: AnyObject) {
+    @IBAction func directionButtonTapped(_ sender: AnyObject) {
 
         
     }

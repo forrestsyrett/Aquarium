@@ -8,12 +8,42 @@
 
 import UIKit
 import CoreImage
+fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l < r
+  case (nil, _?):
+    return true
+  default:
+    return false
+  }
+}
+
+fileprivate func <= <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l <= r
+  default:
+    return !(rhs < lhs)
+  }
+}
+
+fileprivate func > <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l > r
+  default:
+    return rhs < lhs
+  }
+}
+
 
 class AddNewMembershipViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet var membershipNameTextField: UITextField!
     @IBOutlet var membershipIDTextField: UITextField!
     @IBOutlet weak var saveButton: UIBarButtonItem!
+    @IBOutlet weak var expirationDatePicker: UIDatePicker!
     
     var membership: MembershipCard?
     var membershipCell = MembershipCardTableViewCell()
@@ -29,14 +59,14 @@ class AddNewMembershipViewController: UIViewController, UITextFieldDelegate {
         transparentNavigationBar(self)
         
         if membershipNameTextField.text?.isEmpty == true {
-            saveButton.enabled = false
+            saveButton.isEnabled = false
         }
        
     }
     
     
     
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         
 //        if membershipNameTextField.text == "" || membershipIDTextField.text == "" {
 //            saveButton.enabled = false
@@ -49,29 +79,29 @@ class AddNewMembershipViewController: UIViewController, UITextFieldDelegate {
     }
 
     
-    @IBAction func memberIDTextFieldEditingChanged(sender: AnyObject) {
+    @IBAction func memberIDTextFieldEditingChanged(_ sender: AnyObject) {
         
         if membershipNameTextField.text?.characters.count <= 0 || membershipIDTextField.text?.characters.count <= 0 {
-            saveButton.enabled = false
+            saveButton.isEnabled = false
         } else if membershipIDTextField.text?.characters.count > 0 {
-            saveButton.enabled = true
+            saveButton.isEnabled = true
         }
     }
     
     
-    @IBAction func memberNameTextFieldEditingChanged(sender: AnyObject) {
+    @IBAction func memberNameTextFieldEditingChanged(_ sender: AnyObject) {
         
         if membershipNameTextField.text?.characters.count <= 0 || membershipIDTextField.text?.characters.count <= 0 {
-            saveButton.enabled = false
+            saveButton.isEnabled = false
         } else if membershipIDTextField.text?.characters.count > 0 {
-            saveButton.enabled = true
+            saveButton.isEnabled = true
         }
 
     }
     
     
     
-    @IBAction func saveButton(sender: AnyObject) {
+    @IBAction func saveButton(_ sender: AnyObject) {
         
         if membership?.memberName == "" && membership?.memberID == "" { return }
         else {
@@ -79,23 +109,28 @@ class AddNewMembershipViewController: UIViewController, UITextFieldDelegate {
                 membership.memberName = self.membershipNameTextField.text!
                 membership.memberID = self.membershipIDTextField.text!
                 membership.barcodeImageString = self.membershipIDTextField.text!
-                
+                let date = self.expirationDatePicker.date
+                membership.expirationDate = self.expirationDatePicker.date
+                print(self.expirationDatePicker.date)
+
             } else {
-                let newMembership = MembershipCard(memberID: self.membershipIDTextField.text!, memberName: self.membershipNameTextField.text!, barcodeImageString: membershipIDTextField.text!)
+                let newMembership = MembershipCard(memberID: self.membershipIDTextField.text!, memberName: self.membershipNameTextField.text!, barcodeImageString: membershipIDTextField.text!, expirationDate: expirationDatePicker.date)
                 MembershipCardController.sharedMembershipController.addMembership(newMembership)
                 self.membership = newMembership
+                print(self.expirationDatePicker.date)
             }
         }
         
-        self.navigationController?.popViewControllerAnimated(true)
+        self.navigationController?.popViewController(animated: true)
     }
     
     
     
-    func updateWithMembership(membership: MembershipCard) {
+    func updateWithMembership(_ membership: MembershipCard) {
         self.membership = membership
         
         self.membershipIDTextField.text = membership.memberID
         self.membershipNameTextField.text = membership.memberName
+        self.expirationDatePicker.date = membership.expirationDate
     }
 }

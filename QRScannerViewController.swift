@@ -9,6 +9,9 @@
 import UIKit
 import AVFoundation
 import SafariServices
+import MetalKit
+import MetalPerformanceShaders
+import Accelerate
 
 
 
@@ -25,13 +28,25 @@ class QRScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsD
     @IBOutlet weak var scanButton: UIButton!
     
     
+    ///////
+//    var Net: Inception3Net? = nil
+//    var device: MTLDevice!
+//    var commandQueue: MTLCommandQueue!
+//    var imageNum = 0
+//    var total = 6
+//    var textureLoader : MTKTextureLoader!
+//    var ciContext : CIContext!
+//    var sourceTexture : MTLTexture? = nil
+//    var camRan = false
+///////
+    
     var captureSession: AVCaptureSession?
     var videoPreviewLayer: AVCaptureVideoPreviewLayer?
     var qrCodeFrameView: UIView?
     
     
     func configureVideoCapture() {
-        let captureDevice = AVCaptureDevice.defaultDeviceWithMediaType(AVMediaTypeVideo)
+        let captureDevice = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo)
         
         var error: NSError?
         let input: AnyObject!
@@ -63,7 +78,7 @@ class QRScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsD
         
         let objCaptureMetadataOutput = AVCaptureMetadataOutput()
         captureSession?.addOutput(objCaptureMetadataOutput)
-        objCaptureMetadataOutput.setMetadataObjectsDelegate(self, queue: dispatch_get_main_queue())
+        objCaptureMetadataOutput.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
         objCaptureMetadataOutput.metadataObjectTypes = [AVMetadataObjectTypeQRCode]
     }
     
@@ -78,7 +93,7 @@ class QRScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsD
     
     func initializeQRView() {
         qrCodeFrameView = UIView()
-        qrCodeFrameView?.layer.borderColor = UIColor.blueColor().CGColor
+        qrCodeFrameView?.layer.borderColor = UIColor.blue.cgColor
         qrCodeFrameView?.layer.borderWidth = 5
         self.view.addSubview(qrCodeFrameView!)
         self.view.addSubview(tabBarLineView)
@@ -89,14 +104,14 @@ class QRScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsD
     
     
     
-    func captureOutput(captureOutput: AVCaptureOutput!, didOutputMetadataObjects metadataObjects: [AnyObject]!, fromConnection connection: AVCaptureConnection!) {
+    func captureOutput(_ captureOutput: AVCaptureOutput!, didOutputMetadataObjects metadataObjects: [Any]!, from connection: AVCaptureConnection!) {
         if metadataObjects == nil || metadataObjects.count == 0 {
-            qrCodeFrameView?.frame = CGRectZero
+            qrCodeFrameView?.frame = CGRect.zero
             return
         }
         let objMetadataMachineReadableCodeObject = metadataObjects[0] as! AVMetadataMachineReadableCodeObject
         if objMetadataMachineReadableCodeObject.type == AVMetadataObjectTypeQRCode {
-            let objBarCode = videoPreviewLayer?.transformedMetadataObjectForMetadataObject(objMetadataMachineReadableCodeObject as AVMetadataMachineReadableCodeObject) as! AVMetadataMachineReadableCodeObject
+            let objBarCode = videoPreviewLayer?.transformedMetadataObject(for: objMetadataMachineReadableCodeObject as AVMetadataMachineReadableCodeObject) as! AVMetadataMachineReadableCodeObject
             qrCodeFrameView?.frame = objBarCode.bounds;
             if objMetadataMachineReadableCodeObject.stringValue != nil {
                 qrCodeResult.text = objMetadataMachineReadableCodeObject.stringValue
@@ -105,25 +120,25 @@ class QRScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsD
         }
     }
     
-    @IBAction func scanButtonTapped(sender: AnyObject) {
+    @IBAction func scanButtonTapped(_ sender: AnyObject) {
         
         let qrResult = qrCodeResult.text
         
         func openURL() {
-            guard let url = NSURL(string: qrResult!) else {
+            guard let url = URL(string: qrResult!) else {
                 return
             }
             
-            if ["http", "https"].contains(url.scheme.lowercaseString) {
-                let safariViewController = SFSafariViewController(URL: url)
-                self.presentViewController(safariViewController, animated: true, completion: nil)
+            if ["http", "https"].contains(url.scheme!.lowercased()) {
+                let safariViewController = SFSafariViewController(url: url)
+                self.present(safariViewController, animated: true, completion: nil)
                 AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
             } else { return }
         }
         openURL()
     }
     
-    func qrOn(isOn: Bool = false) {
+    func qrOn(_ isOn: Bool = false) {
         if isOn {
             configureVideoCapture()
             addVideoPreviewLayer()
@@ -143,22 +158,22 @@ class QRScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsD
 
         }
     
-    override func viewWillDisappear(animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        if (captureSession?.running == true) {
+        if (captureSession?.isRunning == true) {
             captureSession!.stopRunning()
         }
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        if QRModalView.hidden == false {
-            scanButton.hidden = true
-            photoFrameImage.hidden = true
+        if QRModalView.isHidden == false {
+            scanButton.isHidden = true
+            photoFrameImage.isHidden = true
         } else {
-            scanButton.hidden = false
-            photoFrameImage.hidden = false
+            scanButton.isHidden = false
+            photoFrameImage.isHidden = false
         }
         
         captureSession?.stopRunning()
@@ -169,47 +184,47 @@ class QRScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsD
         qrCodeFrameView = nil
         
         initializeQRView()
-        if (captureSession?.running == false) {
+        if (captureSession?.isRunning == false) {
             self.captureSession!.startRunning()
         }
         
-        if QRModalView.hidden == false {
-            alignQRCodeLabel.hidden = true
+        if QRModalView.isHidden == false {
+            alignQRCodeLabel.isHidden = true
         }
     }
     
     
     func cameraCheck() {
-        let authStatus = AVCaptureDevice.authorizationStatusForMediaType(AVMediaTypeVideo)
+        let authStatus = AVCaptureDevice.authorizationStatus(forMediaType: AVMediaTypeVideo)
         switch authStatus {
-        case .Authorized:
+        case .authorized:
             qrOn(true)
-            QRModalView.hidden = true
-            alignQRCodeLabel.hidden = false
-            scanButton.hidden = false
-            photoFrameImage.hidden = false
+            QRModalView.isHidden = true
+            alignQRCodeLabel.isHidden = false
+            scanButton.isHidden = false
+            photoFrameImage.isHidden = false
             
-        case .Denied:
-            let cameraAlert = UIAlertController(title: "No Camera Access", message: "Please Allow Access To The Camera", preferredStyle: .Alert)
-            let settingsAction = UIAlertAction(title: "Settings", style: .Default, handler: { (cameraAlert) in
-                UIApplication.sharedApplication().openURL(NSURL(string: UIApplicationOpenSettingsURLString)!)
+        case .denied:
+            let cameraAlert = UIAlertController(title: "No Camera Access", message: "Please Allow Access To The Camera", preferredStyle: .alert)
+            let settingsAction = UIAlertAction(title: "Settings", style: .default, handler: { (cameraAlert) in
+                UIApplication.shared.openURL(URL(string: UIApplicationOpenSettingsURLString)!)
             })
-            let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
             
             cameraAlert.addAction(cancelAction)
             cameraAlert.addAction(settingsAction)
             
-            self.presentViewController(cameraAlert, animated: true, completion: nil)
+            self.present(cameraAlert, animated: true, completion: nil)
             
             
-            QRModalView.hidden = false
-            alignQRCodeLabel.hidden = true
-            scanButton.hidden = true
-            photoFrameImage.hidden = true
+            QRModalView.isHidden = false
+            alignQRCodeLabel.isHidden = true
+            scanButton.isHidden = true
+            photoFrameImage.isHidden = true
             
-        case .NotDetermined:
+        case .notDetermined:
             
-            AVCaptureDevice.requestAccessForMediaType(AVMediaTypeVideo, completionHandler: nil)
+            AVCaptureDevice.requestAccess(forMediaType: AVMediaTypeVideo, completionHandler: nil)
             
 
             
@@ -219,11 +234,34 @@ class QRScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsD
     
     }
     
-    @IBAction func getStartedButtonTapped(sender: AnyObject) {
+    @IBAction func getStartedButtonTapped(_ sender: AnyObject) {
         
         cameraCheck()
 
         }
+    
+//    func runNetwork(){
+//        
+//        // to deliver optimal performance we leave some resources used in MPSCNN to be released at next call of autoreleasepool,
+//        // so the user can decide the appropriate time to release this
+//        autoreleasepool{
+//            // encoding command buffer
+//            let commandBuffer = commandQueue.makeCommandBuffer()
+//            
+//            // encode all layers of network on present commandBuffer, pass in the input image MTLTexture
+//            Net!.forward(commandBuffer: commandBuffer, sourceTexture: sourceTexture)
+//            
+//            // commit the commandBuffer and wait for completion on CPU
+//            commandBuffer.commit()
+//            commandBuffer.waitUntilCompleted()
+//            
+//            // display top-5 predictions for what the object should be labelled
+//            let label = Net!.getLabel()
+//            alignQRCodeLabel.text = label
+//            alignQRCodeLabel.isHidden = false
+//        }
+//        
+//    }
 }
 
 

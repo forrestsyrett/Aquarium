@@ -29,7 +29,7 @@ class ExhibitTableViewController: UIViewController, UITableViewDataSource  {
         
     }
 
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         animalTableView.reloadData()
     }
@@ -40,23 +40,23 @@ class ExhibitTableViewController: UIViewController, UITableViewDataSource  {
     }
     // MARK: - Table view data source
     
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return exhibitAnimals.count
     }
     
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("animalCell", forIndexPath: indexPath) as! AnimalTableViewCell
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "animalCell", for: indexPath) as! AnimalTableViewCell
         
         // Configure the cell...
         
-        let animal = exhibitAnimals[indexPath.row]
+        let animal = exhibitAnimals[(indexPath as NSIndexPath).row]
         cell.animalNameLabel.text = animal.info.name
         cell.animalPreviewImage.image = animal.info.animalImage
         cell.backgroundColor = cell.contentView.backgroundColor
@@ -70,39 +70,39 @@ class ExhibitTableViewController: UIViewController, UITableViewDataSource  {
 
 extension ExhibitTableViewController: UITableViewDelegate {
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        guard let cell = tableView.cellForRowAtIndexPath(indexPath) as? AnimalTableViewCell else { return }
+        guard let cell = tableView.cellForRow(at: indexPath) as? AnimalTableViewCell else { return }
         
-        let animal = exhibitAnimals[indexPath.row]
+        let animal = exhibitAnimals[(indexPath as NSIndexPath).row]
         
-        exhibitAnimals[indexPath.row] = animal
+        exhibitAnimals[(indexPath as NSIndexPath).row] = animal
         
         cell.moreInfoTextField?.text = animal.info.description
         
-        UIView.animateWithDuration(0.4) {
+        UIView.animate(withDuration: 0.4, animations: {
             cell.contentView.layoutIfNeeded()
-        }
+        }) 
         
         animalTableView.beginUpdates()
         animalTableView.endUpdates()
         
-        animalTableView.scrollToRowAtIndexPath(indexPath, atScrollPosition: UITableViewScrollPosition.Top, animated: true)
+        animalTableView.scrollToRow(at: indexPath, at: UITableViewScrollPosition.top, animated: true)
     }
     
-    func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
         let moreInfoText = "Tap to learn more! >"
-        guard let cell = tableView.cellForRowAtIndexPath(indexPath) as? AnimalTableViewCell else { return }
+        guard let cell = tableView.cellForRow(at: indexPath) as? AnimalTableViewCell else { return }
         
-        let animal = exhibitAnimals[indexPath.row]
+        let animal = exhibitAnimals[(indexPath as NSIndexPath).row]
         
-        exhibitAnimals[indexPath.row] = animal
+        exhibitAnimals[(indexPath as NSIndexPath).row] = animal
         
         cell.moreInfoTextField.text = moreInfoText
         
-        UIView.animateWithDuration(0.4) {
+        UIView.animate(withDuration: 0.4, animations: {
             cell.contentView.layoutIfNeeded()
-        }
+        }) 
         
         animalTableView.beginUpdates()
         animalTableView.endUpdates()

@@ -20,7 +20,7 @@ class AnimalFeedTableViewController: UIViewController, UITableViewDelegate, UITa
     }
     
     
-    private let reuseIdentifier = "feedCell"
+    fileprivate let reuseIdentifier = "feedCell"
     
     var notificationController = NotificationController()
     var feeds = [Feeding]()
@@ -29,17 +29,31 @@ class AnimalFeedTableViewController: UIViewController, UITableViewDelegate, UITa
     override func viewDidLoad() {
         super.viewDidLoad()
         gradient(self.view)
-        animalFeedTableView.backgroundColor = UIColor.clearColor()
-        weekdaySegmentedControl.tintColor = .whiteColor()
+        animalFeedTableView.backgroundColor = UIColor.clear
+        weekdaySegmentedControl.tintColor = UIColor.white
 
  
-        let date = NSDate()
-        let calendar = NSCalendar.currentCalendar()
-        let components = calendar.components([.Weekday], fromDate: date)
-        let dayOfWeek = components.weekday - 1
+        let leftSwipe = UISwipeGestureRecognizer(target: self, action: #selector(AnimalFeedTableViewController.handleLeftSwipes))
+        leftSwipe.direction = .left
+        view.addGestureRecognizer(leftSwipe)
+        
+        
+        let rightSwipe = UISwipeGestureRecognizer(target: self, action: #selector(AnimalFeedTableViewController.handleRightSwipes))
+        
+        rightSwipe.direction = .right
+        
+        view.addGestureRecognizer(rightSwipe)
+
+        
+        
+        
+        let date = Date()
+        let calendar = Calendar.current
+        let components = (calendar as NSCalendar).components([.weekday], from: date)
+        let dayOfWeek = components.weekday! - 1
         
         weekdaySegmentedControl.selectedSegmentIndex = dayOfWeek
-
+        
         if dayOfWeek == 0 {
             feeds = [.shark, .penguin]
         }
@@ -64,44 +78,107 @@ class AnimalFeedTableViewController: UIViewController, UITableViewDelegate, UITa
         
     }
     
-    func swipeAction(swipe: UISwipeGestureRecognizer) {
+    func handleLeftSwipes(sender:UISwipeGestureRecognizer) {
+        
+        let selectedIndex: Int = self.weekdaySegmentedControl.selectedSegmentIndex
+        
+        if weekdaySegmentedControl.selectedSegmentIndex >= 6 { return }
+
+        
+        self.weekdaySegmentedControl.selectedSegmentIndex = selectedIndex + 1
+        let dayOfWeek = weekdaySegmentedControl.selectedSegmentIndex
+
+        
+        if dayOfWeek == 0 {
+            feeds = [.shark, .penguin]
+        }
+        else if dayOfWeek == 1 {
+            feeds = [.archerfish, .penguin]
+        }
+        else if dayOfWeek == 2 {
+            feeds = [.piranha, .shark, .riverGiant, .penguin]
+        }
+        else if dayOfWeek == 3 {
+            feeds = [.penguin]
+        }
+        else if dayOfWeek == 4 {
+            feeds = [.piranha, .shark, .archerfish, .riverGiant, .penguin]
+        }
+        else if dayOfWeek == 5 {
+            feeds = [.penguin]
+        }
+        else if dayOfWeek == 6 {
+            feeds = [.shark, .archerfish, .riverGiant, .penguin]
+        }
+animalFeedTableView.reloadData()
 
     }
+    
+    func handleRightSwipes(sender:UISwipeGestureRecognizer) {
+        let selectedIndex: Int = self.weekdaySegmentedControl.selectedSegmentIndex
+        
+        if weekdaySegmentedControl.selectedSegmentIndex <= 0 { return }
+        
+            self.weekdaySegmentedControl.selectedSegmentIndex = selectedIndex - 1
+        let dayOfWeek = weekdaySegmentedControl.selectedSegmentIndex
 
-    
-    override func viewWillAppear(animated: Bool) {
+        
+        if dayOfWeek == 0 {
+            feeds = [.shark, .penguin]
+        }
+        else if dayOfWeek == 1 {
+            feeds = [.archerfish, .penguin]
+        }
+        else if dayOfWeek == 2 {
+            feeds = [.piranha, .shark, .riverGiant, .penguin]
+        }
+        else if dayOfWeek == 3 {
+            feeds = [.penguin]
+        }
+        else if dayOfWeek == 4 {
+            feeds = [.piranha, .shark, .archerfish, .riverGiant, .penguin]
+        }
+        else if dayOfWeek == 5 {
+            feeds = [.penguin]
+        }
+        else if dayOfWeek == 6 {
+            feeds = [.shark, .archerfish, .riverGiant, .penguin]
+        }
+        animalFeedTableView.reloadData()
+        
     }
-    
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+
+    @IBAction func segmentedControlValueChanged(_ sender: AnyObject) {
+        
+        print(weekdaySegmentedControl.selectedSegmentIndex)
+        animalFeedTableView.reloadData()
     }
+
     
     
     // MARK: UICollectionViewDataSource
     
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return feeds.count
     }
     
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(reuseIdentifier, forIndexPath: indexPath) as! AnimalFeedTableViewCell
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! AnimalFeedTableViewCell
         
         cell.delegate = self
         
-        let feed = feeds[indexPath.row]
+        let feed = feeds[(indexPath as NSIndexPath).row]
         cell.animalFeedLabel.text = feed.info.animalName
         cell.animalFeedImage.image = feed.info.image
         cell.animalFeedTimeLabel.text = feed.info.timeString
-        cell.backgroundColor = UIColor.clearColor()
+        cell.backgroundColor = UIColor.clear
         cell.notificationScheduled = notificationCheck(feed.info.animalName, weekday: selectedWeekday)
         
         cell.animalFeedImage.alpha = 0.0
@@ -121,7 +198,7 @@ class AnimalFeedTableViewController: UIViewController, UITableViewDelegate, UITa
         roundCornerButtons(cell.animalFeedImage)
         
         
-        func animate(cellView: UIView) {
+        func animate(_ cellView: UIView) {
             
             view.addSubview(cellView)
             let basicAnimation = CABasicAnimation()
@@ -129,7 +206,7 @@ class AnimalFeedTableViewController: UIViewController, UITableViewDelegate, UITa
             basicAnimation.fromValue = cellView.center.x + 350
             basicAnimation.toValue = cellView.center.x + -30
             basicAnimation.duration = 0.25
-            cellView.layer.addAnimation(basicAnimation, forKey: "slide")
+            cellView.layer.add(basicAnimation, forKey: "slide")
             cellView.center.x += -30
         }
         
@@ -140,8 +217,8 @@ class AnimalFeedTableViewController: UIViewController, UITableViewDelegate, UITa
     
     
     //                check notifications to see which are scheduled. access .userinfo
-    func notificationCheck(animalName: String, weekday: Int) -> Bool {
-        guard let scheduledLocalNotifications = UIApplication.sharedApplication().scheduledLocalNotifications else { return false }
+    func notificationCheck(_ animalName: String, weekday: Int) -> Bool {
+        guard let scheduledLocalNotifications = UIApplication.shared.scheduledLocalNotifications else { return false }
         var found = false
         for notification in scheduledLocalNotifications {
             guard let userInfo = notification.userInfo as? [String: String] else { return false }
@@ -152,7 +229,7 @@ class AnimalFeedTableViewController: UIViewController, UITableViewDelegate, UITa
         return found
     }
     
-    @IBAction func weekdaySegmentedControlSelected(sender: AnyObject) {
+    @IBAction func weekdaySegmentedControlSelected(_ sender: AnyObject) {
         feeds = Feeding.feeding(on: selectedWeekday)
         animalFeedTableView.reloadData()
         
@@ -160,40 +237,42 @@ class AnimalFeedTableViewController: UIViewController, UITableViewDelegate, UITa
     
     //MARK: - AnimalFeedTableViewCellDelegate Methods
     
-    func feedNotificationButtonTapped(animalFeedTableViewCell: AnimalFeedTableViewCell) {
-        guard let indexPath = animalFeedTableView.indexPathForCell(animalFeedTableViewCell) else { return }
-        let feed = feeds[indexPath.row]
+    func feedNotificationScheduled(_ animalFeedTableViewCell: AnimalFeedTableViewCell) {
+        guard let indexPath = animalFeedTableView.indexPath(for: animalFeedTableViewCell) else { return }
+        let feed = feeds[(indexPath as NSIndexPath).row]
         
-        UIApplication.sharedApplication().registerUserNotificationSettings(UIUserNotificationSettings(forTypes:
-            [.Alert, .Badge, .Sound], categories: nil))
+        UIApplication.shared.registerUserNotificationSettings(UIUserNotificationSettings(types:
+            [.alert, .badge, .sound], categories: nil))
         
         notificationController.scheduleNotification(for: feed, onWeekday: selectedWeekday, scheduled: animalFeedTableViewCell.notificationScheduled)
         
     }
     
     
-    @IBAction func clearFeedingsButtonTapped(sender: AnyObject) {
+    @IBAction func clearFeedingsButtonTapped(_ sender: AnyObject) {
         
-        let alert = UIAlertController(title: "Clear Notifications?", message: "This will cancel all scheduled feeding notifications", preferredStyle: .Alert)
-        let clearAction = UIAlertAction(title: "Clear", style: .Default) { (action) in
-            UIApplication.sharedApplication().cancelAllLocalNotifications()
+        let alert = UIAlertController(title: "Clear Notifications?", message: "This will cancel all scheduled feeding notifications", preferredStyle: .alert)
+        let clearAction = UIAlertAction(title: "Clear", style: .default) { (action) in
+            UIApplication.shared.cancelAllLocalNotifications()
             self.animalFeedTableView.reloadData()
         }
-        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         alert.addAction(clearAction)
         alert.addAction(cancelAction)
         
-        self.presentViewController(alert, animated: true, completion: nil)
+        self.present(alert, animated: true, completion: nil)
         
     }
     
-    @IBAction func swipeRecognition(sender: UISegmentedControl) {
-        
-//        
-//        (weekdaySegmentedControl.selectedSegmentIndex) = self.weekdaySegmentedControl.selectedSegmentIndex - 1
-//        animalFeedTableView.reloadData()
-//        
-    }
+    
+    
+    
+    
+    
+    
+    
+    
+
 }
     
 

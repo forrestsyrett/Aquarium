@@ -11,7 +11,7 @@ import UIKit
 
 
 protocol ExhibitGalleriesViewControllerDelegate: class {
-    func discoverUtahButtonTapped(exhibitGalleriesViewController: ExhibitGalleriesViewController)
+    func discoverUtahButtonTapped(_ exhibitGalleriesViewController: ExhibitGalleriesViewController)
 }
 
 class ExhibitGalleriesViewController: UIViewController, UITabBarDelegate {
@@ -30,7 +30,7 @@ class ExhibitGalleriesViewController: UIViewController, UITabBarDelegate {
     weak var delegate: ExhibitGalleriesViewControllerDelegate?
     
 
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         
     }
     
@@ -52,14 +52,14 @@ class ExhibitGalleriesViewController: UIViewController, UITabBarDelegate {
 
     
 
-    @IBAction func discoverUtahButtonTapped(sender: AnyObject) {
+    @IBAction func discoverUtahButtonTapped(_ sender: AnyObject) {
         
-        NSNotificationCenter.defaultCenter().postNotificationName("discoverUtah", object: nil)
+        NotificationCenter.default.post(name: Notification.Name(rawValue: "discoverUtah"), object: nil)
         
     }
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?){
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?){
         
-        let exhibitAnimalViewController = segue.destinationViewController as? ExhibitTableViewController
+        let exhibitAnimalViewController = segue.destination as? ExhibitTableViewController
         
             if (segue.identifier == "discoverUtah") {
             exhibitAnimalViewController?.exhibitAnimals = [Animals.otters, .tortoise]

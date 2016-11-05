@@ -25,18 +25,18 @@ class MembershipListTableViewController: UIViewController, UITableViewDelegate, 
         roundCornerButtons(welcomeView)
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         
         membershipCardTableView.reloadData()
         gradient(self.view)
-        membershipCardTableView.backgroundColor = UIColor.clearColor()
+        membershipCardTableView.backgroundColor = UIColor.clear
         transparentNavigationBar(self)
         
         if MembershipCardController.sharedMembershipController.memberships.count != 0 {
             
-            welcomeView.hidden = true
+            welcomeView.isHidden = true
         } else {
-            welcomeView.hidden = false
+            welcomeView.isHidden = false
         }
     }
     
@@ -44,10 +44,10 @@ class MembershipListTableViewController: UIViewController, UITableViewDelegate, 
     
     
     
-    @IBAction func becomeAMemberButtonTapped(sender: AnyObject) {
+    @IBAction func becomeAMemberButtonTapped(_ sender: AnyObject) {
         
-        let safariVC = SFSafariViewController(URL: NSURL(string: "https://tickets.thelivingplanet.com/WebStore/Shop/ViewItems.aspx?CG=online&C=Memberships")!)
-        presentViewController(safariVC, animated: true, completion: nil)
+        let safariVC = SFSafariViewController(url: URL(string: "https://tickets.thelivingplanet.com/WebStore/Shop/ViewItems.aspx?CG=online&C=Memberships")!)
+        present(safariVC, animated: true, completion: nil)
     }
     
     
@@ -58,36 +58,41 @@ class MembershipListTableViewController: UIViewController, UITableViewDelegate, 
     
     // MARK: - Table view data source
     
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return MembershipCardController.sharedMembershipController.memberships.count
     }
     
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("tableViewCell", forIndexPath: indexPath) as! MembershipCardTableViewCell
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "tableViewCell", for: indexPath) as! MembershipCardTableViewCell
         
-        let membership = MembershipCardController.sharedMembershipController.memberships[indexPath.row]
+        let membership = MembershipCardController.sharedMembershipController.memberships[(indexPath as NSIndexPath).row]
         
         
-        func barcodefromString(string : String) -> UIImage? {
+        func barcodefromString(_ string : String) -> UIImage? {
             
-            guard let barcode = string.dataUsingEncoding(NSASCIIStringEncoding) else { return barcodefromString("1") }
+            guard let barcode = string.data(using: String.Encoding.ascii) else { return barcodefromString("1") }
             let filter = CIFilter(name: "CICode128BarcodeGenerator")
             filter!.setValue(barcode, forKey: "inputMessage")
-            return UIImage(CIImage: filter!.outputImage!)
+            return UIImage(ciImage: filter!.outputImage!)
         }
         
         // Configure the cell...
         cell.memberNameLabel.text = membership.memberName
         cell.membershipIDLabel.text = membership.memberID
         cell.barcodeImage.image = barcodefromString(membership.memberID)
-        cell.backgroundColor = UIColor.clearColor()
+        
+        let dateFormat = DateFormatter()
+        dateFormat.dateStyle = .medium
+        
+        cell.expirationDateLabel.text = "Expires: \((dateFormat.string(from: membership.expirationDate)))"
+        cell.backgroundColor = UIColor.clear
         roundCornerButtons(cell.barcodeImage)
         
         return cell
@@ -96,15 +101,15 @@ class MembershipListTableViewController: UIViewController, UITableViewDelegate, 
     
     
     // Override to support editing the table view.
-    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            let membership = MembershipCardController.sharedMembershipController.memberships[indexPath.row]
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let membership = MembershipCardController.sharedMembershipController.memberships[(indexPath as NSIndexPath).row]
             
             MembershipCardController.sharedMembershipController.removeMembership(membership)
             
             // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
     }

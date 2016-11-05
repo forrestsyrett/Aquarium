@@ -32,32 +32,32 @@ class ContactUsViewController: UIViewController {
 
     
 
-    @IBAction func phoneNumberButton(sender: AnyObject) {
+    @IBAction func phoneNumberButton(_ sender: AnyObject) {
         
-        let callAlert = UIAlertController(title: "Call the Living Planet Aquarium?", message: "801-355-3474", preferredStyle: .Alert)
-        let callAction = UIAlertAction(title: "Call", style: .Default) { (callAlert) in
-        UIApplication.sharedApplication().openURL(NSURL(string: "tel://8013553474")!)
+        let callAlert = UIAlertController(title: "Call the Living Planet Aquarium?", message: "801-355-3474", preferredStyle: .alert)
+        let callAction = UIAlertAction(title: "Call", style: .default) { (callAlert) in
+        UIApplication.shared.openURL(URL(string: "tel://8013553474")!)
     }
-        let cancelAlert = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+        let cancelAlert = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         callAlert.addAction(callAction)
         callAlert.addAction(cancelAlert)
         
-        self.presentViewController(callAlert, animated: true, completion: nil)
+        self.present(callAlert, animated: true, completion: nil)
     }
     
     
-    @IBAction func openInMapsButtonTapped(sender: AnyObject) {
+    @IBAction func openInMapsButtonTapped(_ sender: AnyObject) {
         
-        let alert = UIAlertController(title: "Open in Maps?", message: "12033 Lone Peak Parkway, Draper UT", preferredStyle: .Alert)
+        let alert = UIAlertController(title: "Open in Maps?", message: "12033 Lone Peak Parkway, Draper UT", preferredStyle: .alert)
         
-        alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: { (action: UIAlertAction!) in
-            UIApplication.sharedApplication().openURL(NSURL(string: "http://maps.apple.com/?q=Loveland+Living+Planet+Aquarium")!)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action: UIAlertAction!) in
+            UIApplication.shared.openURL(URL(string: "http://maps.apple.com/?q=Loveland+Living+Planet+Aquarium")!)
         }))
         
-        alert.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: { (action: UIAlertAction!) in
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction!) in
             return }))
         
-        presentViewController(alert, animated: true, completion: nil)
+        present(alert, animated: true, completion: nil)
 
     }
     

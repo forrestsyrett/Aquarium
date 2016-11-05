@@ -17,12 +17,12 @@ class NotificationController {
     
     func scheduleNotification(for feeding: Feeding, onWeekday weekday: Int, scheduled: Bool) {
         
-        let gregorian = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
+        let gregorian = Calendar(identifier: Calendar.Identifier.gregorian)
         
-        let now = NSDate()
-        var fireDate = gregorian.dateBySettingUnit(.Weekday, value: weekday, ofDate: now, options: [])!
-        fireDate = gregorian.dateBySettingUnit(.Hour, value: feeding.info.hour, ofDate: fireDate, options: [])!
-        fireDate = gregorian.dateBySettingUnit(.Minute, value: feeding.info.minute, ofDate: fireDate, options: [])!
+        let now = Date()
+        var fireDate = (gregorian as NSCalendar).date(bySettingUnit: .weekday, value: weekday, of: now, options: [])!
+        fireDate = (gregorian as NSCalendar).date(bySettingUnit: .hour, value: feeding.info.hour, of: fireDate, options: [])!
+        fireDate = (gregorian as NSCalendar).date(bySettingUnit: .minute, value: feeding.info.minute, of: fireDate, options: [])!
         
         
         let feedNotification = UILocalNotification()
@@ -30,17 +30,17 @@ class NotificationController {
         
         feedNotification.fireDate = fireDate
         feedNotification.alertBody = feeding.info.notificationTitle
-        feedNotification.timeZone = NSTimeZone.defaultTimeZone()
-        feedNotification.repeatInterval = .WeekOfYear
+        feedNotification.timeZone = TimeZone.current
+        feedNotification.repeatInterval = .weekOfYear
         feedNotification.userInfo = userInfoDictionary
         feedNotification.soundName = "fishFlop.wav"
         
         
         if scheduled {
-            UIApplication.sharedApplication().scheduleLocalNotification(feedNotification)
+            UIApplication.shared.scheduleLocalNotification(feedNotification)
         }
         if scheduled == false {
-            UIApplication.sharedApplication().cancelLocalNotification(feedNotification)
+            UIApplication.shared.cancelLocalNotification(feedNotification)
         }
     }
 }

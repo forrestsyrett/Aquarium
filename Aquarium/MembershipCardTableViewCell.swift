@@ -13,6 +13,7 @@ class MembershipCardTableViewCell: UITableViewCell {
     @IBOutlet weak var memberNameLabel: UILabel!
     @IBOutlet weak var barcodeImage: UIImageView!
     @IBOutlet weak var membershipIDLabel: UILabel!
+    @IBOutlet weak var expirationDateLabel: UILabel!
     
     
     
@@ -21,7 +22,7 @@ class MembershipCardTableViewCell: UITableViewCell {
         // Initialization code
     }
     
-    override func setSelected(selected: Bool, animated: Bool) {
+    override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         
         // Configure the view for the selected state

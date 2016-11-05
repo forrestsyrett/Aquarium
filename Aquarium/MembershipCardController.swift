@@ -11,7 +11,7 @@ import Foundation
 
 class MembershipCardController {
     
-    private let membershipKey = "memberships"
+    fileprivate let membershipKey = "memberships"
     
     static let sharedMembershipController = MembershipCardController()
     
@@ -22,14 +22,14 @@ class MembershipCardController {
     }
     
     
-    func addMembership(membership: MembershipCard) {
+    func addMembership(_ membership: MembershipCard) {
         memberships.append(membership)
         saveToPersistentStorage()
     }
     
-    func removeMembership(membership: MembershipCard) {
-        if let index = memberships.indexOf(membership) {
-            memberships.removeAtIndex(index)
+    func removeMembership(_ membership: MembershipCard) {
+        if let index = memberships.index(of: membership) {
+            memberships.remove(at: index)
             saveToPersistentStorage()
         }
     }
@@ -37,12 +37,12 @@ class MembershipCardController {
     func saveToPersistentStorage() {
         
         let membershipDictionaries = self.memberships.map({$0.dictionaryCopy()})
-        NSUserDefaults.standardUserDefaults().setObject(membershipDictionaries, forKey: membershipKey)
+        UserDefaults.standard.set(membershipDictionaries, forKey: membershipKey)
         
     }
     
     func loadFromPersistentStorage() {
-        if let membershipDictionariesFromDefaults = NSUserDefaults.standardUserDefaults().objectForKey(membershipKey) as? [Dictionary<String, String>] {
+        if let membershipDictionariesFromDefaults = UserDefaults.standard.object(forKey: membershipKey) as? [Dictionary<String, AnyObject>] {
             self.memberships = membershipDictionariesFromDefaults.map({MembershipCard(dictionary: $0)!})
         }
     }

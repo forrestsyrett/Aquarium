@@ -9,7 +9,7 @@
 import UIKit
 
 protocol AnimalFeedTableViewCellDelegate: class {
-    func feedNotificationButtonTapped(animalFeedTableViewCell: AnimalFeedTableViewCell)
+    func feedNotificationScheduled(_ animalFeedTableViewCell: AnimalFeedTableViewCell)
 }
 
 class AnimalFeedTableViewCell: UITableViewCell {
@@ -24,7 +24,7 @@ class AnimalFeedTableViewCell: UITableViewCell {
     
     var notificationScheduled = false {
         didSet {
-            notifyMeButtonLabel.setTitle(notificationScheduled ? AnimalFeedTableViewCell.cancelNotification : AnimalFeedTableViewCell.notifyMe, forState: .Normal)
+            notifyMeButtonLabel.setTitle(notificationScheduled ? AnimalFeedTableViewCell.cancelNotification : AnimalFeedTableViewCell.notifyMe, for: UIControlState())
             checkMarkImage.image = UIImage(named: notificationScheduled ? "checkmarkSelected" : "checkmark")
         }
     }
@@ -37,7 +37,7 @@ class AnimalFeedTableViewCell: UITableViewCell {
     
     
     
-    override func setSelected(selected: Bool, animated: Bool) {
+    override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         
         // Configure the view for the selected state
@@ -48,18 +48,18 @@ class AnimalFeedTableViewCell: UITableViewCell {
     static let IDKey = "ID"
     
     
-    private let sunday = 0
-    private let monday = 1
-    private let tuesday = 2
-    private let wednesday = 3
-    private let thursday = 4
-    private let friday = 5
-    private let saturday = 6
+    fileprivate let sunday = 0
+    fileprivate let monday = 1
+    fileprivate let tuesday = 2
+    fileprivate let wednesday = 3
+    fileprivate let thursday = 4
+    fileprivate let friday = 5
+    fileprivate let saturday = 6
     
-    @IBAction func notifyMeButtonTapped(sender: AnyObject) {
+    @IBAction func notifyMeButtonTapped(_ sender: AnyObject) {
         notificationScheduled = !notificationScheduled
         
-        delegate?.feedNotificationButtonTapped(self)
+        delegate?.feedNotificationScheduled(self)
     }
     
 }

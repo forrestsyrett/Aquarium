@@ -13,33 +13,33 @@ import UIKit
 
 // ANIMATIONS
 
-func animateImage(image: UIImageView, animateTime: Double) {
+func animateImage(_ image: UIImageView, animateTime: Double) {
     image.alpha = 0.0
-    UIView.animateWithDuration(animateTime) {
+    UIView.animate(withDuration: animateTime, animations: {
         image.alpha = 1.0
-    }
+    }) 
 }
 
-func animateButton(image: UIButton, animateTime: Double) {
+func animateButton(_ image: UIButton, animateTime: Double) {
     image.alpha = 0.0
-    UIView.animateWithDuration(animateTime) {
+    UIView.animate(withDuration: animateTime, animations: {
         image.alpha = 1.0
-    }
+    }) 
 }
 
-func animateLabel(label: UILabel, animateTime: Double) {
+func animateLabel(_ label: UILabel, animateTime: Double) {
     label.alpha = 0.0
-    UILabel.animateWithDuration(animateTime) {
+    UILabel.animate(withDuration: animateTime, animations: {
         label.alpha = 1.0
-    }
+    }) 
 }
 
 
 // Use UIVIEW to animate all views in cell
 
-func animateLines(view: UIView, animateTime: Double) {
+func animateLines(_ view: UIView, animateTime: Double) {
     view.alpha = 0.0
-    UIView.animateWithDuration(animateTime) {
+    UIView.animate(withDuration: animateTime, animations: {
         view.alpha = 1.0
-    }
+    }) 
 }
