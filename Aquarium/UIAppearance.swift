@@ -42,4 +42,23 @@ func roundCornerButtons(_ view: UIView) {
     view.layer.cornerRadius = 5
     view.layer.masksToBounds = true
 }
+func roundViews(_ view: UIView, cornerRadius: CGFloat) {
+    view.frame = CGRect(x: 160, y: 100, width: 50, height: 50)
+    view.layer.cornerRadius = cornerRadius * view.bounds.size.width
+    view.clipsToBounds = false
+}
+
+func roundedCorners(_ view: UIView) {
+    
+    view.layer.cornerRadius = 5
+    view.clipsToBounds = true
+}
+
+func shadow(_ view: UIView) {
+    
+    view.layer.shadowOpacity = 0.8
+    view.layer.shadowOffset = CGSize(width: 0.0, height: 0.0)
+    view.layer.shadowRadius = 10.0
+    view.layer.shadowColor = UIColor.white.cgColor
+}
 

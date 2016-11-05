@@ -33,7 +33,7 @@ class NotificationController {
         feedNotification.timeZone = TimeZone.current
         feedNotification.repeatInterval = .weekOfYear
         feedNotification.userInfo = userInfoDictionary
-        feedNotification.soundName = "fishFlop.wav"
+        feedNotification.soundName = "fishFlop.m4r"
         
         
         if scheduled {

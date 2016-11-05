@@ -21,9 +21,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UITabBar.appearance().shadowImage = UIImage()
         
         // Override point for customization after application launch.
-        if let shortcutItem = launchOptions?[UIApplicationLaunchOptionsKey.shortcutItem] as? UIApplicationShortcutItem {
-            MembershipShortcutAction(shortcutItem)
-        }
+//        if let shortcutItem = launchOptions?[UIApplicationLaunchOptionsKey.shortcutItem] as? UIApplicationShortcutItem {
+//            MembershipShortcutAction(shortcutItem)
+//        }
         
         
         return true
@@ -46,11 +46,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationDidBecomeActive(_ application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
         func applicationDidBecomeActive(_ application: UIApplication) {
-            guard let shortcut = shortCutItem else { return }
-            
-            MembershipShortcutAction(shortcut)
-            
-            shortCutItem = nil
+//            guard let shortcut = shortCutItem else { return }
+//            
+////            MembershipShortcutAction(shortcut)
+//            
+//            shortCutItem = nil
         }
     }
     
@@ -60,7 +60,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping (Bool) -> Void) {
         
-        MembershipShortcutAction(shortcutItem)
+//        MembershipShortcutAction(shortcutItem)
     }
     
     
