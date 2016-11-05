@@ -23,13 +23,17 @@ class HomeViewController: UIViewController, UITabBarControllerDelegate {
     @IBOutlet weak var lineTwo: UIView!
     @IBOutlet weak var lineThree: UIView!
     @IBOutlet weak var lineFour: UIView!
+    @IBOutlet weak var aquariumLabel: UILabel!
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        smallLogo.isHidden = true
+     
+
+        tabBarTint(view: self)
+        
         gradient(self.view)
         transparentNavigationBar(self)
     }
@@ -38,6 +42,7 @@ class HomeViewController: UIViewController, UITabBarControllerDelegate {
         animateImage(smallLogo, animateTime: 2.0)
         animateLabel(welcomeLabel, animateTime: 0.5)
         animateLabel(livingPlanetLabel, animateTime: 1.0)
+        animateLabel(aquariumLabel, animateTime: 1.0)
         animateLines(lineOne, animateTime: 0.75)
         animateLines(lineTwo, animateTime: 1.0)
         animateLines(lineThree, animateTime: 1.5)

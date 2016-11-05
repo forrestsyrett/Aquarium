@@ -40,6 +40,7 @@ class ExhibitGalleriesViewController: UIViewController, UITabBarDelegate {
     
         gradient(self.view)
         
+        tabBarTint(view: self)
         
         roundCornerButtons(discoverUtahButton)
         roundCornerButtons(oceanExplorerButton)

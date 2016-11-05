@@ -9,9 +9,9 @@
 import UIKit
 import AVFoundation
 import SafariServices
-import MetalKit
-import MetalPerformanceShaders
-import Accelerate
+//import MetalKit
+//import MetalPerformanceShaders
+//import Accelerate
 
 
 
@@ -156,6 +156,7 @@ class QRScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsD
         roundCornerButtons(scanButton)
             gradient(self.view)
 
+        tabBarTint(view: self)
         }
     
     override func viewWillDisappear(_ animated: Bool) {

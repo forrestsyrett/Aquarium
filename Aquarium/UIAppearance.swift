@@ -17,11 +17,11 @@ func gradient (_ view: UIView) {
     view.backgroundColor = UIColor(red: 0, green: 0.3961, blue: 0.8196, alpha: 1.0)
     gradientLayer.frame = view.bounds
     let color1 = UIColor(red: 0, green: 0.3961, blue: 0.8196, alpha: 1.0).cgColor as CGColor
-    let color2 = UIColor(red: 0, green: 0.0941, blue: 0.2, alpha: 1.0).cgColor as CGColor
+    let color2 = UIColor(red: 0.05, green: 0.16, blue: 0.24, alpha: 1.0).cgColor as CGColor
     let color3 = UIColor(red: 0.149, green: 0.4392, blue: 0.498, alpha: 1.0).cgColor as CGColor
     gradientLayer.colors = [color1, color3, color2]
     
-    gradientLayer.locations = [0.0, 0.50, 1.0]
+    gradientLayer.locations = [0.0, 0.30, 0.8]
     
     view.layer.insertSublayer(gradientLayer, at: 0)
     
@@ -60,5 +60,9 @@ func shadow(_ view: UIView) {
     view.layer.shadowOffset = CGSize(width: 0.0, height: 0.0)
     view.layer.shadowRadius = 10.0
     view.layer.shadowColor = UIColor.white.cgColor
+}
+
+func tabBarTint(view: UIViewController) {
+    view.tabBarController?.tabBar.barTintColor = UIColor(red:0.00, green:0.10, blue:0.20, alpha:1.00)
 }
 

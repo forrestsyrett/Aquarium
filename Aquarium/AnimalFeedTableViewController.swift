@@ -44,7 +44,7 @@ class AnimalFeedTableViewController: UIViewController, UITableViewDelegate, UITa
         
         view.addGestureRecognizer(rightSwipe)
 
-        
+        tabBarTint(view: self)
         
         
         let date = Date()

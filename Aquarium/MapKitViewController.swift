@@ -45,6 +45,8 @@ class MapKitViewController: UIViewController, MKMapViewDelegate, BottomSheetView
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tabBarTint(view: self)
+        
         bottomSheetViewController.delegate = self
         
         currentLocationAnnotation.coordinate = CurrentLocationController.shared.coordinate
@@ -66,6 +68,7 @@ class MapKitViewController: UIViewController, MKMapViewDelegate, BottomSheetView
         mapView.showsCompass = true
         label.text = titleLabel
         clearDirectionsButton.isHidden = true
+       
         
         addAnnotations()
         addCurrentLocationAnnotation()

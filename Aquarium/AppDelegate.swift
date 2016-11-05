@@ -17,8 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         UITabBar.appearance().tintColor = UIColor.white
-        UITabBar.appearance().backgroundImage = UIImage()
-        UITabBar.appearance().shadowImage = UIImage()
+       
         
         // Override point for customization after application launch.
 //        if let shortcutItem = launchOptions?[UIApplicationLaunchOptionsKey.shortcutItem] as? UIApplicationShortcutItem {

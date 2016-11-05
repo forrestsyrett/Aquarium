@@ -2,6 +2,13 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>UIAppFonts</key>
+	<array>
+		<string>TrajanPro-Regular.otf</string>
+		<string>ITCFranklinGothicStd-Book.otf</string>
+	</array>
+	<key>NSCameraUsageDescription</key>
+	<string>Enable camera access for access to unique information about our exhibits!</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>
@@ -28,7 +35,7 @@
 			<key>UIApplicationShortcutItemIconType</key>
 			<string>UIApplicationShortcutIconTypeAlarm</string>
 			<key>UIApplicationShortcutItemTitle</key>
-			<string>Today's Feedings</string>
+			<string>Today&apos;s Feedings</string>
 			<key>UIApplicationShortcutItemType</key>
 			<string>$(PRODUCT_BUNDLE_IDENTIFIER).Third</string>
 			<key>UIApplicationShortcutItemUserInfo</key>

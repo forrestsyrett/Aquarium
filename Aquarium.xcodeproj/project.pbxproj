@@ -22,6 +22,17 @@
 		AA353ACA1DCE625600AD5490 /* MapGalleryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA353AC91DCE625600AD5490 /* MapGalleryController.swift */; };
 		AA353ACC1DCE665500AD5490 /* fishFlop.m4r in Resources */ = {isa = PBXBuildFile; fileRef = AA353ACB1DCE665500AD5490 /* fishFlop.m4r */; };
 		AA353ACE1DCE670000AD5490 /* Annotations.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA353ACD1DCE670000AD5490 /* Annotations.swift */; };
+		AA353AD01DCE701500AD5490 /* EntranceToSharksRoute.plist in Resources */ = {isa = PBXBuildFile; fileRef = AA353ACF1DCE701500AD5490 /* EntranceToSharksRoute.plist */; };
+		AA353AD91DCE8B9E00AD5490 /* ITCFranklinGothicStd-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = AA353AD11DCE8B9E00AD5490 /* ITCFranklinGothicStd-Book.otf */; };
+		AA353ADA1DCE8B9E00AD5490 /* ITCFranklinGothicStd-BookIt.otf in Resources */ = {isa = PBXBuildFile; fileRef = AA353AD21DCE8B9E00AD5490 /* ITCFranklinGothicStd-BookIt.otf */; };
+		AA353ADB1DCE8B9E00AD5490 /* ITCFranklinGothicStd-Demi.otf in Resources */ = {isa = PBXBuildFile; fileRef = AA353AD31DCE8B9E00AD5490 /* ITCFranklinGothicStd-Demi.otf */; };
+		AA353ADC1DCE8B9E00AD5490 /* ITCFranklinGothicStd-DemiIt.otf in Resources */ = {isa = PBXBuildFile; fileRef = AA353AD41DCE8B9E00AD5490 /* ITCFranklinGothicStd-DemiIt.otf */; };
+		AA353ADD1DCE8B9E00AD5490 /* ITCFranklinGothicStd-Hvy.otf in Resources */ = {isa = PBXBuildFile; fileRef = AA353AD51DCE8B9E00AD5490 /* ITCFranklinGothicStd-Hvy.otf */; };
+		AA353ADE1DCE8B9E00AD5490 /* ITCFranklinGothicStd-HvyIt.otf in Resources */ = {isa = PBXBuildFile; fileRef = AA353AD61DCE8B9E00AD5490 /* ITCFranklinGothicStd-HvyIt.otf */; };
+		AA353ADF1DCE8B9E00AD5490 /* ITCFranklinGothicStd-Med.otf in Resources */ = {isa = PBXBuildFile; fileRef = AA353AD71DCE8B9E00AD5490 /* ITCFranklinGothicStd-Med.otf */; };
+		AA353AE01DCE8B9E00AD5490 /* ITCFranklinGothicStd-MedIt.otf in Resources */ = {isa = PBXBuildFile; fileRef = AA353AD81DCE8B9E00AD5490 /* ITCFranklinGothicStd-MedIt.otf */; };
+		AA353AE41DCE8C0600AD5490 /* TrajanPro-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = AA353AE21DCE8C0600AD5490 /* TrajanPro-Bold.otf */; };
+		AA353AE51DCE8C0600AD5490 /* TrajanPro-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = AA353AE31DCE8C0600AD5490 /* TrajanPro-Regular.otf */; };
 		AA544C951D0BB66C00DC1725 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA544C941D0BB66C00DC1725 /* AppDelegate.swift */; };
 		AA544C9C1D0BB66C00DC1725 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA544C9B1D0BB66C00DC1725 /* Assets.xcassets */; };
 		AA544C9F1D0BB66C00DC1725 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA544C9D1D0BB66C00DC1725 /* LaunchScreen.storyboard */; };
@@ -61,6 +72,17 @@
 		AA353AC91DCE625600AD5490 /* MapGalleryController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapGalleryController.swift; path = Aquarium/MapGalleryController.swift; sourceTree = "<group>"; };
 		AA353ACB1DCE665500AD5490 /* fishFlop.m4r */ = {isa = PBXFileReference; lastKnownFileType = file; path = fishFlop.m4r; sourceTree = "<group>"; };
 		AA353ACD1DCE670000AD5490 /* Annotations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Annotations.swift; path = Aquarium/Annotations.swift; sourceTree = "<group>"; };
+		AA353ACF1DCE701500AD5490 /* EntranceToSharksRoute.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = EntranceToSharksRoute.plist; sourceTree = "<group>"; };
+		AA353AD11DCE8B9E00AD5490 /* ITCFranklinGothicStd-Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ITCFranklinGothicStd-Book.otf"; sourceTree = "<group>"; };
+		AA353AD21DCE8B9E00AD5490 /* ITCFranklinGothicStd-BookIt.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ITCFranklinGothicStd-BookIt.otf"; sourceTree = "<group>"; };
+		AA353AD31DCE8B9E00AD5490 /* ITCFranklinGothicStd-Demi.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ITCFranklinGothicStd-Demi.otf"; sourceTree = "<group>"; };
+		AA353AD41DCE8B9E00AD5490 /* ITCFranklinGothicStd-DemiIt.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ITCFranklinGothicStd-DemiIt.otf"; sourceTree = "<group>"; };
+		AA353AD51DCE8B9E00AD5490 /* ITCFranklinGothicStd-Hvy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ITCFranklinGothicStd-Hvy.otf"; sourceTree = "<group>"; };
+		AA353AD61DCE8B9E00AD5490 /* ITCFranklinGothicStd-HvyIt.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ITCFranklinGothicStd-HvyIt.otf"; sourceTree = "<group>"; };
+		AA353AD71DCE8B9E00AD5490 /* ITCFranklinGothicStd-Med.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ITCFranklinGothicStd-Med.otf"; sourceTree = "<group>"; };
+		AA353AD81DCE8B9E00AD5490 /* ITCFranklinGothicStd-MedIt.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ITCFranklinGothicStd-MedIt.otf"; sourceTree = "<group>"; };
+		AA353AE21DCE8C0600AD5490 /* TrajanPro-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "TrajanPro-Bold.otf"; sourceTree = "<group>"; };
+		AA353AE31DCE8C0600AD5490 /* TrajanPro-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "TrajanPro-Regular.otf"; sourceTree = "<group>"; };
 		AA544C911D0BB66C00DC1725 /* Aquarium.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Aquarium.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA544C941D0BB66C00DC1725 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AA544C9B1D0BB66C00DC1725 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -109,11 +131,30 @@
 				AA353AC11DCE619100AD5490 /* AquariumMapOverlayView.swift */,
 				AA353AC71DCE622300AD5490 /* MapGalleries.swift */,
 				AA353AC91DCE625600AD5490 /* MapGalleryController.swift */,
+				AA353ACD1DCE670000AD5490 /* Annotations.swift */,
 				AA353AC31DCE61C200AD5490 /* Aquarium.plist */,
 				AA353AC41DCE61C200AD5490 /* aquariumExhibits.plist */,
-				AA353ACD1DCE670000AD5490 /* Annotations.swift */,
+				AA353ACF1DCE701500AD5490 /* EntranceToSharksRoute.plist */,
 			);
 			name = Map;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		AA353AE11DCE8BAA00AD5490 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				AA353AD11DCE8B9E00AD5490 /* ITCFranklinGothicStd-Book.otf */,
+				AA353AD21DCE8B9E00AD5490 /* ITCFranklinGothicStd-BookIt.otf */,
+				AA353AD31DCE8B9E00AD5490 /* ITCFranklinGothicStd-Demi.otf */,
+				AA353AD41DCE8B9E00AD5490 /* ITCFranklinGothicStd-DemiIt.otf */,
+				AA353AD51DCE8B9E00AD5490 /* ITCFranklinGothicStd-Hvy.otf */,
+				AA353AD61DCE8B9E00AD5490 /* ITCFranklinGothicStd-HvyIt.otf */,
+				AA353AD71DCE8B9E00AD5490 /* ITCFranklinGothicStd-Med.otf */,
+				AA353AD81DCE8B9E00AD5490 /* ITCFranklinGothicStd-MedIt.otf */,
+				AA353AE21DCE8C0600AD5490 /* TrajanPro-Bold.otf */,
+				AA353AE31DCE8C0600AD5490 /* TrajanPro-Regular.otf */,
+			);
+			name = Fonts;
 			path = ..;
 			sourceTree = "<group>";
 		};
@@ -139,6 +180,7 @@
 				AA544C941D0BB66C00DC1725 /* AppDelegate.swift */,
 				AA33919F1D6FA92800F92147 /* Main.storyboard */,
 				AAA20FF51D5E47A1009B3241 /* ContactUsViewController.swift */,
+				AA353AE11DCE8BAA00AD5490 /* Fonts */,
 				AA353AB41DCE5F3900AD5490 /* Map */,
 				AA8441CF1D556F3C000238C1 /* Main Tab Bar Items */,
 				AA8441CB1D556E12000238C1 /* Mobile Membership */,
@@ -267,11 +309,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA353ACC1DCE665500AD5490 /* fishFlop.m4r in Resources */,
+				AA353ADD1DCE8B9E00AD5490 /* ITCFranklinGothicStd-Hvy.otf in Resources */,
 				AA544C9F1D0BB66C00DC1725 /* LaunchScreen.storyboard in Resources */,
+				AA353AD91DCE8B9E00AD5490 /* ITCFranklinGothicStd-Book.otf in Resources */,
 				AA3391A01D6FA92800F92147 /* Main.storyboard in Resources */,
+				AA353ADE1DCE8B9E00AD5490 /* ITCFranklinGothicStd-HvyIt.otf in Resources */,
+				AA353ADB1DCE8B9E00AD5490 /* ITCFranklinGothicStd-Demi.otf in Resources */,
 				AA353AC51DCE61C200AD5490 /* Aquarium.plist in Resources */,
+				AA353AE41DCE8C0600AD5490 /* TrajanPro-Bold.otf in Resources */,
+				AA353AE51DCE8C0600AD5490 /* TrajanPro-Regular.otf in Resources */,
+				AA353ADF1DCE8B9E00AD5490 /* ITCFranklinGothicStd-Med.otf in Resources */,
 				AA544C9C1D0BB66C00DC1725 /* Assets.xcassets in Resources */,
+				AA353ADA1DCE8B9E00AD5490 /* ITCFranklinGothicStd-BookIt.otf in Resources */,
 				AA353AC61DCE61C200AD5490 /* aquariumExhibits.plist in Resources */,
+				AA353AD01DCE701500AD5490 /* EntranceToSharksRoute.plist in Resources */,
+				AA353AE01DCE8B9E00AD5490 /* ITCFranklinGothicStd-MedIt.otf in Resources */,
+				AA353ADC1DCE8B9E00AD5490 /* ITCFranklinGothicStd-DemiIt.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

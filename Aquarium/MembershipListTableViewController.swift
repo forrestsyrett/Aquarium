@@ -20,6 +20,8 @@ class MembershipListTableViewController: UIViewController, UITableViewDelegate, 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        tabBarTint(view: self)
+        
         membershipCardTableView.reloadData()
         roundCornerButtons(becomeAMemberButtonLabel)
         roundCornerButtons(welcomeView)
