@@ -70,6 +70,8 @@ class HomeViewController: UIViewController, UITabBarControllerDelegate {
     
     @IBAction func buyTicketsButtonTapped(_ sender: AnyObject) {
         let safariVC = SFSafariViewController(url: URL(string: "https://tickets.thelivingplanet.com/WebStore/Shop/ViewItems.aspx?CG=online&C=Tickets")!)
+        safariVC.preferredControlTintColor = UIColor.white
+        safariVC.preferredBarTintColor = UIColor(red:0.00, green:0.10, blue:0.20, alpha:1.00)
         present(safariVC, animated: true, completion: nil)
         
     }
@@ -77,11 +79,15 @@ class HomeViewController: UIViewController, UITabBarControllerDelegate {
     
     @IBAction func becomeAMemberButtonTapped(_ sender: AnyObject) {
         let safariVC = SFSafariViewController(url: URL(string: "https://tickets.thelivingplanet.com/WebStore/Shop/ViewItems.aspx?CG=online&C=Memberships")!)
+        safariVC.preferredControlTintColor = UIColor.white
+        safariVC.preferredBarTintColor = UIColor(red:0.00, green:0.10, blue:0.20, alpha:1.00)
         present(safariVC, animated: true, completion: nil)
     }
     
     @IBAction func donateButtonTapped(_ sender: AnyObject) {
         let safariVC = SFSafariViewController(url: URL(string: "http://www.thelivingplanet.com/home-4/give/")!)
+        safariVC.preferredControlTintColor = UIColor.white
+        safariVC.preferredBarTintColor = UIColor(red:0.00, green:0.10, blue:0.20, alpha:1.00)
         present(safariVC, animated: true, completion: nil)
     }
     

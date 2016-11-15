@@ -43,3 +43,34 @@ func animateLines(_ view: UIView, animateTime: Double) {
         view.alpha = 1.0
     }) 
 }
+
+
+// Button - Touch Down and Up animations //
+
+func buttonBounceTouchDown(_ view: UIView) {
+    
+    let scaleTransform = CGAffineTransform(scaleX: 0.93, y: 0.93)
+    
+    UIView.animate(withDuration: 1.5,
+                   delay: 0.0,
+                   usingSpringWithDamping: 0.35,
+                   initialSpringVelocity: 6.0,
+                   options: .allowUserInteraction,
+                   animations: { view.transform = scaleTransform } ,
+                   completion: nil)
+}
+
+func buttonBounceTouchUp(_ view: UIView) {
+    
+    let scaleTransform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+    
+    UIView.animate(withDuration: 1.5,
+                   delay: 0.0,
+                   usingSpringWithDamping: 0.35,
+                   initialSpringVelocity: 6.0,
+                   options: .allowUserInteraction,
+                   animations: { view.transform = scaleTransform } ,
+                   completion: nil)
+}
+
+

@@ -26,13 +26,13 @@ class AquariumMapOverlayView: MKOverlayRenderer {
     override func draw(_ mapRect: MKMapRect, zoomScale: MKZoomScale, in context: CGContext) {
         
         
-        var image = self.mapOverlay
+        let image = self.mapOverlay
         let mapRect = overlay.boundingMapRect
         let newRect = rect(for: mapRect)
         
         
         UIGraphicsPushContext(context)
-        image.draw(in: newRect, blendMode: .normal, alpha: 0.80)
+        image.draw(in: newRect, blendMode: .normal, alpha: 1.00)
         
         UIGraphicsPopContext()
         

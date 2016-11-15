@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E3C1D313B999B8DCB850948 /* Pods_Aquarium.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA163953DE68335B7F2D0C0E /* Pods_Aquarium.framework */; };
+		AA00A7871DD3D3E100B80DF6 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA00A7861DD3D3E100B80DF6 /* WebViewController.swift */; };
+		AA07C69E1DD5052700AD855D /* SecondFloorOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA07C69D1DD5052700AD855D /* SecondFloorOverlayView.swift */; };
+		AA07C6A01DD5090E00AD855D /* SecondFloorOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA07C69F1DD5090E00AD855D /* SecondFloorOverlay.swift */; };
+		AA07C6A21DD5126100AD855D /* SecondFloorExhibits.plist in Resources */ = {isa = PBXBuildFile; fileRef = AA07C6A11DD5126100AD855D /* SecondFloorExhibits.plist */; };
+		AA081A561DDA8CE30020C269 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = AA081A551DDA8CE30020C269 /* background.png */; };
+		AA081A581DDA91E60020C269 /* BackGroundOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA081A571DDA91E60020C269 /* BackGroundOverlay.swift */; };
 		AA183F2A1D1A6DD300D31044 /* AnimalEncountersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA183F291D1A6DD200D31044 /* AnimalEncountersViewController.swift */; };
 		AA3391A01D6FA92800F92147 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA33919F1D6FA92800F92147 /* Main.storyboard */; };
 		AA353AB31DCE5F1700AD5490 /* AquariumMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA353AB21DCE5F1700AD5490 /* AquariumMap.swift */; };
@@ -17,7 +24,7 @@
 		AA353AC01DCE617000AD5490 /* AquariumMapOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA353ABF1DCE617000AD5490 /* AquariumMapOverlay.swift */; };
 		AA353AC21DCE619100AD5490 /* AquariumMapOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA353AC11DCE619100AD5490 /* AquariumMapOverlayView.swift */; };
 		AA353AC51DCE61C200AD5490 /* Aquarium.plist in Resources */ = {isa = PBXBuildFile; fileRef = AA353AC31DCE61C200AD5490 /* Aquarium.plist */; };
-		AA353AC61DCE61C200AD5490 /* aquariumExhibits.plist in Resources */ = {isa = PBXBuildFile; fileRef = AA353AC41DCE61C200AD5490 /* aquariumExhibits.plist */; };
+		AA353AC61DCE61C200AD5490 /* firstFloorExhibits.plist in Resources */ = {isa = PBXBuildFile; fileRef = AA353AC41DCE61C200AD5490 /* firstFloorExhibits.plist */; };
 		AA353AC81DCE622300AD5490 /* MapGalleries.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA353AC71DCE622300AD5490 /* MapGalleries.swift */; };
 		AA353ACA1DCE625600AD5490 /* MapGalleryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA353AC91DCE625600AD5490 /* MapGalleryController.swift */; };
 		AA353ACC1DCE665500AD5490 /* fishFlop.m4r in Resources */ = {isa = PBXBuildFile; fileRef = AA353ACB1DCE665500AD5490 /* fishFlop.m4r */; };
@@ -48,6 +55,9 @@
 		AA6FA1D41D55540B00CBEEC7 /* MembershipListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6FA1D31D55540B00CBEEC7 /* MembershipListTableViewController.swift */; };
 		AA6FA1D61D5554FC00CBEEC7 /* MembershipCardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6FA1D51D5554FC00CBEEC7 /* MembershipCardController.swift */; };
 		AA6FA1D81D55552800CBEEC7 /* Membership.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6FA1D71D55552800CBEEC7 /* Membership.swift */; };
+		AA7CE6FD1DDB909A00EF4669 /* BackgroundOverlay.plist in Resources */ = {isa = PBXBuildFile; fileRef = AA7CE6FC1DDB909A00EF4669 /* BackgroundOverlay.plist */; };
+		AA7CE6FF1DDB91A600EF4669 /* Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7CE6FE1DDB91A600EF4669 /* Background.swift */; };
+		AA7CE7011DDB928200EF4669 /* BackgroundOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7CE7001DDB928200EF4669 /* BackgroundOverlayView.swift */; };
 		AA8D05161D19DC930063F222 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8D05151D19DC930063F222 /* HomeViewController.swift */; };
 		AA909B181D41B42A000DB923 /* Feeding.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA909B171D41B42A000DB923 /* Feeding.swift */; };
 		AA9D6EE01D1CCD5000831AFE /* Animal.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9D6EDF1D1CCD5000831AFE /* Animal.swift */; };
@@ -57,6 +67,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AA00A7861DD3D3E100B80DF6 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		AA07C69D1DD5052700AD855D /* SecondFloorOverlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondFloorOverlayView.swift; sourceTree = "<group>"; };
+		AA07C69F1DD5090E00AD855D /* SecondFloorOverlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SecondFloorOverlay.swift; path = Aquarium/SecondFloorOverlay.swift; sourceTree = "<group>"; };
+		AA07C6A11DD5126100AD855D /* SecondFloorExhibits.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SecondFloorExhibits.plist; sourceTree = "<group>"; };
+		AA081A551DDA8CE30020C269 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
+		AA081A571DDA91E60020C269 /* BackGroundOverlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BackGroundOverlay.swift; path = Aquarium/BackGroundOverlay.swift; sourceTree = "<group>"; };
 		AA183F291D1A6DD200D31044 /* AnimalEncountersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimalEncountersViewController.swift; sourceTree = "<group>"; };
 		AA33919F1D6FA92800F92147 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		AA353AB21DCE5F1700AD5490 /* AquariumMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AquariumMap.swift; path = Aquarium/AquariumMap.swift; sourceTree = "<group>"; };
@@ -67,7 +83,7 @@
 		AA353ABF1DCE617000AD5490 /* AquariumMapOverlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AquariumMapOverlay.swift; path = Aquarium/AquariumMapOverlay.swift; sourceTree = "<group>"; };
 		AA353AC11DCE619100AD5490 /* AquariumMapOverlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AquariumMapOverlayView.swift; path = Aquarium/AquariumMapOverlayView.swift; sourceTree = "<group>"; };
 		AA353AC31DCE61C200AD5490 /* Aquarium.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Aquarium.plist; sourceTree = "<group>"; };
-		AA353AC41DCE61C200AD5490 /* aquariumExhibits.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = aquariumExhibits.plist; sourceTree = "<group>"; };
+		AA353AC41DCE61C200AD5490 /* firstFloorExhibits.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = firstFloorExhibits.plist; sourceTree = "<group>"; };
 		AA353AC71DCE622300AD5490 /* MapGalleries.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapGalleries.swift; path = Aquarium/MapGalleries.swift; sourceTree = "<group>"; };
 		AA353AC91DCE625600AD5490 /* MapGalleryController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapGalleryController.swift; path = Aquarium/MapGalleryController.swift; sourceTree = "<group>"; };
 		AA353ACB1DCE665500AD5490 /* fishFlop.m4r */ = {isa = PBXFileReference; lastKnownFileType = file; path = fishFlop.m4r; sourceTree = "<group>"; };
@@ -100,12 +116,19 @@
 		AA6FA1D31D55540B00CBEEC7 /* MembershipListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MembershipListTableViewController.swift; sourceTree = "<group>"; };
 		AA6FA1D51D5554FC00CBEEC7 /* MembershipCardController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MembershipCardController.swift; sourceTree = "<group>"; };
 		AA6FA1D71D55552800CBEEC7 /* Membership.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Membership.swift; sourceTree = "<group>"; };
+		AA7CE6FC1DDB909A00EF4669 /* BackgroundOverlay.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = BackgroundOverlay.plist; sourceTree = "<group>"; };
+		AA7CE6FE1DDB91A600EF4669 /* Background.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Background.swift; path = Aquarium/Background.swift; sourceTree = "<group>"; };
+		AA7CE7001DDB928200EF4669 /* BackgroundOverlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BackgroundOverlayView.swift; path = Aquarium/BackgroundOverlayView.swift; sourceTree = "<group>"; };
 		AA8D05151D19DC930063F222 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		AA909B171D41B42A000DB923 /* Feeding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Feeding.swift; sourceTree = "<group>"; };
 		AA9D6EDF1D1CCD5000831AFE /* Animal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animal.swift; sourceTree = "<group>"; };
+		AA9EE37B1DD25F94007D1E08 /* Aquarium.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Aquarium.entitlements; sourceTree = "<group>"; };
 		AAA20FF51D5E47A1009B3241 /* ContactUsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactUsViewController.swift; sourceTree = "<group>"; };
 		AACE39291D54578E0082E667 /* AddNewMembershipViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewMembershipViewController.swift; sourceTree = "<group>"; };
 		AAEE47671D3CAD8500E0C537 /* NotificationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		AE652E5AD0B8A15AFB9D2F67 /* Pods-Aquarium.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Aquarium.release.xcconfig"; path = "Pods/Target Support Files/Pods-Aquarium/Pods-Aquarium.release.xcconfig"; sourceTree = "<group>"; };
+		DA6E2996903BEDB88149D83B /* Pods-Aquarium.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Aquarium.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Aquarium/Pods-Aquarium.debug.xcconfig"; sourceTree = "<group>"; };
+		EA163953DE68335B7F2D0C0E /* Pods_Aquarium.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Aquarium.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +136,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E3C1D313B999B8DCB850948 /* Pods_Aquarium.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -123,17 +147,24 @@
 			isa = PBXGroup;
 			children = (
 				AA353AB21DCE5F1700AD5490 /* AquariumMap.swift */,
+				AA7CE6FE1DDB91A600EF4669 /* Background.swift */,
 				AA353AB51DCE5FD200AD5490 /* MapKitViewController.swift */,
 				AA353AB71DCE601800AD5490 /* BottomSheetViewController.swift */,
 				AA353ABB1DCE608500AD5490 /* CurrentLocationController.swift */,
 				AA353ABD1DCE60A700AD5490 /* AnnotationViews.swift */,
+				AA081A571DDA91E60020C269 /* BackGroundOverlay.swift */,
 				AA353ABF1DCE617000AD5490 /* AquariumMapOverlay.swift */,
 				AA353AC11DCE619100AD5490 /* AquariumMapOverlayView.swift */,
+				AA7CE7001DDB928200EF4669 /* BackgroundOverlayView.swift */,
+				AA07C69D1DD5052700AD855D /* SecondFloorOverlayView.swift */,
+				AA07C69F1DD5090E00AD855D /* SecondFloorOverlay.swift */,
 				AA353AC71DCE622300AD5490 /* MapGalleries.swift */,
 				AA353AC91DCE625600AD5490 /* MapGalleryController.swift */,
 				AA353ACD1DCE670000AD5490 /* Annotations.swift */,
 				AA353AC31DCE61C200AD5490 /* Aquarium.plist */,
-				AA353AC41DCE61C200AD5490 /* aquariumExhibits.plist */,
+				AA7CE6FC1DDB909A00EF4669 /* BackgroundOverlay.plist */,
+				AA353AC41DCE61C200AD5490 /* firstFloorExhibits.plist */,
+				AA07C6A11DD5126100AD855D /* SecondFloorExhibits.plist */,
 				AA353ACF1DCE701500AD5490 /* EntranceToSharksRoute.plist */,
 			);
 			name = Map;
@@ -163,6 +194,8 @@
 			children = (
 				AA544C931D0BB66C00DC1725 /* Aquarium */,
 				AA544C921D0BB66C00DC1725 /* Products */,
+				BA65A9DDB62A50DF28C33017 /* Pods */,
+				EA94B41FA31D61D281B2BE4B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -177,8 +210,10 @@
 		AA544C931D0BB66C00DC1725 /* Aquarium */ = {
 			isa = PBXGroup;
 			children = (
+				AA9EE37B1DD25F94007D1E08 /* Aquarium.entitlements */,
 				AA544C941D0BB66C00DC1725 /* AppDelegate.swift */,
 				AA33919F1D6FA92800F92147 /* Main.storyboard */,
+				AA00A7861DD3D3E100B80DF6 /* WebViewController.swift */,
 				AAA20FF51D5E47A1009B3241 /* ContactUsViewController.swift */,
 				AA353AE11DCE8BAA00AD5490 /* Fonts */,
 				AA353AB41DCE5F3900AD5490 /* Map */,
@@ -230,6 +265,7 @@
 		AA8441CE1D556ECD000238C1 /* Appearance */ = {
 			isa = PBXGroup;
 			children = (
+				AA081A551DDA8CE30020C269 /* background.png */,
 				AA6F4E631D3868F900FA20F7 /* Animations.swift */,
 				AA544CAA1D0C790400DC1725 /* UIAppearance.swift */,
 				AA353ACB1DCE665500AD5490 /* fishFlop.m4r */,
@@ -248,6 +284,23 @@
 			name = "Main Tab Bar Items";
 			sourceTree = "<group>";
 		};
+		BA65A9DDB62A50DF28C33017 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DA6E2996903BEDB88149D83B /* Pods-Aquarium.debug.xcconfig */,
+				AE652E5AD0B8A15AFB9D2F67 /* Pods-Aquarium.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		EA94B41FA31D61D281B2BE4B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EA163953DE68335B7F2D0C0E /* Pods_Aquarium.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -255,9 +308,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AA544CA31D0BB66C00DC1725 /* Build configuration list for PBXNativeTarget "Aquarium" */;
 			buildPhases = (
+				18EC9C3927D6BD15E1764A5A /* [CP] Check Pods Manifest.lock */,
 				AA544C8D1D0BB66B00DC1725 /* Sources */,
 				AA544C8E1D0BB66B00DC1725 /* Frameworks */,
 				AA544C8F1D0BB66B00DC1725 /* Resources */,
+				46E6E5229D403232BA3BCF95 /* [CP] Embed Pods Frameworks */,
+				64C321959809DAF444FA9955 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -282,6 +338,14 @@
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = B3G94J8WC9;
 						LastSwiftMigration = 0800;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -319,16 +383,67 @@
 				AA353AE41DCE8C0600AD5490 /* TrajanPro-Bold.otf in Resources */,
 				AA353AE51DCE8C0600AD5490 /* TrajanPro-Regular.otf in Resources */,
 				AA353ADF1DCE8B9E00AD5490 /* ITCFranklinGothicStd-Med.otf in Resources */,
+				AA081A561DDA8CE30020C269 /* background.png in Resources */,
 				AA544C9C1D0BB66C00DC1725 /* Assets.xcassets in Resources */,
 				AA353ADA1DCE8B9E00AD5490 /* ITCFranklinGothicStd-BookIt.otf in Resources */,
-				AA353AC61DCE61C200AD5490 /* aquariumExhibits.plist in Resources */,
+				AA353AC61DCE61C200AD5490 /* firstFloorExhibits.plist in Resources */,
+				AA7CE6FD1DDB909A00EF4669 /* BackgroundOverlay.plist in Resources */,
 				AA353AD01DCE701500AD5490 /* EntranceToSharksRoute.plist in Resources */,
 				AA353AE01DCE8B9E00AD5490 /* ITCFranklinGothicStd-MedIt.otf in Resources */,
+				AA07C6A21DD5126100AD855D /* SecondFloorExhibits.plist in Resources */,
 				AA353ADC1DCE8B9E00AD5490 /* ITCFranklinGothicStd-DemiIt.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		18EC9C3927D6BD15E1764A5A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		46E6E5229D403232BA3BCF95 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Aquarium/Pods-Aquarium-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		64C321959809DAF444FA9955 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Aquarium/Pods-Aquarium-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		AA544C8D1D0BB66B00DC1725 /* Sources */ = {
@@ -341,6 +456,8 @@
 				AA353ABE1DCE60A700AD5490 /* AnnotationViews.swift in Sources */,
 				AA544CAD1D0C90DE00DC1725 /* ExhibitTableViewController.swift in Sources */,
 				AA6F4E721D3C01D000FA20F7 /* AnimalFeedTableViewCell.swift in Sources */,
+				AA07C6A01DD5090E00AD855D /* SecondFloorOverlay.swift in Sources */,
+				AA7CE7011DDB928200EF4669 /* BackgroundOverlayView.swift in Sources */,
 				AA353AB61DCE5FD200AD5490 /* MapKitViewController.swift in Sources */,
 				AACE392A1D54578E0082E667 /* AddNewMembershipViewController.swift in Sources */,
 				AA353AC81DCE622300AD5490 /* MapGalleries.swift in Sources */,
@@ -350,9 +467,11 @@
 				AA909B181D41B42A000DB923 /* Feeding.swift in Sources */,
 				AA6FA1D41D55540B00CBEEC7 /* MembershipListTableViewController.swift in Sources */,
 				AA9D6EE01D1CCD5000831AFE /* Animal.swift in Sources */,
+				AA081A581DDA91E60020C269 /* BackGroundOverlay.swift in Sources */,
 				AA544CFA1D149C0A00DC1725 /* QRScannerViewController.swift in Sources */,
 				AA353AC01DCE617000AD5490 /* AquariumMapOverlay.swift in Sources */,
 				AAA20FF61D5E47A1009B3241 /* ContactUsViewController.swift in Sources */,
+				AA07C69E1DD5052700AD855D /* SecondFloorOverlayView.swift in Sources */,
 				AA8D05161D19DC930063F222 /* HomeViewController.swift in Sources */,
 				AA353AB81DCE601800AD5490 /* BottomSheetViewController.swift in Sources */,
 				AA6F4E661D386A2A00FA20F7 /* AnimalTableViewCell.swift in Sources */,
@@ -361,8 +480,10 @@
 				AA544C951D0BB66C00DC1725 /* AppDelegate.swift in Sources */,
 				AAEE47681D3CAD8500E0C537 /* NotificationController.swift in Sources */,
 				AA6F4E641D3868F900FA20F7 /* Animations.swift in Sources */,
+				AA7CE6FF1DDB91A600EF4669 /* Background.swift in Sources */,
 				AA353ABC1DCE608500AD5490 /* CurrentLocationController.swift in Sources */,
 				AA544CAB1D0C790400DC1725 /* UIAppearance.swift in Sources */,
+				AA00A7871DD3D3E100B80DF6 /* WebViewController.swift in Sources */,
 				AA6FA1D21D554E6800CBEEC7 /* MembershipCardTableViewCell.swift in Sources */,
 				AA6FA1D81D55552800CBEEC7 /* Membership.swift in Sources */,
 			);
@@ -472,29 +593,33 @@
 		};
 		AA544CA41D0BB66C00DC1725 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DA6E2996903BEDB88149D83B /* Pods-Aquarium.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Aquarium/Aquarium.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Aquarium/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.forrest.Aquarium;
 				PRODUCT_NAME = Aquarium;
 				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		AA544CA51D0BB66C00DC1725 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AE652E5AD0B8A15AFB9D2F67 /* Pods-Aquarium.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Aquarium/Aquarium.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Aquarium/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.forrest.Aquarium;
 				PRODUCT_NAME = Aquarium;
 				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

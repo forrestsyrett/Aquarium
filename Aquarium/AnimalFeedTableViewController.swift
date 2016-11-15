@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import OneSignal
 
 class AnimalFeedTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, AnimalFeedTableViewCellDelegate, UIGestureRecognizerDelegate {
     
@@ -27,6 +28,13 @@ class AnimalFeedTableViewController: UIViewController, UITableViewDelegate, UITa
     
     
     override func viewDidLoad() {
+        
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) {(accepted, error) in
+            if !accepted {
+                print("Notification access denied.")
+            }
+        }
+        
         super.viewDidLoad()
         gradient(self.view)
         animalFeedTableView.backgroundColor = UIColor.clear

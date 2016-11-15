@@ -26,6 +26,9 @@ enum AnnotationTypes: Int {
     case Elevator = 10
     case DeepSeaLab = 11
     case CurrentLocation = 12
+    case Theater = 13
+    case EducationCenter = 14
+    case MothersRoom = 15
 }
 
 

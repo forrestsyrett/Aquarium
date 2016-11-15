@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import OneSignal
+import UserNotifications
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, OSUserNotificationCenterDelegate {
     
     var window: UIWindow?
     
@@ -17,13 +19,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         UITabBar.appearance().tintColor = UIColor.white
-       
+//        let pushNotificationSettings = UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
         
-        // Override point for customization after application launch.
-//        if let shortcutItem = launchOptions?[UIApplicationLaunchOptionsKey.shortcutItem] as? UIApplicationShortcutItem {
-//            MembershipShortcutAction(shortcutItem)
-//        }
         
+        OneSignal.initWithLaunchOptions(launchOptions, appId: "3090501c-b1b5-4a1f-9c02-cb3a768e71a7")
+        OneSignal.registerForPushNotifications()
+    
+        
+//        OneSignal.initWithLaunchOptions(launchOptions, appId: "b2f7f966-d8cc-11e4-bed1-df8f05be55ba", handleNotificationReceived:nil, handleNotificationAction:nil, settings: [kOSSettingsKeyInFocusDisplayOption: None, kOSSettingsKeyAutoPrompt: true])
+
         
         return true
     }
@@ -45,11 +49,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationDidBecomeActive(_ application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
         func applicationDidBecomeActive(_ application: UIApplication) {
-//            guard let shortcut = shortCutItem else { return }
-//            
-////            MembershipShortcutAction(shortcut)
-//            
-//            shortCutItem = nil
+            guard let shortcut = shortCutItem else { return }
+            
+//            MembershipShortcutAction(shortcut)
+            
+            shortCutItem = nil
         }
     }
     
@@ -57,10 +61,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
     
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        var token: String = ""
+        for i in 0..<deviceToken.count {
+            token += String(format: "%02.2hhx", deviceToken[i] as CVarArg)
+        }
+        
+        print(token)
+    }
+    
+    
+    
+    func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
+        print(error)
+    }
+    
+    private func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
+        print(userInfo)
+    }
+    
     func application(_ application: UIApplication, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping (Bool) -> Void) {
         
-//        MembershipShortcutAction(shortcutItem)
+        MembershipShortcutAction(shortcutItem)
     }
+    
+ 
     
     
     enum ShortCutIdentifier: String {

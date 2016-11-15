@@ -2,13 +2,15 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>UIAppFonts</key>
-	<array>
-		<string>TrajanPro-Regular.otf</string>
-		<string>ITCFranklinGothicStd-Book.otf</string>
-	</array>
-	<key>NSCameraUsageDescription</key>
-	<string>Enable camera access for access to unique information about our exhibits!</string>
+	<key>NSLocationUsageDescription</key>
+	<string>The Living Planet Aquarium would like to use your location to give you special interactive access to some of our exhibits!</string>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>The Living Planet Aquarium would like to use your location to give you special interactive access to some of our exhibits!</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>
@@ -29,32 +31,39 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSCameraUsageDescription</key>
+	<string>Enable camera access for access to unique information about our exhibits!</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>TrajanPro-Regular.otf</string>
+		<string>ITCFranklinGothicStd-Book.otf</string>
+	</array>
 	<key>UIApplicationShortcutItems</key>
 	<array>
-		<dict>
-			<key>UIApplicationShortcutItemIconType</key>
-			<string>UIApplicationShortcutIconTypeAlarm</string>
-			<key>UIApplicationShortcutItemTitle</key>
-			<string>Today&apos;s Feedings</string>
-			<key>UIApplicationShortcutItemType</key>
-			<string>$(PRODUCT_BUNDLE_IDENTIFIER).Third</string>
-			<key>UIApplicationShortcutItemUserInfo</key>
-			<dict>
-				<key>TabIndex</key>
-				<integer>3</integer>
-			</dict>
-		</dict>
 		<dict>
 			<key>UIApplicationShortcutItemIconType</key>
 			<string>UIApplicationShortcutIconTypeCapturePhoto</string>
 			<key>UIApplicationShortcutItemTitle</key>
 			<string>QR Scanner</string>
 			<key>UIApplicationShortcutItemType</key>
-			<string>$(PRODUCT_BUNDLE_IDENTIFIER).Second</string>
+			<string>$(PRODUCT_BUNDLE_IDENTIFIER).Third</string>
 			<key>UIApplicationShortcutItemUserInfo</key>
 			<dict>
 				<key>TabIndex</key>
 				<integer>4</integer>
+			</dict>
+		</dict>
+		<dict>
+			<key>UIApplicationShortcutItemIconType</key>
+			<string>UIApplicationShortcutIconTypeAlarm</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>Today&apos;s Feedings</string>
+			<key>UIApplicationShortcutItemType</key>
+			<string>$(PRODUCT_BUNDLE_IDENTIFIER).Second</string>
+			<key>UIApplicationShortcutItemUserInfo</key>
+			<dict>
+				<key>TabIndex</key>
+				<integer>1</integer>
 			</dict>
 		</dict>
 		<dict>
@@ -67,9 +76,13 @@
 			<key>UIApplicationShortcutItemUserInfo</key>
 			<dict>
 				<key>TabIndex</key>
-				<integer>1</integer>
+				<integer>3</integer>
 			</dict>
 		</dict>
+	</array>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>remote-notification</string>
 	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SafariServices
 
 
 var galleryTest = ""
@@ -32,7 +33,7 @@ class BottomSheetViewController: UIViewController, UIGestureRecognizerDelegate  
     @IBOutlet weak var shadowView: UIImageView!
     @IBOutlet weak var handleView: UIView!
     @IBOutlet weak var getDirectionsButton: UIButton!
-    
+    var buttonAction = "Safari"
     
     
     let galleries = MapGalleryController.sharedController
@@ -44,8 +45,13 @@ class BottomSheetViewController: UIViewController, UIGestureRecognizerDelegate  
         return UIScreen.main.bounds.height - 120
         
     }
+    var urlString = "http://www.thelivingplanet.com/"
     
     
+    enum ButtonActions {
+       case Safari = "Safari"
+         case WebView = "WebView"
+    }
     
     
     override func viewDidLoad() {
@@ -59,10 +65,10 @@ class BottomSheetViewController: UIViewController, UIGestureRecognizerDelegate  
         
         gesture.delegate = self
         
-        roundedCorners(completeView)
-        roundedCorners(galleryPhoto1)
-        roundedCorners(handleView)
-        roundedCorners(getDirectionsButton)
+        roundedCorners(completeView, cornerRadius: 5.0)
+        roundedCorners(galleryPhoto1, cornerRadius: 5.0)
+        roundedCorners(handleView, cornerRadius: 5.0)
+        roundedCorners(getDirectionsButton, cornerRadius: 5.0)
         postObservers()
         
         self.shadowView.layer.shadowColor = UIColor.black.cgColor
@@ -84,9 +90,6 @@ class BottomSheetViewController: UIViewController, UIGestureRecognizerDelegate  
             let yComponent = UIScreen.main.bounds.height - 120
             self.view.frame = CGRect(x: 0, y: yComponent, width: frame.width, height: frame.height)
         }
-        
-        print(self.view.frame.maxY)
-        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -111,41 +114,83 @@ class BottomSheetViewController: UIViewController, UIGestureRecognizerDelegate  
     func discoverUtah() {
         updateLabels(gallery: galleries.discoverUtah)
         animateTappedGallery()
+        self.getDirectionsButton.setTitle("More Info!", for: .normal)
+        self.urlString = "http://www.thelivingplanet.com/essential_grid_category/discover-utah/"
+        
     }
     
     func antarcticAdventure() {
         updateLabels(gallery: galleries.antarcticAdventure)
         animateTappedGallery()
+        self.getDirectionsButton.setTitle("Penguin Cam", for: .normal)
+        self.urlString = "http://www.thelivingplanet.com/essential_grid/penguin-live-cam/"
+        
     }
     
     func ammenities() {
         updateLabels(gallery: galleries.amenities)
         animateTappedGallery()
+        self.getDirectionsButton.setTitle("More Info!", for: .normal)
+        self.urlString = "http://www.thelivingplanet.com/"
     }
     
     func banquetHall() {
         updateLabels(gallery: galleries.banquetHall)
         animateTappedGallery()
+        self.getDirectionsButton.setTitle("Book an event!", for: .normal)
+        self.urlString = "http://www.thelivingplanet.com/essential_grid/wedding-proposals/"
     }
     
     func asia() {
         updateLabels(gallery: galleries.expeditionAsia)
         animateTappedGallery()
+        self.getDirectionsButton.setTitle("More Info!", for: .normal)
+        self.urlString = "http://www.thelivingplanet.com/essential_grid/expedition-asia/"
     }
     
     func jsa() {
         updateLabels(gallery: galleries.jsa)
         animateTappedGallery()
+        self.getDirectionsButton.setTitle("More Info!", for: .normal)
+        self.urlString = "http://www.thelivingplanet.com/essential_grid_category/south-america/"
     }
     
     func oceans() {
         updateLabels(gallery: galleries.oceanExplorer)
         animateTappedGallery()
+        self.getDirectionsButton.setTitle("More Info!", for: .normal)
+        self.urlString = "http://www.thelivingplanet.com/essential_grid_category/invertebrates/"
     }
     
     func tukis() {
         updateLabels(gallery: galleries.tukis)
         animateTappedGallery()
+        self.getDirectionsButton.setTitle("Book a party!", for: .normal)
+        self.urlString = "http://www.thelivingplanet.com/home-4/parties/"
+    }
+    func jellies() {
+        updateLabels(gallery: galleries.jellyFish)
+        animateTappedGallery()
+        self.getDirectionsButton.setTitle("More Info!", for: .normal)
+        self.urlString = "http://www.thelivingplanet.com/essential_grid/ocean-explorer/"
+    }
+    func theater() {
+        updateLabels(gallery: galleries.theater)
+        animateTappedGallery()
+        self.getDirectionsButton.setTitle("Check schedule", for: .normal)
+        self.urlString = "http://www.thelivingplanet.com/essential_grid/4d-theatre-showtimes/"
+    }
+    func educationCenter() {
+        updateLabels(gallery: galleries.educationCenter)
+        animateTappedGallery()
+        self.getDirectionsButton.setTitle("More Info!", for: .normal)
+        self.urlString = "http://www.thelivingplanet.com/home-4/education/"
+    }
+    func deepSea() {
+        updateLabels(gallery: galleries.deepSeaLab)
+        animateTappedGallery()
+        self.getDirectionsButton.setTitle("More Info!", for: .normal)
+        self.urlString = "http://www.thelivingplanet.com/essential_grid/exhibit-updates/"
     }
     
     
@@ -171,14 +216,18 @@ class BottomSheetViewController: UIViewController, UIGestureRecognizerDelegate  
         NotificationCenter.default.addObserver(self, selector: #selector(BottomSheetViewController.tukis), name: Notification.Name(rawValue: galleries.tukis.name), object: nil)
         
         NotificationCenter.default.addObserver(self, selector: #selector(BottomSheetViewController.banquetHall), name: Notification.Name(rawValue: galleries.banquetHall.name), object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(BottomSheetViewController.jellies), name: Notification.Name(rawValue: galleries.jellyFish.name), object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(BottomSheetViewController.theater), name: Notification.Name(rawValue: galleries.theater.name), object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(BottomSheetViewController.educationCenter), name: Notification.Name(rawValue: galleries.educationCenter.name), object: nil)
+              NotificationCenter.default.addObserver(self, selector: #selector(BottomSheetViewController.deepSea), name: Notification.Name(rawValue: galleries.deepSeaLab.name), object: nil)
     }
     
     
     
     func updateLabels(gallery: MapGalleries) {
-        
-        
-        print("Notification heard for \(gallery.name)")
         
         self.galleryTitleLabel.text = gallery.name
         self.galleryPhoto1.image = gallery.image1
@@ -234,11 +283,24 @@ class BottomSheetViewController: UIViewController, UIGestureRecognizerDelegate  
     
     @IBAction func getDirectionsButtonTapped(_ sender: AnyObject) {
         
+        
+        switch self.buttonAction {
+        case ButtonActions.Safari:
         delegate?.getDirectionsButtonTapped(self)
         
         animateDown()
+        
+        let url = URL(string: self.urlString)!
+        let safariViewController = SFSafariViewController(url: url, entersReaderIfAvailable: true)
+        safariViewController.preferredBarTintColor = UIColor(red:0.00, green:0.10, blue:0.20, alpha:1.00)
+        safariViewController.preferredControlTintColor = UIColor.white
+        
+        self.present(safariViewController, animated: true, completion: nil)
+        case ButtonActions.WebView:
+            
+            self.view.st
     }
-    
+    }
     
     func animateDown() {
         UIView.animate(withDuration: 0.5, delay: 0.0, options: .allowUserInteraction, animations: {
@@ -256,7 +318,8 @@ class BottomSheetViewController: UIViewController, UIGestureRecognizerDelegate  
     }
     
     
-}
+    }
+
 
 
 extension UIPanGestureRecognizer {

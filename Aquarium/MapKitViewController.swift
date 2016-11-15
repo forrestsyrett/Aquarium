@@ -8,7 +8,7 @@
 
 import UIKit
 import MapKit
-
+import OneSignal
 
 
 class MapKitViewController: UIViewController, MKMapViewDelegate, BottomSheetViewControllerDelegate {
@@ -22,22 +22,25 @@ class MapKitViewController: UIViewController, MKMapViewDelegate, BottomSheetView
     @IBOutlet weak var selectedFloor: UISegmentedControl!
     
     
+    @IBOutlet weak var loadMapView: UIButton!
     
     let galleries = MapGalleryController.sharedController
     let bottomSheetViewController = BottomSheetViewController()
     
     var aquarium = AquariumMap(filename: "Aquarium")
+    var background = Background(filename: "BackgroundOverlay")
     var floorImage = UIImage(named: "mainFloor")
     var delta = 0.0
     var selectedPin: MKPlacemark? = nil
     var titleLabel: String = "Tap on a gallery to learn more!"
     var label = UILabel(frame: CGRect(x: 16, y: 20, width: 343, height: 21))
     var currentLocationAnnotation = Annotation(coordinate: CurrentLocationController.shared.coordinate, title: "Current Location", subtitle: "", type: AnnotationTypes.CurrentLocation)
-    
+    var manuallyChangingMapRect: Bool = true
     @IBOutlet weak var clearDirectionsButton: UIButton!
     
     var route: MKPolyline? = nil
-    
+    var firstFloor: MKOverlay? = nil
+    var secondFloor: MKOverlay? = nil
     
     
     
@@ -45,13 +48,14 @@ class MapKitViewController: UIViewController, MKMapViewDelegate, BottomSheetView
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         tabBarTint(view: self)
         
         bottomSheetViewController.delegate = self
         
         currentLocationAnnotation.coordinate = CurrentLocationController.shared.coordinate
         
-        mapView.mapType = .satellite
+        mapView.mapType = .standard
         gradient(self.view)
         
         
@@ -70,7 +74,7 @@ class MapKitViewController: UIViewController, MKMapViewDelegate, BottomSheetView
         clearDirectionsButton.isHidden = true
        
         
-        addAnnotations()
+        addMainFloorAnnotations()
         addCurrentLocationAnnotation()
         addBottomSheetView()
         addOverlays()
@@ -78,35 +82,49 @@ class MapKitViewController: UIViewController, MKMapViewDelegate, BottomSheetView
         NotificationCenter.default.addObserver(self, selector: #selector(MapKitViewController.updateLocation), name: Notification.Name(rawValue: "jsa"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(MapKitViewController.updateLocation), name: Notification.Name(rawValue: "sharks"), object: nil)
         
+        transparentNavigationBar(self)
+        roundViews(loadMapView, cornerRadius: 15)
     }
-    
-    
-    
-    
     
     
     
     
     func addOverlays() {
         
-        let worldRect = MKMapRectWorld
-        let point1 = MKMapRectWorld.origin
-        let point2 = MKMapPointMake(point1.x + worldRect.size.width, point1.y)
-        let point3 = MKMapPointMake(point2.x, point2.y + worldRect.size.height)
-        let point4 = MKMapPointMake(point1.x, point3.y)
-        var points = [point1, point2, point3, point4]
-        let polygon = MKPolygon(points: &points, count: points.count)
-        mapView.add(polygon)
+
         
-        let overlay = AquariumMapOverlay(aquarium: aquarium)
-        mapView.add(overlay)
+        
+        
+//        let path = Bundle.main.path(forResource: "background", ofType: "png")
+//        let fileURL = NSURL(fileURLWithPath: path!)
+//        let colorOverlay = MKTileOverlay(urlTemplate: fileURL.absoluteString)
+//        
+//        
+//        colorOverlay.canReplaceMapContent = true
+//        
+//        colorOverlay.tileSize = CGSize(width: 265, height: 265)
+//       
+//        mapView.add(colorOverlay)
+        
+        
+        let background = BackGroundOverlay(background: self.background)
+        mapView.add(background, level: .aboveLabels)
+        
+        let firstFloorOverlay = AquariumMapOverlay(aquarium: aquarium)
+        self.firstFloor = firstFloorOverlay
+        
+        let secondFloorOverlay = SecondFloorOverlay(aquarium: aquarium)
+        self.secondFloor = secondFloorOverlay
+        
+        
+        mapView.add(firstFloorOverlay)
         mapView.showsPointsOfInterest = false
         
     }
     
     
-    func addAnnotations() {
-        let filePath = Bundle.main.path(forResource: "aquariumExhibits", ofType: "plist")
+    func addMainFloorAnnotations() {
+        let filePath = Bundle.main.path(forResource: "firstFloorExhibits", ofType: "plist")
         let exhibits = NSArray(contentsOfFile: filePath!)
         for exhibit in (exhibits as? [[String: AnyObject]])! {
             let point = CGPointFromString(exhibit["location"] as! String)
@@ -115,9 +133,27 @@ class MapKitViewController: UIViewController, MKMapViewDelegate, BottomSheetView
             let typeRawValue = Int((exhibit["type"] as! String))!
             let type = AnnotationTypes(rawValue: typeRawValue)!
             let subtitle = exhibit["subtitle"] as! String
-            let annotation = Annotation(coordinate: coordinate, title: title, subtitle: subtitle, type: type)
+            let firstFloorAnnotation = Annotation(coordinate: coordinate, title: title, subtitle: subtitle, type: type)
             
-            mapView.addAnnotation(annotation)
+            mapView.addAnnotation(firstFloorAnnotation)
+            
+        }
+    }
+    
+    func addSecondFloorAnnotations() {
+        let filePath = Bundle.main.path(forResource: "SecondFloorExhibits", ofType: "plist")
+        let exhibits = NSArray(contentsOfFile: filePath!)
+        
+        for exhibit in (exhibits as? [[String: AnyObject]])! {
+            let point = CGPointFromString(exhibit["location"] as! String)
+            let coordinate = CLLocationCoordinate2DMake(CLLocationDegrees(point.x), CLLocationDegrees(point.y))
+            let title = exhibit["name"] as! String
+            let typeRawValue = Int((exhibit["type"] as! String))!
+            let type = AnnotationTypes(rawValue: typeRawValue)!
+            let subtitle = exhibit["subtitle"] as! String
+let secondFloorAnnotation = Annotation(coordinate: coordinate, title: title, subtitle: subtitle, type: type)
+            
+            mapView.addAnnotation(secondFloorAnnotation)
         }
     }
     
@@ -125,19 +161,36 @@ class MapKitViewController: UIViewController, MKMapViewDelegate, BottomSheetView
     
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
         
+        
+        ///// Sets Overlay and Overlay Image
         if overlay is AquariumMapOverlay {
-            let overlayView = AquariumMapOverlayView(overlay: overlay, overlayImage: self.floorImage!)
+            let overlayView = AquariumMapOverlayView(overlay: overlay, overlayImage: #imageLiteral(resourceName: "mainFloor"))
             return overlayView
         }
+        if overlay is SecondFloorOverlay {
+            let overlayView = SecondFloorOverlayView(overlay: overlay, overlayImage: #imageLiteral(resourceName: "secondFloor"))
+            return overlayView
+        }
+        if overlay is BackGroundOverlay {
+            let overlayView = BackgroundOverlayView(overlay: overlay, overlayImage: #imageLiteral(resourceName: "background"))
+            return overlayView
+        }
+            
         else if overlay is MKPolyline {
             let lineView = MKPolylineRenderer(overlay: overlay)
             lineView.strokeColor = UIColor.blue
             lineView.lineDashPattern = [1,5]
-            //            lineView.miterLimit = 1.0
             lineView.lineDashPhase = 8.0
             lineView.lineWidth = 2.5
             
             return lineView
+
+        }
+        
+        else if overlay is MKTileOverlay {
+            let renderer = MKTileOverlayRenderer(overlay: overlay)
+            renderer.alpha = 5.0
+            return renderer
         }
         return MKOverlayRenderer()
     }
@@ -146,20 +199,34 @@ class MapKitViewController: UIViewController, MKMapViewDelegate, BottomSheetView
     
     func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
         
-        let latDelta = aquarium.topLeftMapCoordinate.latitude + 0.0007 - aquarium.bottomRightMapCoordinate.latitude + 0.0007
+        let latDelta = aquarium.topLeftMapCoordinate.latitude + 0.0005 - aquarium.bottomRightMapCoordinate.latitude + 0.0005
         
         // 0.0003 sets correct zoom level when zoomed out bounce back
         
         let span = MKCoordinateSpanMake(fabs(latDelta), 0.0)
         
-        if ((mapView.region.span.latitudeDelta > aquarium.topLeftMapCoordinate.latitude + 0.0005 - aquarium.bottomRightMapCoordinate.latitude + 0.0005 )) {
-            
-            let aquariumRegion: MKCoordinateRegion = MKCoordinateRegionMake(aquarium.midCoordinate, span);
-            mapView.setRegion(aquariumRegion, animated: true);
-            
-        }
+
         
-    }
+            let mapContainsOverlay: Bool = MKMapRectContainsRect(mapView.visibleMapRect, aquarium.overlayBoundingMapRect)
+            
+            if mapContainsOverlay {
+                
+                let aquariumRegion: MKCoordinateRegion = MKCoordinateRegionMake(aquarium.midCoordinate, span)
+
+                let widthRatio = aquarium.overlayBoundingMapRect.size.width / mapView.visibleMapRect.size.width
+                let heightRatio = aquarium.overlayBoundingMapRect.size.height / mapView.visibleMapRect.size.height
+                if (widthRatio < 5.0) || (heightRatio < 5.0) {
+                    manuallyChangingMapRect = true
+                    mapView.setRegion(aquariumRegion, animated: true)
+                    manuallyChangingMapRect = false
+                }
+            } else if !MKMapRectIntersectsRect(aquarium.overlayBoundingMapRect, mapView.visibleMapRect) {
+                mapView.setVisibleMapRect(mapView.visibleMapRect, animated: true)
+                let aquariumRegion: MKCoordinateRegion = MKCoordinateRegionMake(aquarium.midCoordinate, span)
+                mapView.setRegion(aquariumRegion, animated: true)
+        }
+        }
+    
     
     func addCurrentLocationAnnotation() {
         
@@ -221,7 +288,6 @@ class MapKitViewController: UIViewController, MKMapViewDelegate, BottomSheetView
         if let annotation = view.annotation {
             if let title = annotation.title {
                 if let newTitle = title {
-                    print("\(newTitle)")
                     self.titleLabel = newTitle
                 }
             }
@@ -251,16 +317,32 @@ class MapKitViewController: UIViewController, MKMapViewDelegate, BottomSheetView
             postNotificationWithGalleryName(gallery: galleries.amenities)
             
         case "Jellyfish":
-            postNotificationWithGalleryName(gallery: galleries.antarcticAdventure)
+            postNotificationWithGalleryName(gallery: galleries.jellyFish)
             
         case "Elevator":
             postNotificationWithGalleryName(gallery: galleries.amenities)
             
         case "Deep Sea Lab":
-            postNotificationWithGalleryName(gallery: galleries.antarcticAdventure)
+            postNotificationWithGalleryName(gallery: galleries.deepSeaLab)
             
         case "40' Shark Tunnel":
             postNotificationWithGalleryName(gallery: galleries.oceanExplorer)
+            
+        case "4D Theater":
+            postNotificationWithGalleryName(gallery: galleries.theater)
+            
+        case "Expedition Asia":
+            postNotificationWithGalleryName(gallery: galleries.expeditionAsia)
+            
+        case "Tuki's Island":
+            postNotificationWithGalleryName(gallery: galleries.tukis)
+            
+        case "Education Center":
+            postNotificationWithGalleryName(gallery: galleries.educationCenter)
+            
+        case "Journey to South America - Aviary":
+            postNotificationWithGalleryName(gallery: galleries.jsa)
+            
         default:
             break
         }
@@ -274,6 +356,7 @@ class MapKitViewController: UIViewController, MKMapViewDelegate, BottomSheetView
     }
     
     
+    // MARK: - Segmented Control
     
     @IBAction func mapTypeChanged(Sender: AnyObject) {
         
@@ -281,14 +364,23 @@ class MapKitViewController: UIViewController, MKMapViewDelegate, BottomSheetView
         
         if self.selectedFloor.selectedSegmentIndex == 0 {
             
+            mapView.remove(self.secondFloor!)
+            mapView.add(self.firstFloor!)
             
+            mapView.removeAnnotations(mapView.annotations)
+            addMainFloorAnnotations()
             
         } else if self.selectedFloor.selectedSegmentIndex == 1 {
-            self.floorImage = #imageLiteral(resourceName: "secondFloor")
+           
+            mapView.remove(self.firstFloor!)
+            mapView.add(self.secondFloor!)
             
+            mapView.removeAnnotations(mapView.annotations)
+            addSecondFloorAnnotations()
+            
+            }
         }
         
-    }
     
     
     @IBAction func tapDismiss(_ sender: AnyObject) {
@@ -320,28 +412,29 @@ class MapKitViewController: UIViewController, MKMapViewDelegate, BottomSheetView
         
         bottomSheetViewController.delegate = self
         
-        print("Delegate Heard")
         
-        let thePath = Bundle.main.path(forResource: "EntranceToSharksRoute", ofType: "plist")
-        let pointsArray = NSArray(contentsOfFile: thePath!)
+            // Sets MKPolyLine Based off of Plist Coordinate Map
         
-        let pointsCount = pointsArray!.count
-        
-        var pointsToUse: [CLLocationCoordinate2D] = []
-        
-        for point in 0...pointsCount - 1 {
-            let p = CGPointFromString(pointsArray![point] as! String)
-            pointsToUse += [CLLocationCoordinate2DMake(CLLocationDegrees(p.x), CLLocationDegrees(p.y))]
-        }
-        
-        let routeLine = MKPolyline(coordinates: &pointsToUse, count: pointsCount)
-        
-        self.route = routeLine
-        clearDirectionsButton.isHidden = false
-        
-        UIView.animate(withDuration: 5.0, animations: {
-            self.mapView.add(self.route!)
-        })
+//        let thePath = Bundle.main.path(forResource: "EntranceToSharksRoute", ofType: "plist")
+//        let pointsArray = NSArray(contentsOfFile: thePath!)
+//        
+//        let pointsCount = pointsArray!.count
+//        
+//        var pointsToUse: [CLLocationCoordinate2D] = []
+//        
+//        for point in 0...pointsCount - 1 {
+//            let p = CGPointFromString(pointsArray![point] as! String)
+//            pointsToUse += [CLLocationCoordinate2DMake(CLLocationDegrees(p.x), CLLocationDegrees(p.y))]
+//        }
+//        
+//        let routeLine = MKPolyline(coordinates: &pointsToUse, count: pointsCount)
+//        
+//        self.route = routeLine
+//        clearDirectionsButton.isHidden = false
+//        
+//        UIView.animate(withDuration: 5.0, animations: {
+//            self.mapView.add(self.route!)
+//        })
     }
     
     

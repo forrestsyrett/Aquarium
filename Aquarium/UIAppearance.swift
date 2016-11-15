@@ -48,9 +48,9 @@ func roundViews(_ view: UIView, cornerRadius: CGFloat) {
     view.clipsToBounds = false
 }
 
-func roundedCorners(_ view: UIView) {
+func roundedCorners(_ view: UIView, cornerRadius: CGFloat) {
     
-    view.layer.cornerRadius = 5
+    view.layer.cornerRadius = cornerRadius
     view.clipsToBounds = true
 }
 
