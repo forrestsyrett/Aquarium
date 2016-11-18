@@ -9,4 +9,7 @@ target 'Aquarium' do
 
 pod ‘OneSignal’
 
+source 'https://github.com/CocoaPods/Specs.git'
+pod ‘FlowingMenu’, ‘~> 2.0.1’
+
 end

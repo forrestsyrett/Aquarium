@@ -38,7 +38,6 @@ class ExhibitGalleriesViewController: UIViewController, UITabBarDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
     
-        gradient(self.view)
         
         tabBarTint(view: self)
         

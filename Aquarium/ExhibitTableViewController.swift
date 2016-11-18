@@ -20,12 +20,13 @@ class ExhibitTableViewController: UIViewController, UITableViewDataSource  {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        gradient(self.view)
         exhibitGalleryLabel.text = exhibitGalleryLabelMutable
         animalTableView.reloadData()
         animalTableView.rowHeight = UITableViewAutomaticDimension
         animalTableView.estimatedRowHeight = 400
         
-        gradient(self.view)
         
     }
 

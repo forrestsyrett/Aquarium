@@ -48,7 +48,7 @@ class BottomSheetViewController: UIViewController, UIGestureRecognizerDelegate  
     var urlString = "http://www.thelivingplanet.com/"
     
     
-    enum ButtonActions {
+    enum ButtonActions: String {
        case Safari = "Safari"
          case WebView = "WebView"
     }
@@ -285,7 +285,7 @@ class BottomSheetViewController: UIViewController, UIGestureRecognizerDelegate  
         
         
         switch self.buttonAction {
-        case ButtonActions.Safari:
+        case ButtonActions.Safari.rawValue:
         delegate?.getDirectionsButtonTapped(self)
         
         animateDown()
@@ -296,10 +296,13 @@ class BottomSheetViewController: UIViewController, UIGestureRecognizerDelegate  
         safariViewController.preferredControlTintColor = UIColor.white
         
         self.present(safariViewController, animated: true, completion: nil)
-        case ButtonActions.WebView:
             
-            self.view.st
+            
+        case ButtonActions.WebView.rawValue:
+            storyboard?.instantiateViewController(withIdentifier: "webview")
+        default: break
     }
+        
     }
     
     func animateDown() {

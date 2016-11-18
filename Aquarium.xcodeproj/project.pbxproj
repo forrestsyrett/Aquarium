@@ -47,6 +47,9 @@
 		AA544CAD1D0C90DE00DC1725 /* ExhibitTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA544CAC1D0C90DE00DC1725 /* ExhibitTableViewController.swift */; };
 		AA544CB31D0CAE1000DC1725 /* ExhibitGalleriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA544CB21D0CAE1000DC1725 /* ExhibitGalleriesViewController.swift */; };
 		AA544CFA1D149C0A00DC1725 /* QRScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA544CF91D149C0A00DC1725 /* QRScannerViewController.swift */; };
+		AA55B5821DDF759600CC2336 /* MainExhibitTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA55B5811DDF759600CC2336 /* MainExhibitTableViewController.swift */; };
+		AA55B5841DDF75AE00CC2336 /* MainExhibits.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA55B5831DDF75AE00CC2336 /* MainExhibits.swift */; };
+		AA55B5861DDF765100CC2336 /* MainExhibitController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA55B5851DDF765100CC2336 /* MainExhibitController.swift */; };
 		AA6F4E641D3868F900FA20F7 /* Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6F4E631D3868F900FA20F7 /* Animations.swift */; };
 		AA6F4E661D386A2A00FA20F7 /* AnimalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6F4E651D386A2A00FA20F7 /* AnimalTableViewCell.swift */; };
 		AA6F4E701D3C01B100FA20F7 /* AnimalFeedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6F4E6F1D3C01B100FA20F7 /* AnimalFeedTableViewController.swift */; };
@@ -58,6 +61,8 @@
 		AA7CE6FD1DDB909A00EF4669 /* BackgroundOverlay.plist in Resources */ = {isa = PBXBuildFile; fileRef = AA7CE6FC1DDB909A00EF4669 /* BackgroundOverlay.plist */; };
 		AA7CE6FF1DDB91A600EF4669 /* Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7CE6FE1DDB91A600EF4669 /* Background.swift */; };
 		AA7CE7011DDB928200EF4669 /* BackgroundOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7CE7001DDB928200EF4669 /* BackgroundOverlayView.swift */; };
+		AA7FF44B1DDE65AE002A5AE0 /* MainExhibitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7FF44A1DDE65AE002A5AE0 /* MainExhibitViewController.swift */; };
+		AA7FF44D1DDE67AF002A5AE0 /* FlowingMenu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA7FF44C1DDE67AF002A5AE0 /* FlowingMenu.framework */; };
 		AA8D05161D19DC930063F222 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8D05151D19DC930063F222 /* HomeViewController.swift */; };
 		AA909B181D41B42A000DB923 /* Feeding.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA909B171D41B42A000DB923 /* Feeding.swift */; };
 		AA9D6EE01D1CCD5000831AFE /* Animal.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9D6EDF1D1CCD5000831AFE /* Animal.swift */; };
@@ -108,6 +113,9 @@
 		AA544CAC1D0C90DE00DC1725 /* ExhibitTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExhibitTableViewController.swift; sourceTree = "<group>"; };
 		AA544CB21D0CAE1000DC1725 /* ExhibitGalleriesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExhibitGalleriesViewController.swift; path = ../ExhibitGalleriesViewController.swift; sourceTree = "<group>"; };
 		AA544CF91D149C0A00DC1725 /* QRScannerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QRScannerViewController.swift; path = ../QRScannerViewController.swift; sourceTree = "<group>"; };
+		AA55B5811DDF759600CC2336 /* MainExhibitTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainExhibitTableViewController.swift; sourceTree = "<group>"; };
+		AA55B5831DDF75AE00CC2336 /* MainExhibits.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainExhibits.swift; sourceTree = "<group>"; };
+		AA55B5851DDF765100CC2336 /* MainExhibitController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainExhibitController.swift; sourceTree = "<group>"; };
 		AA6F4E631D3868F900FA20F7 /* Animations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animations.swift; sourceTree = "<group>"; };
 		AA6F4E651D386A2A00FA20F7 /* AnimalTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimalTableViewCell.swift; sourceTree = "<group>"; };
 		AA6F4E6F1D3C01B100FA20F7 /* AnimalFeedTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimalFeedTableViewController.swift; sourceTree = "<group>"; };
@@ -119,6 +127,8 @@
 		AA7CE6FC1DDB909A00EF4669 /* BackgroundOverlay.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = BackgroundOverlay.plist; sourceTree = "<group>"; };
 		AA7CE6FE1DDB91A600EF4669 /* Background.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Background.swift; path = Aquarium/Background.swift; sourceTree = "<group>"; };
 		AA7CE7001DDB928200EF4669 /* BackgroundOverlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BackgroundOverlayView.swift; path = Aquarium/BackgroundOverlayView.swift; sourceTree = "<group>"; };
+		AA7FF44A1DDE65AE002A5AE0 /* MainExhibitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainExhibitViewController.swift; sourceTree = "<group>"; };
+		AA7FF44C1DDE67AF002A5AE0 /* FlowingMenu.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FlowingMenu.framework; path = "../../../Library/Developer/Xcode/DerivedData/Aquarium-dssxpatbhahvltdxuofqdxoybnwp/Build/Products/Debug-iphoneos/FlowingMenu/FlowingMenu.framework"; sourceTree = "<group>"; };
 		AA8D05151D19DC930063F222 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		AA909B171D41B42A000DB923 /* Feeding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Feeding.swift; sourceTree = "<group>"; };
 		AA9D6EDF1D1CCD5000831AFE /* Animal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animal.swift; sourceTree = "<group>"; };
@@ -136,6 +146,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA7FF44D1DDE67AF002A5AE0 /* FlowingMenu.framework in Frameworks */,
 				2E3C1D313B999B8DCB850948 /* Pods_Aquarium.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -221,7 +232,7 @@
 				AA8441CB1D556E12000238C1 /* Mobile Membership */,
 				AA8441CD1D556EA0000238C1 /* Animal Feeds */,
 				AA8441CE1D556ECD000238C1 /* Appearance */,
-				AA8441CC1D556E49000238C1 /* Exhibit TableViews */,
+				AA8441CC1D556E49000238C1 /* Animal Exhibit Galleries */,
 				AA544C9B1D0BB66C00DC1725 /* Assets.xcassets */,
 				AA544C9D1D0BB66C00DC1725 /* LaunchScreen.storyboard */,
 				AA544CA01D0BB66C00DC1725 /* Info.plist */,
@@ -241,14 +252,19 @@
 			name = "Mobile Membership";
 			sourceTree = "<group>";
 		};
-		AA8441CC1D556E49000238C1 /* Exhibit TableViews */ = {
+		AA8441CC1D556E49000238C1 /* Animal Exhibit Galleries */ = {
 			isa = PBXGroup;
 			children = (
 				AA9D6EDF1D1CCD5000831AFE /* Animal.swift */,
 				AA6F4E651D386A2A00FA20F7 /* AnimalTableViewCell.swift */,
 				AA544CAC1D0C90DE00DC1725 /* ExhibitTableViewController.swift */,
+				AA7FF44A1DDE65AE002A5AE0 /* MainExhibitViewController.swift */,
+				AA544CB21D0CAE1000DC1725 /* ExhibitGalleriesViewController.swift */,
+				AA55B5811DDF759600CC2336 /* MainExhibitTableViewController.swift */,
+				AA55B5831DDF75AE00CC2336 /* MainExhibits.swift */,
+				AA55B5851DDF765100CC2336 /* MainExhibitController.swift */,
 			);
-			name = "Exhibit TableViews";
+			name = "Animal Exhibit Galleries";
 			sourceTree = "<group>";
 		};
 		AA8441CD1D556EA0000238C1 /* Animal Feeds */ = {
@@ -276,7 +292,6 @@
 		AA8441CF1D556F3C000238C1 /* Main Tab Bar Items */ = {
 			isa = PBXGroup;
 			children = (
-				AA544CB21D0CAE1000DC1725 /* ExhibitGalleriesViewController.swift */,
 				AA183F291D1A6DD200D31044 /* AnimalEncountersViewController.swift */,
 				AA8D05151D19DC930063F222 /* HomeViewController.swift */,
 				AA544CF91D149C0A00DC1725 /* QRScannerViewController.swift */,
@@ -296,6 +311,7 @@
 		EA94B41FA31D61D281B2BE4B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AA7FF44C1DDE67AF002A5AE0 /* FlowingMenu.framework */,
 				EA163953DE68335B7F2D0C0E /* Pods_Aquarium.framework */,
 			);
 			name = Frameworks;
@@ -452,7 +468,9 @@
 			files = (
 				AA6F4E701D3C01B100FA20F7 /* AnimalFeedTableViewController.swift in Sources */,
 				AA6FA1D61D5554FC00CBEEC7 /* MembershipCardController.swift in Sources */,
+				AA55B5821DDF759600CC2336 /* MainExhibitTableViewController.swift in Sources */,
 				AA353ACE1DCE670000AD5490 /* Annotations.swift in Sources */,
+				AA55B5861DDF765100CC2336 /* MainExhibitController.swift in Sources */,
 				AA353ABE1DCE60A700AD5490 /* AnnotationViews.swift in Sources */,
 				AA544CAD1D0C90DE00DC1725 /* ExhibitTableViewController.swift in Sources */,
 				AA6F4E721D3C01D000FA20F7 /* AnimalFeedTableViewCell.swift in Sources */,
@@ -473,7 +491,9 @@
 				AAA20FF61D5E47A1009B3241 /* ContactUsViewController.swift in Sources */,
 				AA07C69E1DD5052700AD855D /* SecondFloorOverlayView.swift in Sources */,
 				AA8D05161D19DC930063F222 /* HomeViewController.swift in Sources */,
+				AA55B5841DDF75AE00CC2336 /* MainExhibits.swift in Sources */,
 				AA353AB81DCE601800AD5490 /* BottomSheetViewController.swift in Sources */,
+				AA7FF44B1DDE65AE002A5AE0 /* MainExhibitViewController.swift in Sources */,
 				AA6F4E661D386A2A00FA20F7 /* AnimalTableViewCell.swift in Sources */,
 				AA353AC21DCE619100AD5490 /* AquariumMapOverlayView.swift in Sources */,
 				AA183F2A1D1A6DD300D31044 /* AnimalEncountersViewController.swift in Sources */,

@@ -56,7 +56,6 @@ class MapKitViewController: UIViewController, MKMapViewDelegate, BottomSheetView
         currentLocationAnnotation.coordinate = CurrentLocationController.shared.coordinate
         
         mapView.mapType = .standard
-        gradient(self.view)
         
         
         let latDelta = aquarium.topLeftMapCoordinate.latitude + 0.0009 - aquarium.bottomRightMapCoordinate.latitude + 0.0009

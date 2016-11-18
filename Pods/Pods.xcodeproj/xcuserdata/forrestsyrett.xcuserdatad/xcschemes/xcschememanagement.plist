@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>FlowingMenu.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-Aquarium.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -12,7 +17,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>9F6B37124C8C95B9DB4C17E5DB104E2A</key>
+		<key>34A28D254BEE0FE722FC3266389A3240</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>6012E5BD00F813DFDA770631746D441A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
