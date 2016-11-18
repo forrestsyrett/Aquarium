@@ -50,6 +50,7 @@
 		AA55B5821DDF759600CC2336 /* MainExhibitTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA55B5811DDF759600CC2336 /* MainExhibitTableViewController.swift */; };
 		AA55B5841DDF75AE00CC2336 /* MainExhibits.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA55B5831DDF75AE00CC2336 /* MainExhibits.swift */; };
 		AA55B5861DDF765100CC2336 /* MainExhibitController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA55B5851DDF765100CC2336 /* MainExhibitController.swift */; };
+		AA55B5881DDF7D4100CC2336 /* ExhibitGalleryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA55B5871DDF7D4100CC2336 /* ExhibitGalleryTableViewCell.swift */; };
 		AA6F4E641D3868F900FA20F7 /* Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6F4E631D3868F900FA20F7 /* Animations.swift */; };
 		AA6F4E661D386A2A00FA20F7 /* AnimalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6F4E651D386A2A00FA20F7 /* AnimalTableViewCell.swift */; };
 		AA6F4E701D3C01B100FA20F7 /* AnimalFeedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6F4E6F1D3C01B100FA20F7 /* AnimalFeedTableViewController.swift */; };
@@ -116,6 +117,7 @@
 		AA55B5811DDF759600CC2336 /* MainExhibitTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainExhibitTableViewController.swift; sourceTree = "<group>"; };
 		AA55B5831DDF75AE00CC2336 /* MainExhibits.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainExhibits.swift; sourceTree = "<group>"; };
 		AA55B5851DDF765100CC2336 /* MainExhibitController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainExhibitController.swift; sourceTree = "<group>"; };
+		AA55B5871DDF7D4100CC2336 /* ExhibitGalleryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExhibitGalleryTableViewCell.swift; sourceTree = "<group>"; };
 		AA6F4E631D3868F900FA20F7 /* Animations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animations.swift; sourceTree = "<group>"; };
 		AA6F4E651D386A2A00FA20F7 /* AnimalTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimalTableViewCell.swift; sourceTree = "<group>"; };
 		AA6F4E6F1D3C01B100FA20F7 /* AnimalFeedTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimalFeedTableViewController.swift; sourceTree = "<group>"; };
@@ -261,6 +263,7 @@
 				AA7FF44A1DDE65AE002A5AE0 /* MainExhibitViewController.swift */,
 				AA544CB21D0CAE1000DC1725 /* ExhibitGalleriesViewController.swift */,
 				AA55B5811DDF759600CC2336 /* MainExhibitTableViewController.swift */,
+				AA55B5871DDF7D4100CC2336 /* ExhibitGalleryTableViewCell.swift */,
 				AA55B5831DDF75AE00CC2336 /* MainExhibits.swift */,
 				AA55B5851DDF765100CC2336 /* MainExhibitController.swift */,
 			);
@@ -471,6 +474,7 @@
 				AA55B5821DDF759600CC2336 /* MainExhibitTableViewController.swift in Sources */,
 				AA353ACE1DCE670000AD5490 /* Annotations.swift in Sources */,
 				AA55B5861DDF765100CC2336 /* MainExhibitController.swift in Sources */,
+				AA55B5881DDF7D4100CC2336 /* ExhibitGalleryTableViewCell.swift in Sources */,
 				AA353ABE1DCE60A700AD5490 /* AnnotationViews.swift in Sources */,
 				AA544CAD1D0C90DE00DC1725 /* ExhibitTableViewController.swift in Sources */,
 				AA6F4E721D3C01D000FA20F7 /* AnimalFeedTableViewCell.swift in Sources */,

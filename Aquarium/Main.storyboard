@@ -290,7 +290,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cTl-Ja-usU" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Home" image="home" selectedImage="homeFilled" id="PDX-89-lF2"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="4Oi-c8-wAc">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="4Oi-c8-wAc">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1049,7 +1049,7 @@ To get started, tap the plus!
                                         <barButtonItem key="leftBarButtonItem" title="|||" id="mgG-FY-SiE">
                                             <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                             <connections>
-                                                <segue destination="KJl-fD-egZ" kind="show" id="t57-sm-F17"/>
+                                                <segue destination="0C9-bH-Q4I" kind="show" identifier="toExhibits" id="ZRY-cx-Q1k"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -1076,9 +1076,6 @@ To get started, tap the plus!
                     <navigationItem key="navigationItem" id="bBC-Ob-ov6">
                         <barButtonItem key="leftBarButtonItem" title="|||" style="done" id="k2I-kG-f9u">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                            <connections>
-                                <segue destination="KJl-fD-egZ" kind="show" identifier="toExhibits" id="Gty-6l-PF5"/>
-                            </connections>
                         </barButtonItem>
                     </navigationItem>
                 </viewController>
@@ -1138,7 +1135,6 @@ To get started, tap the plus!
                                 </state>
                                 <connections>
                                     <action selector="discoverUtahButtonTapped:" destination="KJl-fD-egZ" eventType="touchUpInside" id="drh-2e-YUC"/>
-                                    <segue destination="F9z-vC-yoc" kind="show" identifier="discoverUtah" id="60J-2n-fID"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8In-Yt-83n">
@@ -1151,9 +1147,6 @@ To get started, tap the plus!
                                 <state key="normal" title="Journey To South America" backgroundImage="journeyToSouthAmerica">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
-                                <connections>
-                                    <segue destination="F9z-vC-yoc" kind="show" identifier="journeyToSouthAmerica" id="n0l-54-pDC"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3LF-u7-DjW">
                                 <rect key="frame" x="20" y="442" width="560" height="75"/>
@@ -1165,9 +1158,6 @@ To get started, tap the plus!
                                 <state key="normal" title="Antarctic Adventure" backgroundImage="antarcticAdventure">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
-                                <connections>
-                                    <segue destination="F9z-vC-yoc" kind="show" identifier="antarcticAdventure" id="SfH-VC-ocv"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Vj-yq-WpF">
                                 <rect key="frame" x="20" y="332" width="560" height="75"/>
@@ -1179,9 +1169,6 @@ To get started, tap the plus!
                                 <state key="normal" title="Ocean Explorer" backgroundImage="OceanExplorer">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
-                                <connections>
-                                    <segue destination="F9z-vC-yoc" kind="show" identifier="oceanExplorer" id="H4R-kY-0mb"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sH6-PG-Epm">
                                 <rect key="frame" x="20" y="552" width="560" height="75"/>
@@ -1192,9 +1179,6 @@ To get started, tap the plus!
                                 <state key="normal" title="Expedition Asia">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
-                                <connections>
-                                    <segue destination="F9z-vC-yoc" kind="show" identifier="expeditionAsia" id="ysC-yD-YdB"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.1895698579" green="0.36253436389999999" blue="0.56035850249999997" alpha="0.39954294839999999" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1236,33 +1220,115 @@ To get started, tap the plus!
             </objects>
             <point key="canvasLocation" x="3684.8000000000002" y="1135.2323838080961"/>
         </scene>
-        <!--Table View Controller-->
-        <scene sceneID="QrP-dO-oif">
+        <!--Main Exhibit Table View Controller-->
+        <scene sceneID="w5i-fB-l7R">
             <objects>
-                <tableViewController id="acw-HG-KlJ" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="YRG-La-FfQ">
+                <viewController id="0C9-bH-Q4I" customClass="MainExhibitTableViewController" customModule="Aquarium" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="E5g-8N-n3B"/>
+                        <viewControllerLayoutGuide type="bottom" id="U5b-qY-oUD"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="wpD-uB-IxM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="tDc-4u-WCe">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tDc-4u-WCe" id="uwb-Ef-GbJ">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="acw-HG-KlJ" id="Vue-z1-3TU"/>
-                            <outlet property="delegate" destination="acw-HG-KlJ" id="WpR-dJ-W4f"/>
-                        </connections>
-                    </tableView>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="WWm-58-uKt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="105" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rBp-Ws-4KI">
+                                <rect key="frame" x="0.0" y="93" width="375" height="574"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <inset key="scrollIndicatorInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="3"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="cell" rowHeight="105" id="qN2-cq-fCX" customClass="ExhibitGalleryTableViewCell" customModule="Aquarium" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="105"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qN2-cq-fCX" id="IP7-EH-sI8">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="105"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ucr-iv-erP">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="105"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gallery Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V82-vH-tGs">
+                                                    <rect key="frame" x="8" y="38" width="359" height="29"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="29" id="zhx-ea-NWQ"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="TrajanPro-Regular" family="Trajan Pro" pointSize="17"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="V82-vH-tGs" secondAttribute="trailing" id="76m-ra-a2p"/>
+                                                <constraint firstItem="V82-vH-tGs" firstAttribute="top" secondItem="IP7-EH-sI8" secondAttribute="topMargin" constant="30" id="FKt-w9-rmt"/>
+                                                <constraint firstItem="Ucr-iv-erP" firstAttribute="top" secondItem="IP7-EH-sI8" secondAttribute="topMargin" constant="-8" id="acQ-S8-rZ0"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Ucr-iv-erP" secondAttribute="trailing" constant="-8" id="eEi-Fr-7ZH"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Ucr-iv-erP" secondAttribute="bottom" constant="-8" id="qv3-cg-6uG"/>
+                                                <constraint firstAttribute="leadingMargin" secondItem="V82-vH-tGs" secondAttribute="leading" id="w1g-dw-yfF"/>
+                                                <constraint firstItem="Ucr-iv-erP" firstAttribute="leading" secondItem="IP7-EH-sI8" secondAttribute="leadingMargin" constant="-8" id="yat-6O-VoG"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="galleryBackgroundImage" destination="Ucr-iv-erP" id="gkW-41-2Rw"/>
+                                            <outlet property="galleryNameLabel" destination="V82-vH-tGs" id="mnQ-xy-Tcy"/>
+                                            <segue destination="F9z-vC-yoc" kind="show" id="gJI-bY-qQw"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="0C9-bH-Q4I" id="6th-uu-N8p"/>
+                                    <outlet property="delegate" destination="0C9-bH-Q4I" id="4ch-6c-Dqw"/>
+                                </connections>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v1K-Kr-Yyn">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="93"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Exhibit Galleries" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QAS-GW-tom">
+                                        <rect key="frame" x="8" y="29" width="359" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="QAS-GW-tom" secondAttribute="height" multiplier="359:21" constant="-153.85714285714289" id="Ndf-1l-3nx"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="TrajanPro-Regular" family="Trajan Pro" pointSize="18"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iTg-2u-Sct">
+                                        <rect key="frame" x="25" y="62" width="325" height="1"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="oLk-LY-zQx"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="iTg-2u-Sct" firstAttribute="leading" secondItem="v1K-Kr-Yyn" secondAttribute="leading" constant="25" id="4kj-0y-lZM"/>
+                                    <constraint firstAttribute="trailing" secondItem="QAS-GW-tom" secondAttribute="trailing" constant="8" id="FY8-qc-efG"/>
+                                    <constraint firstItem="QAS-GW-tom" firstAttribute="leading" secondItem="v1K-Kr-Yyn" secondAttribute="leading" constant="8" id="Ol2-1w-tLQ"/>
+                                    <constraint firstAttribute="trailing" secondItem="iTg-2u-Sct" secondAttribute="trailing" constant="25" id="Q5G-hq-5Hb"/>
+                                    <constraint firstItem="iTg-2u-Sct" firstAttribute="top" secondItem="QAS-GW-tom" secondAttribute="bottom" constant="3" id="RH6-QJ-umv"/>
+                                    <constraint firstItem="QAS-GW-tom" firstAttribute="top" secondItem="v1K-Kr-Yyn" secondAttribute="top" constant="29" id="fUr-7q-06L"/>
+                                    <constraint firstAttribute="width" secondItem="v1K-Kr-Yyn" secondAttribute="height" multiplier="375:77" constant="-77.922077922077904" id="qmf-ne-mlZ"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.1895698579" green="0.36253436389999999" blue="0.56035850249999997" alpha="0.39954294839999999" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="rBp-Ws-4KI" firstAttribute="top" secondItem="E5g-8N-n3B" secondAttribute="bottom" constant="73" id="PDU-cF-ynU"/>
+                            <constraint firstItem="v1K-Kr-Yyn" firstAttribute="top" secondItem="E5g-8N-n3B" secondAttribute="bottom" constant="-20" id="QaL-T6-0fb"/>
+                            <constraint firstItem="v1K-Kr-Yyn" firstAttribute="leading" secondItem="wpD-uB-IxM" secondAttribute="leadingMargin" constant="-16" id="RKr-WD-PTC"/>
+                            <constraint firstAttribute="trailing" secondItem="rBp-Ws-4KI" secondAttribute="trailing" id="YLa-u3-8dj"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="v1K-Kr-Yyn" secondAttribute="trailing" constant="-16" id="hhw-wU-5k8"/>
+                            <constraint firstItem="U5b-qY-oUD" firstAttribute="top" secondItem="rBp-Ws-4KI" secondAttribute="bottom" constant="-49" id="onc-y2-BO2"/>
+                            <constraint firstItem="rBp-Ws-4KI" firstAttribute="leading" secondItem="wpD-uB-IxM" secondAttribute="leading" id="wYA-wf-DyM"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="rBp-Ws-4KI" id="WQ9-sa-65R"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7Su-fd-enF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3505" y="1828"/>
+            <point key="canvasLocation" x="3463.1999999999998" y="1832.833583208396"/>
         </scene>
         <!--Exhibit Table View Controller-->
         <scene sceneID="MH7-tX-WdX">
@@ -1273,25 +1339,25 @@ To get started, tap the plus!
                         <viewControllerLayoutGuide type="bottom" id="iRb-Gi-6RX"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="fYM-VQ-wAK">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="700"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="402" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="j68-9Q-RrZ">
-                                <rect key="frame" x="0.0" y="28" width="600" height="615"/>
+                                <rect key="frame" x="-4" y="28" width="383" height="582"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="separatorColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="sectionIndexBackgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="sectionIndexTrackingBackgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="animalCell" rowHeight="402" id="WYx-wp-hcK" customClass="AnimalTableViewCell" customModule="Aquarium" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="600" height="402"/>
+                                        <rect key="frame" x="0.0" y="28" width="383" height="402"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WYx-wp-hcK" id="Q7r-st-F9g">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="401.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="383" height="401"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Animal Name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Sc-st-KN3">
-                                                    <rect key="frame" x="8" y="8" width="584" height="21"/>
+                                                    <rect key="frame" x="8" y="8" width="367" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="KBm-QU-k7F"/>
                                                     </constraints>
@@ -1300,7 +1366,7 @@ To get started, tap the plus!
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="4x5-Vf-XiC">
-                                                    <rect key="frame" x="41" y="37" width="519" height="313"/>
+                                                    <rect key="frame" x="41" y="37" width="302" height="182"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="4x5-Vf-XiC" secondAttribute="height" multiplier="482:177" constant="102" id="4ag-Qz-fwY"/>
                                                         <constraint firstAttribute="width" secondItem="4x5-Vf-XiC" secondAttribute="height" multiplier="496:277" constant="-41.462093862815891" id="RjF-ex-c3H"/>
@@ -1332,7 +1398,7 @@ To get started, tap the plus!
                                                     </variation>
                                                 </imageView>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="Tap to learn more! &gt;" translatesAutoresizingMaskIntoConstraints="NO" id="0DD-aV-fCl">
-                                                    <rect key="frame" x="8" y="358" width="584" height="35"/>
+                                                    <rect key="frame" x="8" y="227" width="367" height="166"/>
                                                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -1394,20 +1460,20 @@ To get started, tap the plus!
                                 </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Exhibit Gallery Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wAb-Af-5cm">
-                                <rect key="frame" x="20" y="-8" width="560" height="23"/>
+                                <rect key="frame" x="16" y="-8" width="343" height="23"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pTP-k6-hMQ">
-                                <rect key="frame" x="20" y="18" width="560" height="1"/>
+                                <rect key="frame" x="16" y="18" width="343" height="1"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="LIy-hs-MGA"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KoR-4s-eSb">
-                                <rect key="frame" x="20" y="645" width="560" height="1"/>
+                                <rect key="frame" x="16" y="612" width="343" height="1"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="0wB-3d-vbh"/>
@@ -1438,7 +1504,7 @@ To get started, tap the plus!
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="htl-qc-dvO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4730" y="1135"/>
+            <point key="canvasLocation" x="4290" y="1833"/>
         </scene>
         <!--Animal Encounters View Controller-->
         <scene sceneID="euu-eR-3cJ">
@@ -1999,7 +2065,7 @@ Call (801)355-3474 ext. 222 to book your Penguin Encounter!
                 <navigationController storyboardIdentifier="membersController" automaticallyAdjustsScrollViewInsets="NO" id="imB-JP-09G" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Members" image="card" selectedImage="cardFilled" id="Dnf-Lx-63N"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="6MY-Ve-UcP">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="6MY-Ve-UcP">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -2314,8 +2380,4 @@ We hope you enjoy your visit and we're excited to have you with us as we Explore
         <image name="qrCodeFilled" width="25" height="25"/>
         <image name="smallLogo" width="67" height="64"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="Gty-6l-PF5"/>
-        <segue reference="ysC-yD-YdB"/>
-    </inferredMetricsTieBreakers>
 </document>

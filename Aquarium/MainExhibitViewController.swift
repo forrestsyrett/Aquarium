@@ -37,7 +37,7 @@ class MainExhibitViewController: UIViewController, FlowingMenuDelegate {
         
         
         override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-            let destinationViewController  = segue.destination as! ExhibitGalleriesViewController
+            let destinationViewController  = segue.destination as! MainExhibitTableViewController
             destinationViewController.transitioningDelegate = flowingMenuTransitionManager
             
             // Add the left pan gesture to the  menu
