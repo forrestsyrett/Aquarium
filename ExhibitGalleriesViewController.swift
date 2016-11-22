@@ -5,7 +5,9 @@
 //  Created by Forrest Syrett on 6/11/16.
 //  Copyright © 2016 Forrest Syrett. All rights reserved.
 //
+//
 
+/*
 import Foundation
 import UIKit
 
@@ -82,6 +84,5 @@ class ExhibitGalleriesViewController: UIViewController, UITabBarDelegate {
                 exhibitAnimalViewController?.exhibitGalleryLabelMutable = "Expedition Asia"
         }
     }
-    
 }
-
+*/

@@ -8,19 +8,26 @@
 
 import UIKit
 
+protocol MainExhibitTableViewControllerDelegate: class {
+    func gallerySelected(indexPath: Int)
+}
+
 class MainExhibitTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var showAllAnimalsButton: UIButton!
     
     
     let mainGalleries = MainExhibitController.shared
     var allGalleries: [MainExhibit] = []
-    
+    weak var delegate: MainExhibitTableViewControllerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
         allGalleries = [mainGalleries.discoverUtah, mainGalleries.journeyToSouthAmerica, mainGalleries.oceanExplorer, mainGalleries.antarcticAdventure, mainGalleries.expeditionAsia]
+        
           }
 
     override func didReceiveMemoryWarning() {
@@ -50,13 +57,24 @@ class MainExhibitTableViewController: UIViewController, UITableViewDelegate, UIT
         cell.galleryNameLabel.text = gallery.exhibitName
        cell.galleryBackgroundImage.image = gallery.exhibitImage
         
+        cell.galleryBackgroundImage.layer.cornerRadius = 5.0
+        
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+    delegate?.gallerySelected(indexPath: indexPath.row)
+        
     }
+    
+    @IBAction func showAllAnimalsButtonTapped(_ sender: Any) {
+        
+        NotificationCenter.default.post(name: Notification.Name(rawValue: "allAnimals"), object: nil)
+
+    }
+    
 
     /*
     // MARK: - Navigation
