@@ -54,7 +54,9 @@ class MainExhibitTableViewController: UIViewController, UITableViewDelegate, UIT
         return cell
     }
     
-
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+    }
 
     /*
     // MARK: - Navigation

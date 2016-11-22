@@ -1235,9 +1235,8 @@ To get started, tap the plus!
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="105" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rBp-Ws-4KI">
                                 <rect key="frame" x="0.0" y="93" width="375" height="574"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <inset key="scrollIndicatorInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="3"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="cell" rowHeight="105" id="qN2-cq-fCX" customClass="ExhibitGalleryTableViewCell" customModule="Aquarium" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="gray" indentationWidth="10" reuseIdentifier="cell" rowHeight="105" id="qN2-cq-fCX" customClass="ExhibitGalleryTableViewCell" customModule="Aquarium" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="105"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qN2-cq-fCX" id="IP7-EH-sI8">
@@ -1270,7 +1269,7 @@ To get started, tap the plus!
                                         <connections>
                                             <outlet property="galleryBackgroundImage" destination="Ucr-iv-erP" id="gkW-41-2Rw"/>
                                             <outlet property="galleryNameLabel" destination="V82-vH-tGs" id="mnQ-xy-Tcy"/>
-                                            <segue destination="F9z-vC-yoc" kind="show" id="gJI-bY-qQw"/>
+                                            <segue destination="SE4-JL-e75" kind="show" id="gJI-bY-qQw"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -1343,7 +1342,7 @@ To get started, tap the plus!
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="402" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="j68-9Q-RrZ">
-                                <rect key="frame" x="-4" y="28" width="383" height="582"/>
+                                <rect key="frame" x="-4" y="72" width="383" height="538"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="separatorColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="sectionIndexBackgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1460,13 +1459,13 @@ To get started, tap the plus!
                                 </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Exhibit Gallery Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wAb-Af-5cm">
-                                <rect key="frame" x="16" y="-8" width="343" height="23"/>
+                                <rect key="frame" x="16" y="36" width="343" height="23"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pTP-k6-hMQ">
-                                <rect key="frame" x="16" y="18" width="343" height="1"/>
+                                <rect key="frame" x="16" y="62" width="343" height="1"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="LIy-hs-MGA"/>
@@ -1497,6 +1496,14 @@ To get started, tap the plus!
                             <constraint firstItem="pTP-k6-hMQ" firstAttribute="top" secondItem="wAb-Af-5cm" secondAttribute="bottom" constant="3" id="rBp-eg-UXx"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="wxh-tE-hRU">
+                        <barButtonItem key="rightBarButtonItem" title="X" id="duN-oi-zmG">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="dismiss:" destination="F9z-vC-yoc" id="QbR-6l-AR2"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="animalTableView" destination="j68-9Q-RrZ" id="ewB-Ui-12z"/>
                         <outlet property="exhibitGalleryLabel" destination="wAb-Af-5cm" id="dz5-X9-y0f"/>
@@ -1504,7 +1511,7 @@ To get started, tap the plus!
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="htl-qc-dvO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4290" y="1833"/>
+            <point key="canvasLocation" x="5228" y="1832.833583208396"/>
         </scene>
         <!--Animal Encounters View Controller-->
         <scene sceneID="euu-eR-3cJ">
@@ -2354,6 +2361,24 @@ We hope you enjoy your visit and we're excited to have you with us as we Explore
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QLt-zb-f7p" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1079" y="1866"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="wwN-3Y-1LD">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="SE4-JL-e75" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="gMz-hw-3vl">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="F9z-vC-yoc" kind="relationship" relationship="rootViewController" id="uTz-mM-WVa"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7NQ-AP-z3b" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4288.8000000000002" y="1832.833583208396"/>
         </scene>
     </scenes>
     <resources>

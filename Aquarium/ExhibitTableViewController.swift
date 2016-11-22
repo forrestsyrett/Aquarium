@@ -66,6 +66,10 @@ class ExhibitTableViewController: UIViewController, UITableViewDataSource  {
         return cell
         
     }
+    @IBAction func dismiss(_ sender: Any) {
+        
+        dismiss(animated: true, completion: nil)
+    }
 }
 
 
@@ -108,5 +112,7 @@ extension ExhibitTableViewController: UITableViewDelegate {
         animalTableView.beginUpdates()
         animalTableView.endUpdates()
     }
+    
+    
     
 }
