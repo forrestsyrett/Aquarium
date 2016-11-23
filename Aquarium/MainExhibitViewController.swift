@@ -54,12 +54,10 @@ class MainExhibitViewController: UIViewController, FlowingMenuDelegate, UICollec
     
     override func viewWillAppear(_ animated: Bool) {
         collectionView.reloadData()
-        
         searchBar.resignFirstResponder()
     }
     
-    override func viewDidDisappear(_ animated: Bool) {
-        removeObservers()
+    override func viewWillDisappear(_ animated: Bool) {
     }
     
     // MARK: - Search Bar Functions
@@ -97,6 +95,7 @@ class MainExhibitViewController: UIViewController, FlowingMenuDelegate, UICollec
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         self.searchBar.resignFirstResponder()
         self.searchBarIsActive = false
+        searchBar.text = ""
         self.collectionView.reloadData()
     }
     
@@ -190,6 +189,11 @@ class MainExhibitViewController: UIViewController, FlowingMenuDelegate, UICollec
             cell.animalImage.image = animal.info.animalImage
             cell.animalNameLabel.text = animal.info.name
         }
+       // cell.alpha = 0.0
+        
+     //   UIView.animate(withDuration: 0.30, animations: {
+     //       cell.alpha = 1.0
+     //   }, completion: nil)
         
         cell.layer.cornerRadius = 5.0
         

@@ -1036,7 +1036,7 @@ To get started, tap the plus!
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="psT-nt-buZ">
-                                <rect key="frame" x="0.0" y="52" width="375" height="510"/>
+                                <rect key="frame" x="0.0" y="52" width="375" height="516"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="14" minimumInteritemSpacing="3" id="QaF-h1-tLi">
                                     <size key="itemSize" width="196" height="140"/>
@@ -1126,7 +1126,7 @@ To get started, tap the plus!
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="hfj-U2-cWa" firstAttribute="top" secondItem="psT-nt-buZ" secondAttribute="bottom" constant="56" id="7KN-p7-nkt"/>
+                            <constraint firstItem="hfj-U2-cWa" firstAttribute="top" secondItem="psT-nt-buZ" secondAttribute="bottom" constant="50" id="7KN-p7-nkt"/>
                             <constraint firstItem="VGm-vU-f89" firstAttribute="leading" secondItem="2yP-h4-CSn" secondAttribute="trailing" constant="-46" id="9Mn-BL-wf5"/>
                             <constraint firstAttribute="trailing" secondItem="psT-nt-buZ" secondAttribute="trailing" id="9id-AK-eqg"/>
                             <constraint firstItem="hfj-U2-cWa" firstAttribute="top" secondItem="erm-3E-mZe" secondAttribute="bottom" id="CVD-mW-at0"/>
@@ -1180,7 +1180,7 @@ To get started, tap the plus!
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="105" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rBp-Ws-4KI">
-                                <rect key="frame" x="0.0" y="93" width="375" height="443"/>
+                                <rect key="frame" x="0.0" y="93" width="375" height="421"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="gray" indentationWidth="10" reuseIdentifier="cell" rowHeight="105" id="qN2-cq-fCX" customClass="ExhibitGalleryTableViewCell" customModule="Aquarium" customModuleProvider="target">
@@ -1257,8 +1257,8 @@ To get started, tap the plus!
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5sD-ys-tH3">
-                                <rect key="frame" x="16" y="544" width="343" height="66"/>
-                                <color key="backgroundColor" red="0.25414796428717157" green="0.61494155531126415" blue="0.72336632013320923" alpha="0.59441021126760563" colorSpace="custom" customColorSpace="sRGB"/>
+                                <rect key="frame" x="16" y="517" width="343" height="72"/>
+                                <color key="backgroundColor" red="0.25414796428717157" green="0.61494155531126415" blue="0.72336632013320923" alpha="0.85112575065116713" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="ITCFranklinGothicStd-Book" family="ITC Franklin Gothic Std" pointSize="17"/>
                                 <state key="normal" title="Show All Animals">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1270,8 +1270,8 @@ To get started, tap the plus!
                         </subviews>
                         <color key="backgroundColor" red="0.22796113529963935" green="0.43738873637977432" blue="0.67989380042746106" alpha="0.60173264910422541" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="U5b-qY-oUD" firstAttribute="top" secondItem="5sD-ys-tH3" secondAttribute="bottom" constant="8" id="6Bd-Ga-bAW"/>
-                            <constraint firstItem="5sD-ys-tH3" firstAttribute="top" secondItem="rBp-Ws-4KI" secondAttribute="bottom" constant="8" id="9UT-1N-yBP"/>
+                            <constraint firstItem="U5b-qY-oUD" firstAttribute="top" secondItem="5sD-ys-tH3" secondAttribute="bottom" constant="29" id="6Bd-Ga-bAW"/>
+                            <constraint firstItem="5sD-ys-tH3" firstAttribute="top" secondItem="rBp-Ws-4KI" secondAttribute="bottom" constant="3" id="9UT-1N-yBP"/>
                             <constraint firstItem="5sD-ys-tH3" firstAttribute="leading" secondItem="wpD-uB-IxM" secondAttribute="leadingMargin" id="B4o-e7-ONd"/>
                             <constraint firstAttribute="trailingMargin" secondItem="5sD-ys-tH3" secondAttribute="trailing" id="Hf7-qE-wYq"/>
                             <constraint firstItem="rBp-Ws-4KI" firstAttribute="top" secondItem="E5g-8N-n3B" secondAttribute="bottom" constant="73" id="PDU-cF-ynU"/>
@@ -1279,7 +1279,7 @@ To get started, tap the plus!
                             <constraint firstItem="v1K-Kr-Yyn" firstAttribute="leading" secondItem="wpD-uB-IxM" secondAttribute="leadingMargin" constant="-16" id="RKr-WD-PTC"/>
                             <constraint firstAttribute="trailing" secondItem="rBp-Ws-4KI" secondAttribute="trailing" id="YLa-u3-8dj"/>
                             <constraint firstAttribute="trailingMargin" secondItem="v1K-Kr-Yyn" secondAttribute="trailing" constant="-16" id="hhw-wU-5k8"/>
-                            <constraint firstItem="U5b-qY-oUD" firstAttribute="top" secondItem="rBp-Ws-4KI" secondAttribute="bottom" constant="82" id="onc-y2-BO2"/>
+                            <constraint firstItem="U5b-qY-oUD" firstAttribute="top" secondItem="rBp-Ws-4KI" secondAttribute="bottom" constant="104" id="onc-y2-BO2"/>
                             <constraint firstItem="rBp-Ws-4KI" firstAttribute="leading" secondItem="wpD-uB-IxM" secondAttribute="leading" id="wYA-wf-DyM"/>
                         </constraints>
                     </view>
