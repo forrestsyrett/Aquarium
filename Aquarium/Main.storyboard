@@ -290,7 +290,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cTl-Ja-usU" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Home" image="home" selectedImage="homeFilled" id="PDX-89-lF2"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="4Oi-c8-wAc">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="4Oi-c8-wAc">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1036,7 +1036,7 @@ To get started, tap the plus!
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="psT-nt-buZ">
-                                <rect key="frame" x="0.0" y="52" width="375" height="558"/>
+                                <rect key="frame" x="0.0" y="52" width="375" height="510"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="14" minimumInteritemSpacing="3" id="QaF-h1-tLi">
                                     <size key="itemSize" width="196" height="140"/>
@@ -1112,19 +1112,33 @@ To get started, tap the plus!
                                     <segue destination="0C9-bH-Q4I" kind="show" identifier="toExhibits" id="wWd-Cl-s9J"/>
                                 </connections>
                             </button>
+                            <searchBar contentMode="redraw" placeholder="Search for an animal!" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="erm-3E-mZe">
+                                <rect key="frame" x="0.0" y="568" width="375" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="nc9-6L-h5o"/>
+                                </constraints>
+                                <color key="barTintColor" red="0.19" green="0.37" blue="0.54000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                <connections>
+                                    <outlet property="delegate" destination="efd-Aa-KzA" id="7oP-Q3-n8m"/>
+                                </connections>
+                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="hfj-U2-cWa" firstAttribute="top" secondItem="psT-nt-buZ" secondAttribute="bottom" constant="8" id="7KN-p7-nkt"/>
+                            <constraint firstItem="hfj-U2-cWa" firstAttribute="top" secondItem="psT-nt-buZ" secondAttribute="bottom" constant="56" id="7KN-p7-nkt"/>
                             <constraint firstItem="VGm-vU-f89" firstAttribute="leading" secondItem="2yP-h4-CSn" secondAttribute="trailing" constant="-46" id="9Mn-BL-wf5"/>
                             <constraint firstAttribute="trailing" secondItem="psT-nt-buZ" secondAttribute="trailing" id="9id-AK-eqg"/>
+                            <constraint firstItem="hfj-U2-cWa" firstAttribute="top" secondItem="erm-3E-mZe" secondAttribute="bottom" id="CVD-mW-at0"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ekS-k9-O6b" secondAttribute="trailing" id="DWY-Dh-DLN"/>
                             <constraint firstItem="psT-nt-buZ" firstAttribute="top" secondItem="VGm-vU-f89" secondAttribute="bottom" constant="-26" id="Emn-US-ry8"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="erm-3E-mZe" secondAttribute="trailing" constant="-16" id="IT2-fc-Oya"/>
                             <constraint firstAttribute="trailing" secondItem="VGm-vU-f89" secondAttribute="trailing" id="JXQ-Tn-mAs"/>
                             <constraint firstItem="2yP-h4-CSn" firstAttribute="top" secondItem="VGm-vU-f89" secondAttribute="bottom" constant="-47" id="KZS-Se-eTY"/>
                             <constraint firstItem="VGm-vU-f89" firstAttribute="top" secondItem="yaF-kY-vGA" secondAttribute="top" id="Mg1-sF-Ho0"/>
                             <constraint firstItem="psT-nt-buZ" firstAttribute="leading" secondItem="yaF-kY-vGA" secondAttribute="leading" id="P7z-2f-vgz"/>
                             <constraint firstItem="VGm-vU-f89" firstAttribute="leading" secondItem="yaF-kY-vGA" secondAttribute="leading" id="WNH-N7-tOP"/>
+                            <constraint firstItem="erm-3E-mZe" firstAttribute="leading" secondItem="yaF-kY-vGA" secondAttribute="leadingMargin" constant="-16" id="rLE-br-B1f"/>
                             <constraint firstItem="ekS-k9-O6b" firstAttribute="top" secondItem="zgj-Mo-Hfr" secondAttribute="bottom" constant="17" id="w6B-9N-lQz"/>
                             <constraint firstAttribute="leadingMargin" secondItem="ekS-k9-O6b" secondAttribute="leading" id="yDm-dx-7WF"/>
                         </constraints>
@@ -1137,9 +1151,19 @@ To get started, tap the plus!
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="psT-nt-buZ" id="dSa-e9-4X5"/>
+                        <outlet property="searchBar" destination="erm-3E-mZe" id="N2S-CS-S3N"/>
+                        <outlet property="searchDisplayController" destination="yDe-aN-f4a" id="1yC-CL-Nxs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ww1-pQ-NsL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="yDe-aN-f4a">
+                    <connections>
+                        <outlet property="delegate" destination="efd-Aa-KzA" id="KId-aA-DI7"/>
+                        <outlet property="searchContentsController" destination="efd-Aa-KzA" id="owv-cG-AFt"/>
+                        <outlet property="searchResultsDataSource" destination="efd-Aa-KzA" id="mEC-gz-nQ0"/>
+                        <outlet property="searchResultsDelegate" destination="efd-Aa-KzA" id="FF8-va-5nl"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="1236" y="1149.1754122938532"/>
         </scene>
@@ -1156,7 +1180,7 @@ To get started, tap the plus!
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="105" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rBp-Ws-4KI">
-                                <rect key="frame" x="0.0" y="93" width="375" height="466"/>
+                                <rect key="frame" x="0.0" y="93" width="375" height="443"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="gray" indentationWidth="10" reuseIdentifier="cell" rowHeight="105" id="qN2-cq-fCX" customClass="ExhibitGalleryTableViewCell" customModule="Aquarium" customModuleProvider="target">
@@ -1233,7 +1257,7 @@ To get started, tap the plus!
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5sD-ys-tH3">
-                                <rect key="frame" x="16" y="567" width="343" height="43"/>
+                                <rect key="frame" x="16" y="544" width="343" height="66"/>
                                 <color key="backgroundColor" red="0.25414796428717157" green="0.61494155531126415" blue="0.72336632013320923" alpha="0.59441021126760563" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="ITCFranklinGothicStd-Book" family="ITC Franklin Gothic Std" pointSize="17"/>
                                 <state key="normal" title="Show All Animals">
@@ -1255,7 +1279,7 @@ To get started, tap the plus!
                             <constraint firstItem="v1K-Kr-Yyn" firstAttribute="leading" secondItem="wpD-uB-IxM" secondAttribute="leadingMargin" constant="-16" id="RKr-WD-PTC"/>
                             <constraint firstAttribute="trailing" secondItem="rBp-Ws-4KI" secondAttribute="trailing" id="YLa-u3-8dj"/>
                             <constraint firstAttribute="trailingMargin" secondItem="v1K-Kr-Yyn" secondAttribute="trailing" constant="-16" id="hhw-wU-5k8"/>
-                            <constraint firstItem="U5b-qY-oUD" firstAttribute="top" secondItem="rBp-Ws-4KI" secondAttribute="bottom" constant="59" id="onc-y2-BO2"/>
+                            <constraint firstItem="U5b-qY-oUD" firstAttribute="top" secondItem="rBp-Ws-4KI" secondAttribute="bottom" constant="82" id="onc-y2-BO2"/>
                             <constraint firstItem="rBp-Ws-4KI" firstAttribute="leading" secondItem="wpD-uB-IxM" secondAttribute="leading" id="wYA-wf-DyM"/>
                         </constraints>
                     </view>
@@ -1266,7 +1290,7 @@ To get started, tap the plus!
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Su-fd-enF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1981.5999999999999" y="1178.8605697151424"/>
+            <point key="canvasLocation" x="1981.5999999999999" y="1148.2758620689656"/>
         </scene>
         <!--Exhibit Table View Controller-->
         <scene sceneID="MH7-tX-WdX">
@@ -1281,7 +1305,7 @@ To get started, tap the plus!
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="402" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="j68-9Q-RrZ">
-                                <rect key="frame" x="-4" y="72" width="383" height="587"/>
+                                <rect key="frame" x="-4" y="28" width="383" height="631"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="separatorColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="sectionIndexBackgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1291,7 +1315,7 @@ To get started, tap the plus!
                                         <rect key="frame" x="0.0" y="28" width="383" height="402"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WYx-wp-hcK" id="Q7r-st-F9g">
-                                            <rect key="frame" x="0.0" y="0.0" width="383" height="401"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="383" height="401.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Animal Name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Sc-st-KN3">
@@ -1398,13 +1422,13 @@ To get started, tap the plus!
                                 </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Exhibit Gallery Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wAb-Af-5cm">
-                                <rect key="frame" x="16" y="36" width="343" height="23"/>
+                                <rect key="frame" x="16" y="-8" width="343" height="23"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pTP-k6-hMQ">
-                                <rect key="frame" x="16" y="62" width="343" height="1"/>
+                                <rect key="frame" x="16" y="18" width="343" height="1"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="LIy-hs-MGA"/>
@@ -1450,7 +1474,7 @@ To get started, tap the plus!
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="htl-qc-dvO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3543" y="1522"/>
+            <point key="canvasLocation" x="1982" y="1883"/>
         </scene>
         <!--Animal Encounters View Controller-->
         <scene sceneID="euu-eR-3cJ">
@@ -2011,7 +2035,7 @@ Call (801)355-3474 ext. 222 to book your Penguin Encounter!
                 <navigationController storyboardIdentifier="membersController" automaticallyAdjustsScrollViewInsets="NO" id="imB-JP-09G" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Members" image="card" selectedImage="cardFilled" id="Dnf-Lx-63N"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="6MY-Ve-UcP">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="6MY-Ve-UcP">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -2300,24 +2324,6 @@ We hope you enjoy your visit and we're excited to have you with us as we Explore
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QLt-zb-f7p" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1079" y="1866"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="wwN-3Y-1LD">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="SE4-JL-e75" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="gMz-hw-3vl">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="F9z-vC-yoc" kind="relationship" relationship="rootViewController" id="uTz-mM-WVa"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="7NQ-AP-z3b" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2798" y="1522"/>
         </scene>
     </scenes>
     <resources>

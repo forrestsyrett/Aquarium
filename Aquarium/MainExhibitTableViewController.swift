@@ -25,6 +25,7 @@ class MainExhibitTableViewController: UIViewController, UITableViewDelegate, UIT
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        showAllAnimalsButton.layer.cornerRadius = 5.0
         
         allGalleries = [mainGalleries.discoverUtah, mainGalleries.journeyToSouthAmerica, mainGalleries.oceanExplorer, mainGalleries.antarcticAdventure, mainGalleries.expeditionAsia]
         
