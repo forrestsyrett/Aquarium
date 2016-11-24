@@ -1,6 +1,6 @@
 PODS:
   - FlowingMenu (2.0.1)
-  - OneSignal (2.2.2)
+  - OneSignal (2.2.3)
 
 DEPENDENCIES:
   - FlowingMenu (~> 2.0.1)
@@ -8,8 +8,8 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   FlowingMenu: 097789ea7fcec5c94edd58765e00e27b31e62cf5
-  OneSignal: e0b347d6eb671903e0cec630f1b4c1cc446bd874
+  OneSignal: 5fb2b0bce3be5a7cbb5f2d357e26f03a96c4859a
 
 PODFILE CHECKSUM: 664f7d6a5d993b656ba585e0b066dd5b71c3f44f
 
-COCOAPODS: 1.1.0.rc.2
+COCOAPODS: 1.1.1

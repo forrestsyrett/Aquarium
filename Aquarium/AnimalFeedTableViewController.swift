@@ -246,6 +246,8 @@ animalFeedTableView.reloadData()
     //MARK: - AnimalFeedTableViewCellDelegate Methods
     
     func feedNotificationScheduled(_ animalFeedTableViewCell: AnimalFeedTableViewCell) {
+        
+        print("Delegate Heard")
         guard let indexPath = animalFeedTableView.indexPath(for: animalFeedTableViewCell) else { return }
         let feed = feeds[(indexPath as NSIndexPath).row]
         

@@ -21,7 +21,7 @@ class MainExhibitController {
     let oceanExplorer = MainExhibit(exhibitName: "Ocean Explorer", exhibitImage: #imageLiteral(resourceName: "OceanExplorer"))
     let journeyToSouthAmerica = MainExhibit(exhibitName: "Journey to South America", exhibitImage: #imageLiteral(resourceName: "journeyToSouthAmerica"))
     let antarcticAdventure = MainExhibit(exhibitName: "Antarctic Adventure", exhibitImage: #imageLiteral(resourceName: "antarcticAdventure"))
-    let expeditionAsia = MainExhibit(exhibitName: "Expedition Asia", exhibitImage: #imageLiteral(resourceName: "asia"))
+    let expeditionAsia = MainExhibit(exhibitName: "", exhibitImage: #imageLiteral(resourceName: "asia"))
     
     
 }

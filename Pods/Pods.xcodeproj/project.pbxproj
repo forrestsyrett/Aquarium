@@ -7,62 +7,62 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		06B3C599146B6A08195C5E8AE365C855 /* FlowingMenu-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E2A3CA9DF580FBFD65DF08F9B48EAB1 /* FlowingMenu-dummy.m */; };
-		2BA1B7DDBD6EF851CF4FBCDC5447150D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A817CAE99C81EE68006DC1E60E295C0A /* Foundation.framework */; };
-		3F3EC8B12A9843905CAA9F73BCE3093C /* FlowingMenuTransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3244ABAFB0BA748AE92648BF828FA9D8 /* FlowingMenuTransitionManager.swift */; };
-		40EFEA4690EAC59F222DA2662454469E /* FlowingMenuTransitionManager+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B9A5A00D852AF080FA90FA021540DB /* FlowingMenuTransitionManager+Delegate.swift */; };
-		4F7B28C4163DCEA209AB24C5591C8319 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 091D54A73E1E8BB182C9D7D245AF1C2F /* UIKit.framework */; };
-		76CF2B72A31A8D818D9027D810491F7D /* FlowingMenuTransitionManager+UIViewControllerAnimatedTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56ECDAE35D7CC22D701E736693FC552 /* FlowingMenuTransitionManager+UIViewControllerAnimatedTransitioning.swift */; };
-		78FA6ED6E2E610E4CC83607CCCF95B26 /* FlowingMenu-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F338C4E56E2F6741B107A002DF44F14 /* FlowingMenu-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7C3B33F509216411ADF6248B441B67D5 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014CC67E2B2C35A1CF3622C7720166ED /* UIView.swift */; };
-		7ECBF7779D443608E8BB7CD0A35A6036 /* FlowingMenuTransitionManager+UIViewControllerTransitioningDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF8DFB667E628179AF71A6009CE8320 /* FlowingMenuTransitionManager+UIViewControllerTransitioningDelegate.swift */; };
-		A521C6C9E898486222B8159B2E851AFA /* FlowingMenuDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9CDDC18B1021DC370AFBB6A55B0E47A /* FlowingMenuDelegate.swift */; };
-		BECB6CDD1E2AB1CEA60819C385E17778 /* FlowingMenuTransitionManager+UIGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CF6EF2A39993DDB2595130D71B7CDD /* FlowingMenuTransitionManager+UIGestureRecognizer.swift */; };
-		C87B28C76B55E8CB19028BBFFC910B45 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A817CAE99C81EE68006DC1E60E295C0A /* Foundation.framework */; };
-		D2B7899416780BAE93C175A58BA6A26D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23016F69B2480F44D0BB5526B39192FA /* QuartzCore.framework */; };
-		EFE0C86607E3EA62E6CBF39D59C5A8AC /* Pods-Aquarium-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8042DCA1D2F916B6CD919E726BF02DEB /* Pods-Aquarium-dummy.m */; };
-		F219DE5F5A9D754980F766CE099F2A76 /* Pods-Aquarium-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8B9EA9337A85270EAA2A61062C9568DB /* Pods-Aquarium-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		FFA3185EC1EF393FA06E176186C70D2C /* FlowingMenuTransitionStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = F988DCDBAACC0C22782C4A9BA82281A8 /* FlowingMenuTransitionStatus.swift */; };
+		13AC393FEEEFF27D9F88CBC6A4A75CE4 /* FlowingMenuTransitionManager+UIGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CF6EF2A39993DDB2595130D71B7CDD /* FlowingMenuTransitionManager+UIGestureRecognizer.swift */; };
+		2A883C4509AF0DC49EE172246C2A63DC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC32878090C4B2B93381956161EC0930 /* Foundation.framework */; };
+		2F8B345BFCD825B3F9BC12B70EB08528 /* FlowingMenuTransitionManager+UIViewControllerTransitioningDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF8DFB667E628179AF71A6009CE8320 /* FlowingMenuTransitionManager+UIViewControllerTransitioningDelegate.swift */; };
+		65103BC4AD165F25DEFEFF1333F7977F /* FlowingMenuTransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3244ABAFB0BA748AE92648BF828FA9D8 /* FlowingMenuTransitionManager.swift */; };
+		7FAACDE88C539D195A030EAC7C8EC2E1 /* Pods-Aquarium-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8042DCA1D2F916B6CD919E726BF02DEB /* Pods-Aquarium-dummy.m */; };
+		902C14F47CB067875301CA9500B37594 /* Pods-Aquarium-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8B9EA9337A85270EAA2A61062C9568DB /* Pods-Aquarium-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9EAB161308EA6610B2E95304698DC77E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC32878090C4B2B93381956161EC0930 /* Foundation.framework */; };
+		9FE7ED5A4DED0C05611C6DE6FBDDB9A3 /* FlowingMenuTransitionStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = F988DCDBAACC0C22782C4A9BA82281A8 /* FlowingMenuTransitionStatus.swift */; };
+		AF6FB67FBEA5C435A9BC4E1D32ABFF58 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014CC67E2B2C35A1CF3622C7720166ED /* UIView.swift */; };
+		C455E6FA525B6B8669B6DE461EAE3215 /* FlowingMenuDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9CDDC18B1021DC370AFBB6A55B0E47A /* FlowingMenuDelegate.swift */; };
+		C9EE79F5C713A970251C645855AEC2B2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BF675A168132FD52AED630F977FE906 /* UIKit.framework */; };
+		DAEA1BBDBBE1CDAEF13EDFB0E5930A32 /* FlowingMenuTransitionManager+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B9A5A00D852AF080FA90FA021540DB /* FlowingMenuTransitionManager+Delegate.swift */; };
+		EED9E968622BB75D7AB3DDD0EFA6C2BE /* FlowingMenu-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F338C4E56E2F6741B107A002DF44F14 /* FlowingMenu-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FA3CB3B69FE2F901341888BD4E42C391 /* FlowingMenuTransitionManager+UIViewControllerAnimatedTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56ECDAE35D7CC22D701E736693FC552 /* FlowingMenuTransitionManager+UIViewControllerAnimatedTransitioning.swift */; };
+		FC83FB7EAE24D2DAEC1D8E4C32DF8207 /* FlowingMenu-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E2A3CA9DF580FBFD65DF08F9B48EAB1 /* FlowingMenu-dummy.m */; };
+		FE76D705946E76C0DD554CE53A767552 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0203FCF2E38F9E0B8C4E69853543A3E /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		C56C16E65645F1E52D53BAB9C30E00B7 /* PBXContainerItemProxy */ = {
+		3733A48DD9C71DC624D77927755AB7B6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 6012E5BD00F813DFDA770631746D441A;
+			remoteGlobalIDString = 180D8FDE90A15229F9EB5BDB40076850;
 			remoteInfo = FlowingMenu;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		014CC67E2B2C35A1CF3622C7720166ED /* UIView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UIView.swift; path = Sources/UIView.swift; sourceTree = "<group>"; };
-		091D54A73E1E8BB182C9D7D245AF1C2F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		17C7C288D1C7997478C735FB25021AF6 /* Pods-Aquarium-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Aquarium-resources.sh"; sourceTree = "<group>"; };
-		23016F69B2480F44D0BB5526B39192FA /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
 		2849852F66ED77E61B67BB12701B4044 /* Pods-Aquarium-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Aquarium-frameworks.sh"; sourceTree = "<group>"; };
 		3244ABAFB0BA748AE92648BF828FA9D8 /* FlowingMenuTransitionManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FlowingMenuTransitionManager.swift; path = Sources/FlowingMenuTransitionManager.swift; sourceTree = "<group>"; };
 		4E2A3CA9DF580FBFD65DF08F9B48EAB1 /* FlowingMenu-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "FlowingMenu-dummy.m"; sourceTree = "<group>"; };
+		5BF675A168132FD52AED630F977FE906 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		5DEDAC7D600E3F97392E8C5367D67E72 /* OneSignal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OneSignal.framework; path = iOS_SDK/Framework/OneSignal.framework; sourceTree = "<group>"; };
 		5F338C4E56E2F6741B107A002DF44F14 /* FlowingMenu-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FlowingMenu-umbrella.h"; sourceTree = "<group>"; };
 		6535B5ACAEA2A194231475B70C948810 /* Pods-Aquarium.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Aquarium.release.xcconfig"; sourceTree = "<group>"; };
 		6572E1FEDE7A25C74211F97A716A2995 /* Pods-Aquarium.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Aquarium.debug.xcconfig"; sourceTree = "<group>"; };
-		6CFCAD835BF44912724925BA6DD5FF44 /* FlowingMenu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FlowingMenu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6CFCAD835BF44912724925BA6DD5FF44 /* FlowingMenu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = FlowingMenu.framework; path = FlowingMenu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8042DCA1D2F916B6CD919E726BF02DEB /* Pods-Aquarium-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Aquarium-dummy.m"; sourceTree = "<group>"; };
 		8B9EA9337A85270EAA2A61062C9568DB /* Pods-Aquarium-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Aquarium-umbrella.h"; sourceTree = "<group>"; };
-		920F9637A8AD409C48A36EBE8F34EF08 /* Pods_Aquarium.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Aquarium.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		920F9637A8AD409C48A36EBE8F34EF08 /* Pods_Aquarium.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Aquarium.framework; path = "Pods-Aquarium.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		92798BCFB6356B43ADCF7BB28989B36F /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		97E73E4351CA2055D22557CB1EACCE42 /* Pods-Aquarium.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Aquarium.modulemap"; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		97E73E4351CA2055D22557CB1EACCE42 /* Pods-Aquarium.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-Aquarium.modulemap"; sourceTree = "<group>"; };
 		980DCA7E3ACB90CDE90807C95A6E1A88 /* FlowingMenu-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FlowingMenu-prefix.pch"; sourceTree = "<group>"; };
 		A1D2CD5C5B31E76396FB513F6BD4EDA3 /* Pods-Aquarium-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Aquarium-acknowledgements.markdown"; sourceTree = "<group>"; };
-		A817CAE99C81EE68006DC1E60E295C0A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		ABF8DFB667E628179AF71A6009CE8320 /* FlowingMenuTransitionManager+UIViewControllerTransitioningDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "FlowingMenuTransitionManager+UIViewControllerTransitioningDelegate.swift"; path = "Sources/FlowingMenuTransitionManager+UIViewControllerTransitioningDelegate.swift"; sourceTree = "<group>"; };
 		B3CF6EF2A39993DDB2595130D71B7CDD /* FlowingMenuTransitionManager+UIGestureRecognizer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "FlowingMenuTransitionManager+UIGestureRecognizer.swift"; path = "Sources/FlowingMenuTransitionManager+UIGestureRecognizer.swift"; sourceTree = "<group>"; };
 		C51A7A9BD90EF8B84EB988B274CA14BD /* FlowingMenu.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FlowingMenu.xcconfig; sourceTree = "<group>"; };
-		C68BEF84D13495B4D13B5E70F0ABE008 /* FlowingMenu.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = FlowingMenu.modulemap; sourceTree = "<group>"; };
+		C68BEF84D13495B4D13B5E70F0ABE008 /* FlowingMenu.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = FlowingMenu.modulemap; sourceTree = "<group>"; };
 		D9CDDC18B1021DC370AFBB6A55B0E47A /* FlowingMenuDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FlowingMenuDelegate.swift; path = Sources/FlowingMenuDelegate.swift; sourceTree = "<group>"; };
 		DEF4F0FBB8E79C0BEF988387F362713B /* Pods-Aquarium-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Aquarium-acknowledgements.plist"; sourceTree = "<group>"; };
+		E0203FCF2E38F9E0B8C4E69853543A3E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
+		EC32878090C4B2B93381956161EC0930 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		EC399B1954498D317319E7AAB51CC507 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F56ECDAE35D7CC22D701E736693FC552 /* FlowingMenuTransitionManager+UIViewControllerAnimatedTransitioning.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "FlowingMenuTransitionManager+UIViewControllerAnimatedTransitioning.swift"; path = "Sources/FlowingMenuTransitionManager+UIViewControllerAnimatedTransitioning.swift"; sourceTree = "<group>"; };
 		F5B9A5A00D852AF080FA90FA021540DB /* FlowingMenuTransitionManager+Delegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "FlowingMenuTransitionManager+Delegate.swift"; path = "Sources/FlowingMenuTransitionManager+Delegate.swift"; sourceTree = "<group>"; };
@@ -70,21 +70,21 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		20623CFD4A3CD53925294CA30F4E893E /* Frameworks */ = {
+		745CB0FB880B9905BE9484B5D6F1347E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C87B28C76B55E8CB19028BBFFC910B45 /* Foundation.framework in Frameworks */,
+				2A883C4509AF0DC49EE172246C2A63DC /* Foundation.framework in Frameworks */,
+				FE76D705946E76C0DD554CE53A767552 /* QuartzCore.framework in Frameworks */,
+				C9EE79F5C713A970251C645855AEC2B2 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AD7A0D6F7AA71B5D61749C9447E35C89 /* Frameworks */ = {
+		CAE013677A4E7049273BE4AE2911D1B3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2BA1B7DDBD6EF851CF4FBCDC5447150D /* Foundation.framework in Frameworks */,
-				D2B7899416780BAE93C175A58BA6A26D /* QuartzCore.framework in Frameworks */,
-				4F7B28C4163DCEA209AB24C5591C8319 /* UIKit.framework in Frameworks */,
+				9EAB161308EA6610B2E95304698DC77E /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -111,7 +111,7 @@
 		122DA2E5084A4393C29BE363C764795C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				DFDE779C6E5D3445E0CB8CCB8D424449 /* iOS */,
+				E5E9260013FA223D81B907D9285F6EA1 /* iOS */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -137,6 +137,7 @@
 				014CC67E2B2C35A1CF3622C7720166ED /* UIView.swift */,
 				65921BA1A3B4375B35619AFADE3BDF25 /* Support Files */,
 			);
+			name = FlowingMenu;
 			path = FlowingMenu;
 			sourceTree = "<group>";
 		};
@@ -197,15 +198,16 @@
 			children = (
 				25B252958EBD45F13FE1D0966C810BD5 /* Frameworks */,
 			);
+			name = OneSignal;
 			path = OneSignal;
 			sourceTree = "<group>";
 		};
-		DFDE779C6E5D3445E0CB8CCB8D424449 /* iOS */ = {
+		E5E9260013FA223D81B907D9285F6EA1 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				A817CAE99C81EE68006DC1E60E295C0A /* Foundation.framework */,
-				23016F69B2480F44D0BB5526B39192FA /* QuartzCore.framework */,
-				091D54A73E1E8BB182C9D7D245AF1C2F /* UIKit.framework */,
+				EC32878090C4B2B93381956161EC0930 /* Foundation.framework */,
+				E0203FCF2E38F9E0B8C4E69853543A3E /* QuartzCore.framework */,
+				5BF675A168132FD52AED630F977FE906 /* UIKit.framework */,
 			);
 			name = iOS;
 			sourceTree = "<group>";
@@ -213,50 +215,50 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		2098095A50F7AEB219BF504AE829E89C /* Headers */ = {
+		22F52AA14665B4FB6A3BCD9E2242C94D /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				78FA6ED6E2E610E4CC83607CCCF95B26 /* FlowingMenu-umbrella.h in Headers */,
+				902C14F47CB067875301CA9500B37594 /* Pods-Aquarium-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3422CBFF17B22BF3DA330EA7C4EF74A9 /* Headers */ = {
+		CCF35B37C3BCF16ED597E218030D54A2 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F219DE5F5A9D754980F766CE099F2A76 /* Pods-Aquarium-umbrella.h in Headers */,
+				EED9E968622BB75D7AB3DDD0EFA6C2BE /* FlowingMenu-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		34A28D254BEE0FE722FC3266389A3240 /* Pods-Aquarium */ = {
+		00C9B84C123965C31AE0B17E8AC11AB8 /* Pods-Aquarium */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 07089B5BDBCA8F8E3BD11052342C5AD3 /* Build configuration list for PBXNativeTarget "Pods-Aquarium" */;
+			buildConfigurationList = BDCC173B543B6E32F6751754D5322B2F /* Build configuration list for PBXNativeTarget "Pods-Aquarium" */;
 			buildPhases = (
-				9715F02E5280F75CEF008EC16FD95927 /* Sources */,
-				20623CFD4A3CD53925294CA30F4E893E /* Frameworks */,
-				3422CBFF17B22BF3DA330EA7C4EF74A9 /* Headers */,
+				F9670D20C9CD353F024037973920CF17 /* Sources */,
+				CAE013677A4E7049273BE4AE2911D1B3 /* Frameworks */,
+				22F52AA14665B4FB6A3BCD9E2242C94D /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				04514083F6832AFA54B5A297B1BE976D /* PBXTargetDependency */,
+				7958042AFE499EB46DDE4A5D61622764 /* PBXTargetDependency */,
 			);
 			name = "Pods-Aquarium";
 			productName = "Pods-Aquarium";
 			productReference = 920F9637A8AD409C48A36EBE8F34EF08 /* Pods_Aquarium.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		6012E5BD00F813DFDA770631746D441A /* FlowingMenu */ = {
+		180D8FDE90A15229F9EB5BDB40076850 /* FlowingMenu */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CB74B721D2DF8BF04F874B4E5E734BB2 /* Build configuration list for PBXNativeTarget "FlowingMenu" */;
+			buildConfigurationList = 9CBC2D21DA00391FF4AA23BBE3E54DA5 /* Build configuration list for PBXNativeTarget "FlowingMenu" */;
 			buildPhases = (
-				AB9381FD82DD3A5C33885B12DDEC58FF /* Sources */,
-				AD7A0D6F7AA71B5D61749C9447E35C89 /* Frameworks */,
-				2098095A50F7AEB219BF504AE829E89C /* Headers */,
+				53B295B15FDA2A4AC2997458B4DA63FB /* Sources */,
+				745CB0FB880B9905BE9484B5D6F1347E /* Frameworks */,
+				CCF35B37C3BCF16ED597E218030D54A2 /* Headers */,
 			);
 			buildRules = (
 			);
@@ -288,45 +290,45 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				6012E5BD00F813DFDA770631746D441A /* FlowingMenu */,
-				34A28D254BEE0FE722FC3266389A3240 /* Pods-Aquarium */,
+				180D8FDE90A15229F9EB5BDB40076850 /* FlowingMenu */,
+				00C9B84C123965C31AE0B17E8AC11AB8 /* Pods-Aquarium */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		9715F02E5280F75CEF008EC16FD95927 /* Sources */ = {
+		53B295B15FDA2A4AC2997458B4DA63FB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EFE0C86607E3EA62E6CBF39D59C5A8AC /* Pods-Aquarium-dummy.m in Sources */,
+				FC83FB7EAE24D2DAEC1D8E4C32DF8207 /* FlowingMenu-dummy.m in Sources */,
+				C455E6FA525B6B8669B6DE461EAE3215 /* FlowingMenuDelegate.swift in Sources */,
+				DAEA1BBDBBE1CDAEF13EDFB0E5930A32 /* FlowingMenuTransitionManager+Delegate.swift in Sources */,
+				13AC393FEEEFF27D9F88CBC6A4A75CE4 /* FlowingMenuTransitionManager+UIGestureRecognizer.swift in Sources */,
+				FA3CB3B69FE2F901341888BD4E42C391 /* FlowingMenuTransitionManager+UIViewControllerAnimatedTransitioning.swift in Sources */,
+				2F8B345BFCD825B3F9BC12B70EB08528 /* FlowingMenuTransitionManager+UIViewControllerTransitioningDelegate.swift in Sources */,
+				65103BC4AD165F25DEFEFF1333F7977F /* FlowingMenuTransitionManager.swift in Sources */,
+				9FE7ED5A4DED0C05611C6DE6FBDDB9A3 /* FlowingMenuTransitionStatus.swift in Sources */,
+				AF6FB67FBEA5C435A9BC4E1D32ABFF58 /* UIView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AB9381FD82DD3A5C33885B12DDEC58FF /* Sources */ = {
+		F9670D20C9CD353F024037973920CF17 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				06B3C599146B6A08195C5E8AE365C855 /* FlowingMenu-dummy.m in Sources */,
-				A521C6C9E898486222B8159B2E851AFA /* FlowingMenuDelegate.swift in Sources */,
-				40EFEA4690EAC59F222DA2662454469E /* FlowingMenuTransitionManager+Delegate.swift in Sources */,
-				BECB6CDD1E2AB1CEA60819C385E17778 /* FlowingMenuTransitionManager+UIGestureRecognizer.swift in Sources */,
-				76CF2B72A31A8D818D9027D810491F7D /* FlowingMenuTransitionManager+UIViewControllerAnimatedTransitioning.swift in Sources */,
-				7ECBF7779D443608E8BB7CD0A35A6036 /* FlowingMenuTransitionManager+UIViewControllerTransitioningDelegate.swift in Sources */,
-				3F3EC8B12A9843905CAA9F73BCE3093C /* FlowingMenuTransitionManager.swift in Sources */,
-				FFA3185EC1EF393FA06E176186C70D2C /* FlowingMenuTransitionStatus.swift in Sources */,
-				7C3B33F509216411ADF6248B441B67D5 /* UIView.swift in Sources */,
+				7FAACDE88C539D195A030EAC7C8EC2E1 /* Pods-Aquarium-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		04514083F6832AFA54B5A297B1BE976D /* PBXTargetDependency */ = {
+		7958042AFE499EB46DDE4A5D61622764 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = FlowingMenu;
-			target = 6012E5BD00F813DFDA770631746D441A /* FlowingMenu */;
-			targetProxy = C56C16E65645F1E52D53BAB9C30E00B7 /* PBXContainerItemProxy */;
+			target = 180D8FDE90A15229F9EB5BDB40076850 /* FlowingMenu */;
+			targetProxy = 3733A48DD9C71DC624D77927755AB7B6 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -375,7 +377,7 @@
 			};
 			name = Debug;
 		};
-		205ECD3E2A5350F482476EC67FCDB017 /* Debug */ = {
+		808730562B508867BC1F8E5805AFE692 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6572E1FEDE7A25C74211F97A716A2995 /* Pods-Aquarium.debug.xcconfig */;
 			buildSettings = {
@@ -411,7 +413,7 @@
 			};
 			name = Debug;
 		};
-		40A46138EF26CF9F7C4442765F07D585 /* Release */ = {
+		979523BDE690700415B772F9366991DA /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6535B5ACAEA2A194231475B70C948810 /* Pods-Aquarium.release.xcconfig */;
 			buildSettings = {
@@ -446,7 +448,39 @@
 			};
 			name = Release;
 		};
-		67F522DD2F575BC2921876B5B8BFE045 /* Debug */ = {
+		AAC2A47394FAD8E320DBCF344123CA1F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C51A7A9BD90EF8B84EB988B274CA14BD /* FlowingMenu.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/FlowingMenu/FlowingMenu-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/FlowingMenu/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/FlowingMenu/FlowingMenu.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = FlowingMenu;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		C16DC49007B836F2D9B6D705D8125DC6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C51A7A9BD90EF8B84EB988B274CA14BD /* FlowingMenu.xcconfig */;
 			buildSettings = {
@@ -478,38 +512,6 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
-		};
-		D115D981B21ADEB7027133E3E51085ED /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = C51A7A9BD90EF8B84EB988B274CA14BD /* FlowingMenu.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/FlowingMenu/FlowingMenu-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/FlowingMenu/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/FlowingMenu/FlowingMenu.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = FlowingMenu;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
 		};
 		E72E7977875C2D251FC62736BBDDC389 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -554,15 +556,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		07089B5BDBCA8F8E3BD11052342C5AD3 /* Build configuration list for PBXNativeTarget "Pods-Aquarium" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				205ECD3E2A5350F482476EC67FCDB017 /* Debug */,
-				40A46138EF26CF9F7C4442765F07D585 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -572,11 +565,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CB74B721D2DF8BF04F874B4E5E734BB2 /* Build configuration list for PBXNativeTarget "FlowingMenu" */ = {
+		9CBC2D21DA00391FF4AA23BBE3E54DA5 /* Build configuration list for PBXNativeTarget "FlowingMenu" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				67F522DD2F575BC2921876B5B8BFE045 /* Debug */,
-				D115D981B21ADEB7027133E3E51085ED /* Release */,
+				C16DC49007B836F2D9B6D705D8125DC6 /* Debug */,
+				AAC2A47394FAD8E320DBCF344123CA1F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BDCC173B543B6E32F6751754D5322B2F /* Build configuration list for PBXNativeTarget "Pods-Aquarium" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				808730562B508867BC1F8E5805AFE692 /* Debug */,
+				979523BDE690700415B772F9366991DA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
