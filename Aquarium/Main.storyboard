@@ -290,7 +290,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cTl-Ja-usU" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Home" image="home" selectedImage="homeFilled" id="PDX-89-lF2"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="4Oi-c8-wAc">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="4Oi-c8-wAc">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1046,7 +1046,7 @@ To get started, tap the plus!
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" reuseIdentifier="cell" id="uyV-fR-gOP" customClass="AnimalCollectionViewCell" customModule="Aquarium" customModuleProvider="target">
-                                        <rect key="frame" x="90" y="41" width="196" height="140"/>
+                                        <rect key="frame" x="89.5" y="41" width="196" height="140"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="196" height="140"/>
@@ -1094,7 +1094,7 @@ To get started, tap the plus!
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Animal Fact Zone" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ekS-k9-O6b">
-                                <rect key="frame" x="16" y="37" width="343" height="19"/>
+                                <rect key="frame" x="16" y="37" width="343" height="22.5"/>
                                 <fontDescription key="fontDescription" name="TrajanPro-Regular" family="Trajan Pro" pointSize="19"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>

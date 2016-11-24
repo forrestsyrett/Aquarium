@@ -7,11 +7,12 @@
 //
 
 import UIKit
+import PushKit
 import OneSignal
 import UserNotifications
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, OSUserNotificationCenterDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
     
     var window: UIWindow?
     
@@ -19,15 +20,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate, OSUserNotificationCenterD
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         UITabBar.appearance().tintColor = UIColor.white
-//        let pushNotificationSettings = UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
         
         
         OneSignal.initWithLaunchOptions(launchOptions, appId: "3090501c-b1b5-4a1f-9c02-cb3a768e71a7")
-        OneSignal.registerForPushNotifications()
     
+        application.registerForRemoteNotifications()
         
-//        OneSignal.initWithLaunchOptions(launchOptions, appId: "b2f7f966-d8cc-11e4-bed1-df8f05be55ba", handleNotificationReceived:nil, handleNotificationAction:nil, settings: [kOSSettingsKeyInFocusDisplayOption: None, kOSSettingsKeyAutoPrompt: true])
-
+        
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) {(accepted, error) in
+            if !accepted {
+                print("Notification access denied.")
+            }
+        }
         
         return true
     }
