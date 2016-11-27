@@ -25,6 +25,10 @@ class MembershipListTableViewController: UIViewController, UITableViewDelegate, 
         membershipCardTableView.reloadData()
         roundCornerButtons(becomeAMemberButtonLabel)
         roundCornerButtons(welcomeView)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(MembershipListTableViewController.reloadView), name: Notification.Name(rawValue: "addedNewMembership"), object: nil)
+        
+        self.membershipCardTableView.contentInset = UIEdgeInsetsMake(30, 0, 0, 0)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -43,7 +47,10 @@ class MembershipListTableViewController: UIViewController, UITableViewDelegate, 
     }
     
     
-    
+    func reloadView() {
+        self.membershipCardTableView.reloadData()
+        welcomeView.isHidden = true
+    }
     
     
     @IBAction func becomeAMemberButtonTapped(_ sender: AnyObject) {
@@ -116,5 +123,10 @@ class MembershipListTableViewController: UIViewController, UITableViewDelegate, 
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: Notification.Name(rawValue: "addedNewMembership"), object: nil)
+        print("removed Notification")
     }
 }

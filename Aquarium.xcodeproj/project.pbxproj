@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0656D2CD1DE4C7680014BBF0 /* AnimalCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0656D2CC1DE4C7680014BBF0 /* AnimalCollectionViewCell.swift */; };
+		06FD838D1DEA41F5005F4EFA /* AnimalDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FD838C1DEA41F5005F4EFA /* AnimalDetailViewController.swift */; };
 		2E3C1D313B999B8DCB850948 /* Pods_Aquarium.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA163953DE68335B7F2D0C0E /* Pods_Aquarium.framework */; };
 		AA00A7871DD3D3E100B80DF6 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA00A7861DD3D3E100B80DF6 /* WebViewController.swift */; };
 		AA07C69E1DD5052700AD855D /* SecondFloorOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA07C69D1DD5052700AD855D /* SecondFloorOverlayView.swift */; };
@@ -75,6 +76,7 @@
 
 /* Begin PBXFileReference section */
 		0656D2CC1DE4C7680014BBF0 /* AnimalCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimalCollectionViewCell.swift; sourceTree = "<group>"; };
+		06FD838C1DEA41F5005F4EFA /* AnimalDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimalDetailViewController.swift; sourceTree = "<group>"; };
 		AA00A7861DD3D3E100B80DF6 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		AA07C69D1DD5052700AD855D /* SecondFloorOverlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondFloorOverlayView.swift; sourceTree = "<group>"; };
 		AA07C69F1DD5090E00AD855D /* SecondFloorOverlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SecondFloorOverlay.swift; path = Aquarium/SecondFloorOverlay.swift; sourceTree = "<group>"; };
@@ -278,6 +280,7 @@
 				AA55B5871DDF7D4100CC2336 /* ExhibitGalleryTableViewCell.swift */,
 				AA55B5831DDF75AE00CC2336 /* MainExhibits.swift */,
 				AA55B5851DDF765100CC2336 /* MainExhibitController.swift */,
+				06FD838C1DEA41F5005F4EFA /* AnimalDetailViewController.swift */,
 			);
 			name = "Animal Exhibit Galleries";
 			sourceTree = "<group>";
@@ -513,6 +516,7 @@
 				AA7FF44B1DDE65AE002A5AE0 /* MainExhibitViewController.swift in Sources */,
 				AA6F4E661D386A2A00FA20F7 /* AnimalTableViewCell.swift in Sources */,
 				AA353AC21DCE619100AD5490 /* AquariumMapOverlayView.swift in Sources */,
+				06FD838D1DEA41F5005F4EFA /* AnimalDetailViewController.swift in Sources */,
 				AA183F2A1D1A6DD300D31044 /* AnimalEncountersViewController.swift in Sources */,
 				AA544C951D0BB66C00DC1725 /* AppDelegate.swift in Sources */,
 				AAEE47681D3CAD8500E0C537 /* NotificationController.swift in Sources */,

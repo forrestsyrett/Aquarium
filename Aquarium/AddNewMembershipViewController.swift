@@ -42,8 +42,9 @@ class AddNewMembershipViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet var membershipNameTextField: UITextField!
     @IBOutlet var membershipIDTextField: UITextField!
-    @IBOutlet weak var saveButton: UIBarButtonItem!
     @IBOutlet weak var expirationDatePicker: UIDatePicker!
+    @IBOutlet weak var dismissButton: UIButton!
+    @IBOutlet weak var saveButton: UIButton!
     
     var membership: MembershipCard?
     var membershipCell = MembershipCardTableViewCell()
@@ -60,6 +61,8 @@ class AddNewMembershipViewController: UIViewController, UITextFieldDelegate {
         
         if membershipNameTextField.text?.isEmpty == true {
             saveButton.isEnabled = false
+            
+            dismissButton.layer.cornerRadius = 17.0
         }
        
     }
@@ -121,7 +124,15 @@ class AddNewMembershipViewController: UIViewController, UITextFieldDelegate {
             }
         }
         
-        self.navigationController?.popViewController(animated: true)
+        self.dismiss(animated: true, completion: nil)
+        NotificationCenter.default.post(name: Notification.Name(rawValue: "addedNewMembership"), object: nil)
+        
+    }
+    
+    
+    @IBAction func dismissButtonTapped(_ sender: Any) {
+        
+        self.dismiss(animated: true, completion: nil)
     }
     
     

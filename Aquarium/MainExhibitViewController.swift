@@ -27,7 +27,9 @@ class MainExhibitViewController: UIViewController, FlowingMenuDelegate, UICollec
         super.viewDidLoad()
         
         
-        allAnimals = [Animals.arapaima, Animals.binturong, Animals.cloudedLeopards, Animals.eel, Animals.greenSeaTurtle, Animals.hornbill, Animals.otters, Animals.penguins, Animals.tortoise, Animals.toucan, Animals.zebraShark]
+        
+        
+        allAnimals = [Animals.arapaima, Animals.binturong, Animals.cloudedLeopards, Animals.eel, Animals.greenSeaTurtle, Animals.hornbill, Animals.otters, Animals.penguins, Animals.tortoise, Animals.toucan, Animals.zebraShark, Animals.jellyfish]
         allAnimalsSorted = allAnimals.sorted { $0.info.name < $1.info.name }
         
         allAnimals = allAnimalsSorted
@@ -38,6 +40,8 @@ class MainExhibitViewController: UIViewController, FlowingMenuDelegate, UICollec
         
         transparentNavigationBar(self)
         gradient(self.view)
+        
+        
         // Add the pan screen edge gesture to the current view //
         flowingMenuTransitionManager.setInteractivePresentationView(view)
         
@@ -52,9 +56,9 @@ class MainExhibitViewController: UIViewController, FlowingMenuDelegate, UICollec
         
     }
     
+    
     override func viewWillAppear(_ animated: Bool) {
         collectionView.reloadData()
-        searchBar.resignFirstResponder()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -62,17 +66,6 @@ class MainExhibitViewController: UIViewController, FlowingMenuDelegate, UICollec
     
     // MARK: - Search Bar Functions
     
-    
-    func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
-        
-        
-        return true
-    }
-    
-    func searchBarShouldEndEditing(_ searchBar: UISearchBar) -> Bool {
-        
-        return true
-    }
     
     
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
@@ -106,7 +99,12 @@ class MainExhibitViewController: UIViewController, FlowingMenuDelegate, UICollec
     }
     ////////////////////////////////////////////////////////
     
-    
+    func resignKeyboard() {
+        searchBar.resignFirstResponder()
+    }
+    func setSearchBarView() {
+        searchBar.frame = CGRect(x: 0, y: 637, width: view.frame.width, height: 50)
+    }
     
     // Mark: - SearchBar Movement Response to Keyboard
     
@@ -114,12 +112,17 @@ class MainExhibitViewController: UIViewController, FlowingMenuDelegate, UICollec
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWasShown(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillBeHidden(notification:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(MainExhibitViewController.resignKeyboard), name: Notification.Name(rawValue: "enteringBackground"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(MainExhibitViewController.setSearchBarView), name: Notification.Name(rawValue: "active"), object: nil)
     }
     
     func removeObservers() {
         
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name(rawValue: "enteringBackground" ), object: nil)
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name(rawValue: "active" ), object: nil)
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name(rawValue: "allAnimals" ), object: nil)
     }
     
     func keyboardWasShown(notification: NSNotification) {
@@ -128,7 +131,7 @@ class MainExhibitViewController: UIViewController, FlowingMenuDelegate, UICollec
         let keyboardSize = (info[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue
         let keyboardHeight: CGFloat = (keyboardSize?.height)!
         
-        UIView.animate(withDuration: 0.25, delay: 0, options: UIViewAnimationOptions.curveEaseInOut, animations: {
+        UIView.animate(withDuration: 0.40, delay: 0, options: UIViewAnimationOptions.curveEaseInOut, animations: {
             
             self.searchBar.frame = CGRect(x: 0, y: (self.searchBar.frame.origin.y - keyboardHeight + 50), width: self.view.bounds.width, height: 50)
         }, completion: nil)
@@ -147,7 +150,7 @@ class MainExhibitViewController: UIViewController, FlowingMenuDelegate, UICollec
         let keyboardSize = (info[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue
         let keyboardHeight: CGFloat = (keyboardSize?.height)!
         
-        UIView.animate(withDuration: 0.25, delay: 0, options: UIViewAnimationOptions.curveEaseInOut, animations: {
+        UIView.animate(withDuration: 0.40, delay: 0, options: UIViewAnimationOptions.curveEaseInOut, animations: {
             
             
             self.searchBar.frame = CGRect(x: 0, y: (self.searchBar.frame.origin.y + keyboardHeight - 50), width: self.view.bounds.width, height: 50)
@@ -189,11 +192,11 @@ class MainExhibitViewController: UIViewController, FlowingMenuDelegate, UICollec
             cell.animalImage.image = animal.info.animalImage
             cell.animalNameLabel.text = animal.info.name
         }
-       // cell.alpha = 0.0
+        // cell.alpha = 0.0
         
-     //   UIView.animate(withDuration: 0.30, animations: {
-     //       cell.alpha = 1.0
-     //   }, completion: nil)
+        //   UIView.animate(withDuration: 0.30, animations: {
+        //       cell.alpha = 1.0
+        //   }, completion: nil)
         
         cell.layer.cornerRadius = 5.0
         
@@ -233,22 +236,53 @@ class MainExhibitViewController: UIViewController, FlowingMenuDelegate, UICollec
     // MARK: - Prepare for Segue
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let destinationViewController  = segue.destination as! MainExhibitTableViewController
-        destinationViewController.transitioningDelegate = flowingMenuTransitionManager
-        destinationViewController.delegate = self
         
-        // Add the left pan gesture to the  menu
-        flowingMenuTransitionManager.setInteractiveDismissView(destinationViewController.view)
-        menu = destinationViewController
+       
+            let destinationViewController  = segue.destination
+            destinationViewController.transitioningDelegate = flowingMenuTransitionManager
+        
+            // Add the left pan gesture to the  menu
+            flowingMenuTransitionManager.setInteractiveDismissView(destinationViewController.view)
+            menu = destinationViewController
+        
+        if segue.identifier == "toAnimalDetail" {
+            
+            if let destinationViewController = segue.destination as? AnimalDetailViewController {
+                
+                let indexPath = self.collectionView.indexPath(for: (sender as! UICollectionViewCell))
+                if let selectedItem = (indexPath as NSIndexPath?)?.row {
+                    
+                    if self.searchBarIsActive {
+                        let animal = dataSourceForSearchResult?[selectedItem]
+                        destinationViewController.updateInfo(animal: animal!)
+                    }
+                    else  {
+                        
+                        let animal = allAnimals[selectedItem]
+                        print(selectedItem)
+                        destinationViewController.updateInfo(animal: animal)
+                    }
+                }
+            }
+        }
     }
     
-    func flowingMenuNeedsPresentMenu(_ flowingMenu: FlowingMenuTransitionManager) {
-        performSegue(withIdentifier: "toExhibits", sender: self)
-    }
     
-    func flowingMenuNeedsDismissMenu(_ flowingMenu: FlowingMenuTransitionManager) {
-        menu?.dismiss(animated: true, completion: nil)
-    }
+    // MARK: - Delegate Functions
+    
+        func flowingMenuNeedsPresentMenu(_ flowingMenu: FlowingMenuTransitionManager) {
+            performSegue(withIdentifier: "toExhibits", sender: self)
+        }
+        
+        func flowingMenuNeedsDismissMenu(_ flowingMenu: FlowingMenuTransitionManager) {
+            menu?.dismiss(animated: true, completion: nil)
+        }
+        
+        
+
+    
+    
+
     
     
     // MARK: - Search Filter
@@ -259,6 +293,11 @@ class MainExhibitViewController: UIViewController, FlowingMenuDelegate, UICollec
         dataSourceForSearchResult = animals
         self.collectionView.reloadData()
         
+    }
+    
+    
+    deinit {
+        removeObservers()
     }
     
     
