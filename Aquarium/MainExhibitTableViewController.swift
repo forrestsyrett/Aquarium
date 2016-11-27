@@ -64,10 +64,12 @@ class MainExhibitTableViewController: UIViewController, UITableViewDelegate, UIT
         return cell
     }
     
+    
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
     delegate?.gallerySelected(indexPath: indexPath.row)
-        
+        print("delegate sent")
     }
     
     @IBAction func showAllAnimalsButtonTapped(_ sender: Any) {
