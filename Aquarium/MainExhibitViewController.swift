@@ -205,7 +205,7 @@ class MainExhibitViewController: UIViewController, FlowingMenuDelegate, UICollec
         
     }
     
-    // MARK: - Delegate Methods
+    // MARK: - Gallery Selected Delegate Methods
     
     func gallerySelected(indexPath: Int) {
         switch indexPath {
@@ -218,6 +218,7 @@ class MainExhibitViewController: UIViewController, FlowingMenuDelegate, UICollec
         }
         self.collectionView.reloadData()
         menu?.dismiss(animated: true, completion: nil)
+        print("delegate Heard")
     }
     
     ///////////////
@@ -237,13 +238,15 @@ class MainExhibitViewController: UIViewController, FlowingMenuDelegate, UICollec
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-       
-            let destinationViewController  = segue.destination
+        if segue.identifier == "toExhibits" {
+            let destinationViewController  = segue.destination as! MainExhibitTableViewController
             destinationViewController.transitioningDelegate = flowingMenuTransitionManager
+        destinationViewController.delegate = self
         
             // Add the left pan gesture to the  menu
             flowingMenuTransitionManager.setInteractiveDismissView(destinationViewController.view)
             menu = destinationViewController
+        }
         
         if segue.identifier == "toAnimalDetail" {
             
