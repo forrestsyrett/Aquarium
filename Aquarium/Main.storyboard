@@ -33,7 +33,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="smallLogo" translatesAutoresizingMaskIntoConstraints="NO" id="oWX-bw-Jvg">
-                                <rect key="frame" x="267" y="673" width="67" height="64"/>
+                                <rect key="frame" x="267" y="678" width="67" height="64"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="64" id="2yw-n0-Hyd"/>
                                     <constraint firstAttribute="width" secondItem="oWX-bw-Jvg" secondAttribute="height" multiplier="67:64" id="Y5X-yD-mcm"/>
@@ -45,7 +45,7 @@
                                 </variation>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A30-8u-NHL">
-                                <rect key="frame" x="20" y="745" width="560" height="1"/>
+                                <rect key="frame" x="0.0" y="750" width="600" height="1"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="EsR-UT-Sdx"/>
@@ -209,14 +209,14 @@
                             <constraint firstItem="90p-YP-0He" firstAttribute="top" secondItem="XD1-9t-bYG" secondAttribute="bottom" constant="8" id="OwC-5B-5wk"/>
                             <constraint firstItem="2fT-7x-IA6" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Ry1-9Z-DcZ"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="oWX-bw-Jvg" secondAttribute="bottom" constant="50" id="TAz-3e-kOq"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="A30-8u-NHL" secondAttribute="bottom" constant="5" id="Vpm-UY-UZc"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="A30-8u-NHL" secondAttribute="trailing" id="Xht-OV-4gz"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="A30-8u-NHL" secondAttribute="bottom" id="Vpm-UY-UZc"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="A30-8u-NHL" secondAttribute="trailing" constant="-20" id="Xht-OV-4gz"/>
                             <constraint firstAttribute="leadingMargin" secondItem="th4-ng-6Q2" secondAttribute="leading" id="ZE7-Zd-x3g"/>
                             <constraint firstItem="A30-8u-NHL" firstAttribute="top" secondItem="oWX-bw-Jvg" secondAttribute="bottom" constant="8" id="ZJB-19-qn0"/>
                             <constraint firstItem="oaI-fl-4K6" firstAttribute="top" secondItem="2fT-7x-IA6" secondAttribute="bottom" constant="25" id="arv-lZ-VfZ"/>
                             <constraint firstItem="WJ7-NO-hTG" firstAttribute="top" relation="greaterThanOrEqual" secondItem="oaI-fl-4K6" secondAttribute="bottom" constant="30" id="dQZ-lt-0sd"/>
                             <constraint firstItem="oWX-bw-Jvg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="e2v-aO-0pF"/>
-                            <constraint firstItem="A30-8u-NHL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="eMn-Fk-Rmi"/>
+                            <constraint firstItem="A30-8u-NHL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="eMn-Fk-Rmi"/>
                             <constraint firstAttribute="leadingMargin" secondItem="5JR-E6-8Oh" secondAttribute="leading" id="elE-3g-Vou"/>
                             <constraint firstItem="WJ7-NO-hTG" firstAttribute="top" relation="greaterThanOrEqual" secondItem="oaI-fl-4K6" secondAttribute="bottom" constant="8" id="fYH-ts-G25"/>
                             <constraint firstItem="WJ7-NO-hTG" firstAttribute="leading" secondItem="8Ct-0Y-sI0" secondAttribute="trailing" constant="-560" id="gEx-87-M7B"/>
@@ -316,7 +316,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="213" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="EO3-t5-Sj1">
-                                <rect key="frame" x="-4" y="58" width="383" height="552"/>
+                                <rect key="frame" x="-4" y="58" width="383" height="557"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="tableViewCell" rowHeight="213" id="Nl3-ni-fUx" customClass="MembershipCardTableViewCell" customModule="Aquarium" customModuleProvider="target">
@@ -392,7 +392,7 @@
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0YB-GR-tGq">
-                                <rect key="frame" x="16" y="612" width="343" height="1"/>
+                                <rect key="frame" x="-4" y="617" width="383" height="1"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="drq-of-XoI"/>
@@ -510,7 +510,7 @@ To get started, tap the plus!
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="0YB-GR-tGq" secondAttribute="trailing" id="3oM-Ll-KkP"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="0YB-GR-tGq" secondAttribute="trailing" constant="-20" id="3oM-Ll-KkP"/>
                             <constraint firstItem="FN4-Lr-iS5" firstAttribute="leading" secondItem="v8y-be-ivU" secondAttribute="leadingMargin" constant="-20" id="6EK-gp-MmX"/>
                             <constraint firstAttribute="trailingMargin" secondItem="FN4-Lr-iS5" secondAttribute="trailing" constant="-20" id="7s7-K3-ywD"/>
                             <constraint firstItem="EO3-t5-Sj1" firstAttribute="top" secondItem="AjI-Vc-P61" secondAttribute="bottom" constant="38" id="AA7-1d-7ZD"/>
@@ -519,14 +519,14 @@ To get started, tap the plus!
                             <constraint firstAttribute="trailingMargin" secondItem="EO3-t5-Sj1" secondAttribute="trailing" constant="-20" id="GUt-NN-cr0"/>
                             <constraint firstItem="CmB-iv-51b" firstAttribute="leading" secondItem="v8y-be-ivU" secondAttribute="leadingMargin" id="NBu-rf-kd9"/>
                             <constraint firstItem="vTV-cV-O25" firstAttribute="top" secondItem="AjI-Vc-P61" secondAttribute="bottom" constant="74" id="Nal-RP-Cul"/>
-                            <constraint firstItem="SiM-AC-npK" firstAttribute="top" secondItem="0YB-GR-tGq" secondAttribute="bottom" constant="5" id="Qib-oe-bIA"/>
+                            <constraint firstItem="SiM-AC-npK" firstAttribute="top" secondItem="0YB-GR-tGq" secondAttribute="bottom" id="Qib-oe-bIA"/>
                             <constraint firstItem="3Ip-zb-kE7" firstAttribute="top" secondItem="FN4-Lr-iS5" secondAttribute="bottom" constant="-55" id="SD0-lC-DH4"/>
                             <constraint firstAttribute="trailingMargin" secondItem="CmB-iv-51b" secondAttribute="trailing" id="VmK-tA-vqg"/>
                             <constraint firstItem="CmB-iv-51b" firstAttribute="top" secondItem="AjI-Vc-P61" secondAttribute="bottom" constant="17" id="Vtk-Zc-2zW"/>
                             <constraint firstItem="3Ip-zb-kE7" firstAttribute="leading" secondItem="CmB-iv-51b" secondAttribute="trailing" constant="-21" id="egz-fO-1du"/>
                             <constraint firstAttribute="trailingMargin" secondItem="vTV-cV-O25" secondAttribute="trailing" id="fOK-5b-IO7"/>
                             <constraint firstItem="EO3-t5-Sj1" firstAttribute="leading" secondItem="v8y-be-ivU" secondAttribute="leadingMargin" constant="-20" id="h6z-LH-16E"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="0YB-GR-tGq" secondAttribute="leading" id="lIJ-Ea-eRP"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="0YB-GR-tGq" secondAttribute="leading" constant="20" id="lIJ-Ea-eRP"/>
                             <constraint firstItem="SiM-AC-npK" firstAttribute="top" secondItem="EO3-t5-Sj1" secondAttribute="bottom" constant="17" id="lfj-Qd-ycV"/>
                             <constraint firstItem="FN4-Lr-iS5" firstAttribute="top" secondItem="AjI-Vc-P61" secondAttribute="bottom" constant="-20" id="pQq-Md-vwR"/>
                             <constraint firstItem="0YB-GR-tGq" firstAttribute="top" secondItem="EO3-t5-Sj1" secondAttribute="bottom" constant="2" id="vjs-ms-9yb"/>
@@ -692,7 +692,7 @@ To get started, tap the plus!
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mcl-pj-03z">
-                                <rect key="frame" x="20" y="745" width="560" height="1"/>
+                                <rect key="frame" x="0.0" y="750" width="600" height="1"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="W2N-kX-jmI"/>
@@ -814,10 +814,10 @@ To get started, tap the plus!
                             <constraint firstItem="hjW-q7-UM6" firstAttribute="top" secondItem="6IP-bs-we5" secondAttribute="bottom" constant="5" id="OIM-Cw-xbb"/>
                             <constraint firstAttribute="trailingMargin" secondItem="1mZ-3z-5Hm" secondAttribute="trailing" id="PrF-aj-eVB"/>
                             <constraint firstAttribute="leadingMargin" secondItem="TeN-K3-zEW" secondAttribute="leading" id="Qfd-oM-KFw"/>
-                            <constraint firstItem="was-Xq-FDf" firstAttribute="top" secondItem="mcl-pj-03z" secondAttribute="bottom" constant="5" id="RyC-BI-SoP"/>
+                            <constraint firstItem="was-Xq-FDf" firstAttribute="top" secondItem="mcl-pj-03z" secondAttribute="bottom" id="RyC-BI-SoP"/>
                             <constraint firstItem="mcl-pj-03z" firstAttribute="top" secondItem="hjW-q7-UM6" secondAttribute="bottom" constant="249" id="SxG-Lc-7wm"/>
                             <constraint firstItem="87r-Go-st0" firstAttribute="top" secondItem="1mZ-3z-5Hm" secondAttribute="bottom" constant="4" id="TuP-Wo-RqN"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="mcl-pj-03z" secondAttribute="leading" id="U1X-ct-hw1"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="mcl-pj-03z" secondAttribute="leading" constant="20" id="U1X-ct-hw1"/>
                             <constraint firstItem="1mZ-3z-5Hm" firstAttribute="top" secondItem="DCX-NK-VB8" secondAttribute="bottom" priority="250" constant="40" id="Uzs-TF-19S"/>
                             <constraint firstItem="1mZ-3z-5Hm" firstAttribute="top" secondItem="Erk-nw-Hui" secondAttribute="bottom" priority="750" constant="40" id="VC7-Mx-Bw0"/>
                             <constraint firstItem="TeN-K3-zEW" firstAttribute="top" relation="greaterThanOrEqual" secondItem="c8d-7F-QWp" secondAttribute="bottom" constant="8" id="VIu-Xv-8aU"/>
@@ -838,7 +838,7 @@ To get started, tap the plus!
                             <constraint firstItem="1mZ-3z-5Hm" firstAttribute="top" relation="greaterThanOrEqual" secondItem="DCX-NK-VB8" secondAttribute="bottom" constant="8" id="jxY-E7-XfC"/>
                             <constraint firstAttribute="trailingMargin" secondItem="UPe-Ef-VrZ" secondAttribute="trailing" id="otZ-KG-v9G"/>
                             <constraint firstAttribute="bottom" secondItem="1mZ-3z-5Hm" secondAttribute="bottom" constant="316" id="pNw-sx-nkQ"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="mcl-pj-03z" secondAttribute="trailing" id="rhb-Lb-Cih"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="mcl-pj-03z" secondAttribute="trailing" constant="-20" id="rhb-Lb-Cih"/>
                             <constraint firstAttribute="leadingMargin" secondItem="6IP-bs-we5" secondAttribute="leading" id="u2m-xK-39v"/>
                             <constraint firstItem="TeN-K3-zEW" firstAttribute="top" secondItem="c8d-7F-QWp" secondAttribute="bottom" priority="250" constant="40" id="uhp-CG-uMo"/>
                             <constraint firstItem="JaQ-wt-bbc" firstAttribute="top" secondItem="7b4-M8-adQ" secondAttribute="bottom" constant="4" id="xve-GA-ira"/>
@@ -867,7 +867,7 @@ To get started, tap the plus!
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="62t-tH-QiQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1195" y="443"/>
+            <point key="canvasLocation" x="1193.5999999999999" y="442.5787106446777"/>
         </scene>
         <!--Add New Membership View Controller-->
         <scene sceneID="wsj-vE-6ra">
@@ -881,7 +881,7 @@ To get started, tap the plus!
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Membership ID Number" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lIg-Nw-p4n">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Membership ID Number" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="lIg-Nw-p4n">
                                 <rect key="frame" x="16" y="194" width="343" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="76Y-TI-WqV"/>
@@ -899,13 +899,13 @@ To get started, tap the plus!
                                     <action selector="memberIDTextFieldEditingChanged:" destination="vyk-Ro-hE2" eventType="editingChanged" id="Iqd-Fd-Fgq"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Member Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dHn-RD-4X3">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Member Name" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="dHn-RD-4X3">
                                 <rect key="frame" x="16" y="140" width="343" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="54o-gM-F29"/>
                                 </constraints>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                 <connections>
                                     <action selector="memberNameTextFieldEditingChanged:" destination="vyk-Ro-hE2" eventType="editingChanged" id="5LH-l9-WVk"/>
@@ -925,7 +925,7 @@ To get started, tap the plus!
                                     <constraint firstAttribute="height" constant="1" id="P88-PB-PFv"/>
                                 </constraints>
                             </view>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="ma1-no-Epf">
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="ma1-no-Epf">
                                 <rect key="frame" x="0.0" y="341" width="375" height="216"/>
                                 <date key="date" timeIntervalSinceReferenceDate="498522545.74563903">
                                     <!--2016-10-18 22:29:05 +0000-->
@@ -933,8 +933,14 @@ To get started, tap the plus!
                                 <date key="minimumDate" timeIntervalSinceReferenceDate="473338800">
                                     <!--2016-01-01 11:00:00 +0000-->
                                 </date>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                                        <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="highlightsToday" value="NO"/>
+                                </userDefinedRuntimeAttributes>
                             </datePicker>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Expiration Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zMg-ne-kXB">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Expiration Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="zMg-ne-kXB">
                                 <rect key="frame" x="16" y="298" width="232" height="35"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="29"/>
                                 <color key="textColor" red="0.66326935279187815" green="0.66326935279187815" blue="0.66326935279187815" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -958,7 +964,7 @@ To get started, tap the plus!
                                     <constraint firstAttribute="width" constant="48" id="7yk-2q-RAv"/>
                                     <constraint firstAttribute="height" constant="30" id="hyb-Bl-isW"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="ITCFranklinGothicStd-Book" family="ITC Franklin Gothic Std" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="ITCFranklinGothicStd-Book" family="ITC Franklin Gothic Std" pointSize="18"/>
                                 <state key="normal" title="Save">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -979,6 +985,23 @@ To get started, tap the plus!
                                     <action selector="dismissButtonTapped:" destination="vyk-Ro-hE2" eventType="touchUpInside" id="VnQ-Ko-Xtv"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Expiration Reminder" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="WuE-OV-quv">
+                                <rect key="frame" x="16" y="562" width="282" height="28"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <color key="textColor" red="0.66326935279999999" green="0.66326935279999999" blue="0.66326935279999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jTJ-su-Gr4">
+                                <rect key="frame" x="16" y="594.5" width="343" height="1"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="61h-3e-Ilp"/>
+                                </constraints>
+                            </view>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="jqs-jU-A9g">
+                                <rect key="frame" x="306" y="561" width="51" height="31"/>
+                                <color key="onTintColor" red="0.081560231999867144" green="0.3069847393765332" blue="0.70034898477157359" alpha="0.83813142123287676" colorSpace="custom" customColorSpace="sRGB"/>
+                            </switch>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -986,12 +1009,16 @@ To get started, tap the plus!
                             <constraint firstItem="lvr-00-OxW" firstAttribute="leading" secondItem="LYD-Ub-rKK" secondAttribute="leadingMargin" constant="-20" id="26v-1W-cYT"/>
                             <constraint firstItem="dHn-RD-4X3" firstAttribute="leading" secondItem="LYD-Ub-rKK" secondAttribute="leadingMargin" id="4g0-yW-wSJ"/>
                             <constraint firstItem="zMg-ne-kXB" firstAttribute="top" secondItem="mbq-57-TzL" secondAttribute="bottom" constant="58" id="602-cY-Set"/>
+                            <constraint firstItem="WoT-pk-gRy" firstAttribute="top" secondItem="jqs-jU-A9g" secondAttribute="bottom" constant="75" id="739-GD-XwJ"/>
+                            <constraint firstItem="jTJ-su-Gr4" firstAttribute="top" secondItem="WuE-OV-quv" secondAttribute="bottom" constant="5" id="79W-DW-QzD"/>
                             <constraint firstAttribute="trailingMargin" secondItem="mbq-57-TzL" secondAttribute="trailing" id="BKU-L6-9pr"/>
                             <constraint firstItem="dHn-RD-4X3" firstAttribute="top" secondItem="l1l-IO-8mY" secondAttribute="bottom" constant="120" id="GXy-8B-dVP"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="WuE-OV-quv" secondAttribute="leading" id="IPI-GG-S6b"/>
                             <constraint firstAttribute="trailingMargin" secondItem="dHn-RD-4X3" secondAttribute="trailing" id="JQg-gi-L6F"/>
                             <constraint firstAttribute="trailingMargin" secondItem="JUT-JD-Nqw" secondAttribute="trailing" id="JjD-VW-lau"/>
                             <constraint firstAttribute="trailingMargin" secondItem="E9N-D5-CFh" secondAttribute="trailing" id="K6u-hs-EXl"/>
                             <constraint firstAttribute="trailingMargin" secondItem="zMg-ne-kXB" secondAttribute="trailing" constant="111" id="KN0-N6-IGL"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="jTJ-su-Gr4" secondAttribute="trailing" id="Kau-j4-YfL"/>
                             <constraint firstItem="E9N-D5-CFh" firstAttribute="leading" secondItem="Tmz-cn-9eH" secondAttribute="trailing" constant="-35" id="LJL-5H-QxI"/>
                             <constraint firstItem="dHn-RD-4X3" firstAttribute="top" secondItem="l1l-IO-8mY" secondAttribute="bottom" constant="100" id="NOo-uy-Q67"/>
                             <constraint firstAttribute="leadingMargin" secondItem="JUT-JD-Nqw" secondAttribute="leading" id="NwS-N5-lRp"/>
@@ -1000,8 +1027,10 @@ To get started, tap the plus!
                             <constraint firstAttribute="leadingMargin" secondItem="mbq-57-TzL" secondAttribute="leading" id="RYX-Ez-CMX"/>
                             <constraint firstItem="lIg-Nw-p4n" firstAttribute="top" secondItem="dHn-RD-4X3" secondAttribute="bottom" constant="14" id="S93-l6-mXv"/>
                             <constraint firstItem="lIg-Nw-p4n" firstAttribute="leading" secondItem="LYD-Ub-rKK" secondAttribute="leadingMargin" id="SEn-Bg-Vd2"/>
+                            <constraint firstItem="WuE-OV-quv" firstAttribute="top" secondItem="ma1-no-Epf" secondAttribute="bottom" constant="5" id="SiN-Km-Poz"/>
                             <constraint firstItem="ma1-no-Epf" firstAttribute="leading" secondItem="LYD-Ub-rKK" secondAttribute="leadingMargin" constant="-16" id="YFj-mM-Huj"/>
                             <constraint firstAttribute="trailingMargin" secondItem="lIg-Nw-p4n" secondAttribute="trailing" id="aLo-bt-VUr"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="jqs-jU-A9g" secondAttribute="trailing" constant="4" id="gVl-6m-bgh"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ma1-no-Epf" secondAttribute="trailing" constant="-16" id="gjb-0a-3L9"/>
                             <constraint firstItem="Tmz-cn-9eH" firstAttribute="top" secondItem="l1l-IO-8mY" secondAttribute="bottom" constant="9" id="hbG-gY-XqH"/>
                             <constraint firstAttribute="leadingMargin" secondItem="zMg-ne-kXB" secondAttribute="leading" id="lzw-4r-cXv"/>
@@ -1010,7 +1039,10 @@ To get started, tap the plus!
                             <constraint firstItem="dHn-RD-4X3" firstAttribute="centerY" secondItem="LYD-Ub-rKK" secondAttribute="centerY" id="nj5-FF-8Hr"/>
                             <constraint firstAttribute="trailingMargin" secondItem="lvr-00-OxW" secondAttribute="trailing" constant="-20" id="os9-Dq-WJ3"/>
                             <constraint firstItem="bd9-cw-sUJ" firstAttribute="top" secondItem="l1l-IO-8mY" secondAttribute="bottom" constant="11" id="pxI-2U-fc4"/>
+                            <constraint firstItem="jqs-jU-A9g" firstAttribute="top" secondItem="ma1-no-Epf" secondAttribute="bottom" constant="4" id="rJR-aW-uC8"/>
                             <constraint firstAttribute="leadingMargin" secondItem="Tmz-cn-9eH" secondAttribute="leading" id="tKQ-vN-WhZ"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="jTJ-su-Gr4" secondAttribute="leading" id="tlv-0C-FQf"/>
+                            <constraint firstItem="jqs-jU-A9g" firstAttribute="leading" secondItem="WuE-OV-quv" secondAttribute="trailing" constant="8" id="vmE-dp-7fI"/>
                             <constraint firstItem="JUT-JD-Nqw" firstAttribute="top" secondItem="dHn-RD-4X3" secondAttribute="bottom" constant="5" id="wY7-eR-xyd"/>
                             <constraint firstItem="lvr-00-OxW" firstAttribute="top" secondItem="l1l-IO-8mY" secondAttribute="bottom" constant="-20" id="yzp-Cz-KK3"/>
                         </constraints>
@@ -1027,6 +1059,7 @@ To get started, tap the plus!
                     <connections>
                         <outlet property="dismissButton" destination="Tmz-cn-9eH" id="mK1-0f-MIU"/>
                         <outlet property="expirationDatePicker" destination="ma1-no-Epf" id="usf-jf-IaF"/>
+                        <outlet property="expirationReminderSwitch" destination="jqs-jU-A9g" id="8Mp-OA-bS7"/>
                         <outlet property="membershipIDTextField" destination="lIg-Nw-p4n" id="agW-G3-ody"/>
                         <outlet property="membershipNameTextField" destination="dHn-RD-4X3" id="rMH-oX-ek2"/>
                         <outlet property="saveButton" destination="bd9-cw-sUJ" id="mRp-uL-uas"/>
@@ -1082,7 +1115,7 @@ To get started, tap the plus!
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" reuseIdentifier="cell" id="uyV-fR-gOP" customClass="AnimalCollectionViewCell" customModule="Aquarium" customModuleProvider="target">
-                                        <rect key="frame" x="89.5" y="41" width="196" height="140"/>
+                                        <rect key="frame" x="90" y="41" width="196" height="140"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="196" height="140"/>
@@ -1131,7 +1164,7 @@ To get started, tap the plus!
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Animal Fact Zone" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ekS-k9-O6b">
-                                <rect key="frame" x="16" y="37" width="343" height="22.5"/>
+                                <rect key="frame" x="16" y="37" width="343" height="19"/>
                                 <fontDescription key="fontDescription" name="TrajanPro-Regular" family="Trajan Pro" pointSize="19"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -1150,7 +1183,7 @@ To get started, tap the plus!
                                 </connections>
                             </button>
                             <searchBar contentMode="redraw" placeholder="Search for an animal!" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="erm-3E-mZe">
-                                <rect key="frame" x="0.0" y="568" width="375" height="50"/>
+                                <rect key="frame" x="-4" y="567" width="383" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="nc9-6L-h5o"/>
                                 </constraints>
@@ -1160,23 +1193,43 @@ To get started, tap the plus!
                                     <outlet property="delegate" destination="efd-Aa-KzA" id="7oP-Q3-n8m"/>
                                 </connections>
                             </searchBar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6yd-VI-7GF">
+                                <rect key="frame" x="0.0" y="617" width="375" height="1"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="X4J-lG-VYR"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ufK-UP-ctO">
+                                <rect key="frame" x="-4" y="617" width="383" height="1"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="0YT-Fm-QY2"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="hfj-U2-cWa" firstAttribute="top" secondItem="psT-nt-buZ" secondAttribute="bottom" constant="50" id="7KN-p7-nkt"/>
+                            <constraint firstItem="ufK-UP-ctO" firstAttribute="top" secondItem="erm-3E-mZe" secondAttribute="bottom" id="7fN-aD-zTf"/>
                             <constraint firstItem="VGm-vU-f89" firstAttribute="leading" secondItem="2yP-h4-CSn" secondAttribute="trailing" constant="-46" id="9Mn-BL-wf5"/>
                             <constraint firstAttribute="trailing" secondItem="psT-nt-buZ" secondAttribute="trailing" id="9id-AK-eqg"/>
-                            <constraint firstItem="hfj-U2-cWa" firstAttribute="top" secondItem="erm-3E-mZe" secondAttribute="bottom" id="CVD-mW-at0"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ekS-k9-O6b" secondAttribute="trailing" id="DWY-Dh-DLN"/>
                             <constraint firstItem="psT-nt-buZ" firstAttribute="top" secondItem="VGm-vU-f89" secondAttribute="bottom" constant="-26" id="Emn-US-ry8"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="erm-3E-mZe" secondAttribute="trailing" constant="-16" id="IT2-fc-Oya"/>
+                            <constraint firstItem="ufK-UP-ctO" firstAttribute="leading" secondItem="yaF-kY-vGA" secondAttribute="leadingMargin" constant="-20" id="FKe-TE-fM6"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="erm-3E-mZe" secondAttribute="trailing" constant="-20" id="IT2-fc-Oya"/>
                             <constraint firstAttribute="trailing" secondItem="VGm-vU-f89" secondAttribute="trailing" id="JXQ-Tn-mAs"/>
                             <constraint firstItem="2yP-h4-CSn" firstAttribute="top" secondItem="VGm-vU-f89" secondAttribute="bottom" constant="-47" id="KZS-Se-eTY"/>
                             <constraint firstItem="VGm-vU-f89" firstAttribute="top" secondItem="yaF-kY-vGA" secondAttribute="top" id="Mg1-sF-Ho0"/>
+                            <constraint firstItem="hfj-U2-cWa" firstAttribute="top" secondItem="ufK-UP-ctO" secondAttribute="bottom" id="Oqt-ux-h7C"/>
                             <constraint firstItem="psT-nt-buZ" firstAttribute="leading" secondItem="yaF-kY-vGA" secondAttribute="leading" id="P7z-2f-vgz"/>
                             <constraint firstItem="VGm-vU-f89" firstAttribute="leading" secondItem="yaF-kY-vGA" secondAttribute="leading" id="WNH-N7-tOP"/>
-                            <constraint firstItem="erm-3E-mZe" firstAttribute="leading" secondItem="yaF-kY-vGA" secondAttribute="leadingMargin" constant="-16" id="rLE-br-B1f"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ufK-UP-ctO" secondAttribute="trailing" constant="-20" id="YjJ-aR-YL4"/>
+                            <constraint firstItem="hfj-U2-cWa" firstAttribute="top" secondItem="6yd-VI-7GF" secondAttribute="bottom" id="f5P-ZF-J1k"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="6yd-VI-7GF" secondAttribute="trailing" constant="-16" id="hDU-Pu-9hg"/>
+                            <constraint firstItem="erm-3E-mZe" firstAttribute="leading" secondItem="yaF-kY-vGA" secondAttribute="leadingMargin" constant="-20" id="rLE-br-B1f"/>
                             <constraint firstItem="ekS-k9-O6b" firstAttribute="top" secondItem="zgj-Mo-Hfr" secondAttribute="bottom" constant="17" id="w6B-9N-lQz"/>
+                            <constraint firstItem="6yd-VI-7GF" firstAttribute="leading" secondItem="yaF-kY-vGA" secondAttribute="leadingMargin" constant="-16" id="xTM-5w-AoW"/>
                             <constraint firstAttribute="leadingMargin" secondItem="ekS-k9-O6b" secondAttribute="leading" id="yDm-dx-7WF"/>
                         </constraints>
                     </view>
@@ -1202,7 +1255,7 @@ To get started, tap the plus!
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="1194" y="1148"/>
+            <point key="canvasLocation" x="1192.8" y="1147.3763118440781"/>
         </scene>
         <!--Main Exhibit Table View Controller-->
         <scene sceneID="w5i-fB-l7R">
@@ -1342,7 +1395,7 @@ To get started, tap the plus!
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Animal Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="uS7-2V-fie">
-                                <rect key="frame" x="59" y="45" width="257" height="26"/>
+                                <rect key="frame" x="59" y="45" width="257" height="22"/>
                                 <fontDescription key="fontDescription" name="TrajanPro-Regular" family="Trajan Pro" pointSize="22"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -1362,19 +1415,19 @@ To get started, tap the plus!
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ko2-zq-VuQ">
-                                <rect key="frame" x="8" y="82" width="359" height="197"/>
+                                <rect key="frame" x="8" y="78" width="359" height="197"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Ko2-zq-VuQ" secondAttribute="height" multiplier="359:197" id="ft1-8d-qKa"/>
                                 </constraints>
                             </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ttZ-HF-0Ca">
-                                <rect key="frame" x="0.0" y="287" width="375" height="331"/>
+                                <rect key="frame" x="0.0" y="283" width="375" height="335"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Fw-G4-98q">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1938.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1600"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zQX-Cs-Ejz">
-                                                <rect key="frame" x="8" y="8" width="359" height="1922.5"/>
+                                                <rect key="frame" x="8" y="8" width="359" height="1584"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <string key="text">Custom Categories: Invertebrates
 Pacific Sea Nettle Jellyfish
@@ -1468,7 +1521,7 @@ Individual sea jellies are either male or female and reproduce sexually. Eggs an
                                         <rect key="frame" x="0.0" y="28" width="383" height="402"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WYx-wp-hcK" id="Q7r-st-F9g">
-                                            <rect key="frame" x="0.0" y="0.0" width="383" height="401.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="383" height="401"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Animal Name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Sc-st-KN3">
@@ -1648,7 +1701,7 @@ Individual sea jellies are either male or female and reproduce sexually. Eggs an
                                 </constraints>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nd2-IS-BBg">
-                                <rect key="frame" x="20" y="292" width="560" height="445"/>
+                                <rect key="frame" x="20" y="292" width="560" height="454"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Nd2-IS-BBg" secondAttribute="height" multiplier="140:43" constant="-647.90697674418607" id="1BW-Lb-tXH"/>
@@ -1687,7 +1740,7 @@ Call (801)355-3474 ext. 222 to book your Penguin Encounter!
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="63a-jR-kjf">
-                                <rect key="frame" x="20" y="745" width="560" height="1"/>
+                                <rect key="frame" x="0.0" y="750" width="600" height="1"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="NEN-mW-5Vw"/>
@@ -1697,14 +1750,14 @@ Call (801)355-3474 ext. 222 to book your Penguin Encounter!
                         <color key="backgroundColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="leadingMargin" secondItem="Ms6-XZ-e5D" secondAttribute="leading" id="0wz-yQ-cOM"/>
-                            <constraint firstItem="HaR-73-Dwp" firstAttribute="top" secondItem="63a-jR-kjf" secondAttribute="bottom" constant="5" id="2bP-1i-cGE"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="63a-jR-kjf" secondAttribute="trailing" id="5fD-cC-kg7"/>
+                            <constraint firstItem="HaR-73-Dwp" firstAttribute="top" secondItem="63a-jR-kjf" secondAttribute="bottom" id="2bP-1i-cGE"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="63a-jR-kjf" secondAttribute="trailing" constant="-20" id="5fD-cC-kg7"/>
                             <constraint firstAttribute="leadingMargin" secondItem="tbE-vr-Iig" secondAttribute="leading" id="9U7-S6-u26"/>
                             <constraint firstAttribute="trailingMargin" secondItem="VpU-6U-ytV" secondAttribute="trailing" id="AdB-5u-zRE"/>
                             <constraint firstAttribute="leadingMargin" secondItem="Nd2-IS-BBg" secondAttribute="leading" id="BDO-7X-myZ"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="63a-jR-kjf" secondAttribute="leading" id="EOr-8h-xlJ"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="63a-jR-kjf" secondAttribute="leading" constant="20" id="EOr-8h-xlJ"/>
                             <constraint firstItem="tbE-vr-Iig" firstAttribute="top" secondItem="LL3-mG-mnS" secondAttribute="bottom" constant="-28" id="G21-xr-7k6"/>
-                            <constraint firstItem="63a-jR-kjf" firstAttribute="top" secondItem="Nd2-IS-BBg" secondAttribute="bottom" constant="8" id="QVf-YG-fwx"/>
+                            <constraint firstItem="63a-jR-kjf" firstAttribute="top" secondItem="Nd2-IS-BBg" secondAttribute="bottom" constant="4" id="QVf-YG-fwx"/>
                             <constraint firstItem="Nd2-IS-BBg" firstAttribute="top" secondItem="Ms6-XZ-e5D" secondAttribute="bottom" constant="10" id="Y8h-t4-KcY"/>
                             <constraint firstItem="Ms6-XZ-e5D" firstAttribute="centerX" secondItem="FgV-00-urt" secondAttribute="centerX" id="fYd-pv-nms"/>
                             <constraint firstAttribute="trailingMargin" secondItem="tbE-vr-Iig" secondAttribute="trailing" id="gKj-ag-lcx"/>
@@ -1726,7 +1779,7 @@ Call (801)355-3474 ext. 222 to book your Penguin Encounter!
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Abq-wb-dgp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-627" y="1239"/>
+            <point key="canvasLocation" x="-627.20000000000005" y="1238.6806596701649"/>
         </scene>
         <!--QR Scanner-->
         <scene sceneID="ouM-M7-Gll">
@@ -1961,7 +2014,7 @@ Call (801)355-3474 ext. 222 to book your Penguin Encounter!
                                 </constraints>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="144" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1RR-lf-6Xi">
-                                <rect key="frame" x="-4" y="142" width="383" height="468"/>
+                                <rect key="frame" x="-4" y="142" width="383" height="473"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="feedCell" rowHeight="144" id="S9S-cD-9fi" customClass="AnimalFeedTableViewCell" customModule="Aquarium" customModuleProvider="target">
@@ -2087,7 +2140,7 @@ Call (801)355-3474 ext. 222 to book your Penguin Encounter!
                                 </connections>
                             </segmentedControl>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xQd-oe-lCc">
-                                <rect key="frame" x="16" y="612" width="343" height="1"/>
+                                <rect key="frame" x="-4" y="617" width="383" height="1"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="Jdx-AG-uZw"/>
@@ -2129,7 +2182,7 @@ Call (801)355-3474 ext. 222 to book your Penguin Encounter!
                             <constraint firstItem="Bwl-JV-Cza" firstAttribute="top" secondItem="Ams-48-QmZ" secondAttribute="bottom" constant="16" id="Cx7-cq-6gb"/>
                             <constraint firstAttribute="leadingMargin" secondItem="Bwl-JV-Cza" secondAttribute="leading" constant="-52" id="E8m-ZB-mRr"/>
                             <constraint firstItem="xQd-oe-lCc" firstAttribute="top" secondItem="1RR-lf-6Xi" secondAttribute="bottom" constant="2" id="FFt-3a-aMt"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="xQd-oe-lCc" secondAttribute="leading" id="H7p-Tc-B3B"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="xQd-oe-lCc" secondAttribute="leading" constant="20" id="H7p-Tc-B3B"/>
                             <constraint firstItem="1RR-lf-6Xi" firstAttribute="top" secondItem="VSg-Yz-0Nd" secondAttribute="bottom" constant="8" id="HLS-zz-KzY"/>
                             <constraint firstItem="VSg-Yz-0Nd" firstAttribute="trailing" secondItem="d9f-3L-BKK" secondAttribute="trailingMargin" id="KKN-qU-eDQ"/>
                             <constraint firstItem="Bwl-JV-Cza" firstAttribute="top" secondItem="Ams-48-QmZ" secondAttribute="bottom" constant="10" id="MeQ-Xu-lXK"/>
@@ -2138,11 +2191,11 @@ Call (801)355-3474 ext. 222 to book your Penguin Encounter!
                             <constraint firstAttribute="leadingMargin" secondItem="Bwl-JV-Cza" secondAttribute="leading" id="QPK-Xp-Y2u"/>
                             <constraint firstItem="GJ3-Kb-3Fx" firstAttribute="top" secondItem="Ams-48-QmZ" secondAttribute="bottom" constant="-20" id="Sve-Ej-pAH"/>
                             <constraint firstItem="4zy-sE-J8Q" firstAttribute="leading" secondItem="d9f-3L-BKK" secondAttribute="leadingMargin" constant="516" id="Vi2-5e-PCW"/>
-                            <constraint firstItem="ep7-ky-GFT" firstAttribute="top" secondItem="xQd-oe-lCc" secondAttribute="bottom" constant="5" id="bE2-br-RQS"/>
+                            <constraint firstItem="ep7-ky-GFT" firstAttribute="top" secondItem="xQd-oe-lCc" secondAttribute="bottom" id="bE2-br-RQS"/>
                             <constraint firstAttribute="trailingMargin" secondItem="4zy-sE-J8Q" secondAttribute="trailing" id="bMI-jN-OZQ"/>
                             <constraint firstItem="Bwl-JV-Cza" firstAttribute="top" secondItem="Ams-48-QmZ" secondAttribute="bottom" constant="16" id="cNy-MA-9Cz"/>
                             <constraint firstItem="VSg-Yz-0Nd" firstAttribute="leading" secondItem="d9f-3L-BKK" secondAttribute="leadingMargin" id="eJX-4a-Qgc"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="xQd-oe-lCc" secondAttribute="trailing" id="kx0-uk-EUq"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="xQd-oe-lCc" secondAttribute="trailing" constant="-20" id="kx0-uk-EUq"/>
                             <constraint firstItem="Bwl-JV-Cza" firstAttribute="leading" secondItem="d9f-3L-BKK" secondAttribute="leadingMargin" id="ocb-UH-21m"/>
                             <constraint firstItem="Bwl-JV-Cza" firstAttribute="centerX" secondItem="d9f-3L-BKK" secondAttribute="centerX" constant="-26" id="sX4-hk-Gak"/>
                             <constraint firstItem="VSg-Yz-0Nd" firstAttribute="leading" secondItem="1RR-lf-6Xi" secondAttribute="leading" constant="20" id="vEE-NJ-MiQ"/>
@@ -2175,7 +2228,7 @@ Call (801)355-3474 ext. 222 to book your Penguin Encounter!
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b0x-dR-8uk" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <swipeGestureRecognizer direction="right" id="4AG-Ps-Ejv"/>
             </objects>
-            <point key="canvasLocation" x="2116" y="-280"/>
+            <point key="canvasLocation" x="2116" y="-280.20989505247377"/>
         </scene>
         <!--Map-->
         <scene sceneID="UAB-qu-8Xb">
@@ -2190,7 +2243,7 @@ Call (801)355-3474 ext. 222 to book your Penguin Encounter!
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsPointsOfInterest="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yu1-Oe-RAM">
-                                <rect key="frame" x="0.0" y="8" width="375" height="610"/>
+                                <rect key="frame" x="0.0" y="53" width="375" height="564"/>
                                 <gestureRecognizers/>
                                 <connections>
                                     <outlet property="delegate" destination="hsF-ni-6Pt" id="VsX-3J-WKn"/>
@@ -2232,7 +2285,7 @@ Call (801)355-3474 ext. 222 to book your Penguin Encounter!
                                 </connections>
                             </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Map" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Hg-rg-M6e">
-                                <rect key="frame" x="16" y="37" width="343" height="22.5"/>
+                                <rect key="frame" x="16" y="37" width="343" height="19"/>
                                 <fontDescription key="fontDescription" name="TrajanPro-Regular" family="Trajan Pro" pointSize="19"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -2252,15 +2305,15 @@ Call (801)355-3474 ext. 222 to book your Penguin Encounter!
                         <color key="backgroundColor" red="0.25273759232549942" green="0.42430402436355552" blue="0.58250713832487311" alpha="0.3026273544520548" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="DqD-HU-15n" firstAttribute="leading" secondItem="YLr-US-Y15" secondAttribute="leadingMargin" id="0y6-dw-yhR"/>
+                            <constraint firstItem="Yu1-Oe-RAM" firstAttribute="top" secondItem="FfK-PC-Pnp" secondAttribute="bottom" constant="33" id="GFZ-Jv-6NB"/>
                             <constraint firstAttribute="trailingMargin" secondItem="9Hg-rg-M6e" secondAttribute="trailing" id="Gvk-Nq-MMv"/>
-                            <constraint firstItem="R93-yq-5bn" firstAttribute="top" secondItem="Yu1-Oe-RAM" secondAttribute="bottom" id="HUw-ek-gQz"/>
+                            <constraint firstItem="R93-yq-5bn" firstAttribute="top" secondItem="Yu1-Oe-RAM" secondAttribute="bottom" constant="1" id="Lun-xJ-wvf"/>
                             <constraint firstItem="Yu1-Oe-RAM" firstAttribute="leading" secondItem="YLr-US-Y15" secondAttribute="leading" id="PuA-nB-gaD"/>
                             <constraint firstItem="9Hg-rg-M6e" firstAttribute="top" secondItem="FfK-PC-Pnp" secondAttribute="bottom" constant="17" id="RON-4C-SiY"/>
                             <constraint firstItem="JnW-V9-rTl" firstAttribute="top" secondItem="xKd-2L-FBn" secondAttribute="bottom" constant="8" id="Vyc-c8-o9F"/>
                             <constraint firstItem="JnW-V9-rTl" firstAttribute="leading" secondItem="YLr-US-Y15" secondAttribute="leadingMargin" id="c48-fT-wmx"/>
                             <constraint firstItem="xKd-2L-FBn" firstAttribute="top" secondItem="FfK-PC-Pnp" secondAttribute="bottom" constant="-20" id="f6e-37-YVf"/>
                             <constraint firstAttribute="trailing" secondItem="Yu1-Oe-RAM" secondAttribute="trailing" id="gWl-Il-x3f"/>
-                            <constraint firstItem="Yu1-Oe-RAM" firstAttribute="top" secondItem="JnW-V9-rTl" secondAttribute="bottom" priority="750" constant="-114" id="hbW-k1-sKw"/>
                             <constraint firstAttribute="trailingMargin" secondItem="JnW-V9-rTl" secondAttribute="trailing" id="k8x-Zm-mkt"/>
                             <constraint firstAttribute="leadingMargin" secondItem="9Hg-rg-M6e" secondAttribute="leading" id="kVu-e2-hxd"/>
                             <constraint firstAttribute="trailingMargin" secondItem="xKd-2L-FBn" secondAttribute="trailing" constant="-20" id="mBK-tV-ffh"/>
@@ -2283,7 +2336,7 @@ Call (801)355-3474 ext. 222 to book your Penguin Encounter!
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="341.5" y="1263.5"/>
+            <point key="canvasLocation" x="340" y="1263.4182908545729"/>
         </scene>
         <!--Web View Controller-->
         <scene sceneID="Ef4-RT-QCI">

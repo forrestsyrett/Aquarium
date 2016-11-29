@@ -48,7 +48,6 @@ class MapKitViewController: UIViewController, MKMapViewDelegate, BottomSheetView
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         tabBarTint(view: self)
         
         bottomSheetViewController.delegate = self

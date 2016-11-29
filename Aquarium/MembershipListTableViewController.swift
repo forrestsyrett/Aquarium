@@ -117,12 +117,11 @@ class MembershipListTableViewController: UIViewController, UITableViewDelegate, 
             let membership = MembershipCardController.sharedMembershipController.memberships[(indexPath as NSIndexPath).row]
             
             MembershipCardController.sharedMembershipController.removeMembership(membership)
-            
             // Delete the row from the data source
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        }
     }
     
     deinit {

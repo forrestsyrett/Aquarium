@@ -242,6 +242,7 @@
 				AA33919F1D6FA92800F92147 /* Main.storyboard */,
 				AA00A7861DD3D3E100B80DF6 /* WebViewController.swift */,
 				AAA20FF51D5E47A1009B3241 /* ContactUsViewController.swift */,
+				AA544CA01D0BB66C00DC1725 /* Info.plist */,
 				AA353AE11DCE8BAA00AD5490 /* Fonts */,
 				AA353AB41DCE5F3900AD5490 /* Map */,
 				AA8441CF1D556F3C000238C1 /* Main Tab Bar Items */,
@@ -252,7 +253,6 @@
 				AA544C9B1D0BB66C00DC1725 /* Assets.xcassets */,
 				0656D2CB1DE4C3150014BBF0 /* Unused */,
 				AA544C9D1D0BB66C00DC1725 /* LaunchScreen.storyboard */,
-				AA544CA01D0BB66C00DC1725 /* Info.plist */,
 			);
 			path = Aquarium;
 			sourceTree = "<group>";
