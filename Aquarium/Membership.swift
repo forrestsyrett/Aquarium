@@ -13,41 +13,47 @@ import UIKit
 class MembershipCard: Equatable {
     
     
-    fileprivate var memberNameKey = "memberName"
+    fileprivate var firstNameKey = "firstName"
+    fileprivate var lastNameKey = "lastName"
     fileprivate var memberIDNumberKey = "memberID"
     fileprivate var barcodeImageKey = "barcodeImage"
     fileprivate var expirationDateKey = "date"
     
     
     var memberID: String
-    var memberName: String
+    var firstName: String
+    var lastName: String
     var barcodeImageString: String
     var expirationDate: Date
     
     
-    init(memberID: String, memberName: String, barcodeImageString: String, expirationDate: Date) {
+    init(memberID: String, firstName: String, lastName: String, barcodeImageString: String, expirationDate: Date) {
         
         self.memberID = memberID
-        self.memberName = memberName
+        self.firstName = firstName
+        self.lastName = lastName
         self.barcodeImageString = barcodeImageString
         self.expirationDate = expirationDate
         
     }
     init?(dictionary: Dictionary<String, AnyObject>) {
         guard let memberID = dictionary[memberIDNumberKey],
-            let memberName = dictionary[memberNameKey],
+            let firstName = dictionary[firstNameKey],
+            let lastName = dictionary[lastNameKey],
             let barcodeImage = dictionary[barcodeImageKey],
         let expirationDate = dictionary[expirationDateKey]
             else {
                 self.barcodeImageKey = ""
-                self.memberNameKey = ""
+                self.firstNameKey = ""
+                self.lastNameKey = ""
                 self.memberID = ""
                 self.expirationDate = Date(timeInterval: 1.0, since: Date())
                 return nil
         }
         
         self.memberID = memberID as! String
-        self.memberName = memberName as! String
+        self.firstName = firstName as! String
+        self.lastName = lastName as! String
         self.barcodeImageString = barcodeImage as! String
         self.expirationDate = expirationDate as! Date
         
@@ -56,7 +62,8 @@ class MembershipCard: Equatable {
     func dictionaryCopy() -> Dictionary<String, AnyObject> {
         let dictionary = [
             memberIDNumberKey: memberID.self,
-            memberNameKey: memberName.self,
+            firstNameKey: firstName.self,
+            lastNameKey: lastName.self,
             barcodeImageKey: barcodeImageString.self,
             expirationDateKey: expirationDate.self] as [String : Any]
         

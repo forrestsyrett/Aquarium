@@ -95,7 +95,9 @@ class MembershipListTableViewController: UIViewController, UITableViewDelegate, 
         }
         
         // Configure the cell...
-        cell.memberNameLabel.text = membership.memberName
+        cell.firstNameLabel.isHidden = true
+        cell.lastNameLabel.isHidden = true
+        cell.fullNameLabel.text = "\(membership.firstName) \(membership.lastName)"
         cell.membershipIDLabel.text = membership.memberID
         cell.barcodeImage.image = barcodefromString(membership.memberID)
         

@@ -42,7 +42,8 @@ fileprivate func > <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
 
 class AddNewMembershipViewController: UIViewController, UITextFieldDelegate, UNUserNotificationCenterDelegate {
     
-    @IBOutlet var membershipNameTextField: UITextField!
+    @IBOutlet weak var firstNameTextField: UITextField!
+    @IBOutlet weak var lastNameTextField: UITextField!
     @IBOutlet var membershipIDTextField: UITextField!
     @IBOutlet weak var expirationDatePicker: UIDatePicker!
     @IBOutlet weak var dismissButton: UIButton!
@@ -58,11 +59,12 @@ class AddNewMembershipViewController: UIViewController, UITextFieldDelegate, UNU
         gradient(self.view)
         transparentNavigationBar(self)
         
-        membershipNameTextField.delegate = self
+        firstNameTextField.delegate = self
+        lastNameTextField.delegate = self
         membershipIDTextField.delegate = self
         transparentNavigationBar(self)
         
-        if membershipNameTextField.text?.isEmpty == true {
+        if firstNameTextField.text?.isEmpty == true {
             saveButton.isEnabled = false
             
             dismissButton.layer.cornerRadius = 17.0
@@ -81,47 +83,52 @@ class AddNewMembershipViewController: UIViewController, UITextFieldDelegate, UNU
 //            saveButton.enabled = true
 //        }
         membershipIDTextField.resignFirstResponder()
-        membershipNameTextField.resignFirstResponder()
+        firstNameTextField.resignFirstResponder()
+        lastNameTextField.resignFirstResponder()
         return true
     }
 
     
     @IBAction func memberIDTextFieldEditingChanged(_ sender: AnyObject) {
         
-        if membershipNameTextField.text?.characters.count <= 0 || membershipIDTextField.text?.characters.count <= 0 {
+        if firstNameTextField.text?.characters.count <= 0 || membershipIDTextField.text?.characters.count <= 0 || lastNameTextField.text?.characters.count <= 0 {
             saveButton.isEnabled = false
         } else if membershipIDTextField.text?.characters.count > 0 {
             saveButton.isEnabled = true
         }
     }
     
-    
-    @IBAction func memberNameTextFieldEditingChanged(_ sender: AnyObject) {
-        
-        if membershipNameTextField.text?.characters.count <= 0 || membershipIDTextField.text?.characters.count <= 0 {
-            saveButton.isEnabled = false
-        } else if membershipIDTextField.text?.characters.count > 0 {
-            saveButton.isEnabled = true
-        }
 
-    }
     
+    @IBAction func firstNameTextFieldEditingChanged(_ sender: Any) {
+        
+        if firstNameTextField.text?.characters.count <= 0 || lastNameTextField.text?.characters.count <= 0 || membershipIDTextField.text?.characters.count <= 0 {
+            saveButton.isEnabled = false
+        } else if membershipIDTextField.text?.characters.count > 0 {
+            saveButton.isEnabled = true
+        }
+    }
     
     
     @IBAction func saveButton(_ sender: AnyObject) {
         
-        if membership?.memberName == "" && membership?.memberID == "" { return }
+        if membership?.firstName == "" && membership?.memberID == "" { return }
         else {
             if let membership = self.membership {
-                membership.memberName = self.membershipNameTextField.text!
+                membership.firstName = self.firstNameTextField.text!
+                membership.lastName = self.lastNameTextField.text!
                 membership.memberID = self.membershipIDTextField.text!
                 membership.barcodeImageString = self.membershipIDTextField.text!
-                let date = self.expirationDatePicker.date
+           //     let date = self.expirationDatePicker.date
                 membership.expirationDate = self.expirationDatePicker.date
                 print(self.expirationDatePicker.date)
 
             } else {
-                let newMembership = MembershipCard(memberID: self.membershipIDTextField.text!, memberName: self.membershipNameTextField.text!, barcodeImageString: membershipIDTextField.text!, expirationDate: expirationDatePicker.date)
+                let newMembership = MembershipCard(memberID: self.membershipIDTextField.text!,
+                                                   
+                firstName: self.firstNameTextField.text!,
+                lastName: lastNameTextField.text!,
+                barcodeImageString: membershipIDTextField.text!, expirationDate: expirationDatePicker.date)
                 MembershipCardController.sharedMembershipController.addMembership(newMembership)
                 self.membership = newMembership
                 print(self.expirationDatePicker.date)
@@ -145,7 +152,8 @@ class AddNewMembershipViewController: UIViewController, UITextFieldDelegate, UNU
         self.membership = membership
         
         self.membershipIDTextField.text = membership.memberID
-        self.membershipNameTextField.text = membership.memberName
+        self.firstNameTextField.text = membership.firstName
+        self.lastNameTextField.text = membership.lastName
         self.expirationDatePicker.date = membership.expirationDate
     }
     
@@ -216,7 +224,12 @@ class AddNewMembershipViewController: UIViewController, UITextFieldDelegate, UNU
             default: break
             } */
             
+            if dayDifference == 0 {
+                day! = 1
+            }
             
+        } else  {
+            day = components.day! - 14
         }
         
         let newComponents = DateComponents(
@@ -236,15 +249,16 @@ class AddNewMembershipViewController: UIViewController, UITextFieldDelegate, UNU
         
         //Notification Content
         let content = UNMutableNotificationContent()
-        if let name = self.membershipNameTextField.text {
+        if let name = self.firstNameTextField.text {
             self.name = name
         content.title = "\(self.name), your Membership expires soon!"
         }
-        content.body = "Press for more options"
+        content.body = "Press for more options!"
         
         content.sound = UNNotificationSound(named: "fishFlop.m4r")
         content.categoryIdentifier = "category"
-        content.userInfo = ["customData": "test"]
+        content.userInfo = ["url": "https://tickets.thelivingplanet.com/WebStore/shop/PassLookup.aspx?RedirectURL=Renewal&SalesChannelDetailID=120041"]
+        
         
         
         // Notification Request
@@ -269,7 +283,7 @@ class AddNewMembershipViewController: UIViewController, UITextFieldDelegate, UNU
 
         let userInfo = response.notification.request.content.userInfo
         
-        if let customData = userInfo["customData"] as? String {
+        if let customData = userInfo["url"] as? String {
             print("Custom data received: \(customData)")
 
         
@@ -289,6 +303,10 @@ class AddNewMembershipViewController: UIViewController, UITextFieldDelegate, UNU
     
             case "reminder":
                 /// User Tapped Remind Me Later
+                print("Remind me later")
+                print("Remind me later")
+                print("Remind me later")
+                print("Remind me later")
                 print("Remind me later")
                 let newDate = Date(timeInterval: 10, since: Date())
                 scheduleExpirationReminder(date: newDate)
