@@ -134,6 +134,7 @@ class MapKitViewController: UIViewController, MKMapViewDelegate, BottomSheetView
             let firstFloorAnnotation = Annotation(coordinate: coordinate, title: title, subtitle: subtitle, type: type)
             
             mapView.addAnnotation(firstFloorAnnotation)
+            mapView.addAnnotation(self.currentLocationAnnotation)
             
         }
     }
@@ -152,6 +153,7 @@ class MapKitViewController: UIViewController, MKMapViewDelegate, BottomSheetView
 let secondFloorAnnotation = Annotation(coordinate: coordinate, title: title, subtitle: subtitle, type: type)
             
             mapView.addAnnotation(secondFloorAnnotation)
+            mapView.addAnnotation(self.currentLocationAnnotation)
         }
     }
     

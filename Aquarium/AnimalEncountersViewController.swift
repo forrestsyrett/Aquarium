@@ -10,13 +10,17 @@ import UIKit
 
 class AnimalEncountersViewController: UIViewController {
     
+    @IBOutlet weak var encounterButton: UIButton!
+    @IBOutlet weak var penguinEncounterImage: UIImageView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         
         gradient(self.view)
-        
-        
+        roundedCorners(self.encounterButton, cornerRadius: 5)
+        roundedCorners(self.penguinEncounterImage, cornerRadius: 5)
         
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
         navigationController?.navigationBar.tintColor = UIColor.white
@@ -24,13 +28,35 @@ class AnimalEncountersViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
+
     override func viewDidAppear(_ animated: Bool) {
     }
+    
+    @IBAction func bookYourEncounterButtonTapped(_ sender: Any) {
+        buttonBounceTouchUp(self.encounterButton)
+        
+        let callAlert = UIAlertController(title: "Call the Living Planet Aquarium?", message: "801-355-3474", preferredStyle: .alert)
+        let callAction = UIAlertAction(title: "Call", style: .default) { (callAlert) in
+            UIApplication.shared.openURL(URL(string: "tel://8013553474")!)
+        }
+        let cancelAlert = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        callAlert.addAction(callAction)
+        callAlert.addAction(cancelAlert)
+        
+        self.present(callAlert, animated: true, completion: nil)
+    }
+
+    
+    @IBAction func encounterButtonTouchDragExit(_ sender: Any) {
+        buttonBounceTouchUp(self.encounterButton)
+    }
+    @IBAction func encounterButtonTouchDragEnter(_ sender: Any) {
+        buttonBounceTouchDown(self.encounterButton)
+    }
+    @IBAction func encounterButtonTouchDown(_ sender: Any) {
+        buttonBounceTouchDown(self.encounterButton)
+    }
+    
     
     /*
      // MARK: - Navigation

@@ -9,9 +9,6 @@
 import UIKit
 import AVFoundation
 import SafariServices
-//import MetalKit
-//import MetalPerformanceShaders
-//import Accelerate
 
 
 
@@ -27,18 +24,7 @@ class QRScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsD
     @IBOutlet weak var alignQRCodeLabel: UILabel!
     @IBOutlet weak var scanButton: UIButton!
     
-    
-    ///////
-//    var Net: Inception3Net? = nil
-//    var device: MTLDevice!
-//    var commandQueue: MTLCommandQueue!
-//    var imageNum = 0
-//    var total = 6
-//    var textureLoader : MTKTextureLoader!
-//    var ciContext : CIContext!
-//    var sourceTexture : MTLTexture? = nil
-//    var camRan = false
-///////
+
     
     var captureSession: AVCaptureSession?
     var videoPreviewLayer: AVCaptureVideoPreviewLayer?
@@ -240,29 +226,7 @@ class QRScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsD
         cameraCheck()
 
         }
-    
-//    func runNetwork(){
-//        
-//        // to deliver optimal performance we leave some resources used in MPSCNN to be released at next call of autoreleasepool,
-//        // so the user can decide the appropriate time to release this
-//        autoreleasepool{
-//            // encoding command buffer
-//            let commandBuffer = commandQueue.makeCommandBuffer()
-//            
-//            // encode all layers of network on present commandBuffer, pass in the input image MTLTexture
-//            Net!.forward(commandBuffer: commandBuffer, sourceTexture: sourceTexture)
-//            
-//            // commit the commandBuffer and wait for completion on CPU
-//            commandBuffer.commit()
-//            commandBuffer.waitUntilCompleted()
-//            
-//            // display top-5 predictions for what the object should be labelled
-//            let label = Net!.getLabel()
-//            alignQRCodeLabel.text = label
-//            alignQRCodeLabel.isHidden = false
-//        }
-//        
-//    }
+
 }
 
 

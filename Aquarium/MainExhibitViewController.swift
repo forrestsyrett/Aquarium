@@ -38,7 +38,7 @@ class MainExhibitViewController: UIViewController, FlowingMenuDelegate, UICollec
         dataSourceForSearchResult = [Animals]()
         
         
-        
+        tabBarTint(view: self)
         transparentNavigationBar(self)
         gradient(self.view)
         
@@ -124,6 +124,7 @@ class MainExhibitViewController: UIViewController, FlowingMenuDelegate, UICollec
     
     func resignKeyboard() {
         searchBar.resignFirstResponder()
+        setSearchBarView()
     }
     func setSearchBarView() {
         searchBar.frame = CGRect(x: 0, y: 637, width: view.frame.width, height: 50)
@@ -137,6 +138,7 @@ class MainExhibitViewController: UIViewController, FlowingMenuDelegate, UICollec
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillBeHidden(notification:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(MainExhibitViewController.resignKeyboard), name: Notification.Name(rawValue: "enteringBackground"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(MainExhibitViewController.setSearchBarView), name: Notification.Name(rawValue: "active"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(MainExhibitViewController.resignKeyboard), name: Notification.Name(rawValue: "exhibitsAppeared"), object: nil)
     }
     
     func removeObservers() {
@@ -146,6 +148,7 @@ class MainExhibitViewController: UIViewController, FlowingMenuDelegate, UICollec
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name(rawValue: "enteringBackground" ), object: nil)
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name(rawValue: "active" ), object: nil)
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name(rawValue: "allAnimals" ), object: nil)
+        NotificationCenter.default.removeObserver(self, name: Notification.Name(rawValue: "exhibitsAppeared"), object: nil)
     }
     
     func keyboardWasShown(notification: NSNotification) {
@@ -170,8 +173,8 @@ class MainExhibitViewController: UIViewController, FlowingMenuDelegate, UICollec
     
     func keyboardWillBeHidden(notification: NSNotification) {
         var info = notification.userInfo!
-        let keyboardSize = (info[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue
-        let keyboardHeight: CGFloat = (keyboardSize?.height)!
+   //     let keyboardSize = (info[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue
+   //     let keyboardHeight: CGFloat = (keyboardSize?.height)!
         
         UIView.animate(withDuration: 0.20, delay: 0.0, options: UIViewAnimationOptions.curveEaseIn, animations: {
             
@@ -313,6 +316,7 @@ class MainExhibitViewController: UIViewController, FlowingMenuDelegate, UICollec
     
         func flowingMenuNeedsPresentMenu(_ flowingMenu: FlowingMenuTransitionManager) {
             performSegue(withIdentifier: "toExhibits", sender: self)
+            resignKeyboard()
         }
         
         func flowingMenuNeedsDismissMenu(_ flowingMenu: FlowingMenuTransitionManager) {

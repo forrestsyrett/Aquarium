@@ -11,8 +11,12 @@ import PushKit
 import OneSignal
 import UserNotifications
 
+
+
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
+  
     
     var window: UIWindow?
     
@@ -102,7 +106,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         MembershipShortcutAction(shortcutItem)
     }
     
- 
+
     
     
     enum ShortCutIdentifier: String {

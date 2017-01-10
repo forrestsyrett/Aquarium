@@ -71,8 +71,6 @@ class AddNewMembershipViewController: UIViewController, UITextFieldDelegate, UNU
         }
        
     }
-
-    
     
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -320,6 +318,10 @@ class AddNewMembershipViewController: UIViewController, UITextFieldDelegate, UNU
         completionHandler()
     }
 
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void){
+        
+        completionHandler([.alert, .sound])
+    }
     
     
 }
