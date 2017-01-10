@@ -10,7 +10,9 @@ import UIKit
 
 class MembershipCardTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var memberNameLabel: UILabel!
+    @IBOutlet weak var fullNameLabel: UILabel!
+    @IBOutlet weak var firstNameLabel: UILabel!
+    @IBOutlet weak var lastNameLabel: UILabel!
     @IBOutlet weak var barcodeImage: UIImageView!
     @IBOutlet weak var membershipIDLabel: UILabel!
     @IBOutlet weak var expirationDateLabel: UILabel!

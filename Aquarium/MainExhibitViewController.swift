@@ -9,7 +9,7 @@
 import UIKit
 import FlowingMenu
 
-class MainExhibitViewController: UIViewController, FlowingMenuDelegate, UICollectionViewDelegate, UICollectionViewDataSource, MainExhibitTableViewControllerDelegate, UISearchBarDelegate {
+class MainExhibitViewController: UIViewController, FlowingMenuDelegate, UICollectionViewDelegate, UICollectionViewDataSource, MainExhibitTableViewControllerDelegate, UISearchBarDelegate, UIGestureRecognizerDelegate {
     
     
     @IBOutlet weak var collectionView: UICollectionView!
@@ -23,11 +23,12 @@ class MainExhibitViewController: UIViewController, FlowingMenuDelegate, UICollec
     var searchBarBoundsY: CGFloat?
     @IBOutlet weak var searchBar: UISearchBar!
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        
+
         
         allAnimals = [Animals.arapaima, Animals.binturong, Animals.cloudedLeopards, Animals.eel, Animals.greenSeaTurtle, Animals.hornbill, Animals.otters, Animals.penguins, Animals.tortoise, Animals.toucan, Animals.zebraShark, Animals.jellyfish]
         allAnimalsSorted = allAnimals.sorted { $0.info.name < $1.info.name }
@@ -37,7 +38,7 @@ class MainExhibitViewController: UIViewController, FlowingMenuDelegate, UICollec
         dataSourceForSearchResult = [Animals]()
         
         
-        
+        tabBarTint(view: self)
         transparentNavigationBar(self)
         gradient(self.view)
         
@@ -54,11 +55,28 @@ class MainExhibitViewController: UIViewController, FlowingMenuDelegate, UICollec
         
         registerForKeyboardNotifications()
         
+        
+        
+        
+        let downGesture = UIPanGestureRecognizer.init(target: self,action: #selector(MainExhibitViewController.panGesture))
+        searchBar.addGestureRecognizer(downGesture)
+        
+        downGesture.delegate = self
+        
+        
+    }
+    
+    func panGesture(recognizer: UIPanGestureRecognizer) {
+        
+        if !recognizer.isUp(view: self.searchBar) {
+            self.searchBar.resignFirstResponder()
+        }
     }
     
     
+
+    
     override func viewWillAppear(_ animated: Bool) {
-        collectionView.reloadData()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -69,8 +87,13 @@ class MainExhibitViewController: UIViewController, FlowingMenuDelegate, UICollec
     
     
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        searchBarIsActive = true
         allAnimals = allAnimalsSorted
     }
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        searchBarIsActive = false
+    }
+    
     
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
@@ -88,19 +111,20 @@ class MainExhibitViewController: UIViewController, FlowingMenuDelegate, UICollec
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         self.searchBar.resignFirstResponder()
         self.searchBarIsActive = false
-        searchBar.text = ""
+        self.searchBar.text = ""
         self.collectionView.reloadData()
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         self.searchBarIsActive = false
-        searchBar.text = ""
         self.searchBar.resignFirstResponder()
+        
     }
     ////////////////////////////////////////////////////////
     
     func resignKeyboard() {
         searchBar.resignFirstResponder()
+        setSearchBarView()
     }
     func setSearchBarView() {
         searchBar.frame = CGRect(x: 0, y: 637, width: view.frame.width, height: 50)
@@ -114,6 +138,7 @@ class MainExhibitViewController: UIViewController, FlowingMenuDelegate, UICollec
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillBeHidden(notification:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(MainExhibitViewController.resignKeyboard), name: Notification.Name(rawValue: "enteringBackground"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(MainExhibitViewController.setSearchBarView), name: Notification.Name(rawValue: "active"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(MainExhibitViewController.resignKeyboard), name: Notification.Name(rawValue: "exhibitsAppeared"), object: nil)
     }
     
     func removeObservers() {
@@ -123,6 +148,7 @@ class MainExhibitViewController: UIViewController, FlowingMenuDelegate, UICollec
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name(rawValue: "enteringBackground" ), object: nil)
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name(rawValue: "active" ), object: nil)
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name(rawValue: "allAnimals" ), object: nil)
+        NotificationCenter.default.removeObserver(self, name: Notification.Name(rawValue: "exhibitsAppeared"), object: nil)
     }
     
     func keyboardWasShown(notification: NSNotification) {
@@ -131,7 +157,7 @@ class MainExhibitViewController: UIViewController, FlowingMenuDelegate, UICollec
         let keyboardSize = (info[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue
         let keyboardHeight: CGFloat = (keyboardSize?.height)!
         
-        UIView.animate(withDuration: 0.40, delay: 0, options: UIViewAnimationOptions.curveEaseInOut, animations: {
+        UIView.animate(withDuration: 0.40, delay: 0.027, options: UIViewAnimationOptions.curveEaseIn, animations: {
             
             self.searchBar.frame = CGRect(x: 0, y: (self.searchBar.frame.origin.y - keyboardHeight + 50), width: self.view.bounds.width, height: 50)
         }, completion: nil)
@@ -147,13 +173,13 @@ class MainExhibitViewController: UIViewController, FlowingMenuDelegate, UICollec
     
     func keyboardWillBeHidden(notification: NSNotification) {
         var info = notification.userInfo!
-        let keyboardSize = (info[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue
-        let keyboardHeight: CGFloat = (keyboardSize?.height)!
+   //     let keyboardSize = (info[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue
+   //     let keyboardHeight: CGFloat = (keyboardSize?.height)!
         
-        UIView.animate(withDuration: 0.40, delay: 0, options: UIViewAnimationOptions.curveEaseInOut, animations: {
+        UIView.animate(withDuration: 0.20, delay: 0.0, options: UIViewAnimationOptions.curveEaseIn, animations: {
             
             
-            self.searchBar.frame = CGRect(x: 0, y: (self.searchBar.frame.origin.y + keyboardHeight - 50), width: self.view.bounds.width, height: 50)
+            self.searchBar.frame.origin.y = 637
         }, completion: nil)
         
         self.view.endEditing(true)
@@ -170,16 +196,16 @@ class MainExhibitViewController: UIViewController, FlowingMenuDelegate, UICollec
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        if self.searchBarIsActive {
+        if self.searchBarIsActive && (self.searchBar.text?.characters.count)! > 0 {
             return self.dataSourceForSearchResult!.count
-        }
+        } else {
         return allAnimals.count
-    }
+        }}
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! AnimalCollectionViewCell
         
-        if self.searchBarIsActive {
+        if self.searchBarIsActive && (self.searchBar.text?.characters.count)! > 0 {
             cell.animalNameLabel.text = self.dataSourceForSearchResult?[indexPath.row].info.name
             cell.animalImage.image = self.dataSourceForSearchResult?[indexPath.row].info.animalImage
         } else {
@@ -205,6 +231,15 @@ class MainExhibitViewController: UIViewController, FlowingMenuDelegate, UICollec
         
     }
     
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        searchBarIsActive = false
+        searchBar.resignFirstResponder()
+    }
+    
+    
+    
     // MARK: - Gallery Selected Delegate Methods
     
     func gallerySelected(indexPath: Int) {
@@ -218,7 +253,6 @@ class MainExhibitViewController: UIViewController, FlowingMenuDelegate, UICollec
         }
         self.collectionView.reloadData()
         menu?.dismiss(animated: true, completion: nil)
-        print("delegate Heard")
     }
     
     ///////////////
@@ -229,6 +263,14 @@ class MainExhibitViewController: UIViewController, FlowingMenuDelegate, UICollec
         allAnimals = allAnimalsSorted
         self.collectionView.reloadData()
         menu?.dismiss(animated: true, completion: nil)
+    }
+    
+    func dimBackground() {
+    /*   if searchBarIsActive {
+            dimView.isHidden = false
+        } else {
+            dimView.isHidden = true
+        } */
     }
     
     
@@ -255,12 +297,11 @@ class MainExhibitViewController: UIViewController, FlowingMenuDelegate, UICollec
                 let indexPath = self.collectionView.indexPath(for: (sender as! UICollectionViewCell))
                 if let selectedItem = (indexPath as NSIndexPath?)?.row {
                     
-                    if self.searchBarIsActive {
+                    if (self.searchBar.text?.characters.count)! > 0 {
                         let animal = dataSourceForSearchResult?[selectedItem]
                         destinationViewController.updateInfo(animal: animal!)
                     }
                     else  {
-                        
                         let animal = allAnimals[selectedItem]
                         print(selectedItem)
                         destinationViewController.updateInfo(animal: animal)
@@ -275,6 +316,7 @@ class MainExhibitViewController: UIViewController, FlowingMenuDelegate, UICollec
     
         func flowingMenuNeedsPresentMenu(_ flowingMenu: FlowingMenuTransitionManager) {
             performSegue(withIdentifier: "toExhibits", sender: self)
+            resignKeyboard()
         }
         
         func flowingMenuNeedsDismissMenu(_ flowingMenu: FlowingMenuTransitionManager) {
@@ -283,8 +325,7 @@ class MainExhibitViewController: UIViewController, FlowingMenuDelegate, UICollec
         
         
 
-    
-    
+
 
     
     
