@@ -238,6 +238,9 @@ class HomeViewController: UIViewController, UITabBarControllerDelegate, CLLocati
                 destinationViewController.image = "zebraShark"
                 destinationViewController.info = "Welcome to the shark tank! Here at the Loveland Living Planet Aquarium, we have 8 species of sharks in our shark tank. Can you spot them all?"
                 destinationViewController.titleLabel = "Shark Tank"
+                destinationViewController.segueIdentifier = "sharks"
+                destinationViewController.buttonLabel = "Notify me about the Shark Feeding!"
+                
                 
          
                 
@@ -246,6 +249,8 @@ class HomeViewController: UIViewController, UITabBarControllerDelegate, CLLocati
                destinationViewController.image = "penguins"
                destinationViewController.titleLabel = "Gentoo Penguins"
                 destinationViewController.info = "Our aquarium is home to 17 Gentoo Penguins. See if you can spot the name bands on their flippers!\nWe feed our penguins at 4:00 PM every day."
+                destinationViewController.segueIdentifier = "penguinEncounter"
+                destinationViewController.buttonLabel = "Feed the Penguins!"
                 
                
             }

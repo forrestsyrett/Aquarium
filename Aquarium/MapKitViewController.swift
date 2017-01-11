@@ -22,7 +22,6 @@ class MapKitViewController: UIViewController, MKMapViewDelegate, BottomSheetView
     @IBOutlet weak var selectedFloor: UISegmentedControl!
     
     
-    @IBOutlet weak var loadMapView: UIButton!
     
     let galleries = MapGalleryController.sharedController
     let bottomSheetViewController = BottomSheetViewController()
@@ -36,7 +35,6 @@ class MapKitViewController: UIViewController, MKMapViewDelegate, BottomSheetView
     var label = UILabel(frame: CGRect(x: 16, y: 20, width: 343, height: 21))
     var currentLocationAnnotation = Annotation(coordinate: CurrentLocationController.shared.coordinate, title: "Current Location", subtitle: "", type: AnnotationTypes.CurrentLocation)
     var manuallyChangingMapRect: Bool = true
-    @IBOutlet weak var clearDirectionsButton: UIButton!
     
     var route: MKPolyline? = nil
     var firstFloor: MKOverlay? = nil
@@ -69,7 +67,6 @@ class MapKitViewController: UIViewController, MKMapViewDelegate, BottomSheetView
         mapView.showsBuildings = false
         mapView.showsCompass = true
         label.text = titleLabel
-        clearDirectionsButton.isHidden = true
        
         
         addMainFloorAnnotations()
@@ -81,7 +78,6 @@ class MapKitViewController: UIViewController, MKMapViewDelegate, BottomSheetView
         NotificationCenter.default.addObserver(self, selector: #selector(MapKitViewController.updateLocation), name: Notification.Name(rawValue: "sharks"), object: nil)
         
         transparentNavigationBar(self)
-        roundViews(loadMapView, cornerRadius: 15)
     }
     
     
@@ -438,12 +434,4 @@ let secondFloorAnnotation = Annotation(coordinate: coordinate, title: title, sub
     }
     
     
-    @IBAction func clearDirectionsButtonTapped(_ sender: Any) {
-        
-        mapView.remove(self.route!)
-        clearDirectionsButton.isHidden = true
-        
-        
-    }
-    
-}
+  }

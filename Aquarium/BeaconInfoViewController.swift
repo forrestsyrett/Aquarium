@@ -18,6 +18,8 @@ class BeaconInfoViewController: UIViewController {
     var titleLabel = ""
     var info = ""
     var image = ""
+    var buttonLabel = ""
+    var segueIdentifier = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,8 +34,19 @@ class BeaconInfoViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         updateWithInfo()
+        
+        let weekday = getWeekday(date: Date())
+        let notificationScheduled = AnimalFeedTableViewController.shared.notificationCheck("Shark Feed", weekday: weekday)
+        
+        if notificationScheduled {
+            self.button.setTitle("Shark Feed notification scheduled!", for: .normal)
+        } else {
+            self.button.setTitle(self.buttonLabel, for: .normal)
+        }
     }
     
+    
+    // Updates current view from previous preapreForSegueMethod
     func updateWithInfo() {
         self.galleryTitleLabel.text = self.titleLabel
         self.galleryInfo.text = self.info
@@ -41,6 +54,59 @@ class BeaconInfoViewController: UIViewController {
         
     }
     
+    // Gets the Int number for the current weekday
+    func getWeekday(date: Date) -> Int {
+        let date = Date()
+        let calendar = Calendar.current
+        let components = (calendar as NSCalendar).components([.weekday], from: date)
+        let dayOfWeek = components.weekday!
+        
+        return dayOfWeek
+    }
+    
+    
+    
+    // Near shark beacon, allows user to schedule a notification for the shark feed. Code checks for existing notification so they don't double schedule the same notification.
+    
+    func scheduleSharkFeed() {
+            
+           let weekday = getWeekday(date: Date())
+        
+        
+        let notificationScheduled = AnimalFeedTableViewController.shared.notificationCheck("Shark Feed", weekday: weekday)
+   
+        
+        
+        if notificationScheduled == false {
+            NotificationController().scheduleNotification(for: .shark, onWeekday: weekday, scheduled: true)
+        
+        let alert = UIAlertController(title: "Notification Scheduled!", message: "We'll alert you 15 minutes before the shark feeding.", preferredStyle: .alert)
+        let action = UIAlertAction(title: "Awesome!", style: .default, handler: nil)
+        
+        alert.addAction(action)
+        
+        self.present(alert, animated: true, completion: nil)
+            
+            self.button.setTitle("Notification Scheduled!", for: .normal)
+            
+        } else {
+            
+            let alert = UIAlertController(title: "Cancel Notification?", message: "Would you like to cancel your notification for the shark feeding?", preferredStyle: .alert)
+            let yesAction = UIAlertAction(title: "Yes", style: .destructive, handler: { (action) in
+                
+//***                ////////// CANCEL NOTIFICATION HERE ///////// CHANGE BUTTON TITLE AFTER
+            })
+            let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: nil)
+            alert.addAction(yesAction)
+            alert.addAction(cancelAction)
+            
+            self.present(alert, animated: true, completion: nil)
+            
+        }
+        
+    }
+    
+    // Button animations
     
     @IBAction func buttonTouchDown(_ sender: Any) {
         
@@ -60,6 +126,14 @@ class BeaconInfoViewController: UIViewController {
     @IBAction func buttonTouchUpInside(_ sender: Any) {
         
         buttonBounceTouchUp(self.button)
+        
+        if self.segueIdentifier == "penguinEncounter" {
+        self.performSegue(withIdentifier: self.segueIdentifier, sender: sender)
+        }
+        
+         if self.segueIdentifier == "sharks" {
+        scheduleSharkFeed()
+        }
     }
 
   }
