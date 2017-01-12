@@ -11,6 +11,9 @@ import OneSignal
 
 class AnimalFeedTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, AnimalFeedTableViewCellDelegate, UIGestureRecognizerDelegate {
     
+    
+    static let shared = AnimalFeedTableViewController()
+    
     @IBOutlet weak var animalFeedTableView: UITableView!
     @IBOutlet weak var weekdaySegmentedControl: UISegmentedControl!
     @IBOutlet var rightSwipeGesture: UISwipeGestureRecognizer!
@@ -28,6 +31,7 @@ class AnimalFeedTableViewController: UIViewController, UITableViewDelegate, UITa
     
     
     override func viewDidLoad() {
+        super.viewDidLoad()
         
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) {(accepted, error) in
             if !accepted {
@@ -35,7 +39,7 @@ class AnimalFeedTableViewController: UIViewController, UITableViewDelegate, UITa
             }
         }
         
-        super.viewDidLoad()
+        
         gradient(self.view)
         animalFeedTableView.backgroundColor = UIColor.clear
         weekdaySegmentedControl.tintColor = UIColor.white
@@ -225,6 +229,8 @@ animalFeedTableView.reloadData()
     
     
     //                check notifications to see which are scheduled. access .userinfo
+    // animal name = Animal.Info.AnimalName
+    
     func notificationCheck(_ animalName: String, weekday: Int) -> Bool {
         guard let scheduledLocalNotifications = UIApplication.shared.scheduledLocalNotifications else { return false }
         var found = false

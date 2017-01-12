@@ -84,7 +84,7 @@
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <segue destination="kLs-Qc-lC6" kind="show" id="qnK-PO-FRk"/>
+                                            <segue destination="kLs-Qc-lC6" kind="show" identifier="" id="qnK-PO-FRk"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VL1-4L-JZp">
@@ -340,13 +340,13 @@
                                     <constraint firstAttribute="height" constant="86" id="fW3-7A-dKf"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iw5-mH-KXl">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iw5-mH-KXl">
                                 <rect key="frame" x="16" y="94" width="343" height="162"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="iw5-mH-KXl" secondAttribute="height" multiplier="343:174" constant="23.655172413793082" id="eVs-Er-9Vt"/>
                                 </constraints>
                                 <string key="text">WElcome to the gallery! See if you can spot all the animals! We have 8 different types in this exhibit.WElcome to the gallery! See if you can spot all the animals! We have 8 different types in this exhibit.WElcome to the gallery! See if you can spot all the animals! We have 8 different types in this exhibit.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -370,7 +370,6 @@
                                     <action selector="buttonTouchDragEnter:" destination="Tir-tw-1At" eventType="touchDragEnter" id="na7-Vb-REd"/>
                                     <action selector="buttonTouchDragExit:" destination="Tir-tw-1At" eventType="touchDragExit" id="f6a-Fr-DcB"/>
                                     <action selector="buttonTouchUpInside:" destination="Tir-tw-1At" eventType="touchUpInside" id="sKw-MK-1tp"/>
-                                    <segue destination="kLs-Qc-lC6" kind="show" id="UdE-3L-FIa"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FQm-8L-bAZ">
@@ -382,8 +381,8 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to the Gallery!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rEx-CC-b4k">
-                                <rect key="frame" x="21" y="34" width="333" height="19"/>
-                                <fontDescription key="fontDescription" name="TrajanPro-Regular" family="Trajan Pro" pointSize="19"/>
+                                <rect key="frame" x="21" y="32" width="333" height="21"/>
+                                <fontDescription key="fontDescription" name="TrajanPro-Regular" family="Trajan Pro" pointSize="21"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -415,6 +414,7 @@
                         <outlet property="galleryImage" destination="XwO-d9-MLu" id="JFQ-qp-kED"/>
                         <outlet property="galleryInfo" destination="iw5-mH-KXl" id="TLn-tk-a7g"/>
                         <outlet property="galleryTitleLabel" destination="rEx-CC-b4k" id="u4R-js-MZG"/>
+                        <segue destination="kLs-Qc-lC6" kind="show" identifier="penguinEncounter" id="Ibr-S3-SYC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YIb-Gg-eYf" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1690,7 +1690,7 @@ Individual sea jellies are either male or female and reproduce sexually. Eggs an
                                         <rect key="frame" x="0.0" y="28" width="383" height="402"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WYx-wp-hcK" id="Q7r-st-F9g">
-                                            <rect key="frame" x="0.0" y="0.0" width="383" height="401.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="383" height="402"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Animal Name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Sc-st-KN3">
@@ -2449,19 +2449,6 @@ Call (801)355-3474 ext. 222 to book your Penguin Encounter!
                                     <constraint firstAttribute="height" constant="86" id="LGK-ok-DbQ"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DqD-HU-15n">
-                                <rect key="frame" x="16" y="130" width="101" height="30"/>
-                                <color key="backgroundColor" red="0.61805776450000005" green="0.72383112309999997" blue="0.90563315150000001" alpha="0.76686422409999999" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="HMK-FM-un6"/>
-                                </constraints>
-                                <state key="normal" title="Load WebView">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="88x-fp-xxU" kind="presentation" modalPresentationStyle="overCurrentContext" modalTransitionStyle="coverVertical" id="HqR-Qk-1RR"/>
-                                </connections>
-                            </button>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="JnW-V9-rTl">
                                 <rect key="frame" x="16" y="94" width="343" height="29"/>
                                 <color key="backgroundColor" red="0.25273759229999998" green="0.42430402439999998" blue="0.5825071383" alpha="0.3026273545" colorSpace="custom" customColorSpace="sRGB"/>
@@ -2483,21 +2470,9 @@ Call (801)355-3474 ext. 222 to book your Penguin Encounter!
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QAq-RP-CWT">
-                                <rect key="frame" x="249" y="122" width="110" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.61805776450000005" green="0.72383112309999997" blue="0.90563315150000001" alpha="0.76686422409999999" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Clear Directions">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="clearDirectionsButtonTapped:" destination="hsF-ni-6Pt" eventType="touchUpInside" id="Ndc-Ry-TWL"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.25273759232549942" green="0.42430402436355552" blue="0.58250713832487311" alpha="0.3026273544520548" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="DqD-HU-15n" firstAttribute="leading" secondItem="YLr-US-Y15" secondAttribute="leadingMargin" id="0y6-dw-yhR"/>
                             <constraint firstItem="Yu1-Oe-RAM" firstAttribute="top" secondItem="FfK-PC-Pnp" secondAttribute="bottom" constant="33" id="GFZ-Jv-6NB"/>
                             <constraint firstAttribute="trailingMargin" secondItem="9Hg-rg-M6e" secondAttribute="trailing" id="Gvk-Nq-MMv"/>
                             <constraint firstItem="R93-yq-5bn" firstAttribute="top" secondItem="Yu1-Oe-RAM" secondAttribute="bottom" constant="1" id="Lun-xJ-wvf"/>
@@ -2510,14 +2485,11 @@ Call (801)355-3474 ext. 222 to book your Penguin Encounter!
                             <constraint firstAttribute="trailingMargin" secondItem="JnW-V9-rTl" secondAttribute="trailing" id="k8x-Zm-mkt"/>
                             <constraint firstAttribute="leadingMargin" secondItem="9Hg-rg-M6e" secondAttribute="leading" id="kVu-e2-hxd"/>
                             <constraint firstAttribute="trailingMargin" secondItem="xKd-2L-FBn" secondAttribute="trailing" constant="-20" id="mBK-tV-ffh"/>
-                            <constraint firstItem="DqD-HU-15n" firstAttribute="top" secondItem="JnW-V9-rTl" secondAttribute="bottom" constant="8" id="qRg-IH-M2a"/>
                             <constraint firstItem="xKd-2L-FBn" firstAttribute="leading" secondItem="YLr-US-Y15" secondAttribute="leadingMargin" constant="-20" id="zLA-4u-sey"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Map" image="map" selectedImage="mapFilled" id="hWi-34-4U6"/>
                     <connections>
-                        <outlet property="clearDirectionsButton" destination="QAq-RP-CWT" id="lTU-lb-8Ua"/>
-                        <outlet property="loadMapView" destination="DqD-HU-15n" id="VcL-98-Qtr"/>
                         <outlet property="mapView" destination="Yu1-Oe-RAM" id="AEz-iE-LKB"/>
                         <outlet property="selectedFloor" destination="JnW-V9-rTl" id="HLL-jf-XtF"/>
                     </connections>
@@ -2530,61 +2502,6 @@ Call (801)355-3474 ext. 222 to book your Penguin Encounter!
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="340" y="1263.4182908545729"/>
-        </scene>
-        <!--Web View Controller-->
-        <scene sceneID="Ef4-RT-QCI">
-            <objects>
-                <viewController id="88x-fp-xxU" customClass="WebViewController" customModule="Aquarium" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="hzf-TG-sGU"/>
-                        <viewControllerLayoutGuide type="bottom" id="wlP-xv-yab"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="0Sz-aY-52g">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EYA-Ca-YdQ">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </webView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lPX-pT-17k">
-                                <rect key="frame" x="310" y="25" width="55" height="55"/>
-                                <color key="backgroundColor" red="0.61683653757697821" green="0.72615429718965208" blue="0.90924197129695428" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="55" id="H2J-J3-hrm"/>
-                                    <constraint firstAttribute="width" constant="55" id="h2a-rY-fE6"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <state key="normal" title="X">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="dismissButtonTapped:" destination="88x-fp-xxU" eventType="touchUpInside" id="jKv-0X-MFY"/>
-                                    <action selector="touchDown:" destination="88x-fp-xxU" eventType="touchDown" id="KMB-gf-UQ0"/>
-                                    <action selector="touchDragEnter:" destination="88x-fp-xxU" eventType="touchDragEnter" id="Enb-4c-anw"/>
-                                    <action selector="touchDragExit:" destination="88x-fp-xxU" eventType="touchDragExit" id="ngE-dl-0pD"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="EYA-Ca-YdQ" secondAttribute="trailing" id="F6v-oy-5Cb"/>
-                            <constraint firstItem="wlP-xv-yab" firstAttribute="top" secondItem="EYA-Ca-YdQ" secondAttribute="bottom" id="MnI-3y-8um"/>
-                            <constraint firstItem="EYA-Ca-YdQ" firstAttribute="top" secondItem="0Sz-aY-52g" secondAttribute="top" id="Mpf-pw-3Z9"/>
-                            <constraint firstAttribute="trailing" secondItem="lPX-pT-17k" secondAttribute="trailing" constant="10" id="bVT-jb-Lng"/>
-                            <constraint firstItem="lPX-pT-17k" firstAttribute="top" secondItem="0Sz-aY-52g" secondAttribute="top" constant="25" id="dpc-wy-kqi"/>
-                            <constraint firstItem="EYA-Ca-YdQ" firstAttribute="leading" secondItem="0Sz-aY-52g" secondAttribute="leading" id="mjj-pt-K6A"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="iSS-OT-Kvi"/>
-                    <connections>
-                        <outlet property="dismissButton" destination="lPX-pT-17k" id="NbI-4m-wKh"/>
-                        <outlet property="webView" destination="EYA-Ca-YdQ" id="QfR-nQ-iAh"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="znj-69-cE3" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="341.60000000000002" y="2015.4422788605698"/>
         </scene>
         <!--Bottom Sheet View Controller-->
         <scene sceneID="Jiz-lD-1Pz">
@@ -2742,6 +2659,6 @@ We hope you enjoy your visit and we're excited to have you with us as we Explore
         <image name="smallLogo" width="67" height="64"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="UdE-3L-FIa"/>
+        <segue reference="qnK-PO-FRk"/>
     </inferredMetricsTieBreakers>
 </document>
