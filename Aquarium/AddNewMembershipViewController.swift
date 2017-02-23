@@ -10,6 +10,8 @@ import UIKit
 import CoreImage
 import UserNotifications
 import SafariServices
+
+
 fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
   switch (lhs, rhs) {
   case let (l?, r?):
@@ -40,7 +42,7 @@ fileprivate func > <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
 }
 
 
-class AddNewMembershipViewController: UIViewController, UITextFieldDelegate, UNUserNotificationCenterDelegate {
+class AddNewMembershipViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var firstNameTextField: UITextField!
     @IBOutlet weak var lastNameTextField: UITextField!
@@ -58,6 +60,8 @@ class AddNewMembershipViewController: UIViewController, UITextFieldDelegate, UNU
         super.viewDidLoad()
         gradient(self.view)
         transparentNavigationBar(self)
+        
+//        UNUserNotificationCenter.current().delegate = self
         
         firstNameTextField.delegate = self
         lastNameTextField.delegate = self
@@ -119,7 +123,7 @@ class AddNewMembershipViewController: UIViewController, UITextFieldDelegate, UNU
                 membership.barcodeImageString = self.membershipIDTextField.text!
            //     let date = self.expirationDatePicker.date
                 membership.expirationDate = self.expirationDatePicker.date
-                print(self.expirationDatePicker.date)
+                
 
             } else {
                 let newMembership = MembershipCard(memberID: self.membershipIDTextField.text!,
@@ -129,13 +133,14 @@ class AddNewMembershipViewController: UIViewController, UITextFieldDelegate, UNU
                 barcodeImageString: membershipIDTextField.text!, expirationDate: expirationDatePicker.date)
                 MembershipCardController.sharedMembershipController.addMembership(newMembership)
                 self.membership = newMembership
-                print(self.expirationDatePicker.date)
+               
             }
         }
         
         self.dismiss(animated: true, completion: nil)
         NotificationCenter.default.post(name: Notification.Name(rawValue: "addedNewMembership"), object: nil)
         scheduleReminder()
+        
     }
     
     
@@ -163,7 +168,7 @@ class AddNewMembershipViewController: UIViewController, UITextFieldDelegate, UNU
         let expirationDateReminder = UNNotificationAction(identifier: (self.name), title: "Renew Membership!", options: .foreground)
         let remindMeAction = UNNotificationAction(identifier: "reminder", title: "Remind me later", options: [])
 
-        let category = UNNotificationCategory(identifier: "category", actions: [expirationDateReminder, remindMeAction], intentIdentifiers: [])
+        let category = UNNotificationCategory(identifier: "membershipCategory", actions: [expirationDateReminder, remindMeAction], intentIdentifiers: [])
         
         center.setNotificationCategories([category])
 
@@ -254,15 +259,15 @@ class AddNewMembershipViewController: UIViewController, UITextFieldDelegate, UNU
         content.body = "Press for more options!"
         
         content.sound = UNNotificationSound(named: "fishFlop.m4r")
-        content.categoryIdentifier = "category"
-        content.userInfo = ["url": "https://tickets.thelivingplanet.com/WebStore/shop/PassLookup.aspx?RedirectURL=Renewal&SalesChannelDetailID=120041"]
+        content.categoryIdentifier = "membershipCategory"
+        content.userInfo = ["url": "https://tickets.thelivingplanet.com/WebStore/Shop/ViewItems.aspx?CG=online&C=Memberships"]
         
         
         
         // Notification Request
         
         let request = UNNotificationRequest(identifier: self.name, content: content, trigger: dateTrigger)
-       // UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
+//        UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
         UNUserNotificationCenter.current().add(request) { (error) in
             if let error = error {
                 print("There was an error \(error)")
@@ -270,19 +275,33 @@ class AddNewMembershipViewController: UIViewController, UITextFieldDelegate, UNU
         }
     }
     
+    
+    
+    
     func scheduleReminder() {
         if expirationReminderSwitch.isOn {
+            print("Switch is on")
             scheduleExpirationReminder(date: self.expirationDatePicker.date)
-    
+            
+            UNUserNotificationCenter.current().getPendingNotificationRequests(completionHandler: { requests in
+                for request in requests {
+                    print(request.identifier)
+                }
+            })
+            
         }
     }
+    
+    
+    
+
     
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
 
         let userInfo = response.notification.request.content.userInfo
         
-        if let customData = userInfo["url"] as? String {
-            print("Custom data received: \(customData)")
+        if let websiteURL = userInfo["url"] as? String {
+            
 
         
         
@@ -295,7 +314,7 @@ class AddNewMembershipViewController: UIViewController, UITextFieldDelegate, UNU
             case "\(self.name)":
                 // User tapped Renew Button
                 print("Renewing")
-               let safariVC = SFSafariViewController(url: URL(string: "https://tickets.thelivingplanet.com/WebStore/shop/PassLookup.aspx?RedirectURL=Renewal&SalesChannelDetailID=120041")!)
+                let safariVC = SFSafariViewController(url: URL(string: "\(websiteURL)")!)
                 
                 self.present(safariVC, animated: true, completion: nil)
     
@@ -306,9 +325,10 @@ class AddNewMembershipViewController: UIViewController, UITextFieldDelegate, UNU
                 print("Remind me later")
                 print("Remind me later")
                 print("Remind me later")
-                let newDate = Date(timeInterval: 10, since: Date())
-                scheduleExpirationReminder(date: newDate)
-//604800
+                
+                scheduleRemindMeLater(timeInterval: 604800.00)
+                
+//604800 seconds in one week
                 break
             default:
                 break
@@ -317,11 +337,80 @@ class AddNewMembershipViewController: UIViewController, UITextFieldDelegate, UNU
         }
         completionHandler()
     }
+    
+    
+    
+    
+    
+    // Mark: - Remind Me later Action Tapped
+    func scheduleRemindMeLater(timeInterval: Double) {
+        
+        registerForNotificationCategories()
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: timeInterval, repeats: false)
+        
+        //Notification Content
+        let content = UNMutableNotificationContent()
+        content.title = "Just a reminder"
+        content.body = "\(self.name), your Membership expires in one week!"
+        
+        content.sound = UNNotificationSound(named: "fishFlop.m4r")
+        content.categoryIdentifier = "membershipCategory"
+        content.userInfo = ["url": "https://tickets.thelivingplanet.com/WebStore/Shop/ViewItems.aspx?CG=online&C=Memberships"]
+        
+        // Notification Request
+        
+        let request = UNNotificationRequest(identifier: "reminder", content: content, trigger: trigger)
+        UNUserNotificationCenter.current().add(request) { (error) in
+            if let error = error {
+                print("There was an error \(error)")
+            }
+        }
 
-    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void){
+        
+    }
+
+    @IBAction func notifyMeButtonTapped(_ sender: Any) {
+        
+    registerForNotificationCategories()
+        
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 3.0, repeats: false)
+        
+        let content = UNMutableNotificationContent()
+        content.title = "Just a reminder"
+        content.body = "\(self.name), your Membership expires in one week!"
+        
+        content.sound = UNNotificationSound(named: "fishFlop.m4r")
+        content.categoryIdentifier = "membershipCategory"
+        content.userInfo = ["url": "https://tickets.thelivingplanet.com/WebStore/Shop/ViewItems.aspx?CG=online&C=Memberships"]
+        
+        // Notification Request
+        
+        let request = UNNotificationRequest(identifier: "reminder", content: content, trigger: trigger)
+        UNUserNotificationCenter.current().add(request) { (error) in
+            if let error = error {
+                print("There was an error \(error)")
+            }
+        }
+
+        
+        
+        
+    }
+}
+    
+
+// Show local notification in foreground
+
+extension AddNewMembershipViewController: UNUserNotificationCenterDelegate {
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        
         
         completionHandler([.alert, .sound])
+        
+        
     }
-    
-    
+
 }
+
+

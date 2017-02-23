@@ -79,8 +79,12 @@ class MainExhibitViewController: UIViewController, FlowingMenuDelegate, UICollec
     override func viewWillAppear(_ animated: Bool) {
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        self.searchBar.isHidden = false
+    }
     override func viewWillDisappear(_ animated: Bool) {
     }
+   
     
     // MARK: - Search Bar Functions
     
@@ -120,14 +124,23 @@ class MainExhibitViewController: UIViewController, FlowingMenuDelegate, UICollec
         self.searchBar.resignFirstResponder()
         
     }
+    
+    
+    
     ////////////////////////////////////////////////////////
+    //          MARK: - Keyboard Functions                //
+    ////////////////////////////////////////////////////////
+    
+    
     
     func resignKeyboard() {
         searchBar.resignFirstResponder()
         setSearchBarView()
+        
     }
     func setSearchBarView() {
         searchBar.frame = CGRect(x: 0, y: 637, width: view.frame.width, height: 50)
+        self.searchBar.isHidden = false
     }
     
     // Mark: - SearchBar Movement Response to Keyboard
@@ -316,7 +329,6 @@ class MainExhibitViewController: UIViewController, FlowingMenuDelegate, UICollec
     
         func flowingMenuNeedsPresentMenu(_ flowingMenu: FlowingMenuTransitionManager) {
             performSegue(withIdentifier: "toExhibits", sender: self)
-            resignKeyboard()
         }
         
         func flowingMenuNeedsDismissMenu(_ flowingMenu: FlowingMenuTransitionManager) {

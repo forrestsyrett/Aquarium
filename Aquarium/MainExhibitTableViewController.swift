@@ -28,17 +28,16 @@ class MainExhibitTableViewController: UIViewController, UITableViewDelegate, UIT
         showAllAnimalsButton.layer.cornerRadius = 5.0
         
         allGalleries = [mainGalleries.discoverUtah, mainGalleries.journeyToSouthAmerica, mainGalleries.oceanExplorer, mainGalleries.antarcticAdventure, mainGalleries.expeditionAsia]
-        resignFirstResponder()
+        
+         NotificationCenter.default.post(name: Notification.Name(rawValue: "exhibitsAppeared"), object: nil)
+        print("viewDidLoad")
           }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-      //   NotificationCenter.default.post(name: Notification.Name(rawValue: "exhibitsAppeared"), object: nil)
-    }
+   
 
     // MARK: - Table view data source
 
@@ -78,8 +77,10 @@ class MainExhibitTableViewController: UIViewController, UITableViewDelegate, UIT
     @IBAction func showAllAnimalsButtonTapped(_ sender: Any) {
         
         NotificationCenter.default.post(name: Notification.Name(rawValue: "allAnimals"), object: nil)
+        
 
     }
+  
     
 
     /*

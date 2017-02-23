@@ -31,16 +31,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         application.registerForRemoteNotifications()
         
         
-        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) {(accepted, error) in
-            if !accepted {
-                print("Notification access denied.")
-            }
-        }
+        UNUserNotificationCenter.current().delegate = self
         
         
-        
-        return true
+        let center = UNUserNotificationCenter.current()
+        center.requestAuthorization(options: [.alert, .sound, .badge]) { (granted, error) in
+            
     }
+        return true
+}
+    
     
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -106,7 +106,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         MembershipShortcutAction(shortcutItem)
     }
     
-
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        
+        completionHandler([.alert,.sound])
+        
+    }
     
     
     enum ShortCutIdentifier: String {

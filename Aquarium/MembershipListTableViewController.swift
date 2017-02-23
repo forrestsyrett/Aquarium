@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import SafariServices
+import UserNotifications
 
 class MembershipListTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -19,6 +20,7 @@ class MembershipListTableViewController: UIViewController, UITableViewDelegate, 
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
 
         tabBarTint(view: self)
         
@@ -130,4 +132,8 @@ class MembershipListTableViewController: UIViewController, UITableViewDelegate, 
         NotificationCenter.default.removeObserver(self, name: Notification.Name(rawValue: "addedNewMembership"), object: nil)
         print("removed Notification")
     }
+    
 }
+
+
+

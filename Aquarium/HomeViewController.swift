@@ -197,6 +197,8 @@ class HomeViewController: UIViewController, UITabBarControllerDelegate, CLLocati
                 
                 if self.regionName == "Entrance" {
                     NotificationCenter.default.post(name: Notification.Name(rawValue: "jsa"), object: nil)
+                    
+                    // Sets the currentLocationController "Current Location" String
                     CurrentLocationController.shared.exhibitName = "jsa"
                     
                 }
@@ -236,7 +238,7 @@ class HomeViewController: UIViewController, UITabBarControllerDelegate, CLLocati
             if self.destinationName == "Sharks" {
        
                 destinationViewController.image = "zebraShark"
-                destinationViewController.info = "Welcome to the shark tank! Here at the Loveland Living Planet Aquarium, we have 8 species of sharks in our shark tank. Can you spot them all?"
+                destinationViewController.info = "Welcome to our 300,000 gallon shark tank! Here at the Loveland Living Planet Aquarium, we have 8 species of sharks in our shark tank. Can you spot them all?"
                 destinationViewController.titleLabel = "Shark Tank"
                 destinationViewController.segueIdentifier = "sharks"
                 destinationViewController.buttonLabel = "Notify me about the Shark Feeding!"
@@ -248,7 +250,7 @@ class HomeViewController: UIViewController, UITabBarControllerDelegate, CLLocati
             if self.destinationName == "Penguins" {
                destinationViewController.image = "penguins"
                destinationViewController.titleLabel = "Gentoo Penguins"
-                destinationViewController.info = "Our aquarium is home to 17 Gentoo Penguins. See if you can spot the name bands on their flippers!\nWe feed our penguins at 4:00 PM every day."
+                destinationViewController.info = "Our aquarium is home to 19 Gentoo Penguins. See if you can spot the name bands on their flippers!\nWe feed our penguins at 4:00 PM every day."
                 destinationViewController.segueIdentifier = "penguinEncounter"
                 destinationViewController.buttonLabel = "Feed the Penguins!"
                 
