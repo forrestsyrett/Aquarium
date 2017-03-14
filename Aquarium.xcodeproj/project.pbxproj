@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0656D2CD1DE4C7680014BBF0 /* AnimalCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0656D2CC1DE4C7680014BBF0 /* AnimalCollectionViewCell.swift */; };
 		06B325251DF7383500A53057 /* BeaconInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B325241DF7383500A53057 /* BeaconInfoViewController.swift */; };
+		06C4BB8A1E78882B005A96CE /* NotificationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C4BB891E78882B005A96CE /* NotificationDelegate.swift */; };
 		06C714F21E5E60E3003F3794 /* OpeningScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C714F11E5E60E3003F3794 /* OpeningScreenViewController.swift */; };
 		06C714F81E5E6C61003F3794 /* jellies.MOV in Resources */ = {isa = PBXBuildFile; fileRef = 06C714F71E5E6C61003F3794 /* jellies.MOV */; };
 		06FD838D1DEA41F5005F4EFA /* AnimalDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FD838C1DEA41F5005F4EFA /* AnimalDetailViewController.swift */; };
@@ -80,6 +81,7 @@
 /* Begin PBXFileReference section */
 		0656D2CC1DE4C7680014BBF0 /* AnimalCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimalCollectionViewCell.swift; sourceTree = "<group>"; };
 		06B325241DF7383500A53057 /* BeaconInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeaconInfoViewController.swift; sourceTree = "<group>"; };
+		06C4BB891E78882B005A96CE /* NotificationDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationDelegate.swift; sourceTree = "<group>"; };
 		06C714F11E5E60E3003F3794 /* OpeningScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpeningScreenViewController.swift; sourceTree = "<group>"; };
 		06C714F71E5E6C61003F3794 /* jellies.MOV */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = jellies.MOV; sourceTree = "<group>"; };
 		06FD838C1DEA41F5005F4EFA /* AnimalDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimalDetailViewController.swift; sourceTree = "<group>"; };
@@ -245,6 +247,7 @@
 			children = (
 				AA9EE37B1DD25F94007D1E08 /* Aquarium.entitlements */,
 				AA544C941D0BB66C00DC1725 /* AppDelegate.swift */,
+				06C4BB891E78882B005A96CE /* NotificationDelegate.swift */,
 				06C714F11E5E60E3003F3794 /* OpeningScreenViewController.swift */,
 				AA33919F1D6FA92800F92147 /* Main.storyboard */,
 				AA00A7861DD3D3E100B80DF6 /* WebViewController.swift */,
@@ -515,6 +518,7 @@
 				AA909B181D41B42A000DB923 /* Feeding.swift in Sources */,
 				AA6FA1D41D55540B00CBEEC7 /* MembershipListTableViewController.swift in Sources */,
 				AA9D6EE01D1CCD5000831AFE /* Animal.swift in Sources */,
+				06C4BB8A1E78882B005A96CE /* NotificationDelegate.swift in Sources */,
 				AA081A581DDA91E60020C269 /* BackGroundOverlay.swift in Sources */,
 				AA544CFA1D149C0A00DC1725 /* QRScannerViewController.swift in Sources */,
 				AA353AC01DCE617000AD5490 /* AquariumMapOverlay.swift in Sources */,

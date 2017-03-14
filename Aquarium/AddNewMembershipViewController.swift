@@ -163,7 +163,7 @@ class AddNewMembershipViewController: UIViewController, UITextFieldDelegate {
     
     func registerForNotificationCategories() {
         let center = UNUserNotificationCenter.current()
-        center.delegate = self
+        center.delegate = NotificationDelegate()
         
         let expirationDateReminder = UNNotificationAction(identifier: (self.name), title: "Renew Membership!", options: .foreground)
         let remindMeAction = UNNotificationAction(identifier: "reminder", title: "Remind me later", options: [])
@@ -373,6 +373,7 @@ class AddNewMembershipViewController: UIViewController, UITextFieldDelegate {
         
     registerForNotificationCategories()
         
+        UNUserNotificationCenter.current().delegate = self
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 3.0, repeats: false)
         
         let content = UNMutableNotificationContent()
@@ -391,26 +392,21 @@ class AddNewMembershipViewController: UIViewController, UITextFieldDelegate {
                 print("There was an error \(error)")
             }
         }
-
         
-        
-        
+ 
     }
 }
-    
-
-// Show local notification in foreground
 
 extension AddNewMembershipViewController: UNUserNotificationCenterDelegate {
     
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
         
-        
+        print("presenting...")
         completionHandler([.alert, .sound])
-        
-        
     }
-
+    
 }
+
+
 
 

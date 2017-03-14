@@ -33,6 +33,10 @@ class HomeViewController: UIViewController, UITabBarControllerDelegate, CLLocati
     var destinationName = "String"
     var notificationSwitch = true
     
+    
+ //   let rightGesture = UISwipeGestureRecognizer()
+    
+    
     // MARK: - Beacon Regions
     var entranceRegion: CLBeaconRegion = CLBeaconRegion(proximityUUID: UUID(uuidString: "FDA50693-A4E2-4FB1-AFCF-C6EB07647825")!, major: 10004, minor: 54482, identifier: "Entrance")
     
@@ -71,7 +75,11 @@ class HomeViewController: UIViewController, UITabBarControllerDelegate, CLLocati
         
         locationManager.startMonitoring(for: self.entranceRegion)
         locationManager.startMonitoring(for: self.sharkRegion)
-
+        
+     //   self.rightGesture.direction = .right
+     //   self.view.addGestureRecognizer(rightGesture)
+        
+  
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -367,12 +375,37 @@ class HomeViewController: UIViewController, UITabBarControllerDelegate, CLLocati
     }
     
     
+    // CODE TO ALLOW FOR SWIPING BETWEEN TABS
 
+   /* func goToPreviousTab(gesture: UIGestureRecognizer) {
+        print("Swipe!")
+        guard let tabBarController = self.tabBarController,
+            let selectedIndex = self.tabBarController?.selectedIndex,
+        let selectedController = tabBarController.selectedViewController,
+        let viewControllers = tabBarController.viewControllers, selectedIndex >= 0 else { return }
+        print("selectedIndex \(selectedIndex)")
+        let nextIndex = selectedIndex + 1
+        let fromView = selectedController.view
+        let toView = viewControllers[nextIndex].view
+        print("|NewIndex \(nextIndex)")
+        UIView.transition(  from: fromView!,
+                            to: toView!,
+                                    duration: 0.5,
+                                    options: UIViewAnimationOptions.transitionCrossDissolve,
+                                    completion: {(finished : Bool) -> () in
+                                        if (finished) {
+            tabBarController.selectedIndex = nextIndex
+            }
+        })
     
-    
-    
-    
-
+    }
+ 
+    @IBAction func rightSwipe(_ sender: Any) {
+        
+        self.goToPreviousTab(gesture: self.rightGesture)
+    }
+ 
+ */
 
     
     @IBAction func buyTicketsButtonTapped(_ sender: AnyObject) {

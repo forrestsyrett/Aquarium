@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
   
     
     var window: UIWindow?
-    
+    let delegate = NotificationDelegate()
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
@@ -31,12 +31,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         application.registerForRemoteNotifications()
         
         
-        UNUserNotificationCenter.current().delegate = self
-        
-        
         let center = UNUserNotificationCenter.current()
+        center.delegate = delegate
+        
+        
         center.requestAuthorization(options: [.alert, .sound, .badge]) { (granted, error) in
-            
+            if !granted {
+                print("Permission Denied")
+            }
     }
         return true
 }
@@ -106,12 +108,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         MembershipShortcutAction(shortcutItem)
     }
     
-    
-    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-        
-        completionHandler([.alert,.sound])
-        
-    }
     
     
     enum ShortCutIdentifier: String {
