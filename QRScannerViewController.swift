@@ -20,9 +20,9 @@ class QRScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsD
     @IBOutlet weak var getStartedButtonLabel: UIButton!
     @IBOutlet weak var qrCodeResult: UILabel!
     @IBOutlet weak var photoFrameImage: UIImageView!
-    @IBOutlet weak var tabBarLineView: UIView!
     @IBOutlet weak var alignQRCodeLabel: UILabel!
     @IBOutlet weak var scanButton: UIButton!
+    @IBOutlet weak var dismissButton: UIButton!
     
 
     
@@ -82,7 +82,7 @@ class QRScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsD
         qrCodeFrameView?.layer.borderColor = UIColor.blue.cgColor
         qrCodeFrameView?.layer.borderWidth = 5
         self.view.addSubview(qrCodeFrameView!)
-        self.view.addSubview(tabBarLineView)
+        self.view.addSubview(dismissButton)
         self.view.addSubview(photoFrameImage)
         self.view.addSubview(alignQRCodeLabel)
         self.view.addSubview(scanButton)
@@ -220,6 +220,12 @@ class QRScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsD
         }
     
     }
+    
+    @IBAction func dismissButtonTapped(_ sender: Any) {
+        
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     
     @IBAction func getStartedButtonTapped(_ sender: AnyObject) {
         

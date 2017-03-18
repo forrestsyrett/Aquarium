@@ -68,6 +68,8 @@ class AnnotationViews: MKAnnotationView {
             image = #imageLiteral(resourceName: "transparent")
         case .MothersRoom:
             image = #imageLiteral(resourceName: "transparent")
+        case .Cafe:
+            image = #imageLiteral(resourceName: "transparent")
         }
     }
     

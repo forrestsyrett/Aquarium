@@ -122,5 +122,15 @@
 		<key>subtitle</key>
 		<string></string>
 	</dict>
+	<dict>
+		<key>name</key>
+		<string>Cafe</string>
+		<key>location</key>
+		<string>{40.53215, -111.89405}</string>
+		<key>type</key>
+		<string>15</string>
+		<key>subtitle</key>
+		<string></string>
+	</dict>
 </array>
 </plist>

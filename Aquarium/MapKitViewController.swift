@@ -9,9 +9,10 @@
 import UIKit
 import MapKit
 import OneSignal
+import CoreLocation
 
 
-class MapKitViewController: UIViewController, MKMapViewDelegate, BottomSheetViewControllerDelegate {
+class MapKitViewController: UIViewController, MKMapViewDelegate, BottomSheetViewControllerDelegate, CLLocationManagerDelegate {
     
     
     static let shared = MapKitViewController()
@@ -21,10 +22,14 @@ class MapKitViewController: UIViewController, MKMapViewDelegate, BottomSheetView
     
     @IBOutlet weak var selectedFloor: UISegmentedControl!
     
-    
+    @IBOutlet weak var restroomButton: UIButton!
+    @IBOutlet weak var cafeButton: UIButton!
+    @IBOutlet weak var giftShopBUtton: UIButton!
     
     let galleries = MapGalleryController.sharedController
     let bottomSheetViewController = BottomSheetViewController()
+    
+    var locationManager: CLLocationManager!
     
     var aquarium = AquariumMap(filename: "Aquarium")
     var background = Background(filename: "BackgroundOverlay")
@@ -40,7 +45,7 @@ class MapKitViewController: UIViewController, MKMapViewDelegate, BottomSheetView
     var firstFloor: MKOverlay? = nil
     var secondFloor: MKOverlay? = nil
     
-    
+    var trackingSwitch: Bool = false
     
     
     override func viewDidLoad() {
@@ -78,17 +83,22 @@ class MapKitViewController: UIViewController, MKMapViewDelegate, BottomSheetView
         NotificationCenter.default.addObserver(self, selector: #selector(MapKitViewController.updateLocation), name: Notification.Name(rawValue: "sharks"), object: nil)
         
         transparentNavigationBar(self)
+        
+        let mapCamera = MKMapCamera()
+        
+        mapView.setCamera(mapCamera, animated: false)
+        
+ 
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        locationManager.delegate = self
+        locationManager.startUpdatingHeading()
     }
     
     
-    
-    
     func addOverlays() {
-        
-
-        
-        
-        
+    
 //        let path = Bundle.main.path(forResource: "background", ofType: "png")
 //        let fileURL = NSURL(fileURLWithPath: path!)
 //        let colorOverlay = MKTileOverlay(urlTemplate: fileURL.absoluteString)
@@ -402,7 +412,93 @@ let secondFloorAnnotation = Annotation(coordinate: coordinate, title: title, sub
         
     }
     
+    func selectRestroomAnnotation() {
+        var ann = mapView.annotations[0]
+        
+        for annotation in mapView.annotations {
+            
+            if let title = annotation.title {
+                if title == "Restrooms" {
+                    ann = annotation
+                }
+            }
+        }
+        
+        mapView.selectAnnotation(ann, animated: true)
+        
+    }
     
+    func selectCafeAnnotation() {
+        if self.selectedFloor.selectedSegmentIndex == 0 {
+        var ann = mapView.annotations[0]
+        
+        for annotation in mapView.annotations {
+            
+            if let title = annotation.title {
+                if title == "Cafe" {
+                    ann = annotation
+                }
+            }
+        }
+        
+        mapView.selectAnnotation(ann, animated: true)
+        
+    }
+    }
+    
+    func selectGiftShopAnnotation() {
+        if self.selectedFloor.selectedSegmentIndex == 0 {
+        var ann = mapView.annotations[0]
+        
+        for annotation in mapView.annotations {
+            
+            if let title = annotation.title {
+                if title == "Gift Shop" {
+                    ann = annotation
+                }
+            }
+        }
+    
+        
+        mapView.selectAnnotation(ann, animated: true)
+        
+    }
+}
+    
+    @IBAction func restroomButtonTapped(_ sender: Any) {
+        selectRestroomAnnotation()
+    }
+    
+    @IBAction func cafeButtonTapped(_ sender: Any) {
+        selectCafeAnnotation()
+    }
+    
+    @IBAction func giftshopButtonTapped(_ sender: Any) {
+        selectGiftShopAnnotation()
+    }
+    
+    @IBAction func compassModeButtonTapped(_ sender: Any) {
+        
+        if self.trackingSwitch == false {
+            self.trackingSwitch = true
+
+        } else {
+            self.trackingSwitch = false
+            
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
+        
+        print("Updating heading")
+        let rotation = newHeading.magneticHeading * 3.14159 / 180
+        let anchorPoint: CGPoint = CGPoint(x: 0, y: -23)
+        
+        mapView.transform = CGAffineTransform(rotationAngle: -(CGFloat)(rotation))
+        
+    }
+    
+
     
     func getDirectionsButtonTapped(_ bottomSheetViewController: BottomSheetViewController) {
         

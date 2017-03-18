@@ -193,7 +193,6 @@ class BottomSheetViewController: UIViewController, UIGestureRecognizerDelegate  
         self.urlString = "http://www.thelivingplanet.com/essential_grid/exhibit-updates/"
     }
     
-    
     func postObservers() {
         
         //        let allGalleries = [galleries.amenities, galleries.discoverUtah, galleries.antarcticAdventure, galleries.banquetHall, galleries.expeditionAsia, galleries.jsa, galleries.oceanExplorer, galleries.tukis]
