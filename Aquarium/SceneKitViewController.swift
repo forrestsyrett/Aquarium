@@ -22,10 +22,15 @@ class SceneKitViewController: UIViewController {
         
         var materials = [SCNMaterial]()
         
+    @IBOutlet weak var dismissButton: UIButton!
+    
+    
         override func viewDidLoad() {
             super.viewDidLoad()
             
-            
+            gradient(self.view)
+            dismissButton.layer.cornerRadius = 19.5
+            dismissButton.clipsToBounds = true
             
         }
         
@@ -44,17 +49,27 @@ class SceneKitViewController: UIViewController {
             let asset = MDLAsset(url: url as URL)
             let object = asset.object(at: 0) as? MDLMesh
             
-            let scatteringFunction = MDLScatteringFunction()
-            let material = MDLMaterial(name: "baseMaterial", scatteringFunction: scatteringFunction)
-            let sceneMaterial = SCNMaterial(mdlMaterial: material)
-            material.setTextureProperties(textures: [.baseColor: "sharkTexture.jpg"])
             
-            materials = [sceneMaterial]
+            
+            // Apply texture to SCN Object
+            let scatteringFunction = MDLScatteringFunction()
+            let mdlMaterial = MDLMaterial(name: "sharkTexture.jpg", scatteringFunction: scatteringFunction)
+            
+            mdlMaterial.setTextureProperties(textures: [.baseColor: "sharkTexture.jpg"])
+           
+            for  submesh in (object?.submeshes!)!  {
+                if let submesh = submesh as? MDLSubmesh {
+                    submesh.material = mdlMaterial
+                }
+            }
+            
+    
+            
             
             
             let node =  SCNNode(mdlObject: object!)
+        
             
-            node.geometry?.material(named: "sharkTexture.jpg")
             scene.rootNode.addChildNode(node)
             
             
@@ -110,11 +125,13 @@ class SceneKitViewController: UIViewController {
         }
     
     
-    
     @IBAction func dismissButtonTapped(_ sender: Any) {
         
         self.dismiss(animated: true, completion: nil)
+
     }
+    
+   
     
     
     

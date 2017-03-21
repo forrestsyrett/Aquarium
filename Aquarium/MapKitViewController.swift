@@ -387,8 +387,14 @@ let secondFloorAnnotation = Annotation(coordinate: coordinate, title: title, sub
     
     @IBAction func mapTypeChanged(Sender: AnyObject) {
         
-        // changes floor image
+       switchFloors()
         
+    }
+    
+    
+    func switchFloors() {
+        
+         // changes floor image
         if self.selectedFloor.selectedSegmentIndex == 0 {
             
             mapView.remove(self.secondFloor!)
@@ -398,16 +404,15 @@ let secondFloorAnnotation = Annotation(coordinate: coordinate, title: title, sub
             addMainFloorAnnotations()
             
         } else if self.selectedFloor.selectedSegmentIndex == 1 {
-           
+            
             mapView.remove(self.firstFloor!)
             mapView.add(self.secondFloor!)
             
             mapView.removeAnnotations(mapView.annotations)
             addSecondFloorAnnotations()
             
-            }
         }
-        
+        }
     
     
     @IBAction func tapDismiss(_ sender: AnyObject) {
@@ -464,7 +469,24 @@ let secondFloorAnnotation = Annotation(coordinate: coordinate, title: title, sub
         
         mapView.selectAnnotation(ann, animated: true)
         
-    }
+        } else {
+            self.selectedFloor.selectedSegmentIndex = 0
+            switchFloors()
+            var ann = mapView.annotations[0]
+            
+            for annotation in mapView.annotations {
+                
+                if let title = annotation.title {
+                    if title == "Cafe" {
+                        ann = annotation
+                    }
+                }
+            }
+            
+            mapView.selectAnnotation(ann, animated: true)
+            
+
+        }
     }
     
     func selectGiftShopAnnotation() {
@@ -483,8 +505,25 @@ let secondFloorAnnotation = Annotation(coordinate: coordinate, title: title, sub
         
         mapView.selectAnnotation(ann, animated: true)
         
-    }
+        } else {
+            self.selectedFloor.selectedSegmentIndex = 0
+            switchFloors()
+            
+            var ann = mapView.annotations[0]
+            
+            for annotation in mapView.annotations {
+                
+                if let title = annotation.title {
+                    if title == "Gift Shop" {
+                        ann = annotation
+                    }
+                }
+            }
+            mapView.selectAnnotation(ann, animated: true)
+        }
 }
+    
+    // MARK: Quick Icons
     
     @IBAction func restroomButtonTapped(_ sender: Any) {
         selectRestroomAnnotation()
@@ -498,6 +537,8 @@ let secondFloorAnnotation = Annotation(coordinate: coordinate, title: title, sub
         selectGiftShopAnnotation()
     }
     
+    
+    // MARK: Compass Button
     @IBAction func compassModeButtonTapped(_ sender: Any) {
         
         
@@ -509,23 +550,23 @@ let secondFloorAnnotation = Annotation(coordinate: coordinate, title: title, sub
         UIView.animate(withDuration: 0.3, animations: { 
             self.mapView.transform = CGAffineTransform.identity
         })
-        case TrackingTypes.user.rawValue: locationManager.startUpdatingHeading()
+        case TrackingTypes.user.rawValue: locationManager.stopUpdatingHeading()
             self.trackingSwitch = 3
         self.trackingType = TrackingTypes.off.rawValue
-        case TrackingTypes.off.rawValue : locationManager.startUpdatingHeading()
-            self.trackingSwitch = 1
-        self.trackingType = TrackingTypes.map.rawValue
         for anotation in self.mapView.annotations {
             if let title = anotation.title {
                 if title == "Current Location" {
                     let view = mapView.view(for: anotation)
-                    UIView.animate(withDuration: 0.3, animations: { 
+                    UIView.animate(withDuration: 0.3, animations: {
                         view?.transform = CGAffineTransform.identity
-
+                        
                     })
                 }
             }
-        }
+            }
+        case TrackingTypes.off.rawValue : locationManager.startUpdatingHeading()
+            self.trackingSwitch = 1
+        self.trackingType = TrackingTypes.map.rawValue
             
         default: break
     }
@@ -533,9 +574,6 @@ let secondFloorAnnotation = Annotation(coordinate: coordinate, title: title, sub
 }
     
     func locationManager(_ manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
-        
-        print("Updating heading")
-        print(locationManager.heading ?? "0")
            let userRotation = newHeading.magneticHeading * M_PI / 180
         let mapRotation = newHeading.magneticHeading * M_PI / 180
      
@@ -556,6 +594,18 @@ let secondFloorAnnotation = Annotation(coordinate: coordinate, title: title, sub
         if self.trackingType == TrackingTypes.map.rawValue {
             UIView.animate(withDuration: 0.3, animations: { 
                 self.mapView.transform = CGAffineTransform(rotationAngle: -(CGFloat)(mapRotation))
+                for anotation in self.mapView.annotations {
+                    if let title = anotation.title {
+                        if title == "Current Location" {
+                            let view = self.mapView.view(for: anotation)
+                            UIView.animate(withDuration: 0.3, animations: {
+                                view?.transform = CGAffineTransform(rotationAngle: (CGFloat)(userRotation))
+                                
+                            })
+                        }
+                    }
+                }
+
 
             })
         }

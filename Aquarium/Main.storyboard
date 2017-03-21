@@ -1786,34 +1786,35 @@ Individual sea jellies are either male or female and reproduce sexually. Eggs an
                         <subviews>
                             <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8u7-Bt-6AG">
                                 <rect key="frame" x="-6" y="0.0" width="388" height="667"/>
-                                <color key="backgroundColor" red="0.45545876311909694" green="0.70476160302537172" blue="0.80339487339949245" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </sceneKitView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NVo-gG-Zyx">
-                                <rect key="frame" x="324" y="20" width="35" height="35"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G3k-eE-BKd">
+                                <rect key="frame" x="319" y="28" width="40" height="39"/>
                                 <color key="backgroundColor" red="0.25414796429999997" green="0.61494155530000005" blue="0.72336632010000002" alpha="0.59441021130000005" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="35" id="32C-9e-tnN"/>
-                                    <constraint firstAttribute="height" constant="35" id="ZDm-bl-Mc6"/>
+                                    <constraint firstAttribute="height" constant="39" id="Ey4-xr-2F1"/>
+                                    <constraint firstAttribute="width" constant="40" id="XH8-T2-X9B"/>
                                 </constraints>
                                 <state key="normal" title="X">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="dismissButtonTapped:" destination="TCh-QN-WZo" eventType="touchUpInside" id="1TQ-Ar-weA"/>
+                                    <action selector="dismissButtonTapped:" destination="TCh-QN-WZo" eventType="touchUpInside" id="wdd-rq-7Ie"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="8u7-Bt-6AG" secondAttribute="trailing" constant="-23" id="1oC-Bi-mGp"/>
-                            <constraint firstItem="NVo-gG-Zyx" firstAttribute="leading" secondItem="8u7-Bt-6AG" secondAttribute="trailing" constant="-58" id="415-cO-JcG"/>
+                            <constraint firstItem="G3k-eE-BKd" firstAttribute="leading" secondItem="8u7-Bt-6AG" secondAttribute="trailing" constant="-63" id="Age-3f-bDX"/>
+                            <constraint firstItem="8u7-Bt-6AG" firstAttribute="top" secondItem="G3k-eE-BKd" secondAttribute="bottom" constant="-67" id="aKi-c1-C4f"/>
                             <constraint firstItem="8u7-Bt-6AG" firstAttribute="leading" secondItem="IVa-nr-kKz" secondAttribute="leadingMargin" constant="-22" id="afK-zP-Vpg"/>
                             <constraint firstItem="8u7-Bt-6AG" firstAttribute="top" secondItem="KAi-he-Oku" secondAttribute="bottom" constant="-20" id="r2B-U5-cIr"/>
-                            <constraint firstItem="8u7-Bt-6AG" firstAttribute="top" secondItem="NVo-gG-Zyx" secondAttribute="bottom" constant="-55" id="xMp-hX-ocI"/>
                             <constraint firstItem="euo-lQ-PPU" firstAttribute="top" secondItem="8u7-Bt-6AG" secondAttribute="bottom" id="xT2-10-NFY"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="dismissButton" destination="G3k-eE-BKd" id="hNc-X9-XUO"/>
                         <outlet property="sceneView" destination="8u7-Bt-6AG" id="yhU-4C-HOl"/>
                     </connections>
                 </viewController>

@@ -35,7 +35,7 @@ class AnimalDetailViewController: UIViewController {
         gradient(self.view)
         dismissButton.layer.cornerRadius = 19.5
         ThreeDView.layer.cornerRadius = 5.0
-        gradient(self.view)
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
