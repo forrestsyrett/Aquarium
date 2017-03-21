@@ -39,7 +39,7 @@ class BeaconInfoViewController: UIViewController {
         let notificationScheduled = AnimalFeedTableViewController.shared.notificationCheck("Shark Feed", weekday: weekday)
         
         if notificationScheduled {
-            self.button.setTitle("Shark Feed notification scheduled!", for: .normal)
+            self.button.setTitle("Shark Feed Notification Scheduled!", for: .normal)
         } else {
             self.button.setTitle(self.buttonLabel, for: .normal)
         }
@@ -80,25 +80,26 @@ class BeaconInfoViewController: UIViewController {
         if notificationScheduled == false {
             NotificationController().scheduleNotification(for: .shark, onWeekday: weekday, scheduled: true)
         
-        let alert = UIAlertController(title: "Notification Scheduled!", message: "We'll alert you 15 minutes before the shark feeding.", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Shark Feed Notification Scheduled!", message: "We'll alert you 15 minutes before the shark feeding.", preferredStyle: .alert)
         let action = UIAlertAction(title: "Awesome!", style: .default, handler: nil)
         
         alert.addAction(action)
         
         self.present(alert, animated: true, completion: nil)
             
-            self.button.setTitle("Notification Scheduled!", for: .normal)
+            self.button.setTitle("Shark Feed Notification Scheduled!", for: .normal)
             
         } else {
             
             let alert = UIAlertController(title: "Cancel Notification?", message: "Would you like to cancel your notification for the shark feeding?", preferredStyle: .alert)
             let yesAction = UIAlertAction(title: "Yes", style: .destructive, handler: { (action) in
                 
-//***                ////////// CANCEL NOTIFICATION HERE ///////// CHANGE BUTTON TITLE AFTER
+                NotificationController().scheduleNotification(for: .shark, onWeekday: weekday, scheduled: false)
+                self.button.setTitle("Notify me about the Shark Feeding!", for: .normal)
             })
-            let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: nil)
+            let noAction = UIAlertAction(title: "No", style: .default, handler: nil)
             alert.addAction(yesAction)
-            alert.addAction(cancelAction)
+            alert.addAction(noAction)
             
             self.present(alert, animated: true, completion: nil)
             

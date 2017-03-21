@@ -11,7 +11,7 @@ import UIKit
 
 class NotificationController {
     
-    // Figure out how to assign actions to the notification
+    // Assign actions to the notification
     // Add a snooze action that schedules a new notification 5 min before the feeding
     
     

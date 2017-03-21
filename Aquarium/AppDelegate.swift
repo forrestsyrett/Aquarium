@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
   
     
     var window: UIWindow?
-    
+    let delegate = NotificationDelegate()
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
@@ -31,16 +31,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         application.registerForRemoteNotifications()
         
         
-        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) {(accepted, error) in
-            if !accepted {
-                print("Notification access denied.")
+        let center = UNUserNotificationCenter.current()
+        center.delegate = delegate
+        
+        
+        center.requestAuthorization(options: [.alert, .sound, .badge]) { (granted, error) in
+            if !granted {
+                print("Permission Denied")
             }
-        }
-        
-        
-        
-        return true
     }
+        return true
+}
+    
     
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -106,7 +108,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         MembershipShortcutAction(shortcutItem)
     }
     
-
     
     
     enum ShortCutIdentifier: String {

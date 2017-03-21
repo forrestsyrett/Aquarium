@@ -9,9 +9,10 @@
 import UIKit
 import MapKit
 import OneSignal
+import CoreLocation
 
 
-class MapKitViewController: UIViewController, MKMapViewDelegate, BottomSheetViewControllerDelegate {
+class MapKitViewController: UIViewController, MKMapViewDelegate, BottomSheetViewControllerDelegate, CLLocationManagerDelegate {
     
     
     static let shared = MapKitViewController()
@@ -21,10 +22,14 @@ class MapKitViewController: UIViewController, MKMapViewDelegate, BottomSheetView
     
     @IBOutlet weak var selectedFloor: UISegmentedControl!
     
-    
+    @IBOutlet weak var restroomButton: UIButton!
+    @IBOutlet weak var cafeButton: UIButton!
+    @IBOutlet weak var giftShopBUtton: UIButton!
     
     let galleries = MapGalleryController.sharedController
     let bottomSheetViewController = BottomSheetViewController()
+    
+   // var locationManager: CLLocationManager!
     
     var aquarium = AquariumMap(filename: "Aquarium")
     var background = Background(filename: "BackgroundOverlay")
@@ -40,11 +45,25 @@ class MapKitViewController: UIViewController, MKMapViewDelegate, BottomSheetView
     var firstFloor: MKOverlay? = nil
     var secondFloor: MKOverlay? = nil
     
+    var trackingSwitch = 3
+    var trackingType = "off"
     
+    enum TrackingTypes: String {
+    
+        case user = "user"
+        case map = "map"
+        case off = "off"
+    }
+    
+    let locationManager = CLLocationManager()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        locationManager.requestAlwaysAuthorization()
+        
+        
         
         tabBarTint(view: self)
         
@@ -78,17 +97,24 @@ class MapKitViewController: UIViewController, MKMapViewDelegate, BottomSheetView
         NotificationCenter.default.addObserver(self, selector: #selector(MapKitViewController.updateLocation), name: Notification.Name(rawValue: "sharks"), object: nil)
         
         transparentNavigationBar(self)
+        
+        let mapCamera = MKMapCamera()
+        
+        mapView.setCamera(mapCamera, animated: false)
+        
+ 
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+      locationManager.delegate = self
+        locationManager.startUpdatingLocation()
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        
     }
     
     
-    
-    
     func addOverlays() {
-        
-
-        
-        
-        
+    
 //        let path = Bundle.main.path(forResource: "background", ofType: "png")
 //        let fileURL = NSURL(fileURLWithPath: path!)
 //        let colorOverlay = MKTileOverlay(urlTemplate: fileURL.absoluteString)
@@ -338,7 +364,12 @@ let secondFloorAnnotation = Annotation(coordinate: coordinate, title: title, sub
             
         case "Journey to South America - Aviary":
             postNotificationWithGalleryName(gallery: galleries.jsa)
+
+        case "Cafe":
+            postNotificationWithGalleryName(gallery: galleries.amenities)
             
+        case "Mother's Room":
+            postNotificationWithGalleryName(gallery: galleries.amenities)
         default:
             break
         }
@@ -356,8 +387,14 @@ let secondFloorAnnotation = Annotation(coordinate: coordinate, title: title, sub
     
     @IBAction func mapTypeChanged(Sender: AnyObject) {
         
-        // changes floor image
+       switchFloors()
         
+    }
+    
+    
+    func switchFloors() {
+        
+         // changes floor image
         if self.selectedFloor.selectedSegmentIndex == 0 {
             
             mapView.remove(self.secondFloor!)
@@ -367,16 +404,15 @@ let secondFloorAnnotation = Annotation(coordinate: coordinate, title: title, sub
             addMainFloorAnnotations()
             
         } else if self.selectedFloor.selectedSegmentIndex == 1 {
-           
+            
             mapView.remove(self.firstFloor!)
             mapView.add(self.secondFloor!)
             
             mapView.removeAnnotations(mapView.annotations)
             addSecondFloorAnnotations()
             
-            }
         }
-        
+        }
     
     
     @IBAction func tapDismiss(_ sender: AnyObject) {
@@ -402,7 +438,180 @@ let secondFloorAnnotation = Annotation(coordinate: coordinate, title: title, sub
         
     }
     
+    func selectRestroomAnnotation() {
+        var ann = mapView.annotations[0]
+        
+        for annotation in mapView.annotations {
+            
+            if let title = annotation.title {
+                if title == "Restrooms" {
+                    ann = annotation
+                }
+            }
+        }
+        
+        mapView.selectAnnotation(ann, animated: true)
+        
+    }
     
+    func selectCafeAnnotation() {
+        if self.selectedFloor.selectedSegmentIndex == 0 {
+        var ann = mapView.annotations[0]
+        
+        for annotation in mapView.annotations {
+            
+            if let title = annotation.title {
+                if title == "Cafe" {
+                    ann = annotation
+                }
+            }
+        }
+        
+        mapView.selectAnnotation(ann, animated: true)
+        
+        } else {
+            self.selectedFloor.selectedSegmentIndex = 0
+            switchFloors()
+            var ann = mapView.annotations[0]
+            
+            for annotation in mapView.annotations {
+                
+                if let title = annotation.title {
+                    if title == "Cafe" {
+                        ann = annotation
+                    }
+                }
+            }
+            
+            mapView.selectAnnotation(ann, animated: true)
+            
+
+        }
+    }
+    
+    func selectGiftShopAnnotation() {
+        if self.selectedFloor.selectedSegmentIndex == 0 {
+        var ann = mapView.annotations[0]
+        
+        for annotation in mapView.annotations {
+            
+            if let title = annotation.title {
+                if title == "Gift Shop" {
+                    ann = annotation
+                }
+            }
+        }
+    
+        
+        mapView.selectAnnotation(ann, animated: true)
+        
+        } else {
+            self.selectedFloor.selectedSegmentIndex = 0
+            switchFloors()
+            
+            var ann = mapView.annotations[0]
+            
+            for annotation in mapView.annotations {
+                
+                if let title = annotation.title {
+                    if title == "Gift Shop" {
+                        ann = annotation
+                    }
+                }
+            }
+            mapView.selectAnnotation(ann, animated: true)
+        }
+}
+    
+    // MARK: Quick Icons
+    
+    @IBAction func restroomButtonTapped(_ sender: Any) {
+        selectRestroomAnnotation()
+    }
+    
+    @IBAction func cafeButtonTapped(_ sender: Any) {
+        selectCafeAnnotation()
+    }
+    
+    @IBAction func giftshopButtonTapped(_ sender: Any) {
+        selectGiftShopAnnotation()
+    }
+    
+    
+    // MARK: Compass Button
+    @IBAction func compassModeButtonTapped(_ sender: Any) {
+        
+        
+        
+        switch self.trackingType {
+        case TrackingTypes.map.rawValue: locationManager.startUpdatingHeading()
+            self.trackingSwitch = 2
+            self.trackingType = TrackingTypes.user.rawValue
+        UIView.animate(withDuration: 0.3, animations: { 
+            self.mapView.transform = CGAffineTransform.identity
+        })
+        case TrackingTypes.user.rawValue: locationManager.stopUpdatingHeading()
+            self.trackingSwitch = 3
+        self.trackingType = TrackingTypes.off.rawValue
+        for anotation in self.mapView.annotations {
+            if let title = anotation.title {
+                if title == "Current Location" {
+                    let view = mapView.view(for: anotation)
+                    UIView.animate(withDuration: 0.3, animations: {
+                        view?.transform = CGAffineTransform.identity
+                        
+                    })
+                }
+            }
+            }
+        case TrackingTypes.off.rawValue : locationManager.startUpdatingHeading()
+            self.trackingSwitch = 1
+        self.trackingType = TrackingTypes.map.rawValue
+            
+        default: break
+    }
+
+}
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
+           let userRotation = newHeading.magneticHeading * M_PI / 180
+        let mapRotation = newHeading.magneticHeading * M_PI / 180
+     
+        if self.trackingType == TrackingTypes.user.rawValue {
+            for anotation in self.mapView.annotations {
+                if let title = anotation.title {
+                    if title == "Current Location" {
+                        let view = mapView.view(for: anotation)
+                        UIView.animate(withDuration: 0.3, animations: { 
+                            view?.transform = CGAffineTransform(rotationAngle: (CGFloat)(userRotation))
+
+                        })
+                    }
+                }
+            }
+        }
+                
+        if self.trackingType == TrackingTypes.map.rawValue {
+            UIView.animate(withDuration: 0.3, animations: { 
+                self.mapView.transform = CGAffineTransform(rotationAngle: -(CGFloat)(mapRotation))
+                for anotation in self.mapView.annotations {
+                    if let title = anotation.title {
+                        if title == "Current Location" {
+                            let view = self.mapView.view(for: anotation)
+                            UIView.animate(withDuration: 0.3, animations: {
+                                view?.transform = CGAffineTransform(rotationAngle: (CGFloat)(userRotation))
+                                
+                            })
+                        }
+                    }
+                }
+
+
+            })
+        }
+    }
+    
+
     
     func getDirectionsButtonTapped(_ bottomSheetViewController: BottomSheetViewController) {
         

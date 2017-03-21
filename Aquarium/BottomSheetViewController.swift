@@ -193,7 +193,6 @@ class BottomSheetViewController: UIViewController, UIGestureRecognizerDelegate  
         self.urlString = "http://www.thelivingplanet.com/essential_grid/exhibit-updates/"
     }
     
-    
     func postObservers() {
         
         //        let allGalleries = [galleries.amenities, galleries.discoverUtah, galleries.antarcticAdventure, galleries.banquetHall, galleries.expeditionAsia, galleries.jsa, galleries.oceanExplorer, galleries.tukis]
@@ -222,7 +221,8 @@ class BottomSheetViewController: UIViewController, UIGestureRecognizerDelegate  
         NotificationCenter.default.addObserver(self, selector: #selector(BottomSheetViewController.theater), name: Notification.Name(rawValue: galleries.theater.name), object: nil)
         
         NotificationCenter.default.addObserver(self, selector: #selector(BottomSheetViewController.educationCenter), name: Notification.Name(rawValue: galleries.educationCenter.name), object: nil)
-              NotificationCenter.default.addObserver(self, selector: #selector(BottomSheetViewController.deepSea), name: Notification.Name(rawValue: galleries.deepSeaLab.name), object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(BottomSheetViewController.deepSea), name: Notification.Name(rawValue: galleries.deepSeaLab.name), object: nil)
     }
     
     
@@ -238,8 +238,6 @@ class BottomSheetViewController: UIViewController, UIGestureRecognizerDelegate  
     
     func panGesture(recognizer: UIPanGestureRecognizer) {
         
-        
-        //        self.view.transform = CGAffineTransform.identity
         
         let translation = recognizer.translation(in: self.view)
         
@@ -280,7 +278,7 @@ class BottomSheetViewController: UIViewController, UIGestureRecognizerDelegate  
     }
     
     
-    
+    // "More Info" Button
     @IBAction func getDirectionsButtonTapped(_ sender: AnyObject) {
         
         
@@ -324,7 +322,7 @@ class BottomSheetViewController: UIViewController, UIGestureRecognizerDelegate  
     }
 
 
-
+// Checks to see if panGesture is moving up or down
 extension UIPanGestureRecognizer {
     
     func isUp(view: UIView) -> Bool {

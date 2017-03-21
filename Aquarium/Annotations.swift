@@ -29,6 +29,7 @@ enum AnnotationTypes: Int {
     case Theater = 13
     case EducationCenter = 14
     case MothersRoom = 15
+    case Cafe = 16
 }
 
 

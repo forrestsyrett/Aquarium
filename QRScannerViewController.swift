@@ -20,9 +20,9 @@ class QRScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsD
     @IBOutlet weak var getStartedButtonLabel: UIButton!
     @IBOutlet weak var qrCodeResult: UILabel!
     @IBOutlet weak var photoFrameImage: UIImageView!
-    @IBOutlet weak var tabBarLineView: UIView!
     @IBOutlet weak var alignQRCodeLabel: UILabel!
     @IBOutlet weak var scanButton: UIButton!
+    @IBOutlet weak var dismissButton: UIButton!
     
 
     
@@ -34,15 +34,15 @@ class QRScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsD
     func configureVideoCapture() {
         let captureDevice = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo)
         
-        var error: NSError?
+    //    var error: NSError?
         let input: AnyObject!
         
         
         do {
             input = try AVCaptureDeviceInput(device: captureDevice) as AVCaptureDeviceInput
         }
-        catch let error1 as NSError {
-            error = error1
+        catch _ as NSError {
+      //      error = error1
             input = nil
         }
 //        if (error != nil) {
@@ -82,7 +82,7 @@ class QRScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsD
         qrCodeFrameView?.layer.borderColor = UIColor.blue.cgColor
         qrCodeFrameView?.layer.borderWidth = 5
         self.view.addSubview(qrCodeFrameView!)
-        self.view.addSubview(tabBarLineView)
+        self.view.addSubview(dismissButton)
         self.view.addSubview(photoFrameImage)
         self.view.addSubview(alignQRCodeLabel)
         self.view.addSubview(scanButton)
@@ -140,6 +140,8 @@ class QRScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsD
         roundCornerButtons(QRModalView)
         roundCornerButtons(getStartedButtonLabel)
         roundCornerButtons(scanButton)
+        self.dismissButton.layer.cornerRadius = 17.0
+        self.dismissButton.clipsToBounds = true
             gradient(self.view)
 
         tabBarTint(view: self)
@@ -194,7 +196,7 @@ class QRScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsD
         case .denied:
             let cameraAlert = UIAlertController(title: "No Camera Access", message: "Please Allow Access To The Camera", preferredStyle: .alert)
             let settingsAction = UIAlertAction(title: "Settings", style: .default, handler: { (cameraAlert) in
-                UIApplication.shared.openURL(URL(string: UIApplicationOpenSettingsURLString)!)
+                UIApplication.shared.open(URL(string: UIApplicationOpenSettingsURLString)!)
             })
             let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
             
@@ -220,6 +222,12 @@ class QRScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsD
         }
     
     }
+    
+    @IBAction func dismissButtonTapped(_ sender: Any) {
+        
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     
     @IBAction func getStartedButtonTapped(_ sender: AnyObject) {
         

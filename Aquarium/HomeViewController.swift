@@ -33,6 +33,10 @@ class HomeViewController: UIViewController, UITabBarControllerDelegate, CLLocati
     var destinationName = "String"
     var notificationSwitch = true
     
+    
+ //   let rightGesture = UISwipeGestureRecognizer()
+    
+    
     // MARK: - Beacon Regions
     var entranceRegion: CLBeaconRegion = CLBeaconRegion(proximityUUID: UUID(uuidString: "FDA50693-A4E2-4FB1-AFCF-C6EB07647825")!, major: 10004, minor: 54482, identifier: "Entrance")
     
@@ -71,7 +75,11 @@ class HomeViewController: UIViewController, UITabBarControllerDelegate, CLLocati
         
         locationManager.startMonitoring(for: self.entranceRegion)
         locationManager.startMonitoring(for: self.sharkRegion)
-
+        
+     //   self.rightGesture.direction = .right
+     //   self.view.addGestureRecognizer(rightGesture)
+        
+  
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -197,6 +205,8 @@ class HomeViewController: UIViewController, UITabBarControllerDelegate, CLLocati
                 
                 if self.regionName == "Entrance" {
                     NotificationCenter.default.post(name: Notification.Name(rawValue: "jsa"), object: nil)
+                    
+                    // Sets the currentLocationController "Current Location" String
                     CurrentLocationController.shared.exhibitName = "jsa"
                     
                 }
@@ -236,7 +246,7 @@ class HomeViewController: UIViewController, UITabBarControllerDelegate, CLLocati
             if self.destinationName == "Sharks" {
        
                 destinationViewController.image = "zebraShark"
-                destinationViewController.info = "Welcome to the shark tank! Here at the Loveland Living Planet Aquarium, we have 8 species of sharks in our shark tank. Can you spot them all?"
+                destinationViewController.info = "Welcome to our 300,000 gallon shark tank! Here at the Loveland Living Planet Aquarium, we have 8 species of sharks in our shark tank. Can you spot them all?"
                 destinationViewController.titleLabel = "Shark Tank"
                 destinationViewController.segueIdentifier = "sharks"
                 destinationViewController.buttonLabel = "Notify me about the Shark Feeding!"
@@ -248,7 +258,7 @@ class HomeViewController: UIViewController, UITabBarControllerDelegate, CLLocati
             if self.destinationName == "Penguins" {
                destinationViewController.image = "penguins"
                destinationViewController.titleLabel = "Gentoo Penguins"
-                destinationViewController.info = "Our aquarium is home to 17 Gentoo Penguins. See if you can spot the name bands on their flippers!\nWe feed our penguins at 4:00 PM every day."
+                destinationViewController.info = "Our aquarium is home to 19 Gentoo Penguins. See if you can spot the name bands on their flippers!\nWe feed our penguins at 4:00 PM every day."
                 destinationViewController.segueIdentifier = "penguinEncounter"
                 destinationViewController.buttonLabel = "Feed the Penguins!"
                 
@@ -365,12 +375,37 @@ class HomeViewController: UIViewController, UITabBarControllerDelegate, CLLocati
     }
     
     
+    // CODE TO ALLOW FOR SWIPING BETWEEN TABS
 
+   /* func goToPreviousTab(gesture: UIGestureRecognizer) {
+        print("Swipe!")
+        guard let tabBarController = self.tabBarController,
+            let selectedIndex = self.tabBarController?.selectedIndex,
+        let selectedController = tabBarController.selectedViewController,
+        let viewControllers = tabBarController.viewControllers, selectedIndex >= 0 else { return }
+        print("selectedIndex \(selectedIndex)")
+        let nextIndex = selectedIndex + 1
+        let fromView = selectedController.view
+        let toView = viewControllers[nextIndex].view
+        print("|NewIndex \(nextIndex)")
+        UIView.transition(  from: fromView!,
+                            to: toView!,
+                                    duration: 0.5,
+                                    options: UIViewAnimationOptions.transitionCrossDissolve,
+                                    completion: {(finished : Bool) -> () in
+                                        if (finished) {
+            tabBarController.selectedIndex = nextIndex
+            }
+        })
     
-    
-    
-    
-
+    }
+ 
+    @IBAction func rightSwipe(_ sender: Any) {
+        
+        self.goToPreviousTab(gesture: self.rightGesture)
+    }
+ 
+ */
 
     
     @IBAction func buyTicketsButtonTapped(_ sender: AnyObject) {

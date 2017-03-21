@@ -7,8 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		060C1EB31E81D7FC00501713 /* SceneKitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060C1EB21E81D7FC00501713 /* SceneKitViewController.swift */; };
+		060C1EB61E81D87500501713 /* shark.obj in Resources */ = {isa = PBXBuildFile; fileRef = 060C1EB41E81D87500501713 /* shark.obj */; };
+		060C1EB71E81D87500501713 /* sharkTexture.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 060C1EB51E81D87500501713 /* sharkTexture.jpg */; };
 		0656D2CD1DE4C7680014BBF0 /* AnimalCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0656D2CC1DE4C7680014BBF0 /* AnimalCollectionViewCell.swift */; };
 		06B325251DF7383500A53057 /* BeaconInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B325241DF7383500A53057 /* BeaconInfoViewController.swift */; };
+		06C4BB8A1E78882B005A96CE /* NotificationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C4BB891E78882B005A96CE /* NotificationDelegate.swift */; };
+		06C714F21E5E60E3003F3794 /* OpeningScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C714F11E5E60E3003F3794 /* OpeningScreenViewController.swift */; };
+		06C714F81E5E6C61003F3794 /* jellies.MOV in Resources */ = {isa = PBXBuildFile; fileRef = 06C714F71E5E6C61003F3794 /* jellies.MOV */; };
 		06FD838D1DEA41F5005F4EFA /* AnimalDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FD838C1DEA41F5005F4EFA /* AnimalDetailViewController.swift */; };
 		2E3C1D313B999B8DCB850948 /* Pods_Aquarium.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA163953DE68335B7F2D0C0E /* Pods_Aquarium.framework */; };
 		AA00A7871DD3D3E100B80DF6 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA00A7861DD3D3E100B80DF6 /* WebViewController.swift */; };
@@ -76,8 +82,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		060C1EB21E81D7FC00501713 /* SceneKitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneKitViewController.swift; sourceTree = "<group>"; };
+		060C1EB41E81D87500501713 /* shark.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = shark.obj; sourceTree = "<group>"; };
+		060C1EB51E81D87500501713 /* sharkTexture.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sharkTexture.jpg; sourceTree = "<group>"; };
 		0656D2CC1DE4C7680014BBF0 /* AnimalCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimalCollectionViewCell.swift; sourceTree = "<group>"; };
 		06B325241DF7383500A53057 /* BeaconInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeaconInfoViewController.swift; sourceTree = "<group>"; };
+		06C4BB891E78882B005A96CE /* NotificationDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationDelegate.swift; sourceTree = "<group>"; };
+		06C714F11E5E60E3003F3794 /* OpeningScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpeningScreenViewController.swift; sourceTree = "<group>"; };
+		06C714F71E5E6C61003F3794 /* jellies.MOV */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = jellies.MOV; sourceTree = "<group>"; };
 		06FD838C1DEA41F5005F4EFA /* AnimalDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimalDetailViewController.swift; sourceTree = "<group>"; };
 		AA00A7861DD3D3E100B80DF6 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		AA07C69D1DD5052700AD855D /* SecondFloorOverlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondFloorOverlayView.swift; sourceTree = "<group>"; };
@@ -241,9 +253,12 @@
 			children = (
 				AA9EE37B1DD25F94007D1E08 /* Aquarium.entitlements */,
 				AA544C941D0BB66C00DC1725 /* AppDelegate.swift */,
+				06C4BB891E78882B005A96CE /* NotificationDelegate.swift */,
+				06C714F11E5E60E3003F3794 /* OpeningScreenViewController.swift */,
 				AA33919F1D6FA92800F92147 /* Main.storyboard */,
 				AA00A7861DD3D3E100B80DF6 /* WebViewController.swift */,
 				AAA20FF51D5E47A1009B3241 /* ContactUsViewController.swift */,
+				06C714F71E5E6C61003F3794 /* jellies.MOV */,
 				AA544CA01D0BB66C00DC1725 /* Info.plist */,
 				AA353AE11DCE8BAA00AD5490 /* Fonts */,
 				AA353AB41DCE5F3900AD5490 /* Map */,
@@ -283,6 +298,9 @@
 				AA55B5831DDF75AE00CC2336 /* MainExhibits.swift */,
 				AA55B5851DDF765100CC2336 /* MainExhibitController.swift */,
 				06FD838C1DEA41F5005F4EFA /* AnimalDetailViewController.swift */,
+				060C1EB21E81D7FC00501713 /* SceneKitViewController.swift */,
+				060C1EB41E81D87500501713 /* shark.obj */,
+				060C1EB51E81D87500501713 /* sharkTexture.jpg */,
 			);
 			name = "Animal Exhibit Galleries";
 			sourceTree = "<group>";
@@ -374,7 +392,7 @@
 					AA544C901D0BB66B00DC1725 = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = B3G94J8WC9;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 0820;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -420,9 +438,12 @@
 				AA353AE41DCE8C0600AD5490 /* TrajanPro-Bold.otf in Resources */,
 				AA353AE51DCE8C0600AD5490 /* TrajanPro-Regular.otf in Resources */,
 				AA353ADF1DCE8B9E00AD5490 /* ITCFranklinGothicStd-Med.otf in Resources */,
+				060C1EB61E81D87500501713 /* shark.obj in Resources */,
 				AA081A561DDA8CE30020C269 /* background.png in Resources */,
 				AA544C9C1D0BB66C00DC1725 /* Assets.xcassets in Resources */,
 				AA353ADA1DCE8B9E00AD5490 /* ITCFranklinGothicStd-BookIt.otf in Resources */,
+				060C1EB71E81D87500501713 /* sharkTexture.jpg in Resources */,
+				06C714F81E5E6C61003F3794 /* jellies.MOV in Resources */,
 				AA353AC61DCE61C200AD5490 /* firstFloorExhibits.plist in Resources */,
 				AA7CE6FD1DDB909A00EF4669 /* BackgroundOverlay.plist in Resources */,
 				AA353AD01DCE701500AD5490 /* EntranceToSharksRoute.plist in Resources */,
@@ -508,6 +529,7 @@
 				AA909B181D41B42A000DB923 /* Feeding.swift in Sources */,
 				AA6FA1D41D55540B00CBEEC7 /* MembershipListTableViewController.swift in Sources */,
 				AA9D6EE01D1CCD5000831AFE /* Animal.swift in Sources */,
+				06C4BB8A1E78882B005A96CE /* NotificationDelegate.swift in Sources */,
 				AA081A581DDA91E60020C269 /* BackGroundOverlay.swift in Sources */,
 				AA544CFA1D149C0A00DC1725 /* QRScannerViewController.swift in Sources */,
 				AA353AC01DCE617000AD5490 /* AquariumMapOverlay.swift in Sources */,
@@ -518,6 +540,7 @@
 				AA353AB81DCE601800AD5490 /* BottomSheetViewController.swift in Sources */,
 				AA7FF44B1DDE65AE002A5AE0 /* MainExhibitViewController.swift in Sources */,
 				AA6F4E661D386A2A00FA20F7 /* AnimalTableViewCell.swift in Sources */,
+				060C1EB31E81D7FC00501713 /* SceneKitViewController.swift in Sources */,
 				AA353AC21DCE619100AD5490 /* AquariumMapOverlayView.swift in Sources */,
 				06B325251DF7383500A53057 /* BeaconInfoViewController.swift in Sources */,
 				06FD838D1DEA41F5005F4EFA /* AnimalDetailViewController.swift in Sources */,
@@ -526,6 +549,7 @@
 				AAEE47681D3CAD8500E0C537 /* NotificationController.swift in Sources */,
 				AA6F4E641D3868F900FA20F7 /* Animations.swift in Sources */,
 				AA7CE6FF1DDB91A600EF4669 /* Background.swift in Sources */,
+				06C714F21E5E60E3003F3794 /* OpeningScreenViewController.swift in Sources */,
 				AA353ABC1DCE608500AD5490 /* CurrentLocationController.swift in Sources */,
 				AA544CAB1D0C790400DC1725 /* UIAppearance.swift in Sources */,
 				AA00A7871DD3D3E100B80DF6 /* WebViewController.swift in Sources */,
@@ -642,6 +666,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Aquarium/Aquarium.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = B3G94J8WC9;
@@ -649,6 +674,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.forrest.Aquarium;
 				PRODUCT_NAME = Aquarium;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -660,6 +686,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Aquarium/Aquarium.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = B3G94J8WC9;

@@ -90,6 +90,10 @@ class AnimalFeedTableViewController: UIViewController, UITableViewDelegate, UITa
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        animalFeedTableView.reloadData()
+    }
+    
     func handleLeftSwipes(sender:UISwipeGestureRecognizer) {
         
         let selectedIndex: Int = self.weekdaySegmentedControl.selectedSegmentIndex
@@ -210,6 +214,7 @@ animalFeedTableView.reloadData()
         roundCornerButtons(cell.animalFeedImage)
         
         
+        // Slide cells into view
         func animate(_ cellView: UIView) {
             
             view.addSubview(cellView)
@@ -228,8 +233,8 @@ animalFeedTableView.reloadData()
     }
     
     
-    //                check notifications to see which are scheduled. access .userinfo
-    // animal name = Animal.Info.AnimalName
+    // check notifications to see which are scheduled
+    // animal name in code below = Animal.Info.AnimalName
     
     func notificationCheck(_ animalName: String, weekday: Int) -> Bool {
         guard let scheduledLocalNotifications = UIApplication.shared.scheduledLocalNotifications else { return false }
@@ -250,6 +255,7 @@ animalFeedTableView.reloadData()
     }
     
     //MARK: - AnimalFeedTableViewCellDelegate Methods
+
     
     func feedNotificationScheduled(_ animalFeedTableViewCell: AnimalFeedTableViewCell) {
         
@@ -264,7 +270,7 @@ animalFeedTableView.reloadData()
         
     }
     
-    
+    // Clears all notifications
     @IBAction func clearFeedingsButtonTapped(_ sender: AnyObject) {
         
         let alert = UIAlertController(title: "Clear Notifications?", message: "This will cancel all scheduled feeding notifications", preferredStyle: .alert)

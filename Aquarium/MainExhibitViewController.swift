@@ -30,7 +30,7 @@ class MainExhibitViewController: UIViewController, FlowingMenuDelegate, UICollec
         
 
         
-        allAnimals = [Animals.arapaima, Animals.binturong, Animals.cloudedLeopards, Animals.eel, Animals.greenSeaTurtle, Animals.hornbill, Animals.otters, Animals.penguins, Animals.tortoise, Animals.toucan, Animals.zebraShark, Animals.jellyfish]
+        allAnimals = [Animals.arapaima, Animals.binturong, Animals.cloudedLeopards, Animals.eel, Animals.greenSeaTurtle, Animals.hornbill, Animals.otters, Animals.penguins, Animals.tortoise, Animals.toucan, Animals.zebraShark, Animals.jellyfish, Animals.blacktipReef]
         allAnimalsSorted = allAnimals.sorted { $0.info.name < $1.info.name }
         
         allAnimals = allAnimalsSorted
@@ -79,8 +79,12 @@ class MainExhibitViewController: UIViewController, FlowingMenuDelegate, UICollec
     override func viewWillAppear(_ animated: Bool) {
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        self.searchBar.isHidden = false
+    }
     override func viewWillDisappear(_ animated: Bool) {
     }
+   
     
     // MARK: - Search Bar Functions
     
@@ -120,14 +124,23 @@ class MainExhibitViewController: UIViewController, FlowingMenuDelegate, UICollec
         self.searchBar.resignFirstResponder()
         
     }
+    
+    
+    
     ////////////////////////////////////////////////////////
+    //          MARK: - Keyboard Functions                //
+    ////////////////////////////////////////////////////////
+    
+    
     
     func resignKeyboard() {
         searchBar.resignFirstResponder()
         setSearchBarView()
+        
     }
     func setSearchBarView() {
         searchBar.frame = CGRect(x: 0, y: 637, width: view.frame.width, height: 50)
+        self.searchBar.isHidden = false
     }
     
     // Mark: - SearchBar Movement Response to Keyboard
@@ -246,7 +259,7 @@ class MainExhibitViewController: UIViewController, FlowingMenuDelegate, UICollec
         switch indexPath {
         case 0: allAnimals = [Animals.otters, Animals.tortoise]
         case 1: allAnimals = [Animals.arapaima, Animals.toucan]
-        case 2: allAnimals = [Animals.eel, Animals.greenSeaTurtle, Animals.zebraShark]
+        case 2: allAnimals = [Animals.eel, Animals.greenSeaTurtle, Animals.zebraShark, Animals.blacktipReef]
         case 3: allAnimals = [Animals.penguins]
         case 4: allAnimals = [Animals.binturong, Animals.cloudedLeopards, Animals.hornbill]
         default: break
@@ -305,6 +318,7 @@ class MainExhibitViewController: UIViewController, FlowingMenuDelegate, UICollec
                         let animal = allAnimals[selectedItem]
                         print(selectedItem)
                         destinationViewController.updateInfo(animal: animal)
+                        destinationViewController.animal = animal.info.name
                     }
                 }
             }
@@ -316,7 +330,6 @@ class MainExhibitViewController: UIViewController, FlowingMenuDelegate, UICollec
     
         func flowingMenuNeedsPresentMenu(_ flowingMenu: FlowingMenuTransitionManager) {
             performSegue(withIdentifier: "toExhibits", sender: self)
-            resignKeyboard()
         }
         
         func flowingMenuNeedsDismissMenu(_ flowingMenu: FlowingMenuTransitionManager) {
