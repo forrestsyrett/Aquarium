@@ -30,7 +30,7 @@ class MainExhibitViewController: UIViewController, FlowingMenuDelegate, UICollec
         
 
         
-        allAnimals = [Animals.arapaima, Animals.binturong, Animals.cloudedLeopards, Animals.eel, Animals.greenSeaTurtle, Animals.hornbill, Animals.otters, Animals.penguins, Animals.tortoise, Animals.toucan, Animals.zebraShark, Animals.jellyfish]
+        allAnimals = [Animals.arapaima, Animals.binturong, Animals.cloudedLeopards, Animals.eel, Animals.greenSeaTurtle, Animals.hornbill, Animals.otters, Animals.penguins, Animals.tortoise, Animals.toucan, Animals.zebraShark, Animals.jellyfish, Animals.blacktipReef]
         allAnimalsSorted = allAnimals.sorted { $0.info.name < $1.info.name }
         
         allAnimals = allAnimalsSorted
@@ -259,7 +259,7 @@ class MainExhibitViewController: UIViewController, FlowingMenuDelegate, UICollec
         switch indexPath {
         case 0: allAnimals = [Animals.otters, Animals.tortoise]
         case 1: allAnimals = [Animals.arapaima, Animals.toucan]
-        case 2: allAnimals = [Animals.eel, Animals.greenSeaTurtle, Animals.zebraShark]
+        case 2: allAnimals = [Animals.eel, Animals.greenSeaTurtle, Animals.zebraShark, Animals.blacktipReef]
         case 3: allAnimals = [Animals.penguins]
         case 4: allAnimals = [Animals.binturong, Animals.cloudedLeopards, Animals.hornbill]
         default: break
@@ -318,6 +318,7 @@ class MainExhibitViewController: UIViewController, FlowingMenuDelegate, UICollec
                         let animal = allAnimals[selectedItem]
                         print(selectedItem)
                         destinationViewController.updateInfo(animal: animal)
+                        destinationViewController.animal = animal.info.name
                     }
                 }
             }

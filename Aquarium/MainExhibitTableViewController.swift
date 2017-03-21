@@ -62,6 +62,7 @@ class MainExhibitTableViewController: UIViewController, UITableViewDelegate, UIT
        cell.galleryBackgroundImage.image = gallery.exhibitImage
         
         cell.galleryBackgroundImage.layer.cornerRadius = 5.0
+        cell.galleryBackgroundImage.clipsToBounds = true
         
         
         return cell

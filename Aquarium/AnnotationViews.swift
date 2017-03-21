@@ -61,7 +61,7 @@ class AnnotationViews: MKAnnotationView {
         case .DeepSeaLab:
             image = #imageLiteral(resourceName: "transparent")
         case .CurrentLocation:
-            image = #imageLiteral(resourceName: "userLocation3")
+            image = #imageLiteral(resourceName: "mapArrow")
         case .Theater:
             image = #imageLiteral(resourceName: "transparent")
         case .EducationCenter:

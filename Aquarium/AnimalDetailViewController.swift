@@ -21,16 +21,21 @@ class AnimalDetailViewController: UIViewController {
     
     @IBOutlet weak var scrollView: UIScrollView!
     
+    @IBOutlet weak var ThreeDView: UIButton!
+    
     var name = ""
     var image = UIImage(named: "")
     var info = ""
+    
+    var animal = "none"
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         gradient(self.view)
         dismissButton.layer.cornerRadius = 19.5
-        
+        ThreeDView.layer.cornerRadius = 5.0
+        gradient(self.view)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -40,7 +45,23 @@ class AnimalDetailViewController: UIViewController {
         self.animalInfo.text = info
         animalImage.layer.cornerRadius = 5.0
         animalImage.clipsToBounds = true
+        
+        // Added to test 3D model functionality. Will hide button if no 3D Model is available.
+        if self.animal == "Blacktip Reef Shark" {
+            self.ThreeDView.isHidden = false
+            
+        } else {
+            self.ThreeDView.isHidden = true
+        }
 
+    }
+    
+    
+    @IBAction func toModelButtonTapped(_ sender: Any) {
+        
+        if self.animal == "Blacktip Reef Shark" {
+            self.performSegue(withIdentifier: "toModel", sender: self)
+        }
     }
 
     override func didReceiveMemoryWarning() {

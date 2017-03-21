@@ -139,14 +139,14 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5JR-E6-8Oh">
-                                <rect key="frame" x="16" y="442" width="343" height="67"/>
+                                <rect key="frame" x="16" y="442" width="343" height="67.5"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HIZ-Q1-7jm">
-                                        <rect key="frame" x="0.0" y="0.0" width="86" height="67"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="86" height="67.5"/>
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QGm-ZF-Ooh">
-                                        <rect key="frame" x="86" y="0.0" width="171.5" height="67"/>
+                                        <rect key="frame" x="86" y="0.0" width="171.5" height="67.5"/>
                                         <fontDescription key="fontDescription" name="ITCFranklinGothicStd-Book" family="ITC Franklin Gothic Std" pointSize="18"/>
                                         <state key="normal" title="Help Us Grow!">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -156,7 +156,7 @@
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UuO-qQ-Iv1">
-                                        <rect key="frame" x="257.5" y="0.0" width="85.5" height="67"/>
+                                        <rect key="frame" x="257.5" y="0.0" width="85.5" height="67.5"/>
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                     </view>
                                 </subviews>
@@ -166,7 +166,7 @@
                                 </constraints>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2vw-ow-2t3" userLabel="Line Four">
-                                <rect key="frame" x="85" y="518" width="203" height="1"/>
+                                <rect key="frame" x="85" y="518.5" width="203" height="1"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="HiS-YF-z0R"/>
@@ -547,7 +547,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mobile Membership Card" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CmB-iv-51b">
-                                <rect key="frame" x="16" y="37" width="343" height="19"/>
+                                <rect key="frame" x="16" y="37" width="343" height="22.5"/>
                                 <fontDescription key="fontDescription" name="TrajanPro-Regular" family="Trajan Pro" pointSize="19"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -605,7 +605,7 @@ To get started, tap the plus!
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Not a member yet?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ni6-bF-yRa">
-                                        <rect key="frame" x="8" y="401" width="327" height="18"/>
+                                        <rect key="frame" x="8" y="398" width="327" height="21"/>
                                         <fontDescription key="fontDescription" name="ITCFranklinGothicStd-Book" family="ITC Franklin Gothic Std" pointSize="18"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -725,7 +725,7 @@ To get started, tap the plus!
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10 AM - 6 PM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="Mee-BF-QhS">
-                                <rect key="frame" x="16" y="249" width="343" height="17.5"/>
+                                <rect key="frame" x="16" y="249" width="343" height="18"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Mee-BF-QhS" secondAttribute="height" multiplier="80:3" constant="-133.33333333333337" id="Hhp-UR-qZC"/>
                                     <constraint firstAttribute="height" constant="21" id="Yux-m9-lbo"/>
@@ -740,7 +740,7 @@ To get started, tap the plus!
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We are open every day except" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="Erk-nw-Hui">
-                                <rect key="frame" x="16" y="274.5" width="343" height="20"/>
+                                <rect key="frame" x="16" y="275" width="343" height="19.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Erk-nw-Hui" secondAttribute="height" multiplier="70:4" id="mpv-oh-lzr"/>
                                     <constraint firstAttribute="height" constant="24" id="woS-fM-nYd"/>
@@ -1358,7 +1358,7 @@ To get started, tap the plus!
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" reuseIdentifier="cell" id="uyV-fR-gOP" customClass="AnimalCollectionViewCell" customModule="Aquarium" customModuleProvider="target">
-                                        <rect key="frame" x="90" y="41" width="196" height="140"/>
+                                        <rect key="frame" x="89.5" y="41" width="196" height="140"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="196" height="140"/>
@@ -1451,10 +1451,10 @@ To get started, tap the plus!
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HxW-2u-wFD">
-                                <rect key="frame" x="330" y="22" width="35" height="35"/>
+                                <rect key="frame" x="330" y="22" width="30" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="35" id="0hF-x8-zNc"/>
-                                    <constraint firstAttribute="height" constant="35" id="jPH-3J-OI3"/>
+                                    <constraint firstAttribute="width" constant="30" id="0hF-x8-zNc"/>
+                                    <constraint firstAttribute="height" constant="30" id="jPH-3J-OI3"/>
                                 </constraints>
                                 <state key="normal" image="qrWhite"/>
                                 <connections>
@@ -1724,12 +1724,28 @@ Individual sea jellies are either male or female and reproduce sexually. Eggs an
                                     <constraint firstItem="0Fw-G4-98q" firstAttribute="leading" secondItem="ttZ-HF-0Ca" secondAttribute="leading" id="vfh-pa-q3A"/>
                                 </constraints>
                             </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KxM-Hz-ex6">
+                                <rect key="frame" x="284" y="238" width="75" height="30"/>
+                                <color key="backgroundColor" red="0.25414796429999997" green="0.61494155530000005" blue="0.72336632010000002" alpha="0.59441021130000005" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="75" id="KE0-W3-8Gd"/>
+                                    <constraint firstAttribute="height" constant="30" id="vlN-K0-cGj"/>
+                                </constraints>
+                                <state key="normal" title="3D View">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="toModelButtonTapped:" destination="Jr2-gF-2qH" eventType="touchUpInside" id="EQ4-pU-XoL"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.25414796429999997" green="0.61494155530000005" blue="0.72336632010000002" alpha="0.59441021130000005" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="8sw-dx-0fL" firstAttribute="leading" secondItem="uS7-2V-fie" secondAttribute="trailing" constant="8" id="Euz-dO-VnH"/>
                             <constraint firstAttribute="trailing" secondItem="ttZ-HF-0Ca" secondAttribute="trailing" id="HSE-dz-lDQ"/>
+                            <constraint firstItem="KxM-Hz-ex6" firstAttribute="top" secondItem="Ko2-zq-VuQ" secondAttribute="bottom" constant="-37" id="IbQ-Et-5sK"/>
                             <constraint firstItem="Ko2-zq-VuQ" firstAttribute="leading" secondItem="Zeu-qj-FT0" secondAttribute="leading" constant="8" id="KWc-zc-mDQ"/>
+                            <constraint firstItem="KxM-Hz-ex6" firstAttribute="leading" secondItem="Ko2-zq-VuQ" secondAttribute="trailing" constant="-83" id="Npk-NH-adB"/>
                             <constraint firstItem="ttZ-HF-0Ca" firstAttribute="leading" secondItem="Zeu-qj-FT0" secondAttribute="leading" id="QHP-mR-57h"/>
                             <constraint firstAttribute="trailing" secondItem="Ko2-zq-VuQ" secondAttribute="trailing" constant="8" id="SfZ-wK-p4k"/>
                             <constraint firstItem="ttZ-HF-0Ca" firstAttribute="top" secondItem="Ko2-zq-VuQ" secondAttribute="bottom" constant="8" id="bs4-7N-5EG"/>
@@ -1743,16 +1759,67 @@ Individual sea jellies are either male or female and reproduce sexually. Eggs an
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="ThreeDView" destination="KxM-Hz-ex6" id="wJI-Ga-A5w"/>
                         <outlet property="animalImage" destination="Ko2-zq-VuQ" id="wQK-7a-MT1"/>
                         <outlet property="animalInfo" destination="zQX-Cs-Ejz" id="9WY-Dd-gCd"/>
                         <outlet property="animalNameLabel" destination="uS7-2V-fie" id="hLF-g3-0XB"/>
                         <outlet property="dismissButton" destination="8sw-dx-0fL" id="Jsl-PN-Tco"/>
                         <outlet property="scrollView" destination="ttZ-HF-0Ca" id="Myu-sQ-wlS"/>
+                        <segue destination="TCh-QN-WZo" kind="presentation" identifier="toModel" modalTransitionStyle="crossDissolve" id="NwN-nE-nh7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cWA-Wo-Os2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2250" y="1110"/>
+            <point key="canvasLocation" x="2248.8000000000002" y="1109.5952023988007"/>
+        </scene>
+        <!--Scene Kit View Controller-->
+        <scene sceneID="C2E-4A-Kgl">
+            <objects>
+                <viewController id="TCh-QN-WZo" customClass="SceneKitViewController" customModule="Aquarium" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="KAi-he-Oku"/>
+                        <viewControllerLayoutGuide type="bottom" id="euo-lQ-PPU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="IVa-nr-kKz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8u7-Bt-6AG">
+                                <rect key="frame" x="-6" y="0.0" width="388" height="667"/>
+                                <color key="backgroundColor" red="0.45545876311909694" green="0.70476160302537172" blue="0.80339487339949245" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </sceneKitView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NVo-gG-Zyx">
+                                <rect key="frame" x="324" y="20" width="35" height="35"/>
+                                <color key="backgroundColor" red="0.25414796429999997" green="0.61494155530000005" blue="0.72336632010000002" alpha="0.59441021130000005" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="35" id="32C-9e-tnN"/>
+                                    <constraint firstAttribute="height" constant="35" id="ZDm-bl-Mc6"/>
+                                </constraints>
+                                <state key="normal" title="X">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="dismissButtonTapped:" destination="TCh-QN-WZo" eventType="touchUpInside" id="1TQ-Ar-weA"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="8u7-Bt-6AG" secondAttribute="trailing" constant="-23" id="1oC-Bi-mGp"/>
+                            <constraint firstItem="NVo-gG-Zyx" firstAttribute="leading" secondItem="8u7-Bt-6AG" secondAttribute="trailing" constant="-58" id="415-cO-JcG"/>
+                            <constraint firstItem="8u7-Bt-6AG" firstAttribute="leading" secondItem="IVa-nr-kKz" secondAttribute="leadingMargin" constant="-22" id="afK-zP-Vpg"/>
+                            <constraint firstItem="8u7-Bt-6AG" firstAttribute="top" secondItem="KAi-he-Oku" secondAttribute="bottom" constant="-20" id="r2B-U5-cIr"/>
+                            <constraint firstItem="8u7-Bt-6AG" firstAttribute="top" secondItem="NVo-gG-Zyx" secondAttribute="bottom" constant="-55" id="xMp-hX-ocI"/>
+                            <constraint firstItem="euo-lQ-PPU" firstAttribute="top" secondItem="8u7-Bt-6AG" secondAttribute="bottom" id="xT2-10-NFY"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="sceneView" destination="8u7-Bt-6AG" id="yhU-4C-HOl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cWx-QZ-rJd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2972" y="1109.5952023988007"/>
         </scene>
         <!--Exhibit Table View Controller-->
         <scene sceneID="MH7-tX-WdX">
@@ -1777,7 +1844,7 @@ Individual sea jellies are either male or female and reproduce sexually. Eggs an
                                         <rect key="frame" x="0.0" y="28" width="383" height="402"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WYx-wp-hcK" id="Q7r-st-F9g">
-                                            <rect key="frame" x="0.0" y="0.0" width="383" height="401"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="383" height="401.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Animal Name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Sc-st-KN3">
@@ -2210,11 +2277,11 @@ Call (801)355-3474 ext. 222 to book your Penguin Encounter!
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sov-TY-OlN">
-                                <rect key="frame" x="321" y="28" width="30" height="30"/>
+                                <rect key="frame" x="329" y="24" width="35" height="35"/>
                                 <color key="backgroundColor" red="0.25414796429999997" green="0.61494155530000005" blue="0.72336632010000002" alpha="0.59441021130000005" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="YVE-Rk-JCl"/>
-                                    <constraint firstAttribute="width" constant="30" id="gXZ-AR-fuZ"/>
+                                    <constraint firstAttribute="height" constant="35" id="YVE-Rk-JCl"/>
+                                    <constraint firstAttribute="width" constant="35" id="gXZ-AR-fuZ"/>
                                 </constraints>
                                 <state key="normal" title="X">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -2228,7 +2295,7 @@ Call (801)355-3474 ext. 222 to book your Penguin Encounter!
                         <constraints>
                             <constraint firstAttribute="leadingMargin" secondItem="Rwa-vi-IyD" secondAttribute="leading" id="2li-T3-MtX"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ZuI-Hf-35J" secondAttribute="trailing" constant="8" id="3LJ-nD-2b1"/>
-                            <constraint firstItem="Sov-TY-OlN" firstAttribute="leading" secondItem="Rwa-vi-IyD" secondAttribute="trailing" constant="-38" id="9SH-tu-33a"/>
+                            <constraint firstItem="Sov-TY-OlN" firstAttribute="leading" secondItem="Rwa-vi-IyD" secondAttribute="trailing" constant="-30" id="9SH-tu-33a"/>
                             <constraint firstItem="jir-VW-avP" firstAttribute="top" secondItem="dNn-yR-jlI" secondAttribute="bottom" constant="283" id="BS9-DN-xdP"/>
                             <constraint firstAttribute="leadingMargin" secondItem="waN-Ru-3wv" secondAttribute="leading" id="BdU-ei-O3m"/>
                             <constraint firstItem="dNn-yR-jlI" firstAttribute="centerX" secondItem="p1p-bL-GDg" secondAttribute="centerX" id="EaG-ro-DeE"/>
@@ -2243,7 +2310,7 @@ Call (801)355-3474 ext. 222 to book your Penguin Encounter!
                             <constraint firstItem="Rwa-vi-IyD" firstAttribute="top" secondItem="Y8z-0I-f1Z" secondAttribute="bottom" constant="16" id="Kel-Ug-NWm"/>
                             <constraint firstItem="S5t-oz-H9R" firstAttribute="top" secondItem="waN-Ru-3wv" secondAttribute="bottom" constant="14" id="QAA-IS-siI"/>
                             <constraint firstItem="S5t-oz-H9R" firstAttribute="top" secondItem="waN-Ru-3wv" secondAttribute="bottom" constant="20" id="VOQ-BG-FKO"/>
-                            <constraint firstItem="Sov-TY-OlN" firstAttribute="top" secondItem="Y8z-0I-f1Z" secondAttribute="bottom" constant="8" id="XBb-Ve-Nc8"/>
+                            <constraint firstItem="Sov-TY-OlN" firstAttribute="top" secondItem="Y8z-0I-f1Z" secondAttribute="bottom" constant="4" id="XBb-Ve-Nc8"/>
                             <constraint firstItem="dNn-yR-jlI" firstAttribute="top" secondItem="H8o-zs-gKh" secondAttribute="bottom" constant="-284" id="eTP-xK-Q4j"/>
                             <constraint firstItem="waN-Ru-3wv" firstAttribute="top" secondItem="Y8z-0I-f1Z" secondAttribute="bottom" constant="78" id="h52-Zk-3OG"/>
                             <constraint firstAttribute="trailingMargin" secondItem="H8o-zs-gKh" secondAttribute="trailing" constant="30" id="k7P-aF-zGc"/>
@@ -2433,7 +2500,7 @@ Call (801)355-3474 ext. 222 to book your Penguin Encounter!
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Animal Feedings" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bwl-JV-Cza">
-                                <rect key="frame" x="16" y="36" width="343" height="19"/>
+                                <rect key="frame" x="16" y="36" width="343" height="22.5"/>
                                 <fontDescription key="fontDescription" name="TrajanPro-Regular" family="Trajan Pro" pointSize="19"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -2563,7 +2630,7 @@ Call (801)355-3474 ext. 222 to book your Penguin Encounter!
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YOf-IF-cy9">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YOf-IF-cy9">
                                 <rect key="frame" x="329" y="500" width="30" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="30" id="0nu-BN-Vsr"/>
@@ -2574,7 +2641,7 @@ Call (801)355-3474 ext. 222 to book your Penguin Encounter!
                                     <action selector="giftshopButtonTapped:" destination="hsF-ni-6Pt" eventType="touchUpInside" id="Xau-cW-7ZV"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UxW-Qw-RXL">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UxW-Qw-RXL">
                                 <rect key="frame" x="287" y="500" width="30" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="QcH-h4-GKo"/>
@@ -2585,7 +2652,7 @@ Call (801)355-3474 ext. 222 to book your Penguin Encounter!
                                     <action selector="cafeButtonTapped:" destination="hsF-ni-6Pt" eventType="touchUpInside" id="gkL-ps-e6n"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xkk-ie-QT0">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xkk-ie-QT0">
                                 <rect key="frame" x="245" y="500" width="30" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="30" id="E4W-KF-ELH"/>
@@ -2596,11 +2663,11 @@ Call (801)355-3474 ext. 222 to book your Penguin Encounter!
                                     <action selector="restroomButtonTapped:" destination="hsF-ni-6Pt" eventType="touchUpInside" id="cA6-GS-2lJ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lSq-JG-tPW">
-                                <rect key="frame" x="329" y="130" width="30" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lSq-JG-tPW">
+                                <rect key="frame" x="329" y="135" width="35" height="35"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="JBG-fM-mpK"/>
-                                    <constraint firstAttribute="width" constant="30" id="gAk-bU-pbb"/>
+                                    <constraint firstAttribute="height" constant="35" id="JBG-fM-mpK"/>
+                                    <constraint firstAttribute="width" constant="35" id="gAk-bU-pbb"/>
                                 </constraints>
                                 <state key="normal" image="compass"/>
                                 <connections>
@@ -2625,7 +2692,7 @@ Call (801)355-3474 ext. 222 to book your Penguin Encounter!
                             <constraint firstAttribute="trailingMargin" secondItem="JnW-V9-rTl" secondAttribute="trailing" id="k8x-Zm-mkt"/>
                             <constraint firstAttribute="leadingMargin" secondItem="9Hg-rg-M6e" secondAttribute="leading" id="kVu-e2-hxd"/>
                             <constraint firstItem="lSq-JG-tPW" firstAttribute="leading" secondItem="Yu1-Oe-RAM" secondAttribute="trailing" constant="-46" id="l39-Rc-0dI"/>
-                            <constraint firstItem="Yu1-Oe-RAM" firstAttribute="top" secondItem="lSq-JG-tPW" secondAttribute="bottom" constant="-107" id="lNb-6s-Rmz"/>
+                            <constraint firstItem="Yu1-Oe-RAM" firstAttribute="top" secondItem="lSq-JG-tPW" secondAttribute="bottom" constant="-117" id="lNb-6s-Rmz"/>
                             <constraint firstAttribute="trailingMargin" secondItem="xKd-2L-FBn" secondAttribute="trailing" constant="-20" id="mBK-tV-ffh"/>
                             <constraint firstItem="R93-yq-5bn" firstAttribute="top" secondItem="Xkk-ie-QT0" secondAttribute="bottom" constant="88" id="nSl-ig-OOs"/>
                             <constraint firstItem="R93-yq-5bn" firstAttribute="top" secondItem="YOf-IF-cy9" secondAttribute="bottom" constant="88" id="rL2-dv-O8C"/>

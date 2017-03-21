@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		060C1EB31E81D7FC00501713 /* SceneKitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060C1EB21E81D7FC00501713 /* SceneKitViewController.swift */; };
+		060C1EB61E81D87500501713 /* shark.obj in Resources */ = {isa = PBXBuildFile; fileRef = 060C1EB41E81D87500501713 /* shark.obj */; };
+		060C1EB71E81D87500501713 /* sharkTexture.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 060C1EB51E81D87500501713 /* sharkTexture.jpg */; };
 		0656D2CD1DE4C7680014BBF0 /* AnimalCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0656D2CC1DE4C7680014BBF0 /* AnimalCollectionViewCell.swift */; };
 		06B325251DF7383500A53057 /* BeaconInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B325241DF7383500A53057 /* BeaconInfoViewController.swift */; };
 		06C4BB8A1E78882B005A96CE /* NotificationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C4BB891E78882B005A96CE /* NotificationDelegate.swift */; };
@@ -79,6 +82,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		060C1EB21E81D7FC00501713 /* SceneKitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneKitViewController.swift; sourceTree = "<group>"; };
+		060C1EB41E81D87500501713 /* shark.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = shark.obj; sourceTree = "<group>"; };
+		060C1EB51E81D87500501713 /* sharkTexture.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sharkTexture.jpg; sourceTree = "<group>"; };
 		0656D2CC1DE4C7680014BBF0 /* AnimalCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimalCollectionViewCell.swift; sourceTree = "<group>"; };
 		06B325241DF7383500A53057 /* BeaconInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeaconInfoViewController.swift; sourceTree = "<group>"; };
 		06C4BB891E78882B005A96CE /* NotificationDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationDelegate.swift; sourceTree = "<group>"; };
@@ -292,6 +298,9 @@
 				AA55B5831DDF75AE00CC2336 /* MainExhibits.swift */,
 				AA55B5851DDF765100CC2336 /* MainExhibitController.swift */,
 				06FD838C1DEA41F5005F4EFA /* AnimalDetailViewController.swift */,
+				060C1EB21E81D7FC00501713 /* SceneKitViewController.swift */,
+				060C1EB41E81D87500501713 /* shark.obj */,
+				060C1EB51E81D87500501713 /* sharkTexture.jpg */,
 			);
 			name = "Animal Exhibit Galleries";
 			sourceTree = "<group>";
@@ -429,9 +438,11 @@
 				AA353AE41DCE8C0600AD5490 /* TrajanPro-Bold.otf in Resources */,
 				AA353AE51DCE8C0600AD5490 /* TrajanPro-Regular.otf in Resources */,
 				AA353ADF1DCE8B9E00AD5490 /* ITCFranklinGothicStd-Med.otf in Resources */,
+				060C1EB61E81D87500501713 /* shark.obj in Resources */,
 				AA081A561DDA8CE30020C269 /* background.png in Resources */,
 				AA544C9C1D0BB66C00DC1725 /* Assets.xcassets in Resources */,
 				AA353ADA1DCE8B9E00AD5490 /* ITCFranklinGothicStd-BookIt.otf in Resources */,
+				060C1EB71E81D87500501713 /* sharkTexture.jpg in Resources */,
 				06C714F81E5E6C61003F3794 /* jellies.MOV in Resources */,
 				AA353AC61DCE61C200AD5490 /* firstFloorExhibits.plist in Resources */,
 				AA7CE6FD1DDB909A00EF4669 /* BackgroundOverlay.plist in Resources */,
@@ -529,6 +540,7 @@
 				AA353AB81DCE601800AD5490 /* BottomSheetViewController.swift in Sources */,
 				AA7FF44B1DDE65AE002A5AE0 /* MainExhibitViewController.swift in Sources */,
 				AA6F4E661D386A2A00FA20F7 /* AnimalTableViewCell.swift in Sources */,
+				060C1EB31E81D7FC00501713 /* SceneKitViewController.swift in Sources */,
 				AA353AC21DCE619100AD5490 /* AquariumMapOverlayView.swift in Sources */,
 				06B325251DF7383500A53057 /* BeaconInfoViewController.swift in Sources */,
 				06FD838D1DEA41F5005F4EFA /* AnimalDetailViewController.swift in Sources */,

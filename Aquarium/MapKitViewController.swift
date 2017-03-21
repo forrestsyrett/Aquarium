@@ -29,7 +29,7 @@ class MapKitViewController: UIViewController, MKMapViewDelegate, BottomSheetView
     let galleries = MapGalleryController.sharedController
     let bottomSheetViewController = BottomSheetViewController()
     
-    var locationManager: CLLocationManager!
+   // var locationManager: CLLocationManager!
     
     var aquarium = AquariumMap(filename: "Aquarium")
     var background = Background(filename: "BackgroundOverlay")
@@ -45,11 +45,25 @@ class MapKitViewController: UIViewController, MKMapViewDelegate, BottomSheetView
     var firstFloor: MKOverlay? = nil
     var secondFloor: MKOverlay? = nil
     
-    var trackingSwitch: Bool = false
+    var trackingSwitch = 3
+    var trackingType = "off"
+    
+    enum TrackingTypes: String {
+    
+        case user = "user"
+        case map = "map"
+        case off = "off"
+    }
+    
+    let locationManager = CLLocationManager()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        locationManager.requestAlwaysAuthorization()
+        
+        
         
         tabBarTint(view: self)
         
@@ -92,8 +106,10 @@ class MapKitViewController: UIViewController, MKMapViewDelegate, BottomSheetView
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        locationManager.delegate = self
-        locationManager.startUpdatingHeading()
+      locationManager.delegate = self
+        locationManager.startUpdatingLocation()
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        
     }
     
     
@@ -348,7 +364,12 @@ let secondFloorAnnotation = Annotation(coordinate: coordinate, title: title, sub
             
         case "Journey to South America - Aviary":
             postNotificationWithGalleryName(gallery: galleries.jsa)
+
+        case "Cafe":
+            postNotificationWithGalleryName(gallery: galleries.amenities)
             
+        case "Mother's Room":
+            postNotificationWithGalleryName(gallery: galleries.amenities)
         default:
             break
         }
@@ -479,23 +500,65 @@ let secondFloorAnnotation = Annotation(coordinate: coordinate, title: title, sub
     
     @IBAction func compassModeButtonTapped(_ sender: Any) {
         
-        if self.trackingSwitch == false {
-            self.trackingSwitch = true
+        
+        
+        switch self.trackingType {
+        case TrackingTypes.map.rawValue: locationManager.startUpdatingHeading()
+            self.trackingSwitch = 2
+            self.trackingType = TrackingTypes.user.rawValue
+        UIView.animate(withDuration: 0.3, animations: { 
+            self.mapView.transform = CGAffineTransform.identity
+        })
+        case TrackingTypes.user.rawValue: locationManager.startUpdatingHeading()
+            self.trackingSwitch = 3
+        self.trackingType = TrackingTypes.off.rawValue
+        case TrackingTypes.off.rawValue : locationManager.startUpdatingHeading()
+            self.trackingSwitch = 1
+        self.trackingType = TrackingTypes.map.rawValue
+        for anotation in self.mapView.annotations {
+            if let title = anotation.title {
+                if title == "Current Location" {
+                    let view = mapView.view(for: anotation)
+                    UIView.animate(withDuration: 0.3, animations: { 
+                        view?.transform = CGAffineTransform.identity
 
-        } else {
-            self.trackingSwitch = false
-            
+                    })
+                }
+            }
         }
+            
+        default: break
     }
+
+}
     
     func locationManager(_ manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
         
         print("Updating heading")
-        let rotation = newHeading.magneticHeading * 3.14159 / 180
-        let anchorPoint: CGPoint = CGPoint(x: 0, y: -23)
-        
-        mapView.transform = CGAffineTransform(rotationAngle: -(CGFloat)(rotation))
-        
+        print(locationManager.heading ?? "0")
+           let userRotation = newHeading.magneticHeading * M_PI / 180
+        let mapRotation = newHeading.magneticHeading * M_PI / 180
+     
+        if self.trackingType == TrackingTypes.user.rawValue {
+            for anotation in self.mapView.annotations {
+                if let title = anotation.title {
+                    if title == "Current Location" {
+                        let view = mapView.view(for: anotation)
+                        UIView.animate(withDuration: 0.3, animations: { 
+                            view?.transform = CGAffineTransform(rotationAngle: (CGFloat)(userRotation))
+
+                        })
+                    }
+                }
+            }
+        }
+                
+        if self.trackingType == TrackingTypes.map.rawValue {
+            UIView.animate(withDuration: 0.3, animations: { 
+                self.mapView.transform = CGAffineTransform(rotationAngle: -(CGFloat)(mapRotation))
+
+            })
+        }
     }
     
 
