@@ -25,6 +25,10 @@ class MapKitViewController: UIViewController, MKMapViewDelegate, BottomSheetView
     @IBOutlet weak var restroomButton: UIButton!
     @IBOutlet weak var cafeButton: UIButton!
     @IBOutlet weak var giftShopBUtton: UIButton!
+    @IBOutlet weak var zoomGalleryView: UIView!
+    @IBOutlet weak var zoomedGalleryImage: UIImageView!
+    
+    @IBOutlet weak var exitZoomButton: UIButton!
     
     let galleries = MapGalleryController.sharedController
     let bottomSheetViewController = BottomSheetViewController()
@@ -45,8 +49,8 @@ class MapKitViewController: UIViewController, MKMapViewDelegate, BottomSheetView
     var firstFloor: MKOverlay? = nil
     var secondFloor: MKOverlay? = nil
     
-    var trackingSwitch = 3
-    var trackingType = "off"
+    var trackingSwitch = 2
+    var trackingType = "user"
     
     enum TrackingTypes: String {
     
@@ -54,6 +58,9 @@ class MapKitViewController: UIViewController, MKMapViewDelegate, BottomSheetView
         case map = "map"
         case off = "off"
     }
+    
+    
+    var galleryZoomed = false
     
     let locationManager = CLLocationManager()
     
@@ -102,6 +109,11 @@ class MapKitViewController: UIViewController, MKMapViewDelegate, BottomSheetView
         
         mapView.setCamera(mapCamera, animated: false)
         
+        
+        self.zoomGalleryView.layer.cornerRadius = 5.0
+        self.zoomedGalleryImage.layer.cornerRadius = 5.0
+        self.zoomGalleryView.layer.shadowRadius = 5.0
+        self.zoomGalleryView.layer.shadowColor = UIColor.white.cgColor
  
     }
     
@@ -109,7 +121,16 @@ class MapKitViewController: UIViewController, MKMapViewDelegate, BottomSheetView
       locationManager.delegate = self
         locationManager.startUpdatingLocation()
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.startUpdatingHeading()
         
+        self.zoomGalleryView.isHidden = true
+        
+        self.zoomGalleryView.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
+    }
+    
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        locationManager.stopUpdatingHeading()
     }
     
     
@@ -186,7 +207,7 @@ let secondFloorAnnotation = Annotation(coordinate: coordinate, title: title, sub
         
         ///// Sets Overlay and Overlay Image
         if overlay is AquariumMapOverlay {
-            let overlayView = AquariumMapOverlayView(overlay: overlay, overlayImage: #imageLiteral(resourceName: "mainFloor"))
+            let overlayView = AquariumMapOverlayView(overlay: overlay, overlayImage: #imageLiteral(resourceName: "mainFloor") )
             return overlayView
         }
         if overlay is SecondFloorOverlay {
@@ -247,7 +268,7 @@ let secondFloorAnnotation = Annotation(coordinate: coordinate, title: title, sub
                 let aquariumRegion: MKCoordinateRegion = MKCoordinateRegionMake(aquarium.midCoordinate, span)
                 mapView.setRegion(aquariumRegion, animated: true)
         }
-        }
+    }
     
     
     func addCurrentLocationAnnotation() {
@@ -273,6 +294,49 @@ let secondFloorAnnotation = Annotation(coordinate: coordinate, title: title, sub
             }
         }
     }
+    
+    
+    func zoomGallery() {
+    
+        
+        UIView.animate(withDuration: 1.2, delay: 0.0, usingSpringWithDamping: 0.50, initialSpringVelocity: 9.0, options: .allowUserInteraction, animations: {
+            
+            self.zoomGalleryView.isHidden = false
+            self.zoomGalleryView.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+            self.mapView.alpha = 0.3
+        }, completion: nil)
+        
+        self.galleryZoomed = true
+        
+        if self.galleryZoomed == true {
+            self.mapView.isScrollEnabled = false
+        }
+        
+    }
+    
+    func dismissZoomedGallery() {
+        UIView.animate(withDuration: 0.30, delay: 0.0, usingSpringWithDamping: 1.0, initialSpringVelocity: 7.0, options: .allowUserInteraction, animations: {
+            
+            self.zoomGalleryView.transform = CGAffineTransform(scaleX: 0.01, y: 0.01)
+            self.mapView.alpha = 1.0
+        }, completion: { (true) in
+            self.zoomGalleryView.isHidden = true
+        })
+        
+        self.galleryZoomed = false
+        
+        if self.galleryZoomed == false {
+            self.mapView.isScrollEnabled = true
+        }
+
+    }
+
+    @IBAction func dismissZoomGalleryButtonTapped(_ sender: Any) {
+        
+        dismissZoomedGallery()
+        
+           }
+    
     
     
     
@@ -316,12 +380,15 @@ let secondFloorAnnotation = Annotation(coordinate: coordinate, title: title, sub
         }
         
         
+        
         switch self.titleLabel {
         case "Discover Utah":
             postNotificationWithGalleryName(gallery: galleries.discoverUtah)
             
         case "Journey to South America":
             postNotificationWithGalleryName(gallery: galleries.jsa)
+            self.zoomedGalleryImage.image = #imageLiteral(resourceName: "jsa2")
+            zoomGallery()
             
         case "Gift Shop":
             postNotificationWithGalleryName(gallery: galleries.amenities)
@@ -331,24 +398,34 @@ let secondFloorAnnotation = Annotation(coordinate: coordinate, title: title, sub
             
         case "Ocean Explorer":
             postNotificationWithGalleryName(gallery: galleries.oceanExplorer)
+            self.zoomedGalleryImage.image = #imageLiteral(resourceName: "oceanExplorer2")
+            zoomGallery()
             
         case "Antarctic Adventure":
             postNotificationWithGalleryName(gallery: galleries.antarcticAdventure)
+            self.zoomedGalleryImage.image = #imageLiteral(resourceName: "antarcticAdventure2")
+            zoomGallery()
             
         case "Restrooms":
             postNotificationWithGalleryName(gallery: galleries.amenities)
             
         case "Jellyfish":
             postNotificationWithGalleryName(gallery: galleries.jellyFish)
+            self.zoomedGalleryImage.image = #imageLiteral(resourceName: "oceanExplorer2")
+            zoomGallery()
             
         case "Elevator":
             postNotificationWithGalleryName(gallery: galleries.amenities)
             
         case "Deep Sea Lab":
             postNotificationWithGalleryName(gallery: galleries.deepSeaLab)
+            self.zoomedGalleryImage.image = #imageLiteral(resourceName: "oceanExplorer2")
+            zoomGallery()
             
         case "40' Shark Tunnel":
             postNotificationWithGalleryName(gallery: galleries.oceanExplorer)
+            self.zoomedGalleryImage.image = #imageLiteral(resourceName: "oceanExplorer2")
+            zoomGallery()
             
         case "4D Theater":
             postNotificationWithGalleryName(gallery: galleries.theater)
@@ -364,6 +441,8 @@ let secondFloorAnnotation = Annotation(coordinate: coordinate, title: title, sub
             
         case "Journey to South America - Aviary":
             postNotificationWithGalleryName(gallery: galleries.jsa)
+            self.zoomedGalleryImage.image = #imageLiteral(resourceName: "jsa2")
+            zoomGallery()
 
         case "Cafe":
             postNotificationWithGalleryName(gallery: galleries.amenities)
@@ -416,6 +495,8 @@ let secondFloorAnnotation = Annotation(coordinate: coordinate, title: title, sub
     
     
     @IBAction func tapDismiss(_ sender: AnyObject) {
+        
+        dismissZoomedGallery()
         
     }
     
@@ -544,30 +625,16 @@ let secondFloorAnnotation = Annotation(coordinate: coordinate, title: title, sub
         
         
         switch self.trackingType {
-        case TrackingTypes.map.rawValue: locationManager.startUpdatingHeading()
+        case TrackingTypes.map.rawValue:
             self.trackingSwitch = 2
             self.trackingType = TrackingTypes.user.rawValue
         UIView.animate(withDuration: 0.3, animations: { 
             self.mapView.transform = CGAffineTransform.identity
         })
-        case TrackingTypes.user.rawValue: locationManager.stopUpdatingHeading()
-            self.trackingSwitch = 3
-        self.trackingType = TrackingTypes.off.rawValue
-        for anotation in self.mapView.annotations {
-            if let title = anotation.title {
-                if title == "Current Location" {
-                    let view = mapView.view(for: anotation)
-                    UIView.animate(withDuration: 0.3, animations: {
-                        view?.transform = CGAffineTransform.identity
-                        
-                    })
-                }
-            }
-            }
-        case TrackingTypes.off.rawValue : locationManager.startUpdatingHeading()
-            self.trackingSwitch = 1
-        self.trackingType = TrackingTypes.map.rawValue
+        case TrackingTypes.user.rawValue:
             
+            self.trackingSwitch = 1
+            self.trackingType = TrackingTypes.map.rawValue
         default: break
     }
 

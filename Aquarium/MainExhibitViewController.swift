@@ -30,7 +30,7 @@ class MainExhibitViewController: UIViewController, FlowingMenuDelegate, UICollec
         
 
         
-        allAnimals = [Animals.arapaima, Animals.binturong, Animals.cloudedLeopards, Animals.eel, Animals.greenSeaTurtle, Animals.hornbill, Animals.otters, Animals.penguins, Animals.tortoise, Animals.toucan, Animals.zebraShark, Animals.jellyfish, Animals.blacktipReef]
+        allAnimals = AnimalController.shared.allAnimals
         allAnimalsSorted = allAnimals.sorted { $0.info.name < $1.info.name }
         
         allAnimals = allAnimalsSorted

@@ -16,7 +16,7 @@ protocol BottomSheetViewControllerDelegate: class {
     func getDirectionsButtonTapped(_ bottomSheetViewController: BottomSheetViewController)
 }
 
-class BottomSheetViewController: UIViewController, UIGestureRecognizerDelegate  {
+class BottomSheetViewController: UIViewController, UIGestureRecognizerDelegate, UITableViewDelegate, UITableViewDataSource, AnimalActionsDelegate  {
     
     
     static let shared = BottomSheetViewController()
@@ -35,6 +35,8 @@ class BottomSheetViewController: UIViewController, UIGestureRecognizerDelegate  
     @IBOutlet weak var getDirectionsButton: UIButton!
     var buttonAction = "Safari"
     
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var theaterTableView: UITableView!
     
     let galleries = MapGalleryController.sharedController
     
@@ -53,6 +55,17 @@ class BottomSheetViewController: UIViewController, UIGestureRecognizerDelegate  
          case WebView = "WebView"
     }
     
+    var mapTableViewData = AnimalController.shared.allAnimals
+    var mapGalleries = [MapGalleryController.sharedController.antarcticAdventure.name]
+    var allTheaterShows = [TheaterShowsController.shared.penguins4D, TheaterShowsController.shared.sammyAndRay4D, TheaterShowsController.shared.wildCats3D]
+    
+    
+    var animalInfo = ""
+    var animalImage = UIImage()
+    var animalName = ""
+    
+    
+    var closeSwitch: Bool = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -76,29 +89,193 @@ class BottomSheetViewController: UIViewController, UIGestureRecognizerDelegate  
         shadowView.layer.shadowOffset = CGSize(width: 5.0, height: 5.0)
         shadowView.layer.shadowRadius = 7.0
         
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+        let allGalleries = [galleries.amenities.name, galleries.antarcticAdventure.name, galleries.banquetHall.name, galleries.deepSeaLab.name, galleries.discoverUtah.name, galleries.educationCenter.name, galleries.expeditionAsia.name, galleries.jellyFish.name, galleries.jsa.name, galleries.oceanExplorer.name, galleries.theater.name, galleries.tukis.name]
+        
+        mapGalleries = allGalleries
+        
+        hideTableView()
+        self.theaterTableView.isHidden = true
+
         
         
-    }
+        
+           }
     
     
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
+        if self.closeSwitch == true {
         UIView.animate(withDuration: 0.3) {
             let frame = self.view.frame
             let yComponent = UIScreen.main.bounds.height - 120
             self.view.frame = CGRect(x: 0, y: yComponent, width: frame.width, height: frame.height)
+            }
         }
+        
+        self.closeSwitch = false
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        let frame = self.view.frame
+    /*    let frame = self.view.frame
         let yComponent = UIScreen.main.bounds.height - 120
         self.view.frame = CGRect(x: 0, y: yComponent, width: frame.width, height: frame.height)
         
-        self.view.transform = .identity
+        UIView.animate(withDuration: 0.3) { 
+            self.view.transform = .identity
+
+        }*/
     }
+
+    
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        if tableView == self.tableView {
+        return  1
+        } else {
+            return 1
+        }
+    }
+    
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if tableView == self.tableView {
+       return self.mapTableViewData.count
+        } else {
+            return self.allTheaterShows.count
+        }
+    }
+    
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        if tableView == self.tableView {
+            
+        let cell = tableView.dequeueReusableCell(withIdentifier: "mapCell") as! MapTableViewCell
+        
+        cell.delegate = self
+        
+        let mapData = self.mapTableViewData[indexPath.row]
+        
+    cell.cellImage.image = mapData.info.animalImage
+        cell.cellLabel.text = mapData.info.name
+        
+        cell.button1.tag = indexPath.row
+        
+        cell.cellImage.layer.cornerRadius = 5.0
+        cell.cellImage.clipsToBounds = true
+        
+      
+        return cell
+            
+        }
+        else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "theaterCell") as! TheaterTimesTableViewCell
+            let showtimes = self.allTheaterShows[indexPath.row]
+            
+            cell.moviePosterImage.image = showtimes.image
+            cell.showTimesLabel.text = showtimes.showtimes
+            
+            cell.moviePosterImage.layer.cornerRadius = 5.0
+            cell.moviePosterImage.clipsToBounds = true
+            
+            return cell
+        }
+    
+    }
+    
+    func hideTableView() {
+        self.tableView.isHidden = true
+        self.galleryInfo.isHidden = false
+        self.getDirectionsButton.isHidden = false
+    }
+    
+    func showTableView() {
+        self.tableView.isHidden = false
+        self.galleryInfo.isHidden = true
+        self.getDirectionsButton.isHidden = true
+        
+    }
+    
+    func sortGalleryData() {
+        
+        switch self.galleryName {
+        case galleries.amenities.name:
+            hideTableView()
+            self.theaterTableView.isHidden = true
+
+            
+        case galleries.antarcticAdventure.name:
+            showTableView()
+            self.mapTableViewData = [.penguins]
+            self.theaterTableView.isHidden = true
+            
+        case galleries.banquetHall.name:
+            hideTableView()
+            self.theaterTableView.isHidden = true
+            
+        case galleries.cafe.name:
+            hideTableView()
+            self.theaterTableView.isHidden = true
+            
+        case galleries.deepSeaLab.name:
+            hideTableView()
+            self.theaterTableView.isHidden = true
+            
+        case galleries.discoverUtah.name:
+            showTableView()
+            self.mapTableViewData = [.otters, .tortoise]
+            self.theaterTableView.isHidden = true
+            
+        case galleries.educationCenter.name:
+            hideTableView()
+            self.theaterTableView.isHidden = true
+            
+        case galleries.expeditionAsia.name:
+            showTableView()
+            self.mapTableViewData = [.cloudedLeopards, .hornbill]
+            self.theaterTableView.isHidden = true
+            
+        case galleries.jellyFish.name:
+            showTableView()
+            self.mapTableViewData = [.jellyfish]
+            self.theaterTableView.isHidden = true
+            
+        case galleries.jsa.name:
+            showTableView()
+            self.mapTableViewData = [.arapaima, .toucan]
+            self.theaterTableView.isHidden = true
+            
+        case galleries.oceanExplorer.name:
+            showTableView()
+            self.mapTableViewData = [.blacktipReef, .eel, .greenSeaTurtle, .zebraShark]
+            self.theaterTableView.isHidden = true
+            
+        case galleries.theater.name:
+            hideTableView()
+            self.theaterTableView.isHidden = false
+            self.galleryInfo.isHidden = true
+            self.getDirectionsButton.isHidden = true
+            
+        case galleries.tukis.name:
+            hideTableView()
+            self.theaterTableView.isHidden = true
+            
+        default: break
+            
+        }
+        
+        tableView.reloadData()
+       
+    }
+    
+     
+    
     
     
     func animateTappedGallery() {
@@ -114,6 +291,7 @@ class BottomSheetViewController: UIViewController, UIGestureRecognizerDelegate  
     func discoverUtah() {
         updateLabels(gallery: galleries.discoverUtah)
         animateTappedGallery()
+        sortGalleryData()
         self.getDirectionsButton.setTitle("More Info!", for: .normal)
         self.urlString = "http://www.thelivingplanet.com/essential_grid_category/discover-utah/"
         
@@ -122,6 +300,7 @@ class BottomSheetViewController: UIViewController, UIGestureRecognizerDelegate  
     func antarcticAdventure() {
         updateLabels(gallery: galleries.antarcticAdventure)
         animateTappedGallery()
+        sortGalleryData()
         self.getDirectionsButton.setTitle("Penguin Cam", for: .normal)
         self.urlString = "http://www.thelivingplanet.com/essential_grid/penguin-live-cam/"
         
@@ -130,6 +309,7 @@ class BottomSheetViewController: UIViewController, UIGestureRecognizerDelegate  
     func ammenities() {
         updateLabels(gallery: galleries.amenities)
         animateTappedGallery()
+        sortGalleryData()
         self.getDirectionsButton.setTitle("More Info!", for: .normal)
         self.urlString = "http://www.thelivingplanet.com/"
     }
@@ -137,6 +317,7 @@ class BottomSheetViewController: UIViewController, UIGestureRecognizerDelegate  
     func banquetHall() {
         updateLabels(gallery: galleries.banquetHall)
         animateTappedGallery()
+        sortGalleryData()
         self.getDirectionsButton.setTitle("Book an event!", for: .normal)
         self.urlString = "http://www.thelivingplanet.com/essential_grid/wedding-proposals/"
     }
@@ -144,6 +325,7 @@ class BottomSheetViewController: UIViewController, UIGestureRecognizerDelegate  
     func asia() {
         updateLabels(gallery: galleries.expeditionAsia)
         animateTappedGallery()
+        sortGalleryData()
         self.getDirectionsButton.setTitle("More Info!", for: .normal)
         self.urlString = "http://www.thelivingplanet.com/essential_grid/expedition-asia/"
     }
@@ -151,6 +333,7 @@ class BottomSheetViewController: UIViewController, UIGestureRecognizerDelegate  
     func jsa() {
         updateLabels(gallery: galleries.jsa)
         animateTappedGallery()
+        sortGalleryData()
         self.getDirectionsButton.setTitle("More Info!", for: .normal)
         self.urlString = "http://www.thelivingplanet.com/essential_grid_category/south-america/"
     }
@@ -158,6 +341,7 @@ class BottomSheetViewController: UIViewController, UIGestureRecognizerDelegate  
     func oceans() {
         updateLabels(gallery: galleries.oceanExplorer)
         animateTappedGallery()
+        sortGalleryData()
         self.getDirectionsButton.setTitle("More Info!", for: .normal)
         self.urlString = "http://www.thelivingplanet.com/essential_grid_category/invertebrates/"
     }
@@ -165,40 +349,41 @@ class BottomSheetViewController: UIViewController, UIGestureRecognizerDelegate  
     func tukis() {
         updateLabels(gallery: galleries.tukis)
         animateTappedGallery()
+        sortGalleryData()
         self.getDirectionsButton.setTitle("Book a party!", for: .normal)
         self.urlString = "http://www.thelivingplanet.com/home-4/parties/"
     }
     func jellies() {
         updateLabels(gallery: galleries.jellyFish)
         animateTappedGallery()
+        sortGalleryData()
         self.getDirectionsButton.setTitle("More Info!", for: .normal)
         self.urlString = "http://www.thelivingplanet.com/essential_grid/ocean-explorer/"
     }
     func theater() {
         updateLabels(gallery: galleries.theater)
         animateTappedGallery()
+        sortGalleryData()
         self.getDirectionsButton.setTitle("Check schedule", for: .normal)
         self.urlString = "http://www.thelivingplanet.com/essential_grid/4d-theatre-showtimes/"
     }
     func educationCenter() {
         updateLabels(gallery: galleries.educationCenter)
         animateTappedGallery()
+        sortGalleryData()
         self.getDirectionsButton.setTitle("More Info!", for: .normal)
         self.urlString = "http://www.thelivingplanet.com/home-4/education/"
     }
     func deepSea() {
         updateLabels(gallery: galleries.deepSeaLab)
         animateTappedGallery()
+        sortGalleryData()
         self.getDirectionsButton.setTitle("More Info!", for: .normal)
         self.urlString = "http://www.thelivingplanet.com/essential_grid/exhibit-updates/"
     }
     
     func postObservers() {
         
-        //        let allGalleries = [galleries.amenities, galleries.discoverUtah, galleries.antarcticAdventure, galleries.banquetHall, galleries.expeditionAsia, galleries.jsa, galleries.oceanExplorer, galleries.tukis]
-        //
-        
-        //        for galleryName in allGalleries {
         
         NotificationCenter.default.addObserver(self, selector: #selector(BottomSheetViewController.discoverUtah), name: Notification.Name(rawValue: galleries.discoverUtah.name), object: nil)
         
@@ -223,12 +408,19 @@ class BottomSheetViewController: UIViewController, UIGestureRecognizerDelegate  
         NotificationCenter.default.addObserver(self, selector: #selector(BottomSheetViewController.educationCenter), name: Notification.Name(rawValue: galleries.educationCenter.name), object: nil)
         
         NotificationCenter.default.addObserver(self, selector: #selector(BottomSheetViewController.deepSea), name: Notification.Name(rawValue: galleries.deepSeaLab.name), object: nil)
+        
+        // Reloads bottomSheet viewController when leaving the app
+        NotificationCenter.default.addObserver(self, selector: #selector(BottomSheetViewController.closeSwitchAction), name: NSNotification.Name(rawValue: "enteringBackground"), object: nil)
     }
     
     
+    func closeSwitchAction() {
+        self.closeSwitch = true
+    }
     
     func updateLabels(gallery: MapGalleries) {
         
+        self.galleryName = gallery.name
         self.galleryTitleLabel.text = gallery.name
         self.galleryPhoto1.image = gallery.image1
         self.galleryInfo.text = gallery.info
@@ -277,6 +469,40 @@ class BottomSheetViewController: UIViewController, UIGestureRecognizerDelegate  
         
     }
     
+  
+    
+    
+    
+    // MARK: - Delegate Functions
+    
+    func infoButtonAction(_ mapTableViewCell: MapTableViewCell) {
+        
+        guard let indexPath = tableView.indexPath(for: mapTableViewCell) else { return }
+        let animal = self.mapTableViewData[(indexPath as NSIndexPath).row]
+        self.animalInfo = animal.info.description!
+        self.animalName = animal.info.name
+        self.animalImage = animal.info.animalImage
+        
+        print("Info button tapped for \(animal.info.name)")
+        self.performSegue(withIdentifier: "toAnimalDetail", sender: self)
+        
+        self.closeSwitch = false
+    }
+    
+    func locateButtonAction(_ mapTableViewCell: MapTableViewCell) {
+        guard let indexPath = tableView.indexPath(for: mapTableViewCell) else { return }
+        let animal = self.mapTableViewData[(indexPath as NSIndexPath).row]
+        print("Locate button tapped for \(animal.info.name)")
+    }
+    
+    func feedingButtonAction(_ mapTableViewCell: MapTableViewCell) {
+        guard let indexPath = tableView.indexPath(for: mapTableViewCell) else { return }
+        let animal = self.mapTableViewData[(indexPath as NSIndexPath).row]
+        print("Feeding button tapped for \(animal.info.name)")
+    }
+    
+    
+    
     
     // "More Info" Button
     @IBAction func getDirectionsButtonTapped(_ sender: AnyObject) {
@@ -318,6 +544,23 @@ class BottomSheetViewController: UIViewController, UIGestureRecognizerDelegate  
         })
     }
     
+    
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        
+        if segue.identifier == "toAnimalDetail" {
+            
+            if let destinationViewController = segue.destination as? AnimalDetailViewController {
+                
+                destinationViewController.image = self.animalImage
+                destinationViewController.info = self.animalInfo
+                destinationViewController.name = self.animalName
+                
+            }
+        }
+    }
+    
+   
     
     }
 
