@@ -11,7 +11,7 @@ import UIKit
 import SafariServices
 import UserNotifications
 
-class MembershipListTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class MembershipListTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UNUserNotificationCenterDelegate {
     
     @IBOutlet weak var membershipCardTableView: UITableView!
     @IBOutlet weak var welcomeView: UIView!
@@ -31,6 +31,10 @@ class MembershipListTableViewController: UIViewController, UITableViewDelegate, 
         NotificationCenter.default.addObserver(self, selector: #selector(MembershipListTableViewController.reloadView), name: Notification.Name(rawValue: "addedNewMembership"), object: nil)
         
         self.membershipCardTableView.contentInset = UIEdgeInsetsMake(30, 0, 0, 0)
+        
+        UNUserNotificationCenter.current().delegate = NotificationDelegate.shared.delegate
+        
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -64,7 +68,10 @@ class MembershipListTableViewController: UIViewController, UITableViewDelegate, 
     }
     
     
-    
+//    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+//        
+//        completionHandler([.alert, .sound])
+//    }
     
     
     let membership = MembershipCardTableViewCell()
@@ -135,21 +142,7 @@ class MembershipListTableViewController: UIViewController, UITableViewDelegate, 
     
 }
 
-extension MembershipListTableViewController: UNUserNotificationCenterDelegate {
 
-    
-    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-        
-        completionHandler([.alert, .sound])
-        
-        
-    }
-    
-    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
-        print("received")
-    }
-    
-}
 
 
 

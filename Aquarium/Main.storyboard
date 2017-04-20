@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="68v-6X-1Sf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="68v-6X-1Sf">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -1088,7 +1088,7 @@ To get started, tap the plus!
                                 </userDefinedRuntimeAttributes>
                             </datePicker>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Expiration Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="zMg-ne-kXB">
-                                <rect key="frame" x="16" y="316" width="232" height="35"/>
+                                <rect key="frame" x="16" y="339" width="232" height="35"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="29"/>
                                 <color key="textColor" red="0.66326935279187815" green="0.66326935279187815" blue="0.66326935279187815" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -1165,12 +1165,26 @@ To get started, tap the plus!
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="done"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LhQ-GW-Qha">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LhQ-GW-Qha">
                                 <rect key="frame" x="311" y="69" width="42" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Notify"/>
                                 <connections>
                                     <action selector="notifyMeButtonTapped:" destination="vyk-Ro-hE2" eventType="touchUpInside" id="On4-gP-kzJ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AQY-Nq-Lhu">
+                                <rect key="frame" x="112" y="301" width="150" height="30"/>
+                                <color key="backgroundColor" red="0.28922465425518523" green="0.49107943940651011" blue="0.61056472081218272" alpha="0.25133775684931509" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="AQY-Nq-Lhu" secondAttribute="height" multiplier="5:1" id="0Rl-4K-3nm"/>
+                                </constraints>
+                                <state key="normal" title="Scan Card">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="scanCardButtonTapped:" destination="vyk-Ro-hE2" eventType="touchUpInside" id="zKF-8n-G0v"/>
+                                    <segue destination="uai-Rq-JX2" kind="presentation" identifier="toBarcodeScanner" id="qCd-ud-LAc"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1181,6 +1195,7 @@ To get started, tap the plus!
                             <constraint firstItem="dHn-RD-4X3" firstAttribute="leading" secondItem="LYD-Ub-rKK" secondAttribute="leadingMargin" id="4g0-yW-wSJ"/>
                             <constraint firstItem="WoT-pk-gRy" firstAttribute="top" secondItem="jqs-jU-A9g" secondAttribute="bottom" constant="46" id="739-GD-XwJ"/>
                             <constraint firstItem="jTJ-su-Gr4" firstAttribute="top" secondItem="WuE-OV-quv" secondAttribute="bottom" constant="5" id="79W-DW-QzD"/>
+                            <constraint firstItem="AQY-Nq-Lhu" firstAttribute="leading" secondItem="LYD-Ub-rKK" secondAttribute="leadingMargin" constant="96" id="7YT-93-WSa"/>
                             <constraint firstAttribute="trailingMargin" secondItem="mbq-57-TzL" secondAttribute="trailing" id="BKU-L6-9pr"/>
                             <constraint firstItem="lIg-Nw-p4n" firstAttribute="top" secondItem="mbq-57-TzL" secondAttribute="bottom" constant="20" id="Frq-G4-6h5"/>
                             <constraint firstItem="Fs7-2W-WDD" firstAttribute="top" secondItem="JUT-JD-Nqw" secondAttribute="bottom" constant="8" id="GA5-ne-5K5"/>
@@ -1196,11 +1211,12 @@ To get started, tap the plus!
                             <constraint firstItem="dHn-RD-4X3" firstAttribute="top" secondItem="l1l-IO-8mY" secondAttribute="bottom" constant="100" id="NOo-uy-Q67"/>
                             <constraint firstAttribute="leadingMargin" secondItem="JUT-JD-Nqw" secondAttribute="leading" id="NwS-N5-lRp"/>
                             <constraint firstItem="Hb9-ug-yoa" firstAttribute="leading" secondItem="LYD-Ub-rKK" secondAttribute="leadingMargin" constant="-4" id="O6I-nl-OSo"/>
-                            <constraint firstItem="ma1-no-Epf" firstAttribute="top" secondItem="zMg-ne-kXB" secondAttribute="bottom" constant="15" id="QQl-ug-yoC"/>
+                            <constraint firstItem="ma1-no-Epf" firstAttribute="top" secondItem="zMg-ne-kXB" secondAttribute="bottom" constant="-8" id="QQl-ug-yoC"/>
                             <constraint firstAttribute="leadingMargin" secondItem="mbq-57-TzL" secondAttribute="leading" id="RYX-Ez-CMX"/>
                             <constraint firstItem="lIg-Nw-p4n" firstAttribute="leading" secondItem="LYD-Ub-rKK" secondAttribute="leadingMargin" id="SEn-Bg-Vd2"/>
                             <constraint firstItem="WuE-OV-quv" firstAttribute="top" secondItem="ma1-no-Epf" secondAttribute="bottom" constant="9" id="SiN-Km-Poz"/>
                             <constraint firstItem="ma1-no-Epf" firstAttribute="leading" secondItem="LYD-Ub-rKK" secondAttribute="leadingMargin" constant="-16" id="YFj-mM-Huj"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="AQY-Nq-Lhu" secondAttribute="trailing" constant="97" id="Zo4-4q-8o4"/>
                             <constraint firstAttribute="trailingMargin" secondItem="lIg-Nw-p4n" secondAttribute="trailing" id="aLo-bt-VUr"/>
                             <constraint firstItem="mbq-57-TzL" firstAttribute="top" secondItem="Fs7-2W-WDD" secondAttribute="bottom" constant="3" id="e91-cH-x9D"/>
                             <constraint firstAttribute="leadingMargin" secondItem="Fs7-2W-WDD" secondAttribute="leading" id="ff1-rx-LMe"/>
@@ -1209,6 +1225,7 @@ To get started, tap the plus!
                             <constraint firstItem="Tmz-cn-9eH" firstAttribute="top" secondItem="l1l-IO-8mY" secondAttribute="bottom" constant="9" id="hbG-gY-XqH"/>
                             <constraint firstItem="Hb9-ug-yoa" firstAttribute="top" secondItem="lIg-Nw-p4n" secondAttribute="bottom" constant="3" id="hgQ-PV-QH4"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Fs7-2W-WDD" secondAttribute="trailing" id="iPB-JE-ZZ7"/>
+                            <constraint firstItem="zMg-ne-kXB" firstAttribute="top" relation="greaterThanOrEqual" secondItem="AQY-Nq-Lhu" secondAttribute="bottom" constant="3" id="lti-SQ-OhW"/>
                             <constraint firstAttribute="leadingMargin" secondItem="zMg-ne-kXB" secondAttribute="leading" id="lzw-4r-cXv"/>
                             <constraint firstAttribute="leadingMargin" secondItem="E9N-D5-CFh" secondAttribute="leading" id="mbx-UL-w3M"/>
                             <constraint firstItem="E9N-D5-CFh" firstAttribute="top" secondItem="l1l-IO-8mY" secondAttribute="bottom" constant="17" id="nbj-DR-uAr"/>
@@ -1218,6 +1235,7 @@ To get started, tap the plus!
                             <constraint firstItem="jqs-jU-A9g" firstAttribute="top" secondItem="ma1-no-Epf" secondAttribute="bottom" constant="8" id="rJR-aW-uC8"/>
                             <constraint firstAttribute="leadingMargin" secondItem="Tmz-cn-9eH" secondAttribute="leading" id="tKQ-vN-WhZ"/>
                             <constraint firstAttribute="leadingMargin" secondItem="jTJ-su-Gr4" secondAttribute="leading" id="tlv-0C-FQf"/>
+                            <constraint firstItem="AQY-Nq-Lhu" firstAttribute="top" secondItem="Hb9-ug-yoa" secondAttribute="bottom" constant="4" id="vDP-jq-i2P"/>
                             <constraint firstItem="jqs-jU-A9g" firstAttribute="leading" secondItem="WuE-OV-quv" secondAttribute="trailing" constant="8" id="vmE-dp-7fI"/>
                             <constraint firstItem="JUT-JD-Nqw" firstAttribute="top" secondItem="dHn-RD-4X3" secondAttribute="bottom" constant="3" id="wY7-eR-xyd"/>
                             <constraint firstItem="lvr-00-OxW" firstAttribute="top" secondItem="l1l-IO-8mY" secondAttribute="bottom" constant="-20" id="yzp-Cz-KK3"/>
@@ -1244,7 +1262,7 @@ To get started, tap the plus!
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xdz-zh-Gso" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1231" y="-251"/>
+            <point key="canvasLocation" x="1229.5999999999999" y="-251.42428785607197"/>
         </scene>
         <!--Opening Screen View Controller-->
         <scene sceneID="eUO-Aq-gnS">
@@ -1357,7 +1375,7 @@ To get started, tap the plus!
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" reuseIdentifier="cell" id="uyV-fR-gOP" customClass="AnimalCollectionViewCell" customModule="Aquarium" customModuleProvider="target">
-                                        <rect key="frame" x="90" y="41" width="196" height="140"/>
+                                        <rect key="frame" x="89.5" y="41" width="196" height="140"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="196" height="140"/>
@@ -1457,7 +1475,7 @@ To get started, tap the plus!
                                 </constraints>
                                 <state key="normal" image="qrWhite"/>
                                 <connections>
-                                    <segue destination="uai-Rq-JX2" kind="show" id="7Cm-a2-BYD"/>
+                                    <segue destination="uai-Rq-JX2" kind="show" identifier="toQRScanner" id="7Cm-a2-BYD"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -2106,14 +2124,19 @@ Call (801)355-3474 ext. 222 to book your Penguin Encounter!
                                     <action selector="dismissButtonTapped:" destination="uai-Rq-JX2" eventType="touchUpInside" id="skz-Q3-i3k"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="QRviewfinder" translatesAutoresizingMaskIntoConstraints="NO" id="lHU-Tu-3C7">
+                                <rect key="frame" x="31" y="269" width="314" height="79"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="leadingMargin" secondItem="Rwa-vi-IyD" secondAttribute="leading" id="2li-T3-MtX"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ZuI-Hf-35J" secondAttribute="trailing" constant="8" id="3LJ-nD-2b1"/>
+                            <constraint firstItem="lHU-Tu-3C7" firstAttribute="top" secondItem="Y8z-0I-f1Z" secondAttribute="bottom" constant="249" id="89v-vX-4To"/>
                             <constraint firstItem="Sov-TY-OlN" firstAttribute="leading" secondItem="Rwa-vi-IyD" secondAttribute="trailing" constant="-30" id="9SH-tu-33a"/>
                             <constraint firstItem="jir-VW-avP" firstAttribute="top" secondItem="dNn-yR-jlI" secondAttribute="bottom" constant="283" id="BS9-DN-xdP"/>
                             <constraint firstAttribute="leadingMargin" secondItem="waN-Ru-3wv" secondAttribute="leading" id="BdU-ei-O3m"/>
+                            <constraint firstItem="lHU-Tu-3C7" firstAttribute="leading" secondItem="p1p-bL-GDg" secondAttribute="leadingMargin" constant="15" id="Cxc-dN-CEf"/>
                             <constraint firstItem="dNn-yR-jlI" firstAttribute="centerX" secondItem="p1p-bL-GDg" secondAttribute="centerX" id="EaG-ro-DeE"/>
                             <constraint firstItem="S5t-oz-H9R" firstAttribute="top" secondItem="jir-VW-avP" secondAttribute="bottom" constant="35" id="Ell-8q-p7S"/>
                             <constraint firstItem="H8o-zs-gKh" firstAttribute="centerX" secondItem="p1p-bL-GDg" secondAttribute="centerX" id="FRD-UQ-wfZ"/>
@@ -2125,9 +2148,11 @@ Call (801)355-3474 ext. 222 to book your Penguin Encounter!
                             <constraint firstItem="H8o-zs-gKh" firstAttribute="centerY" secondItem="p1p-bL-GDg" secondAttribute="centerY" id="KBy-ay-iVY"/>
                             <constraint firstItem="Rwa-vi-IyD" firstAttribute="top" secondItem="Y8z-0I-f1Z" secondAttribute="bottom" constant="16" id="Kel-Ug-NWm"/>
                             <constraint firstItem="S5t-oz-H9R" firstAttribute="top" secondItem="waN-Ru-3wv" secondAttribute="bottom" constant="14" id="QAA-IS-siI"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="lHU-Tu-3C7" secondAttribute="trailing" constant="14" id="ULB-Sj-bYd"/>
                             <constraint firstItem="S5t-oz-H9R" firstAttribute="top" secondItem="waN-Ru-3wv" secondAttribute="bottom" constant="20" id="VOQ-BG-FKO"/>
                             <constraint firstItem="Sov-TY-OlN" firstAttribute="top" secondItem="Y8z-0I-f1Z" secondAttribute="bottom" constant="4" id="XBb-Ve-Nc8"/>
                             <constraint firstItem="dNn-yR-jlI" firstAttribute="top" secondItem="H8o-zs-gKh" secondAttribute="bottom" constant="-284" id="eTP-xK-Q4j"/>
+                            <constraint firstItem="S5t-oz-H9R" firstAttribute="top" secondItem="lHU-Tu-3C7" secondAttribute="bottom" constant="270" id="fO7-3Z-35I"/>
                             <constraint firstItem="waN-Ru-3wv" firstAttribute="top" secondItem="Y8z-0I-f1Z" secondAttribute="bottom" constant="78" id="h52-Zk-3OG"/>
                             <constraint firstAttribute="trailingMargin" secondItem="H8o-zs-gKh" secondAttribute="trailing" constant="30" id="k7P-aF-zGc"/>
                             <constraint firstItem="pSN-Ap-Nkd" firstAttribute="top" secondItem="Rwa-vi-IyD" secondAttribute="bottom" constant="4" id="kna-4A-jKF"/>
@@ -2152,17 +2177,20 @@ Call (801)355-3474 ext. 222 to book your Penguin Encounter!
                     <connections>
                         <outlet property="QRModalView" destination="waN-Ru-3wv" id="Rwl-aX-Xth"/>
                         <outlet property="alignQRCodeLabel" destination="dNn-yR-jlI" id="kDB-SV-XOW"/>
+                        <outlet property="barcodeViewFinder" destination="lHU-Tu-3C7" id="HL4-AE-21p"/>
                         <outlet property="dismissButton" destination="Sov-TY-OlN" id="Cmh-Pj-h8U"/>
                         <outlet property="getStartedButtonLabel" destination="ZKX-Er-3fC" id="apH-wB-NW0"/>
                         <outlet property="photoFrameImage" destination="H8o-zs-gKh" id="1Z0-pL-Z1X"/>
                         <outlet property="qrCodeResult" destination="pdo-TE-cKj" id="6lw-CQ-hWL"/>
                         <outlet property="qrWelcomeTextField" destination="Pk0-Bu-fsC" id="aT6-x1-i3W"/>
                         <outlet property="scanButton" destination="jir-VW-avP" id="ho1-or-nKI"/>
+                        <segue destination="m95-yL-ULS" kind="unwind" identifier="unwindToAddNewMembership" unwindAction="unwindToAddNewMembershipWithSegue:" id="YBt-HA-g6w"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vRI-qV-PHc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="m95-yL-ULS" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1534" y="439"/>
+            <point key="canvasLocation" x="1533.5999999999999" y="438.53073463268368"/>
         </scene>
         <!--Animal Feedings-->
         <scene sceneID="QAN-EJ-vGH">
@@ -2753,7 +2781,7 @@ We hope you enjoy your visit and we're excited to have you with us as we Explore
                                                             <rect key="frame" x="0.0" y="28" width="375" height="164"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qAH-og-mZD" id="ToE-zp-MmA">
-                                                                <rect key="frame" x="0.0" y="0.0" width="375" height="163"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="375" height="163.5"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <subviews>
                                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="penguins-200px" translatesAutoresizingMaskIntoConstraints="NO" id="Sj1-5r-c74">
@@ -2894,6 +2922,7 @@ We hope you enjoy your visit and we're excited to have you with us as we Explore
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="qnK-PO-FRk"/>
+        <segue reference="7Cm-a2-BYD"/>
         <segue reference="kEL-g6-fwi"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -323,6 +323,15 @@ class MainExhibitViewController: UIViewController, FlowingMenuDelegate, UICollec
                 }
             }
         }
+        
+        if segue.identifier == "toQRScanner" {
+            
+            if let destinationViewController = segue.destination as? QRScannerViewController {
+                
+                destinationViewController.scanType = "qr"
+            }
+        }
+        
     }
     
     
