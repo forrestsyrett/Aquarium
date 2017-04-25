@@ -6,7 +6,7 @@
 		<key>name</key>
 		<string>Elevator</string>
 		<key>location</key>
-		<string>{40.532298830645139, -111.8937316285183}</string>
+		<string>{40.53225, -111.893781}</string>
 		<key>type</key>
 		<string>10</string>
 		<key>subtitle</key>
@@ -16,7 +16,7 @@
 		<key>name</key>
 		<string>4D Theater</string>
 		<key>location</key>
-		<string>{40.532456100379285, -111.89404551281442}</string>
+		<string>{40.53240, -111.89411}</string>
 		<key>type</key>
 		<string>13</string>
 		<key>subtitle</key>
@@ -26,7 +26,7 @@
 		<key>name</key>
 		<string>Restrooms</string>
 		<key>location</key>
-		<string>{40.532248504661496, -111.89412146400308}</string>
+		<string>{40.53224, -111.89419}</string>
 		<key>type</key>
 		<string>8</string>
 		<key>subtitle</key>
@@ -36,7 +36,7 @@
 		<key>name</key>
 		<string>Expedition Asia</string>
 		<key>location</key>
-		<string>{40.532635189410364, -111.89405119014198}</string>
+		<string>{40.532591623, -111.89407191}</string>
 		<key>type</key>
 		<string>4</string>
 		<key>subtitle</key>
@@ -46,7 +46,7 @@
 		<key>name</key>
 		<string>Tuki&apos;s Island</string>
 		<key>location</key>
-		<string>{40.532241029833457, -111.89429848976003}</string>
+		<string>{40.53221756, -111.8943762}</string>
 		<key>type</key>
 		<string>5</string>
 		<key>subtitle</key>
@@ -56,7 +56,7 @@
 		<key>name</key>
 		<string>Journey to South America - Aviary</string>
 		<key>location</key>
-		<string>{40.532155307195801, -111.89347979032402}</string>
+		<string>{40.53211, -111.89355327}</string>
 		<key>type</key>
 		<string>1</string>
 		<key>subtitle</key>
@@ -66,7 +66,7 @@
 		<key>name</key>
 		<string>Antarctic Adventure</string>
 		<key>location</key>
-		<string>{40.532609588295685, -111.89370009080039}</string>
+		<string>{40.53256259, -111.89378918}</string>
 		<key>type</key>
 		<string>6</string>
 		<key>subtitle</key>
@@ -76,7 +76,7 @@
 		<key>name</key>
 		<string>Education Center</string>
 		<key>location</key>
-		<string>{40.532746094746528, -111.89405242069614}</string>
+		<string>{40.53270, -111.89412}</string>
 		<key>type</key>
 		<string>14</string>
 		<key>subtitle</key>

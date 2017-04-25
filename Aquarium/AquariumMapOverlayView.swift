@@ -14,7 +14,7 @@ class AquariumMapOverlayView: MKOverlayRenderer {
     
     
     var overlayImage: UIImage
-    var mapOverlay = #imageLiteral(resourceName: "mainFloor")
+    var mapOverlay = #imageLiteral(resourceName: "mainFloorUpdated")
     
     init(overlay: MKOverlay, overlayImage: UIImage) {
         self.overlayImage = overlayImage
@@ -32,7 +32,7 @@ class AquariumMapOverlayView: MKOverlayRenderer {
         
         
         UIGraphicsPushContext(context)
-        image.draw(in: newRect, blendMode: .normal, alpha: 1.00)
+        image.draw(in: newRect, blendMode: .normal, alpha: 1.0)
         
         UIGraphicsPopContext()
         

@@ -18,6 +18,6 @@ class CurrentLocationController {
     
     
     
-    dynamic var coordinate = CLLocationCoordinate2DMake(CLLocationDegrees(40.5321), CLLocationDegrees(-111.8937))
+    dynamic var coordinate = CLLocationCoordinate2DMake(CLLocationDegrees(40.5321), CLLocationDegrees(-111.89382))
     var exhibitName = ""
 }

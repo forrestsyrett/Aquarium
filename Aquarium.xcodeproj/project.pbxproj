@@ -14,6 +14,7 @@
 		0660F0451EA00A5F00D14C3D /* TheaterTimesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0660F0441EA00A5F00D14C3D /* TheaterTimesTableViewCell.swift */; };
 		0660F0471EA00AB700D14C3D /* TheaterShows.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0660F0461EA00AB700D14C3D /* TheaterShows.swift */; };
 		0660F0491EA00B1D00D14C3D /* TheaterShowsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0660F0481EA00B1D00D14C3D /* TheaterShowsController.swift */; };
+		068A98CF1EAEB9CF00950B04 /* AquariumSecondFloor.plist in Resources */ = {isa = PBXBuildFile; fileRef = 068A98CE1EAEB9CF00950B04 /* AquariumSecondFloor.plist */; };
 		06A0C2DD1E8713800012A1DD /* MapTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A0C2DC1E8713800012A1DD /* MapTableViewCell.swift */; };
 		06A0C2DF1E8714930012A1DD /* AnimalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A0C2DE1E8714930012A1DD /* AnimalController.swift */; };
 		06B325251DF7383500A53057 /* BeaconInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B325241DF7383500A53057 /* BeaconInfoViewController.swift */; };
@@ -94,6 +95,7 @@
 		0660F0441EA00A5F00D14C3D /* TheaterTimesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TheaterTimesTableViewCell.swift; path = Aquarium/TheaterTimesTableViewCell.swift; sourceTree = "<group>"; };
 		0660F0461EA00AB700D14C3D /* TheaterShows.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TheaterShows.swift; path = Aquarium/TheaterShows.swift; sourceTree = "<group>"; };
 		0660F0481EA00B1D00D14C3D /* TheaterShowsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TheaterShowsController.swift; path = Aquarium/TheaterShowsController.swift; sourceTree = "<group>"; };
+		068A98CE1EAEB9CF00950B04 /* AquariumSecondFloor.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = AquariumSecondFloor.plist; sourceTree = "<group>"; };
 		06A0C2DC1E8713800012A1DD /* MapTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapTableViewCell.swift; path = Aquarium/MapTableViewCell.swift; sourceTree = "<group>"; };
 		06A0C2DE1E8714930012A1DD /* AnimalController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimalController.swift; sourceTree = "<group>"; };
 		06B325241DF7383500A53057 /* BeaconInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeaconInfoViewController.swift; sourceTree = "<group>"; };
@@ -217,6 +219,7 @@
 				0660F0461EA00AB700D14C3D /* TheaterShows.swift */,
 				0660F0481EA00B1D00D14C3D /* TheaterShowsController.swift */,
 				AA353AC31DCE61C200AD5490 /* Aquarium.plist */,
+				068A98CE1EAEB9CF00950B04 /* AquariumSecondFloor.plist */,
 				AA7CE6FC1DDB909A00EF4669 /* BackgroundOverlay.plist */,
 				AA353AC41DCE61C200AD5490 /* firstFloorExhibits.plist */,
 				AA07C6A11DD5126100AD855D /* SecondFloorExhibits.plist */,
@@ -448,6 +451,7 @@
 				AA353AD91DCE8B9E00AD5490 /* ITCFranklinGothicStd-Book.otf in Resources */,
 				AA3391A01D6FA92800F92147 /* Main.storyboard in Resources */,
 				AA353ADE1DCE8B9E00AD5490 /* ITCFranklinGothicStd-HvyIt.otf in Resources */,
+				068A98CF1EAEB9CF00950B04 /* AquariumSecondFloor.plist in Resources */,
 				AA353ADB1DCE8B9E00AD5490 /* ITCFranklinGothicStd-Demi.otf in Resources */,
 				AA353AC51DCE61C200AD5490 /* Aquarium.plist in Resources */,
 				AA353AE41DCE8C0600AD5490 /* TrajanPro-Bold.otf in Resources */,

@@ -14,7 +14,7 @@ class SecondFloorOverlayView: MKOverlayRenderer {
     
     
     var overlayImage: UIImage
-    var mapOverlay = #imageLiteral(resourceName: "secondFloor")
+    var mapOverlay = #imageLiteral(resourceName: "secondFloorUpdated")
     
     init(overlay: MKOverlay, overlayImage: UIImage) {
         self.overlayImage = overlayImage
@@ -32,7 +32,7 @@ class SecondFloorOverlayView: MKOverlayRenderer {
         
         
         UIGraphicsPushContext(context)
-        image.draw(in: newRect, blendMode: .normal, alpha: 1.00)
+        image.draw(in: newRect, blendMode: .normal, alpha: 1.0)
         
         UIGraphicsPopContext()
         
