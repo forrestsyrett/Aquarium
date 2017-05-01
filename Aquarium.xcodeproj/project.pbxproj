@@ -14,6 +14,12 @@
 		0660F0451EA00A5F00D14C3D /* TheaterTimesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0660F0441EA00A5F00D14C3D /* TheaterTimesTableViewCell.swift */; };
 		0660F0471EA00AB700D14C3D /* TheaterShows.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0660F0461EA00AB700D14C3D /* TheaterShows.swift */; };
 		0660F0491EA00B1D00D14C3D /* TheaterShowsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0660F0481EA00B1D00D14C3D /* TheaterShowsController.swift */; };
+		068A98CF1EAEB9CF00950B04 /* AquariumSecondFloor.plist in Resources */ = {isa = PBXBuildFile; fileRef = 068A98CE1EAEB9CF00950B04 /* AquariumSecondFloor.plist */; };
+		069A216B1EB68F77006130C1 /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069A21671EB68F77006130C1 /* CustomTabBarController.swift */; };
+		069A216C1EB68F77006130C1 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069A21681EB68F77006130C1 /* CustomTabBar.swift */; };
+		069A216D1EB68F77006130C1 /* CustomTabBarAnimatedTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069A21691EB68F77006130C1 /* CustomTabBarAnimatedTransition.swift */; };
+		069A216E1EB68F77006130C1 /* CustomTabBarItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069A216A1EB68F77006130C1 /* CustomTabBarItems.swift */; };
+		069A21701EB68FB0006130C1 /* IndexController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069A216F1EB68FB0006130C1 /* IndexController.swift */; };
 		06A0C2DD1E8713800012A1DD /* MapTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A0C2DC1E8713800012A1DD /* MapTableViewCell.swift */; };
 		06A0C2DF1E8714930012A1DD /* AnimalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A0C2DE1E8714930012A1DD /* AnimalController.swift */; };
 		06B325251DF7383500A53057 /* BeaconInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B325241DF7383500A53057 /* BeaconInfoViewController.swift */; };
@@ -91,9 +97,15 @@
 		060C1EB41E81D87500501713 /* shark.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = shark.obj; sourceTree = "<group>"; };
 		060C1EB51E81D87500501713 /* sharkTexture.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sharkTexture.jpg; sourceTree = "<group>"; };
 		0656D2CC1DE4C7680014BBF0 /* AnimalCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimalCollectionViewCell.swift; sourceTree = "<group>"; };
-		0660F0441EA00A5F00D14C3D /* TheaterTimesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TheaterTimesTableViewCell.swift; sourceTree = "<group>"; };
-		0660F0461EA00AB700D14C3D /* TheaterShows.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TheaterShows.swift; sourceTree = "<group>"; };
-		0660F0481EA00B1D00D14C3D /* TheaterShowsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TheaterShowsController.swift; sourceTree = "<group>"; };
+		0660F0441EA00A5F00D14C3D /* TheaterTimesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TheaterTimesTableViewCell.swift; path = Aquarium/TheaterTimesTableViewCell.swift; sourceTree = "<group>"; };
+		0660F0461EA00AB700D14C3D /* TheaterShows.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TheaterShows.swift; path = Aquarium/TheaterShows.swift; sourceTree = "<group>"; };
+		0660F0481EA00B1D00D14C3D /* TheaterShowsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TheaterShowsController.swift; path = Aquarium/TheaterShowsController.swift; sourceTree = "<group>"; };
+		068A98CE1EAEB9CF00950B04 /* AquariumSecondFloor.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = AquariumSecondFloor.plist; sourceTree = "<group>"; };
+		069A21671EB68F77006130C1 /* CustomTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
+		069A21681EB68F77006130C1 /* CustomTabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
+		069A21691EB68F77006130C1 /* CustomTabBarAnimatedTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabBarAnimatedTransition.swift; sourceTree = "<group>"; };
+		069A216A1EB68F77006130C1 /* CustomTabBarItems.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabBarItems.swift; sourceTree = "<group>"; };
+		069A216F1EB68FB0006130C1 /* IndexController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndexController.swift; sourceTree = "<group>"; };
 		06A0C2DC1E8713800012A1DD /* MapTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapTableViewCell.swift; path = Aquarium/MapTableViewCell.swift; sourceTree = "<group>"; };
 		06A0C2DE1E8714930012A1DD /* AnimalController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimalController.swift; sourceTree = "<group>"; };
 		06B325241DF7383500A53057 /* BeaconInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeaconInfoViewController.swift; sourceTree = "<group>"; };
@@ -194,6 +206,18 @@
 			path = ..;
 			sourceTree = "<group>";
 		};
+		069A21661EB68F52006130C1 /* CustomTabBar */ = {
+			isa = PBXGroup;
+			children = (
+				069A21671EB68F77006130C1 /* CustomTabBarController.swift */,
+				069A21681EB68F77006130C1 /* CustomTabBar.swift */,
+				069A21691EB68F77006130C1 /* CustomTabBarAnimatedTransition.swift */,
+				069A216A1EB68F77006130C1 /* CustomTabBarItems.swift */,
+				069A216F1EB68FB0006130C1 /* IndexController.swift */,
+			);
+			name = CustomTabBar;
+			sourceTree = "<group>";
+		};
 		AA353AB41DCE5F3900AD5490 /* Map */ = {
 			isa = PBXGroup;
 			children = (
@@ -213,7 +237,11 @@
 				AA353AC71DCE622300AD5490 /* MapGalleries.swift */,
 				AA353AC91DCE625600AD5490 /* MapGalleryController.swift */,
 				AA353ACD1DCE670000AD5490 /* Annotations.swift */,
+				0660F0441EA00A5F00D14C3D /* TheaterTimesTableViewCell.swift */,
+				0660F0461EA00AB700D14C3D /* TheaterShows.swift */,
+				0660F0481EA00B1D00D14C3D /* TheaterShowsController.swift */,
 				AA353AC31DCE61C200AD5490 /* Aquarium.plist */,
+				068A98CE1EAEB9CF00950B04 /* AquariumSecondFloor.plist */,
 				AA7CE6FC1DDB909A00EF4669 /* BackgroundOverlay.plist */,
 				AA353AC41DCE61C200AD5490 /* firstFloorExhibits.plist */,
 				AA07C6A11DD5126100AD855D /* SecondFloorExhibits.plist */,
@@ -276,12 +304,10 @@
 				AA8441CF1D556F3C000238C1 /* Main Tab Bar Items */,
 				AA8441CB1D556E12000238C1 /* Mobile Membership */,
 				AA8441CD1D556EA0000238C1 /* Animal Feeds */,
+				069A21661EB68F52006130C1 /* CustomTabBar */,
 				AA8441CE1D556ECD000238C1 /* Appearance */,
 				AA8441CC1D556E49000238C1 /* Animal Exhibit Galleries */,
 				AA544C9B1D0BB66C00DC1725 /* Assets.xcassets */,
-				0660F0441EA00A5F00D14C3D /* TheaterTimesTableViewCell.swift */,
-				0660F0461EA00AB700D14C3D /* TheaterShows.swift */,
-				0660F0481EA00B1D00D14C3D /* TheaterShowsController.swift */,
 				0656D2CB1DE4C3150014BBF0 /* Unused */,
 				AA544C9D1D0BB66C00DC1725 /* LaunchScreen.storyboard */,
 			);
@@ -448,6 +474,7 @@
 				AA353AD91DCE8B9E00AD5490 /* ITCFranklinGothicStd-Book.otf in Resources */,
 				AA3391A01D6FA92800F92147 /* Main.storyboard in Resources */,
 				AA353ADE1DCE8B9E00AD5490 /* ITCFranklinGothicStd-HvyIt.otf in Resources */,
+				068A98CF1EAEB9CF00950B04 /* AquariumSecondFloor.plist in Resources */,
 				AA353ADB1DCE8B9E00AD5490 /* ITCFranklinGothicStd-Demi.otf in Resources */,
 				AA353AC51DCE61C200AD5490 /* Aquarium.plist in Resources */,
 				AA353AE41DCE8C0600AD5490 /* TrajanPro-Bold.otf in Resources */,
@@ -526,8 +553,11 @@
 				AA6F4E701D3C01B100FA20F7 /* AnimalFeedTableViewController.swift in Sources */,
 				AA6FA1D61D5554FC00CBEEC7 /* MembershipCardController.swift in Sources */,
 				06A0C2DD1E8713800012A1DD /* MapTableViewCell.swift in Sources */,
+				069A216E1EB68F77006130C1 /* CustomTabBarItems.swift in Sources */,
 				AA55B5821DDF759600CC2336 /* MainExhibitTableViewController.swift in Sources */,
+				069A216C1EB68F77006130C1 /* CustomTabBar.swift in Sources */,
 				AA353ACE1DCE670000AD5490 /* Annotations.swift in Sources */,
+				069A216D1EB68F77006130C1 /* CustomTabBarAnimatedTransition.swift in Sources */,
 				AA55B5861DDF765100CC2336 /* MainExhibitController.swift in Sources */,
 				AA55B5881DDF7D4100CC2336 /* ExhibitGalleryTableViewCell.swift in Sources */,
 				AA353ABE1DCE60A700AD5490 /* AnnotationViews.swift in Sources */,
@@ -542,9 +572,11 @@
 				AA353AC81DCE622300AD5490 /* MapGalleries.swift in Sources */,
 				AA353AB31DCE5F1700AD5490 /* AquariumMap.swift in Sources */,
 				06A0C2DF1E8714930012A1DD /* AnimalController.swift in Sources */,
+				069A21701EB68FB0006130C1 /* IndexController.swift in Sources */,
 				AA544CB31D0CAE1000DC1725 /* ExhibitGalleriesViewController.swift in Sources */,
 				AA353ACA1DCE625600AD5490 /* MapGalleryController.swift in Sources */,
 				AA909B181D41B42A000DB923 /* Feeding.swift in Sources */,
+				069A216B1EB68F77006130C1 /* CustomTabBarController.swift in Sources */,
 				AA6FA1D41D55540B00CBEEC7 /* MembershipListTableViewController.swift in Sources */,
 				AA9D6EE01D1CCD5000831AFE /* Animal.swift in Sources */,
 				06C4BB8A1E78882B005A96CE /* NotificationDelegate.swift in Sources */,

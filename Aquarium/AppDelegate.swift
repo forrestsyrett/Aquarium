@@ -19,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
   
     
     var window: UIWindow?
+
     let delegate = NotificationDelegate()
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
@@ -32,7 +33,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         
         
         let center = UNUserNotificationCenter.current()
-        center.delegate = delegate
+        
+        let notificationDelegate = NotificationDelegate()
+        center.delegate = notificationDelegate
         
         
         center.requestAuthorization(options: [.alert, .sound, .badge]) { (granted, error) in

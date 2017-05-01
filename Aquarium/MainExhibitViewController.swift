@@ -77,6 +77,9 @@ class MainExhibitViewController: UIViewController, FlowingMenuDelegate, UICollec
 
     
     override func viewWillAppear(_ animated: Bool) {
+        
+        IndexController.shared.index = (self.tabBarController?.selectedIndex)!
+
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -323,6 +326,15 @@ class MainExhibitViewController: UIViewController, FlowingMenuDelegate, UICollec
                 }
             }
         }
+        
+        if segue.identifier == "toQRScanner" {
+            
+            if let destinationViewController = segue.destination as? QRScannerViewController {
+                
+                destinationViewController.scanType = "qr"
+            }
+        }
+        
     }
     
     

@@ -9,6 +9,14 @@
 import Foundation
 import UIKit
 
+let aquaDarker = UIColor(red: 0, green: 0.3176, blue: 0.4863, alpha: 1.0)
+let aquaDark = UIColor(red:0.00, green:0.35, blue:0.53, alpha:1.00)
+let aquaMedium = UIColor(red: 0.1451, green: 0.6235, blue: 0.7686, alpha: 1.0)
+let aquaLight = UIColor(red:0.13, green:0.43, blue:0.60, alpha:1.00)
+
+let aquaWaveColor = UIColor(red:0.20, green:0.36, blue:0.53, alpha:1.00)
+
+
 func gradient (_ view: UIView) {
     
     
@@ -19,9 +27,12 @@ func gradient (_ view: UIView) {
     let color1 = UIColor(red: 0, green: 0.3961, blue: 0.8196, alpha: 1.0).cgColor as CGColor
     let color2 = UIColor(red: 0.05, green: 0.16, blue: 0.24, alpha: 1.0).cgColor as CGColor
     let color3 = UIColor(red: 0.149, green: 0.4392, blue: 0.498, alpha: 1.0).cgColor as CGColor
-    gradientLayer.colors = [color1, color3, color2]
     
-    gradientLayer.locations = [0.0, 0.30, 0.8]
+    
+//    gradientLayer.colors = [color1, color3, color2]
+    gradientLayer.colors = [aquaLight.cgColor as CGColor, aquaMedium.cgColor as CGColor, aquaDark.cgColor as CGColor]
+   
+    gradientLayer.locations = [0.0, 0.50, 0.8]
     
     view.layer.insertSublayer(gradientLayer, at: 0)
     

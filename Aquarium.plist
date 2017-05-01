@@ -3,24 +3,24 @@
 <plist version="1.0">
 <dict>
 	<key>midCoord</key>
-	<string>{40.5324,-111.8939}</string>
+	<string>{40.53242,-111.89397}</string>
 	<key>overlayTopLeftCoord</key>
-	<string>{40.53285,-111.89463}</string>
+	<string>{40.53283,-111.89485}</string>
 	<key>overlayTopRightCoord</key>
-	<string>{40.5329,-111.89315}</string>
+	<string>{40.53283,-111.89299}</string>
 	<key>overlayBottomLeftCoord</key>
-	<string>{40.53195,-111.8946}</string>
+	<string>{40.531895, -111.8946}</string>
 	<key>boundary</key>
 	<array>
-		<string>{40.5327,-111.8944}</string>
-		<string>{40.5321,-111.8944}</string>
-		<string>{40.5321,-111.8941}</string>
-		<string>{40.5320, -111.8938}</string>
-		<string>{40.5321,-111.8937}</string>
-		<string>{40.5320,-111.8934}</string>
-		<string>{40.5321,-111.8933}</string>
-		<string>{40.5328,-111.8934}</string>
-		<string>{40.5328,-111.8942}</string>
+		<string>{40.532737,-111.89454}</string>
+		<string>{40.5321,-111.89454}</string>
+		<string>{40.5321,-111.89415}</string>
+		<string>{40.53197, -111.89391}</string>
+		<string>{40.5321,-111.89376}</string>
+		<string>{40.53201,-111.89351}</string>
+		<string>{40.5322,-111.893429}</string>
+		<string>{40.53278,-111.89343}</string>
+		<string>{40.53278,-111.89429}</string>
 	</array>
 </dict>
 </plist>

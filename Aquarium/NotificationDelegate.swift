@@ -13,12 +13,15 @@ import UserNotifications
 
 class NotificationDelegate: NSObject, UNUserNotificationCenterDelegate {
     
+    static let shared = NotificationDelegate()
+    
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        
+        print("presenting...")
         completionHandler([.alert, .sound])
     }
+
     
-    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
-        print("received notification")
-    }
+    var delegate = UNUserNotificationCenter.current().delegate
     
 }

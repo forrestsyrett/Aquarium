@@ -91,6 +91,8 @@ class HomeViewController: UIViewController, UITabBarControllerDelegate, CLLocati
         animateLines(lineTwo, animateTime: 1.0)
         animateLines(lineThree, animateTime: 1.5)
         animateLines(lineFour, animateTime: 2.0)
+        IndexController.shared.index = (self.tabBarController?.selectedIndex)!
+
     }
     
    
@@ -348,11 +350,11 @@ class HomeViewController: UIViewController, UITabBarControllerDelegate, CLLocati
         completionHandler()
     }
     
-    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void){
-        
-        completionHandler([.alert, .sound])
-    }
-    
+//    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void){
+//        
+//        completionHandler([.alert, .sound])
+//    }
+//    
     
     
     // MARK: - Beacon Button Animations

@@ -61,7 +61,7 @@ class AddNewMembershipViewController: UIViewController, UITextFieldDelegate {
         gradient(self.view)
         transparentNavigationBar(self)
         
-//        UNUserNotificationCenter.current().delegate = self
+
         
         firstNameTextField.delegate = self
         lastNameTextField.delegate = self
@@ -121,7 +121,6 @@ class AddNewMembershipViewController: UIViewController, UITextFieldDelegate {
                 membership.lastName = self.lastNameTextField.text!
                 membership.memberID = self.membershipIDTextField.text!
                 membership.barcodeImageString = self.membershipIDTextField.text!
-           //     let date = self.expirationDatePicker.date
                 membership.expirationDate = self.expirationDatePicker.date
                 
 
@@ -144,6 +143,13 @@ class AddNewMembershipViewController: UIViewController, UITextFieldDelegate {
     }
     
     
+    @IBAction func scanCardButtonTapped(_ sender: Any) {
+        
+        
+    }
+    
+    
+    
     @IBAction func dismissButtonTapped(_ sender: Any) {
         
         self.dismiss(animated: true, completion: nil)
@@ -163,7 +169,7 @@ class AddNewMembershipViewController: UIViewController, UITextFieldDelegate {
     
     func registerForNotificationCategories() {
         let center = UNUserNotificationCenter.current()
-        center.delegate = NotificationDelegate()
+
         
         let expirationDateReminder = UNNotificationAction(identifier: (self.name), title: "Renew Membership!", options: .foreground)
         let remindMeAction = UNNotificationAction(identifier: "reminder", title: "Remind me later", options: [])
@@ -373,7 +379,6 @@ class AddNewMembershipViewController: UIViewController, UITextFieldDelegate {
         
     registerForNotificationCategories()
         
-        UNUserNotificationCenter.current().delegate = self
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 3.0, repeats: false)
         
         let content = UNMutableNotificationContent()
@@ -395,16 +400,39 @@ class AddNewMembershipViewController: UIViewController, UITextFieldDelegate {
         
  
     }
+    
+    @IBAction func unwindToAddNewMembership(segue: UIStoryboardSegue) {
+        
+        if (self.firstNameTextField.text?.characters.count > 0 || self.lastNameTextField.text?.characters.count > 0) && self.membershipIDTextField.text?.characters.count > 0 {
+            self.saveButton.isEnabled = true
+        }
+        
+    }
+
+    
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "toBarcodeScanner" {
+            
+    let destination = segue.destination as! QRScannerViewController
+            
+            destination.scanType = "barCode"
+            
+                
+
+        }
+    }
 }
 
-extension AddNewMembershipViewController: UNUserNotificationCenterDelegate {
+
+
+
+extension NotificationDelegate {
     
-    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-        
-        print("presenting...")
-        completionHandler([.alert, .sound])
-    }
     
+       
 }
 
 

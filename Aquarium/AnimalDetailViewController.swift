@@ -24,11 +24,14 @@ class AnimalDetailViewController: UIViewController {
     
     @IBOutlet weak var ThreeDView: UIButton!
     
+    @IBOutlet weak var conservationStatusImage: UIImageView!
+    
     var name = ""
     var image = UIImage(named: "")
     var info = ""
     
     var animal = "none"
+    var status = "none"
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +39,7 @@ class AnimalDetailViewController: UIViewController {
         gradient(self.view)
         dismissButton.layer.cornerRadius = 19.5
         ThreeDView.layer.cornerRadius = 5.0
+        scrollView.contentSize = CGSize(width: self.view.frame.width, height: self.view.frame.height + 2000)
 
     }
     
@@ -53,6 +57,19 @@ class AnimalDetailViewController: UIViewController {
             
         } else {
             self.ThreeDView.isHidden = true
+        }
+        
+        
+        switch self.status {
+            case "Least Concern": conservationStatusImage.image = #imageLiteral(resourceName: "LeastConcern")
+            case "Near Threatened": conservationStatusImage.image =
+            #imageLiteral(resourceName: "NearThreatened")
+            case "Vulnerable": conservationStatusImage.image = #imageLiteral(resourceName: "Vulnerable")
+            case "Endangered": conservationStatusImage.image =
+            #imageLiteral(resourceName: "Endangered")
+            case "Critically Endangered": conservationStatusImage.image = #imageLiteral(resourceName: "CriticallyEndangered")
+            case "Extinct in the Wild": conservationStatusImage.image = #imageLiteral(resourceName: "Extinct_In_Wild")
+        default: break
         }
 
     }
@@ -80,6 +97,7 @@ class AnimalDetailViewController: UIViewController {
         self.name = animal.info.name
         self.image = animal.info.animalImage
         self.info = animal.info.description!
+        self.status = animal.info.status
         
 
     }

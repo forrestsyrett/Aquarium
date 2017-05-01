@@ -92,7 +92,11 @@ class AnimalFeedTableViewController: UIViewController, UITableViewDelegate, UITa
     
     override func viewWillAppear(_ animated: Bool) {
         animalFeedTableView.reloadData()
+        IndexController.shared.index = (self.tabBarController?.selectedIndex)!
+
     }
+    
+    
     
     func handleLeftSwipes(sender:UISwipeGestureRecognizer) {
         
