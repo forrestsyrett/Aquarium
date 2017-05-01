@@ -130,6 +130,9 @@ class MapKitViewController: UIViewController, MKMapViewDelegate, BottomSheetView
         self.zoomGalleryView.isHidden = true
         
         self.zoomGalleryView.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
+        
+        IndexController.shared.index = (self.tabBarController?.selectedIndex)!
+
     }
     
     

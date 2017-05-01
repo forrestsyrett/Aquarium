@@ -63,6 +63,7 @@ class BottomSheetViewController: UIViewController, UIGestureRecognizerDelegate, 
     var animalInfo = ""
     var animalImage = UIImage()
     var animalName = ""
+    var conservationStatus = ""
     
     
     var closeSwitch: Bool = true
@@ -482,6 +483,7 @@ class BottomSheetViewController: UIViewController, UIGestureRecognizerDelegate, 
         self.animalInfo = animal.info.description!
         self.animalName = animal.info.name
         self.animalImage = animal.info.animalImage
+        self.conservationStatus = animal.info.status
         
         print("Info button tapped for \(animal.info.name)")
         self.performSegue(withIdentifier: "toAnimalDetail", sender: self)
@@ -555,6 +557,7 @@ class BottomSheetViewController: UIViewController, UIGestureRecognizerDelegate, 
                 destinationViewController.image = self.animalImage
                 destinationViewController.info = self.animalInfo
                 destinationViewController.name = self.animalName
+                destinationViewController.status = self.conservationStatus
                 
             }
         }

@@ -2,12 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "rsz_qr_code-50.png",
+      "filename" : "Heat_Map.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "QR Code-50.png",
       "scale" : "2x"
     },
     {

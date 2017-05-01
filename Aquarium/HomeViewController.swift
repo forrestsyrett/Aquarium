@@ -91,6 +91,8 @@ class HomeViewController: UIViewController, UITabBarControllerDelegate, CLLocati
         animateLines(lineTwo, animateTime: 1.0)
         animateLines(lineThree, animateTime: 1.5)
         animateLines(lineFour, animateTime: 2.0)
+        IndexController.shared.index = (self.tabBarController?.selectedIndex)!
+
     }
     
    

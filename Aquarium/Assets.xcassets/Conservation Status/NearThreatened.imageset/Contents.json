@@ -2,11 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
+      "filename" : "NearThreatened.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "Fish-50.png",
       "scale" : "2x"
     },
     {

@@ -77,6 +77,9 @@ class MainExhibitViewController: UIViewController, FlowingMenuDelegate, UICollec
 
     
     override func viewWillAppear(_ animated: Bool) {
+        
+        IndexController.shared.index = (self.tabBarController?.selectedIndex)!
+
     }
     
     override func viewDidAppear(_ animated: Bool) {

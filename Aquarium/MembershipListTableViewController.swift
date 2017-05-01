@@ -50,6 +50,8 @@ class MembershipListTableViewController: UIViewController, UITableViewDelegate, 
         } else {
             welcomeView.isHidden = false
         }
+        IndexController.shared.index = (self.tabBarController?.selectedIndex)!
+
     }
     
     
