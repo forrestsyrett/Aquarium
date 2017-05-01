@@ -11,6 +11,11 @@
 		060C1EB61E81D87500501713 /* shark.obj in Resources */ = {isa = PBXBuildFile; fileRef = 060C1EB41E81D87500501713 /* shark.obj */; };
 		060C1EB71E81D87500501713 /* sharkTexture.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 060C1EB51E81D87500501713 /* sharkTexture.jpg */; };
 		0656D2CD1DE4C7680014BBF0 /* AnimalCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0656D2CC1DE4C7680014BBF0 /* AnimalCollectionViewCell.swift */; };
+		0660F0451EA00A5F00D14C3D /* TheaterTimesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0660F0441EA00A5F00D14C3D /* TheaterTimesTableViewCell.swift */; };
+		0660F0471EA00AB700D14C3D /* TheaterShows.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0660F0461EA00AB700D14C3D /* TheaterShows.swift */; };
+		0660F0491EA00B1D00D14C3D /* TheaterShowsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0660F0481EA00B1D00D14C3D /* TheaterShowsController.swift */; };
+		06A0C2DD1E8713800012A1DD /* MapTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A0C2DC1E8713800012A1DD /* MapTableViewCell.swift */; };
+		06A0C2DF1E8714930012A1DD /* AnimalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A0C2DE1E8714930012A1DD /* AnimalController.swift */; };
 		06B325251DF7383500A53057 /* BeaconInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B325241DF7383500A53057 /* BeaconInfoViewController.swift */; };
 		06C4BB8A1E78882B005A96CE /* NotificationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C4BB891E78882B005A96CE /* NotificationDelegate.swift */; };
 		06C714F21E5E60E3003F3794 /* OpeningScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C714F11E5E60E3003F3794 /* OpeningScreenViewController.swift */; };
@@ -86,6 +91,11 @@
 		060C1EB41E81D87500501713 /* shark.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = shark.obj; sourceTree = "<group>"; };
 		060C1EB51E81D87500501713 /* sharkTexture.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sharkTexture.jpg; sourceTree = "<group>"; };
 		0656D2CC1DE4C7680014BBF0 /* AnimalCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimalCollectionViewCell.swift; sourceTree = "<group>"; };
+		0660F0441EA00A5F00D14C3D /* TheaterTimesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TheaterTimesTableViewCell.swift; sourceTree = "<group>"; };
+		0660F0461EA00AB700D14C3D /* TheaterShows.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TheaterShows.swift; sourceTree = "<group>"; };
+		0660F0481EA00B1D00D14C3D /* TheaterShowsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TheaterShowsController.swift; sourceTree = "<group>"; };
+		06A0C2DC1E8713800012A1DD /* MapTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapTableViewCell.swift; path = Aquarium/MapTableViewCell.swift; sourceTree = "<group>"; };
+		06A0C2DE1E8714930012A1DD /* AnimalController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimalController.swift; sourceTree = "<group>"; };
 		06B325241DF7383500A53057 /* BeaconInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeaconInfoViewController.swift; sourceTree = "<group>"; };
 		06C4BB891E78882B005A96CE /* NotificationDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationDelegate.swift; sourceTree = "<group>"; };
 		06C714F11E5E60E3003F3794 /* OpeningScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpeningScreenViewController.swift; sourceTree = "<group>"; };
@@ -191,6 +201,7 @@
 				AA7CE6FE1DDB91A600EF4669 /* Background.swift */,
 				AA353AB51DCE5FD200AD5490 /* MapKitViewController.swift */,
 				AA353AB71DCE601800AD5490 /* BottomSheetViewController.swift */,
+				06A0C2DC1E8713800012A1DD /* MapTableViewCell.swift */,
 				AA353ABB1DCE608500AD5490 /* CurrentLocationController.swift */,
 				AA353ABD1DCE60A700AD5490 /* AnnotationViews.swift */,
 				AA081A571DDA91E60020C269 /* BackGroundOverlay.swift */,
@@ -268,6 +279,9 @@
 				AA8441CE1D556ECD000238C1 /* Appearance */,
 				AA8441CC1D556E49000238C1 /* Animal Exhibit Galleries */,
 				AA544C9B1D0BB66C00DC1725 /* Assets.xcassets */,
+				0660F0441EA00A5F00D14C3D /* TheaterTimesTableViewCell.swift */,
+				0660F0461EA00AB700D14C3D /* TheaterShows.swift */,
+				0660F0481EA00B1D00D14C3D /* TheaterShowsController.swift */,
 				0656D2CB1DE4C3150014BBF0 /* Unused */,
 				AA544C9D1D0BB66C00DC1725 /* LaunchScreen.storyboard */,
 			);
@@ -290,6 +304,7 @@
 			isa = PBXGroup;
 			children = (
 				AA9D6EDF1D1CCD5000831AFE /* Animal.swift */,
+				06A0C2DE1E8714930012A1DD /* AnimalController.swift */,
 				AA6F4E651D386A2A00FA20F7 /* AnimalTableViewCell.swift */,
 				AA7FF44A1DDE65AE002A5AE0 /* MainExhibitViewController.swift */,
 				AA55B5811DDF759600CC2336 /* MainExhibitTableViewController.swift */,
@@ -510,6 +525,7 @@
 			files = (
 				AA6F4E701D3C01B100FA20F7 /* AnimalFeedTableViewController.swift in Sources */,
 				AA6FA1D61D5554FC00CBEEC7 /* MembershipCardController.swift in Sources */,
+				06A0C2DD1E8713800012A1DD /* MapTableViewCell.swift in Sources */,
 				AA55B5821DDF759600CC2336 /* MainExhibitTableViewController.swift in Sources */,
 				AA353ACE1DCE670000AD5490 /* Annotations.swift in Sources */,
 				AA55B5861DDF765100CC2336 /* MainExhibitController.swift in Sources */,
@@ -519,11 +535,13 @@
 				0656D2CD1DE4C7680014BBF0 /* AnimalCollectionViewCell.swift in Sources */,
 				AA6F4E721D3C01D000FA20F7 /* AnimalFeedTableViewCell.swift in Sources */,
 				AA07C6A01DD5090E00AD855D /* SecondFloorOverlay.swift in Sources */,
+				0660F0491EA00B1D00D14C3D /* TheaterShowsController.swift in Sources */,
 				AA7CE7011DDB928200EF4669 /* BackgroundOverlayView.swift in Sources */,
 				AA353AB61DCE5FD200AD5490 /* MapKitViewController.swift in Sources */,
 				AACE392A1D54578E0082E667 /* AddNewMembershipViewController.swift in Sources */,
 				AA353AC81DCE622300AD5490 /* MapGalleries.swift in Sources */,
 				AA353AB31DCE5F1700AD5490 /* AquariumMap.swift in Sources */,
+				06A0C2DF1E8714930012A1DD /* AnimalController.swift in Sources */,
 				AA544CB31D0CAE1000DC1725 /* ExhibitGalleriesViewController.swift in Sources */,
 				AA353ACA1DCE625600AD5490 /* MapGalleryController.swift in Sources */,
 				AA909B181D41B42A000DB923 /* Feeding.swift in Sources */,
@@ -546,9 +564,11 @@
 				06FD838D1DEA41F5005F4EFA /* AnimalDetailViewController.swift in Sources */,
 				AA183F2A1D1A6DD300D31044 /* AnimalEncountersViewController.swift in Sources */,
 				AA544C951D0BB66C00DC1725 /* AppDelegate.swift in Sources */,
+				0660F0451EA00A5F00D14C3D /* TheaterTimesTableViewCell.swift in Sources */,
 				AAEE47681D3CAD8500E0C537 /* NotificationController.swift in Sources */,
 				AA6F4E641D3868F900FA20F7 /* Animations.swift in Sources */,
 				AA7CE6FF1DDB91A600EF4669 /* Background.swift in Sources */,
+				0660F0471EA00AB700D14C3D /* TheaterShows.swift in Sources */,
 				06C714F21E5E60E3003F3794 /* OpeningScreenViewController.swift in Sources */,
 				AA353ABC1DCE608500AD5490 /* CurrentLocationController.swift in Sources */,
 				AA544CAB1D0C790400DC1725 /* UIAppearance.swift in Sources */,

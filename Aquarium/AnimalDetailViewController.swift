@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class AnimalDetailViewController: UIViewController {
     
     
@@ -47,7 +48,7 @@ class AnimalDetailViewController: UIViewController {
         animalImage.clipsToBounds = true
         
         // Added to test 3D model functionality. Will hide button if no 3D Model is available.
-        if self.animal == "Blacktip Reef Shark" {
+        if self.name == "Blacktip Reef Shark" {
             self.ThreeDView.isHidden = false
             
         } else {
@@ -59,7 +60,7 @@ class AnimalDetailViewController: UIViewController {
     
     @IBAction func toModelButtonTapped(_ sender: Any) {
         
-        if self.animal == "Blacktip Reef Shark" {
+        if self.name == "Blacktip Reef Shark" {
             self.performSegue(withIdentifier: "toModel", sender: self)
         }
     }
