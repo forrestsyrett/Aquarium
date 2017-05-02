@@ -2,8 +2,8 @@
 //  CustomTabBar.swift
 //  CustomTabBar
 //
-//  Created by Adam Bardon on 07/03/16.
-//  Copyright © 2016 Swift Joureny. All rights reserved.
+//  Created by Forrest Syrett on 4/28/17.
+//  Copyright © 2017 Forrest Syrett. All rights reserved.
 //
 
 import UIKit
@@ -42,6 +42,15 @@ class CustomTabBar: UIView {
         self.backgroundColor = aquaWaveColor
         self.layer.borderWidth = 0.5
         self.layer.borderColor = UIColor.white.cgColor
+        
+        
+//        self.clipsToBounds = true
+//        let rightBorder = CALayer()
+//        rightBorder.borderColor = UIColor.white.cgColor
+//        rightBorder.borderWidth = 0.5
+//        rightBorder.frame = CGRect(x: CGFloat(-1), y: CGFloat(-1), width: CGFloat(self.frame.width), height: CGFloat(self.frame.height + 2))
+//        self.layer.addSublayer(rightBorder)
+
         
     }
     

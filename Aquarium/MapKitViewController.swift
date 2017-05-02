@@ -251,7 +251,7 @@ let secondFloorAnnotation = Annotation(coordinate: coordinate, title: title, sub
     
     func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
         
-        let latDelta = aquarium.topLeftMapCoordinate.latitude + 0.0005 - aquarium.bottomRightMapCoordinate.latitude + 0.0005
+        let latDelta = aquarium.topLeftMapCoordinate.latitude + 0.0004 - aquarium.bottomRightMapCoordinate.latitude + 0.0004
         
         // 0.0003 sets correct zoom level when zoomed out bounce back
         

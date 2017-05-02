@@ -2,8 +2,8 @@
 //  CustomTabBarController.swift
 //  CustomTabBar
 //
-//  Created by Adam Bardon on 07/03/16.
-//  Copyright © 2016 Swift Journey. All rights reserved.
+//  Created by Forrest Syrett on 4/28/17.
+//  Copyright © 2017 Forrest Syrett. All rights reserved.
 //
 
 import UIKit
