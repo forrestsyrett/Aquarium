@@ -14,6 +14,19 @@
 		0660F0451EA00A5F00D14C3D /* TheaterTimesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0660F0441EA00A5F00D14C3D /* TheaterTimesTableViewCell.swift */; };
 		0660F0471EA00AB700D14C3D /* TheaterShows.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0660F0461EA00AB700D14C3D /* TheaterShows.swift */; };
 		0660F0491EA00B1D00D14C3D /* TheaterShowsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0660F0481EA00B1D00D14C3D /* TheaterShowsController.swift */; };
+		0689F6C41EB943DD007E8251 /* CraftARAugmentedRealitySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0689F6C31EB943DD007E8251 /* CraftARAugmentedRealitySDK.framework */; };
+		0689F6C61EB9440F007E8251 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0689F6C51EB9440F007E8251 /* Pods.framework */; };
+		0689F6C81EB9445A007E8251 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 0689F6C71EB9445A007E8251 /* libz.tbd */; };
+		0689F6CA1EB94467007E8251 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 0689F6C91EB94467007E8251 /* libc++.tbd */; };
+		0689F6CC1EB94478007E8251 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0689F6CB1EB94478007E8251 /* CoreLocation.framework */; };
+		0689F6CE1EB94482007E8251 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0689F6CD1EB94482007E8251 /* AudioToolbox.framework */; };
+		0689F6D01EB9448A007E8251 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0689F6CF1EB9448A007E8251 /* QuartzCore.framework */; };
+		0689F6D21EB94496007E8251 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0689F6D11EB94496007E8251 /* MobileCoreServices.framework */; };
+		0689F6D41EB9449D007E8251 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0689F6D31EB9449D007E8251 /* SystemConfiguration.framework */; };
+		0689F6D61EB944B3007E8251 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0689F6D51EB944B2007E8251 /* CoreMedia.framework */; };
+		0689F6D81EB944BA007E8251 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0689F6D71EB944BA007E8251 /* AVFoundation.framework */; };
+		0689F6DA1EB94511007E8251 /* AugmentedRealityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0689F6D91EB94511007E8251 /* AugmentedRealityViewController.swift */; };
+		0689F6E21EB95138007E8251 /* CraftARResourcesAR.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0689F6E11EB95138007E8251 /* CraftARResourcesAR.bundle */; };
 		068A98CF1EAEB9CF00950B04 /* AquariumSecondFloor.plist in Resources */ = {isa = PBXBuildFile; fileRef = 068A98CE1EAEB9CF00950B04 /* AquariumSecondFloor.plist */; };
 		069A216B1EB68F77006130C1 /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069A21671EB68F77006130C1 /* CustomTabBarController.swift */; };
 		069A216C1EB68F77006130C1 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069A21681EB68F77006130C1 /* CustomTabBar.swift */; };
@@ -100,6 +113,20 @@
 		0660F0441EA00A5F00D14C3D /* TheaterTimesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TheaterTimesTableViewCell.swift; path = Aquarium/TheaterTimesTableViewCell.swift; sourceTree = "<group>"; };
 		0660F0461EA00AB700D14C3D /* TheaterShows.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TheaterShows.swift; path = Aquarium/TheaterShows.swift; sourceTree = "<group>"; };
 		0660F0481EA00B1D00D14C3D /* TheaterShowsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TheaterShowsController.swift; path = Aquarium/TheaterShowsController.swift; sourceTree = "<group>"; };
+		0689F6C31EB943DD007E8251 /* CraftARAugmentedRealitySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CraftARAugmentedRealitySDK.framework; sourceTree = "<group>"; };
+		0689F6C51EB9440F007E8251 /* Pods.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Pods.framework; sourceTree = "<group>"; };
+		0689F6C71EB9445A007E8251 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		0689F6C91EB94467007E8251 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		0689F6CB1EB94478007E8251 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		0689F6CD1EB94482007E8251 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		0689F6CF1EB9448A007E8251 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		0689F6D11EB94496007E8251 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		0689F6D31EB9449D007E8251 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		0689F6D51EB944B2007E8251 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		0689F6D71EB944BA007E8251 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		0689F6D91EB94511007E8251 /* AugmentedRealityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AugmentedRealityViewController.swift; sourceTree = "<group>"; };
+		0689F6DD1EB9461C007E8251 /* Aquarium-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Aquarium-Bridging-Header.h"; sourceTree = "<group>"; };
+		0689F6E11EB95138007E8251 /* CraftARResourcesAR.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = CraftARResourcesAR.bundle; sourceTree = "<group>"; };
 		068A98CE1EAEB9CF00950B04 /* AquariumSecondFloor.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = AquariumSecondFloor.plist; sourceTree = "<group>"; };
 		069A21671EB68F77006130C1 /* CustomTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
 		069A21681EB68F77006130C1 /* CustomTabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
@@ -188,7 +215,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0689F6D81EB944BA007E8251 /* AVFoundation.framework in Frameworks */,
+				0689F6D61EB944B3007E8251 /* CoreMedia.framework in Frameworks */,
+				0689F6D41EB9449D007E8251 /* SystemConfiguration.framework in Frameworks */,
+				0689F6D21EB94496007E8251 /* MobileCoreServices.framework in Frameworks */,
+				0689F6D01EB9448A007E8251 /* QuartzCore.framework in Frameworks */,
+				0689F6CE1EB94482007E8251 /* AudioToolbox.framework in Frameworks */,
+				0689F6CC1EB94478007E8251 /* CoreLocation.framework in Frameworks */,
+				0689F6CA1EB94467007E8251 /* libc++.tbd in Frameworks */,
+				0689F6C81EB9445A007E8251 /* libz.tbd in Frameworks */,
+				0689F6C61EB9440F007E8251 /* Pods.framework in Frameworks */,
 				AA7FF44D1DDE67AF002A5AE0 /* FlowingMenu.framework in Frameworks */,
+				0689F6C41EB943DD007E8251 /* CraftARAugmentedRealitySDK.framework in Frameworks */,
 				2E3C1D313B999B8DCB850948 /* Pods_Aquarium.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -204,6 +242,15 @@
 			);
 			name = Unused;
 			path = ..;
+			sourceTree = "<group>";
+		};
+		0689F6E01EB946CE007E8251 /* AR Resources */ = {
+			isa = PBXGroup;
+			children = (
+				0689F6C51EB9440F007E8251 /* Pods.framework */,
+				0689F6C31EB943DD007E8251 /* CraftARAugmentedRealitySDK.framework */,
+			);
+			name = "AR Resources";
 			sourceTree = "<group>";
 		};
 		069A21661EB68F52006130C1 /* CustomTabBar */ = {
@@ -272,6 +319,8 @@
 		AA544C881D0BB66B00DC1725 = {
 			isa = PBXGroup;
 			children = (
+				0689F6DD1EB9461C007E8251 /* Aquarium-Bridging-Header.h */,
+				0689F6E11EB95138007E8251 /* CraftARResourcesAR.bundle */,
 				AA544C931D0BB66C00DC1725 /* Aquarium */,
 				AA544C921D0BB66C00DC1725 /* Products */,
 				BA65A9DDB62A50DF28C33017 /* Pods */,
@@ -290,6 +339,7 @@
 		AA544C931D0BB66C00DC1725 /* Aquarium */ = {
 			isa = PBXGroup;
 			children = (
+				0689F6E01EB946CE007E8251 /* AR Resources */,
 				AA9EE37B1DD25F94007D1E08 /* Aquarium.entitlements */,
 				AA544C941D0BB66C00DC1725 /* AppDelegate.swift */,
 				06C4BB891E78882B005A96CE /* NotificationDelegate.swift */,
@@ -371,8 +421,9 @@
 		AA8441CF1D556F3C000238C1 /* Main Tab Bar Items */ = {
 			isa = PBXGroup;
 			children = (
-				AA183F291D1A6DD200D31044 /* AnimalEncountersViewController.swift */,
 				AA8D05151D19DC930063F222 /* HomeViewController.swift */,
+				0689F6D91EB94511007E8251 /* AugmentedRealityViewController.swift */,
+				AA183F291D1A6DD200D31044 /* AnimalEncountersViewController.swift */,
 				06B325241DF7383500A53057 /* BeaconInfoViewController.swift */,
 				AA544CF91D149C0A00DC1725 /* QRScannerViewController.swift */,
 			);
@@ -391,6 +442,15 @@
 		EA94B41FA31D61D281B2BE4B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0689F6D71EB944BA007E8251 /* AVFoundation.framework */,
+				0689F6D51EB944B2007E8251 /* CoreMedia.framework */,
+				0689F6D31EB9449D007E8251 /* SystemConfiguration.framework */,
+				0689F6D11EB94496007E8251 /* MobileCoreServices.framework */,
+				0689F6CF1EB9448A007E8251 /* QuartzCore.framework */,
+				0689F6CD1EB94482007E8251 /* AudioToolbox.framework */,
+				0689F6CB1EB94478007E8251 /* CoreLocation.framework */,
+				0689F6C91EB94467007E8251 /* libc++.tbd */,
+				0689F6C71EB9445A007E8251 /* libz.tbd */,
 				AA7FF44C1DDE67AF002A5AE0 /* FlowingMenu.framework */,
 				EA163953DE68335B7F2D0C0E /* Pods_Aquarium.framework */,
 			);
@@ -433,7 +493,7 @@
 					AA544C901D0BB66B00DC1725 = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = B3G94J8WC9;
-						LastSwiftMigration = 0820;
+						LastSwiftMigration = 0830;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -470,6 +530,7 @@
 			files = (
 				AA353ACC1DCE665500AD5490 /* fishFlop.m4r in Resources */,
 				AA353ADD1DCE8B9E00AD5490 /* ITCFranklinGothicStd-Hvy.otf in Resources */,
+				0689F6E21EB95138007E8251 /* CraftARResourcesAR.bundle in Resources */,
 				AA544C9F1D0BB66C00DC1725 /* LaunchScreen.storyboard in Resources */,
 				AA353AD91DCE8B9E00AD5490 /* ITCFranklinGothicStd-Book.otf in Resources */,
 				AA3391A01D6FA92800F92147 /* Main.storyboard in Resources */,
@@ -562,6 +623,7 @@
 				AA55B5881DDF7D4100CC2336 /* ExhibitGalleryTableViewCell.swift in Sources */,
 				AA353ABE1DCE60A700AD5490 /* AnnotationViews.swift in Sources */,
 				AA544CAD1D0C90DE00DC1725 /* ExhibitTableViewController.swift in Sources */,
+				0689F6DA1EB94511007E8251 /* AugmentedRealityViewController.swift in Sources */,
 				0656D2CD1DE4C7680014BBF0 /* AnimalCollectionViewCell.swift in Sources */,
 				AA6F4E721D3C01D000FA20F7 /* AnimalFeedTableViewCell.swift in Sources */,
 				AA07C6A01DD5090E00AD855D /* SecondFloorOverlay.swift in Sources */,
@@ -722,10 +784,15 @@
 				CODE_SIGN_ENTITLEMENTS = Aquarium/Aquarium.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = B3G94J8WC9;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Aquarium",
+				);
 				INFOPLIST_FILE = Aquarium/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.forrest.Aquarium;
 				PRODUCT_NAME = Aquarium;
+				SWIFT_OBJC_BRIDGING_HEADER = "Aquarium-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -742,10 +809,15 @@
 				CODE_SIGN_ENTITLEMENTS = Aquarium/Aquarium.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = B3G94J8WC9;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Aquarium",
+				);
 				INFOPLIST_FILE = Aquarium/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.forrest.Aquarium;
 				PRODUCT_NAME = Aquarium;
+				SWIFT_OBJC_BRIDGING_HEADER = "Aquarium-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
