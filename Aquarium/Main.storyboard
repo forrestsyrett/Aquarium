@@ -1360,11 +1360,12 @@ To get started, tap the plus!
                         <segue destination="XZH-NW-XMu" kind="relationship" relationship="viewControllers" id="3or-I5-FBe"/>
                         <segue destination="cTl-Ja-usU" kind="relationship" relationship="viewControllers" id="wgt-fe-5m4"/>
                         <segue destination="efd-Aa-KzA" kind="relationship" relationship="viewControllers" id="fHo-Xs-KA2"/>
+                        <segue destination="t47-gY-Ukw" kind="relationship" relationship="viewControllers" id="NPH-h8-Tb8"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LYA-8d-shZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1631" y="-388"/>
+            <point key="canvasLocation" x="-1414" y="439"/>
         </scene>
         <!--Animals-->
         <scene sceneID="64V-HK-fR2">
@@ -1827,6 +1828,89 @@ To get started, tap the plus!
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cWA-Wo-Os2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2239" y="813"/>
+        </scene>
+        <!--AR-->
+        <scene sceneID="2hq-mM-b2i">
+            <objects>
+                <viewController id="t47-gY-Ukw" customClass="AugmentedRealityViewController" customModule="Aquarium" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xPY-Ct-zAt"/>
+                        <viewControllerLayoutGuide type="bottom" id="2Ag-yT-8KQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="p8J-hl-7Bf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JCW-YU-y8R">
+                                <rect key="frame" x="-4" y="0.0" width="383" height="618"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V1h-AM-4sf" userLabel="Overlay Views">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="aquaWave" translatesAutoresizingMaskIntoConstraints="NO" id="j9Y-2C-99S">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="86"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="86" id="Kya-9i-ugX"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Augmented Reality" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="FPb-dW-JWC">
+                                        <rect key="frame" x="4" y="37" width="367" height="23"/>
+                                        <fontDescription key="fontDescription" name="TrajanPro-Regular" family="Trajan Pro" pointSize="19"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H1z-iB-OzG">
+                                        <rect key="frame" x="108" y="475" width="159" height="50"/>
+                                        <color key="backgroundColor" red="0.25414796429999997" green="0.61494155530000005" blue="0.72336632010000002" alpha="0.59441021130000005" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="ROh-u1-Vde"/>
+                                            <constraint firstAttribute="width" constant="159" id="Yce-4Y-MLS"/>
+                                        </constraints>
+                                        <state key="normal" title="Scanning...">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="scanButtonTapped:" destination="t47-gY-Ukw" eventType="touchUpInside" id="r0U-6o-wUh"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="j9Y-2C-99S" secondAttribute="trailing" id="1ya-Ui-P18"/>
+                                    <constraint firstItem="j9Y-2C-99S" firstAttribute="leading" secondItem="V1h-AM-4sf" secondAttribute="leading" id="LDs-Iv-oi1"/>
+                                    <constraint firstItem="FPb-dW-JWC" firstAttribute="top" secondItem="V1h-AM-4sf" secondAttribute="top" constant="37" id="MW7-zz-vow"/>
+                                    <constraint firstAttribute="bottom" secondItem="H1z-iB-OzG" secondAttribute="bottom" constant="93" id="WTu-yT-gqf"/>
+                                    <constraint firstAttribute="trailing" secondItem="FPb-dW-JWC" secondAttribute="trailing" constant="4" id="Ya3-GZ-scE"/>
+                                    <constraint firstItem="FPb-dW-JWC" firstAttribute="leading" secondItem="V1h-AM-4sf" secondAttribute="leading" constant="4" id="knD-HR-ciF"/>
+                                    <constraint firstItem="H1z-iB-OzG" firstAttribute="centerX" secondItem="V1h-AM-4sf" secondAttribute="centerX" id="mwC-4t-DBi"/>
+                                    <constraint firstItem="j9Y-2C-99S" firstAttribute="top" secondItem="V1h-AM-4sf" secondAttribute="top" id="xEb-Tw-2f2"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="FPb-dW-JWC" firstAttribute="top" secondItem="xPY-Ct-zAt" secondAttribute="bottom" constant="17" id="19N-gv-vlE"/>
+                            <constraint firstItem="JCW-YU-y8R" firstAttribute="top" secondItem="xPY-Ct-zAt" secondAttribute="bottom" constant="-20" id="256-Zx-HEC"/>
+                            <constraint firstAttribute="trailing" secondItem="V1h-AM-4sf" secondAttribute="trailing" id="9sw-hd-dqB"/>
+                            <constraint firstItem="JCW-YU-y8R" firstAttribute="leading" secondItem="p8J-hl-7Bf" secondAttribute="leadingMargin" constant="-20" id="MzO-7t-Wd4"/>
+                            <constraint firstItem="2Ag-yT-8KQ" firstAttribute="top" secondItem="JCW-YU-y8R" secondAttribute="bottom" id="VFF-hf-G7F"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="JCW-YU-y8R" secondAttribute="trailing" constant="-20" id="W0J-Qq-ges"/>
+                            <constraint firstItem="2Ag-yT-8KQ" firstAttribute="top" secondItem="V1h-AM-4sf" secondAttribute="bottom" id="Za6-cu-94J"/>
+                            <constraint firstItem="V1h-AM-4sf" firstAttribute="leading" secondItem="p8J-hl-7Bf" secondAttribute="leading" id="r9O-nv-ZLw"/>
+                            <constraint firstItem="V1h-AM-4sf" firstAttribute="top" secondItem="p8J-hl-7Bf" secondAttribute="top" id="v60-uN-cqz"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="AR" image="camera" selectedImage="camera" id="A8F-5H-eAs"/>
+                    <connections>
+                        <outlet property="aquaWave" destination="j9Y-2C-99S" id="jxn-5S-Bzz"/>
+                        <outlet property="scanButton" destination="H1z-iB-OzG" id="PBK-tL-bTO"/>
+                        <outlet property="videoPreview" destination="JCW-YU-y8R" id="dgh-mB-0mV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="spx-5x-pXm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1415.2" y="1109.5952023988007"/>
         </scene>
         <!--Scene Kit View Controller-->
         <scene sceneID="C2E-4A-Kgl">
@@ -2958,6 +3042,7 @@ We hope you enjoy your visit and we're excited to have you with us as we Explore
         <image name="aquarium" width="800" height="304"/>
         <image name="calendar" width="25" height="25"/>
         <image name="calendarFilled" width="25" height="25"/>
+        <image name="camera" width="25" height="25"/>
         <image name="cancel" width="50" height="50"/>
         <image name="card" width="25" height="25"/>
         <image name="cardFilled" width="25" height="25"/>
