@@ -57,8 +57,6 @@ class CustomTabBarController: UITabBarController, CustomTabBarDataSource, Custom
         homeButtonFrame.origin.y = self.view.bounds.height - homeButtonFrame.height
         homeButtonFrame.origin.x = self.view.bounds.width/2 - homeButtonFrame.size.width/2
         homeButton.frame = homeButtonFrame
-        
-        
         homeButton.backgroundColor = buttonColor
         homeButton.layer.cornerRadius = homeButtonFrame.height/2
         homeButton.layer.borderColor = UIColor.white.cgColor

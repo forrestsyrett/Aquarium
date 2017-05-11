@@ -7,9 +7,10 @@
 //
 
 import UIKit
+import QuartzCore
 
 
-class AnimalDetailViewController: UIViewController {
+class AnimalDetailViewController: UIViewController, UIGestureRecognizerDelegate {
     
     
     @IBOutlet weak var animalNameLabel: UILabel!
@@ -40,6 +41,12 @@ class AnimalDetailViewController: UIViewController {
         dismissButton.layer.cornerRadius = 19.5
         ThreeDView.layer.cornerRadius = 5.0
         scrollView.contentSize = CGSize(width: self.view.frame.width, height: self.view.frame.height + 2000)
+        
+        let gesture = UIPanGestureRecognizer.init(target: self, action: #selector(BottomSheetViewController.panGesture))
+        
+        view.addGestureRecognizer(gesture)
+        
+        gesture.delegate = self
 
     }
     
@@ -62,11 +69,9 @@ class AnimalDetailViewController: UIViewController {
         
         switch self.status {
             case "Least Concern": conservationStatusImage.image = #imageLiteral(resourceName: "LeastConcern")
-            case "Near Threatened": conservationStatusImage.image =
-            #imageLiteral(resourceName: "NearThreatened")
+            case "Near Threatened": conservationStatusImage.image = #imageLiteral(resourceName: "NearThreatened")
             case "Vulnerable": conservationStatusImage.image = #imageLiteral(resourceName: "Vulnerable")
-            case "Endangered": conservationStatusImage.image =
-            #imageLiteral(resourceName: "Endangered")
+            case "Endangered": conservationStatusImage.image = #imageLiteral(resourceName: "Endangered")
             case "Critically Endangered": conservationStatusImage.image = #imageLiteral(resourceName: "CriticallyEndangered")
             case "Extinct in the Wild": conservationStatusImage.image = #imageLiteral(resourceName: "Extinct_In_Wild")
         default: break
@@ -98,18 +103,36 @@ class AnimalDetailViewController: UIViewController {
         self.image = animal.info.animalImage
         self.info = animal.info.description!
         self.status = animal.info.status
+    }
+    
+    
+    
+    func panGesture(recognizer: UIPanGestureRecognizer) {
         
-
+        if recognizer.isUp(view: self.view) == false {
+            
+                let transition = CATransition()
+                transition.duration = 0.5
+                transition.type = kCATransitionFade
+//                transition.subtype = kCATransitionFromBottom
+            
+                self.view.window?.layer.add(transition, forKey: nil)
+                self.dismiss(animated: false, completion: nil)
+        }
     }
+}
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+extension UIPanGestureRecognizer {
+    
+    func isUp(view: UIView) -> Bool {
+        
+        let direction: CGPoint = velocity(in: view)
+        if direction.y < 0 {
+            // Panning up
+            return true
+        } else {
+            // Panning Down
+            return false
+        }
     }
-    */
-
 }

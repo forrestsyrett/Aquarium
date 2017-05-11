@@ -350,25 +350,39 @@ let secondFloorAnnotation = Annotation(coordinate: coordinate, title: title, sub
     
     
     
-    func centerMap() {
+    func centerMapOnSelected() {
         
         if mapView.selectedAnnotations.count > 0 {
       let annotation = mapView.selectedAnnotations[0]
         
-        self.mapView.setCenter(annotation.coordinate, animated: true)
+            UIView.animate(withDuration: 0.3, animations: {
+                self.mapView.setCenter(annotation.coordinate, animated: true)
+
+            })
         }
     }
     
+    func centerMapOnCurrentLocation() {
+        mapView.centerCoordinate = CurrentLocationController.shared.coordinate
+
+        UIView.animate(withDuration: 0.3) {
+       self.mapView(self.mapView, regionDidChangeAnimated: true)
+    }
+    }
     
-    
+    func resetMapCenter() {
+        
+        mapView.centerCoordinate = aquarium.midCoordinate
+        
+        UIView.animate(withDuration: 0.3) {
+        self.mapView(self.mapView, regionDidChangeAnimated: true)
+    }
+}
     
     
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        
-        //        if annotation is MKUserLocation {
-        //            return nil
-        //        }
+ 
         
         if annotation.isEqual(mapView.userLocation) {
             let userLocationAnnotation = MKAnnotationView(annotation: annotation, reuseIdentifier: "userLocation3")
@@ -400,9 +414,13 @@ let secondFloorAnnotation = Annotation(coordinate: coordinate, title: title, sub
             
             
 //             Zoom To Selected Annotation
-            let span = MKCoordinateSpanMake(0.0001, 0.0001)
-            let region = MKCoordinateRegion(center: annotation.coordinate, span: span)
-            mapView.setRegion(region, animated: true)
+            let region = MKCoordinateRegionMakeWithDistance(annotation.coordinate, 5, 5)
+            let adjustedRegion = self.mapView.regionThatFits(region)
+            mapView.setRegion(adjustedRegion, animated: true)
+            
+//            UIView.animate(withDuration: 0.3, animations: { 
+//                self.centerMapOnSelected()
+//            })
             
             if let title = annotation.title {
                 if let newTitle = title {
@@ -661,17 +679,29 @@ let secondFloorAnnotation = Annotation(coordinate: coordinate, title: title, sub
         
         
         switch self.trackingType {
+            
+            // User Location Rotates
         case TrackingTypes.map.rawValue:
             self.trackingSwitch = 2
             self.trackingType = TrackingTypes.user.rawValue
-        UIView.animate(withDuration: 0.3, animations: { 
+        UIView.animate(withDuration: 0.3, animations: {
+            self.resetMapCenter()
             self.mapView.transform = CGAffineTransform.identity
             self.compassButton.setImage(#imageLiteral(resourceName: "compass"), for: .normal)
         })
+            
+            // Map Rotates
         case TrackingTypes.user.rawValue:
             self.trackingSwitch = 1
             self.trackingType = TrackingTypes.map.rawValue
             self.compassButton.setImage(#imageLiteral(resourceName: "compassFilled"), for: .normal)
+            
+            for annotation in self.mapView.annotations {
+                mapView.deselectAnnotation(annotation, animated: true)
+            }
+            UIView.animate(withDuration: 0.3, animations: { 
+                self.centerMapOnCurrentLocation()
+            })
         default: break
     }
 
@@ -686,10 +716,10 @@ let secondFloorAnnotation = Annotation(coordinate: coordinate, title: title, sub
                 if let title = anotation.title {
                     if title == "Current Location" {
                         let view = mapView.view(for: anotation)
-                        UIView.animate(withDuration: 0.3, animations: { 
+                        UIView.animate(withDuration: 0.3, delay: 0.0, options: .allowUserInteraction, animations: { 
                             view?.transform = CGAffineTransform(rotationAngle: (CGFloat)(userRotation))
 
-                        })
+                        }, completion: nil)
                     }
                 }
             }
@@ -702,10 +732,10 @@ let secondFloorAnnotation = Annotation(coordinate: coordinate, title: title, sub
                     if let title = anotation.title {
                         if title == "Current Location" {
                             let view = self.mapView.view(for: anotation)
-                            UIView.animate(withDuration: 0.3, animations: {
+                            UIView.animate(withDuration: 0.3, delay: 0.0, options: .allowUserInteraction, animations: {
                                 view?.transform = CGAffineTransform(rotationAngle: (CGFloat)(userRotation))
                                 
-                            })
+                            }, completion: nil)
                         }
                     }
                 }

@@ -571,16 +571,16 @@ class BottomSheetViewController: UIViewController, UIGestureRecognizerDelegate, 
 // Checks to see if panGesture is moving up or down
 extension UIPanGestureRecognizer {
     
-    func isUp(view: UIView) -> Bool {
-        
-        let direction: CGPoint = velocity(in: view)
-        if direction.y < 0 {
-            // Panning up
-            return true
-        } else {
-            // Panning Down
-            return false
-        }
-    }
+//    func isUp(view: UIView) -> Bool {
+//        
+//        let direction: CGPoint = velocity(in: view)
+//        if direction.y < 0 {
+//            // Panning up
+//            return true
+//        } else {
+//            // Panning Down
+//            return false
+//        }
+//    }
 }
 
