@@ -10,6 +10,8 @@ import UIKit
 import PushKit
 import OneSignal
 import UserNotifications
+import Google
+import GoogleSignIn
 
 
 
@@ -43,6 +45,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
                 print("Permission Denied")
             }
     }
+        // Initialize sign-in
+        var configureError: NSError?
+        GGLContext.sharedInstance().configureWithError(&configureError)
+        assert(configureError == nil, "Error configuring Google services: \(configureError)")
         return true
 }
     

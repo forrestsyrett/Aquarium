@@ -108,7 +108,7 @@ class AnimalDetailViewController: UIViewController, UIGestureRecognizerDelegate 
     
     
     func panGesture(recognizer: UIPanGestureRecognizer) {
-        
+       /*
         if recognizer.isUp(view: self.view) == false {
             
                 let transition = CATransition()
@@ -119,7 +119,9 @@ class AnimalDetailViewController: UIViewController, UIGestureRecognizerDelegate 
                 self.view.window?.layer.add(transition, forKey: nil)
                 self.dismiss(animated: false, completion: nil)
         }
+ */
     }
+ 
 }
 
 extension UIPanGestureRecognizer {

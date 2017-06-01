@@ -10,6 +10,7 @@
 		060C1EB31E81D7FC00501713 /* SceneKitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060C1EB21E81D7FC00501713 /* SceneKitViewController.swift */; };
 		060C1EB61E81D87500501713 /* shark.obj in Resources */ = {isa = PBXBuildFile; fileRef = 060C1EB41E81D87500501713 /* shark.obj */; };
 		060C1EB71E81D87500501713 /* sharkTexture.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 060C1EB51E81D87500501713 /* sharkTexture.jpg */; };
+		0613C8A11EDF6CBD00657292 /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0613C8A01EDF6CBD00657292 /* EventsViewController.swift */; };
 		0656D2CD1DE4C7680014BBF0 /* AnimalCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0656D2CC1DE4C7680014BBF0 /* AnimalCollectionViewCell.swift */; };
 		0660F0451EA00A5F00D14C3D /* TheaterTimesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0660F0441EA00A5F00D14C3D /* TheaterTimesTableViewCell.swift */; };
 		0660F0471EA00AB700D14C3D /* TheaterShows.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0660F0461EA00AB700D14C3D /* TheaterShows.swift */; };
@@ -29,6 +30,10 @@
 		0689F6DA1EB94511007E8251 /* AugmentedRealityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0689F6D91EB94511007E8251 /* AugmentedRealityViewController.swift */; };
 		0689F6E21EB95138007E8251 /* CraftARResourcesAR.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0689F6E11EB95138007E8251 /* CraftARResourcesAR.bundle */; };
 		068A98CF1EAEB9CF00950B04 /* AquariumSecondFloor.plist in Resources */ = {isa = PBXBuildFile; fileRef = 068A98CE1EAEB9CF00950B04 /* AquariumSecondFloor.plist */; };
+		068BD1601EDF6E9000B2521F /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068BD15F1EDF6E9000B2521F /* Event.swift */; };
+		068BD1621EDF6F0600B2521F /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068BD1611EDF6F0600B2521F /* EventTableViewCell.swift */; };
+		068BD1641EDF6F8500B2521F /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068BD1631EDF6F8500B2521F /* CustomCell.swift */; };
+		068BD1661EDF76A100B2521F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 068BD1651EDF76A100B2521F /* GoogleService-Info.plist */; };
 		069A216B1EB68F77006130C1 /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069A21671EB68F77006130C1 /* CustomTabBarController.swift */; };
 		069A216C1EB68F77006130C1 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069A21681EB68F77006130C1 /* CustomTabBar.swift */; };
 		069A216D1EB68F77006130C1 /* CustomTabBarAnimatedTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069A21691EB68F77006130C1 /* CustomTabBarAnimatedTransition.swift */; };
@@ -110,6 +115,7 @@
 		060C1EB21E81D7FC00501713 /* SceneKitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneKitViewController.swift; sourceTree = "<group>"; };
 		060C1EB41E81D87500501713 /* shark.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = shark.obj; sourceTree = "<group>"; };
 		060C1EB51E81D87500501713 /* sharkTexture.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sharkTexture.jpg; sourceTree = "<group>"; };
+		0613C8A01EDF6CBD00657292 /* EventsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
 		0656D2CC1DE4C7680014BBF0 /* AnimalCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimalCollectionViewCell.swift; sourceTree = "<group>"; };
 		0660F0441EA00A5F00D14C3D /* TheaterTimesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TheaterTimesTableViewCell.swift; path = Aquarium/TheaterTimesTableViewCell.swift; sourceTree = "<group>"; };
 		0660F0461EA00AB700D14C3D /* TheaterShows.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TheaterShows.swift; path = Aquarium/TheaterShows.swift; sourceTree = "<group>"; };
@@ -130,6 +136,10 @@
 		0689F6DD1EB9461C007E8251 /* Aquarium-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Aquarium-Bridging-Header.h"; sourceTree = "<group>"; };
 		0689F6E11EB95138007E8251 /* CraftARResourcesAR.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = CraftARResourcesAR.bundle; sourceTree = "<group>"; };
 		068A98CE1EAEB9CF00950B04 /* AquariumSecondFloor.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = AquariumSecondFloor.plist; sourceTree = "<group>"; };
+		068BD15F1EDF6E9000B2521F /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		068BD1611EDF6F0600B2521F /* EventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
+		068BD1631EDF6F8500B2521F /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
+		068BD1651EDF76A100B2521F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		069A21671EB68F77006130C1 /* CustomTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
 		069A21681EB68F77006130C1 /* CustomTabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
 		069A21691EB68F77006130C1 /* CustomTabBarAnimatedTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabBarAnimatedTransition.swift; sourceTree = "<group>"; };
@@ -347,10 +357,15 @@
 				06C4BB891E78882B005A96CE /* NotificationDelegate.swift */,
 				06C714F11E5E60E3003F3794 /* OpeningScreenViewController.swift */,
 				AA33919F1D6FA92800F92147 /* Main.storyboard */,
+				0613C8A01EDF6CBD00657292 /* EventsViewController.swift */,
+				068BD1631EDF6F8500B2521F /* CustomCell.swift */,
+				068BD1611EDF6F0600B2521F /* EventTableViewCell.swift */,
+				068BD15F1EDF6E9000B2521F /* Event.swift */,
 				AA00A7861DD3D3E100B80DF6 /* WebViewController.swift */,
 				AAA20FF51D5E47A1009B3241 /* ContactUsViewController.swift */,
 				06C714F71E5E6C61003F3794 /* jellies.MOV */,
 				AA544CA01D0BB66C00DC1725 /* Info.plist */,
+				068BD1651EDF76A100B2521F /* GoogleService-Info.plist */,
 				AA353AE11DCE8BAA00AD5490 /* Fonts */,
 				AA353AB41DCE5F3900AD5490 /* Map */,
 				AA8441CF1D556F3C000238C1 /* Main Tab Bar Items */,
@@ -534,6 +549,7 @@
 				AA353ACC1DCE665500AD5490 /* fishFlop.m4r in Resources */,
 				AA353ADD1DCE8B9E00AD5490 /* ITCFranklinGothicStd-Hvy.otf in Resources */,
 				0689F6E21EB95138007E8251 /* CraftARResourcesAR.bundle in Resources */,
+				068BD1661EDF76A100B2521F /* GoogleService-Info.plist in Resources */,
 				AA544C9F1D0BB66C00DC1725 /* LaunchScreen.storyboard in Resources */,
 				AA353AD91DCE8B9E00AD5490 /* ITCFranklinGothicStd-Book.otf in Resources */,
 				AA3391A01D6FA92800F92147 /* Main.storyboard in Resources */,
@@ -643,6 +659,7 @@
 				AA909B181D41B42A000DB923 /* Feeding.swift in Sources */,
 				069A216B1EB68F77006130C1 /* CustomTabBarController.swift in Sources */,
 				AA6FA1D41D55540B00CBEEC7 /* MembershipListTableViewController.swift in Sources */,
+				0613C8A11EDF6CBD00657292 /* EventsViewController.swift in Sources */,
 				AA9D6EE01D1CCD5000831AFE /* Animal.swift in Sources */,
 				06C4BB8A1E78882B005A96CE /* NotificationDelegate.swift in Sources */,
 				AA081A581DDA91E60020C269 /* BackGroundOverlay.swift in Sources */,
@@ -653,6 +670,7 @@
 				AA8D05161D19DC930063F222 /* HomeViewController.swift in Sources */,
 				AA55B5841DDF75AE00CC2336 /* MainExhibits.swift in Sources */,
 				AA353AB81DCE601800AD5490 /* BottomSheetViewController.swift in Sources */,
+				068BD1641EDF6F8500B2521F /* CustomCell.swift in Sources */,
 				AA7FF44B1DDE65AE002A5AE0 /* MainExhibitViewController.swift in Sources */,
 				AA6F4E661D386A2A00FA20F7 /* AnimalTableViewCell.swift in Sources */,
 				060C1EB31E81D7FC00501713 /* SceneKitViewController.swift in Sources */,
@@ -665,6 +683,8 @@
 				AAEE47681D3CAD8500E0C537 /* NotificationController.swift in Sources */,
 				AA6F4E641D3868F900FA20F7 /* Animations.swift in Sources */,
 				0670DB0B1EC3C12C0099EDA9 /* ARCollectionViewCell.swift in Sources */,
+				068BD1621EDF6F0600B2521F /* EventTableViewCell.swift in Sources */,
+				068BD1601EDF6E9000B2521F /* Event.swift in Sources */,
 				AA7CE6FF1DDB91A600EF4669 /* Background.swift in Sources */,
 				0660F0471EA00AB700D14C3D /* TheaterShows.swift in Sources */,
 				06C714F21E5E60E3003F3794 /* OpeningScreenViewController.swift in Sources */,
