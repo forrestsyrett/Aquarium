@@ -17,12 +17,11 @@ import GoogleSignIn
 
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate {
   
     
     var window: UIWindow?
 
-    let delegate = NotificationDelegate()
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
@@ -35,16 +34,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         
         
         let center = UNUserNotificationCenter.current()
-        
-        let notificationDelegate = NotificationDelegate()
-        center.delegate = notificationDelegate
-        
-        
-        center.requestAuthorization(options: [.alert, .sound, .badge]) { (granted, error) in
-            if !granted {
-                print("Permission Denied")
-            }
+       
+        center.requestAuthorization(options: [.alert, .sound]) { (granted, error) in
+            
     }
+        
+        
         // Initialize sign-in
         var configureError: NSError?
         GGLContext.sharedInstance().configureWithError(&configureError)

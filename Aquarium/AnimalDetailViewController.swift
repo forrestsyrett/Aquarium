@@ -33,6 +33,8 @@ class AnimalDetailViewController: UIViewController, UIGestureRecognizerDelegate 
     
     var animal = "none"
     var status = "none"
+    
+    var imageType = "animal"
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,7 +42,7 @@ class AnimalDetailViewController: UIViewController, UIGestureRecognizerDelegate 
         gradient(self.view)
         dismissButton.layer.cornerRadius = 19.5
         ThreeDView.layer.cornerRadius = 5.0
-        scrollView.contentSize = CGSize(width: self.view.frame.width, height: self.view.frame.height + 2000)
+    
         
         let gesture = UIPanGestureRecognizer.init(target: self, action: #selector(BottomSheetViewController.panGesture))
         
@@ -86,12 +88,21 @@ class AnimalDetailViewController: UIViewController, UIGestureRecognizerDelegate 
             self.performSegue(withIdentifier: "toModel", sender: self)
         }
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    
+    @IBAction func heatmapButtonTapped(_ sender: Any) {
+        
+        if self.imageType == "animal" {
+            self.animalImage.image = #imageLiteral(resourceName: "FrogHeatMap_Example")
+            self.imageType = "heatmap"
+        } else {
+            self.animalImage.image = image
+            self.imageType = "animal"
+        }
     }
     
+    
+
     
     @IBAction func dismissButtonTapped(_ sender: Any) {
         

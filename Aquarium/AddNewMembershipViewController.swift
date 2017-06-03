@@ -461,7 +461,7 @@ class AddNewMembershipViewController: UIViewController, UITextFieldDelegate {
 
 
 
-extension NotificationDelegate {
+extension AddNewMembershipViewController: UNUserNotificationCenterDelegate {
     
     
        

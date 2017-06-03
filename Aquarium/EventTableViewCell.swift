@@ -8,11 +8,19 @@
 
 import UIKit
 
+protocol EventTableViewCellDelegate: class {
+    func eventNotificationScheduled(_ eventTableViewCell: EventTableViewCell)
+}
+
+
+
 class EventTableViewCell: UITableViewCell {
     
     @IBOutlet weak var eventNameLabel: UILabel!
     @IBOutlet weak var eventTimeLabel: UILabel!
-    
+    weak var delegate: EventTableViewCellDelegate?
+
+    @IBOutlet weak var notifyMeButton: UIButton!
     
     
     override func awakeFromNib() {
@@ -25,5 +33,11 @@ class EventTableViewCell: UITableViewCell {
         
         // Configure the view for the selected state
     }
+    
+    @IBAction func notifyMeButtonTapped(_ sender: Any) {
+        
+        delegate?.eventNotificationScheduled(self)
+    }
+    
     
 }
