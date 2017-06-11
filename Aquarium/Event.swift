@@ -17,6 +17,7 @@ class Event: Mappable {
     
     var eventName: String?
     var eventDate: String?
+    var scheduled: Bool?
     
     required init?(map: Map) {
         

@@ -246,6 +246,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		064889CE1EEDF2990012C46E /* Calendar Events */ = {
+			isa = PBXGroup;
+			children = (
+				0613C8A01EDF6CBD00657292 /* EventsViewController.swift */,
+				068BD1631EDF6F8500B2521F /* CustomCell.swift */,
+				068BD1611EDF6F0600B2521F /* EventTableViewCell.swift */,
+				068BD15F1EDF6E9000B2521F /* Event.swift */,
+			);
+			name = "Calendar Events";
+			sourceTree = "<group>";
+		};
 		0656D2CB1DE4C3150014BBF0 /* Unused */ = {
 			isa = PBXGroup;
 			children = (
@@ -357,15 +368,12 @@
 				06C4BB891E78882B005A96CE /* NotificationDelegate.swift */,
 				06C714F11E5E60E3003F3794 /* OpeningScreenViewController.swift */,
 				AA33919F1D6FA92800F92147 /* Main.storyboard */,
-				0613C8A01EDF6CBD00657292 /* EventsViewController.swift */,
-				068BD1631EDF6F8500B2521F /* CustomCell.swift */,
-				068BD1611EDF6F0600B2521F /* EventTableViewCell.swift */,
-				068BD15F1EDF6E9000B2521F /* Event.swift */,
 				AA00A7861DD3D3E100B80DF6 /* WebViewController.swift */,
 				AAA20FF51D5E47A1009B3241 /* ContactUsViewController.swift */,
 				06C714F71E5E6C61003F3794 /* jellies.MOV */,
 				AA544CA01D0BB66C00DC1725 /* Info.plist */,
 				068BD1651EDF76A100B2521F /* GoogleService-Info.plist */,
+				064889CE1EEDF2990012C46E /* Calendar Events */,
 				AA353AE11DCE8BAA00AD5490 /* Fonts */,
 				AA353AB41DCE5F3900AD5490 /* Map */,
 				AA8441CF1D556F3C000238C1 /* Main Tab Bar Items */,

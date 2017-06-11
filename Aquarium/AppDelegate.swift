@@ -134,6 +134,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         if let index = shortcutItem.userInfo?["TabIndex"] as? Int {
             (window?.rootViewController as? UITabBarController)?.selectedIndex = index
+           
         }
         
         return true

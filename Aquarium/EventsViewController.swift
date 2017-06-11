@@ -50,9 +50,7 @@ class EventsViewController: UIViewController {
         
         IndexController.shared.index = (self.tabBarController?.selectedIndex)!
         self.tableView.reloadData()
-        
     }
-    
     
     
     override func viewDidAppear(_ animated: Bool) {
@@ -76,7 +74,6 @@ class EventsViewController: UIViewController {
         
         
         self.currentDate = calendar.date(from: components)!
-        print("CurrentDate \(currentDate)")
         
         calendarView.scrollToDate(currentDate)
         calendarView.selectDates([currentDate])
@@ -96,20 +93,21 @@ class EventsViewController: UIViewController {
     }
     
     
+
     
     
     
-    func animateTableView() {
+    
+    func animateTableView(completion: @escaping (Bool) -> ()) {
+      
+        self.tableView.reloadData()
         
-        
-        tableView.reloadData()
-        
-        let cells = tableView.visibleCells
-        let tableHeight: CGFloat = tableView.bounds.size.height
+        let cells = self.tableView.visibleCells
+        let tableHeight: CGFloat = self.tableView.bounds.size.height
         
         
         for eventCell in cells {
-            let cell: UITableViewCell = eventCell as UITableViewCell
+            let cell: UITableViewCell = eventCell as! EventTableViewCell
             cell.transform = CGAffineTransform(translationX: 0, y: tableHeight)
         }
         
@@ -117,14 +115,18 @@ class EventsViewController: UIViewController {
         
         for a in cells {
             
-            let cell: UITableViewCell = a as UITableViewCell
+            let cell: UITableViewCell = a as! EventTableViewCell
             UIView.animate(withDuration: 1.5, delay: 0.05 * Double(index), usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: .allowUserInteraction, animations: {
                 cell.transform = CGAffineTransform(translationX: 0, y: 0)
-            }, completion: nil)
+            }, completion: { _ in
+                self.tableView.reloadData()
+            })
             
             index += 1
-        }
         
+        }
+        completion(true)
+ 
     }
     
     
@@ -134,6 +136,7 @@ class EventsViewController: UIViewController {
     
     /////////////////////////////////////////////
     func getCalendarItems() {
+        
         
         self.activityMonitor.isHidden = false
         self.activityMonitor.startAnimating()
@@ -180,20 +183,36 @@ class EventsViewController: UIViewController {
                 
                 for singleEvent in events {
                     self.calendarEvents.append(singleEvent)
-                   //     print("EventName: \(singleEvent.eventDate)")
+                 //   print("EventName: \(singleEvent.eventName) \(singleEvent.scheduled)")
+                    
                 }
+                self.checkScheduledEvents(completionHandler: { (complete) in
+                    
+                    if complete {
+                    for event in self.calendarEvents {
+                        print(event.scheduled)
+                    }
+                self.animateTableView(completion: { (true) in
+                    
+                        self.activityMonitor.stopAnimating()
+                        self.activityMonitor.isHidden = true
+                        print("Execution Finished")
+                        })
                 
-                self.animateTableView()
+                } else {
+                    print("not complete")
+                        }
+                    
                 
-                self.activityMonitor.stopAnimating()
-                self.activityMonitor.isHidden = true
-                print("Execution Finished")
                 
                 
+                
+            })
             case .failure(let error):
                 print(error)
                 
             }
+        
         }
         
     }
@@ -283,10 +302,44 @@ class EventsViewController: UIViewController {
         self.monthLabel.text = self.dateFormatter.string(from: date)
     }
     
+    @IBAction func reloadTableVIew(_ sender: Any) {
+        self.tabBarController?.selectedIndex = 1
+    }
     
+    
+/////////////////////////////////////////
+    
+    func checkScheduledEvents(completionHandler: @escaping (_ complete: Bool) -> ()) {
+        var identifiers: [String] = []
+        print("checking events")
+         UNUserNotificationCenter.current().getPendingNotificationRequests(completionHandler: { (requests) in
+            
+            for request in requests {
+                if !identifiers.contains(request.identifier) {
+                    identifiers.append(request.identifier)
+                }
+            }
+            print(self.calendarEvents.count)
+            
+        for event in self.calendarEvents {
+             let notificationIdentifier = "\(event.eventName ?? "Event Name") \(event.eventDate ?? "Event Date")"
+            
+            if identifiers.contains(notificationIdentifier) {
+                event.scheduled = true
+            } else {
+                event.scheduled = false
+            }
+        }
+    })
+
+        let flag = true
+       
+        completionHandler(flag)
+        
+    }
 }
 
-
+    // MARK: - Calendar Methods
 extension EventsViewController: JTAppleCalendarViewDataSource {
     
     func configureCalendar(_ calendar: JTAppleCalendarView) -> ConfigurationParameters {
@@ -312,6 +365,9 @@ extension EventsViewController: JTAppleCalendarViewDelegate {
         cell.dateLabel.text = cellState.text
         handleCellTextColor(cell: cell, cellState: cellState)
         handleCellSelected(cell: cell, cellState: cellState)
+        cell.selectedView.layer.cornerRadius = 15.0
+        cell.selectedView.layer.borderWidth = 1.0
+        cell.selectedView.layer.borderColor = UIColor.white.cgColor
         return cell
     }
     
@@ -325,7 +381,6 @@ extension EventsViewController: JTAppleCalendarViewDelegate {
         }
         
         self.currentDate = cellState.date
-        
         getCalendarItems()
         
     }
@@ -347,6 +402,9 @@ extension EventsViewController: JTAppleCalendarViewDelegate {
 
 extension EventsViewController: UITableViewDelegate, UITableViewDataSource,EventTableViewCellDelegate {
     
+    
+    
+    // MARK: - TableView Methods
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.calendarEvents.count
     }
@@ -369,42 +427,68 @@ extension EventsViewController: UITableViewDelegate, UITableViewDataSource,Event
         cell.eventTimeLabel.text = self.formatDate(dateString: eventDate)
         
         
-        // Disable scheduling notification if event is in the past.//
+        
         let date = getComparableDate(dateString: eventDate)
         let currentDate = Date()
-        let notificationIdentifier = "\(event.eventName ?? "Event Name") \(event.eventDate ?? "Event Date")"
 
-        UNUserNotificationCenter.current().getPendingNotificationRequests(completionHandler: { (requests) in
-            
-            for request in requests {
-                // Get notification that corresponds to the cell tapped
-                if request.identifier == notificationIdentifier {
-                    
-                    cell.notifyMeButton.setTitle("Cancel", for: .normal)
-                    
-                } else {
-                    cell.notifyMeButton.setTitle("Notify Me!", for: .normal)
-                }
-            }
-        })
+        // Check to see if event notification is already scheduled
+        // Disable scheduling notification if event is in the past.
+        // Allow User to cancel notification if event is currently scheduled.
+      
+        cell.notifyMeButton.titleLabel?.adjustsFontSizeToFitWidth = true
+        cell.notifyMeButton.titleLabel?.minimumScaleFactor = 0.5
         
-        if date <= currentDate {
+        
+        
+        if currentDate >= date.addingTimeInterval(15 * 60) {
             cell.notifyMeButton.alpha = 0.45
             cell.notifyMeButton.tintColor = UIColor(red: 0.25, green: 0.25, blue: 0.25, alpha: 0.45)
             cell.notifyMeButton.isEnabled = false
+            cell.notifyMeButton.layer.borderWidth = 0.0
             cell.notifyMeButton.setTitle("Event Over", for: .normal)
+            
+        } else if currentDate > date.addingTimeInterval(-15 * 60) && currentDate < date {
+            cell.notifyMeButton.alpha = 1.0
+            cell.notifyMeButton.tintColor = .white
+            cell.notifyMeButton.isEnabled = false
+            cell.notifyMeButton.layer.borderColor = UIColor.lightGray.cgColor
+            cell.notifyMeButton.layer.borderWidth = 1.0
+            cell.notifyMeButton.setTitle("Starting Soon", for: .normal)
+            
+        } else if currentDate >= date && currentDate < date.addingTimeInterval(15 * 60) {
+            cell.notifyMeButton.alpha = 1.0
+            cell.notifyMeButton.tintColor = .white
+            cell.notifyMeButton.isEnabled = false
+            cell.notifyMeButton.layer.borderColor = UIColor.white.cgColor
+            cell.notifyMeButton.layer.borderWidth = 1.0
+            cell.notifyMeButton.setTitle("In Progress", for: .normal)
+            
         } else {
+            
+                if currentDate < date.addingTimeInterval(-15 * 60) {
+                    
+          if event.scheduled == true {
             cell.notifyMeButton.alpha = 1.0
             cell.notifyMeButton.tintColor = .white
             cell.notifyMeButton.isEnabled = true
+            cell.notifyMeButton.layer.borderWidth = 0.0
+            cell.notifyMeButton.setTitle("Cancel", for: .normal)
+           
+        } else if event.scheduled == false {
+            cell.notifyMeButton.alpha = 1.0
+            cell.notifyMeButton.tintColor = .white
+            cell.notifyMeButton.isEnabled = true
+            cell.notifyMeButton.layer.borderWidth = 0.0
             cell.notifyMeButton.setTitle("Notify Me!", for: .normal)
-            
+          } else {
+            cell.notifyMeButton.alpha = 0.45
+            cell.notifyMeButton.tintColor = UIColor(red: 0.25, green: 0.25, blue: 0.25, alpha: 0.45)
+            cell.notifyMeButton.isEnabled = false
+            cell.notifyMeButton.layer.borderWidth = 0.0
+            cell.notifyMeButton.setTitle("Loading...", for: .normal)
         }
-        
-      
-        
-        
-        
+    }
+}
         return cell
         
     }
@@ -420,19 +504,28 @@ extension EventsViewController: UITableViewDelegate, UITableViewDataSource,Event
         
         UNUserNotificationCenter.current().delegate = self
         
-        let notificationStatus = UIApplication.shared.currentUserNotificationSettings?.types.contains([.alert, .sound]) ?? false
+        let notificationStatus = UIApplication.shared.currentUserNotificationSettings?.types.contains([.alert]) ?? false
         
         
         guard let indexPath = tableView.indexPath(for: eventTableViewCell) else { return }
+        
         let event = self.calendarEvents[indexPath.row]
         
         // Check if user has allowed for local notifications
         
-        // User has not alllowed for notifications, but tapped "notify me" button. Prompt to change settings
-        if notificationStatus == false {
-            let alert = UIAlertController(title: "You haven't allowed for the Aquarium to send you notifications.", message: "Would you like to enable this feature now?", preferredStyle: .alert)
-            let dismissAction = UIAlertAction(title: "No", style: .default, handler: nil)
+        // User has not allowed for notifications, but tapped "notify me" button. Prompt to change settings
+        if notificationStatus == false && eventTableViewCell.notifyMeButton.titleLabel?.text == "Notify Me!" {
+            let alert = UIAlertController(title: "Notifications are not enabled", message: "To receive notifications on feeding times and other Aquarium events, please change your notification settings.", preferredStyle: .alert)
+            let dismissAction = UIAlertAction(title: "Dismiss", style: .default, handler: nil)
+    
+            let settingsAction = UIAlertAction(title: "Settings", style: .default, handler: { (toSettings) in
+                guard let url = URL(string: UIApplicationOpenSettingsURLString) else { return }
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            })
+            
             alert.addAction(dismissAction)
+            alert.addAction(settingsAction)
+            
             
             self.present(alert, animated: true, completion: nil)
             
@@ -442,8 +535,8 @@ extension EventsViewController: UITableViewDelegate, UITableViewDataSource,Event
             
             // Check to see if notification is already pending
             // Notification is not pending
+            
             if eventTableViewCell.notifyMeButton.titleLabel?.text == "Notify Me!" {
-                
                 print("event notification delegate heard")
                 
                 let formatter = DateFormatter()
@@ -455,43 +548,34 @@ extension EventsViewController: UITableViewDelegate, UITableViewDataSource,Event
                 notificationController.scheduleNewNotification(on: notificationDate!, event: event)
   
                 print("Notification Scheduled for: \(event.eventName) on: \(notificationDate)")
-                UNUserNotificationCenter.current().getPendingNotificationRequests(completionHandler: { (requests) in
-                    print(requests.count)
-                    for request in requests {
-                        print("Identifier: \(request.identifier)")
-                    }
-                })
-                
+         
                 // set button title label to show notification is pending
                 eventTableViewCell.notifyMeButton.setTitle("Cancel", for: .normal)
+                checkScheduledEvents(completionHandler: { (true) in
                 
+                })
                 
                 // Cancel pending notification
             } else {
+                eventTableViewCell.notifyMeButton.setTitle("Notify Me!", for: .normal)
+            
                 print("cancel function reached")
-                UNUserNotificationCenter.current().getPendingNotificationRequests(completionHandler: { (requests) in
-                    
-                    for request in requests {
-                        // Get notification that corresponds to the cell tapped
+                
+                                        // Get notification that corresponds to the cell tapped
                         let notificationIdentifier = "\(event.eventName ?? "Event Name") \(event.eventDate ?? "Event Date")"
-                        if request.identifier == notificationIdentifier {
-                            
-                            // Remove the notification and change the button title.
+         
+                            // Remove the notification
                             UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [notificationIdentifier])
                             print("Notification Removed")
-                            eventTableViewCell.notifyMeButton.setTitle("Notify Me!", for: .normal)
-                            
+                checkScheduledEvents(completionHandler: { (true) in
+                    
+                })
                         }
                     }
-                })
-                
             }
             
         }
-        
-    }
-    
-}
+
 
 extension EventsViewController: UNUserNotificationCenterDelegate {
 
