@@ -14,7 +14,7 @@ class SecondFloorOverlayView: MKOverlayRenderer {
     
     
     var overlayImage: UIImage
-    var mapOverlay = #imageLiteral(resourceName: "secondFloorUpdated")
+    var mapOverlay = #imageLiteral(resourceName: "secondFloorFinalRSZ")
     
     init(overlay: MKOverlay, overlayImage: UIImage) {
         self.overlayImage = overlayImage

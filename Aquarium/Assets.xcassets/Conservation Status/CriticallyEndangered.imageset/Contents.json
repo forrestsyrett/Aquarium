@@ -2,11 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
+      "filename" : "CriticallyEndangered.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "CriticallyEndangered.png",
       "scale" : "2x"
     },
     {

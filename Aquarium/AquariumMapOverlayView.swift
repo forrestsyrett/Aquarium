@@ -14,7 +14,7 @@ class AquariumMapOverlayView: MKOverlayRenderer {
     
     
     var overlayImage: UIImage
-    var mapOverlay = #imageLiteral(resourceName: "mainFloorUpdated")
+    var mapOverlay = #imageLiteral(resourceName: "mainFinalRSZ")
     
     init(overlay: MKOverlay, overlayImage: UIImage) {
         self.overlayImage = overlayImage
