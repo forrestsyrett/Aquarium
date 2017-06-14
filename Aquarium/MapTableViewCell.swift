@@ -17,11 +17,13 @@ protocol AnimalActionsDelegate: class {
 
 class MapTableViewCell: UITableViewCell {
 
+    
+
     @IBOutlet weak var cellImage: UIImageView!
     @IBOutlet weak var cellLabel: UILabel!
-    @IBOutlet weak var animalInfoButton: UIButton!
-
-    
+    @IBOutlet weak var button1: UIButton!
+    @IBOutlet weak var button2: UIButton!
+    @IBOutlet weak var button3: UIButton!
     weak var delegate: AnimalActionsDelegate?
     
     override func awakeFromNib() {
@@ -35,10 +37,16 @@ class MapTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
-
+    @IBAction func feedingButtonTapped(_ sender: Any) {
+        delegate?.feedingButtonAction(self)
+        print("Delegate Sent for feeding")
+    }
     @IBAction func animalInfoButtonTapped(_ sender: Any) {
         delegate?.infoButtonAction(self)
         print("Delegate Sent for info")
     }
-
+    @IBAction func locateButtonTapped(_ sender: Any) {
+        delegate?.locateButtonAction(self)
+        print("Delegate Sent for locate")
+    }
 }

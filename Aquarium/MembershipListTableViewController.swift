@@ -62,7 +62,6 @@ class MembershipListTableViewController: UIViewController, UITableViewDelegate, 
     func reloadView() {
         self.membershipCardTableView.reloadData()
         welcomeView.isHidden = true
-        self.blurView.isHidden = true
     }
     
     

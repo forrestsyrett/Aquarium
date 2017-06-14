@@ -52,10 +52,7 @@ class AddNewMembershipViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var expirationReminderSwitch: UISwitch!
 
-    @IBOutlet weak var scanButton: UIButton!
-    
     var membership: MembershipCard?
-    
     var membershipCell = MembershipCardTableViewCell()
     var name = "first"
     
@@ -65,12 +62,11 @@ class AddNewMembershipViewController: UIViewController, UITextFieldDelegate {
         transparentNavigationBar(self)
         
 
-        expirationDatePicker.setValue(UIColor.white, forKey: "textColor")
+        
         firstNameTextField.delegate = self
         lastNameTextField.delegate = self
         membershipIDTextField.delegate = self
         transparentNavigationBar(self)
-        roundCornerButtons(scanButton)
         
         if firstNameTextField.text?.isEmpty == true {
             saveButton.isEnabled = false
@@ -81,43 +77,17 @@ class AddNewMembershipViewController: UIViewController, UITextFieldDelegate {
     }
     
     
-    @IBAction func firstNameNextButtonTapped(_ sender: Any) {
-    
-    }
-    
-    @IBAction func lastNameNextButtonTapped(_ sender: Any) {
-    
-        
-    }
-    
-    
-    @IBAction func membershipDoneButtonTapped(_ sender: Any) {
-        
-    }
-    
-    
-    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         
-       if firstNameTextField.text == "" || membershipIDTextField.text == "" {
-           saveButton.isEnabled = false
-        } else {
-            saveButton.isEnabled = true
-        }
-        
-        if textField == self.firstNameTextField {
-            self.lastNameTextField.becomeFirstResponder()
-        }
-        else if textField == self.lastNameTextField {
-            self.membershipIDTextField.becomeFirstResponder()
-        }
-        else {
+//        if membershipNameTextField.text == "" || membershipIDTextField.text == "" {
+//            saveButton.enabled = false
+//        } else {
+//            saveButton.enabled = true
+//        }
         membershipIDTextField.resignFirstResponder()
         firstNameTextField.resignFirstResponder()
         lastNameTextField.resignFirstResponder()
-        }
         return true
-
     }
 
     
@@ -134,9 +104,9 @@ class AddNewMembershipViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func firstNameTextFieldEditingChanged(_ sender: Any) {
         
-        if firstNameTextField.text?.characters.count <= 0 || membershipIDTextField.text?.characters.count <= 0 {
+        if firstNameTextField.text?.characters.count <= 0 || lastNameTextField.text?.characters.count <= 0 || membershipIDTextField.text?.characters.count <= 0 {
             saveButton.isEnabled = false
-        } else if membershipIDTextField.text?.characters.count > 0 && self.firstNameTextField.text?.characters.count > 0 {
+        } else if membershipIDTextField.text?.characters.count > 0 {
             saveButton.isEnabled = true
         }
     }
@@ -433,8 +403,6 @@ class AddNewMembershipViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func unwindToAddNewMembership(segue: UIStoryboardSegue) {
         
-        print("unwind")
-        
         if (self.firstNameTextField.text?.characters.count > 0 || self.lastNameTextField.text?.characters.count > 0) && self.membershipIDTextField.text?.characters.count > 0 {
             self.saveButton.isEnabled = true
         }
@@ -461,7 +429,7 @@ class AddNewMembershipViewController: UIViewController, UITextFieldDelegate {
 
 
 
-extension AddNewMembershipViewController: UNUserNotificationCenterDelegate {
+extension NotificationDelegate {
     
     
        
