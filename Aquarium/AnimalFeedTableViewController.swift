@@ -99,7 +99,7 @@ class AnimalFeedTableViewController: UIViewController, UITableViewDelegate, UITa
     
     
     func handleLeftSwipes(sender:UISwipeGestureRecognizer) {
-   /*
+        
         let selectedIndex: Int = self.weekdaySegmentedControl.selectedSegmentIndex
         
         if weekdaySegmentedControl.selectedSegmentIndex >= 6 { return }
@@ -131,11 +131,10 @@ class AnimalFeedTableViewController: UIViewController, UITableViewDelegate, UITa
             feeds = [.shark, .archerfish, .riverGiant, .penguin]
         }
 animalFeedTableView.reloadData()
-*/
+
     }
     
     func handleRightSwipes(sender:UISwipeGestureRecognizer) {
-   /*
         let selectedIndex: Int = self.weekdaySegmentedControl.selectedSegmentIndex
         
         if weekdaySegmentedControl.selectedSegmentIndex <= 0 { return }
@@ -166,7 +165,7 @@ animalFeedTableView.reloadData()
             feeds = [.shark, .archerfish, .riverGiant, .penguin]
         }
         animalFeedTableView.reloadData()
-     */
+        
     }
 
     @IBAction func segmentedControlValueChanged(_ sender: AnyObject) {
@@ -201,20 +200,19 @@ animalFeedTableView.reloadData()
         cell.animalFeedTimeLabel.text = feed.info.timeString
         cell.backgroundColor = UIColor.clear
         cell.notificationScheduled = notificationCheck(feed.info.animalName, weekday: selectedWeekday)
-     /*
+        
         cell.animalFeedImage.alpha = 0.0
         cell.animalFeedLabel.alpha = 0.0
         cell.animalFeedTimeLabel.alpha = 0.0
         cell.checkMarkImage.alpha = 0.0
         cell.notifyMeButtonLabel.alpha = 0.0
- 
+    
         
         animateLabel(cell.animalFeedLabel, animateTime: 0.75)
         animateImage(cell.animalFeedImage, animateTime: 0.75)
         animateLabel(cell.animalFeedTimeLabel, animateTime: 0.75)
         animateImage(cell.checkMarkImage, animateTime: 0.75)
         animateButton(cell.notifyMeButtonLabel, animateTime: 0.75)
-        */
         
         roundCornerButtons(cell.notifyMeButtonLabel)
         roundCornerButtons(cell.animalFeedImage)
@@ -228,7 +226,7 @@ animalFeedTableView.reloadData()
             basicAnimation.keyPath = "position.x"
             basicAnimation.fromValue = cellView.center.x + 350
             basicAnimation.toValue = cellView.center.x + -30
-            basicAnimation.duration = 0.35
+            basicAnimation.duration = 0.25
             cellView.layer.add(basicAnimation, forKey: "slide")
             cellView.center.x += -30
         }

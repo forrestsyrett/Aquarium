@@ -36,6 +36,7 @@ class ContactUsViewController: UIViewController {
         
         let callAlert = UIAlertController(title: "Call the Living Planet Aquarium?", message: "801-355-3474", preferredStyle: .alert)
         let callAction = UIAlertAction(title: "Call", style: .default) { (callAlert) in
+     //   UIApplication.shared.openURL(URL(string: "tel://8013553474")!)
             UIApplication.shared.open(URL(string: "tel://8013553474")!, options: [:], completionHandler: nil)
     } 
         let cancelAlert = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)

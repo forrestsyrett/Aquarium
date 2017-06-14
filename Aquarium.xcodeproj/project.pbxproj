@@ -10,31 +10,11 @@
 		060C1EB31E81D7FC00501713 /* SceneKitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060C1EB21E81D7FC00501713 /* SceneKitViewController.swift */; };
 		060C1EB61E81D87500501713 /* shark.obj in Resources */ = {isa = PBXBuildFile; fileRef = 060C1EB41E81D87500501713 /* shark.obj */; };
 		060C1EB71E81D87500501713 /* sharkTexture.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 060C1EB51E81D87500501713 /* sharkTexture.jpg */; };
-		0613C8A11EDF6CBD00657292 /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0613C8A01EDF6CBD00657292 /* EventsViewController.swift */; };
 		0656D2CD1DE4C7680014BBF0 /* AnimalCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0656D2CC1DE4C7680014BBF0 /* AnimalCollectionViewCell.swift */; };
 		0660F0451EA00A5F00D14C3D /* TheaterTimesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0660F0441EA00A5F00D14C3D /* TheaterTimesTableViewCell.swift */; };
 		0660F0471EA00AB700D14C3D /* TheaterShows.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0660F0461EA00AB700D14C3D /* TheaterShows.swift */; };
 		0660F0491EA00B1D00D14C3D /* TheaterShowsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0660F0481EA00B1D00D14C3D /* TheaterShowsController.swift */; };
-		0664751A1EF0860D0085A440 /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 066475191EF0860D0085A440 /* background.jpg */; };
-		0670DB0B1EC3C12C0099EDA9 /* ARCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0670DB0A1EC3C12C0099EDA9 /* ARCollectionViewCell.swift */; };
-		0689F6C41EB943DD007E8251 /* CraftARAugmentedRealitySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0689F6C31EB943DD007E8251 /* CraftARAugmentedRealitySDK.framework */; };
-		0689F6C61EB9440F007E8251 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0689F6C51EB9440F007E8251 /* Pods.framework */; };
-		0689F6C81EB9445A007E8251 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 0689F6C71EB9445A007E8251 /* libz.tbd */; };
-		0689F6CA1EB94467007E8251 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 0689F6C91EB94467007E8251 /* libc++.tbd */; };
-		0689F6CC1EB94478007E8251 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0689F6CB1EB94478007E8251 /* CoreLocation.framework */; };
-		0689F6CE1EB94482007E8251 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0689F6CD1EB94482007E8251 /* AudioToolbox.framework */; };
-		0689F6D01EB9448A007E8251 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0689F6CF1EB9448A007E8251 /* QuartzCore.framework */; };
-		0689F6D21EB94496007E8251 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0689F6D11EB94496007E8251 /* MobileCoreServices.framework */; };
-		0689F6D41EB9449D007E8251 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0689F6D31EB9449D007E8251 /* SystemConfiguration.framework */; };
-		0689F6D61EB944B3007E8251 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0689F6D51EB944B2007E8251 /* CoreMedia.framework */; };
-		0689F6D81EB944BA007E8251 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0689F6D71EB944BA007E8251 /* AVFoundation.framework */; };
-		0689F6DA1EB94511007E8251 /* AugmentedRealityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0689F6D91EB94511007E8251 /* AugmentedRealityViewController.swift */; };
-		0689F6E21EB95138007E8251 /* CraftARResourcesAR.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0689F6E11EB95138007E8251 /* CraftARResourcesAR.bundle */; };
 		068A98CF1EAEB9CF00950B04 /* AquariumSecondFloor.plist in Resources */ = {isa = PBXBuildFile; fileRef = 068A98CE1EAEB9CF00950B04 /* AquariumSecondFloor.plist */; };
-		068BD1601EDF6E9000B2521F /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068BD15F1EDF6E9000B2521F /* Event.swift */; };
-		068BD1621EDF6F0600B2521F /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068BD1611EDF6F0600B2521F /* EventTableViewCell.swift */; };
-		068BD1641EDF6F8500B2521F /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068BD1631EDF6F8500B2521F /* CustomCell.swift */; };
-		068BD1661EDF76A100B2521F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 068BD1651EDF76A100B2521F /* GoogleService-Info.plist */; };
 		069A216B1EB68F77006130C1 /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069A21671EB68F77006130C1 /* CustomTabBarController.swift */; };
 		069A216C1EB68F77006130C1 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069A21681EB68F77006130C1 /* CustomTabBar.swift */; };
 		069A216D1EB68F77006130C1 /* CustomTabBarAnimatedTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069A21691EB68F77006130C1 /* CustomTabBarAnimatedTransition.swift */; };
@@ -52,6 +32,7 @@
 		AA07C69E1DD5052700AD855D /* SecondFloorOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA07C69D1DD5052700AD855D /* SecondFloorOverlayView.swift */; };
 		AA07C6A01DD5090E00AD855D /* SecondFloorOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA07C69F1DD5090E00AD855D /* SecondFloorOverlay.swift */; };
 		AA07C6A21DD5126100AD855D /* SecondFloorExhibits.plist in Resources */ = {isa = PBXBuildFile; fileRef = AA07C6A11DD5126100AD855D /* SecondFloorExhibits.plist */; };
+		AA081A561DDA8CE30020C269 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = AA081A551DDA8CE30020C269 /* background.png */; };
 		AA081A581DDA91E60020C269 /* BackGroundOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA081A571DDA91E60020C269 /* BackGroundOverlay.swift */; };
 		AA183F2A1D1A6DD300D31044 /* AnimalEncountersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA183F291D1A6DD200D31044 /* AnimalEncountersViewController.swift */; };
 		AA3391A01D6FA92800F92147 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA33919F1D6FA92800F92147 /* Main.storyboard */; };
@@ -115,32 +96,11 @@
 		060C1EB21E81D7FC00501713 /* SceneKitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneKitViewController.swift; sourceTree = "<group>"; };
 		060C1EB41E81D87500501713 /* shark.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = shark.obj; sourceTree = "<group>"; };
 		060C1EB51E81D87500501713 /* sharkTexture.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sharkTexture.jpg; sourceTree = "<group>"; };
-		0613C8A01EDF6CBD00657292 /* EventsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
 		0656D2CC1DE4C7680014BBF0 /* AnimalCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimalCollectionViewCell.swift; sourceTree = "<group>"; };
 		0660F0441EA00A5F00D14C3D /* TheaterTimesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TheaterTimesTableViewCell.swift; path = Aquarium/TheaterTimesTableViewCell.swift; sourceTree = "<group>"; };
 		0660F0461EA00AB700D14C3D /* TheaterShows.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TheaterShows.swift; path = Aquarium/TheaterShows.swift; sourceTree = "<group>"; };
 		0660F0481EA00B1D00D14C3D /* TheaterShowsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TheaterShowsController.swift; path = Aquarium/TheaterShowsController.swift; sourceTree = "<group>"; };
-		066475191EF0860D0085A440 /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
-		0670DB0A1EC3C12C0099EDA9 /* ARCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARCollectionViewCell.swift; sourceTree = "<group>"; };
-		0689F6C31EB943DD007E8251 /* CraftARAugmentedRealitySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CraftARAugmentedRealitySDK.framework; sourceTree = "<group>"; };
-		0689F6C51EB9440F007E8251 /* Pods.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Pods.framework; sourceTree = "<group>"; };
-		0689F6C71EB9445A007E8251 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
-		0689F6C91EB94467007E8251 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
-		0689F6CB1EB94478007E8251 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		0689F6CD1EB94482007E8251 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
-		0689F6CF1EB9448A007E8251 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		0689F6D11EB94496007E8251 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
-		0689F6D31EB9449D007E8251 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		0689F6D51EB944B2007E8251 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
-		0689F6D71EB944BA007E8251 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		0689F6D91EB94511007E8251 /* AugmentedRealityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AugmentedRealityViewController.swift; sourceTree = "<group>"; };
-		0689F6DD1EB9461C007E8251 /* Aquarium-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Aquarium-Bridging-Header.h"; sourceTree = "<group>"; };
-		0689F6E11EB95138007E8251 /* CraftARResourcesAR.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = CraftARResourcesAR.bundle; sourceTree = "<group>"; };
 		068A98CE1EAEB9CF00950B04 /* AquariumSecondFloor.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = AquariumSecondFloor.plist; sourceTree = "<group>"; };
-		068BD15F1EDF6E9000B2521F /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
-		068BD1611EDF6F0600B2521F /* EventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
-		068BD1631EDF6F8500B2521F /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
-		068BD1651EDF76A100B2521F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		069A21671EB68F77006130C1 /* CustomTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
 		069A21681EB68F77006130C1 /* CustomTabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
 		069A21691EB68F77006130C1 /* CustomTabBarAnimatedTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabBarAnimatedTransition.swift; sourceTree = "<group>"; };
@@ -157,6 +117,7 @@
 		AA07C69D1DD5052700AD855D /* SecondFloorOverlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondFloorOverlayView.swift; sourceTree = "<group>"; };
 		AA07C69F1DD5090E00AD855D /* SecondFloorOverlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SecondFloorOverlay.swift; path = Aquarium/SecondFloorOverlay.swift; sourceTree = "<group>"; };
 		AA07C6A11DD5126100AD855D /* SecondFloorExhibits.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SecondFloorExhibits.plist; sourceTree = "<group>"; };
+		AA081A551DDA8CE30020C269 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
 		AA081A571DDA91E60020C269 /* BackGroundOverlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BackGroundOverlay.swift; path = Aquarium/BackGroundOverlay.swift; sourceTree = "<group>"; };
 		AA183F291D1A6DD200D31044 /* AnimalEncountersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimalEncountersViewController.swift; sourceTree = "<group>"; };
 		AA33919F1D6FA92800F92147 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -227,18 +188,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0689F6D81EB944BA007E8251 /* AVFoundation.framework in Frameworks */,
-				0689F6D61EB944B3007E8251 /* CoreMedia.framework in Frameworks */,
-				0689F6D41EB9449D007E8251 /* SystemConfiguration.framework in Frameworks */,
-				0689F6D21EB94496007E8251 /* MobileCoreServices.framework in Frameworks */,
-				0689F6D01EB9448A007E8251 /* QuartzCore.framework in Frameworks */,
-				0689F6CE1EB94482007E8251 /* AudioToolbox.framework in Frameworks */,
-				0689F6CC1EB94478007E8251 /* CoreLocation.framework in Frameworks */,
-				0689F6CA1EB94467007E8251 /* libc++.tbd in Frameworks */,
-				0689F6C81EB9445A007E8251 /* libz.tbd in Frameworks */,
-				0689F6C61EB9440F007E8251 /* Pods.framework in Frameworks */,
 				AA7FF44D1DDE67AF002A5AE0 /* FlowingMenu.framework in Frameworks */,
-				0689F6C41EB943DD007E8251 /* CraftARAugmentedRealitySDK.framework in Frameworks */,
 				2E3C1D313B999B8DCB850948 /* Pods_Aquarium.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -246,17 +196,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		064889CE1EEDF2990012C46E /* Calendar Events */ = {
-			isa = PBXGroup;
-			children = (
-				0613C8A01EDF6CBD00657292 /* EventsViewController.swift */,
-				068BD1631EDF6F8500B2521F /* CustomCell.swift */,
-				068BD1611EDF6F0600B2521F /* EventTableViewCell.swift */,
-				068BD15F1EDF6E9000B2521F /* Event.swift */,
-			);
-			name = "Calendar Events";
-			sourceTree = "<group>";
-		};
 		0656D2CB1DE4C3150014BBF0 /* Unused */ = {
 			isa = PBXGroup;
 			children = (
@@ -265,15 +204,6 @@
 			);
 			name = Unused;
 			path = ..;
-			sourceTree = "<group>";
-		};
-		0689F6E01EB946CE007E8251 /* AR Resources */ = {
-			isa = PBXGroup;
-			children = (
-				0689F6C51EB9440F007E8251 /* Pods.framework */,
-				0689F6C31EB943DD007E8251 /* CraftARAugmentedRealitySDK.framework */,
-			);
-			name = "AR Resources";
 			sourceTree = "<group>";
 		};
 		069A21661EB68F52006130C1 /* CustomTabBar */ = {
@@ -342,8 +272,6 @@
 		AA544C881D0BB66B00DC1725 = {
 			isa = PBXGroup;
 			children = (
-				0689F6DD1EB9461C007E8251 /* Aquarium-Bridging-Header.h */,
-				0689F6E11EB95138007E8251 /* CraftARResourcesAR.bundle */,
 				AA544C931D0BB66C00DC1725 /* Aquarium */,
 				AA544C921D0BB66C00DC1725 /* Products */,
 				BA65A9DDB62A50DF28C33017 /* Pods */,
@@ -362,7 +290,6 @@
 		AA544C931D0BB66C00DC1725 /* Aquarium */ = {
 			isa = PBXGroup;
 			children = (
-				0689F6E01EB946CE007E8251 /* AR Resources */,
 				AA9EE37B1DD25F94007D1E08 /* Aquarium.entitlements */,
 				AA544C941D0BB66C00DC1725 /* AppDelegate.swift */,
 				06C4BB891E78882B005A96CE /* NotificationDelegate.swift */,
@@ -372,8 +299,6 @@
 				AAA20FF51D5E47A1009B3241 /* ContactUsViewController.swift */,
 				06C714F71E5E6C61003F3794 /* jellies.MOV */,
 				AA544CA01D0BB66C00DC1725 /* Info.plist */,
-				068BD1651EDF76A100B2521F /* GoogleService-Info.plist */,
-				064889CE1EEDF2990012C46E /* Calendar Events */,
 				AA353AE11DCE8BAA00AD5490 /* Fonts */,
 				AA353AB41DCE5F3900AD5490 /* Map */,
 				AA8441CF1D556F3C000238C1 /* Main Tab Bar Items */,
@@ -435,7 +360,7 @@
 		AA8441CE1D556ECD000238C1 /* Appearance */ = {
 			isa = PBXGroup;
 			children = (
-				066475191EF0860D0085A440 /* background.jpg */,
+				AA081A551DDA8CE30020C269 /* background.png */,
 				AA6F4E631D3868F900FA20F7 /* Animations.swift */,
 				AA544CAA1D0C790400DC1725 /* UIAppearance.swift */,
 				AA353ACB1DCE665500AD5490 /* fishFlop.m4r */,
@@ -446,10 +371,8 @@
 		AA8441CF1D556F3C000238C1 /* Main Tab Bar Items */ = {
 			isa = PBXGroup;
 			children = (
-				AA8D05151D19DC930063F222 /* HomeViewController.swift */,
-				0689F6D91EB94511007E8251 /* AugmentedRealityViewController.swift */,
-				0670DB0A1EC3C12C0099EDA9 /* ARCollectionViewCell.swift */,
 				AA183F291D1A6DD200D31044 /* AnimalEncountersViewController.swift */,
+				AA8D05151D19DC930063F222 /* HomeViewController.swift */,
 				06B325241DF7383500A53057 /* BeaconInfoViewController.swift */,
 				AA544CF91D149C0A00DC1725 /* QRScannerViewController.swift */,
 			);
@@ -468,15 +391,6 @@
 		EA94B41FA31D61D281B2BE4B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				0689F6D71EB944BA007E8251 /* AVFoundation.framework */,
-				0689F6D51EB944B2007E8251 /* CoreMedia.framework */,
-				0689F6D31EB9449D007E8251 /* SystemConfiguration.framework */,
-				0689F6D11EB94496007E8251 /* MobileCoreServices.framework */,
-				0689F6CF1EB9448A007E8251 /* QuartzCore.framework */,
-				0689F6CD1EB94482007E8251 /* AudioToolbox.framework */,
-				0689F6CB1EB94478007E8251 /* CoreLocation.framework */,
-				0689F6C91EB94467007E8251 /* libc++.tbd */,
-				0689F6C71EB9445A007E8251 /* libz.tbd */,
 				AA7FF44C1DDE67AF002A5AE0 /* FlowingMenu.framework */,
 				EA163953DE68335B7F2D0C0E /* Pods_Aquarium.framework */,
 			);
@@ -519,7 +433,7 @@
 					AA544C901D0BB66B00DC1725 = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = B3G94J8WC9;
-						LastSwiftMigration = 0830;
+						LastSwiftMigration = 0820;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -555,10 +469,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA353ACC1DCE665500AD5490 /* fishFlop.m4r in Resources */,
-				0664751A1EF0860D0085A440 /* background.jpg in Resources */,
 				AA353ADD1DCE8B9E00AD5490 /* ITCFranklinGothicStd-Hvy.otf in Resources */,
-				0689F6E21EB95138007E8251 /* CraftARResourcesAR.bundle in Resources */,
-				068BD1661EDF76A100B2521F /* GoogleService-Info.plist in Resources */,
 				AA544C9F1D0BB66C00DC1725 /* LaunchScreen.storyboard in Resources */,
 				AA353AD91DCE8B9E00AD5490 /* ITCFranklinGothicStd-Book.otf in Resources */,
 				AA3391A01D6FA92800F92147 /* Main.storyboard in Resources */,
@@ -570,6 +481,7 @@
 				AA353AE51DCE8C0600AD5490 /* TrajanPro-Regular.otf in Resources */,
 				AA353ADF1DCE8B9E00AD5490 /* ITCFranklinGothicStd-Med.otf in Resources */,
 				060C1EB61E81D87500501713 /* shark.obj in Resources */,
+				AA081A561DDA8CE30020C269 /* background.png in Resources */,
 				AA544C9C1D0BB66C00DC1725 /* Assets.xcassets in Resources */,
 				AA353ADA1DCE8B9E00AD5490 /* ITCFranklinGothicStd-BookIt.otf in Resources */,
 				060C1EB71E81D87500501713 /* sharkTexture.jpg in Resources */,
@@ -650,7 +562,6 @@
 				AA55B5881DDF7D4100CC2336 /* ExhibitGalleryTableViewCell.swift in Sources */,
 				AA353ABE1DCE60A700AD5490 /* AnnotationViews.swift in Sources */,
 				AA544CAD1D0C90DE00DC1725 /* ExhibitTableViewController.swift in Sources */,
-				0689F6DA1EB94511007E8251 /* AugmentedRealityViewController.swift in Sources */,
 				0656D2CD1DE4C7680014BBF0 /* AnimalCollectionViewCell.swift in Sources */,
 				AA6F4E721D3C01D000FA20F7 /* AnimalFeedTableViewCell.swift in Sources */,
 				AA07C6A01DD5090E00AD855D /* SecondFloorOverlay.swift in Sources */,
@@ -667,7 +578,6 @@
 				AA909B181D41B42A000DB923 /* Feeding.swift in Sources */,
 				069A216B1EB68F77006130C1 /* CustomTabBarController.swift in Sources */,
 				AA6FA1D41D55540B00CBEEC7 /* MembershipListTableViewController.swift in Sources */,
-				0613C8A11EDF6CBD00657292 /* EventsViewController.swift in Sources */,
 				AA9D6EE01D1CCD5000831AFE /* Animal.swift in Sources */,
 				06C4BB8A1E78882B005A96CE /* NotificationDelegate.swift in Sources */,
 				AA081A581DDA91E60020C269 /* BackGroundOverlay.swift in Sources */,
@@ -678,7 +588,6 @@
 				AA8D05161D19DC930063F222 /* HomeViewController.swift in Sources */,
 				AA55B5841DDF75AE00CC2336 /* MainExhibits.swift in Sources */,
 				AA353AB81DCE601800AD5490 /* BottomSheetViewController.swift in Sources */,
-				068BD1641EDF6F8500B2521F /* CustomCell.swift in Sources */,
 				AA7FF44B1DDE65AE002A5AE0 /* MainExhibitViewController.swift in Sources */,
 				AA6F4E661D386A2A00FA20F7 /* AnimalTableViewCell.swift in Sources */,
 				060C1EB31E81D7FC00501713 /* SceneKitViewController.swift in Sources */,
@@ -690,9 +599,6 @@
 				0660F0451EA00A5F00D14C3D /* TheaterTimesTableViewCell.swift in Sources */,
 				AAEE47681D3CAD8500E0C537 /* NotificationController.swift in Sources */,
 				AA6F4E641D3868F900FA20F7 /* Animations.swift in Sources */,
-				0670DB0B1EC3C12C0099EDA9 /* ARCollectionViewCell.swift in Sources */,
-				068BD1621EDF6F0600B2521F /* EventTableViewCell.swift in Sources */,
-				068BD1601EDF6E9000B2521F /* Event.swift in Sources */,
 				AA7CE6FF1DDB91A600EF4669 /* Background.swift in Sources */,
 				0660F0471EA00AB700D14C3D /* TheaterShows.swift in Sources */,
 				06C714F21E5E60E3003F3794 /* OpeningScreenViewController.swift in Sources */,
@@ -816,15 +722,10 @@
 				CODE_SIGN_ENTITLEMENTS = Aquarium/Aquarium.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = B3G94J8WC9;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Aquarium",
-				);
 				INFOPLIST_FILE = Aquarium/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.forrest.Aquarium;
 				PRODUCT_NAME = Aquarium;
-				SWIFT_OBJC_BRIDGING_HEADER = "Aquarium-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -841,15 +742,10 @@
 				CODE_SIGN_ENTITLEMENTS = Aquarium/Aquarium.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = B3G94J8WC9;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Aquarium",
-				);
 				INFOPLIST_FILE = Aquarium/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.forrest.Aquarium;
 				PRODUCT_NAME = Aquarium;
-				SWIFT_OBJC_BRIDGING_HEADER = "Aquarium-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

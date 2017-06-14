@@ -10,18 +10,17 @@ import UIKit
 import PushKit
 import OneSignal
 import UserNotifications
-import Google
-import GoogleSignIn
 
 
 
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
   
     
     var window: UIWindow?
 
+    let delegate = NotificationDelegate()
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
@@ -34,16 +33,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
         let center = UNUserNotificationCenter.current()
-       
-        center.requestAuthorization(options: [.alert, .sound]) { (granted, error) in
-            
+        
+        let notificationDelegate = NotificationDelegate()
+        center.delegate = notificationDelegate
+        
+        
+        center.requestAuthorization(options: [.alert, .sound, .badge]) { (granted, error) in
+            if !granted {
+                print("Permission Denied")
+            }
     }
-        
-        
-        // Initialize sign-in
-        var configureError: NSError?
-        GGLContext.sharedInstance().configureWithError(&configureError)
-        assert(configureError == nil, "Error configuring Google services: \(configureError)")
         return true
 }
     
@@ -134,7 +133,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         if let index = shortcutItem.userInfo?["TabIndex"] as? Int {
             (window?.rootViewController as? UITabBarController)?.selectedIndex = index
-           
         }
         
         return true

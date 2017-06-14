@@ -2,11 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "Extinct_In_Wild.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "Extinct_In_Wild.png",
       "scale" : "2x"
     },
     {
