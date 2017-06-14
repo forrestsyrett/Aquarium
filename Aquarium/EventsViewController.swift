@@ -153,11 +153,7 @@ class EventsViewController: UIViewController {
         
         let timeMin = formatter.string(from: dateTimeMin!)
         let timeMax = formatter.string(from: dateTimeMax!)
-        
-        
-        print(timeMin)
-        print(timeMax)
-        
+   
         
         let body : Parameters  = [
             "calendarId" : "ahyde1973@gmail.com",
@@ -178,7 +174,6 @@ class EventsViewController: UIViewController {
             case .success:
                 guard let event = response.result.value else { return }
                 
-                print(event)
                 guard let events = event.events else { return }
                 
                 for singleEvent in events {
@@ -189,9 +184,6 @@ class EventsViewController: UIViewController {
                 self.checkScheduledEvents(completionHandler: { (complete) in
                     
                     if complete {
-                    for event in self.calendarEvents {
-                        print(event.scheduled)
-                    }
                 self.animateTableView(completion: { (true) in
                     
                         self.activityMonitor.stopAnimating()
@@ -368,6 +360,7 @@ extension EventsViewController: JTAppleCalendarViewDelegate {
         cell.selectedView.layer.cornerRadius = 15.0
         cell.selectedView.layer.borderWidth = 1.0
         cell.selectedView.layer.borderColor = UIColor.white.cgColor
+        cell.selectedView.backgroundColor = aquaLight
         return cell
     }
     
@@ -537,7 +530,6 @@ extension EventsViewController: UITableViewDelegate, UITableViewDataSource,Event
             // Notification is not pending
             
             if eventTableViewCell.notifyMeButton.titleLabel?.text == "Notify Me!" {
-                print("event notification delegate heard")
                 
                 let formatter = DateFormatter()
                 formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssxxxxx"
@@ -546,9 +538,7 @@ extension EventsViewController: UITableViewDelegate, UITableViewDataSource,Event
                 let notificationDate = date?.addingTimeInterval(TimeInterval(-60 * 15))
                 
                 notificationController.scheduleNewNotification(on: notificationDate!, event: event)
-  
-                print("Notification Scheduled for: \(event.eventName) on: \(notificationDate)")
-         
+           
                 // set button title label to show notification is pending
                 eventTableViewCell.notifyMeButton.setTitle("Cancel", for: .normal)
                 checkScheduledEvents(completionHandler: { (true) in
@@ -582,7 +572,7 @@ extension EventsViewController: UNUserNotificationCenterDelegate {
         
         func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
             
-            print("Tapped in notification")
+            print("User Tapped Notification")
         }
         
         //This is key callback to present notification while the app is in foreground
@@ -590,7 +580,7 @@ extension EventsViewController: UNUserNotificationCenterDelegate {
             
             print("Notification being triggered")
             
-                completionHandler( [.alert,.sound,.badge])
+                completionHandler( [.alert, .sound, .badge])
                 
             }
         }

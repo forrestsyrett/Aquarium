@@ -132,8 +132,10 @@ class BottomSheetViewController: UIViewController, UIGestureRecognizerDelegate, 
 
         }*/
     }
-
     
+    
+
+    // MARK: - TableView Functions
     
     func numberOfSections(in tableView: UITableView) -> Int {
         if tableView == self.tableView {
@@ -166,7 +168,7 @@ class BottomSheetViewController: UIViewController, UIGestureRecognizerDelegate, 
     cell.cellImage.image = mapData.info.animalImage
         cell.cellLabel.text = mapData.info.name
         
-        cell.button1.tag = indexPath.row
+        cell.animalInfoButton.tag = indexPath.row
         
         cell.cellImage.layer.cornerRadius = 5.0
         cell.cellImage.clipsToBounds = true

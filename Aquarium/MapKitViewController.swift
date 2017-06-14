@@ -25,11 +25,7 @@ class MapKitViewController: UIViewController, MKMapViewDelegate, BottomSheetView
     @IBOutlet weak var restroomButton: UIButton!
     @IBOutlet weak var cafeButton: UIButton!
     @IBOutlet weak var giftShopBUtton: UIButton!
-    @IBOutlet weak var zoomGalleryView: UIView!
-    @IBOutlet weak var zoomedGalleryImage: UIImageView!
     @IBOutlet weak var compassButton: UIButton!
-    
-    @IBOutlet weak var exitZoomButton: UIButton!
     
     let galleries = MapGalleryController.sharedController
     let bottomSheetViewController = BottomSheetViewController()
@@ -69,10 +65,9 @@ class MapKitViewController: UIViewController, MKMapViewDelegate, BottomSheetView
     
     override func viewDidLoad() {
         super.viewDidLoad()
+     self.view.backgroundColor = UIColor(red:0.00, green:0.41, blue:0.57, alpha:1.00)
         
         locationManager.requestAlwaysAuthorization()
-        
-        
         
         tabBarTint(view: self)
         
@@ -104,6 +99,8 @@ class MapKitViewController: UIViewController, MKMapViewDelegate, BottomSheetView
         addBottomSheetView()
         addOverlays()
         
+       
+        
         NotificationCenter.default.addObserver(self, selector: #selector(MapKitViewController.updateLocation), name: Notification.Name(rawValue: "jsa"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(MapKitViewController.updateLocation), name: Notification.Name(rawValue: "sharks"), object: nil)
         
@@ -112,13 +109,7 @@ class MapKitViewController: UIViewController, MKMapViewDelegate, BottomSheetView
         let mapCamera = MKMapCamera()
         
         mapView.setCamera(mapCamera, animated: false)
-        
-        
-        self.zoomGalleryView.layer.cornerRadius = 5.0
-        self.zoomedGalleryImage.layer.cornerRadius = 5.0
-        self.zoomGalleryView.layer.shadowRadius = 5.0
-        self.zoomGalleryView.layer.shadowColor = UIColor.white.cgColor
- 
+   
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -127,9 +118,6 @@ class MapKitViewController: UIViewController, MKMapViewDelegate, BottomSheetView
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.startUpdatingHeading()
         
-        self.zoomGalleryView.isHidden = true
-        
-        self.zoomGalleryView.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
         
         IndexController.shared.index = (self.tabBarController?.selectedIndex)!
 
@@ -143,20 +131,19 @@ class MapKitViewController: UIViewController, MKMapViewDelegate, BottomSheetView
     
     func addOverlays() {
     
-//        let path = Bundle.main.path(forResource: "background", ofType: "png")
-//        let fileURL = NSURL(fileURLWithPath: path!)
-//        let colorOverlay = MKTileOverlay(urlTemplate: fileURL.absoluteString)
-//        
-//        
-//        colorOverlay.canReplaceMapContent = true
-//        
-//        colorOverlay.tileSize = CGSize(width: 265, height: 265)
-//       
-//        mapView.add(colorOverlay)
+        let path = Bundle.main.path(forResource: "background", ofType: "jpg")
+        let fileURL = NSURL(fileURLWithPath: path!)
+        let colorOverlay = MKTileOverlay(urlTemplate: fileURL.absoluteString)
+        colorOverlay.canReplaceMapContent = true
+        colorOverlay.tileSize = CGSize(width: 265, height: 265)
+       mapView.add(colorOverlay)
+        
+        
         
         // MARK: -  Background Overlay
-        let background = BackGroundOverlay(background: self.background)
-        mapView.add(background, level: .aboveLabels)
+        
+       // let background = BackGroundOverlay(background: self.background)
+     //   mapView.add(background, level: .aboveLabels)
         
         let firstFloorOverlay = AquariumMapOverlay(aquarium: aquarium)
         self.firstFloor = firstFloorOverlay
@@ -247,18 +234,29 @@ let secondFloorAnnotation = Annotation(coordinate: coordinate, title: title, sub
     
  
     
-    
+   
     
     func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
+        
+        // Get value for zoom level
+        let zoomWidth = mapView.visibleMapRect.size.width
+        let zoomFactor = Double(zoomWidth)
+        print("ZOOM FACTOR: \(zoomFactor)")
+        
+        if zoomFactor < 620 {
+            print("Map zoomed in. Show details!")
+        }
+        if zoomFactor > 800 {
+            print("Map zoomed out, Hide details.")
+        }
+        
         
         let latDelta = aquarium.topLeftMapCoordinate.latitude + 0.0004 - aquarium.bottomRightMapCoordinate.latitude + 0.0004
         
         // 0.0003 sets correct zoom level when zoomed out bounce back
         
         let span = MKCoordinateSpanMake(fabs(latDelta), 0.0)
-        
 
-        
             let mapContainsOverlay: Bool = MKMapRectContainsRect(mapView.visibleMapRect, aquarium.overlayBoundingMapRect)
             
             if mapContainsOverlay {
@@ -371,13 +369,17 @@ let secondFloorAnnotation = Annotation(coordinate: coordinate, title: title, sub
     }
     
     func resetMapCenter() {
+    
+            self.mapView.centerCoordinate = self.aquarium.midCoordinate
         
-        mapView.centerCoordinate = aquarium.midCoordinate
-        
-        UIView.animate(withDuration: 0.3) {
-        self.mapView(self.mapView, regionDidChangeAnimated: true)
-    }
+        let latDelta = aquarium.topLeftMapCoordinate.latitude + 0.0004 - aquarium.bottomRightMapCoordinate.latitude + 0.0004
+        let span = MKCoordinateSpanMake(fabs(latDelta), 0.0)
+        let aquariumRegion: MKCoordinateRegion = MKCoordinateRegionMake(aquarium.midCoordinate, span)
+        mapView.setRegion(aquariumRegion, animated: true)
+    
 }
+    
+    
     
     
     
@@ -434,12 +436,10 @@ let secondFloorAnnotation = Annotation(coordinate: coordinate, title: title, sub
         switch self.titleLabel {
         case "Discover Utah":
             postNotificationWithGalleryName(gallery: galleries.discoverUtah)
-            self.zoomedGalleryImage.image = #imageLiteral(resourceName: "mainFloorDU")
             zoomGallery()
             
         case "Journey to South America":
             postNotificationWithGalleryName(gallery: galleries.jsa)
-            self.zoomedGalleryImage.image = #imageLiteral(resourceName: "mainFloorJSA")
             zoomGallery()
             
         case "Gift Shop":
@@ -450,12 +450,10 @@ let secondFloorAnnotation = Annotation(coordinate: coordinate, title: title, sub
             
         case "Ocean Explorer":
             postNotificationWithGalleryName(gallery: galleries.oceanExplorer)
-            self.zoomedGalleryImage.image = #imageLiteral(resourceName: "mainFloorOE")
             zoomGallery()
             
         case "Antarctic Adventure":
             postNotificationWithGalleryName(gallery: galleries.antarcticAdventure)
-            self.zoomedGalleryImage.image = #imageLiteral(resourceName: "secondFloorAA")
             zoomGallery()
             
         case "Restrooms":
@@ -463,7 +461,6 @@ let secondFloorAnnotation = Annotation(coordinate: coordinate, title: title, sub
             
         case "Jellyfish":
             postNotificationWithGalleryName(gallery: galleries.jellyFish)
-            self.zoomedGalleryImage.image = #imageLiteral(resourceName: "mainFloorAA")
             zoomGallery()
             
         case "Elevator":
@@ -471,12 +468,10 @@ let secondFloorAnnotation = Annotation(coordinate: coordinate, title: title, sub
             
         case "Deep Sea Lab":
             postNotificationWithGalleryName(gallery: galleries.deepSeaLab)
-            self.zoomedGalleryImage.image = #imageLiteral(resourceName: "mainFloorAA")
             zoomGallery()
             
         case "40' Shark Tunnel":
             postNotificationWithGalleryName(gallery: galleries.oceanExplorer)
-            self.zoomedGalleryImage.image = #imageLiteral(resourceName: "mainFloorOE")
             zoomGallery()
             
         case "4D Theater":
@@ -484,7 +479,6 @@ let secondFloorAnnotation = Annotation(coordinate: coordinate, title: title, sub
             
         case "Expedition Asia":
             postNotificationWithGalleryName(gallery: galleries.expeditionAsia)
-            self.zoomedGalleryImage.image = #imageLiteral(resourceName: "secondFloorAsia")
             zoomGallery()
             
         case "Tuki's Island":
@@ -495,7 +489,6 @@ let secondFloorAnnotation = Annotation(coordinate: coordinate, title: title, sub
             
         case "Journey to South America - Aviary":
             postNotificationWithGalleryName(gallery: galleries.jsa)
-            self.zoomedGalleryImage.image = #imageLiteral(resourceName: "secondFloorJSA")
             zoomGallery()
 
         case "Cafe":
@@ -676,6 +669,8 @@ let secondFloorAnnotation = Annotation(coordinate: coordinate, title: title, sub
     // MARK: Compass Button
     @IBAction func compassModeButtonTapped(_ sender: Any) {
         
+       
+        
         
         
         switch self.trackingType {
@@ -684,6 +679,8 @@ let secondFloorAnnotation = Annotation(coordinate: coordinate, title: title, sub
         case TrackingTypes.map.rawValue:
             self.trackingSwitch = 2
             self.trackingType = TrackingTypes.user.rawValue
+            self.mapView.isScrollEnabled = true
+            self.mapView.isZoomEnabled = true
         UIView.animate(withDuration: 0.3, animations: {
             self.resetMapCenter()
             self.mapView.transform = CGAffineTransform.identity
@@ -695,13 +692,18 @@ let secondFloorAnnotation = Annotation(coordinate: coordinate, title: title, sub
             self.trackingSwitch = 1
             self.trackingType = TrackingTypes.map.rawValue
             self.compassButton.setImage(#imageLiteral(resourceName: "compassFilled"), for: .normal)
+            self.mapView.isScrollEnabled = false
+            self.mapView.isZoomEnabled = false
             
             for annotation in self.mapView.annotations {
                 mapView.deselectAnnotation(annotation, animated: true)
             }
-            UIView.animate(withDuration: 0.3, animations: { 
-                self.centerMapOnCurrentLocation()
+            
+            UIView.animate(withDuration: 0.3, animations: {
+                self.resetMapCenter()
+               
             })
+            
         default: break
     }
 
