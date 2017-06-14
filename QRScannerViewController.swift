@@ -24,7 +24,6 @@ class QRScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsD
     @IBOutlet weak var scanButton: UIButton!
     @IBOutlet weak var dismissButton: UIButton!
     @IBOutlet weak var barcodeViewFinder: UIImageView!
-    @IBOutlet weak var blurView: UIVisualEffectView!
     
 
     
@@ -166,7 +165,6 @@ class QRScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsD
         roundCornerButtons(QRModalView)
         roundCornerButtons(getStartedButtonLabel)
         roundCornerButtons(scanButton)
-        roundCornerButtons(blurView)
         self.dismissButton.layer.cornerRadius = 17.0
         self.dismissButton.clipsToBounds = true
             gradient(self.view)

@@ -15,7 +15,6 @@ class MembershipListTableViewController: UIViewController, UITableViewDelegate, 
     
     @IBOutlet weak var membershipCardTableView: UITableView!
     @IBOutlet weak var welcomeView: UIView!
-    @IBOutlet weak var blurView: UIVisualEffectView!
     
     @IBOutlet weak var becomeAMemberButtonLabel: UIButton!
     
@@ -28,7 +27,6 @@ class MembershipListTableViewController: UIViewController, UITableViewDelegate, 
         membershipCardTableView.reloadData()
         roundCornerButtons(becomeAMemberButtonLabel)
         roundCornerButtons(welcomeView)
-        roundCornerButtons(blurView)
         
         NotificationCenter.default.addObserver(self, selector: #selector(MembershipListTableViewController.reloadView), name: Notification.Name(rawValue: "addedNewMembership"), object: nil)
         
@@ -49,10 +47,8 @@ class MembershipListTableViewController: UIViewController, UITableViewDelegate, 
         if MembershipCardController.sharedMembershipController.memberships.count != 0 {
             
             welcomeView.isHidden = true
-            blurView.isHidden = true
         } else {
             welcomeView.isHidden = false
-            blurView.isHidden = false
         }
         IndexController.shared.index = (self.tabBarController?.selectedIndex)!
 
